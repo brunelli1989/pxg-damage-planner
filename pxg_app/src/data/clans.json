@@ -1,0 +1,79 @@
+[
+  {
+    "name": "volcanic",
+    "displayName": "Volcanic",
+    "bonuses": [
+      { "element": "fire", "atk": 0.28, "def": 0.28 }
+    ]
+  },
+  {
+    "name": "raibolt",
+    "displayName": "Raibolt",
+    "bonuses": [
+      { "element": "electric", "atk": 0.28, "def": 0.28 }
+    ]
+  },
+  {
+    "name": "orebound",
+    "displayName": "Orebound",
+    "bonuses": [
+      { "element": "rock", "atk": 0.25, "def": 0.25 },
+      { "element": "ground", "atk": 0.25, "def": 0.25 }
+    ]
+  },
+  {
+    "name": "naturia",
+    "displayName": "Naturia",
+    "bonuses": [
+      { "element": "grass", "atk": 0.25, "def": 0.25 },
+      { "element": "bug", "atk": 0.28, "def": 0.28 }
+    ]
+  },
+  {
+    "name": "gardestrike",
+    "displayName": "Gardestrike",
+    "bonuses": [
+      { "element": "normal", "atk": 0.25, "def": 0.25 },
+      { "element": "fighting", "atk": 0.25, "def": 0.25 }
+    ]
+  },
+  {
+    "name": "ironhard",
+    "displayName": "Ironhard",
+    "bonuses": [
+      { "element": "steel", "atk": 0.28, "def": 0.28 }
+    ]
+  },
+  {
+    "name": "wingeon",
+    "displayName": "Wingeon",
+    "bonuses": [
+      { "element": "flying", "atk": 0.28, "def": 0.28 },
+      { "element": "dragon", "atk": 0.28, "def": 0.28 }
+    ]
+  },
+  {
+    "name": "psycraft",
+    "displayName": "Psycraft",
+    "bonuses": [
+      { "element": "psychic", "atk": 0.28, "def": 0.28 },
+      { "element": "fairy", "atk": 0.28, "def": 0.28 }
+    ]
+  },
+  {
+    "name": "seavell",
+    "displayName": "Seavell",
+    "bonuses": [
+      { "element": "water", "atk": 0.25, "def": 0.25 },
+      { "element": "ice", "atk": 0.28, "def": 0.28 }
+    ]
+  },
+  {
+    "name": "malefic",
+    "displayName": "Malefic",
+    "bonuses": [
+      { "element": "ghost", "atk": 0.25, "def": 0.25 },
+      { "element": "poison", "atk": 0.28, "def": 0.28 }
+    ]
+  }
+]

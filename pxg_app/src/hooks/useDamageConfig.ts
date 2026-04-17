@@ -1,0 +1,152 @@
+import { useState, useEffect, useCallback } from "react";
+import type {
+  DamageConfig,
+  ClanName,
+  HuntLevel,
+  PokeSetup,
+  MobConfig,
+  XAtkTier,
+  PokemonElement,
+  DeviceHeld,
+} from "../types";
+
+const STORAGE_KEY = "pxg_damage_config";
+
+const DEFAULT_CONFIG: DamageConfig = {
+  playerLvl: 300,
+  clan: null,
+  hunt: "300",
+  mob: { name: "Dratini", types: ["dragon"], hp: 191610, defFactor: 0.80 },
+  device: { kind: "x-attack", tier: 4 },
+  pokeSetups: {},
+  skillCalibrations: {},
+};
+
+function loadConfig(): DamageConfig {
+  const raw = localStorage.getItem(STORAGE_KEY);
+  if (!raw) return DEFAULT_CONFIG;
+  try {
+    const parsed = JSON.parse(raw);
+    const merged = { ...DEFAULT_CONFIG, ...parsed };
+    // Migration: old schema had mob.type (string), new has mob.types (array)
+    if (merged.mob) {
+      merged.mob = { ...DEFAULT_CONFIG.mob, ...merged.mob };
+      const anyMob = merged.mob as { type?: PokemonElement; types?: PokemonElement[] };
+      if (!Array.isArray(anyMob.types)) {
+        anyMob.types = anyMob.type ? [anyMob.type] : ["normal"];
+        delete anyMob.type;
+      }
+    }
+    // Migration: add global device (was per-poke antes)
+    if (!merged.device) {
+      merged.device = { kind: "x-attack", tier: 4 };
+    }
+    // Migration: pokeSetups — converte xAtkTier/xBoostTier legado pra held único
+    if (merged.pokeSetups) {
+      for (const k of Object.keys(merged.pokeSetups)) {
+        const s = merged.pokeSetups[k] as Partial<PokeSetup> & {
+          xAtkTier?: XAtkTier;
+          xBoostTier?: XAtkTier;
+          deviceXAtkTier?: XAtkTier;
+          deviceXBoostTier?: XAtkTier;
+        };
+        if (!s.held) {
+          if (s.xAtkTier && s.xAtkTier > 0) {
+            s.held = { kind: "x-attack", tier: s.xAtkTier };
+          } else if (s.xBoostTier && s.xBoostTier > 0) {
+            s.held = { kind: "x-boost", tier: s.xBoostTier };
+          } else {
+            s.held = { kind: "none", tier: 0 };
+          }
+        }
+        delete s.xAtkTier;
+        delete s.xBoostTier;
+        delete s.deviceXAtkTier;
+        delete s.deviceXBoostTier;
+      }
+    }
+    return merged;
+  } catch {
+    return DEFAULT_CONFIG;
+  }
+}
+
+export function useDamageConfig() {
+  const [config, setConfig] = useState<DamageConfig>(() => loadConfig());
+
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(config));
+  }, [config]);
+
+  const setPlayerLvl = useCallback((v: number) => {
+    setConfig((c) => ({ ...c, playerLvl: v }));
+  }, []);
+
+  const setClan = useCallback((v: ClanName | null) => {
+    setConfig((c) => ({ ...c, clan: v }));
+  }, []);
+
+  const setHunt = useCallback((v: HuntLevel) => {
+    setConfig((c) => ({ ...c, hunt: v }));
+  }, []);
+
+  const setMob = useCallback((mob: Partial<MobConfig>) => {
+    setConfig((c) => ({ ...c, mob: { ...c.mob, ...mob } }));
+  }, []);
+
+  const setPokeSetup = useCallback((pokeId: string, setup: Partial<PokeSetup>) => {
+    setConfig((c) => {
+      const current = c.pokeSetups[pokeId] ?? {
+        boost: 0,
+        held: { kind: "none" as const, tier: 0 as XAtkTier },
+        hasDevice: false,
+      };
+      return {
+        ...c,
+        pokeSetups: { ...c.pokeSetups, [pokeId]: { ...current, ...setup } },
+      };
+    });
+  }, []);
+
+  const setDevice = useCallback((device: Partial<DeviceHeld>) => {
+    setConfig((c) => ({ ...c, device: { ...c.device, ...device } }));
+  }, []);
+
+  const setSkillCalibration = useCallback(
+    (pokeId: string, skillName: string, skillPower: number) => {
+      setConfig((c) => ({
+        ...c,
+        skillCalibrations: {
+          ...c.skillCalibrations,
+          [`${pokeId}:${skillName}`]: skillPower,
+        },
+      }));
+    },
+    []
+  );
+
+  const clearSkillCalibration = useCallback((pokeId: string, skillName: string) => {
+    setConfig((c) => {
+      const { [`${pokeId}:${skillName}`]: _removed, ...rest } = c.skillCalibrations;
+      return { ...c, skillCalibrations: rest };
+    });
+  }, []);
+
+  return {
+    config,
+    setPlayerLvl,
+    setClan,
+    setHunt,
+    setMob,
+    setDevice,
+    setPokeSetup,
+    setSkillCalibration,
+    clearSkillCalibration,
+  };
+}
+
+export const POKEMON_ELEMENTS: PokemonElement[] = [
+  "normal", "fire", "water", "electric", "grass", "ice",
+  "fighting", "poison", "ground", "flying", "psychic", "bug",
+  "rock", "ghost", "dragon", "dark", "steel", "fairy",
+];

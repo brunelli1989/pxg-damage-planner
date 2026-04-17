@@ -1,0 +1,128 @@
+export type SkillType = "area" | "frontal";
+export type CCType = "stun" | "silence";
+export type BuffType = "self" | "next";
+export type Tier = "T1H" | "T2" | "T3" | "TR" | "TM";
+
+export type PokemonElement =
+  | "normal" | "fire" | "water" | "electric" | "grass" | "ice"
+  | "fighting" | "poison" | "ground" | "flying" | "psychic" | "bug"
+  | "rock" | "ghost" | "dragon" | "dark" | "steel" | "fairy";
+
+export type ClanName =
+  | "volcanic" | "raibolt" | "orebound" | "naturia" | "gardestrike"
+  | "ironhard" | "wingeon" | "psycraft" | "seavell" | "malefic";
+
+export type PokemonRole = "offensive_tank" | "burst_dd";
+
+export interface Clan {
+  name: ClanName;
+  displayName: string;
+  bonuses: { element: PokemonElement; atk: number; def: number }[];
+}
+
+export interface RosterPokemon {
+  id: string;
+  name: string;
+  tier: Tier;
+  clans: ClanName[];
+  role: PokemonRole;
+  elements: PokemonElement[];
+}
+export type DiskLevel = 0 | 1 | 2 | 3 | 4;
+
+export interface Skill {
+  name: string;
+  cooldown: number;
+  type: SkillType;
+  cc: CCType | null;
+  buff: BuffType | null;
+  element?: PokemonElement; // opcional; se omitido, clã/effectiveness não se aplicam
+  power?: number; // skill_power "clean" (sem clã embutido); calibrado via cast no dummy
+}
+
+export interface Pokemon {
+  id: string;
+  name: string;
+  tier: Tier;
+  skills: Skill[];
+}
+
+export type LureType = "solo_device" | "solo_elixir" | "dupla";
+
+export interface Lure {
+  type: LureType;
+  starter: Pokemon;
+  second: Pokemon | null;
+  starterSkills: Skill[];
+  secondSkills: Skill[];
+  starterUsesHarden: boolean;
+  starterUsesElixirDef: boolean;
+  usesElixirAtk: boolean;
+  usesDevice: boolean;
+}
+
+export interface RotationStep {
+  lure: Lure;
+  timeStart: number;
+  timeEnd: number;
+  idleBefore: number;
+  idleMidLure: number;
+}
+
+export interface RotationResult {
+  steps: RotationStep[];
+  totalTime: number;
+  totalIdle: number;
+  cycleNumber: number;
+  selectedIds: string[];
+  devicePokemonId: string | null;
+}
+
+// =========================================================
+// Damage module types
+// =========================================================
+
+export type HuntLevel = "300" | "400+";
+export type XAtkTier = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+
+export type HeldKind = "none" | "x-attack" | "x-boost" | "x-critical" | "x-defense";
+export interface HeldItem {
+  kind: HeldKind;
+  tier: XAtkTier;
+}
+
+// Alias pra compatibilidade com código antigo
+export type DeviceHeldKind = HeldKind;
+export type DeviceHeld = HeldItem;
+
+export interface PokeSetup {
+  boost: number;
+  held: HeldItem; // X-Held do slot principal do poke (X-Atk, X-Boost, ou nenhum)
+  hasDevice: boolean; // device atribuído a este poke (só 1 poke por vez)
+}
+
+export interface MobConfig {
+  name: string;
+  types: PokemonElement[]; // 1 ou 2 tipos; effectiveness é produto
+  hp: number;
+  defFactor: number; // 1.0 = sem defesa, 0.5 = 50% redução
+}
+
+export interface MobEntry {
+  name: string;
+  types: PokemonElement[]; // 1 ou 2 tipos
+  hunt: HuntLevel;
+  group: string; // mobs no mesmo group farmam juntos (mesma task)
+  hp?: number;
+  defFactor?: number;
+}
+
+export interface DamageConfig {
+  playerLvl: number;
+  clan: ClanName | null;
+  hunt: HuntLevel;
+  mob: MobConfig;
+  device: DeviceHeld; // global: held que está no device (compartilhado entre pokes)
+  pokeSetups: Record<string, PokeSetup>; // keyed by pokeId
+  skillCalibrations: Record<string, number>; // keyed by "pokeId:skillName", value = skill_power
+}

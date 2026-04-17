@@ -1,0 +1,6641 @@
+[
+  {
+    "id": "shiny-rampardos",
+    "name": "Shiny Rampardos",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Head Smash",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "rock",
+        "power": 21.38
+      },
+      {
+        "name": "Ancient Power",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock",
+        "power": 22.31
+      },
+      {
+        "name": "Falling Rocks",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock",
+        "power": 24.28
+      },
+      {
+        "name": "Rock Wrecker",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock",
+        "power": 26.24
+      },
+      {
+        "name": "Shadow Rush",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock",
+        "power": 25.28
+      }
+    ]
+  },
+  {
+    "id": "mega-barbaracle",
+    "name": "Mega Barbaracle",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Hone Claws",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "dark"
+      },
+      {
+        "name": "Rock Blast",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock"
+      },
+      {
+        "name": "Stone Edge",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock"
+      },
+      {
+        "name": "Falling Rocks",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock"
+      }
+    ]
+  },
+  {
+    "id": "shiny-golem",
+    "name": "Shiny Golem",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Harden",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "normal"
+      },
+      {
+        "name": "Rollout",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "rock"
+      },
+      {
+        "name": "Falling Rocks",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock",
+        "power": 27.99
+      },
+      {
+        "name": "Ancient Power",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock",
+        "power": 22.33
+      },
+      {
+        "name": "Rock Wrecker",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock",
+        "power": 25.29
+      },
+      {
+        "name": "Steamroller",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "bug",
+        "power": 1.96
+      }
+    ]
+  },
+  {
+    "id": "hippowdon",
+    "name": "Hippowdon",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Sand Field",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "ground",
+        "power": 14.5
+      },
+      {
+        "name": "Earth Power",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground",
+        "power": 14.26
+      },
+      {
+        "name": "Sandstorm",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock",
+        "power": 14.48
+      },
+      {
+        "name": "Earthquake",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground",
+        "power": 25.2
+      },
+      {
+        "name": "Fissure",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground",
+        "power": 23.51
+      }
+    ]
+  },
+  {
+    "id": "rampardos",
+    "name": "Rampardos",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Head Smash",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "rock",
+        "power": 19.45
+      },
+      {
+        "name": "Focus Energy",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "normal"
+      },
+      {
+        "name": "Rock Wrecker",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock",
+        "power": 23.38
+      },
+      {
+        "name": "Falling Rocks",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock",
+        "power": 21.58
+      },
+      {
+        "name": "Ancient Power",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock",
+        "power": 15.29
+      }
+    ]
+  },
+  {
+    "id": "tyranitar",
+    "name": "TR Tyranitar",
+    "tier": "TR",
+    "skills": [
+      {
+        "name": "Epicenter",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "rock"
+      },
+      {
+        "name": "Stone Edge",
+        "cooldown": 50,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "rock"
+      },
+      {
+        "name": "Rock Blast",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock"
+      },
+      {
+        "name": "Rock Tomb",
+        "cooldown": 20,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "rock"
+      },
+      {
+        "name": "Rock Slide",
+        "cooldown": 15,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "rock"
+      }
+    ]
+  },
+  {
+    "id": "lycanroc",
+    "name": "Lycanroc",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Howl",
+        "cooldown": 40,
+        "type": "frontal",
+        "cc": "stun",
+        "buff": null,
+        "element": "dark"
+      },
+      {
+        "name": "Swords Dance",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "normal"
+      },
+      {
+        "name": "Falling Rocks",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock",
+        "power": 28.05
+      },
+      {
+        "name": "Rock Blast",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock",
+        "power": 24.24
+      },
+      {
+        "name": "Stone Edge",
+        "cooldown": 45,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "rock",
+        "power": 25.62
+      }
+    ]
+  },
+  {
+    "id": "omastar",
+    "name": "Omastar",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Harden",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "normal"
+      },
+      {
+        "name": "Rollout",
+        "cooldown": 35,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "rock"
+      },
+      {
+        "name": "Rain Dance",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "silence",
+        "buff": "next",
+        "element": "water"
+      },
+      {
+        "name": "Falling Rocks",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock",
+        "power": 22.73
+      },
+      {
+        "name": "Ancient Power",
+        "cooldown": 35,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock",
+        "power": 14.72
+      },
+      {
+        "name": "Rock Wrecker",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock",
+        "power": 25.74
+      }
+    ]
+  },
+  {
+    "id": "golem",
+    "name": "Golem",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Harden",
+        "cooldown": 30,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "normal"
+      },
+      {
+        "name": "Rollout",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "rock"
+      },
+      {
+        "name": "Ancient Power",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock"
+      },
+      {
+        "name": "Falling Rocks",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock",
+        "power": 29.4
+      },
+      {
+        "name": "Rock Wrecker",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock",
+        "power": 27.45
+      }
+    ]
+  },
+  {
+    "id": "solrock",
+    "name": "Solrock",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Ancient Power",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock"
+      },
+      {
+        "name": "Falling Rocks",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock"
+      },
+      {
+        "name": "Meteor Beam",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "rock"
+      },
+      {
+        "name": "Sunny Day",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      }
+    ]
+  },
+  {
+    "id": "barbaracle",
+    "name": "Barbaracle",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Hone Claws",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "dark"
+      },
+      {
+        "name": "Rock Blast",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock"
+      },
+      {
+        "name": "Stone Edge",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock"
+      },
+      {
+        "name": "Falling Rocks",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock"
+      }
+    ]
+  },
+  {
+    "id": "mega-aerodactyl",
+    "name": "Mega Aerodactyl",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Giga Impact",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "rock"
+      },
+      {
+        "name": "Ancient Power",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock"
+      },
+      {
+        "name": "Falling Rocks",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock"
+      },
+      {
+        "name": "Stone Edge",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "rock"
+      }
+    ]
+  },
+  {
+    "id": "steelix",
+    "name": "Steelix",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Sand Tomb",
+        "cooldown": 45,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Earth Power",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Sand Eruption",
+        "cooldown": 55,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Fissure",
+        "cooldown": 55,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      }
+    ]
+  },
+  {
+    "id": "sandaconda",
+    "name": "Sandaconda",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Sand Spit",
+        "cooldown": 50,
+        "type": "area",
+        "cc": "silence",
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Earth Power",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Scorching Sand",
+        "cooldown": 45,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Sand Eruption",
+        "cooldown": 55,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      }
+    ]
+  },
+  {
+    "id": "shiny-krookodile",
+    "name": "Shiny Krookodile",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Sand Tomb",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": "self",
+        "element": "ground"
+      },
+      {
+        "name": "Dig",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "ground"
+      },
+      {
+        "name": "Stomping Tantrum",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Earthquake",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Shadow Rush",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      }
+    ]
+  },
+  {
+    "id": "mega-excadrill",
+    "name": "Mega Excadrill",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Sandstorm",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "rock"
+      },
+      {
+        "name": "Dig",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "ground"
+      },
+      {
+        "name": "Earth Power",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Earthquake",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Fissure",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      }
+    ]
+  },
+  {
+    "id": "shiny-donphan",
+    "name": "Shiny Donphan",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Rollout",
+        "cooldown": 20,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "rock"
+      },
+      {
+        "name": "Stomping Tantrum",
+        "cooldown": 18,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Earthquake",
+        "cooldown": 45,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Sand Eruption",
+        "cooldown": 45,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Fissure",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      }
+    ]
+  },
+  {
+    "id": "hippowdon-female",
+    "name": "Hippowdon Female",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Sand Tomb",
+        "cooldown": 45,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Dig",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "ground"
+      },
+      {
+        "name": "Sand Field",
+        "cooldown": 35,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "ground"
+      },
+      {
+        "name": "Earthquake",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Fissure",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      }
+    ]
+  },
+  {
+    "id": "nidoqueen",
+    "name": "Nidoqueen",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Sand Tomb",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Bulldoze",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Ground Collapse",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Earthquake",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Fissure",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      }
+    ]
+  },
+  {
+    "id": "alolan-dugtrio",
+    "name": "Alolan Dugtrio",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Sandstorm",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "rock"
+      },
+      {
+        "name": "Dig",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "ground"
+      },
+      {
+        "name": "Earth Power",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Stomping Tantrum",
+        "cooldown": 30,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Earthquake",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      }
+    ]
+  },
+  {
+    "id": "rhydon",
+    "name": "Rhydon",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Earth Power",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Ground Collapse",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Bulldoze",
+        "cooldown": 45,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Fissure",
+        "cooldown": 55,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      }
+    ]
+  },
+  {
+    "id": "shiny-quagsire",
+    "name": "Shiny Quagsire",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Mud Bomb",
+        "cooldown": 30,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Earth Power",
+        "cooldown": 30,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Stomping Tantrum",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Earthquake",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      }
+    ]
+  },
+  {
+    "id": "shiny-rhydon",
+    "name": "TM Shiny Rhydon",
+    "tier": "TM",
+    "skills": [
+      {
+        "name": "Epicenter",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Earth Power",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Bulldoze",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Magnitude",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Fissure",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      }
+    ]
+  },
+  {
+    "id": "shiny-rhydon-regular",
+    "name": "Shiny Rhydon",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Hammer Arm",
+        "cooldown": 35,
+        "type": "frontal",
+        "cc": "stun",
+        "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Stomping Tantrum",
+        "cooldown": 20,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Dig",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Bulldoze",
+        "cooldown": 45,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Drill Run",
+        "cooldown": 30,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Fissure",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      }
+    ]
+  },
+  {
+    "id": "piloswine",
+    "name": "TR Piloswine",
+    "tier": "TR",
+    "skills": [
+      {
+        "name": "Ground Collapse",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "High Horsepower",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Bulldoze",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Earthquake",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      },
+      {
+        "name": "Fissure",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ground"
+      }
+    ]
+  },
+  {
+    "id": "alolan-marowak",
+    "name": "TM Alolan Marowak",
+    "tier": "TM",
+    "skills": [
+      {
+        "name": "Swords Dance",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "normal"
+      },
+      {
+        "name": "Flare Blitz",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Flaming Rush",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Will-O-Wisp",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Fire Punch",
+        "cooldown": 20,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      }
+    ]
+  },
+  {
+    "id": "magmar",
+    "name": "Magmar",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Burning Jealousy",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Endure",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "normal"
+      },
+      {
+        "name": "Hellfire Storm",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Lava Plume",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      }
+    ]
+  },
+  {
+    "id": "arcanine",
+    "name": "Arcanine",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Burn Up",
+        "cooldown": 50,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Flare Blitz",
+        "cooldown": 60,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Hellfire Storm",
+        "cooldown": 60,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Fire Ball",
+        "cooldown": 25,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      }
+    ]
+  },
+  {
+    "id": "shiny-chandelure",
+    "name": "Shiny Chandelure",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Mystical Fire",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "silence",
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Shadow Fire",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Fire Pledge",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Incinerate",
+        "cooldown": 30,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      }
+    ]
+  },
+  {
+    "id": "shiny-heatmor",
+    "name": "Shiny Heatmor",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Burning Jealousy",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Shadow Fire",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Fire Lash",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Hellfire Storm",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      }
+    ]
+  },
+  {
+    "id": "mega-pyroar",
+    "name": "Mega Pyroar",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Sunny Day",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "fire"
+      },
+      {
+        "name": "Flame Charge",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "fire"
+      },
+      {
+        "name": "Flare Blitz",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Fire Blast",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      }
+    ]
+  },
+  {
+    "id": "ninetales",
+    "name": "Ninetales",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Burning Jealousy",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Inferno",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Hellfire Storm",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Flame Wheel",
+        "cooldown": 35,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "fire"
+      },
+      {
+        "name": "Fire Ball",
+        "cooldown": 25,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      }
+    ]
+  },
+  {
+    "id": "shiny-magby",
+    "name": "Shiny Magby",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Hellfire Storm",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Fire Blast",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Magma Fist",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      }
+    ]
+  },
+  {
+    "id": "typhlosion",
+    "name": "Typhlosion",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Inferno",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Eruption",
+        "cooldown": 45,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Lava Plume",
+        "cooldown": 45,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Smokescreen",
+        "cooldown": 35,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "normal"
+      }
+    ]
+  },
+  {
+    "id": "flareon",
+    "name": "Flareon",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Burning Jealousy",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Hellfire Storm",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Lava Plume",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Blaze Kick",
+        "cooldown": 20,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "fire"
+      }
+    ]
+  },
+  {
+    "id": "charizard",
+    "name": "TR Charizard",
+    "tier": "TR",
+    "skills": [
+      {
+        "name": "Roar",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "normal"
+      },
+      {
+        "name": "Ancient Fury",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "normal"
+      },
+      {
+        "name": "Hellfire Storm",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Flare Blitz",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Fire Spin",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Fire Ball",
+        "cooldown": 30,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      }
+    ]
+  },
+  {
+    "id": "magmortar",
+    "name": "TM Magmortar",
+    "tier": "TM",
+    "skills": [
+      {
+        "name": "Burning Jealousy",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Hellfire Storm",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Fire Blast",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Flare Blitz",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      }
+    ]
+  },
+  {
+    "id": "shiny-ampharos",
+    "name": "TM Shiny Ampharos",
+    "tier": "TM",
+    "skills": [
+      {
+        "name": "Shock Wave",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "electric"
+      },
+      {
+        "name": "Discharge",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "electric"
+      },
+      {
+        "name": "Thunder",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "electric"
+      },
+      {
+        "name": "Charge",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "electric"
+      }
+    ]
+  },
+  {
+    "id": "shiny-pachirisu",
+    "name": "Shiny Pachirisu",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Flash",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "silence",
+        "buff": null,
+        "element": "normal"
+      },
+      {
+        "name": "Discharge",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "electric"
+      },
+      {
+        "name": "Thunder Wrath",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "electric"
+      },
+      {
+        "name": "Thunder Sphere",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "electric"
+      }
+    ]
+  },
+  {
+    "id": "shiny-toxtricity",
+    "name": "Shiny Toxtricity",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Shock Wave",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "electric"
+      },
+      {
+        "name": "Charge",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "electric"
+      },
+      {
+        "name": "Discharge",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "electric"
+      },
+      {
+        "name": "Overdrive",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "electric"
+      }
+    ]
+  },
+  {
+    "id": "shiny-elekid",
+    "name": "Shiny Elekid",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Electrify",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "electric"
+      },
+      {
+        "name": "Discharge",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "electric"
+      },
+      {
+        "name": "Lightning Fist",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "electric"
+      }
+    ]
+  },
+  {
+    "id": "shiny-electrode",
+    "name": "Shiny Electrode",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Rollout",
+        "cooldown": 35,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "rock"
+      },
+      {
+        "name": "Explosion",
+        "cooldown": 80,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "normal"
+      },
+      {
+        "name": "Electric Storm",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "electric"
+      },
+      {
+        "name": "Discharge",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "electric"
+      },
+      {
+        "name": "Thunder Wrath",
+        "cooldown": 35,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "electric"
+      }
+    ]
+  },
+  {
+    "id": "manectric",
+    "name": "Manectric",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Discharge",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "electric"
+      },
+      {
+        "name": "Rising Voltage",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "electric"
+      },
+      {
+        "name": "Thunder",
+        "cooldown": 45,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "electric"
+      }
+    ]
+  },
+  {
+    "id": "raichu",
+    "name": "Raichu",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Shockwave",
+        "cooldown": 50,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "electric"
+      },
+      {
+        "name": "Volt Tackle",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "electric"
+      },
+      {
+        "name": "Discharge",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "electric"
+      },
+      {
+        "name": "Electric Storm",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "electric"
+      },
+      {
+        "name": "Thunder Wrath",
+        "cooldown": 35,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "electric"
+      }
+    ]
+  },
+  {
+    "id": "shiny-pikachu",
+    "name": "Shiny Pikachu",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Discharge",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "electric"
+      },
+      {
+        "name": "Shock Wave",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "electric"
+      },
+      {
+        "name": "Thunder Wrath",
+        "cooldown": 35,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "electric"
+      },
+      {
+        "name": "Electro Ball",
+        "cooldown": 30,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "electric"
+      }
+    ]
+  },
+  {
+    "id": "electivire",
+    "name": "TM Electivire",
+    "tier": "TM",
+    "skills": [
+      {
+        "name": "Electrify",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "electric"
+      },
+      {
+        "name": "Discharge",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "electric"
+      },
+      {
+        "name": "Charge",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "electric"
+      }
+    ]
+  },
+  {
+    "id": "magnezone",
+    "name": "TR Magnezone",
+    "tier": "TR",
+    "skills": [
+      {
+        "name": "Shock Wave",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "electric"
+      },
+      {
+        "name": "Discharge",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "electric"
+      },
+      {
+        "name": "Thunder",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "electric"
+      },
+      {
+        "name": "Spark",
+        "cooldown": 20,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "electric"
+      }
+    ]
+  },
+  {
+    "id": "shiny-meganium",
+    "name": "TM Shiny Meganium",
+    "tier": "TM",
+    "skills": [
+      {
+        "name": "Petal Tornado",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Flower Field",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "grass"
+      },
+      {
+        "name": "Petal Blizzard",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Petal Dance",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      }
+    ]
+  },
+  {
+    "id": "gogoat",
+    "name": "Gogoat",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Grassy Terrain",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Growth",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "normal"
+      },
+      {
+        "name": "Bulk Up",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "fighting"
+      },
+      {
+        "name": "Horn Leech",
+        "cooldown": 50,
+        "type": "frontal",
+        "cc": "stun",
+        "buff": null,
+        "element": "grass"
+      }
+    ]
+  },
+  {
+    "id": "sceptile",
+    "name": "Sceptile",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Frenzy Plant",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Swords Dance",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "normal"
+      },
+      {
+        "name": "Leaf Storm",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Leaf Blade",
+        "cooldown": 10,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      }
+    ]
+  },
+  {
+    "id": "shiny-sceptile",
+    "name": "Shiny Sceptile",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Frenzy Plant",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Leaf Storm",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Leaf Blade",
+        "cooldown": 20,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Leafage",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      }
+    ]
+  },
+  {
+    "id": "mega-meganium",
+    "name": "Mega Meganium",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Solar Beam",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Petal Blizzard",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Leaf Storm",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Body Slam",
+        "cooldown": 20,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "normal"
+      }
+    ]
+  },
+  {
+    "id": "tropius",
+    "name": "Tropius",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Growth",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "normal"
+      },
+      {
+        "name": "Leaf Tornado",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Leaf Storm",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Stomp",
+        "cooldown": 25,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "normal"
+      }
+    ]
+  },
+  {
+    "id": "roserade",
+    "name": "Roserade",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Sleep Powder",
+        "cooldown": 50,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Synthesis",
+        "cooldown": 80,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "grass"
+      },
+      {
+        "name": "Solar Beam",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Petal Blizzard",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Petal Dance",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      }
+    ]
+  },
+  {
+    "id": "wormadam",
+    "name": "Wormadam",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Captivate",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "silence",
+        "buff": null,
+        "element": "normal"
+      },
+      {
+        "name": "Growth",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "normal"
+      },
+      {
+        "name": "Leaf Storm",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Solar Beam",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      }
+    ]
+  },
+  {
+    "id": "lilligant",
+    "name": "Lilligant",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Growth",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "normal"
+      },
+      {
+        "name": "Petal Blizzard",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Leaf Stone",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Teeter Dance",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      }
+    ]
+  },
+  {
+    "id": "shiny-victreebel",
+    "name": "Shiny Victreebel",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Sleep Powder",
+        "cooldown": 50,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Leaf Storm",
+        "cooldown": 80,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Stun Spore",
+        "cooldown": 45,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Giga Drain",
+        "cooldown": 60,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      }
+    ]
+  },
+  {
+    "id": "shiny-jumpluff",
+    "name": "Shiny Jumpluff",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Sleep Powder",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Leaf Storm",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Solar Beam",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Cotton Spore",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      }
+    ]
+  },
+  {
+    "id": "venusaur",
+    "name": "TR Venusaur",
+    "tier": "TR",
+    "skills": [
+      {
+        "name": "Sleep Powder",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Petal Blizzard",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Solar Beam",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Vine Whip",
+        "cooldown": 30,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Sludge",
+        "cooldown": 20,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      }
+    ]
+  },
+  {
+    "id": "vespiquen",
+    "name": "Vespiquen",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Aromatic Mist",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "fairy"
+      },
+      {
+        "name": "Defend Order",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "bug"
+      },
+      {
+        "name": "Bee Swarm",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "bug"
+      },
+      {
+        "name": "Attack Order",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "bug"
+      }
+    ]
+  },
+  {
+    "id": "accelgor",
+    "name": "Accelgor",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Sticky Hold",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "bug"
+      },
+      {
+        "name": "Acid Armor",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "poison"
+      },
+      {
+        "name": "Bug Shuriken",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "bug"
+      },
+      {
+        "name": "Ninja Strike",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "bug"
+      }
+    ]
+  },
+  {
+    "id": "shiny-yanmega",
+    "name": "Shiny Yanmega",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Bug Drop",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "bug"
+      },
+      {
+        "name": "Bug Buzz",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "bug"
+      },
+      {
+        "name": "Shadow Rave",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "bug"
+      },
+      {
+        "name": "Silver Wind",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "bug"
+      }
+    ]
+  },
+  {
+    "id": "mega-scolipede",
+    "name": "Mega Scolipede",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Swords Dance",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "normal"
+      },
+      {
+        "name": "Megahorn",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "bug"
+      },
+      {
+        "name": "Fury Cutter",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "bug"
+      },
+      {
+        "name": "Poison Jab",
+        "cooldown": 12,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      }
+    ]
+  },
+  {
+    "id": "shiny-kricketune",
+    "name": "Shiny Kricketune",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Sing",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "normal"
+      },
+      {
+        "name": "Swords Dance",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "normal"
+      },
+      {
+        "name": "Compass Slash",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "bug"
+      },
+      {
+        "name": "Fury Cutter",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying"
+      }
+    ]
+  },
+  {
+    "id": "mega-beedrill",
+    "name": "Mega Beedrill",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Infestation",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "bug"
+      },
+      {
+        "name": "Swords Dance",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "normal"
+      },
+      {
+        "name": "Savage Spirit",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "bug"
+      },
+      {
+        "name": "Fell Stinger",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "bug"
+      }
+    ]
+  },
+  {
+    "id": "shiny-beedrill",
+    "name": "Shiny Beedrill",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Swords Dance",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "normal"
+      },
+      {
+        "name": "Savage Spirit",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "bug"
+      },
+      {
+        "name": "Fell Sting",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "bug"
+      },
+      {
+        "name": "String Shot",
+        "cooldown": 15,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "bug"
+      }
+    ]
+  },
+  {
+    "id": "shiny-parasect",
+    "name": "Shiny Parasect",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Sleep Powder",
+        "cooldown": 45,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Compass Slash",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "bug"
+      },
+      {
+        "name": "Cutting Blades",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "bug"
+      },
+      {
+        "name": "Struggle Bug",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "bug"
+      }
+    ]
+  },
+  {
+    "id": "kricketune",
+    "name": "Kricketune",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Swords Dance",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "normal"
+      },
+      {
+        "name": "Compass Slash",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "bug"
+      },
+      {
+        "name": "Bug Buzz",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "bug"
+      },
+      {
+        "name": "Fury Cutter",
+        "cooldown": 60,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying"
+      }
+    ]
+  },
+  {
+    "id": "shiny-ariados",
+    "name": "TM Shiny Ariados",
+    "tier": "TM",
+    "skills": [
+      {
+        "name": "Infestation",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "bug"
+      },
+      {
+        "name": "X-Scissor",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "bug"
+      },
+      {
+        "name": "Megahorn",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "bug"
+      },
+      {
+        "name": "Pin Missile",
+        "cooldown": 25,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "bug"
+      },
+      {
+        "name": "Sticky Web",
+        "cooldown": 25,
+        "type": "frontal",
+        "cc": "stun",
+        "buff": null,
+        "element": "bug"
+      }
+    ]
+  },
+  {
+    "id": "scyther",
+    "name": "TR Scyther",
+    "tier": "TR",
+    "skills": [
+      {
+        "name": "X-Scissor",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "bug"
+      },
+      {
+        "name": "Fury Cutter",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "bug"
+      },
+      {
+        "name": "Compass Slash",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "bug"
+      },
+      {
+        "name": "U-Turn",
+        "cooldown": 22,
+        "type": "frontal",
+        "cc": null,
+        "buff": "self",
+        "element": "bug"
+      }
+    ]
+  },
+  {
+    "id": "mega-lucario-fighting",
+    "name": "TM Mega Lucario Fighting",
+    "tier": "TM",
+    "skills": [
+      {
+        "name": "Upper Hand",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Swords Dance",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "normal"
+      },
+      {
+        "name": "Aura Overflow",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "fighting"
+      },
+      {
+        "name": "Aura Blast",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Aura Sphere",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      }
+    ]
+  },
+  {
+    "id": "mega-lopunny",
+    "name": "Mega Lopunny",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Low Sweep",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Superpower",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Spin Swing",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Jump Kick",
+        "cooldown": 20,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      }
+    ]
+  },
+  {
+    "id": "elite-hitmontop",
+    "name": "Elite Hitmontop",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Rolling Kick",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Close Combat",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "fighting"
+      },
+      {
+        "name": "Superpower",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Jump Kick",
+        "cooldown": 20,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      }
+    ]
+  },
+  {
+    "id": "shiny-hariyama",
+    "name": "Shiny Hariyama",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Fake Out",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Leap Strike",
+        "cooldown": 15,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Superpower",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Reversal",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      }
+    ]
+  },
+  {
+    "id": "shiny-mienshao",
+    "name": "Shiny Mienshao",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "High Jump Kick",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "silence",
+        "buff": "self",
+        "element": "fighting"
+      },
+      {
+        "name": "Upper Hand",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Focus Blast",
+        "cooldown": 50,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Reversal",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      }
+    ]
+  },
+  {
+    "id": "mega-hawlucha",
+    "name": "Mega Hawlucha",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Superpower",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Flying Press",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying"
+      },
+      {
+        "name": "Revenge",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Low Kick",
+        "cooldown": 10,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      }
+    ]
+  },
+  {
+    "id": "mega-kangaskhan",
+    "name": "TM Mega Kangaskhan",
+    "tier": "TM",
+    "skills": [
+      {
+        "name": "Fake Out",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "normal"
+      },
+      {
+        "name": "Power-Up Punch",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "fighting"
+      },
+      {
+        "name": "Reversal",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Focus Blast",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Drain Punch",
+        "cooldown": 25,
+        "type": "frontal",
+        "cc": null,
+        "buff": "self",
+        "element": "fighting"
+      }
+    ]
+  },
+  {
+    "id": "machamp",
+    "name": "Machamp",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Dynamic Punch",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Focus Blast",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Arm Thrust",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Vacuum Wave",
+        "cooldown": 35,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      }
+    ]
+  },
+  {
+    "id": "champion-primeape",
+    "name": "Champion Primeape",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Anger Release",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "silence",
+        "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Cross Chop",
+        "cooldown": 30,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Final Gambit",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Low Kick",
+        "cooldown": 10,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      }
+    ]
+  },
+  {
+    "id": "shiny-primeape",
+    "name": "Shiny Primeape",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Close Combat",
+        "cooldown": 40,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Cross Chop",
+        "cooldown": 30,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Final Gambit",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Megakick",
+        "cooldown": 15,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      }
+    ]
+  },
+  {
+    "id": "heracross",
+    "name": "TR Heracross",
+    "tier": "TR",
+    "skills": [
+      {
+        "name": "Brick Break",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Close Combat",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "fighting"
+      },
+      {
+        "name": "Reversal",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Mega Punch",
+        "cooldown": 20,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "fighting"
+      }
+    ]
+  },
+  {
+    "id": "exploud",
+    "name": "Exploud",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Boomburst",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "normal"
+      },
+      {
+        "name": "Hyper Beam",
+        "cooldown": 45,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "normal"
+      },
+      {
+        "name": "Hyper Voice",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "normal"
+      },
+      {
+        "name": "Echoed Voice",
+        "cooldown": 30,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "normal"
+      }
+    ]
+  },
+  {
+    "id": "snorlax",
+    "name": "TR Snorlax",
+    "tier": "TR",
+    "skills": [
+      {
+        "name": "Giga Impact",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "normal"
+      },
+      {
+        "name": "Hyper Beam",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "normal"
+      },
+      {
+        "name": "Body Slam",
+        "cooldown": 20,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "normal"
+      },
+      {
+        "name": "Crunch",
+        "cooldown": 12,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "dark"
+      }
+    ]
+  },
+  {
+    "id": "mega-metagross",
+    "name": "Mega Metagross",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Giga Impact",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "steel"
+      },
+      {
+        "name": "Meteor Mash",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      },
+      {
+        "name": "Heavy Metal",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      }
+    ]
+  },
+  {
+    "id": "shiny-forretress",
+    "name": "Shiny Forretress",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Iron Spikes",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "steel"
+      },
+      {
+        "name": "Autotomize",
+        "cooldown": 25,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "steel"
+      },
+      {
+        "name": "Heavy Slam",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      },
+      {
+        "name": "Meteor Mash",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      }
+    ]
+  },
+  {
+    "id": "klinklang",
+    "name": "Klinklang",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Gravity",
+        "cooldown": 45,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "normal"
+      },
+      {
+        "name": "Magnetic Flux",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "electric"
+      },
+      {
+        "name": "Gear Grind",
+        "cooldown": 55,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      },
+      {
+        "name": "Metal Sound",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      }
+    ]
+  },
+  {
+    "id": "shiny-mawile",
+    "name": "Shiny Mawile",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Torment",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "silence",
+        "buff": null,
+        "element": "dark"
+      },
+      {
+        "name": "Impale",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      },
+      {
+        "name": "Heavy Metal",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      },
+      {
+        "name": "Iron Head",
+        "cooldown": 15,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      }
+    ]
+  },
+  {
+    "id": "shiny-aegislash",
+    "name": "Shiny Aegislash",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Royal Blade",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "steel"
+      },
+      {
+        "name": "Swords Dance",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "normal"
+      },
+      {
+        "name": "Counter Assault",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      },
+      {
+        "name": "Gyro Ball",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      }
+    ]
+  },
+  {
+    "id": "mega-skarmory",
+    "name": "Mega Skarmory",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Hone Claws",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "steel"
+      },
+      {
+        "name": "Metal Sound",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      },
+      {
+        "name": "Steel Wing",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      },
+      {
+        "name": "Metal Claw",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      }
+    ]
+  },
+  {
+    "id": "bronzong",
+    "name": "Bronzong",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Meteor Mash",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      },
+      {
+        "name": "Heavy Slam",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      },
+      {
+        "name": "Gyro Ball",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      }
+    ]
+  },
+  {
+    "id": "perrserker",
+    "name": "Perrserker",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Hone Claws",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "steel"
+      },
+      {
+        "name": "Metal Claw",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      },
+      {
+        "name": "Flash Cannon",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      },
+      {
+        "name": "Iron Head",
+        "cooldown": 10,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      }
+    ]
+  },
+  {
+    "id": "magneton",
+    "name": "Magneton",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Gravity",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "normal"
+      },
+      {
+        "name": "Gyro Ball",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      },
+      {
+        "name": "Heavy Metal",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      }
+    ]
+  },
+  {
+    "id": "metang",
+    "name": "Metang",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Metal Claw",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "steel"
+      },
+      {
+        "name": "Meteor Mash",
+        "cooldown": 60,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      },
+      {
+        "name": "Heavy Slam",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      },
+      {
+        "name": "Gyro Ball",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      }
+    ]
+  },
+  {
+    "id": "shiny-lairon",
+    "name": "Shiny Lairon",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Metal Burst",
+        "cooldown": 30,
+        "type": "frontal",
+        "cc": "silence",
+        "buff": null,
+        "element": "steel"
+      },
+      {
+        "name": "Metal Claw",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "steel"
+      },
+      {
+        "name": "Meteor Mash",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      },
+      {
+        "name": "Heavy Slam",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      },
+      {
+        "name": "Flash Cannon",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      }
+    ]
+  },
+  {
+    "id": "shiny-magneton",
+    "name": "TM Shiny Magneton",
+    "tier": "TM",
+    "skills": [
+      {
+        "name": "Gravity",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "normal"
+      },
+      {
+        "name": "Flash Cannon",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      },
+      {
+        "name": "Heavy Metal",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      },
+      {
+        "name": "Magnet Bomb",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      }
+    ]
+  },
+  {
+    "id": "scizor",
+    "name": "TR Scizor",
+    "tier": "TR",
+    "skills": [
+      {
+        "name": "U-Turn",
+        "cooldown": 20,
+        "type": "frontal",
+        "cc": null,
+        "buff": "self",
+        "element": "bug"
+      },
+      {
+        "name": "Counter Claw",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      },
+      {
+        "name": "Red Fury",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      },
+      {
+        "name": "Metal Claw",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      },
+      {
+        "name": "Iron Head",
+        "cooldown": 15,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      }
+    ]
+  },
+  {
+    "id": "shiny-fearow",
+    "name": "Shiny Fearow",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Whirlwind",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "flying"
+      },
+      {
+        "name": "Sky Attack",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying"
+      },
+      {
+        "name": "Aerial Ace",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying"
+      }
+    ]
+  },
+  {
+    "id": "mega-pidgeot",
+    "name": "Mega Pidgeot",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Whirlwind",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "flying"
+      },
+      {
+        "name": "Sky Attack",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying"
+      },
+      {
+        "name": "Aerial Ace",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying"
+      }
+    ]
+  },
+  {
+    "id": "staraptor",
+    "name": "Staraptor",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Close Combat",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "fighting"
+      },
+      {
+        "name": "Brave Bird",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "flying"
+      },
+      {
+        "name": "Sky Attack",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying"
+      }
+    ]
+  },
+  {
+    "id": "pidgeot",
+    "name": "Pidgeot",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Whirlwind",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "normal"
+      },
+      {
+        "name": "Hurricane",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "flying"
+      },
+      {
+        "name": "Air Slash",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying"
+      }
+    ]
+  },
+  {
+    "id": "crobat",
+    "name": "Crobat",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Fly",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "silence",
+        "buff": "self",
+        "element": "flying"
+      },
+      {
+        "name": "Sky Attack",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying"
+      }
+    ]
+  },
+  {
+    "id": "shiny-butterfree",
+    "name": "Shiny Butterfree",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Sleep Powder",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Hurricane",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying"
+      },
+      {
+        "name": "Air Slash",
+        "cooldown": 30,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying"
+      }
+    ]
+  },
+  {
+    "id": "shiny-dodrio",
+    "name": "TM Shiny Dodrio",
+    "tier": "TM",
+    "skills": [
+      {
+        "name": "Whirlwind",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "flying"
+      },
+      {
+        "name": "Stampede",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying"
+      },
+      {
+        "name": "Sky Attack",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying"
+      },
+      {
+        "name": "Brave Bird",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying"
+      },
+      {
+        "name": "Drill Peck",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying"
+      }
+    ]
+  },
+  {
+    "id": "skarmory",
+    "name": "TR Skarmory",
+    "tier": "TR",
+    "skills": [
+      {
+        "name": "Fly",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": "self",
+        "element": "flying"
+      },
+      {
+        "name": "Sky Attack",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying"
+      },
+      {
+        "name": "Aerial Ace",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying"
+      },
+      {
+        "name": "Air Slash",
+        "cooldown": 35,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying"
+      },
+      {
+        "name": "Iron Head",
+        "cooldown": 15,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "steel"
+      }
+    ]
+  },
+  {
+    "id": "mega-charizard-x",
+    "name": "TM Mega Charizard X",
+    "tier": "TM",
+    "skills": [
+      {
+        "name": "Dragon Blast",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "dragon"
+      },
+      {
+        "name": "Outrage",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "dragon"
+      },
+      {
+        "name": "Dragon Pulse",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "dragon"
+      }
+    ]
+  },
+  {
+    "id": "mega-dragonite",
+    "name": "Mega Dragonite",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Dragon Rush",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "dragon"
+      },
+      {
+        "name": "Draco Meteor",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "dragon"
+      },
+      {
+        "name": "Hurricane",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying"
+      }
+    ]
+  },
+  {
+    "id": "dragonite",
+    "name": "Dragonite",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Dragon Flight",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": "self",
+        "element": "dragon"
+      },
+      {
+        "name": "Outrage",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "dragon"
+      },
+      {
+        "name": "Scale Shot",
+        "cooldown": 15,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "dragon"
+      }
+    ]
+  },
+  {
+    "id": "shiny-hydreigon",
+    "name": "Shiny Hydreigon",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Dragon Blast",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "dragon"
+      },
+      {
+        "name": "Nasty Plot",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "dark"
+      },
+      {
+        "name": "Draco Meteor",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "dragon"
+      }
+    ]
+  },
+  {
+    "id": "mega-drampa",
+    "name": "Mega Drampa",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Rain Dance",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "water"
+      },
+      {
+        "name": "Draco Meteor",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "dragon"
+      },
+      {
+        "name": "Outrage",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "dragon"
+      }
+    ]
+  },
+  {
+    "id": "garchomp",
+    "name": "Garchomp",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Dragon Rush",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": "self",
+        "element": "dragon"
+      },
+      {
+        "name": "Swords Dance",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "normal"
+      },
+      {
+        "name": "Draco Meteor",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "dragon"
+      }
+    ]
+  },
+  {
+    "id": "shiny-druddigon",
+    "name": "Shiny Druddigon",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Roar",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "dragon"
+      },
+      {
+        "name": "Dragon Rage",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "dragon"
+      },
+      {
+        "name": "Outrage",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "dragon"
+      },
+      {
+        "name": "Draco Meteor",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "dragon"
+      }
+    ]
+  },
+  {
+    "id": "flapple",
+    "name": "Flapple",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Dragon Dance",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "dragon"
+      },
+      {
+        "name": "Apple Meteor",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "dragon"
+      },
+      {
+        "name": "Dragon Breath",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "dragon"
+      }
+    ]
+  },
+  {
+    "id": "druddigon",
+    "name": "Druddigon",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Outrage",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "dragon"
+      },
+      {
+        "name": "Draco Meteor",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "dragon"
+      },
+      {
+        "name": "Dragon Claw",
+        "cooldown": 40,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "dragon"
+      }
+    ]
+  },
+  {
+    "id": "dragonair",
+    "name": "TR Dragonair",
+    "tier": "TR",
+    "skills": [
+      {
+        "name": "Dragon Blast",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "dragon"
+      },
+      {
+        "name": "Twister",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "dragon"
+      },
+      {
+        "name": "Dragon Tail",
+        "cooldown": 20,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "dragon"
+      },
+      {
+        "name": "Aqua Tail",
+        "cooldown": 10,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "water"
+      }
+    ]
+  },
+  {
+    "id": "mega-altaria",
+    "name": "TM Mega Altaria",
+    "tier": "TM",
+    "skills": [
+      {
+        "name": "Cotton Guard",
+        "cooldown": 70,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "grass"
+      },
+      {
+        "name": "Moonblast",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fairy"
+      },
+      {
+        "name": "Disarming Voice",
+        "cooldown": 35,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fairy"
+      },
+      {
+        "name": "Dragon Breath",
+        "cooldown": 30,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "dragon"
+      }
+    ]
+  },
+  {
+    "id": "florges",
+    "name": "Florges",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Grassy Terrain",
+        "cooldown": 45,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Floral Storm",
+        "cooldown": 55,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fairy"
+      },
+      {
+        "name": "Heart Pound",
+        "cooldown": 35,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fairy"
+      }
+    ]
+  },
+  {
+    "id": "sylveon",
+    "name": "Sylveon",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Love Spell",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "fairy"
+      },
+      {
+        "name": "Focus Energy",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "normal"
+      },
+      {
+        "name": "Floral Storm",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fairy"
+      },
+      {
+        "name": "Heart Pound",
+        "cooldown": 30,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fairy"
+      }
+    ]
+  },
+  {
+    "id": "shiny-gardevoir",
+    "name": "Shiny Gardevoir",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Moonblast",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "silence",
+        "buff": null,
+        "element": "fairy"
+      },
+      {
+        "name": "Stored Power",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fairy"
+      },
+      {
+        "name": "Shadow Down",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ghost"
+      },
+      {
+        "name": "Synchronoise",
+        "cooldown": 40,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "fairy"
+      }
+    ]
+  },
+  {
+    "id": "mega-clefable",
+    "name": "Mega Clefable",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Misty Terrain",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "fairy"
+      },
+      {
+        "name": "Moonblast",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fairy"
+      },
+      {
+        "name": "Misty Explosion",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fairy"
+      },
+      {
+        "name": "Metronome",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "normal"
+      }
+    ]
+  },
+  {
+    "id": "hatterene",
+    "name": "Hatterene",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Love Spell",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "fairy"
+      },
+      {
+        "name": "Misty Explosion",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fairy"
+      },
+      {
+        "name": "Magic Beam",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fairy"
+      },
+      {
+        "name": "Heart Pound",
+        "cooldown": 30,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fairy"
+      }
+    ]
+  },
+  {
+    "id": "alcremie",
+    "name": "Alcremie",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Aromatic Mist",
+        "cooldown": 50,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "fairy"
+      },
+      {
+        "name": "Decorate",
+        "cooldown": 60,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "fairy"
+      },
+      {
+        "name": "Misty Explosion",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fairy"
+      },
+      {
+        "name": "Heart Pound",
+        "cooldown": 30,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fairy"
+      }
+    ]
+  },
+  {
+    "id": "wigglytuff",
+    "name": "TR Wigglytuff",
+    "tier": "TR",
+    "skills": [
+      {
+        "name": "Love Spell",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "fairy"
+      },
+      {
+        "name": "Alluring Voice",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "fairy"
+      },
+      {
+        "name": "Heart Pound",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fairy"
+      },
+      {
+        "name": "Dazzling Gleam",
+        "cooldown": 15,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "fairy"
+      }
+    ]
+  },
+  {
+    "id": "wobbuffet",
+    "name": "Wobbuffet",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Encore",
+        "cooldown": 45,
+        "type": "area",
+        "cc": "silence",
+        "buff": null,
+        "element": "normal"
+      },
+      {
+        "name": "Mirror Coat",
+        "cooldown": 45,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "psychic"
+      },
+      {
+        "name": "Stunning Confusion",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "psychic"
+      },
+      {
+        "name": "Psychic",
+        "cooldown": 30,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "psychic"
+      }
+    ]
+  },
+  {
+    "id": "galarian-rapidash",
+    "name": "Galarian Rapidash",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Psycho Cut",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "psychic"
+      },
+      {
+        "name": "Psychic Terrain",
+        "cooldown": 45,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "psychic"
+      },
+      {
+        "name": "Stored Power",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "psychic"
+      },
+      {
+        "name": "Psychic",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "psychic"
+      }
+    ]
+  },
+  {
+    "id": "shiny-gothitelle",
+    "name": "Shiny Gothitelle",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Magic Room",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "psychic"
+      },
+      {
+        "name": "Psyshock",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "psychic"
+      },
+      {
+        "name": "Future Sight",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "psychic"
+      },
+      {
+        "name": "Shadow Down",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ghost"
+      }
+    ]
+  },
+  {
+    "id": "mega-starmie",
+    "name": "Mega Starmie",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Psyshock",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "psychic"
+      },
+      {
+        "name": "Psy Impact",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "psychic"
+      },
+      {
+        "name": "Cosmic Overflow",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "psychic"
+      },
+      {
+        "name": "Psychic",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "psychic"
+      }
+    ]
+  },
+  {
+    "id": "alakazam",
+    "name": "Alakazam",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Kinesis",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "psychic"
+      },
+      {
+        "name": "Calm Mind",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "psychic"
+      },
+      {
+        "name": "Psychokinesis",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "psychic"
+      },
+      {
+        "name": "Psychic",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "psychic"
+      }
+    ]
+  },
+  {
+    "id": "meowstic",
+    "name": "Meowstic",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Wonder Room",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "psychic"
+      },
+      {
+        "name": "Stored Power",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "psychic"
+      },
+      {
+        "name": "Psychic",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "psychic"
+      },
+      {
+        "name": "Trick",
+        "cooldown": 35,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "psychic"
+      }
+    ]
+  },
+  {
+    "id": "shiny-kadabra",
+    "name": "Shiny Kadabra",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Hypnosis",
+        "cooldown": 50,
+        "type": "frontal",
+        "cc": "stun",
+        "buff": null,
+        "element": "psychic"
+      },
+      {
+        "name": "Calm Mind",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "psychic"
+      },
+      {
+        "name": "Confusion",
+        "cooldown": 30,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "psychic"
+      },
+      {
+        "name": "Psychic",
+        "cooldown": 30,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "psychic"
+      }
+    ]
+  },
+  {
+    "id": "metagross",
+    "name": "TM Metagross",
+    "tier": "TM",
+    "skills": [
+      {
+        "name": "Psycho Cut",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "psychic"
+      },
+      {
+        "name": "Psy Impact",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "psychic"
+      },
+      {
+        "name": "Psychic",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "psychic"
+      },
+      {
+        "name": "Psyshock",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "psychic"
+      }
+    ]
+  },
+  {
+    "id": "slowking",
+    "name": "TR Slowking",
+    "tier": "TR",
+    "skills": [
+      {
+        "name": "Future Sight",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "silence",
+        "buff": null,
+        "element": "psychic"
+      },
+      {
+        "name": "Psychic",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "psychic"
+      },
+      {
+        "name": "Expanding Force",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "psychic"
+      },
+      {
+        "name": "Psybeam",
+        "cooldown": 20,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "psychic"
+      }
+    ]
+  },
+  {
+    "id": "milotic",
+    "name": "TM Milotic",
+    "tier": "TM",
+    "skills": [
+      {
+        "name": "Whirlpool",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "water"
+      },
+      {
+        "name": "Rain Dance",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "water"
+      },
+      {
+        "name": "Hydro Pump",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "water"
+      },
+      {
+        "name": "Water Pulse",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "water"
+      }
+    ]
+  },
+  {
+    "id": "shiny-vaporeon",
+    "name": "Shiny Vaporeon",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Flip Turn",
+        "cooldown": 45,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "water"
+      },
+      {
+        "name": "Acid Armor",
+        "cooldown": 45,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "poison"
+      },
+      {
+        "name": "Hydro Pump",
+        "cooldown": 55,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "water"
+      }
+    ]
+  },
+  {
+    "id": "shiny-giant-magikarp",
+    "name": "Shiny Giant Magikarp",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Rain Dance",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "silence",
+        "buff": "next",
+        "element": "water"
+      },
+      {
+        "name": "Surf",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "water"
+      },
+      {
+        "name": "Hydro Pump",
+        "cooldown": 45,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "water"
+      }
+    ]
+  },
+  {
+    "id": "shiny-floatzel",
+    "name": "Shiny Floatzel",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Wave Crash",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": "self",
+        "element": "water"
+      },
+      {
+        "name": "Dive",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "water"
+      },
+      {
+        "name": "Whirlpool",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "water"
+      }
+    ]
+  },
+  {
+    "id": "mega-feraligatr",
+    "name": "Mega Feraligatr",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Water Spout",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "water"
+      },
+      {
+        "name": "Aqua Fang",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "water"
+      },
+      {
+        "name": "Surf",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "water"
+      }
+    ]
+  },
+  {
+    "id": "gyarados",
+    "name": "Gyarados",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Splash",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "water"
+      },
+      {
+        "name": "Hydro Pump",
+        "cooldown": 60,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "water"
+      },
+      {
+        "name": "Hydro Cannon",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "water"
+      }
+    ]
+  },
+  {
+    "id": "shiny-kingler",
+    "name": "Shiny Kingler",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Swords Dance",
+        "cooldown": 60,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "normal"
+      },
+      {
+        "name": "Aqua Impact",
+        "cooldown": 70,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "water"
+      },
+      {
+        "name": "Crabhammer",
+        "cooldown": 55,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "water"
+      }
+    ]
+  },
+  {
+    "id": "vaporeon",
+    "name": "Vaporeon",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Flip Turn",
+        "cooldown": 45,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "water"
+      },
+      {
+        "name": "Hydro Pump",
+        "cooldown": 55,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "water"
+      },
+      {
+        "name": "Surf",
+        "cooldown": 55,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "water"
+      }
+    ]
+  },
+  {
+    "id": "azumarill",
+    "name": "Azumarill",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Defense Curl",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "normal"
+      },
+      {
+        "name": "Surf",
+        "cooldown": 55,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "water"
+      },
+      {
+        "name": "Whirlpool",
+        "cooldown": 45,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "water"
+      }
+    ]
+  },
+  {
+    "id": "shiny-slowbro",
+    "name": "Shiny Slowbro",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Rain Dance",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "silence",
+        "buff": "next",
+        "element": "water"
+      },
+      {
+        "name": "Yawn",
+        "cooldown": 50,
+        "type": "frontal",
+        "cc": "stun",
+        "buff": null,
+        "element": "normal"
+      },
+      {
+        "name": "Surf",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "water"
+      }
+    ]
+  },
+  {
+    "id": "shiny-politoed",
+    "name": "TM Shiny Politoed",
+    "tier": "TM",
+    "skills": [
+      {
+        "name": "Whirlpool",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "water"
+      },
+      {
+        "name": "Rain Dance",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "water"
+      },
+      {
+        "name": "Surf",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "water"
+      },
+      {
+        "name": "Hydro Pump",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "water"
+      }
+    ]
+  },
+  {
+    "id": "kingdra",
+    "name": "TR Kingdra",
+    "tier": "TR",
+    "skills": [
+      {
+        "name": "Flip Turn",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "water"
+      },
+      {
+        "name": "Hydro Pump",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "water"
+      },
+      {
+        "name": "Water Pulse",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "water"
+      },
+      {
+        "name": "Scale Shot",
+        "cooldown": 15,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "dragon"
+      }
+    ]
+  },
+  {
+    "id": "mega-glalie",
+    "name": "Mega Glalie",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Glacial Spikes",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "ice"
+      },
+      {
+        "name": "Frenzy Snow",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ice"
+      },
+      {
+        "name": "Icicle Crash",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ice"
+      }
+    ]
+  },
+  {
+    "id": "mega-froslass",
+    "name": "Mega Froslass",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Phantom Force",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "ghost"
+      },
+      {
+        "name": "Blizzard",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ice"
+      },
+      {
+        "name": "Winterlash",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ice"
+      }
+    ]
+  },
+  {
+    "id": "lapras",
+    "name": "Lapras",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Sing",
+        "cooldown": 50,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "normal"
+      },
+      {
+        "name": "Blizzard",
+        "cooldown": 55,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ice"
+      },
+      {
+        "name": "Ice Storm",
+        "cooldown": 55,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ice"
+      }
+    ]
+  },
+  {
+    "id": "vanilluxe",
+    "name": "Vanilluxe",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Hail",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "ice"
+      },
+      {
+        "name": "Frenzy Snow",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ice"
+      },
+      {
+        "name": "Freezy Dry",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ice"
+      }
+    ]
+  },
+  {
+    "id": "glalie",
+    "name": "Glalie",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Glacial Spikes",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "ice"
+      },
+      {
+        "name": "Blizzard",
+        "cooldown": 55,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ice"
+      },
+      {
+        "name": "Frost Power",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ice"
+      }
+    ]
+  },
+  {
+    "id": "shiny-delibird",
+    "name": "Shiny Delibird",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Agility",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "psychic"
+      },
+      {
+        "name": "Blizzard",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ice"
+      },
+      {
+        "name": "Aurora Beam",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ice"
+      }
+    ]
+  },
+  {
+    "id": "froslass",
+    "name": "Froslass",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Hail",
+        "cooldown": 55,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "ice"
+      },
+      {
+        "name": "Blizzard",
+        "cooldown": 55,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ice"
+      },
+      {
+        "name": "Frost Breath",
+        "cooldown": 35,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ice"
+      }
+    ]
+  },
+  {
+    "id": "shiny-dewgong",
+    "name": "Shiny Dewgong",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Swagger",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "normal"
+      },
+      {
+        "name": "Blizzard",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ice"
+      },
+      {
+        "name": "Icicle Crash",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ice"
+      }
+    ]
+  },
+  {
+    "id": "jynx",
+    "name": "TR Jynx",
+    "tier": "TR",
+    "skills": [
+      {
+        "name": "Blizzard",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ice"
+      },
+      {
+        "name": "Powder Snow",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ice"
+      },
+      {
+        "name": "Ice Beam",
+        "cooldown": 20,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ice"
+      },
+      {
+        "name": "Ice Ball",
+        "cooldown": 40,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "ice"
+      },
+      {
+        "name": "Ice Punch",
+        "cooldown": 15,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "ice"
+      }
+    ]
+  },
+  {
+    "id": "shiny-muk",
+    "name": "TM Shiny Muk",
+    "tier": "TM",
+    "skills": [
+      {
+        "name": "Stench",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "poison"
+      },
+      {
+        "name": "Acid Rain",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      },
+      {
+        "name": "Sludge Wave",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      },
+      {
+        "name": "Sludge Bomb",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      }
+    ]
+  },
+  {
+    "id": "shiny-qwilfish",
+    "name": "Shiny Qwilfish",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Barb Barrage",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "silence",
+        "buff": null,
+        "element": "poison"
+      },
+      {
+        "name": "Minimize",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "normal"
+      },
+      {
+        "name": "Mortal Gas",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      },
+      {
+        "name": "Toxic",
+        "cooldown": 30,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      }
+    ]
+  },
+  {
+    "id": "shiny-garbodor",
+    "name": "Shiny Garbodor",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Stench",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "poison"
+      },
+      {
+        "name": "Acid Rain",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      },
+      {
+        "name": "Venoshock",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      },
+      {
+        "name": "Acid Spray",
+        "cooldown": 25,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      }
+    ]
+  },
+  {
+    "id": "mega-victreebel",
+    "name": "Mega Victreebel",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Acid Rain",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      },
+      {
+        "name": "Sludge Wave",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      },
+      {
+        "name": "Toxic",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      },
+      {
+        "name": "Poison Jab",
+        "cooldown": 12,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      }
+    ]
+  },
+  {
+    "id": "alolan-muk",
+    "name": "Alolan Muk",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Poison Touch",
+        "cooldown": 60,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "poison"
+      },
+      {
+        "name": "Harden",
+        "cooldown": 60,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "normal"
+      },
+      {
+        "name": "Swamp Mist",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      },
+      {
+        "name": "Acid Rain",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      }
+    ]
+  },
+  {
+    "id": "seviper",
+    "name": "Seviper",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Venomous Gale",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      },
+      {
+        "name": "Acid Rain",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      },
+      {
+        "name": "Toxic",
+        "cooldown": 30,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      },
+      {
+        "name": "Poison Tail",
+        "cooldown": 20,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      }
+    ]
+  },
+  {
+    "id": "muk",
+    "name": "Muk",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Poison Touch",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "poison"
+      },
+      {
+        "name": "Harden",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "normal"
+      },
+      {
+        "name": "Swamp Mist",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      },
+      {
+        "name": "Sludge Bomb",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      }
+    ]
+  },
+  {
+    "id": "nidoking",
+    "name": "Nidoking",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Rage",
+        "cooldown": 30,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "dragon"
+      },
+      {
+        "name": "Venoshock",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      },
+      {
+        "name": "Toxic",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      },
+      {
+        "name": "Poison Tail",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      }
+    ]
+  },
+  {
+    "id": "hisuian-qwilfish",
+    "name": "Hisuian Qwilfish",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Barb Barrage",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "silence",
+        "buff": null,
+        "element": "poison"
+      },
+      {
+        "name": "Sludge Bomb",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "poison"
+      },
+      {
+        "name": "Deadly Spikes",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "normal"
+      },
+      {
+        "name": "Poison Tail",
+        "cooldown": 30,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      }
+    ]
+  },
+  {
+    "id": "shiny-crobat",
+    "name": "TR Shiny Crobat",
+    "tier": "TR",
+    "skills": [
+      {
+        "name": "Venom Gale",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "poison"
+      },
+      {
+        "name": "Venoshock",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      },
+      {
+        "name": "Cross Poison",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      },
+      {
+        "name": "Poison Fang",
+        "cooldown": 20,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "poison"
+      }
+    ]
+  },
+  {
+    "id": "cofagrigus",
+    "name": "Cofagrigus",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Trick Room",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "psychic"
+      },
+      {
+        "name": "Nasty Plot",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "dark"
+      },
+      {
+        "name": "Shadow Storm",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ghost"
+      },
+      {
+        "name": "Curse",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ghost"
+      }
+    ]
+  },
+  {
+    "id": "mismagius",
+    "name": "Mismagius",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Black Box",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "ghost"
+      },
+      {
+        "name": "Lucky Chant",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "normal"
+      },
+      {
+        "name": "Shadow Storm",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ghost"
+      },
+      {
+        "name": "Illusion Yield",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ghost"
+      }
+    ]
+  },
+  {
+    "id": "mega-chandelure",
+    "name": "Mega Chandelure",
+    "tier": "T1H",
+    "skills": [
+      {
+        "name": "Night Shade",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ghost"
+      },
+      {
+        "name": "Hex",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ghost"
+      },
+      {
+        "name": "Shadow Storm",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ghost"
+      },
+      {
+        "name": "Dark Pulse",
+        "cooldown": 20,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "dark"
+      }
+    ]
+  },
+  {
+    "id": "gengar",
+    "name": "Gengar",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Hypnosis",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "ghost"
+      },
+      {
+        "name": "Shadow Storm",
+        "cooldown": 60,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ghost"
+      },
+      {
+        "name": "Shadow Claw",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ghost"
+      },
+      {
+        "name": "Shadow Ball",
+        "cooldown": 12,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "ghost"
+      }
+    ]
+  },
+  {
+    "id": "hisuian-typhlosion",
+    "name": "Hisuian Typhlosion",
+    "tier": "T2",
+    "skills": [
+      {
+        "name": "Flame Charge",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": "self",
+        "element": "fire"
+      },
+      {
+        "name": "Infernal Parade",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Fire Spin",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Lava Plume",
+        "cooldown": 45,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ghost"
+      }
+    ]
+  },
+  {
+    "id": "banette",
+    "name": "Banette",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Torment",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "silence",
+        "buff": null,
+        "element": "dark"
+      },
+      {
+        "name": "Shadow Storm",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ghost"
+      }
+    ]
+  },
+  {
+    "id": "cursola",
+    "name": "Cursola",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Harden",
+        "cooldown": 60,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "normal"
+      },
+      {
+        "name": "Curse",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ghost"
+      },
+      {
+        "name": "Night Shade",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ghost"
+      },
+      {
+        "name": "Hex",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ghost"
+      }
+    ]
+  },
+  {
+    "id": "shiny-haunter",
+    "name": "Shiny Haunter",
+    "tier": "T3",
+    "skills": [
+      {
+        "name": "Hypnosis",
+        "cooldown": 50,
+        "type": "frontal",
+        "cc": "stun",
+        "buff": null,
+        "element": "psychic"
+      },
+      {
+        "name": "Invisible",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "ghost"
+      },
+      {
+        "name": "Curse",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ghost"
+      },
+      {
+        "name": "Shadow Storm",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ghost"
+      }
+    ]
+  },
+  {
+    "id": "dusknoir",
+    "name": "TM Dusknoir",
+    "tier": "TM",
+    "skills": [
+      {
+        "name": "Afterlife Link",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "ghost"
+      },
+      {
+        "name": "Shadow Blast",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ghost"
+      },
+      {
+        "name": "Shadow Cannon",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ghost"
+      }
+    ]
+  }
+]
