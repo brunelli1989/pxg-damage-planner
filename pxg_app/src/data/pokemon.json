@@ -1335,7 +1335,16 @@
         "type": "area",
         "cc": "stun",
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 22.68
+      },
+      {
+        "name": "Hone Claws",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "dark"
       },
       {
         "name": "Shadow Fire",
@@ -1343,15 +1352,17 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 24.26
       },
       {
         "name": "Fire Lash",
-        "cooldown": 40,
+        "cooldown": 50,
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 25.20
       },
       {
         "name": "Hellfire Storm",
@@ -1359,7 +1370,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 32.48
       }
     ]
   },
@@ -3091,7 +3103,8 @@
         "type": "area",
         "cc": "stun",
         "buff": null,
-        "element": "fighting"
+        "element": "fighting",
+        "power": 15.72
       },
       {
         "name": "Leap Strike",
@@ -3107,7 +3120,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fighting"
+        "element": "fighting",
+        "power": 32.27
       },
       {
         "name": "Reversal",
@@ -3115,7 +3129,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fighting"
+        "element": "fighting",
+        "power": 30.09
       }
     ]
   },
@@ -4019,7 +4034,8 @@
         "type": "area",
         "cc": "stun",
         "buff": null,
-        "element": "flying"
+        "element": "flying",
+        "power": 19.88
       },
       {
         "name": "Sky Attack",
@@ -4027,7 +4043,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "flying"
+        "element": "flying",
+        "power": 23.99
       },
       {
         "name": "Aerial Ace",
@@ -4035,7 +4052,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "flying"
+        "element": "flying",
+        "power": 21.07
       }
     ]
   },
@@ -5342,7 +5360,8 @@
         "type": "area",
         "cc": "stun",
         "buff": "self",
-        "element": "water"
+        "element": "water",
+        "power": 23.08
       },
       {
         "name": "Dive",
@@ -5350,7 +5369,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "water"
+        "element": "water",
+        "power": 27.05
       },
       {
         "name": "Whirlpool",
@@ -5358,7 +5378,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "water"
+        "element": "water",
+        "power": 24.23
       }
     ]
   },
@@ -5637,7 +5658,8 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "ice"
+        "element": "ice",
+        "power": 17.41
       },
       {
         "name": "Frenzy Snow",
@@ -5645,7 +5667,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ice"
+        "element": "ice",
+        "power": 28.12
       },
       {
         "name": "Icicle Crash",
@@ -5653,7 +5676,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ice"
+        "element": "ice",
+        "power": 26.62
       }
     ]
   },
