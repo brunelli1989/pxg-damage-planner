@@ -223,7 +223,7 @@
     "hunt": "300",
     "group": "Farfetch'd",
     "hp": 177174,
-    "todo": "calibrate defense"
+    "defFactor": 0.849
   },
   {
     "name": "Klink",
@@ -281,7 +281,7 @@
     ],
     "hunt": "300",
     "group": "Rufflet",
-    "todo": "calibrate defense"
+    "defFactor": 0.82
   },
   {
     "name": "Machoke",
@@ -395,7 +395,8 @@
     ],
     "hunt": "300",
     "group": "Whirlipede/Venipede",
-    "todo": "calibrate defense"
+    "hp": 138236,
+    "defFactor": 0.66
   },
   {
     "name": "Venipede",
@@ -405,7 +406,8 @@
     ],
     "hunt": "300",
     "group": "Whirlipede/Venipede",
-    "todo": "calibrate defense"
+    "hp": 167828,
+    "defFactor": 0.80
   },
   {
     "name": "Litleo",
@@ -415,7 +417,7 @@
     ],
     "hunt": "300",
     "group": "Litleo",
-    "todo": "calibrate defense"
+    "defFactor": 0.80
   },
   {
     "name": "Cranidos",

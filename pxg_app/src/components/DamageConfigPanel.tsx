@@ -10,17 +10,47 @@ import type {
 } from "../types";
 import clansData from "../data/clans.json";
 import mobsData from "../data/mobs.json";
-import { DEFAULT_MOB_DEF_FACTOR } from "../engine/damage";
+import { DEFAULT_MOB_DEF_FACTOR, resolveMobConfig } from "../engine/damage";
+import type { MobFieldSource, ResolvedMob } from "../engine/damage";
 
 const mobs = mobsData as MobEntry[];
+const resolvedByName = new Map<string, ResolvedMob>(
+  mobs.map((m) => [m.name, resolveMobConfig(m, mobs)])
+);
 
 const TIERS: XAtkTier[] = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
-function mobMarker(mobs: MobEntry[]): string {
-  const measured = mobs.filter((m) => m.defFactor !== undefined).length;
-  if (measured === mobs.length) return " ✓";
-  if (measured === 0) return " ⚠️";
-  return " ⚠️✓";
+const SOURCE_RANK: Record<MobFieldSource, number> = {
+  measured: 0,
+  group: 1,
+  "hunt-avg": 2,
+  default: 3,
+};
+const SOURCE_ICON: Record<MobFieldSource, string> = {
+  measured: "🟢",
+  group: "🟡",
+  "hunt-avg": "🟠",
+  default: "🔴",
+};
+const SOURCE_LABEL: Record<MobFieldSource, string> = {
+  measured: "medido no jogo",
+  group: "derivado do grupo (~1% erro)",
+  "hunt-avg": "média do tier (~15% erro)",
+  default: `fallback ${DEFAULT_MOB_DEF_FACTOR} (~20% erro)`,
+};
+
+function worstSource(a: MobFieldSource, b: MobFieldSource): MobFieldSource {
+  return SOURCE_RANK[a] >= SOURCE_RANK[b] ? a : b;
+}
+
+function entrySource(m: MobEntry): MobFieldSource {
+  const r = resolvedByName.get(m.name);
+  return r ? worstSource(r.hpSource, r.defSource) : "default";
+}
+
+function mobMarker(entries: MobEntry[]): string {
+  const worst = entries.map(entrySource).reduce(worstSource);
+  return " " + SOURCE_ICON[worst];
 }
 
 interface Props {
@@ -57,21 +87,21 @@ export function DamageConfigPanel({
     const groupMobs = groupedMobs[groupName];
     if (!groupMobs || groupMobs.length === 0) return;
 
-    // Seleciona o mais difícil do grupo (maior HP × defFactor se disponível), senão primeiro
-    const hardest =
-      groupMobs.reduce<MobEntry | null>((best, m) => {
-        const score = (m.hp ?? 0) * (m.defFactor ?? 0);
-        const bestScore = best ? (best.hp ?? 0) * (best.defFactor ?? 0) : -1;
-        return score > bestScore ? m : best;
-      }, null) ?? groupMobs[0];
+    // Maior effective HP = HP / defFactor (mais tanky)
+    const hardest = groupMobs
+      .map((m) => resolvedByName.get(m.name)!)
+      .reduce((best, cur) => {
+        const eff = (r: ResolvedMob) => r.hp / (r.defFactor ?? DEFAULT_MOB_DEF_FACTOR);
+        return eff(cur) > eff(best) ? cur : best;
+      });
 
     const groupDisplayName = groupMobs.length > 1 ? groupName : hardest.name;
 
     onMobChange({
       name: groupDisplayName,
       types: hardest.types,
-      hp: hardest.hp ?? config.mob.hp,
-      defFactor: hardest.defFactor ?? config.mob.defFactor,
+      hp: hardest.hp,
+      defFactor: hardest.defFactor,
     });
   };
 
@@ -91,6 +121,11 @@ export function DamageConfigPanel({
   const maxHpMob = selectedGroupMobs.find((m) => m.hp === maxHpInGroup);
 
   const mobDisplay = (m: MobEntry) => `${m.name} (${m.types.join("/")})${mobMarker([m])}`;
+
+  const currentResolved = resolvedByName.get(config.mob.name);
+  const currentMobSource = currentResolved
+    ? worstSource(currentResolved.hpSource, currentResolved.defSource)
+    : null;
 
   return (
     <section className="damage-config">
@@ -161,17 +196,18 @@ export function DamageConfigPanel({
           </select>
           <span className="hint">
             Tipo 1: <strong>{type1}</strong> | Tipo 2: <strong>{type2}</strong>
-            {config.mob.defFactor === undefined && (
-              <span
-                className="calibration-warning"
-                title={`A defesa real deste mob ainda não foi medida. Estou usando uma estimativa média (${DEFAULT_MOB_DEF_FACTOR}) dos mobs já testados.`}
-              >
-                ⚠️ defesa aproximada
+            {currentMobSource && currentMobSource !== "measured" && (
+              <span className="calibration-warning" title={SOURCE_LABEL[currentMobSource]}>
+                {SOURCE_ICON[currentMobSource]} {SOURCE_LABEL[currentMobSource]}
               </span>
             )}
           </span>
           <span className="hint legend">
-            Legenda: <strong>✓</strong> = defesa medida no jogo · <strong>⚠️</strong> = defesa estimada (dano pode variar)
+            {Object.entries(SOURCE_ICON).map(([src, icon]) => (
+              <span key={src} style={{ marginRight: 10 }}>
+                {icon} {SOURCE_LABEL[src as MobFieldSource]}
+              </span>
+            ))}
           </span>
         </label>
 
