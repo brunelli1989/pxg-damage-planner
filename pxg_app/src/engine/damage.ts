@@ -31,7 +31,7 @@ const DEFAULT_POWER_BY_TIER_ROLE: Partial<Record<TierRoleKey, number>> = {
   "T3:offensive_tank":  19.4,
   "TM:burst_dd":        15.0,
   "TM:offensive_tank":  19.4,
-  "TR:burst_dd":        12.0,
+  "TR:burst_dd":        18.4,
 };
 
 export function getDefaultSkillPower(tier: Tier, role: PokemonRole | undefined): number {

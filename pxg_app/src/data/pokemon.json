@@ -157,60 +157,6 @@
     ]
   },
   {
-    "id": "hippowdon",
-    "name": "Hippowdon",
-    "tier": "T2",
-    "role": "burst_dd",
-    "wiki": "https://wiki.pokexgames.com/index.php/Hippowdon",
-    "skills": [
-      {
-        "name": "Sand Field",
-        "cooldown": 40,
-        "type": "area",
-        "cc": "stun",
-        "buff": null,
-        "element": "ground",
-        "power": 14.5
-      },
-      {
-        "name": "Earth Power",
-        "cooldown": 40,
-        "type": "area",
-        "cc": null,
-        "buff": null,
-        "element": "ground",
-        "power": 14.26
-      },
-      {
-        "name": "Sandstorm",
-        "cooldown": 40,
-        "type": "area",
-        "cc": null,
-        "buff": null,
-        "element": "rock",
-        "power": 14.48
-      },
-      {
-        "name": "Earthquake",
-        "cooldown": 50,
-        "type": "area",
-        "cc": null,
-        "buff": null,
-        "element": "ground",
-        "power": 25.2
-      },
-      {
-        "name": "Fissure",
-        "cooldown": 50,
-        "type": "area",
-        "cc": null,
-        "buff": null,
-        "element": "ground",
-        "power": 23.51
-      }
-    ]
-  },
-  {
     "id": "rampardos",
     "name": "Rampardos",
     "tier": "T2",
@@ -269,7 +215,6 @@
     "tier": "TR",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Tyranitar_(TR)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Epicenter",
@@ -277,15 +222,17 @@
         "type": "area",
         "cc": "stun",
         "buff": null,
-        "element": "rock"
+        "element": "rock",
+        "power": 21.24
       },
       {
         "name": "Stone Edge",
         "cooldown": 50,
-        "type": "frontal",
+        "type": "area",
         "cc": null,
         "buff": null,
-        "element": "rock"
+        "element": "rock",
+        "power": 18.9
       },
       {
         "name": "Rock Blast",
@@ -293,23 +240,26 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "rock"
+        "element": "rock",
+        "power": 16.42
       },
       {
-        "name": "Rock Tomb",
-        "cooldown": 20,
-        "type": "frontal",
+        "name": "Falling Rocks",
+        "cooldown": 40,
+        "type": "area",
         "cc": null,
         "buff": null,
-        "element": "rock"
+        "element": "rock",
+        "power": 17.4
       },
       {
-        "name": "Rock Slide",
-        "cooldown": 15,
-        "type": "frontal",
+        "name": "Earthquake",
+        "cooldown": 40,
+        "type": "area",
         "cc": null,
         "buff": null,
-        "element": "rock"
+        "element": "rock",
+        "power": 17.87
       }
     ]
   },
@@ -432,7 +382,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Golem",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Harden",
@@ -451,12 +400,22 @@
         "element": "rock"
       },
       {
+        "name": "Swagger",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "normal",
+        "power": 0
+      },
+      {
         "name": "Ancient Power",
         "cooldown": 40,
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "rock"
+        "element": "rock",
+        "power": 28.06
       },
       {
         "name": "Falling Rocks",
@@ -465,7 +424,7 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 29.4
+        "power": 29.66
       },
       {
         "name": "Rock Wrecker",
@@ -474,7 +433,7 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 27.45
+        "power": 27.57
       }
     ]
   },
@@ -610,15 +569,15 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Steelix",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Sand Tomb",
-        "cooldown": 45,
+        "cooldown": 40,
         "type": "area",
         "cc": "stun",
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 13.74
       },
       {
         "name": "Earth Power",
@@ -626,23 +585,26 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 16.44
       },
       {
         "name": "Sand Eruption",
-        "cooldown": 55,
+        "cooldown": 50,
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 25.27
       },
       {
         "name": "Fissure",
-        "cooldown": 55,
+        "cooldown": 50,
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 22.3
       }
     ]
   },
@@ -652,7 +614,6 @@
     "tier": "T3",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Sandaconda",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Sand Spit",
@@ -660,7 +621,16 @@
         "type": "area",
         "cc": "silence",
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 19.39
+      },
+      {
+        "name": "Coil",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "poison"
       },
       {
         "name": "Earth Power",
@@ -668,7 +638,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 13.79
       },
       {
         "name": "Scorching Sand",
@@ -676,7 +647,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 27.68
       },
       {
         "name": "Sand Eruption",
@@ -684,7 +656,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 23.56
       }
     ]
   },
@@ -794,7 +767,6 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Donphan",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Rollout",
@@ -805,12 +777,21 @@
         "element": "rock"
       },
       {
+        "name": "Focus Energy",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "normal"
+      },
+      {
         "name": "Stomping Tantrum",
         "cooldown": 18,
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 11.74
       },
       {
         "name": "Earthquake",
@@ -818,7 +799,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 27.08
       },
       {
         "name": "Sand Eruption",
@@ -826,7 +808,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 20.34
       },
       {
         "name": "Fissure",
@@ -834,7 +817,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 26.62
       }
     ]
   },
@@ -844,31 +828,33 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Hippowdon_Female",
-    "todo": "calibrate skills",
     "skills": [
       {
-        "name": "Sand Tomb",
-        "cooldown": 45,
+        "name": "Sand Field",
+        "cooldown": 40,
         "type": "area",
         "cc": "stun",
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 14.45
       },
       {
-        "name": "Dig",
+        "name": "Earth Power",
         "cooldown": 40,
         "type": "area",
         "cc": null,
-        "buff": "self",
-        "element": "ground"
+        "buff": null,
+        "element": "ground",
+        "power": 14.26
       },
       {
-        "name": "Sand Field",
-        "cooldown": 35,
+        "name": "Sandstorm",
+        "cooldown": 40,
         "type": "area",
         "cc": null,
-        "buff": "self",
-        "element": "ground"
+        "buff": null,
+        "element": "rock",
+        "power": 14.50
       },
       {
         "name": "Earthquake",
@@ -876,7 +862,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 25.22
       },
       {
         "name": "Fissure",
@@ -884,7 +871,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 23.37
       }
     ]
   },
@@ -994,7 +982,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Rhydon",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Earth Power",
@@ -1002,31 +989,44 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 21.82
       },
       {
         "name": "Ground Collapse",
         "cooldown": 40,
-        "type": "area",
+        "type": "frontal",
         "cc": null,
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 19.80
       },
       {
         "name": "Bulldoze",
         "cooldown": 45,
-        "type": "area",
+        "type": "frontal",
         "cc": null,
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 21.76
       },
       {
         "name": "Fissure",
-        "cooldown": 55,
+        "cooldown": 50,
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 22.79
+      },
+      {
+        "name": "Scary Face",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "normal",
+        "power": 0
       }
     ]
   },
@@ -1186,31 +1186,33 @@
     "tier": "TR",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Piloswine_(TR)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Ground Collapse",
         "cooldown": 40,
-        "type": "area",
+        "type": "frontal",
         "cc": "stun",
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 13.57
       },
       {
         "name": "High Horsepower",
         "cooldown": 40,
-        "type": "area",
+        "type": "frontal",
         "cc": null,
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 19.35
       },
       {
         "name": "Bulldoze",
         "cooldown": 40,
-        "type": "area",
+        "type": "frontal",
         "cc": null,
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 14.53
       },
       {
         "name": "Earthquake",
@@ -1218,7 +1220,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 21.28
       },
       {
         "name": "Fissure",
@@ -1226,7 +1229,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 23.17
       }
     ]
   },
@@ -3323,7 +3327,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Hariyama",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Fake Out",
@@ -3335,12 +3338,12 @@
         "power": 15.72
       },
       {
-        "name": "Leap Strike",
-        "cooldown": 15,
+        "name": "Focus Energy",
+        "cooldown": 40,
         "type": "area",
-        "cc": "stun",
-        "buff": null,
-        "element": "fighting"
+        "cc": null,
+        "buff": "next",
+        "element": "normal"
       },
       {
         "name": "Superpower",
@@ -3359,6 +3362,15 @@
         "buff": null,
         "element": "fighting",
         "power": 30.09
+      },
+      {
+        "name": "Shadow Break",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fighting",
+        "power": 25.17
       }
     ]
   },
