@@ -49,9 +49,14 @@ function getCache(p: Pokemon): PokemonCache {
   let c = cacheMap.get(p);
   if (!c) {
     c = {
-      hasHardCC: p.skills.some((s) => s.cc === "stun" || s.cc === "silence"),
+      // stun/silence frontal não bloqueia os 6 mobs; locked vale em qualquer tipo.
+      hasHardCC: p.skills.some(
+        (s) =>
+          s.cc === "locked" ||
+          ((s.cc === "stun" || s.cc === "silence") && s.type !== "frontal")
+      ),
       hasHarden: p.skills.some((s) => s.name.toLowerCase() === "harden"),
-      hasSilence: p.skills.some((s) => s.cc === "silence"),
+      hasSilence: p.skills.some((s) => s.cc === "silence" && s.type !== "frontal"),
       hasFrontal: p.skills.some((s) => s.type === "frontal"),
       skillOrderNormal: computeOrder(p, false),
       skillOrderSilenced: computeOrder(p, true),

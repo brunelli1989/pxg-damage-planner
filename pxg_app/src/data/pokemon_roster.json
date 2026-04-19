@@ -2040,5 +2040,17 @@
       "fairy",
       "dragon"
     ]
+  },
+  {
+    "id": "beartic",
+    "name": "Beartic",
+    "tier": "T2",
+    "clans": [
+      "seavell"
+    ],
+    "role": "offensive_tank",
+    "elements": [
+      "ice"
+    ]
   }
 ]

@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import type { Pokemon, PokemonElement } from "../types";
+import type { Pokemon, PokemonElement, Tier } from "../types";
 import { PokemonCard } from "./PokemonCard";
 
 const ALL_ELEMENTS: PokemonElement[] = [
@@ -7,6 +7,8 @@ const ALL_ELEMENTS: PokemonElement[] = [
   "fighting", "poison", "ground", "flying", "psychic", "bug",
   "rock", "ghost", "dragon", "dark", "steel", "fairy",
 ];
+
+const ALL_TIERS: Tier[] = ["T1H", "T2", "T3", "TM", "TR"];
 
 interface Props {
   allPokemon: Pokemon[];
@@ -18,6 +20,7 @@ interface Props {
 export function PokemonSelector({ allPokemon, selectedIds, onToggle, elementsByPokeId }: Props) {
   const [search, setSearch] = useState("");
   const [typeFilter, setTypeFilter] = useState<string>("");
+  const [tierFilter, setTierFilter] = useState<Tier | "">("");
 
   const filtered = useMemo(() => {
     let list = allPokemon;
@@ -28,8 +31,11 @@ export function PokemonSelector({ allPokemon, selectedIds, onToggle, elementsByP
     if (typeFilter) {
       list = list.filter((p) => (elementsByPokeId[p.id] ?? []).includes(typeFilter));
     }
+    if (tierFilter) {
+      list = list.filter((p) => p.tier === tierFilter);
+    }
     return list;
-  }, [allPokemon, search, typeFilter, elementsByPokeId]);
+  }, [allPokemon, search, typeFilter, tierFilter, elementsByPokeId]);
 
   // Seleciona primeiro os marcados, depois o resto (filtrado)
   const sorted = useMemo(() => {
@@ -51,6 +57,24 @@ export function PokemonSelector({ allPokemon, selectedIds, onToggle, elementsByP
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
+
+      <div className="poke-type-chips">
+        <button
+          className={`type-chip ${tierFilter === "" ? "active" : ""}`}
+          onClick={() => setTierFilter("")}
+        >
+          todos tiers
+        </button>
+        {ALL_TIERS.map((t) => (
+          <button
+            key={t}
+            className={`type-chip ${tierFilter === t ? "active" : ""}`}
+            onClick={() => setTierFilter(tierFilter === t ? "" : t)}
+          >
+            {t}
+          </button>
+        ))}
+      </div>
 
       <div className="poke-type-chips">
         <button

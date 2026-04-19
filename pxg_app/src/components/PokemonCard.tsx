@@ -16,12 +16,10 @@ const TIER_COLORS: Record<string, string> = {
 };
 
 function ccLabel(pokemon: Pokemon): string {
-  const hasStun = pokemon.skills.some((s) => s.cc === "stun");
-  const hasSilence = pokemon.skills.some((s) => s.cc === "silence");
-  if (hasStun && hasSilence) return "stun/silence";
-  if (hasStun) return "stun";
-  if (hasSilence) return "silence";
-  return "No CC";
+  // Mostra qualquer CC (incluindo stun/silence frontal, que ainda vale como second).
+  const kinds = new Set(pokemon.skills.filter((s) => s.cc !== null).map((s) => s.cc));
+  if (kinds.size === 0) return "No CC";
+  return Array.from(kinds).join("/");
 }
 
 export function PokemonCard({ pokemon, selected, disabled, onToggle }: Props) {

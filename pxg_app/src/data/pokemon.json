@@ -854,7 +854,7 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 14.50
+        "power": 14.5
       },
       {
         "name": "Earthquake",
@@ -999,7 +999,7 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 19.80
+        "power": 19.8
       },
       {
         "name": "Bulldoze",
@@ -6130,10 +6130,28 @@
         "name": "Glacial Spikes",
         "cooldown": 40,
         "type": "area",
-        "cc": null,
+        "cc": "locked",
         "buff": "self",
         "element": "ice",
         "power": 17.41
+      },
+      {
+        "name": "Frost Power",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ice",
+        "power": 19.3
+      },
+      {
+        "name": "Icicle Crash",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ice",
+        "power": 26.62
       },
       {
         "name": "Frenzy Snow",
@@ -6145,13 +6163,13 @@
         "power": 28.12
       },
       {
-        "name": "Icicle Crash",
-        "cooldown": 40,
+        "name": "Shadow Melting",
+        "cooldown": 50,
         "type": "area",
         "cc": null,
         "buff": null,
         "element": "ice",
-        "power": 26.62
+        "power": 25.3
       }
     ]
   },
@@ -6402,6 +6420,14 @@
     "todo": "calibrate skills",
     "skills": [
       {
+        "name": "Hail",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "locked",
+        "buff": "self",
+        "element": "ice"
+      },
+      {
         "name": "Blizzard",
         "cooldown": 50,
         "type": "area",
@@ -6411,6 +6437,14 @@
       },
       {
         "name": "Powder Snow",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ice"
+      },
+      {
+        "name": "Frost Power",
         "cooldown": 40,
         "type": "area",
         "cc": null,
@@ -6428,15 +6462,7 @@
       {
         "name": "Ice Ball",
         "cooldown": 40,
-        "type": "frontal",
-        "cc": null,
-        "buff": null,
-        "element": "ice"
-      },
-      {
-        "name": "Ice Punch",
-        "cooldown": 15,
-        "type": "frontal",
+        "type": "area",
         "cc": null,
         "buff": null,
         "element": "ice"
@@ -7349,6 +7375,56 @@
         "cc": null,
         "buff": "self",
         "element": "fairy"
+      }
+    ]
+  },
+  {
+    "id": "beartic",
+    "name": "Beartic",
+    "tier": "T2",
+    "role": "offensive_tank",
+    "wiki": "https://wiki.pokexgames.com/index.php/Beartic",
+    "todo": "calibrate skills",
+    "skills": [
+      {
+        "name": "Ice Storm",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ice"
+      },
+      {
+        "name": "Frenzy Snow",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ice"
+      },
+      {
+        "name": "Icicle Crash",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "ice"
+      },
+      {
+        "name": "Hail",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "locked",
+        "buff": "self",
+        "element": "ice"
+      },
+      {
+        "name": "Snowscape",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "ice"
       }
     ]
   }

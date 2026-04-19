@@ -12,6 +12,12 @@ import type {
 
 const STORAGE_KEY = "pxg_damage_config";
 
+export const DEFAULT_POKE_SETUP: PokeSetup = {
+  boost: 70,
+  held: { kind: "none", tier: 0 },
+  hasDevice: false,
+};
+
 const DEFAULT_CONFIG: DamageConfig = {
   playerLvl: 300,
   clan: null,
@@ -96,11 +102,7 @@ export function useDamageConfig() {
 
   const setPokeSetup = useCallback((pokeId: string, setup: Partial<PokeSetup>) => {
     setConfig((c) => {
-      const current = c.pokeSetups[pokeId] ?? {
-        boost: 0,
-        held: { kind: "none" as const, tier: 0 as XAtkTier },
-        hasDevice: false,
-      };
+      const current = c.pokeSetups[pokeId] ?? DEFAULT_POKE_SETUP;
       return {
         ...c,
         pokeSetups: { ...c.pokeSetups, [pokeId]: { ...current, ...setup } },

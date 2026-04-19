@@ -1,15 +1,20 @@
-import { useState } from "react";
-import type { DamageConfig, HeldKind, HeldItem, Pokemon, PokeSetup, XAtkTier } from "../types";
+import { useEffect, useState } from "react";
+import type { DamageConfig, HeldKind, HeldItem, Pokemon, PokeSetup, Tier, XAtkTier } from "../types";
 import { estimatePokeSoloDamage } from "../engine/damage";
 import { getOptimalSkillOrder } from "../engine/scoring";
+import { DEFAULT_POKE_SETUP } from "../hooks/useDamageConfig";
 
 const X_ATK_TIERS_ALL: XAtkTier[] = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
-const DEFAULT_SETUP: PokeSetup = {
-  boost: 70,
-  held: { kind: "none", tier: 0 },
-  hasDevice: false,
-};
+const MAX_BOOST = 80;
+function minBoostForTier(tier: Tier): number {
+  if (tier === "TR") return 70;
+  if (tier === "TM") return 80;
+  return 0;
+}
+function clampBoost(tier: Tier, v: number): number {
+  return Math.min(Math.max(v, minBoostForTier(tier)), MAX_BOOST);
+}
 
 interface Props {
   pokes: Pokemon[];
@@ -26,6 +31,17 @@ export function PokeSetupEditor({ pokes, config, onChange }: Props) {
   // Keyed by poke.id; populated when user clicks "Estimar dano"
   const [estimates, setEstimates] = useState<Record<string, DamageRow>>({});
 
+  // Normaliza boost pra respeitar min do tier (TR +70, TM +80). Roda sempre que
+  // muda a lista de pokes ou os setups persistidos.
+  useEffect(() => {
+    for (const p of pokes) {
+      const stored = config.pokeSetups[p.id];
+      if (stored && stored.boost !== clampBoost(p.tier, stored.boost)) {
+        onChange(p.id, { boost: clampBoost(p.tier, stored.boost) });
+      }
+    }
+  }, [pokes, config.pokeSetups, onChange]);
+
   if (pokes.length === 0) return null;
 
   const handleEstimate = () => {
@@ -36,7 +52,7 @@ export function PokeSetupEditor({ pokes, config, onChange }: Props) {
     };
     for (const p of pokes) {
       if (!configWithDefaults.pokeSetups[p.id]) {
-        configWithDefaults.pokeSetups[p.id] = DEFAULT_SETUP;
+        configWithDefaults.pokeSetups[p.id] = DEFAULT_POKE_SETUP;
       }
     }
 
@@ -70,10 +86,14 @@ export function PokeSetupEditor({ pokes, config, onChange }: Props) {
         </thead>
         <tbody>
           {pokes.map((p) => {
-            const setup = config.pokeSetups[p.id] ?? DEFAULT_SETUP;
+            const setup = config.pokeSetups[p.id] ?? {
+              ...DEFAULT_POKE_SETUP,
+              boost: clampBoost(p.tier, DEFAULT_POKE_SETUP.boost),
+            };
             const heldKind = setup.held.kind;
             const maxTier: XAtkTier = heldKind === "x-boost" ? 7 : 8;
             const availableTiers = X_ATK_TIERS_ALL.filter((t) => t <= maxTier);
+            const minBoost = minBoostForTier(p.tier);
 
             const setHeld = (next: Partial<HeldItem>) => {
               onChange(p.id, { held: { ...setup.held, ...next } });
@@ -89,11 +109,14 @@ export function PokeSetupEditor({ pokes, config, onChange }: Props) {
                 <td>
                   <input
                     type="number"
-                    min={0}
-                    max={100}
-                    value={setup.boost}
-                    onChange={(e) => onChange(p.id, { boost: Number(e.target.value) })}
+                    min={minBoost}
+                    max={MAX_BOOST}
+                    value={clampBoost(p.tier, setup.boost)}
+                    onChange={(e) =>
+                      onChange(p.id, { boost: clampBoost(p.tier, Number(e.target.value)) })
+                    }
                     className="inline-input"
+                    title={`${p.tier}: boost ${minBoost}-${MAX_BOOST}`}
                   />
                 </td>
                 <td>

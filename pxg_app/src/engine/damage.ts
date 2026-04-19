@@ -41,10 +41,11 @@ export function getDefaultSkillPower(tier: Tier, role: PokemonRole | undefined):
 
 /**
  * Resolve o power de uma skill: calibrado se existir, senão fallback por (tier, role).
- * Skills com power = 0 (CC-only, sem dano) retornam 0 sem fallback.
+ * Skills com buff (self ou next) e power = 0 (CC-only) não recebem fallback — são 0.
  */
 export function resolveSkillPower(skill: Skill, poke: Pokemon): number {
-  if (skill.power !== undefined) return skill.power; // inclui 0 (CC-only)
+  if (skill.power !== undefined) return skill.power;
+  if (skill.buff !== null) return 0; // buff:self ou buff:next não dá dano
   return getDefaultSkillPower(poke.tier, poke.role);
 }
 

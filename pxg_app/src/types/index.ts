@@ -1,5 +1,5 @@
 export type SkillType = "area" | "frontal";
-export type CCType = "stun" | "silence";
+export type CCType = "stun" | "silence" | "locked";
 export type BuffType = "self" | "next";
 export type Tier = "T1H" | "T2" | "T3" | "TR" | "TM";
 
