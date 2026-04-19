@@ -22,21 +22,32 @@ npx tsc --noEmit  # type check
 
 ```
 pxg_app/src/
-├── data/pokemon.json       # Todos os pokémons e skills (editar aqui p/ add pokes)
-├── types/index.ts          # Interfaces (Pokemon, Skill, Lure, RotationStep, ...)
+├── data/
+│   ├── pokemon.json        # Pokes + skills (power calibrado ou via fallback). Tem role, wiki, todo.
+│   ├── pokemon_roster.json # Lista de pokes do jogo com clans/elements/role (fonte do role)
+│   ├── mobs.json           # Mobs por hunt: types, group, hp, defFactor, todo
+│   └── clans.json          # Bônus de atk/def por clã
+├── types/index.ts          # Interfaces (Pokemon, Skill, Lure, RotationStep, DamageConfig, MobConfig, ...)
 ├── engine/
 │   ├── cooldown.ts         # Fórmula de CD com disk, cooldowns de elixir
 │   ├── scoring.ts          # Ordem ótima de skills, helpers (hasHarden, hasSilence, hasFrontal, hasHardCC)
 │   ├── rotation.ts         # Core: geração de lures + beam search + simulação com active time
 │   ├── rotation.worker.ts  # Worker que processa chunks de bags
-│   └── rotationAsync.ts    # Orquestrador: distribui bags entre workers, junta resultado
+│   ├── rotationAsync.ts    # Orquestrador: distribui bags entre workers, junta resultado
+│   ├── damage.ts           # Fórmula de dano, fallback por (tier, role), resolveSkillPower
+│   └── damage.test.ts      # Testes de regressão vs dados reais (<0.25% erro)
 ├── components/
 │   ├── PokemonSelector.tsx / PokemonCard.tsx / SkillBadge.tsx
 │   ├── DiskSelector.tsx
-│   ├── RotationResult.tsx   # Tabela passo-a-passo
-│   └── SkillTimeline.tsx    # Barra visual
-├── hooks/useRotation.ts     # Hook async c/ loading + progresso (memoiza pool!)
-└── App.tsx                  # Root + localStorage + botão "copiar dados"
+│   ├── DamageConfigPanel.tsx   # Player lvl, clã, hunt, mob alvo, held global do device
+│   ├── PokeSetupEditor.tsx     # Boost e held por poke
+│   ├── LureDamagePreview.tsx   # Estimativa de dano vs mob por lure
+│   ├── RotationResult.tsx      # Tabela passo-a-passo
+│   └── SkillTimeline.tsx       # Barra visual
+├── hooks/
+│   ├── useRotation.ts      # Hook async c/ loading + progresso (memoiza pool!)
+│   └── useDamageConfig.ts  # Persiste config de dano no localStorage
+└── App.tsx                 # Root + localStorage + botão "copiar dados"
 ```
 
 ## Mecânicas do jogo (LEIA ANTES DE MEXER NO ENGINE)
@@ -151,9 +162,9 @@ Definida em `getOptimalSkillOrder()`:
 
 Para bags > 6 pokes: testa `C(n,6)` combinações em paralelo via Web Workers.
 
-## Módulo de dano (planejado, não implementado)
+## Módulo de dano (implementado em `engine/damage.ts`)
 
-Engine futuro pra validar se uma lure finaliza a box (`HP_mob × 6`) e filtrar lures inviáveis na geração de rotação.
+Valida se uma lure finaliza a box (`HP_mob × 6`) e filtra lures inviáveis. Testes em `damage.test.ts` confirmam <0.25% erro vs dados reais.
 
 ### Fórmula de dano (validada em combate real, 40+ amostras, <0.2% erro)
 
@@ -161,38 +172,59 @@ Engine futuro pra validar se uma lure finaliza a box (`HP_mob × 6`) e filtrar l
 dmg = (player_lvl + 1.3 × boost + 150) × skill_power × (1 + Σ atk%) × clã × eff × def_mob
 ```
 
-Modificador: `× 1.5` se skill anterior tem `buff: "next"` (Dragon Rage, Hone Claws, Focus Energy).
+Modificador: `× 1.5` se skill anterior tem `buff: "next"` (Dragon Rage, Hone Claws, Focus Energy, Swords Dance, Sunny Day).
 
 **Componentes:**
-- `player_lvl`: level do char
-- `boost`: boost do poke (coef 1.3)
-- Constante `+150` fixa
-- `skill_power`: empírico por (poke, skill). **Varia per-instância** (não por espécie) — mesmo nome de skill pode diferir muito entre pokes (Fire Ball: Ninetales 6.07 vs Charizard 13.77)
-- `Σ atk%`: aditivo (X-Atk T1=8%, T2=12%, T3=16%, T4=19%, T5=22%, T6=25%, T7=28%, T8=31%)
-- **Device = +19%** (equivalente X-Atk T4, aditivo com X-Atk da ball)
-- `clã`: multiplicativo, só se skill é do tipo do clã. Orebound rock/ground=1.25, Volcanic fire=1.28
-- `eff`: standard Pokemon chart (0×/0.5×/1×/2×) — **validado em PxG**
+- `player_lvl`, `boost`, constante `+150` fixa, `skill_power` calibrado por (poke, skill)
+- `Σ atk%`: aditivo (X-Atk T1=8% ... T8=31%, device=+19% equivalente T4)
+- `clã`: multiplicativo se skill é do tipo do clã (Orebound rock/ground=1.25, Volcanic fire=1.28, etc — ver `clans.json`)
+- `eff`: chart padrão Pokémon (0×/0.5×/1×/2×). PxG usa regra custom pra tipo duplo em `computeEffectiveness`
 - `def_mob`: multiplicador < 1, empírico por mob
 
-### Defesas de mobs medidos
+**`skill_power` varia per-instância**, não por espécie: Fire Ball no Ninetales = 6.07, no Charizard = 13.77.
 
-| Mob | Tipo | def_mob |
+### Fallback por (tier, role)
+
+Quando `skill.power` é undefined, `resolveSkillPower(skill, poke)` usa `DEFAULT_POWER_BY_TIER_ROLE`. Valores derivados empiricamente:
+
+| Tier \ Role | burst_dd | offensive_tank |
 |---|---|---|
-| Dragonair | dragon | 0.68 |
+| T1H | 24.7 | 19.4 |
+| T2 | 22.5 | 19.4 |
+| T3 | 21.5 | 19.4 |
+| TM | 15.0 | 19.4 |
+| TR | 12.0 | — |
+
+**Insights validados:**
+- `burst_dd` **escala por tier** (T1H ~118 Σ → T2 ~92 → T3 ~85 Σ raw por poke, spread <3.5% dentro do cluster)
+- `offensive_tank` **flat entre tiers** (Sh.Golem T2 ≈ Omastar T3 ≈ 77 Σ raw)
+- OTDD (over-time damage dealer) existe mas é foco de boss, não de lure — tratado como `burst_dd` sem distinção
+
+### Defesas de mobs calibrados
+
+| Mob | Tipo | defFactor |
+|---|---|---|
+| Dragonair | dragon | 0.68 (outlier) |
 | Dratini | dragon | 0.80 |
 | Magby | fire | 0.88 |
 | Pansear | fire | 0.90 |
-| Spurr | psy | 0.92 |
+| Espurr | psy | 0.92 |
 
-### Plano de implementação
+Fallback `DEFAULT_MOB_DEF_FACTOR = 0.85` (média aproximada) pros demais mobs com `todo: "calibrate defense"`.
 
-- **`pokemon.json`:** adicionar campo `power` (calibrado) + `element` (rock/fire/etc) em cada skill
-- **Globals na UI:** player_lvl, clã ativo (tipo + %), mob_type/HP/def_factor por mapa
-- **Por poke na UI:** boost, helds (X-Atk tier + device flag)
-- **Modo calibração:** usuário cast skill 1× no dummy → app deriva `skill_power` via fórmula inversa → salva em localStorage por (poke_id, skill_name)
-- **Engine:** `estimateLureDamagePerMob(lure, mob, cfg)` soma `skill_power × scaling` de todas skills castadas, aplica eff e def. Filtra em `generateLureTemplates` lures onde `dmg_per_mob < mob.HP`
+### Calibração
 
-Contexto completo na memória: `project_pxg_damage_formula.md`.
+- Usuário cast skill 1× no dummy → app deriva `skill_power` via fórmula inversa (`deriveSkillPower`) → valor salvo em `pokemon.json` (campo `power` da skill)
+- Pokes calibrados: 13 (5 T1H burst_dd, 3 T2 burst_dd, 3 T3 burst_dd, 1 T2 offensive_tank, 1 T3 offensive_tank)
+- **Pitfall de calibração:** quando o usuário cola "char X, boost Y, X-Atk Z" no topo, isso é do CHAR, não do poke testado. Cada poke tem seu próprio boost/held (ver memória `feedback_dummy_calibration_setup.md`)
+
+### UI de calibração
+
+- `PokemonCard`: ⚠️ quando `pokemon.todo` existe (skill power sem calibração)
+- `DamageConfigPanel`: ⚠️/✓ nos mobs da dropdown + aviso "defesa aproximada" quando `defFactor` undefined
+- Linguagem user-facing: "medido no jogo" (✓) vs "aproximado / estimado" (⚠️) — evitar "calibrado"
+
+Contexto histórico na memória: `project_pxg_damage_formula.md`.
 
 ## Pitfalls conhecidos (não repetir)
 
@@ -202,6 +234,8 @@ Contexto completo na memória: `project_pxg_damage_formula.md`.
 - **NÃO** crie duplas silence+frontal — filtrar antes da geração
 - **NÃO** remover active time tracking do engine — é fundamental pra acurácia
 - **NÃO** usar leeway (removido) — usar kill time explícito (`KILL_TIME = 10` após cada lure)
+- **NÃO** chamar `resolveSkillPower` duas vezes por skill cast — passa via `opts.skillPower` pro `computeSkillDamage` (hot path do beam search)
+- **NÃO** assumir boost/held do poke testado pelo setup listado no topo da mensagem de calibração — é do char. Cada poke tem seu próprio boost/held no ball
 
 ## Dicas de UI
 

@@ -44,6 +44,9 @@ export interface Pokemon {
   id: string;
   name: string;
   tier: Tier;
+  role?: PokemonRole;
+  wiki?: string;
+  todo?: string;
   skills: Skill[];
 }
 
@@ -105,7 +108,7 @@ export interface MobConfig {
   name: string;
   types: PokemonElement[]; // 1 ou 2 tipos; effectiveness é produto
   hp: number;
-  defFactor: number; // 1.0 = sem defesa, 0.5 = 50% redução
+  defFactor?: number; // undefined = usa DEFAULT_MOB_DEF_FACTOR no engine
 }
 
 export interface MobEntry {
@@ -115,6 +118,7 @@ export interface MobEntry {
   group: string; // mobs no mesmo group farmam juntos (mesma task)
   hp?: number;
   defFactor?: number;
+  todo?: string;
 }
 
 export interface DamageConfig {

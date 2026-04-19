@@ -5,10 +5,46 @@ import type {
   MobConfig,
   Pokemon,
   PokemonElement,
+  PokemonRole,
   Skill,
+  Tier,
   XAtkTier,
 } from "../types";
 import clansData from "../data/clans.json";
+
+// =========================================================
+// Default skill_power per (tier, role) — fallback pra pokes não calibrados.
+// Valores derivados de calibrações reais no dummy (média simples por slot).
+// =========================================================
+
+// Média de skill_power por (tier, role) derivada de pokes calibrados no dummy.
+// burst_dd escala por tier; offensive_tank é flat entre tiers (Sh.Golem T2 ≈ Omastar T3).
+type TierRoleKey = `${Tier}:${PokemonRole}`;
+const DEFAULT_POWER_BY_TIER_ROLE: Partial<Record<TierRoleKey, number>> = {
+  "T1H:burst_dd":       24.7,
+  "T1H:offensive_tank": 19.4,
+  "T2:burst_dd":        22.5,
+  "T2:offensive_tank":  19.4,
+  "T3:burst_dd":        21.5,
+  "T3:offensive_tank":  19.4,
+  "TM:burst_dd":        15.0,
+  "TM:offensive_tank":  19.4,
+  "TR:burst_dd":        12.0,
+};
+
+export function getDefaultSkillPower(tier: Tier, role: PokemonRole | undefined): number {
+  if (!role) return 0;
+  return DEFAULT_POWER_BY_TIER_ROLE[`${tier}:${role}` as TierRoleKey] ?? 0;
+}
+
+/**
+ * Resolve o power de uma skill: calibrado se existir, senão fallback por (tier, role).
+ * Skills com power = 0 (CC-only, sem dano) retornam 0 sem fallback.
+ */
+export function resolveSkillPower(skill: Skill, poke: Pokemon): number {
+  if (skill.power !== undefined) return skill.power; // inclui 0 (CC-only)
+  return getDefaultSkillPower(poke.tier, poke.role);
+}
 
 // =========================================================
 // Constants (validated empirically, <0.2% precision cross-char)
@@ -17,6 +53,9 @@ import clansData from "../data/clans.json";
 const BOOST_COEF = 1.3;
 const FORMULA_CONSTANT = 150;
 const BUFF_NEXT_MULTIPLIER = 1.5; // +50% na próxima skill
+
+// Fallback quando mob não tem defFactor calibrado (média dos mobs testados no dummy).
+export const DEFAULT_MOB_DEF_FACTOR = 0.85;
 
 // X-Attack tier bonuses (aditivos)
 const X_ATK_BONUSES: Record<XAtkTier, number> = {
@@ -153,19 +192,21 @@ export function getClanBonus(
 
 /**
  * dmg = (player_lvl + 1.3 × boost + 150) × skill_power × (1 + Σ atk%) × (1 + clã) × eff × def_mob
+ *
+ * `skill.power` não calibrado cai no fallback por (poke.tier, poke.role).
  */
 export function computeSkillDamage(
   cfg: DamageConfig,
-  pokeId: string,
+  poke: Pokemon,
   skill: Skill,
   mob: MobConfig = cfg.mob,
-  opts: { buffedByPrevious?: boolean } = {}
+  opts: { buffedByPrevious?: boolean; skillPower?: number } = {}
 ): number {
-  const setup = cfg.pokeSetups[pokeId];
+  const setup = cfg.pokeSetups[poke.id];
   if (!setup) return 0;
 
-  const skillPower = skill.power;
-  if (skillPower === undefined || skillPower === 0) return 0;
+  const skillPower = opts.skillPower ?? resolveSkillPower(skill, poke);
+  if (skillPower === 0) return 0;
 
   const deviceActive = setup.hasDevice;
   const pokeBoostTier: XAtkTier = setup.held.kind === "x-boost" ? setup.held.tier : 0;
@@ -187,7 +228,8 @@ export function computeSkillDamage(
   const eff = skill.element ? computeEffectiveness(skill.element, mob.types) : 1;
   const buffMult = opts.buffedByPrevious ? BUFF_NEXT_MULTIPLIER : 1;
 
-  return base * skillPower * helds * clã * eff * mob.defFactor * buffMult;
+  const defFactor = mob.defFactor ?? DEFAULT_MOB_DEF_FACTOR;
+  return base * skillPower * helds * clã * eff * defFactor * buffMult;
 }
 
 /**
@@ -240,13 +282,13 @@ export function estimateLureDamagePerMob(
 ): number {
   let totalDmg = 0;
 
-  const castSequence: { pokeId: string; skill: Skill }[] = [];
+  const castSequence: { poke: Pokemon; skill: Skill }[] = [];
   for (const s of lure.starterSkills) {
-    castSequence.push({ pokeId: lure.starter.id, skill: s });
+    castSequence.push({ poke: lure.starter, skill: s });
   }
   if (lure.second) {
     for (const s of lure.secondSkills) {
-      castSequence.push({ pokeId: lure.second.id, skill: s });
+      castSequence.push({ poke: lure.second, skill: s });
     }
   }
 
@@ -254,10 +296,10 @@ export function estimateLureDamagePerMob(
   // (pula self-buffs e outras skills sem power, pra que o buff vá na skill forte)
   let buffPending = false;
   for (let i = 0; i < castSequence.length; i++) {
-    const { pokeId, skill } = castSequence[i];
-    const isDamageSkill = (skill.power ?? 0) > 0;
-    const buffed = buffPending && isDamageSkill;
-    totalDmg += computeSkillDamage(cfg, pokeId, skill, mob, { buffedByPrevious: buffed });
+    const { poke, skill } = castSequence[i];
+    const power = resolveSkillPower(skill, poke);
+    const buffed = buffPending && power > 0;
+    totalDmg += computeSkillDamage(cfg, poke, skill, mob, { buffedByPrevious: buffed, skillPower: power });
     if (buffed) buffPending = false;
     if (skill.buff === "next") buffPending = true;
   }
@@ -314,10 +356,11 @@ export function estimatePokeSoloDamage(
   let buffPending = false;
   for (let i = 0; i < orderedSkills.length; i++) {
     const skill = orderedSkills[i];
-    const isDamageSkill = (skill.power ?? 0) > 0;
-    const buffed = buffPending && isDamageSkill;
-    total += computeSkillDamage(cfgOverride, poke.id, skill, config.mob, {
+    const power = resolveSkillPower(skill, poke);
+    const buffed = buffPending && power > 0;
+    total += computeSkillDamage(cfgOverride, poke, skill, config.mob, {
       buffedByPrevious: buffed,
+      skillPower: power,
     });
     if (buffed) buffPending = false;
     if (skill.buff === "next") buffPending = true;

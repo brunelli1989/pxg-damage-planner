@@ -27,6 +27,7 @@ function ccLabel(pokemon: Pokemon): string {
 export function PokemonCard({ pokemon, selected, disabled, onToggle }: Props) {
   const cc = ccLabel(pokemon);
   const hasCC = cc !== "No CC";
+  const uncalibrated = pokemon.todo !== undefined;
 
   return (
     <div
@@ -35,6 +36,14 @@ export function PokemonCard({ pokemon, selected, disabled, onToggle }: Props) {
     >
       <div className="card-header">
         <span className="pokemon-name">{pokemon.name}</span>
+        {uncalibrated && (
+          <span
+            className="calibration-warning"
+            title={`Dano aproximado — este pokémon ainda não foi testado no dummy. Estou usando a média dos pokémons calibrados de mesmo tier/função (${pokemon.tier}, ${pokemon.role ?? "?"}).`}
+          >
+            ⚠️
+          </span>
+        )}
         <span
           className="tier-badge"
           style={{ backgroundColor: TIER_COLORS[pokemon.tier] ?? "#888" }}

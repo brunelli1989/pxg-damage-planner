@@ -1,140 +1,1082 @@
 [
-  { "name": "Espurr", "types": ["psychic"], "hunt": "300", "group": "Espurr", "defFactor": 0.92 },
-
-  { "name": "Pansear", "types": ["fire"], "hunt": "300", "group": "Magby/Pansear", "defFactor": 0.90 },
-  { "name": "Magby", "types": ["fire"], "hunt": "300", "group": "Magby/Pansear", "defFactor": 0.88 },
-
-  { "name": "Dratini", "types": ["dragon"], "hunt": "300", "group": "Dratini/Dragonair", "hp": 191610, "defFactor": 0.80 },
-  { "name": "Dragonair", "types": ["dragon"], "hunt": "300", "group": "Dratini/Dragonair", "hp": 163115, "defFactor": 0.68 },
-
-  { "name": "Bagon", "types": ["dragon"], "hunt": "300", "group": "Bagon/Shelgon" },
-  { "name": "Shelgon", "types": ["dragon"], "hunt": "300", "group": "Bagon/Shelgon" },
-
-  { "name": "Gible", "types": ["dragon", "ground"], "hunt": "300", "group": "Gible/Gabite" },
-  { "name": "Gabite", "types": ["dragon", "ground"], "hunt": "300", "group": "Gible/Gabite" },
-
-  { "name": "Spoink", "types": ["psychic"], "hunt": "300", "group": "Spoink" },
-
-  { "name": "Alolan Diglett", "types": ["ground", "steel"], "hunt": "300", "group": "Alolan Diglett" },
-  { "name": "Alolan Meowth", "types": ["dark"], "hunt": "300", "group": "Alolan Meowth" },
-  { "name": "Grimer", "types": ["poison"], "hunt": "300", "group": "Grimer" },
-
-  { "name": "Mega Beedrill", "types": ["bug", "poison"], "hunt": "300", "group": "Mega Beedrill/Beedrill" },
-  { "name": "Beedrill", "types": ["bug", "poison"], "hunt": "300", "group": "Mega Beedrill/Beedrill" },
-
-  { "name": "Silicobra", "types": ["ground"], "hunt": "300", "group": "Silicobra", "hp": 184696 },
-  { "name": "Galarian Farfetch'd", "types": ["fighting"], "hunt": "300", "group": "Galarian Farfetch'd" },
-
-  { "name": "Lunatone", "types": ["rock", "psychic"], "hunt": "300", "group": "Lunatone/Solrock" },
-  { "name": "Solrock", "types": ["rock", "psychic"], "hunt": "300", "group": "Lunatone/Solrock" },
-
-  { "name": "Rockruff", "types": ["rock"], "hunt": "300", "group": "Rockruff" },
-  { "name": "Mantyke", "types": ["water", "flying"], "hunt": "300", "group": "Mantyke" },
-  { "name": "Galarian Darumaka", "types": ["ice"], "hunt": "300", "group": "Galarian Darumaka" },
-  { "name": "Farfetch'd", "types": ["normal", "flying"], "hunt": "300", "group": "Farfetch'd", "hp": 177174 },
-
-  { "name": "Klink", "types": ["steel"], "hunt": "300", "group": "Klink/Klang" },
-  { "name": "Klang", "types": ["steel"], "hunt": "300", "group": "Klink/Klang" },
-
-  { "name": "Galarian Meowth", "types": ["steel"], "hunt": "300", "group": "Galarian Meowth" },
-  { "name": "Carvanha", "types": ["water", "dark"], "hunt": "300", "group": "Carvanha" },
-  { "name": "Barboach", "types": ["water", "ground"], "hunt": "300", "group": "Barboach" },
-  { "name": "Rufflet", "types": ["normal", "flying"], "hunt": "300", "group": "Rufflet" },
-
-  { "name": "Machoke", "types": ["fighting"], "hunt": "300", "group": "Machoke" },
-  { "name": "Sneasel", "types": ["dark", "ice"], "hunt": "300", "group": "Sneasel" },
-  { "name": "Cloyster", "types": ["water", "ice"], "hunt": "300", "group": "Cloyster" },
-  { "name": "Snorunt", "types": ["ice"], "hunt": "300", "group": "Snorunt" },
-
-  { "name": "Snubbull", "types": ["fairy"], "hunt": "300", "group": "Snubbull", "hp": 211296 },
-  { "name": "Shuppet", "types": ["ghost"], "hunt": "300", "group": "Shuppet" },
-  { "name": "Darkrai Minion", "types": ["dark"], "hunt": "300", "group": "Darkrai Minion" },
-
-  { "name": "Lampent", "types": ["ghost", "fire"], "hunt": "300", "group": "Lampent/Litwick" },
-  { "name": "Litwick", "types": ["ghost", "fire"], "hunt": "300", "group": "Lampent/Litwick" },
-
-  { "name": "Goomy", "types": ["dragon"], "hunt": "300", "group": "Goomy/Sliggoo" },
-  { "name": "Sliggoo", "types": ["dragon"], "hunt": "300", "group": "Goomy/Sliggoo" },
-
-  { "name": "Whirlipede", "types": ["bug", "poison"], "hunt": "300", "group": "Whirlipede/Venipede" },
-  { "name": "Venipede", "types": ["bug", "poison"], "hunt": "300", "group": "Whirlipede/Venipede" },
-
-  { "name": "Litleo", "types": ["fire", "normal"], "hunt": "300", "group": "Litleo" },
-  { "name": "Cranidos", "types": ["rock"], "hunt": "300", "group": "Cranidos", "hp": 216472 },
-  { "name": "Elekid", "types": ["electric"], "hunt": "300", "group": "Elekid", "hp": 209984 },
-
-  { "name": "Tynamo", "types": ["electric"], "hunt": "300", "group": "Tynamo/Eelektrik", "hp": 239169 },
-  { "name": "Eelektrik", "types": ["electric"], "hunt": "300", "group": "Tynamo/Eelektrik", "hp": 203680 },
-
-  { "name": "Petilil", "types": ["grass"], "hunt": "300", "group": "Petilil" },
-
-  { "name": "Skiddo", "types": ["grass"], "hunt": "300", "group": "Skiddo/Nuzleaf" },
-  { "name": "Nuzleaf", "types": ["grass", "dark"], "hunt": "300", "group": "Skiddo/Nuzleaf" },
-
-  { "name": "Ralts", "types": ["psychic", "fairy"], "hunt": "300", "group": "Ralts/Kirlia" },
-  { "name": "Kirlia", "types": ["psychic", "fairy"], "hunt": "300", "group": "Ralts/Kirlia" },
-
-  { "name": "Applin", "types": ["grass", "dragon"], "hunt": "300", "group": "Applin" },
-
-  { "name": "Meowstic", "types": ["psychic"], "hunt": "400+", "group": "Meowstic" },
-  { "name": "Wormadam", "types": ["bug", "grass"], "hunt": "400+", "group": "Wormadam" },
-  { "name": "Sirfetch'd", "types": ["fighting"], "hunt": "400+", "group": "Sirfetch'd" },
-  { "name": "Lycanroc", "types": ["rock"], "hunt": "400+", "group": "Lycanroc" },
-  { "name": "Mantine", "types": ["water", "flying"], "hunt": "400+", "group": "Mantine" },
-  { "name": "Galarian Darmanitan", "types": ["ice"], "hunt": "400+", "group": "Galarian Darmanitan" },
-  { "name": "Klinklang", "types": ["steel"], "hunt": "400+", "group": "Klinklang" },
-
-  { "name": "Mecha Meganium", "types": [], "hunt": "400+", "group": "Mechas", "hp": 341730 },
-  { "name": "Mecha Venusaur", "types": [], "hunt": "400+", "group": "Mechas" },
-  { "name": "Mecha Feraligatr", "types": [], "hunt": "400+", "group": "Mechas", "hp": 321676 },
-  { "name": "Mecha Blastoise", "types": [], "hunt": "400+", "group": "Mechas" },
-  { "name": "Mecha Typhlosion", "types": [], "hunt": "400+", "group": "Mechas" },
-  { "name": "Mecha Charizard", "types": [], "hunt": "400+", "group": "Mechas", "hp": 316842 },
-
-  { "name": "Braviary", "types": ["normal", "flying"], "hunt": "400+", "group": "Braviary", "hp": 455650 },
-  { "name": "Pidgeot", "types": ["normal", "flying"], "hunt": "400+", "group": "Pidgeot", "hp": 468889 },
-  { "name": "Perrserker", "types": ["steel"], "hunt": "400+", "group": "Perrserker" },
-  { "name": "Weavile", "types": ["dark", "ice"], "hunt": "400+", "group": "Weavile" },
-  { "name": "Garchomp", "types": ["dragon", "ground"], "hunt": "400+", "group": "Garchomp/Dragonite" },
-  { "name": "Dragonite", "types": ["dragon", "flying"], "hunt": "400+", "group": "Garchomp/Dragonite" },
-  { "name": "Hawlucha", "types": ["fighting", "flying"], "hunt": "400+", "group": "Hawlucha", "hp": 399075 },
-  { "name": "Granbull", "types": ["fairy"], "hunt": "400+", "group": "Granbull" },
-
-  { "name": "Gallade", "types": ["psychic", "fighting"], "hunt": "400+", "group": "Gallade" },
-  { "name": "Honchkrow", "types": ["dark", "flying"], "hunt": "400+", "group": "Honchkrow" },
-  { "name": "Empoleon", "types": ["water", "steel"], "hunt": "400+", "group": "Empoleon" },
-  { "name": "Infernape", "types": ["fire", "fighting"], "hunt": "400+", "group": "Infernape" },
-  { "name": "Torterra", "types": ["grass", "ground"], "hunt": "400+", "group": "Torterra", "hp": 506520 },
-  { "name": "Luxray", "types": ["electric"], "hunt": "400+", "group": "Luxray" },
-
-  { "name": "Sharpedo", "types": ["water", "dark"], "hunt": "400+", "group": "Sharpedo" },
-  { "name": "Starmie", "types": ["water", "psychic"], "hunt": "400+", "group": "Starmie", "hp": 505974 },
-  { "name": "Whiscash", "types": ["water", "ground"], "hunt": "400+", "group": "Whiscash" },
-  { "name": "Pyroar Female", "types": ["fire", "normal"], "hunt": "400+", "group": "Pyroar Female" },
-  { "name": "Pyroar", "types": ["fire", "normal"], "hunt": "400+", "group": "Pyroar", "hp": 391855 },
-  { "name": "Simisear", "types": ["fire"], "hunt": "400+", "group": "Simisear" },
-  { "name": "Turtonator", "types": ["fire", "dragon"], "hunt": "400+", "group": "Turtonator" },
-  { "name": "Chandelure", "types": ["ghost", "fire"], "hunt": "400+", "group": "Chandelure" },
-  { "name": "Houndoom", "types": ["dark", "fire"], "hunt": "400+", "group": "Houndoom", "hp": 391590 },
-  { "name": "Pinsir", "types": ["bug"], "hunt": "400+", "group": "Pinsir", "hp": 465400 },
-  { "name": "Machamp", "types": ["fighting"], "hunt": "400+", "group": "Machamp", "hp": 462060 },
-
-  { "name": "Alolan Persian", "types": ["dark"], "hunt": "400+", "group": "Alolan Persian", "hp": 448152 },
-  { "name": "Alolan Muk", "types": ["poison", "dark"], "hunt": "400+", "group": "Alolan Muk" },
-
-  { "name": "Goodra", "types": ["dragon"], "hunt": "400+", "group": "Goodra" },
-  { "name": "Eelektross", "types": ["electric"], "hunt": "400+", "group": "Eelektross", "hp": 519739 },
-  { "name": "Rampardos", "types": ["rock"], "hunt": "400+", "group": "Rampardos/Sudowoodo" },
-  { "name": "Sudowoodo", "types": ["rock"], "hunt": "400+", "group": "Rampardos/Sudowoodo" },
-  { "name": "Gogoat", "types": ["grass"], "hunt": "400+", "group": "Gogoat", "hp": 463891 },
-  { "name": "Alolan Raichu", "types": ["electric", "psychic"], "hunt": "400+", "group": "Alolan Raichu" },
-
-  { "name": "Flapple", "types": ["grass", "dragon"], "hunt": "400+", "group": "Flapple" },
-  { "name": "Appletun", "types": ["grass", "dragon"], "hunt": "400+", "group": "Appletun" },
-
-  { "name": "Druddigon", "types": ["dragon"], "hunt": "400+", "group": "Druddigon" },
-  { "name": "Drampa", "types": ["normal", "dragon"], "hunt": "400+", "group": "Drampa", "hp": 420095 },
-
-  { "name": "Muk", "types": ["poison"], "hunt": "400+", "group": "Muk/Seviper" },
-  { "name": "Seviper", "types": ["poison"], "hunt": "400+", "group": "Muk/Seviper" }
+  {
+    "name": "Espurr",
+    "types": [
+      "psychic"
+    ],
+    "hunt": "300",
+    "group": "Espurr",
+    "defFactor": 0.92
+  },
+  {
+    "name": "Pansear",
+    "types": [
+      "fire"
+    ],
+    "hunt": "300",
+    "group": "Magby/Pansear",
+    "defFactor": 0.9
+  },
+  {
+    "name": "Magby",
+    "types": [
+      "fire"
+    ],
+    "hunt": "300",
+    "group": "Magby/Pansear",
+    "defFactor": 0.88
+  },
+  {
+    "name": "Dratini",
+    "types": [
+      "dragon"
+    ],
+    "hunt": "300",
+    "group": "Dratini/Dragonair",
+    "hp": 191610,
+    "defFactor": 0.8
+  },
+  {
+    "name": "Dragonair",
+    "types": [
+      "dragon"
+    ],
+    "hunt": "300",
+    "group": "Dratini/Dragonair",
+    "hp": 163115,
+    "defFactor": 0.68
+  },
+  {
+    "name": "Bagon",
+    "types": [
+      "dragon"
+    ],
+    "hunt": "300",
+    "group": "Bagon/Shelgon",
+    "hp": 192055,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Shelgon",
+    "types": [
+      "dragon"
+    ],
+    "hunt": "300",
+    "group": "Bagon/Shelgon",
+    "hp": 154350,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Gible",
+    "types": [
+      "dragon",
+      "ground"
+    ],
+    "hunt": "300",
+    "group": "Gible/Gabite",
+    "hp": 191610,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Gabite",
+    "types": [
+      "dragon",
+      "ground"
+    ],
+    "hunt": "300",
+    "group": "Gible/Gabite",
+    "hp": 167407,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Spoink",
+    "types": [
+      "psychic"
+    ],
+    "hunt": "300",
+    "group": "Spoink",
+    "hp": 217021,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Alolan Diglett",
+    "types": [
+      "ground",
+      "steel"
+    ],
+    "hunt": "300",
+    "group": "Alolan Diglett",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Alolan Meowth",
+    "types": [
+      "dark"
+    ],
+    "hunt": "300",
+    "group": "Alolan Meowth",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Grimer",
+    "types": [
+      "poison"
+    ],
+    "hunt": "300",
+    "group": "Grimer",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Mega Beedrill",
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "hunt": "300",
+    "group": "Mega Beedrill/Beedrill",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Beedrill",
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "hunt": "300",
+    "group": "Mega Beedrill/Beedrill",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Silicobra",
+    "types": [
+      "ground"
+    ],
+    "hunt": "300",
+    "group": "Silicobra",
+    "hp": 184696,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Galarian Farfetch'd",
+    "types": [
+      "fighting"
+    ],
+    "hunt": "300",
+    "group": "Galarian Farfetch'd",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Lunatone",
+    "types": [
+      "rock",
+      "psychic"
+    ],
+    "hunt": "300",
+    "group": "Lunatone/Solrock",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Solrock",
+    "types": [
+      "rock",
+      "psychic"
+    ],
+    "hunt": "300",
+    "group": "Lunatone/Solrock",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Rockruff",
+    "types": [
+      "rock"
+    ],
+    "hunt": "300",
+    "group": "Rockruff",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Mantyke",
+    "types": [
+      "water",
+      "flying"
+    ],
+    "hunt": "300",
+    "group": "Mantyke",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Galarian Darumaka",
+    "types": [
+      "ice"
+    ],
+    "hunt": "300",
+    "group": "Galarian Darumaka",
+    "hp": 177632,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Farfetch'd",
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "hunt": "300",
+    "group": "Farfetch'd",
+    "hp": 177174,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Klink",
+    "types": [
+      "steel"
+    ],
+    "hunt": "300",
+    "group": "Klink/Klang",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Klang",
+    "types": [
+      "steel"
+    ],
+    "hunt": "300",
+    "group": "Klink/Klang",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Galarian Meowth",
+    "types": [
+      "steel"
+    ],
+    "hunt": "300",
+    "group": "Galarian Meowth",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Carvanha",
+    "types": [
+      "water",
+      "dark"
+    ],
+    "hunt": "300",
+    "group": "Carvanha",
+    "hp": 199800,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Barboach",
+    "types": [
+      "water",
+      "ground"
+    ],
+    "hunt": "300",
+    "group": "Barboach",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Rufflet",
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "hunt": "300",
+    "group": "Rufflet",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Machoke",
+    "types": [
+      "fighting"
+    ],
+    "hunt": "300",
+    "group": "Machoke",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Sneasel",
+    "types": [
+      "dark",
+      "ice"
+    ],
+    "hunt": "300",
+    "group": "Sneasel",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Cloyster",
+    "types": [
+      "water",
+      "ice"
+    ],
+    "hunt": "300",
+    "group": "Cloyster",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Snorunt",
+    "types": [
+      "ice"
+    ],
+    "hunt": "300",
+    "group": "Snorunt",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Snubbull",
+    "types": [
+      "fairy"
+    ],
+    "hunt": "300",
+    "group": "Snubbull",
+    "hp": 211296,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Shuppet",
+    "types": [
+      "ghost"
+    ],
+    "hunt": "300",
+    "group": "Shuppet",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Darkrai Minion",
+    "types": [
+      "dark"
+    ],
+    "hunt": "300",
+    "group": "Darkrai Minion",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Lampent",
+    "types": [
+      "ghost",
+      "fire"
+    ],
+    "hunt": "300",
+    "group": "Lampent/Litwick",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Litwick",
+    "types": [
+      "ghost",
+      "fire"
+    ],
+    "hunt": "300",
+    "group": "Lampent/Litwick",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Goomy",
+    "types": [
+      "dragon"
+    ],
+    "hunt": "300",
+    "group": "Goomy/Sliggoo",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Sliggoo",
+    "types": [
+      "dragon"
+    ],
+    "hunt": "300",
+    "group": "Goomy/Sliggoo",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Whirlipede",
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "hunt": "300",
+    "group": "Whirlipede/Venipede",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Venipede",
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "hunt": "300",
+    "group": "Whirlipede/Venipede",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Litleo",
+    "types": [
+      "fire",
+      "normal"
+    ],
+    "hunt": "300",
+    "group": "Litleo",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Cranidos",
+    "types": [
+      "rock"
+    ],
+    "hunt": "300",
+    "group": "Cranidos",
+    "hp": 216472,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Elekid",
+    "types": [
+      "electric"
+    ],
+    "hunt": "300",
+    "group": "Elekid",
+    "hp": 209984,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Tynamo",
+    "types": [
+      "electric"
+    ],
+    "hunt": "300",
+    "group": "Tynamo/Eelektrik",
+    "hp": 239169,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Eelektrik",
+    "types": [
+      "electric"
+    ],
+    "hunt": "300",
+    "group": "Tynamo/Eelektrik",
+    "hp": 203680,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Petilil",
+    "types": [
+      "grass"
+    ],
+    "hunt": "300",
+    "group": "Petilil",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Skiddo",
+    "types": [
+      "grass"
+    ],
+    "hunt": "300",
+    "group": "Skiddo/Nuzleaf",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Nuzleaf",
+    "types": [
+      "grass",
+      "dark"
+    ],
+    "hunt": "300",
+    "group": "Skiddo/Nuzleaf",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Ralts",
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "hunt": "300",
+    "group": "Ralts/Kirlia",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Kirlia",
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "hunt": "300",
+    "group": "Ralts/Kirlia",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Applin",
+    "types": [
+      "grass",
+      "dragon"
+    ],
+    "hunt": "300",
+    "group": "Applin",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Meowstic",
+    "types": [
+      "psychic"
+    ],
+    "hunt": "400+",
+    "group": "Meowstic",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Wormadam",
+    "types": [
+      "bug",
+      "grass"
+    ],
+    "hunt": "400+",
+    "group": "Wormadam",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Sirfetch'd",
+    "types": [
+      "fighting"
+    ],
+    "hunt": "400+",
+    "group": "Sirfetch'd",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Lycanroc",
+    "types": [
+      "rock"
+    ],
+    "hunt": "400+",
+    "group": "Lycanroc",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Mantine",
+    "types": [
+      "water",
+      "flying"
+    ],
+    "hunt": "400+",
+    "group": "Mantine",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Galarian Darmanitan",
+    "types": [
+      "ice"
+    ],
+    "hunt": "400+",
+    "group": "Galarian Darmanitan",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Klinklang",
+    "types": [
+      "steel"
+    ],
+    "hunt": "400+",
+    "group": "Klinklang",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Mecha Meganium",
+    "types": [],
+    "hunt": "400+",
+    "group": "Mechas",
+    "hp": 341730,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Mecha Venusaur",
+    "types": [],
+    "hunt": "400+",
+    "group": "Mechas",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Mecha Feraligatr",
+    "types": [],
+    "hunt": "400+",
+    "group": "Mechas",
+    "hp": 321676,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Mecha Blastoise",
+    "types": [],
+    "hunt": "400+",
+    "group": "Mechas",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Mecha Typhlosion",
+    "types": [],
+    "hunt": "400+",
+    "group": "Mechas",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Mecha Charizard",
+    "types": [],
+    "hunt": "400+",
+    "group": "Mechas",
+    "hp": 316842,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Braviary",
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "hunt": "400+",
+    "group": "Braviary",
+    "hp": 455650,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Pidgeot",
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "hunt": "400+",
+    "group": "Pidgeot",
+    "hp": 468889,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Perrserker",
+    "types": [
+      "steel"
+    ],
+    "hunt": "400+",
+    "group": "Perrserker",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Weavile",
+    "types": [
+      "dark",
+      "ice"
+    ],
+    "hunt": "400+",
+    "group": "Weavile",
+    "hp": 543200,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Garchomp",
+    "types": [
+      "dragon",
+      "ground"
+    ],
+    "hunt": "400+",
+    "group": "Garchomp/Dragonite",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Dragonite",
+    "types": [
+      "dragon",
+      "flying"
+    ],
+    "hunt": "400+",
+    "group": "Garchomp/Dragonite",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Hawlucha",
+    "types": [
+      "fighting",
+      "flying"
+    ],
+    "hunt": "400+",
+    "group": "Hawlucha",
+    "hp": 399075,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Granbull",
+    "types": [
+      "fairy"
+    ],
+    "hunt": "400+",
+    "group": "Granbull",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Gallade",
+    "types": [
+      "psychic",
+      "fighting"
+    ],
+    "hunt": "400+",
+    "group": "Gallade",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Honchkrow",
+    "types": [
+      "dark",
+      "flying"
+    ],
+    "hunt": "400+",
+    "group": "Honchkrow",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Empoleon",
+    "types": [
+      "water",
+      "steel"
+    ],
+    "hunt": "400+",
+    "group": "Empoleon",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Infernape",
+    "types": [
+      "fire",
+      "fighting"
+    ],
+    "hunt": "400+",
+    "group": "Infernape",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Torterra",
+    "types": [
+      "grass",
+      "ground"
+    ],
+    "hunt": "400+",
+    "group": "Torterra",
+    "hp": 506520,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Luxray",
+    "types": [
+      "electric"
+    ],
+    "hunt": "400+",
+    "group": "Luxray",
+    "hp": 489684,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Raichu",
+    "types": [
+      "electric"
+    ],
+    "hunt": "400+",
+    "group": "Raichu/Manectric",
+    "hp": 552047,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Manectric",
+    "types": [
+      "electric"
+    ],
+    "hunt": "400+",
+    "group": "Raichu/Manectric",
+    "hp": 511407,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Sandaconda",
+    "types": [
+      "ground"
+    ],
+    "hunt": "400+",
+    "group": "Sandaconda",
+    "hp": 440100,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Scolipede",
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "hunt": "400+",
+    "group": "Scolipede",
+    "hp": 454843,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Torkoal",
+    "types": [
+      "fire"
+    ],
+    "hunt": "400+",
+    "group": "Torkoal",
+    "hp": 439109,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Glalie",
+    "types": [
+      "ice"
+    ],
+    "hunt": "400+",
+    "group": "Glalie",
+    "hp": 455700,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Sharpedo",
+    "types": [
+      "water",
+      "dark"
+    ],
+    "hunt": "400+",
+    "group": "Sharpedo",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Starmie",
+    "types": [
+      "water",
+      "psychic"
+    ],
+    "hunt": "400+",
+    "group": "Starmie",
+    "hp": 505974,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Whiscash",
+    "types": [
+      "water",
+      "ground"
+    ],
+    "hunt": "400+",
+    "group": "Whiscash",
+    "hp": 495711,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Pyroar Female",
+    "types": [
+      "fire",
+      "normal"
+    ],
+    "hunt": "400+",
+    "group": "Pyroar Female",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Pyroar",
+    "types": [
+      "fire",
+      "normal"
+    ],
+    "hunt": "400+",
+    "group": "Pyroar",
+    "hp": 391855,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Simisear",
+    "types": [
+      "fire"
+    ],
+    "hunt": "400+",
+    "group": "Simisear",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Turtonator",
+    "types": [
+      "fire",
+      "dragon"
+    ],
+    "hunt": "400+",
+    "group": "Turtonator",
+    "hp": 364798,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Chandelure",
+    "types": [
+      "ghost",
+      "fire"
+    ],
+    "hunt": "400+",
+    "group": "Chandelure",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Houndoom",
+    "types": [
+      "dark",
+      "fire"
+    ],
+    "hunt": "400+",
+    "group": "Houndoom",
+    "hp": 391590,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Pinsir",
+    "types": [
+      "bug"
+    ],
+    "hunt": "400+",
+    "group": "Pinsir",
+    "hp": 465400,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Machamp",
+    "types": [
+      "fighting"
+    ],
+    "hunt": "400+",
+    "group": "Machamp",
+    "hp": 462060,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Alolan Persian",
+    "types": [
+      "dark"
+    ],
+    "hunt": "400+",
+    "group": "Alolan Persian",
+    "hp": 448152,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Alolan Muk",
+    "types": [
+      "poison",
+      "dark"
+    ],
+    "hunt": "400+",
+    "group": "Alolan Muk",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Goodra",
+    "types": [
+      "dragon"
+    ],
+    "hunt": "400+",
+    "group": "Goodra",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Eelektross",
+    "types": [
+      "electric"
+    ],
+    "hunt": "400+",
+    "group": "Eelektross",
+    "hp": 519739,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Rampardos",
+    "types": [
+      "rock"
+    ],
+    "hunt": "400+",
+    "group": "Rampardos/Sudowoodo",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Sudowoodo",
+    "types": [
+      "rock"
+    ],
+    "hunt": "400+",
+    "group": "Rampardos/Sudowoodo",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Gogoat",
+    "types": [
+      "grass"
+    ],
+    "hunt": "400+",
+    "group": "Gogoat",
+    "hp": 463891,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Alolan Raichu",
+    "types": [
+      "electric",
+      "psychic"
+    ],
+    "hunt": "400+",
+    "group": "Alolan Raichu",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Flapple",
+    "types": [
+      "grass",
+      "dragon"
+    ],
+    "hunt": "400+",
+    "group": "Flapple",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Appletun",
+    "types": [
+      "grass",
+      "dragon"
+    ],
+    "hunt": "400+",
+    "group": "Appletun",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Druddigon",
+    "types": [
+      "dragon"
+    ],
+    "hunt": "400+",
+    "group": "Druddigon",
+    "hp": 504025,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Drampa",
+    "types": [
+      "normal",
+      "dragon"
+    ],
+    "hunt": "400+",
+    "group": "Drampa",
+    "hp": 420095,
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Muk",
+    "types": [
+      "poison"
+    ],
+    "hunt": "400+",
+    "group": "Muk/Seviper",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Seviper",
+    "types": [
+      "poison"
+    ],
+    "hunt": "400+",
+    "group": "Muk/Seviper",
+    "todo": "calibrate defense"
+  }
 ]

@@ -1,5 +1,13 @@
-import type { DamageConfig, Skill } from "../types";
+import type { DamageConfig, Pokemon, Skill } from "../types";
 import { computeSkillDamage, deriveSkillPower } from "./damage";
+
+const shinyRampardos: Pokemon = {
+  id: "shiny-rampardos",
+  name: "Shiny Rampardos",
+  tier: "T1H",
+  role: "burst_dd",
+  skills: [],
+};
 
 /**
  * Validação contra dados reais medidos em combate.
@@ -47,8 +55,8 @@ console.log(`Derived skill_power (Sh.Ramp RW): ${derivedPower.toFixed(3)}`);
 // Esperado: ~26.07
 
 // Step 2: predict char 2 using derived power
-cfgChar2NoClan.skillCalibrations["shiny-rampardos:Rock Wrecker"] = derivedPower;
-const predictedChar2 = computeSkillDamage(cfgChar2NoClan, "shiny-rampardos", rockWrecker);
+const rockWreckerCal: Skill = { ...rockWrecker, power: derivedPower };
+const predictedChar2 = computeSkillDamage(cfgChar2NoClan, shinyRampardos, rockWreckerCal);
 const observedChar2 = 28185;
 const errChar2 = Math.abs(predictedChar2 - observedChar2) / observedChar2;
 console.log(`Sh.Ramp RW char 2: predito ${predictedChar2.toFixed(0)}, obs ${observedChar2}, err ${(errChar2 * 100).toFixed(2)}%`);
@@ -62,7 +70,7 @@ const cfgWithDevice: DamageConfig = {
   },
   skillCalibrations: { "shiny-rampardos:Rock Wrecker": derivedPower },
 };
-const predictedDevice = computeSkillDamage(cfgWithDevice, "shiny-rampardos", rockWrecker);
+const predictedDevice = computeSkillDamage(cfgWithDevice, shinyRampardos, rockWreckerCal);
 const observedDevice = 29148;
 const errDevice = Math.abs(predictedDevice - observedDevice) / observedDevice;
 console.log(`Sh.Ramp RW com device: predito ${predictedDevice.toFixed(0)}, obs ${observedDevice}, err ${(errDevice * 100).toFixed(2)}%`);
@@ -73,7 +81,7 @@ const cfgFireMob: DamageConfig = {
   mob: { name: "fire dummy", types: ["fire"], hp: 0, defFactor: 1 },
   skillCalibrations: { "shiny-rampardos:Rock Wrecker": derivedPower },
 };
-const predictedFire = computeSkillDamage(cfgFireMob, "shiny-rampardos", rockWrecker);
+const predictedFire = computeSkillDamage(cfgFireMob, shinyRampardos, rockWreckerCal);
 const observedFire = 50778;
 const errFire = Math.abs(predictedFire - observedFire) / observedFire;
 console.log(`Sh.Ramp RW em fire dummy: predito ${predictedFire.toFixed(0)}, obs ${observedFire}, err ${(errFire * 100).toFixed(2)}%`);
@@ -84,7 +92,7 @@ const cfgPansear: DamageConfig = {
   mob: { name: "Pansear", types: ["fire"], hp: 0, defFactor: 0.8996 },
   skillCalibrations: { "shiny-rampardos:Rock Wrecker": derivedPower },
 };
-const predictedPansear = computeSkillDamage(cfgPansear, "shiny-rampardos", rockWrecker);
+const predictedPansear = computeSkillDamage(cfgPansear, shinyRampardos, rockWreckerCal);
 const observedPansear = 45677;
 const errPansear = Math.abs(predictedPansear - observedPansear) / observedPansear;
 console.log(`Sh.Ramp RW em Pansear: predito ${predictedPansear.toFixed(0)}, obs ${observedPansear}, err ${(errPansear * 100).toFixed(2)}%`);
@@ -94,7 +102,7 @@ const cfgPansearDevice: DamageConfig = {
   ...cfgPansear,
   pokeSetups: { "shiny-rampardos": { boost: 70, held: { kind: "x-attack", tier: 7 }, hasDevice: true } },
 };
-const predictedPansearDevice = computeSkillDamage(cfgPansearDevice, "shiny-rampardos", rockWrecker);
+const predictedPansearDevice = computeSkillDamage(cfgPansearDevice, shinyRampardos, rockWreckerCal);
 const observedPansearDevice = 52476;
 const errPansearDevice = Math.abs(predictedPansearDevice - observedPansearDevice) / observedPansearDevice;
 console.log(`Sh.Ramp RW em Pansear + device: predito ${predictedPansearDevice.toFixed(0)}, obs ${observedPansearDevice}, err ${(errPansearDevice * 100).toFixed(2)}%`);

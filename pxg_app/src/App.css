@@ -99,35 +99,41 @@
 }
 
 .type-chip:hover {
-  background: #1a2a4a;
-  border-color: #4a90d9;
+  filter: brightness(1.15);
 }
 
 .type-chip.active {
   background: #4a90d9;
   color: #fff;
-  border-color: #4a90d9;
+  border-color: #fff;
+  box-shadow: 0 0 0 2px #fff;
 }
 
-/* Cores por tipo */
-.type-chip.type-fire.active { background: #f08030; border-color: #f08030; }
-.type-chip.type-water.active { background: #6890f0; border-color: #6890f0; }
-.type-chip.type-grass.active { background: #78c850; border-color: #78c850; }
-.type-chip.type-electric.active { background: #f8d030; border-color: #f8d030; color: #222; }
-.type-chip.type-ice.active { background: #98d8d8; border-color: #98d8d8; color: #222; }
-.type-chip.type-fighting.active { background: #c03028; border-color: #c03028; }
-.type-chip.type-poison.active { background: #a040a0; border-color: #a040a0; }
-.type-chip.type-ground.active { background: #e0c068; border-color: #e0c068; color: #222; }
-.type-chip.type-flying.active { background: #a890f0; border-color: #a890f0; }
-.type-chip.type-psychic.active { background: #f85888; border-color: #f85888; }
-.type-chip.type-bug.active { background: #a8b820; border-color: #a8b820; }
-.type-chip.type-rock.active { background: #b8a038; border-color: #b8a038; }
-.type-chip.type-ghost.active { background: #705898; border-color: #705898; }
-.type-chip.type-dragon.active { background: #7038f8; border-color: #7038f8; }
-.type-chip.type-dark.active { background: #705848; border-color: #705848; }
-.type-chip.type-steel.active { background: #b8b8d0; border-color: #b8b8d0; color: #222; }
-.type-chip.type-fairy.active { background: #ee99ac; border-color: #ee99ac; color: #222; }
-.type-chip.type-normal.active { background: #a8a878; border-color: #a8a878; }
+/* Cores por tipo (sempre coloridas, não só quando active) */
+.type-chip.type-fire { background: #f08030; border-color: #f08030; color: #fff; }
+.type-chip.type-water { background: #6890f0; border-color: #6890f0; color: #fff; }
+.type-chip.type-grass { background: #78c850; border-color: #78c850; color: #fff; }
+.type-chip.type-electric { background: #f8d030; border-color: #f8d030; color: #222; }
+.type-chip.type-ice { background: #98d8d8; border-color: #98d8d8; color: #222; }
+.type-chip.type-fighting { background: #c03028; border-color: #c03028; color: #fff; }
+.type-chip.type-poison { background: #a040a0; border-color: #a040a0; color: #fff; }
+.type-chip.type-ground { background: #e0c068; border-color: #e0c068; color: #222; }
+.type-chip.type-flying { background: #a890f0; border-color: #a890f0; color: #fff; }
+.type-chip.type-psychic { background: #f85888; border-color: #f85888; color: #fff; }
+.type-chip.type-bug { background: #a8b820; border-color: #a8b820; color: #fff; }
+.type-chip.type-rock { background: #b8a038; border-color: #b8a038; color: #fff; }
+.type-chip.type-ghost { background: #705898; border-color: #705898; color: #fff; }
+.type-chip.type-dragon { background: #7038f8; border-color: #7038f8; color: #fff; }
+.type-chip.type-dark { background: #705848; border-color: #705848; color: #fff; }
+.type-chip.type-steel { background: #b8b8d0; border-color: #b8b8d0; color: #222; }
+.type-chip.type-fairy { background: #ee99ac; border-color: #ee99ac; color: #222; }
+.type-chip.type-normal { background: #a8a878; border-color: #a8a878; color: #fff; }
+
+/* Quando active, destaca com anel branco ao redor */
+.type-chip[class*="type-"].active {
+  box-shadow: 0 0 0 2px #fff;
+  border-color: #fff;
+}
 
 /* ===== Pokemon Card ===== */
 .pokemon-card {
@@ -172,6 +178,17 @@
   padding: 2px 6px;
   border-radius: 4px;
   color: #1a1a2e;
+}
+
+.calibration-warning {
+  font-size: 0.8rem;
+  margin-left: auto;
+  margin-right: 6px;
+  cursor: help;
+  opacity: 0.85;
+}
+.calibration-warning:hover {
+  opacity: 1;
 }
 
 .card-meta {

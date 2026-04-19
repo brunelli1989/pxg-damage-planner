@@ -1335,7 +1335,7 @@
   },
   {
     "id": "mega-altaria",
-    "name": "TM Mega Altaria",
+    "name": "TM Mega Altaria Fairy",
     "tier": "TM",
     "clans": [
       "psycraft"
@@ -2017,6 +2017,28 @@
     "role": "burst_dd",
     "elements": [
       "ghost"
+    ]
+  },
+  {
+    "id": "mega-altaria-dragon",
+    "name": "TM Mega Altaria Dragon",
+    "tier": "TM",
+    "clans": [],
+    "role": "burst_dd",
+    "elements": [
+      "dragon",
+      "fairy"
+    ]
+  },
+  {
+    "id": "mega-altaria-base",
+    "name": "Mega Altaria",
+    "tier": "T1H",
+    "clans": [],
+    "role": "burst_dd",
+    "elements": [
+      "fairy",
+      "dragon"
     ]
   }
 ]

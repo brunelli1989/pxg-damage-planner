@@ -10,10 +10,18 @@ import type {
 } from "../types";
 import clansData from "../data/clans.json";
 import mobsData from "../data/mobs.json";
+import { DEFAULT_MOB_DEF_FACTOR } from "../engine/damage";
 
 const mobs = mobsData as MobEntry[];
 
 const TIERS: XAtkTier[] = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+
+function mobMarker(mobs: MobEntry[]): string {
+  const measured = mobs.filter((m) => m.defFactor !== undefined).length;
+  if (measured === mobs.length) return " ✓";
+  if (measured === 0) return " ⚠️";
+  return " ⚠️✓";
+}
 
 interface Props {
   config: DamageConfig;
@@ -82,7 +90,7 @@ export function DamageConfigPanel({
   const maxHpInGroup = selectedGroupMobs.reduce((max, m) => Math.max(max, m.hp ?? 0), 0);
   const maxHpMob = selectedGroupMobs.find((m) => m.hp === maxHpInGroup);
 
-  const mobDisplay = (m: MobEntry) => `${m.name} (${m.types.join("/")})${m.defFactor !== undefined ? " ✓" : ""}`;
+  const mobDisplay = (m: MobEntry) => `${m.name} (${m.types.join("/")})${mobMarker([m])}`;
 
   return (
     <section className="damage-config">
@@ -137,11 +145,9 @@ export function DamageConfigPanel({
             {Object.entries(groupedMobs).map(([groupName, groupMobs]) => {
               if (groupMobs.length > 1) {
                 const allTypes = [...new Set(groupMobs.flatMap((m) => m.types))];
-                const hasMeasured = groupMobs.some((m) => m.defFactor !== undefined);
                 return (
                   <option key={groupName} value={groupName}>
-                    {groupName} ({allTypes.join("/")})
-                    {hasMeasured ? " ✓" : ""}
+                    {groupName} ({allTypes.join("/")}){mobMarker(groupMobs)}
                   </option>
                 );
               }
@@ -155,6 +161,17 @@ export function DamageConfigPanel({
           </select>
           <span className="hint">
             Tipo 1: <strong>{type1}</strong> | Tipo 2: <strong>{type2}</strong>
+            {config.mob.defFactor === undefined && (
+              <span
+                className="calibration-warning"
+                title={`A defesa real deste mob ainda não foi medida. Estou usando uma estimativa média (${DEFAULT_MOB_DEF_FACTOR}) dos mobs já testados.`}
+              >
+                ⚠️ defesa aproximada
+              </span>
+            )}
+          </span>
+          <span className="hint legend">
+            Legenda: <strong>✓</strong> = defesa medida no jogo · <strong>⚠️</strong> = defesa estimada (dano pode variar)
           </span>
         </label>
 
