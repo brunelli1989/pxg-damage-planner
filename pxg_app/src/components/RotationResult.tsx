@@ -13,13 +13,18 @@ function formatTime(seconds: number): string {
 
 function lureFinisherLabel(lure: Lure): string {
   if (lure.usesDevice) return "Device";
-  if (lure.usesElixirAtk) return "Elixir Atk";
+  if (lure.usesElixirAtk) return lure.type === "solo_elixir" ? "Elixir Atk" : "+ Elixir Atk";
+  if (lure.type === "group") {
+    const count = 2 + lure.extraMembers.length; // starter + second + extras
+    return `Group (${count})`;
+  }
   return "Dupla";
 }
 
 function lureFinisherClass(lure: Lure): string {
   if (lure.usesDevice) return "device";
   if (lure.usesElixirAtk) return "elixir";
+  if (lure.type === "group") return "group";
   return "dupla";
 }
 
@@ -66,6 +71,15 @@ export function RotationResultView({ result }: Props) {
                       </span>
                     </>
                   )}
+                  {lure.extraMembers.map((m) => (
+                    <span key={m.poke.id}>
+                      <span className="step-plus">+</span>
+                      <span className="step-pokemon">{m.poke.name}</span>
+                      <span className={`step-tier tier-${m.poke.tier.toLowerCase()}`}>
+                        {m.poke.tier}
+                      </span>
+                    </span>
+                  ))}
                   <span className={`step-finish ${lureFinisherClass(lure)}`}>
                     {lureFinisherLabel(lure)}
                   </span>
@@ -98,6 +112,17 @@ export function RotationResultView({ result }: Props) {
                       ))}
                     </span>
                   )}
+                  {lure.extraMembers.map((m) => (
+                    <span key={m.poke.id} className="step-skills-group">
+                      <span className="group-label">{m.poke.name}:</span>
+                      {m.skills.map((skill, j) => (
+                        <span key={skill.name} className="step-skill-item">
+                          {j > 0 && <span className="skill-arrow">→</span>}
+                          <SkillBadge skill={skill} compact />
+                        </span>
+                      ))}
+                    </span>
+                  ))}
                 </div>
 
                 <div className="step-timing">

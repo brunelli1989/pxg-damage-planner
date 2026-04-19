@@ -108,7 +108,8 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "normal"
+        "element": "normal",
+        "def": true
       },
       {
         "name": "Rollout",
@@ -329,7 +330,8 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "normal"
+        "element": "normal",
+        "def": true
       },
       {
         "name": "Rollout",
@@ -389,7 +391,8 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "normal"
+        "element": "normal",
+        "def": true
       },
       {
         "name": "Rollout",
@@ -560,6 +563,15 @@
         "cc": null,
         "buff": null,
         "element": "rock"
+      },
+      {
+        "name": "Ancient Armor",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "def": true,
+        "element": "normal"
       }
     ]
   },
@@ -605,6 +617,15 @@
         "buff": null,
         "element": "ground",
         "power": 22.3
+      },
+      {
+        "name": "Harden",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "def": true,
+        "element": "normal"
       }
     ]
   },
@@ -630,7 +651,8 @@
         "type": "area",
         "cc": null,
         "buff": "next",
-        "element": "poison"
+        "element": "poison",
+        "def": true
       },
       {
         "name": "Earth Power",
@@ -1277,10 +1299,19 @@
       {
         "name": "Fire Punch",
         "cooldown": 20,
-        "type": "frontal",
+        "type": "area",
         "cc": null,
         "buff": null,
         "element": "fire"
+      },
+      {
+        "name": "Spectral Shield",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "def": true,
+        "element": "ghost"
       }
     ]
   },
@@ -1306,7 +1337,8 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "normal"
+        "element": "normal",
+        "def": true
       },
       {
         "name": "Hellfire Storm",
@@ -1336,15 +1368,24 @@
     "skills": [
       {
         "name": "Burn Up",
-        "cooldown": 50,
+        "cooldown": 40,
         "type": "area",
         "cc": "stun",
         "buff": null,
         "element": "fire"
       },
       {
+        "name": "Intimidate",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "def": true,
+        "element": "normal"
+      },
+      {
         "name": "Flare Blitz",
-        "cooldown": 60,
+        "cooldown": 50,
         "type": "area",
         "cc": null,
         "buff": null,
@@ -1352,7 +1393,7 @@
       },
       {
         "name": "Hellfire Storm",
-        "cooldown": 60,
+        "cooldown": 50,
         "type": "area",
         "cc": null,
         "buff": null,
@@ -1548,6 +1589,56 @@
       {
         "name": "Fire Ball",
         "cooldown": 25,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      }
+    ]
+  },
+  {
+    "id": "shiny-ninetales",
+    "name": "Shiny Ninetales",
+    "tier": "T1C",
+    "role": "burst_dd",
+    "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Ninetales",
+    "todo": "calibrate skills",
+    "skills": [
+      {
+        "name": "Inferno",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Fire Blast",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Fire Spin",
+        "cooldown": 35,
+        "type": "frontal",
+        "cc": "stun",
+        "buff": null,
+        "element": "fire"
+      },
+      {
+        "name": "Flame Wheel",
+        "cooldown": 35,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "fire"
+      },
+      {
+        "name": "Fire Ball",
+        "cooldown": 20,
         "type": "area",
         "cc": null,
         "buff": null,
@@ -1823,7 +1914,8 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "electric"
+        "element": "electric",
+        "def": true
       }
     ]
   },
@@ -2219,7 +2311,8 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "grass"
+        "element": "grass",
+        "def": true
       },
       {
         "name": "Petal Blizzard",
@@ -2269,12 +2362,13 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "fighting"
+        "element": "fighting",
+        "def": true
       },
       {
         "name": "Horn Leech",
         "cooldown": 50,
-        "type": "frontal",
+        "type": "area",
         "cc": "stun",
         "buff": null,
         "element": "grass"
@@ -2319,6 +2413,15 @@
         "type": "area",
         "cc": null,
         "buff": null,
+        "element": "grass"
+      },
+      {
+        "name": "Leaf Guard",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "def": true,
         "element": "grass"
       }
     ]
@@ -2739,7 +2842,8 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "bug"
+        "element": "bug",
+        "def": true
       },
       {
         "name": "Bee Swarm",
@@ -2781,7 +2885,8 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "poison"
+        "element": "poison",
+        "def": true
       },
       {
         "name": "Bug Shuriken",
@@ -3234,6 +3339,15 @@
         "cc": null,
         "buff": null,
         "element": "fighting"
+      },
+      {
+        "name": "Mind Reader",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "def": true,
+        "element": "normal"
       }
     ]
   },
@@ -3276,6 +3390,15 @@
         "cc": null,
         "buff": null,
         "element": "fighting"
+      },
+      {
+        "name": "Charm",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "def": true,
+        "element": "fairy"
       }
     ]
   },
@@ -3317,6 +3440,15 @@
         "type": "area",
         "cc": null,
         "buff": null,
+        "element": "fighting"
+      },
+      {
+        "name": "Bulk Up",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "def": true,
         "element": "fighting"
       }
     ]
@@ -3791,6 +3923,15 @@
         "cc": null,
         "buff": null,
         "element": "steel"
+      },
+      {
+        "name": "Iron Defense",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "def": true,
+        "element": "steel"
       }
     ]
   },
@@ -3833,6 +3974,15 @@
         "cc": null,
         "buff": null,
         "element": "steel"
+      },
+      {
+        "name": "Harden",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "def": true,
+        "element": "normal"
       }
     ]
   },
@@ -3874,6 +4024,15 @@
         "type": "area",
         "cc": null,
         "buff": null,
+        "element": "steel"
+      },
+      {
+        "name": "Shift Gear",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "def": true,
         "element": "steel"
       }
     ]
@@ -4329,6 +4488,15 @@
         "cc": null,
         "buff": null,
         "element": "flying"
+      },
+      {
+        "name": "Confide",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "def": true,
+        "element": "normal"
       }
     ]
   },
@@ -4605,6 +4773,15 @@
     "todo": "calibrate skills",
     "skills": [
       {
+        "name": "Defense Curl",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "def": true,
+        "element": "normal"
+      },
+      {
         "name": "Dragon Blast",
         "cooldown": 40,
         "type": "area",
@@ -4691,9 +4868,18 @@
       {
         "name": "Scale Shot",
         "cooldown": 15,
-        "type": "frontal",
+        "type": "area",
         "cc": null,
         "buff": null,
+        "element": "dragon"
+      },
+      {
+        "name": "Inner Focus",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "def": true,
         "element": "dragon"
       }
     ]
@@ -4998,7 +5184,8 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "grass"
+        "element": "grass",
+        "def": true
       }
     ]
   },
@@ -5033,6 +5220,15 @@
         "cc": null,
         "buff": null,
         "element": "fairy"
+      },
+      {
+        "name": "Flower Shield",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "def": true,
+        "element": "normal"
       }
     ]
   },
@@ -5074,6 +5270,15 @@
         "type": "area",
         "cc": null,
         "buff": null,
+        "element": "fairy"
+      },
+      {
+        "name": "Charm",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "def": true,
         "element": "fairy"
       }
     ]
@@ -5310,7 +5515,8 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "psychic"
+        "element": "psychic",
+        "def": true
       },
       {
         "name": "Stunning Confusion",
@@ -5369,6 +5575,15 @@
         "cc": null,
         "buff": null,
         "element": "psychic"
+      },
+      {
+        "name": "Charm",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "def": true,
+        "element": "fairy"
       }
     ]
   },
@@ -5705,6 +5920,15 @@
         "cc": null,
         "buff": null,
         "element": "water"
+      },
+      {
+        "name": "Marvel Scale",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "def": true,
+        "element": "water"
       }
     ]
   },
@@ -5730,7 +5954,8 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "poison"
+        "element": "poison",
+        "def": true
       },
       {
         "name": "Hydro Pump",
@@ -5748,8 +5973,17 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Giant_Magikarp",
-    "todo": "calibrate skills",
+    "todo": "calibrate skills; confirm Splash CD",
     "skills": [
+      {
+        "name": "Splash",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "def": true,
+        "element": "water"
+      },
       {
         "name": "Rain Dance",
         "cooldown": 40,
@@ -5961,7 +6195,8 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "normal"
+        "element": "normal",
+        "def": true
       },
       {
         "name": "Surf",
@@ -6508,6 +6743,15 @@
         "cc": null,
         "buff": null,
         "element": "poison"
+      },
+      {
+        "name": "Minimize",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "def": true,
+        "element": "normal"
       }
     ]
   },
@@ -6533,7 +6777,8 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "normal"
+        "element": "normal",
+        "def": true
       },
       {
         "name": "Mortal Gas",
@@ -6659,7 +6904,8 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "normal"
+        "element": "normal",
+        "def": true
       },
       {
         "name": "Swamp Mist",
@@ -6743,7 +6989,8 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "normal"
+        "element": "normal",
+        "def": true
       },
       {
         "name": "Swamp Mist",
@@ -6928,6 +7175,15 @@
         "cc": null,
         "buff": null,
         "element": "ghost"
+      },
+      {
+        "name": "Confide",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "def": true,
+        "element": "normal"
       }
     ]
   },
@@ -6953,7 +7209,8 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "normal"
+        "element": "normal",
+        "def": true
       },
       {
         "name": "Shadow Storm",
@@ -7139,7 +7396,8 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "normal"
+        "element": "normal",
+        "def": true
       },
       {
         "name": "Curse",
@@ -7366,7 +7624,8 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "grass"
+        "element": "grass",
+        "def": true
       },
       {
         "name": "Sky Camouflage",
@@ -7424,7 +7683,8 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "ice"
+        "element": "ice",
+        "def": true
       }
     ]
   }

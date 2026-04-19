@@ -25,6 +25,8 @@ interface Props {
 interface DamageRow {
   noDevice: number;
   withDevice: number;
+  noDeviceElixir: number;
+  withDeviceElixir: number;
 }
 
 export function PokeSetupEditor({ pokes, config, onChange }: Props) {
@@ -60,8 +62,10 @@ export function PokeSetupEditor({ pokes, config, onChange }: Props) {
     for (const p of pokes) {
       const ordered = getOptimalSkillOrder(p);
       next[p.id] = {
-        noDevice: estimatePokeSoloDamage(p, ordered, configWithDefaults, false),
-        withDevice: estimatePokeSoloDamage(p, ordered, configWithDefaults, true),
+        noDevice: estimatePokeSoloDamage(p, ordered, configWithDefaults, false, false),
+        withDevice: estimatePokeSoloDamage(p, ordered, configWithDefaults, true, false),
+        noDeviceElixir: estimatePokeSoloDamage(p, ordered, configWithDefaults, false, true),
+        withDeviceElixir: estimatePokeSoloDamage(p, ordered, configWithDefaults, true, true),
       };
     }
     setEstimates(next);
@@ -82,6 +86,8 @@ export function PokeSetupEditor({ pokes, config, onChange }: Props) {
             <th>Tier</th>
             <th>Dano sem device</th>
             <th>Dano com device</th>
+            <th>Dano + Elixir (sem device)</th>
+            <th>Dano + Elixir (com device)</th>
           </tr>
         </thead>
         <tbody>
@@ -102,6 +108,8 @@ export function PokeSetupEditor({ pokes, config, onChange }: Props) {
             const est = estimates[p.id];
             const noDeviceCell = est ? Math.round(est.noDevice).toLocaleString() : "—";
             const withDeviceCell = est ? Math.round(est.withDevice).toLocaleString() : "—";
+            const noDeviceElixirCell = est ? Math.round(est.noDeviceElixir).toLocaleString() : "—";
+            const withDeviceElixirCell = est ? Math.round(est.withDeviceElixir).toLocaleString() : "—";
 
             return (
               <tr key={p.id}>
@@ -152,6 +160,8 @@ export function PokeSetupEditor({ pokes, config, onChange }: Props) {
                 </td>
                 <td>{noDeviceCell}</td>
                 <td>{withDeviceCell}</td>
+                <td>{noDeviceElixirCell}</td>
+                <td>{withDeviceElixirCell}</td>
               </tr>
             );
           })}

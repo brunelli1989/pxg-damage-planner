@@ -1,7 +1,7 @@
 export type SkillType = "area" | "frontal";
 export type CCType = "stun" | "silence" | "locked";
 export type BuffType = "self" | "next";
-export type Tier = "T1H" | "T2" | "T3" | "TR" | "TM";
+export type Tier = "T1H" | "T1C" | "T2" | "T3" | "TR" | "TM";
 
 export type PokemonElement =
   | "normal" | "fire" | "water" | "electric" | "grass" | "ice"
@@ -36,6 +36,9 @@ export interface Skill {
   type: SkillType;
   cc: CCType | null;
   buff: BuffType | null;
+  /** true quando a skill é de defesa (Harden, Intimidate, Iron Defense, etc) e dispensa
+   *  Elixir Def pro starter do lure */
+  def?: boolean;
   element?: PokemonElement; // opcional; se omitido, clã/effectiveness não se aplicam
   power?: number; // skill_power "clean" (sem clã embutido); calibrado via cast no dummy
 }
@@ -69,6 +72,8 @@ export interface Lure {
   starterUsesElixirDef: boolean;
   usesElixirAtk: boolean;
   usesDevice: boolean;
+  /** ID do poke que usa o elixir atk (buff +70% nas skills dele por 8s). Null se usesElixirAtk=false. */
+  elixirAtkHolderId: string | null;
 }
 
 export interface RotationStep {

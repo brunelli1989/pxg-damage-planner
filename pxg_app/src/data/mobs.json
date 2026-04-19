@@ -15,6 +15,7 @@
     ],
     "hunt": "300",
     "group": "Magby/Pansear",
+    "hp": 216450,
     "defFactor": 0.9
   },
   {
@@ -24,6 +25,7 @@
     ],
     "hunt": "300",
     "group": "Magby/Pansear",
+    "hp": 209984,
     "defFactor": 0.88
   },
   {
@@ -106,6 +108,17 @@
     ],
     "hunt": "300",
     "group": "Alolan Diglett",
+    "todo": "calibrate defense"
+  },
+  {
+    "name": "Alolan Dugtrio",
+    "types": [
+      "ground",
+      "steel"
+    ],
+    "hunt": "300",
+    "group": "Alolan Diglett",
+    "hp": 505692,
     "todo": "calibrate defense"
   },
   {
@@ -552,6 +565,7 @@
     ],
     "hunt": "400+",
     "group": "Lycanroc",
+    "hp": 495264,
     "todo": "calibrate defense"
   },
   {
@@ -747,6 +761,7 @@
     ],
     "hunt": "400+",
     "group": "Infernape",
+    "hp": 433794,
     "todo": "calibrate defense"
   },
   {

@@ -2,6 +2,7 @@ import type {
   DamageConfig,
   DiskLevel,
   Lure,
+  LureMember,
   Pokemon,
   RotationResult,
   RotationStep,
@@ -11,7 +12,7 @@ import {
   ELIXIR_DEF_COOLDOWN,
   bagRate,
 } from "./cooldown";
-import { lureFinalizesBox } from "./damage";
+import { lureFinalizesBox, resolveSkillPower } from "./damage";
 import { getOptimalSkillOrder, hasFrontal, hasHardCC, hasHarden, hasSilence } from "./scoring";
 
 const CAST_TIME = 1;
@@ -27,7 +28,11 @@ export const MAX_BAG = 6;
  * Uses lure identity (starter.id + second?.id + type) for comparison.
  */
 function lureKey(l: Lure): string {
-  return `${l.type}:${l.starter.id}:${l.second?.id ?? ""}`;
+  const extras = l.extraMembers.length
+    ? ":" + l.extraMembers.map((m) => m.poke.id).sort().join(",")
+    : "";
+  const elixir = l.usesElixirAtk ? ":elixir" : "";
+  return `${l.type}:${l.starter.id}:${l.second?.id ?? ""}${extras}${elixir}`;
 }
 
 function minPeriod(seq: Lure[]): number {
@@ -44,6 +49,24 @@ function minPeriod(seq: Lure[]): number {
     if (ok) return p;
   }
   return n;
+}
+
+/**
+ * Elixir atk vai no poke mais forte do lure (sum de skill_power calibrado/fallback).
+ * Heurística: skills area somam mais dano efetivo; frontais pesam igual pro ranking
+ * (o usuário ainda consegue colocar elixir em offtank T1H se ele aparecer).
+ */
+function pickElixirHolder(members: Pokemon[]): Pokemon {
+  let best = members[0];
+  let bestScore = -1;
+  for (const p of members) {
+    const score = p.skills.reduce((s, sk) => s + resolveSkillPower(sk, p), 0);
+    if (score > bestScore) {
+      best = p;
+      bestScore = score;
+    }
+  }
+  return best;
 }
 
 export function combinations<T>(arr: T[], k: number): T[][] {
@@ -67,7 +90,8 @@ export function combinations<T>(arr: T[], k: number): T[][] {
 
 export function generateLureTemplates(
   bag: Pokemon[],
-  devicePokemonId: string | null
+  devicePokemonId: string | null,
+  options: { includeDuplaElixir?: boolean; includeGroup?: boolean } = {}
 ): Lure[] {
   const lures: Lure[] = [];
   const n = bag.length;
@@ -101,7 +125,8 @@ export function generateLureTemplates(
       starterUsesElixirDef: false,
       usesElixirAtk: false,
       usesDevice: true,
-          extraMembers: [],
+      extraMembers: [],
+      elixirAtkHolderId: null,
     });
   }
 
@@ -123,7 +148,8 @@ export function generateLureTemplates(
       starterUsesElixirDef: !harden[i],
       usesElixirAtk: true,
       usesDevice: false,
-          extraMembers: [],
+      extraMembers: [],
+      elixirAtkHolderId: p.id,
     });
   }
 
@@ -140,18 +166,70 @@ export function generateLureTemplates(
       if (silenceActive && (frontal[i] || frontal[j])) continue;
 
       const second = bag[j];
-      lures.push({
-        type: "dupla",
+      const baseDupla = {
+        type: "dupla" as const,
         starter,
         second,
         starterSkills: getOptimalSkillOrder(starter, silenceActive),
         secondSkills: getOptimalSkillOrder(second, silenceActive),
         starterUsesHarden: starterHarden,
         starterUsesElixirDef: !starterHarden,
-        usesElixirAtk: false,
         usesDevice: false,
-          extraMembers: [],
-      });
+        extraMembers: [],
+      };
+      lures.push({ ...baseDupla, usesElixirAtk: false, elixirAtkHolderId: null });
+      // Dupla + elixir atk: útil em hunt 400+ quando a dupla raw não finaliza a box.
+      if (options.includeDuplaElixir) {
+        const holder = pickElixirHolder([starter, second]);
+        lures.push({ ...baseDupla, usesElixirAtk: true, elixirAtkHolderId: holder.id });
+      }
+    }
+  }
+
+  // Group lures: starter (com CC) + 2..5 extras (total 3..6 membros). Gerados apenas quando
+  // caller aceita (cascading fallback quando nenhuma dupla/dupla+elixir finaliza).
+  // Em hunt 400+ com held baixo, a bag inteira (6 membros) pode ser necessária.
+  const MAX_GROUP_EXTRAS = MAX_BAG - 1;
+  if (options.includeGroup) {
+    for (let i = 0; i < n; i++) {
+      if (!hardCC[i] || i === deviceIdx) continue;
+      const starter = bag[i];
+      const starterHarden = harden[i];
+
+      const candidateIdx: number[] = [];
+      for (let k = 0; k < n; k++) {
+        if (k !== i && k !== deviceIdx) candidateIdx.push(k);
+      }
+
+      const maxExtras = Math.min(candidateIdx.length, MAX_GROUP_EXTRAS);
+      for (let extraCount = 2; extraCount <= maxExtras; extraCount++) {
+        for (const combo of combinations(candidateIdx, extraCount)) {
+          const silenceActive = silence[i] || combo.some((k) => silence[k]);
+          const frontalAny = frontal[i] || combo.some((k) => frontal[k]);
+          if (silenceActive && frontalAny) continue;
+
+          const second = bag[combo[0]];
+          const rest = combo.slice(1).map<LureMember>((k) => ({
+            poke: bag[k],
+            skills: getOptimalSkillOrder(bag[k], silenceActive),
+          }));
+
+          const base = {
+            type: "group" as const,
+            starter,
+            second,
+            starterSkills: getOptimalSkillOrder(starter, silenceActive),
+            secondSkills: getOptimalSkillOrder(second, silenceActive),
+            starterUsesHarden: starterHarden,
+            starterUsesElixirDef: !starterHarden,
+            usesDevice: false,
+            extraMembers: rest,
+          };
+          lures.push({ ...base, usesElixirAtk: false, elixirAtkHolderId: null });
+          const holder = pickElixirHolder([starter, second, ...rest.map((m) => m.poke)]);
+          lures.push({ ...base, usesElixirAtk: true, elixirAtkHolderId: holder.id });
+        }
+      }
     }
   }
 
@@ -278,8 +356,8 @@ function waitForSecondSkill(
   state: SimState,
   pokeId: string,
   skillKey: string,
-  offsetWithinSecondCast: number,
-  numStarterCasts: number,
+  offsetWithinOwnCast: number,
+  offsetBeforeOwnCast: number,
   rate: number
 ): number {
   const info = state.skillCasts.get(skillKey);
@@ -289,7 +367,7 @@ function waitForSecondSkill(
   const othersPast = (state.othersCastTotal.get(pokeId) ?? 0) - info.othersCastSnapshot;
 
   const required =
-    (info.baseCD - selfPast - offsetWithinSecondCast) / rate - (othersPast + numStarterCasts);
+    (info.baseCD - selfPast - offsetWithinOwnCast) / rate - (othersPast + offsetBeforeOwnCast);
   return Math.max(0, required);
 }
 
@@ -316,7 +394,7 @@ export function applyLure(
   }
 
   // Second's skills: during wait, second is in bag (others_cast += W at bag rate)
-  if (lure.type === "dupla" && lure.second) {
+  if (lure.second) {
     for (let j = 0; j < lure.secondSkills.length; j++) {
       const key = `${lure.second.id}:${lure.secondSkills[j].name}`;
       const w = waitForSecondSkill(state, lure.second.id, key, j + 1, numStarterSkills, rate);
@@ -324,9 +402,22 @@ export function applyLure(
     }
   }
 
+  // Group: extraMembers cast after starter + second. Each extra has offsetBefore = all
+  // casts before it starts (starter + second + prior extras).
+  let offsetBeforeExtra = numStarterSkills + lure.secondSkills.length;
+  for (const m of lure.extraMembers) {
+    for (let j = 0; j < m.skills.length; j++) {
+      const key = `${m.poke.id}:${m.skills[j].name}`;
+      const w = waitForSecondSkill(state, m.poke.id, key, j + 1, offsetBeforeExtra, rate);
+      if (w > wait) wait = w;
+    }
+    offsetBeforeExtra += m.skills.length;
+  }
+
   // Step 3: Check elixir atk / def
   if (lure.usesElixirAtk) {
-    const totalCasts = numStarterSkills + lure.secondSkills.length + 1;
+    const extraSkillCount = lure.extraMembers.reduce((s, m) => s + m.skills.length, 0);
+    const totalCasts = numStarterSkills + lure.secondSkills.length + extraSkillCount + 1;
     const elixirCastAt = state.clock + wait + totalCasts;
     const elixirWait = state.elixirAtkReady - elixirCastAt;
     if (elixirWait > 0) wait += elixirWait;
@@ -368,8 +459,8 @@ export function applyLure(
     });
   }
 
-  // Step 6: Cast second skills (dupla)
-  if (lure.type === "dupla" && lure.second) {
+  // Step 6: Cast second skills (dupla + group)
+  if (lure.second) {
     for (let j = 0; j < lure.secondSkills.length; j++) {
       state.clock += CAST_TIME;
       const prevSelf = state.selfCastTotal.get(lure.second.id) ?? 0;
@@ -386,6 +477,24 @@ export function applyLure(
     }
   }
 
+  // Step 6b: Cast extraMembers (group lure). No-op when extraMembers is empty.
+  for (const m of lure.extraMembers) {
+    for (let j = 0; j < m.skills.length; j++) {
+      state.clock += CAST_TIME;
+      const prevSelf = state.selfCastTotal.get(m.poke.id) ?? 0;
+      state.selfCastTotal.set(m.poke.id, prevSelf + CAST_TIME);
+      tickBagTime(state, m.poke.id, CAST_TIME);
+
+      const key = `${m.poke.id}:${m.skills[j].name}`;
+      state.skillCasts.set(key, {
+        castTime: state.clock,
+        baseCD: m.skills[j].cooldown,
+        selfCastSnapshot: state.selfCastTotal.get(m.poke.id) ?? 0,
+        othersCastSnapshot: state.othersCastTotal.get(m.poke.id) ?? 0,
+      });
+    }
+  }
+
   // Step 7: Finisher cast (device or elixir atk)
   if (lure.usesDevice) {
     state.clock += CAST_TIME;
@@ -394,9 +503,10 @@ export function applyLure(
     tickBagTime(state, lure.starter.id, CAST_TIME);
   } else if (lure.usesElixirAtk) {
     state.clock += CAST_TIME;
-    const prevSelf = state.selfCastTotal.get(lure.starter.id) ?? 0;
-    state.selfCastTotal.set(lure.starter.id, prevSelf + CAST_TIME);
-    tickBagTime(state, lure.starter.id, CAST_TIME);
+    const holderId = lure.elixirAtkHolderId ?? lure.starter.id;
+    const prevSelf = state.selfCastTotal.get(holderId) ?? 0;
+    state.selfCastTotal.set(holderId, prevSelf + CAST_TIME);
+    tickBagTime(state, holderId, CAST_TIME);
     state.elixirAtkReady = state.clock + ELIXIR_ATK_COOLDOWN;
   }
 
@@ -446,10 +556,26 @@ export function findBestRotation(
   const maxCycleLen = options.maxCycleLen ?? 12;
   const minCycleLen = options.minCycleLen ?? 2;
 
-  let lures = generateLureTemplates(bag, devicePokemonId);
+  let lures: Lure[];
   if (options.damageConfig) {
+    // Cascata: tenta lures cheap primeiro; só gera caro quando nenhum barato finaliza.
     const cfg = options.damageConfig;
-    lures = lures.filter((lure) => lureFinalizesBox(lure, cfg, cfg.mob));
+    const filter = (ls: Lure[]) => ls.filter((l) => lureFinalizesBox(l, cfg, cfg.mob));
+
+    lures = filter(generateLureTemplates(bag, devicePokemonId));
+    if (lures.length === 0) {
+      lures = filter(generateLureTemplates(bag, devicePokemonId, { includeDuplaElixir: true }));
+    }
+    if (lures.length === 0) {
+      lures = filter(
+        generateLureTemplates(bag, devicePokemonId, {
+          includeDuplaElixir: true,
+          includeGroup: true,
+        })
+      );
+    }
+  } else {
+    lures = generateLureTemplates(bag, devicePokemonId);
   }
   if (lures.length === 0) return null;
 
@@ -541,7 +667,11 @@ function evaluateCycle(
 
   const selectedIds = Array.from(
     new Set(
-      cycle.flatMap((l) => [l.starter.id, l.second?.id].filter(Boolean) as string[])
+      cycle.flatMap((l) => [
+        l.starter.id,
+        l.second?.id,
+        ...l.extraMembers.map((m) => m.poke.id),
+      ].filter(Boolean) as string[])
     )
   );
 

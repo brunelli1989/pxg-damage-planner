@@ -55,7 +55,9 @@ function getCache(p: Pokemon): PokemonCache {
           s.cc === "locked" ||
           ((s.cc === "stun" || s.cc === "silence") && s.type !== "frontal")
       ),
-      hasHarden: p.skills.some((s) => s.name.toLowerCase() === "harden"),
+      // Starter dispensa Elixir Def quando tem alguma skill com flag `def: true`
+      // (Harden, Intimidate, Iron Defense, etc). Fonte de verdade: a própria skill.
+      hasHarden: p.skills.some((s) => s.def === true),
       hasSilence: p.skills.some((s) => s.cc === "silence" && s.type !== "frontal"),
       hasFrontal: p.skills.some((s) => s.type === "frontal"),
       skillOrderNormal: computeOrder(p, false),

@@ -27,9 +27,13 @@ export function LureDamagePreview({ result, config }: Props) {
             const dmg = estimateLureDamagePerMob(step.lure, config);
             const pct = (dmg / config.mob.hp) * 100;
             const finalizes = lureFinalizesBox(step.lure, config);
-            const pokes = step.lure.second
-              ? `${step.lure.starter.name} + ${step.lure.second.name}`
-              : step.lure.starter.name;
+            const pokes = [
+              step.lure.starter.name,
+              step.lure.second?.name,
+              ...step.lure.extraMembers.map((m) => m.poke.name),
+            ]
+              .filter(Boolean)
+              .join(" + ");
 
             return (
               <tr key={i} className={finalizes ? "finalizes" : "not-finalizes"}>

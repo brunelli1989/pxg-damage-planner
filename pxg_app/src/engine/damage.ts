@@ -25,6 +25,8 @@ type TierRoleKey = `${Tier}:${PokemonRole}`;
 const DEFAULT_POWER_BY_TIER_ROLE: Partial<Record<TierRoleKey, number>> = {
   "T1H:burst_dd":       24.7,
   "T1H:offensive_tank": 19.4,
+  "T1C:burst_dd":       23.5, // uncalibrated: midpoint entre T1H e T2
+  "T1C:offensive_tank": 19.4,
   "T2:burst_dd":        22.5,
   "T2:offensive_tank":  19.4,
   "T3:burst_dd":        21.5,
@@ -70,6 +72,7 @@ export function resolveSkillPower(skill: Skill, poke: Pokemon): number {
 const BOOST_COEF = 1.3;
 const FORMULA_CONSTANT = 150;
 const BUFF_NEXT_MULTIPLIER = 1.5; // +50% na próxima skill
+const ELIXIR_ATK_BONUS = 0.70; // +70% atk aditivo enquanto elixir atk está ativo
 
 // Fallback quando mob não tem defFactor calibrado (média dos mobs testados no dummy).
 export const DEFAULT_MOB_DEF_FACTOR = 0.85;
@@ -288,7 +291,7 @@ export function computeSkillDamage(
   poke: Pokemon,
   skill: Skill,
   mob: MobConfig = cfg.mob,
-  opts: { buffedByPrevious?: boolean; skillPower?: number } = {}
+  opts: { buffedByPrevious?: boolean; skillPower?: number; elixirAtkActive?: boolean } = {}
 ): number {
   const setup = cfg.pokeSetups[poke.id];
   if (!setup) return 0;
@@ -311,7 +314,8 @@ export function computeSkillDamage(
   const pokeAtk = setup.held.kind === "x-attack" ? X_ATK_BONUSES[setup.held.tier] : 0;
   const deviceAtk =
     deviceActive && cfg.device.kind === "x-attack" ? X_ATK_BONUSES[cfg.device.tier] : 0;
-  const helds = 1 + pokeAtk + deviceAtk;
+  const elixir = opts.elixirAtkActive ? ELIXIR_ATK_BONUS : 0;
+  const helds = 1 + pokeAtk + deviceAtk + elixir;
   const clã = 1 + getClanBonus(cfg.clan, skill.element);
   const eff = skill.element ? computeEffectiveness(skill.element, mob.types) : 1;
   const buffMult = opts.buffedByPrevious ? BUFF_NEXT_MULTIPLIER : 1;
@@ -370,6 +374,10 @@ export function estimateLureDamagePerMob(
 ): number {
   let totalDmg = 0;
 
+  // Elixir atk buffa +70% as skills de UM poke (o holder, tipicamente o mais forte) por 8s.
+  // Assume janela do holder cabe nos 8s (5-skill cast ~= 5s). Null quando elixir não é usado.
+  const elixirHolderId: string | null = lure.usesElixirAtk ? lure.elixirAtkHolderId : null;
+
   const castSequence: { poke: Pokemon; skill: Skill }[] = [];
   for (const s of lure.starterSkills) {
     castSequence.push({ poke: lure.starter, skill: s });
@@ -392,7 +400,11 @@ export function estimateLureDamagePerMob(
     const { poke, skill } = castSequence[i];
     const power = resolveSkillPower(skill, poke);
     const buffed = buffPending && power > 0;
-    totalDmg += computeSkillDamage(cfg, poke, skill, mob, { buffedByPrevious: buffed, skillPower: power });
+    totalDmg += computeSkillDamage(cfg, poke, skill, mob, {
+      buffedByPrevious: buffed,
+      skillPower: power,
+      elixirAtkActive: poke.id === elixirHolderId,
+    });
     if (buffed) buffPending = false;
     if (skill.buff === "next") buffPending = true;
   }
@@ -434,7 +446,8 @@ export function estimatePokeSoloDamage(
   poke: Pokemon,
   orderedSkills: Skill[],
   config: DamageConfig,
-  withDevice: boolean
+  withDevice: boolean,
+  elixirAtkActive = false
 ): number {
   const setup = config.pokeSetups[poke.id];
   if (!setup) return 0;
@@ -454,6 +467,7 @@ export function estimatePokeSoloDamage(
     total += computeSkillDamage(cfgOverride, poke, skill, config.mob, {
       buffedByPrevious: buffed,
       skillPower: power,
+      elixirAtkActive,
     });
     if (buffed) buffPending = false;
     if (skill.buff === "next") buffPending = true;

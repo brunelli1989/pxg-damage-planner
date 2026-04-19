@@ -28,9 +28,10 @@ export function SkillTimeline({ result }: Props) {
           const activeTime = step.timeEnd - step.timeStart - step.idleBefore;
           const activeWidth = (activeTime / totalTime) * 100;
           const idleWidth = (step.idleBefore / totalTime) * 100;
-          const label = lure.second
-            ? `${lure.starter.name.split(" ").pop()}+${lure.second.name.split(" ").pop()}`
-            : lure.starter.name.split(" ").pop();
+          const shortName = (p: { name: string }) => p.name.split(" ").pop();
+          const parts = [lure.starter, lure.second, ...lure.extraMembers.map((m) => m.poke)]
+            .filter((p): p is NonNullable<typeof p> => p !== null);
+          const label = parts.map(shortName).join("+");
 
           return (
             <span key={i} className="timeline-segment-group">

@@ -106,15 +106,28 @@ function buildReport(
   result.steps.forEach((step, i) => {
     const lure = step.lure;
     const activeTime = step.timeEnd - step.timeStart - step.idleBefore;
-    const finisher = lure.usesDevice ? "Device" : lure.usesElixirAtk ? "Elixir Atk" : "Dupla";
+    const typeLabel =
+      lure.type === "group"
+        ? `Group (${2 + lure.extraMembers.length})`
+        : lure.type === "dupla"
+          ? "Dupla"
+          : "Solo";
+    const finisher = lure.usesDevice
+      ? "Device"
+      : lure.usesElixirAtk
+        ? lure.type === "solo_elixir"
+          ? "Elixir Atk"
+          : `${typeLabel} + Elixir Atk`
+        : typeLabel;
     const defense: string[] = [];
     if (lure.starterUsesHarden) defense.push("Harden");
     if (lure.starterUsesElixirDef) defense.push("Elixir Def");
     const defStr = defense.length ? ` | Defesa: ${defense.join("+")}` : "";
 
-    const pokes = lure.second
-      ? `${lure.starter.name} + ${lure.second.name}`
-      : lure.starter.name;
+    const names = [lure.starter.name, lure.second?.name, ...lure.extraMembers.map((m) => m.poke.name)].filter(
+      Boolean
+    );
+    const pokes = names.join(" + ");
 
     lines.push(`${i + 1}. ${pokes} [${finisher}]${defStr}`);
     lines.push(`   Duração: ${formatTime(activeTime)}${step.idleBefore > 0 ? ` | Espera: ${formatTime(step.idleBefore)}` : ""}`);
