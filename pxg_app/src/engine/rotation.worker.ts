@@ -1,6 +1,7 @@
 import type { DamageConfig, DiskLevel, Pokemon, RotationResult } from "../types";
 import { findBestForBag } from "./rotation";
-import { hasHardCC, hasHarden } from "./scoring";
+import { estimatePokeSoloDamage } from "./damage";
+import { getOptimalSkillOrder, hasHardCC, hasHarden } from "./scoring";
 import { ELIXIR_DEF_COOLDOWN } from "./cooldown";
 
 export interface WorkerRequest {
@@ -49,6 +50,30 @@ function bagTimePerLureLowerBound(bag: Pokemon[]): number {
   return Math.max(minDefenseCD, MIN_ACTIVE_TIME);
 }
 
+/**
+ * Upper bound de dano por mob somando TODOS os pokes da bag com device+elixir.
+ * É um bound solto (superestima: apenas 1 poke usa device e 1 usa elixir de fato).
+ * Se esse máximo < HP_mob, nenhuma combinação finaliza a box → pula antes do beam.
+ * Memoizado por poke.id pois mesmo poke aparece em muitas bags.
+ */
+function makeBagDamagePruner(damageConfig: DamageConfig) {
+  const perPokeDmg = new Map<string, number>();
+  const getDmg = (p: Pokemon): number => {
+    let d = perPokeDmg.get(p.id);
+    if (d === undefined) {
+      d = estimatePokeSoloDamage(p, getOptimalSkillOrder(p), damageConfig, true, true);
+      perPokeDmg.set(p.id, d);
+    }
+    return d;
+  };
+  const hp = damageConfig.mob.hp;
+  return (bag: Pokemon[]): boolean => {
+    let total = 0;
+    for (const p of bag) total += getDmg(p);
+    return total < hp;
+  };
+}
+
 self.onmessage = (e: MessageEvent<WorkerRequest>) => {
   const { bags, diskLevel, beamWidth, maxCycleLen, minCycleLen, damageConfig } = e.data;
 
@@ -56,7 +81,11 @@ self.onmessage = (e: MessageEvent<WorkerRequest>) => {
   let bestTimePerLure = Infinity;
   let bestResult: RotationResult | null = null;
 
-  let skipped = 0;
+  let skippedTime = 0;
+  let skippedDmg = 0;
+
+  // Pré-filter por dano: bags que não batem o HP_mob nem com device+elixir são descartadas.
+  const cantFinalize = damageConfig ? makeBagDamagePruner(damageConfig) : null;
 
   // Sort bags by lower bound (menor = potencialmente melhor). Rodar bags mais promissoras
   // primeiro acelera o pruning: bestTimePerLure desce rápido, demais bags são puladas.
@@ -64,9 +93,16 @@ self.onmessage = (e: MessageEvent<WorkerRequest>) => {
   bagsWithBound.sort((a, b) => a.bound - b.bound);
 
   for (const { bag, bound } of bagsWithBound) {
-    // Pruning: se o lower bound já é >= que o melhor achado, nem chama o beam
+    // Pruning por tempo: lower bound >= best já achado
     if (bound >= bestTimePerLure) {
-      skipped++;
+      skippedTime++;
+      const progressMsg: WorkerMessage = { type: "progress", done: 1 };
+      self.postMessage(progressMsg);
+      continue;
+    }
+    // Pruning por dano: upper bound < HP_mob (impossível finalizar)
+    if (cantFinalize && cantFinalize(bag)) {
+      skippedDmg++;
       const progressMsg: WorkerMessage = { type: "progress", done: 1 };
       self.postMessage(progressMsg);
       continue;
@@ -90,8 +126,12 @@ self.onmessage = (e: MessageEvent<WorkerRequest>) => {
     self.postMessage(progressMsg);
   }
 
-  // Log de diagnostic — útil pra medir efetividade do pruning
-  if (skipped > 0) console.log(`[worker] skipped ${skipped}/${bags.length} bags via pruning`);
+  if (skippedTime + skippedDmg > 0) {
+    console.log(
+      `[worker] skipped ${skippedTime + skippedDmg}/${bags.length} bags ` +
+      `(time=${skippedTime}, dmg=${skippedDmg})`
+    );
+  }
 
   const done: WorkerMessage = { type: "result", bestIdle, bestResult };
   self.postMessage(done);
