@@ -21,33 +21,37 @@ export type WorkerMessage =
       bestResult: RotationResult | null;
     };
 
-const HARDEN_BASE_CD = 40;  // menor skill CD comum de Harden
 const MIN_ACTIVE_TIME = 20; // ~10s casts + 10s kill time
 
 /**
  * Lower bound para time-per-lure de uma bag. Usado pra pular bags que não
  * podem bater o best-so-far ANTES de rodar o beam search.
  *
- * - Sem starter (nenhum hasHardCC): retorna Infinity → bag será pulada
- * - T1H + CC na bag: solo_device dispensa defesa → bound = max(maior CD, active)
- * - Starter com Harden: bound = max(Harden CD, active)
- * - Só starter sem Harden/device: bound = ELIXIR_DEF_COOLDOWN (210s é o gargalo)
+ * Pra cada starter válido p, o bound é `max(maxSkillCD, defPenalty)`:
+ * - Rotação single-poke: T ≥ maxSkillCD (skill precisa recuperar entre casts).
+ *   Rotação multi-poke alterna, pode ir abaixo do maxSkillCD — então pegamos
+ *   `min` sobre todos os starters válidos (optimistic: melhor starter define bound).
+ * - defPenalty = ELIXIR_DEF_COOLDOWN (210s) se o starter não tem defesa barata
+ *   (Harden/Intimidate/etc ou T1H com device).
  */
 function bagTimePerLureLowerBound(bag: Pokemon[]): number {
-  let minDefenseCD = ELIXIR_DEF_COOLDOWN;
+  let bestBound = Infinity;
   let hasValidStarter = false;
   for (const p of bag) {
     if (!hasHardCC(p)) continue;
     hasValidStarter = true;
-    if (p.tier === "T1H") {
-      // Pode ir solo_device → sem CD de defesa
-      minDefenseCD = Math.min(minDefenseCD, MIN_ACTIVE_TIME);
-    } else if (hasHarden(p)) {
-      minDefenseCD = Math.min(minDefenseCD, HARDEN_BASE_CD);
-    }
+
+    let maxSkillCD = 0;
+    for (const s of p.skills) if (s.cooldown > maxSkillCD) maxSkillCD = s.cooldown;
+
+    const hasCheapDef = p.tier === "T1H" || hasHarden(p);
+    const defPenalty = hasCheapDef ? 0 : ELIXIR_DEF_COOLDOWN;
+
+    const pokeBound = Math.max(maxSkillCD, defPenalty, MIN_ACTIVE_TIME);
+    if (pokeBound < bestBound) bestBound = pokeBound;
   }
   if (!hasValidStarter) return Infinity;
-  return Math.max(minDefenseCD, MIN_ACTIVE_TIME);
+  return bestBound;
 }
 
 /**
