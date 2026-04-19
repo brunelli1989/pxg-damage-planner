@@ -35,13 +35,13 @@ function lureKey(l: Lure): string {
   return `${l.type}:${l.starter.id}:${l.second?.id ?? ""}${extras}${elixir}`;
 }
 
-function minPeriod(seq: Lure[]): number {
+function minPeriod(seq: CompiledLure[]): number {
   const n = seq.length;
   for (let p = 1; p <= n; p++) {
     if (n % p !== 0) continue;
     let ok = true;
     for (let i = p; i < n; i++) {
-      if (lureKey(seq[i]) !== lureKey(seq[i - p])) {
+      if (lureKey(seq[i].lure) !== lureKey(seq[i - p].lure)) {
         ok = false;
         break;
       }
@@ -294,20 +294,6 @@ export interface SimState {
   steps: RotationStep[];
 }
 
-function cloneState(s: SimState): SimState {
-  return {
-    clock: s.clock,
-    skillCastTime: new Float64Array(s.skillCastTime),
-    skillBaseCD: new Float64Array(s.skillBaseCD),
-    skillSelfSnap: new Float64Array(s.skillSelfSnap),
-    selfCastTotal: new Float64Array(s.selfCastTotal),
-    elixirAtkReady: s.elixirAtkReady,
-    elixirDefReady: s.elixirDefReady,
-    totalIdle: s.totalIdle,
-    steps: s.steps.slice(),
-  };
-}
-
 export function emptyState(ctx: SimContext): SimState {
   const castTimes = new Float64Array(ctx.skillSlotCount);
   castTimes.fill(-1); // sentinel "nunca castado"
@@ -322,6 +308,158 @@ export function emptyState(ctx: SimContext): SimState {
     totalIdle: 0,
     steps: [],
   };
+}
+
+/**
+ * Pool de SimStates recicláveis. O beam search descarta ~95% dos candidates a cada
+ * step; sem pool, são 40k+ allocs/bag de typed arrays. Com pool, alocamos uma vez
+ * e reutilizamos via memcpy (Float64Array.set) e reset (length = 0 no steps).
+ */
+export class SimStatePool {
+  private free: SimState[] = [];
+  constructor(private ctx: SimContext) {}
+
+  acquireFresh(): SimState {
+    const s = this.free.pop();
+    if (s) {
+      s.clock = 0;
+      s.skillCastTime.fill(-1);
+      s.skillBaseCD.fill(0);
+      s.skillSelfSnap.fill(0);
+      s.selfCastTotal.fill(0);
+      s.elixirAtkReady = 0;
+      s.elixirDefReady = 0;
+      s.totalIdle = 0;
+      s.steps.length = 0;
+      return s;
+    }
+    return emptyState(this.ctx);
+  }
+
+  acquireClone(source: SimState): SimState {
+    const s = this.free.pop();
+    if (!s) {
+      return {
+        clock: source.clock,
+        skillCastTime: new Float64Array(source.skillCastTime),
+        skillBaseCD: new Float64Array(source.skillBaseCD),
+        skillSelfSnap: new Float64Array(source.skillSelfSnap),
+        selfCastTotal: new Float64Array(source.selfCastTotal),
+        elixirAtkReady: source.elixirAtkReady,
+        elixirDefReady: source.elixirDefReady,
+        totalIdle: source.totalIdle,
+        steps: source.steps.slice(),
+      };
+    }
+    s.clock = source.clock;
+    s.skillCastTime.set(source.skillCastTime);
+    s.skillBaseCD.set(source.skillBaseCD);
+    s.skillSelfSnap.set(source.skillSelfSnap);
+    s.selfCastTotal.set(source.selfCastTotal);
+    s.elixirAtkReady = source.elixirAtkReady;
+    s.elixirDefReady = source.elixirDefReady;
+    s.totalIdle = source.totalIdle;
+    // Reuse steps array: overwrite in place, resize
+    const srcSteps = source.steps;
+    const n = srcSteps.length;
+    s.steps.length = n;
+    for (let i = 0; i < n; i++) s.steps[i] = srcSteps[i];
+    return s;
+  }
+
+  release(s: SimState) {
+    this.free.push(s);
+  }
+}
+
+/**
+ * Lure com slots e baseCDs pré-resolvidos contra um SimContext específico.
+ * Elimina ~12 map lookups por applyLure call + strings temp de `${id}:${name}`.
+ */
+export interface CompiledLure {
+  lure: Lure;
+  starterIdx: number;
+  secondIdx: number;                // -1 se sem second
+  holderIdx: number;                // poke que paga o cast do elixir (starterIdx fallback)
+  starterSlots: Int32Array;
+  starterCDs: Float64Array;
+  secondSlots: Int32Array;          // length 0 se sem second
+  secondCDs: Float64Array;
+  extraMemberIdxs: Int32Array;      // bag indices dos extra members
+  extraSlots: Int32Array[];         // slots por extra member
+  extraCDs: Float64Array[];         // cooldowns por extra member
+  totalExtraSkills: number;
+}
+
+export function compileLures(lures: Lure[], ctx: SimContext): CompiledLure[] {
+  const out: CompiledLure[] = new Array(lures.length);
+  for (let k = 0; k < lures.length; k++) {
+    const lure = lures[k];
+    const starterIdx = ctx.pokeIdx.get(lure.starter.id)!;
+    const secondIdx = lure.second ? ctx.pokeIdx.get(lure.second.id)! : -1;
+
+    const nS = lure.starterSkills.length;
+    const starterSlots = new Int32Array(nS);
+    const starterCDs = new Float64Array(nS);
+    for (let i = 0; i < nS; i++) {
+      const s = lure.starterSkills[i];
+      starterSlots[i] = ctx.skillSlotByKey.get(`${lure.starter.id}:${s.name}`)!;
+      starterCDs[i] = s.cooldown;
+    }
+
+    const nS2 = lure.secondSkills.length;
+    const secondSlots = new Int32Array(nS2);
+    const secondCDs = new Float64Array(nS2);
+    if (lure.second) {
+      for (let j = 0; j < nS2; j++) {
+        const s = lure.secondSkills[j];
+        secondSlots[j] = ctx.skillSlotByKey.get(`${lure.second.id}:${s.name}`)!;
+        secondCDs[j] = s.cooldown;
+      }
+    }
+
+    const nExtras = lure.extraMembers.length;
+    const extraMemberIdxs = new Int32Array(nExtras);
+    const extraSlots: Int32Array[] = new Array(nExtras);
+    const extraCDs: Float64Array[] = new Array(nExtras);
+    let totalExtraSkills = 0;
+    for (let m = 0; m < nExtras; m++) {
+      const member = lure.extraMembers[m];
+      extraMemberIdxs[m] = ctx.pokeIdx.get(member.poke.id)!;
+      const nM = member.skills.length;
+      const slots = new Int32Array(nM);
+      const cds = new Float64Array(nM);
+      for (let j = 0; j < nM; j++) {
+        const s = member.skills[j];
+        slots[j] = ctx.skillSlotByKey.get(`${member.poke.id}:${s.name}`)!;
+        cds[j] = s.cooldown;
+      }
+      extraSlots[m] = slots;
+      extraCDs[m] = cds;
+      totalExtraSkills += nM;
+    }
+
+    const holderIdx =
+      lure.usesElixirAtk && lure.elixirAtkHolderId
+        ? (ctx.pokeIdx.get(lure.elixirAtkHolderId) ?? starterIdx)
+        : starterIdx;
+
+    out[k] = {
+      lure,
+      starterIdx,
+      secondIdx,
+      holderIdx,
+      starterSlots,
+      starterCDs,
+      secondSlots,
+      secondCDs,
+      extraMemberIdxs,
+      extraSlots,
+      extraCDs,
+      totalExtraSkills,
+    };
+  }
+  return out;
 }
 
 const KILL_TIME = 10; // seconds of kill time after each lure's finisher (all pokes in bag, disk still applies)
@@ -382,51 +520,58 @@ const INFEASIBLE = Number.POSITIVE_INFINITY;
 
 export function applyLure(
   state: SimState,
-  ctx: SimContext,
-  lure: Lure,
+  compiled: CompiledLure,
   diskLevel: DiskLevel
 ): RotationStep {
   const stepStart = state.clock;
   const rate = bagRate(diskLevel);
-  const numStarterSkills = lure.starterSkills.length;
-  const starterIdx = ctx.pokeIdx.get(lure.starter.id)!;
+
+  const lure = compiled.lure;
+  const starterIdx = compiled.starterIdx;
+  const secondIdx = compiled.secondIdx;
+  const starterSlots = compiled.starterSlots;
+  const starterCDs = compiled.starterCDs;
+  const secondSlots = compiled.secondSlots;
+  const secondCDs = compiled.secondCDs;
+  const extraMemberIdxs = compiled.extraMemberIdxs;
+  const extraSlots = compiled.extraSlots;
+  const extraCDs = compiled.extraCDs;
+  const numStarterSkills = starterSlots.length;
+  const numSecondSkills = secondSlots.length;
+  const numExtras = extraMemberIdxs.length;
 
   // Compute wait needed for all skills (starter + second + extras). Wait = max over all required.
   let wait = 0;
 
   for (let i = 0; i < numStarterSkills; i++) {
-    const slot = ctx.skillSlotByKey.get(`${lure.starter.id}:${lure.starterSkills[i].name}`)!;
-    const w = waitForStarterSkill(state, starterIdx, slot, i + 1, rate);
+    const w = waitForStarterSkill(state, starterIdx, starterSlots[i], i + 1, rate);
     if (w > wait) wait = w;
   }
 
-  let secondIdx = -1;
-  if (lure.second) {
-    secondIdx = ctx.pokeIdx.get(lure.second.id)!;
-    for (let j = 0; j < lure.secondSkills.length; j++) {
-      const slot = ctx.skillSlotByKey.get(`${lure.second.id}:${lure.secondSkills[j].name}`)!;
-      const w = waitForSecondSkill(state, secondIdx, slot, j + 1, numStarterSkills, rate);
+  if (secondIdx >= 0) {
+    for (let j = 0; j < numSecondSkills; j++) {
+      const w = waitForSecondSkill(state, secondIdx, secondSlots[j], j + 1, numStarterSkills, rate);
       if (w > wait) wait = w;
     }
   }
 
   // Group: extraMembers cast after starter + second. Each extra has offsetBefore = all
   // casts before it starts (starter + second + prior extras).
-  let offsetBeforeExtra = numStarterSkills + lure.secondSkills.length;
-  for (const m of lure.extraMembers) {
-    const memberIdx = ctx.pokeIdx.get(m.poke.id)!;
-    for (let j = 0; j < m.skills.length; j++) {
-      const slot = ctx.skillSlotByKey.get(`${m.poke.id}:${m.skills[j].name}`)!;
-      const w = waitForSecondSkill(state, memberIdx, slot, j + 1, offsetBeforeExtra, rate);
+  let offsetBeforeExtra = numStarterSkills + numSecondSkills;
+  for (let m = 0; m < numExtras; m++) {
+    const memberIdx = extraMemberIdxs[m];
+    const slots = extraSlots[m];
+    const nM = slots.length;
+    for (let j = 0; j < nM; j++) {
+      const w = waitForSecondSkill(state, memberIdx, slots[j], j + 1, offsetBeforeExtra, rate);
       if (w > wait) wait = w;
     }
-    offsetBeforeExtra += m.skills.length;
+    offsetBeforeExtra += nM;
   }
 
   // Step 3: Check elixir atk / def
   if (lure.usesElixirAtk) {
-    const extraSkillCount = lure.extraMembers.reduce((s, m) => s + m.skills.length, 0);
-    const totalCasts = numStarterSkills + lure.secondSkills.length + extraSkillCount + 1;
+    const totalCasts = numStarterSkills + numSecondSkills + compiled.totalExtraSkills + 1;
     const elixirCastAt = state.clock + wait + totalCasts;
     const elixirWait = state.elixirAtkReady - elixirCastAt;
     if (elixirWait > 0) wait += elixirWait;
@@ -455,35 +600,38 @@ export function applyLure(
     state.clock += CAST_TIME;
     state.selfCastTotal[starterIdx] += CAST_TIME;
 
-    const slot = ctx.skillSlotByKey.get(`${lure.starter.id}:${lure.starterSkills[i].name}`)!;
+    const slot = starterSlots[i];
     state.skillCastTime[slot] = state.clock;
-    state.skillBaseCD[slot] = lure.starterSkills[i].cooldown;
+    state.skillBaseCD[slot] = starterCDs[i];
     state.skillSelfSnap[slot] = state.selfCastTotal[starterIdx];
   }
 
   // Step 6: Cast second skills (dupla + group)
-  if (lure.second && secondIdx >= 0) {
-    for (let j = 0; j < lure.secondSkills.length; j++) {
+  if (secondIdx >= 0) {
+    for (let j = 0; j < numSecondSkills; j++) {
       state.clock += CAST_TIME;
       state.selfCastTotal[secondIdx] += CAST_TIME;
 
-      const slot = ctx.skillSlotByKey.get(`${lure.second.id}:${lure.secondSkills[j].name}`)!;
+      const slot = secondSlots[j];
       state.skillCastTime[slot] = state.clock;
-      state.skillBaseCD[slot] = lure.secondSkills[j].cooldown;
+      state.skillBaseCD[slot] = secondCDs[j];
       state.skillSelfSnap[slot] = state.selfCastTotal[secondIdx];
     }
   }
 
-  // Step 6b: Cast extraMembers (group lure). No-op when extraMembers is empty.
-  for (const m of lure.extraMembers) {
-    const memberIdx = ctx.pokeIdx.get(m.poke.id)!;
-    for (let j = 0; j < m.skills.length; j++) {
+  // Step 6b: Cast extraMembers (group lure). No-op when numExtras === 0.
+  for (let m = 0; m < numExtras; m++) {
+    const memberIdx = extraMemberIdxs[m];
+    const slots = extraSlots[m];
+    const cds = extraCDs[m];
+    const nM = slots.length;
+    for (let j = 0; j < nM; j++) {
       state.clock += CAST_TIME;
       state.selfCastTotal[memberIdx] += CAST_TIME;
 
-      const slot = ctx.skillSlotByKey.get(`${m.poke.id}:${m.skills[j].name}`)!;
+      const slot = slots[j];
       state.skillCastTime[slot] = state.clock;
-      state.skillBaseCD[slot] = m.skills[j].cooldown;
+      state.skillBaseCD[slot] = cds[j];
       state.skillSelfSnap[slot] = state.selfCastTotal[memberIdx];
     }
   }
@@ -494,8 +642,7 @@ export function applyLure(
     state.selfCastTotal[starterIdx] += CAST_TIME;
   } else if (lure.usesElixirAtk) {
     state.clock += CAST_TIME;
-    const holderIdx = ctx.pokeIdx.get(lure.elixirAtkHolderId ?? lure.starter.id) ?? starterIdx;
-    state.selfCastTotal[holderIdx] += CAST_TIME;
+    state.selfCastTotal[compiled.holderIdx] += CAST_TIME;
     state.elixirAtkReady = state.clock + ELIXIR_ATK_COOLDOWN;
   }
 
@@ -522,7 +669,7 @@ export { INFEASIBLE };
 
 interface BeamState {
   sim: SimState;
-  sequence: Lure[]; // just for tracking
+  sequence: CompiledLure[]; // ref to original via .lure
 }
 
 /**
@@ -568,11 +715,13 @@ export function findBestRotation(
   if (lures.length === 0) return null;
 
   const ctx = buildSimContext(bag);
+  const compiled = compileLures(lures, ctx);
+  const pool = new SimStatePool(ctx);
 
-  let beam: BeamState[] = lures.map((lure) => {
-    const sim = emptyState(ctx);
-    applyLure(sim, ctx, lure, diskLevel);
-    return { sim, sequence: [lure] };
+  let beam: BeamState[] = compiled.map((c) => {
+    const sim = pool.acquireFresh();
+    applyLure(sim, c, diskLevel);
+    return { sim, sequence: [c] };
   });
 
   let bestOverall: { idle: number; result: RotationResult; score: number } | null = null;
@@ -585,15 +734,18 @@ export function findBestRotation(
   for (let step = 1; step < maxCycleLen; step++) {
     const candidates: BeamState[] = [];
     for (const state of beam) {
-      for (const lure of lures) {
-        const newSim = cloneState(state.sim);
-        applyLure(newSim, ctx, lure, diskLevel);
+      for (const c of compiled) {
+        const newSim = pool.acquireClone(state.sim);
+        applyLure(newSim, c, diskLevel);
         candidates.push({
           sim: newSim,
-          sequence: [...state.sequence, lure],
+          sequence: [...state.sequence, c],
         });
       }
     }
+
+    // Release parent states — candidates já têm clones independentes.
+    for (const old of beam) pool.release(old.sim);
 
     const scoredCheap = candidates.map((cand) => ({
       cand,
@@ -602,13 +754,18 @@ export function findBestRotation(
     scoredCheap.sort((a, b) => a.score - b.score);
     beam = scoredCheap.slice(0, beamWidth).map((s) => s.cand);
 
+    // Release candidates que não entraram no beam
+    for (let i = beamWidth; i < scoredCheap.length; i++) {
+      pool.release(scoredCheap[i].cand.sim);
+    }
+
     // Refine top-N com evaluateCycle (steady-state preciso) só pra tracking do bestOverall
     if (step + 1 >= minCycleLen) {
       const topN = scoredCheap.slice(0, REFINE_TOP);
       for (const s of topN) {
         const period = minPeriod(s.cand.sequence);
         const truePeriodSeq = s.cand.sequence.slice(0, period);
-        const ev = evaluateCycle(truePeriodSeq, diskLevel, ctx);
+        const ev = evaluateCycle(truePeriodSeq, diskLevel, ctx, pool);
         const tpl = ev.result.totalTime / truePeriodSeq.length;
         if (!bestOverall || tpl < bestOverall.score) {
           bestOverall = { idle: ev.idlePerCycle, result: ev.result, score: tpl };
@@ -626,15 +783,16 @@ export function findBestRotation(
  * idle time in the second cycle. Returns null if any lure is infeasible.
  */
 function evaluateCycle(
-  cycle: Lure[],
+  cycle: CompiledLure[],
   diskLevel: DiskLevel,
-  ctx: SimContext
+  ctx: SimContext,
+  pool?: SimStatePool
 ): { idlePerCycle: number; result: RotationResult } {
-  const sim = emptyState(ctx);
+  const sim = pool ? pool.acquireFresh() : emptyState(ctx);
 
   // Cycle 1: warmup
-  for (const lure of cycle) {
-    applyLure(sim, ctx, lure, diskLevel);
+  for (const c of cycle) {
+    applyLure(sim, c, diskLevel);
   }
 
   // Cycle 2: measure
@@ -642,8 +800,8 @@ function evaluateCycle(
   const cycle2IdleStart = sim.totalIdle;
   const cycle2StepsStart = sim.steps.length;
 
-  for (const lure of cycle) {
-    applyLure(sim, ctx, lure, diskLevel);
+  for (const c of cycle) {
+    applyLure(sim, c, diskLevel);
   }
 
   const cycle2End = sim.clock;
@@ -658,13 +816,17 @@ function evaluateCycle(
 
   const selectedIds = Array.from(
     new Set(
-      cycle.flatMap((l) => [
-        l.starter.id,
-        l.second?.id,
-        ...l.extraMembers.map((m) => m.poke.id),
+      cycle.flatMap((c) => [
+        c.lure.starter.id,
+        c.lure.second?.id,
+        ...c.lure.extraMembers.map((m) => m.poke.id),
       ].filter(Boolean) as string[])
     )
   );
+
+  const deviceLure = cycle.find((c) => c.lure.usesDevice);
+
+  if (pool) pool.release(sim);
 
   return {
     idlePerCycle: cycle2Idle,
@@ -674,9 +836,7 @@ function evaluateCycle(
       totalIdle: cycle2Idle,
       cycleNumber: 2,
       selectedIds,
-      devicePokemonId: cycle.some((l) => l.usesDevice)
-        ? cycle.find((l) => l.usesDevice)!.starter.id
-        : null,
+      devicePokemonId: deviceLure ? deviceLure.lure.starter.id : null,
     },
   };
 }
