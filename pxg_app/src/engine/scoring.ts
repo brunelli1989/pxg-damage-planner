@@ -7,6 +7,7 @@ import type { Pokemon, Skill } from "../types";
  */
 interface PokemonCache {
   hasHardCC: boolean;
+  hasAnyCC: boolean;
   hasHarden: boolean;
   hasSilence: boolean;
   hasFrontal: boolean;
@@ -49,12 +50,17 @@ function getCache(p: Pokemon): PokemonCache {
   let c = cacheMap.get(p);
   if (!c) {
     c = {
-      // stun/silence frontal não bloqueia os 6 mobs; locked vale em qualquer tipo.
+      // Starter: CC em área (cobre os 6 mobs) ou locked (qualquer tipo).
+      // Frontal stun/silence não vale pra starter — só hita 1 mob.
       hasHardCC: p.skills.some(
         (s) =>
           s.cc === "locked" ||
           ((s.cc === "stun" || s.cc === "silence") && s.type !== "frontal")
       ),
+      // Member/second: CC de qualquer tipo (stun/silence/locked, área OU frontal).
+      // Frontal reaplica stun brevemente — suficiente pra não morrer entre casts.
+      // Poke SEM CC nenhuma (ex: Sh.Donphan) não pode ser member — player morre no switch.
+      hasAnyCC: p.skills.some((s) => s.cc !== null),
       // Starter dispensa Elixir Def quando tem alguma skill com flag `def: true`
       // (Harden, Intimidate, Iron Defense, etc). Fonte de verdade: a própria skill.
       hasHarden: p.skills.some((s) => s.def === true),
@@ -82,6 +88,10 @@ export function getOptimalSkillOrder(
 
 export function hasHardCC(pokemon: Pokemon): boolean {
   return getCache(pokemon).hasHardCC;
+}
+
+export function hasAnyCC(pokemon: Pokemon): boolean {
+  return getCache(pokemon).hasAnyCC;
 }
 
 export function hasHarden(pokemon: Pokemon): boolean {

@@ -66,11 +66,12 @@ Um **lure** = 1 box a ser finalizada com **1 a 6 pokémons**.
 
 ### Regras críticas
 
-- **Starter OBRIGATORIAMENTE tem CC** (stun/silence area ou locked qualquer tipo). Pokémons sem CC válido só podem ser second/extra.
-- **Stun/silence frontal NÃO vale como CC de starter** — não cobre os 6 mobs da box. Pode ser CC em second (conta pra `hasCC` mas não pra `hasHardCC`).
+- **Starter OBRIGATORIAMENTE tem CC área (stun/silence área ou locked) E SEM skill frontal no kit**. Frontal não cobre os 6 mobs — mesmo como damage skill, frontal no starter deixa buracos na proteção. `hasHardCC` filtra o CC, `!hasFrontal` filtra o kit.
+- **Members/second precisam ter CC** (stun/silence/locked, área OU frontal — `hasAnyCC`) pra reaplicar CC enquanto o starter's expira. Senão player morre no switch.
+- **Exceção: finalizador (último poke da chain)** pode ser sem CC (ex: Sh.Donphan, Sh.Magby, Sh.Ninetales). Nada casta depois dele → reaplicação desnecessária. Engine aceita até **1** poke sem CC por group lure e coloca ele na última posição.
 - **Second/extras NÃO podem ter wait mid-lure** — skills prontas no cast. Wait vai pro início.
 - **Silence + Frontal cruzado é inválido** — se algum membro do lure tem silence, nenhum pode ter skill frontal.
-- **Frontal não finaliza solo com elixir** — poke com frontal não pode ser `solo_elixir`. Pode ir em dupla/group.
+- **Frontal não finaliza solo com elixir** — poke com frontal não pode ser `solo_elixir`. Pode ir em dupla/group **como finalizer** (não como starter).
 - **Device é atribuído a 1 pokémon só** — algoritmo testa top-2 T1H+CC como candidatos + "sem device". Se user marca `hasDevice=true` em algum poke no PokeSetupEditor (qualquer tier), adiciona como **hint** à lista (não substitui os outros — engine ainda compara todos).
 - **Device holder pode ser dupla/group starter** (só é excluído do role "second" pra evitar conflito com solo_device). `hasDevice=true` é aplicado via override em `findBestRotation`, então device bonus entra no dano de qualquer lure onde o holder casta.
 - **Defesa do starter:**
@@ -263,6 +264,9 @@ Contexto histórico na memória: `project_pxg_damage_formula.md`.
 - **NÃO** assumir que `lure.usesDevice` é a única coisa que aplica device bonus — o holder tem `hasDevice=true` em todas as lures (override global em `findBestRotation`). Damage calc lê `setup.hasDevice` direto, NÃO tem branch "se lure.usesDevice".
 - **NÃO** excluir device holder de duplas/groups como starter — só como second. Ele pode starterar qualquer tipo de lure, e o dano dele já ganha device bonus via setup override.
 - **NÃO** short-circuitar `findBestForBag` pra só o user's designated device — é hint, não override. Engine compara null + top-T1H + user pick e escolhe o melhor.
+- **NÃO** permitir member sem CC no meio da chain — player morre no switch. Use `hasAnyCC` pra filtrar. Máx 1 no-CC permitido, e só na última posição (finalizer).
+- **NÃO** permitir starter com skill frontal no kit — frontal deixa buracos na proteção dos 6 mobs. Starter precisa `hasHardCC && !hasFrontal`.
+- **NÃO** re-hidratar só `bestStarterElements` no migration — também pega `defFactor`, `hp`, `types` de mobs.json quando o nome bate (source of truth, user não edita no UI).
 
 ## Dicas de UI
 

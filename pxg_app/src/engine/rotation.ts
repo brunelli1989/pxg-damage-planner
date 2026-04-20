@@ -14,7 +14,7 @@ import {
 } from "./cooldown";
 import { getClanElements, lureFinalizesBox, resolveSkillPower } from "./damage";
 import type { ClanName, MobConfig, PokemonElement } from "../types";
-import { getOptimalSkillOrder, hasFrontal, hasHardCC, hasHarden, hasSilence } from "./scoring";
+import { getOptimalSkillOrder, hasAnyCC, hasFrontal, hasHardCC, hasHarden, hasSilence } from "./scoring";
 
 const CAST_TIME = 1;
 export const MAX_BAG = 6;
@@ -99,11 +99,13 @@ export function generateLureTemplates(
 
   // Flags cacheadas por índice da bag (evita chamar has*() centenas de vezes)
   const hardCC = new Array<boolean>(n);
+  const anyCC = new Array<boolean>(n);
   const harden = new Array<boolean>(n);
   const silence = new Array<boolean>(n);
   const frontal = new Array<boolean>(n);
   for (let i = 0; i < n; i++) {
     hardCC[i] = hasHardCC(bag[i]);
+    anyCC[i] = hasAnyCC(bag[i]);
     harden[i] = hasHarden(bag[i]);
     silence[i] = hasSilence(bag[i]);
     frontal[i] = hasFrontal(bag[i]);
@@ -114,8 +116,8 @@ export function generateLureTemplates(
     : -1;
   const devicePoke = deviceIdx >= 0 ? bag[deviceIdx] : null;
 
-  // Solo T1H + device
-  if (devicePoke && devicePoke.tier === "T1H" && hardCC[deviceIdx]) {
+  // Solo T1H + device. Starter sem frontal (frontal não protege os 6 mobs da box).
+  if (devicePoke && devicePoke.tier === "T1H" && hardCC[deviceIdx] && !frontal[deviceIdx]) {
     lures.push({
       type: "solo_device",
       starter: devicePoke,
@@ -154,11 +156,12 @@ export function generateLureTemplates(
     });
   }
 
-  // Dupla: starter (com CC) + second (qualquer outro). Matriz de validade pré-computada.
+  // Dupla: starter (com CC área, sem frontal) + second (qualquer — second é finalizer
+  // na dupla, não precisa de CC). Matriz de validade pré-computada.
   // Device holder PODE ser dupla starter (ele só é excluído de solo_device se não for T1H,
   // e de "second" role — não faz sentido ser starter e second ao mesmo tempo).
   for (let i = 0; i < n; i++) {
-    if (!hardCC[i]) continue;
+    if (!hardCC[i] || frontal[i]) continue;
     const starter = bag[i];
     const starterHarden = harden[i];
 
@@ -197,7 +200,7 @@ export function generateLureTemplates(
   const MAX_GROUP_EXTRAS = MAX_BAG - 1;
   if (options.includeGroup) {
     for (let i = 0; i < n; i++) {
-      if (!hardCC[i]) continue;
+      if (!hardCC[i] || frontal[i]) continue;
       const starter = bag[i];
       const starterHarden = harden[i];
 
@@ -213,8 +216,21 @@ export function generateLureTemplates(
           const frontalAny = frontal[i] || combo.some((k) => frontal[k]);
           if (silenceActive && frontalAny) continue;
 
-          const second = bag[combo[0]];
-          const rest = combo.slice(1).map<LureMember>((k) => ({
+          // Finalizer rule: só o ÚLTIMO poke na chain pode ser sem CC (starter casta
+          // CC inicial, middle members reaplicam CC, o finalizer casta por último e
+          // nada vem depois — então não precisa de CC). Max 1 no-CC por lure.
+          // Reordena pra colocar o no-CC na última posição (finalizer).
+          let noCCCount = 0;
+          for (const k of combo) if (!anyCC[k]) noCCCount++;
+          if (noCCCount > 1) continue;
+
+          let orderedCombo = combo;
+          if (noCCCount === 1) {
+            orderedCombo = [...combo.filter((k) => anyCC[k]), ...combo.filter((k) => !anyCC[k])];
+          }
+
+          const second = bag[orderedCombo[0]];
+          const rest = orderedCombo.slice(1).map<LureMember>((k) => ({
             poke: bag[k],
             skills: getOptimalSkillOrder(bag[k], silenceActive),
           }));
