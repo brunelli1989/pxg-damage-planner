@@ -143,13 +143,15 @@ runTest(
 // Each lure is dupla with Sh.Golem starter + different second, cycling through the 5 others.
 // Expected: Sh.Golem é starter em todas as 5 duplas; Lycanroc, Omastar, Rampardos, TR Tyranitar
 // e Sh.Rampardos aparecem cada um como second em uma dupla.
+// Sem Sh.Rampardos no bag — ele seria top-T1H+CC e o engine compararia com ele
+// como device (higher damage), possivelmente escolhendo ele. Sem Sh.Rampardos, não há
+// T1H+CC candidato, então Sh.Golem (user's hint) fica como único device viável.
 const golemDeviceBag = [
   findPoke("Shiny Golem"),
   findPoke("Lycanroc"),
   findPoke("Omastar"),
   findPoke("Rampardos"),
   findPoke("TR Tyranitar"),
-  findPoke("Shiny Rampardos"),
 ];
 const golemDeviceSetups: Record<string, PokeSetup> = {};
 for (const p of golemDeviceBag) {
@@ -160,12 +162,13 @@ for (const p of golemDeviceBag) {
   };
 }
 runTest(
-  "Test 4: Sh.Golem (device) + X duplas rotacionando os outros 5",
+  "Test 4: Sh.Golem (device) + X duplas rotacionando os outros 4",
   golemDeviceBag,
   "orebound",
   (_starters, usage) => {
-    // Sh.Golem tem que dominar como dupla starter — pelo menos 5 lures como starter
-    // (user expected 5 duplas com Sh.Golem starter, uma por cada outro poke como second)
+    // Sh.Golem tem que dominar como dupla starter — pelo menos 5 lures como starter.
+    // User's hint (hasDevice=true) é aditivo: com Sh.Rampardos fora da bag, Sh.Golem
+    // é o único candidato device (top-T1H+CC vazio), então engine forçosamente pega ele.
     if (usage["Shiny Golem"].starter < 5) {
       throw new Error(`Sh.Golem devia ser starter em ≥5 lures (got ${usage["Shiny Golem"].starter})`);
     }
@@ -173,8 +176,8 @@ runTest(
     if (usage["Shiny Golem"].any > usage["Shiny Golem"].starter) {
       throw new Error(`Sh.Golem não deveria aparecer como second (device holder)`);
     }
-    // Todos os 5 outros pokes aparecem em alguma lure
-    const others = ["Lycanroc", "Omastar", "Rampardos", "TR Tyranitar", "Shiny Rampardos"];
+    // Todos os 4 outros pokes aparecem em alguma lure
+    const others = ["Lycanroc", "Omastar", "Rampardos", "TR Tyranitar"];
     const unused = others.filter((n) => usage[n].any === 0);
     if (unused.length > 0) {
       throw new Error(`pokes não usados: ${unused.join(", ")}`);

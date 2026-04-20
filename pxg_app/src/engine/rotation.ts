@@ -733,6 +733,26 @@ export function findBestRotation(
   const maxCycleLen = options.maxCycleLen ?? 12;
   const minCycleLen = options.minCycleLen ?? 2;
 
+  // Device holder sempre carrega o device — damage calc do poke (em qualquer lure)
+  // recebe bonus. Override pokeSetup.hasDevice=true pro holder durante essa call
+  // sem mutar o config do caller. Antes isso ficava restrito a solo_device, então
+  // dupla/group com o device holder como membro perdiam o bonus que é real no jogo.
+  if (devicePokemonId && options.damageConfig) {
+    const baseSetup = options.damageConfig.pokeSetups[devicePokemonId];
+    if (baseSetup && !baseSetup.hasDevice) {
+      options = {
+        ...options,
+        damageConfig: {
+          ...options.damageConfig,
+          pokeSetups: {
+            ...options.damageConfig.pokeSetups,
+            [devicePokemonId]: { ...baseSetup, hasDevice: true },
+          },
+        },
+      };
+    }
+  }
+
   let lures: Lure[];
   if (options.damageConfig) {
     // Cascata: tenta lures cheap primeiro; só gera caro quando nenhum barato finaliza.
@@ -936,15 +956,6 @@ export function findBestForBag(
     damageConfig?: DamageConfig;
   }
 ): { idle: number; result: RotationResult; score: number } | null {
-  // User override: se algum poke na bag tem hasDevice=true no pokeSetup, usa ele
-  // como device holder (qualquer tier), pulando a heurística automática.
-  const userDesignated = bag.find(
-    (p) => options?.damageConfig?.pokeSetups?.[p.id]?.hasDevice === true && hasHardCC(p)
-  );
-  if (userDesignated) {
-    return findBestRotation(bag, diskLevel, userDesignated.id, options ?? {});
-  }
-
   // Device: só T1H+CC carrega device. Limita a top-2 por power total calibrado
   // pra evitar explosão de runs em bags com muitos T1H.
   const t1hCC = bag
@@ -957,6 +968,16 @@ export function findBestForBag(
     .slice(0, 2)
     .map((x) => x.id);
   const deviceCandidates: (string | null)[] = [null, ...t1hCC];
+
+  // User hint: se o usuário marcou hasDevice=true em algum poke no PokeSetupEditor,
+  // garantimos que ele entra na lista de candidatos (mesmo se não for top-T1H+CC).
+  // Mas NÃO substitui os demais — o beam compara todos e escolhe o melhor.
+  const userDesignated = bag.find(
+    (p) => options?.damageConfig?.pokeSetups?.[p.id]?.hasDevice === true && hasHardCC(p)
+  );
+  if (userDesignated && !deviceCandidates.includes(userDesignated.id)) {
+    deviceCandidates.push(userDesignated.id);
+  }
 
   let best: { idle: number; result: RotationResult; score: number } | null = null;
   let bestScore = Infinity;

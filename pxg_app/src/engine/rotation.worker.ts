@@ -82,7 +82,8 @@ self.onmessage = (e: MessageEvent<WorkerRequest>) => {
   const { bags, diskLevel, beamWidth, maxCycleLen, minCycleLen, damageConfig } = e.data;
 
   let bestIdle = Infinity;
-  let bestTimePerLure = Infinity;
+  let bestScore = Infinity;     // score adjusted (inclui starterResistFactor, só pra ranking)
+  let bestRawTpl = Infinity;    // raw tpl (totalTime/steps) pro pruning por bound
   let bestResult: RotationResult | null = null;
 
   let skippedTime = 0;
@@ -92,13 +93,16 @@ self.onmessage = (e: MessageEvent<WorkerRequest>) => {
   const cantFinalize = damageConfig ? makeBagDamagePruner(damageConfig) : null;
 
   // Sort bags by lower bound (menor = potencialmente melhor). Rodar bags mais promissoras
-  // primeiro acelera o pruning: bestTimePerLure desce rápido, demais bags são puladas.
+  // primeiro acelera o pruning: bestRawTpl desce rápido, demais bags são puladas.
   const bagsWithBound = bags.map((bag) => ({ bag, bound: bagTimePerLureLowerBound(bag) }));
   bagsWithBound.sort((a, b) => a.bound - b.bound);
 
   for (const { bag, bound } of bagsWithBound) {
-    // Pruning por tempo: lower bound >= best já achado
-    if (bound >= bestTimePerLure) {
+    // Pruning por tempo: lower bound >= melhor raw tpl já achado.
+    // IMPORTANTE: comparar raw contra raw. bestScore é adjusted (tpl × starterResistFactor),
+    // mas bound é raw tpl — comparar direto skipava bags incorretamente quando o factor
+    // puxava o score pra baixo (ex: rocks em Orebound = factor 0.6).
+    if (bound >= bestRawTpl) {
       skippedTime++;
       const progressMsg: WorkerMessage = { type: "progress", done: 1 };
       self.postMessage(progressMsg);
@@ -119,9 +123,11 @@ self.onmessage = (e: MessageEvent<WorkerRequest>) => {
       damageConfig,
     });
     if (res) {
-      // res.score já inclui starterResistFactor (preferência por starters resistentes).
-      if (res.score < bestTimePerLure) {
-        bestTimePerLure = res.score;
+      // Rank by adjusted score (respects user's starter preference),
+      // prune by raw tpl (coherent with bound).
+      if (res.score < bestScore) {
+        bestScore = res.score;
+        bestRawTpl = res.result.totalTime / res.result.steps.length;
         bestIdle = res.idle;
         bestResult = res.result;
       }
