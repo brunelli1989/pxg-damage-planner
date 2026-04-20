@@ -128,6 +128,52 @@ runTest(
   }
 );
 
+// --- Test 4: Sh.Golem (device) dupla-starter em todas as lures ---
+// Bag sem Sh.Rampardos como T1H óbvio pro device → Sh.Golem (T2 rock, Orebound, Harden) domina.
+// Sh.Golem hasDevice=true no pokeSetup → ele ganha boost de dano do device mesmo em duplas.
+// Each lure is dupla with Sh.Golem starter + different second, cycling through the 5 others.
+// Expected: Sh.Golem é starter em todas as 5 duplas; Lycanroc, Omastar, Rampardos, TR Tyranitar
+// e Sh.Rampardos aparecem cada um como second em uma dupla.
+const golemDeviceBag = [
+  findPoke("Shiny Golem"),
+  findPoke("Lycanroc"),
+  findPoke("Omastar"),
+  findPoke("Rampardos"),
+  findPoke("TR Tyranitar"),
+  findPoke("Shiny Rampardos"),
+];
+const golemDeviceSetups: Record<string, PokeSetup> = {};
+for (const p of golemDeviceBag) {
+  golemDeviceSetups[p.id] = {
+    boost: 80,
+    held: { kind: "x-attack", tier: 8 },
+    hasDevice: p.name === "Shiny Golem",  // só Sh.Golem tem device
+  };
+}
+runTest(
+  "Test 4: Sh.Golem (device) + X duplas rotacionando os outros 5",
+  golemDeviceBag,
+  "orebound",
+  (_starters, usage) => {
+    // Sh.Golem tem que dominar como dupla starter — pelo menos 5 lures como starter
+    // (user expected 5 duplas com Sh.Golem starter, uma por cada outro poke como second)
+    if (usage["Shiny Golem"].starter < 5) {
+      throw new Error(`Sh.Golem devia ser starter em ≥5 lures (got ${usage["Shiny Golem"].starter})`);
+    }
+    // Device holder nunca é second (engine garante)
+    if (usage["Shiny Golem"].any > usage["Shiny Golem"].starter) {
+      throw new Error(`Sh.Golem não deveria aparecer como second (device holder)`);
+    }
+    // Todos os 5 outros pokes aparecem em alguma lure
+    const others = ["Lycanroc", "Omastar", "Rampardos", "TR Tyranitar", "Shiny Rampardos"];
+    const unused = others.filter((n) => usage[n].any === 0);
+    if (unused.length > 0) {
+      throw new Error(`pokes não usados: ${unused.join(", ")}`);
+    }
+  },
+  golemDeviceSetups,
+);
+
 // --- Test 3: rotação ideal Magby/Pansear com Sh.Rampardos device ---
 // Bag: Sh.Rampardos (T1H rock), Sh.Golem (T2 rock), Hippowdon (T2 ground),
 //      Omastar (T3 rock/water), TR Tyranitar (TR rock), Rampardos (T2 rock)

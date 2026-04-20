@@ -155,8 +155,10 @@ export function generateLureTemplates(
   }
 
   // Dupla: starter (com CC) + second (qualquer outro). Matriz de validade pré-computada.
+  // Device holder PODE ser dupla starter (ele só é excluído de solo_device se não for T1H,
+  // e de "second" role — não faz sentido ser starter e second ao mesmo tempo).
   for (let i = 0; i < n; i++) {
-    if (!hardCC[i] || i === deviceIdx) continue;
+    if (!hardCC[i]) continue;
     const starter = bag[i];
     const starterHarden = harden[i];
 
@@ -916,6 +918,15 @@ export function findBestForBag(
     damageConfig?: DamageConfig;
   }
 ): { idle: number; result: RotationResult; score: number } | null {
+  // User override: se algum poke na bag tem hasDevice=true no pokeSetup, usa ele
+  // como device holder (qualquer tier), pulando a heurística automática.
+  const userDesignated = bag.find(
+    (p) => options?.damageConfig?.pokeSetups?.[p.id]?.hasDevice === true && hasHardCC(p)
+  );
+  if (userDesignated) {
+    return findBestRotation(bag, diskLevel, userDesignated.id, options ?? {});
+  }
+
   // Device: só T1H+CC carrega device. Limita a top-2 por power total calibrado
   // pra evitar explosão de runs em bags com muitos T1H.
   const t1hCC = bag
