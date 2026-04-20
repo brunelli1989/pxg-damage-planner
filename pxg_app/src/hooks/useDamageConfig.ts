@@ -51,13 +51,17 @@ function loadConfig(): DamageConfig {
     if (!merged.device) {
       merged.device = { kind: "x-attack", tier: 4 };
     }
-    // Migration: re-hidrata bestStarterElements do mob se faltando (campo novo,
-    // configs salvas antes não têm — casa por name exato ou pelo group name)
-    if (merged.mob && !merged.mob.bestStarterElements) {
+    // Migration: re-hidrata campos derivados (bestStarterElements, defFactor, hp, types)
+    // do mobs.json quando o nome bate. defFactor e hp mudam com calibração e queremos
+    // sempre pegar o valor mais recente. User não edita esses campos no UI — é source of truth.
+    if (merged.mob) {
       const name = merged.mob.name;
       const match = mobsData.find((m) => m.name === name || m.group === name);
-      if (match?.bestStarterElements) {
-        merged.mob.bestStarterElements = match.bestStarterElements;
+      if (match) {
+        if (match.bestStarterElements) merged.mob.bestStarterElements = match.bestStarterElements;
+        if (match.defFactor !== undefined) merged.mob.defFactor = match.defFactor;
+        if (match.hp !== undefined) merged.mob.hp = match.hp;
+        if (match.types) merged.mob.types = match.types;
       }
     }
     // Migration: pokeSetups — converte xAtkTier/xBoostTier legado pra held único
