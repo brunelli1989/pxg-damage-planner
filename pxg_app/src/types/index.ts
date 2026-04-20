@@ -141,6 +141,10 @@ export interface MobEntry {
   bestStarterElements?: PokemonElement[];
   /** URL da página da hunt no wiki do PxG */
   wiki?: string;
+  /** Elementos que causam dano efetivo no mob (ofensivo — pra tua skill atacar mais forte) */
+  effectiveElements?: PokemonElement[];
+  /** Observações da seção Efetividades do wiki (passivas, exceções) */
+  effectivenessNotes?: string;
 }
 
 export interface DamageConfig {

@@ -12,7 +12,12 @@
       "dark",
       "steel"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Espurr"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Espurr",
+    "effectiveElements": [
+      "bug",
+      "ghost",
+      "dark"
+    ]
   },
   {
     "name": "Pansear",
@@ -27,7 +32,12 @@
       "water",
       "rock"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Magby_e_Pansear"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Magby_e_Pansear",
+    "effectiveElements": [
+      "water",
+      "ground",
+      "rock"
+    ]
   },
   {
     "name": "Magby",
@@ -42,7 +52,12 @@
       "water",
       "rock"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Magby_e_Pansear"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Magby_e_Pansear",
+    "effectiveElements": [
+      "water",
+      "ground",
+      "rock"
+    ]
   },
   {
     "name": "Dratini",
@@ -56,7 +71,12 @@
     "bestStarterElements": [
       "fairy"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Dratini_e_Dragonair"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Dratini_e_Dragonair",
+    "effectiveElements": [
+      "fairy",
+      "ice",
+      "dragon"
+    ]
   },
   {
     "name": "Dragonair",
@@ -70,7 +90,12 @@
     "bestStarterElements": [
       "fairy"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Dratini_e_Dragonair"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Dratini_e_Dragonair",
+    "effectiveElements": [
+      "fairy",
+      "ice",
+      "dragon"
+    ]
   },
   {
     "name": "Bagon",
@@ -84,7 +109,12 @@
     "bestStarterElements": [
       "fairy"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Bagon_e_Shelgon"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Bagon_e_Shelgon",
+    "effectiveElements": [
+      "fairy",
+      "ice",
+      "dragon"
+    ]
   },
   {
     "name": "Shelgon",
@@ -98,7 +128,12 @@
     "bestStarterElements": [
       "fairy"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Bagon_e_Shelgon"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Bagon_e_Shelgon",
+    "effectiveElements": [
+      "fairy",
+      "ice",
+      "dragon"
+    ]
   },
   {
     "name": "Gible",
@@ -114,7 +149,11 @@
       "steel",
       "fairy"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Gible_e_Gabite"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Gible_e_Gabite",
+    "effectiveElements": [
+      "ice"
+    ],
+    "effectivenessNotes": "O Beartic possui uma passiva que o deixa resistente ao elemento Dragon. | Embora o elemento Dragon cause dano super efetivo nesse local, Pokémon desse elemento também recebem dano super efetivo de Dragon. Sendo assim, não é um local indicado para o clã Wingeon. | O elemento Fairy causa dano efetivo no local, entretanto, não serão tão fortes como o dano do elemento Ice, para qual o local foi balanceado."
   },
   {
     "name": "Gabite",
@@ -130,7 +169,11 @@
       "steel",
       "fairy"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Gible_e_Gabite"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Gible_e_Gabite",
+    "effectiveElements": [
+      "ice"
+    ],
+    "effectivenessNotes": "O Beartic possui uma passiva que o deixa resistente ao elemento Dragon. | Embora o elemento Dragon cause dano super efetivo nesse local, Pokémon desse elemento também recebem dano super efetivo de Dragon. Sendo assim, não é um local indicado para o clã Wingeon. | O elemento Fairy causa dano efetivo no local, entretanto, não serão tão fortes como o dano do elemento Ice, para qual o local foi balanceado."
   },
   {
     "name": "Spoink",
@@ -146,7 +189,12 @@
       "dark",
       "steel"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Spoink"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Spoink",
+    "effectiveElements": [
+      "bug",
+      "ghost",
+      "dark"
+    ]
   },
   {
     "name": "Alolan Diglett",
@@ -161,7 +209,14 @@
       "fire",
       "water"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Diglett"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Diglett",
+    "effectiveElements": [
+      "ground",
+      "water",
+      "fighting",
+      "fire"
+    ],
+    "effectivenessNotes": "Apesar de causarem dano super efetivo, os elementos Fighting e Ground recebem dano normal deste Pokémon, portanto, é necessário tomar cuidado ao frequentar o local. | O Pokémon Steelix poderá ser uma opção viável para jogadores do clã Orebound frequentarem este local, tendo em vista que recebe dano inefetivo do elemento Steel."
   },
   {
     "name": "Alolan Dugtrio",
@@ -177,7 +232,14 @@
       "fire",
       "water"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Diglett"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Diglett",
+    "effectiveElements": [
+      "ground",
+      "water",
+      "fighting",
+      "fire"
+    ],
+    "effectivenessNotes": "Apesar de causarem dano super efetivo, os elementos Fighting e Ground recebem dano normal deste Pokémon, portanto, é necessário tomar cuidado ao frequentar o local. | O Pokémon Steelix poderá ser uma opção viável para jogadores do clã Orebound frequentarem este local, tendo em vista que recebe dano inefetivo do elemento Steel."
   },
   {
     "name": "Alolan Meowth",
@@ -191,7 +253,12 @@
       "fighting",
       "fairy"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Meowth"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Meowth",
+    "effectiveElements": [
+      "fighting",
+      "bug",
+      "fairy"
+    ]
   },
   {
     "name": "Grimer",
@@ -205,7 +272,11 @@
       "ground",
       "rock"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Grimer"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Grimer",
+    "effectiveElements": [
+      "psychic",
+      "ground"
+    ]
   },
   {
     "name": "Mega Beedrill",
@@ -220,7 +291,13 @@
       "fire",
       "flying"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Beedrill"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Beedrill",
+    "effectiveElements": [
+      "flying",
+      "fire",
+      "rock",
+      "psychic"
+    ]
   },
   {
     "name": "Beedrill",
@@ -235,7 +312,13 @@
       "fire",
       "flying"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Beedrill"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Beedrill",
+    "effectiveElements": [
+      "flying",
+      "fire",
+      "rock",
+      "psychic"
+    ]
   },
   {
     "name": "Silicobra",
@@ -250,7 +333,12 @@
       "grass",
       "bug"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Silicobra"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Silicobra",
+    "effectiveElements": [
+      "water",
+      "grass",
+      "ice"
+    ]
   },
   {
     "name": "Galarian Farfetch'd",
@@ -265,7 +353,12 @@
       "psychic",
       "fairy"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Galarian_Farfetchd"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Galarian_Farfetchd",
+    "effectiveElements": [
+      "flying",
+      "psychic",
+      "fairy"
+    ]
   },
   {
     "name": "Lunatone",
@@ -279,7 +372,16 @@
     "bestStarterElements": [
       "steel"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Solrock_e_Lunatone"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Solrock_e_Lunatone",
+    "effectiveElements": [
+      "ghost",
+      "dark",
+      "steel",
+      "water",
+      "grass",
+      "bug"
+    ],
+    "effectivenessNotes": "Apesar de causarem dano efetivo, Pokémon dos elementos Ghost, Dark, Water e Grass recebem dano normal destes Pokémon, portanto, é necessário tomar cuidado ao frequentar o local. | Embora os Pokémon sejam do elemento Rock, estes Pokémon possuem a passiva Levitate, portanto, não recebem dano do tipo Ground."
   },
   {
     "name": "Solrock",
@@ -293,7 +395,16 @@
     "bestStarterElements": [
       "steel"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Solrock_e_Lunatone"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Solrock_e_Lunatone",
+    "effectiveElements": [
+      "ghost",
+      "dark",
+      "steel",
+      "water",
+      "grass",
+      "bug"
+    ],
+    "effectivenessNotes": "Apesar de causarem dano efetivo, Pokémon dos elementos Ghost, Dark, Water e Grass recebem dano normal destes Pokémon, portanto, é necessário tomar cuidado ao frequentar o local. | Embora os Pokémon sejam do elemento Rock, estes Pokémon possuem a passiva Levitate, portanto, não recebem dano do tipo Ground."
   },
   {
     "name": "Rockruff",
@@ -308,7 +419,14 @@
       "ground",
       "steel"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Rockruff"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Rockruff",
+    "effectiveElements": [
+      "fighting",
+      "steel",
+      "water",
+      "grass",
+      "ground"
+    ]
   },
   {
     "name": "Mantyke",
@@ -322,7 +440,10 @@
     "bestStarterElements": [
       "electric"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Mantyke"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Mantyke",
+    "effectiveElements": [
+      "electric"
+    ]
   },
   {
     "name": "Galarian Darumaka",
@@ -337,7 +458,12 @@
       "fire",
       "steel"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Galarian_Darumaka"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Galarian_Darumaka",
+    "effectiveElements": [
+      "fire",
+      "rock",
+      "steel"
+    ]
   },
   {
     "name": "Farfetch'd",
@@ -353,7 +479,12 @@
       "electric",
       "rock"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Farfetchd"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Farfetchd",
+    "effectiveElements": [
+      "electric",
+      "rock",
+      "ice"
+    ]
   },
   {
     "name": "Klink",
@@ -366,7 +497,13 @@
     "bestStarterElements": [
       "fire"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Klink_e_Klang"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Klink_e_Klang",
+    "effectiveElements": [
+      "fighting",
+      "ground",
+      "fire"
+    ],
+    "effectivenessNotes": "Apesar de causarem dano super efetivo, os elementos Fighting e Ground recebem dano normal deste Pokémon, portanto, é necessário tomar cuidado ao frequentar o local. | O Pokémon Steelix poderá ser uma opção viável para jogadores do clã Orebound frequentarem este local, tendo em vista que recebe dano inefetivo do elemento Steel."
   },
   {
     "name": "Klang",
@@ -379,7 +516,13 @@
     "bestStarterElements": [
       "fire"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Klink_e_Klang"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Klink_e_Klang",
+    "effectiveElements": [
+      "fighting",
+      "ground",
+      "fire"
+    ],
+    "effectivenessNotes": "Apesar de causarem dano super efetivo, os elementos Fighting e Ground recebem dano normal deste Pokémon, portanto, é necessário tomar cuidado ao frequentar o local. | O Pokémon Steelix poderá ser uma opção viável para jogadores do clã Orebound frequentarem este local, tendo em vista que recebe dano inefetivo do elemento Steel."
   },
   {
     "name": "Galarian Meowth",
@@ -392,7 +535,13 @@
     "bestStarterElements": [
       "fire"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Galarian_Meowth"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Galarian_Meowth",
+    "effectiveElements": [
+      "fighting",
+      "ground",
+      "fire"
+    ],
+    "effectivenessNotes": "Apesar de causarem dano super efetivo, Pokémon do elemento Ground e Fighting recebem dano normal deste Pokémon, portanto, é necessário tomar cuidado ao frequentar o local utilizando esses Pokémon. | O Pokémon Steelix poderá ser uma opção viável para jogadores do clã Orebound frequentarem este local, tendo em vista que recebe dano inefetivo do elemento Steel."
   },
   {
     "name": "Carvanha",
@@ -407,7 +556,14 @@
     "bestStarterElements": [
       "grass"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Carvanha"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Carvanha",
+    "effectiveElements": [
+      "grass",
+      "electric",
+      "fighting",
+      "bug",
+      "fairy"
+    ]
   },
   {
     "name": "Barboach",
@@ -422,7 +578,10 @@
       "grass",
       "bug"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Barboach"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Barboach",
+    "effectiveElements": [
+      "grass"
+    ]
   },
   {
     "name": "Rufflet",
@@ -437,7 +596,12 @@
       "electric",
       "rock"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Rufflet"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Rufflet",
+    "effectiveElements": [
+      "electric",
+      "rock",
+      "ice"
+    ]
   },
   {
     "name": "Machoke",
@@ -452,7 +616,12 @@
       "psychic",
       "fairy"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Machoke"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Machoke",
+    "effectiveElements": [
+      "fairy",
+      "psychic",
+      "flying"
+    ]
   },
   {
     "name": "Sneasel",
@@ -466,7 +635,11 @@
     "bestStarterElements": [
       "fighting"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Sneasel"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Sneasel",
+    "effectiveElements": [
+      "fighting"
+    ],
+    "effectivenessNotes": "Apesar de causarem dano efetivo no local, os elementos Fire, Bug, Rock e Steel recebem dano normal de golpes do tipo Dark usados por deste Pokémon. Portanto, jogadores que frequentarem este local usando Pokémon destes elementos deverão tomar cuidado. | Os elementos Fire, Bug, Rock e Steel e Fairy causam dano efetivo no local, entretanto, não serão tão fortes como o dano do elemento Fighting, para o qual o local foi balanceado."
   },
   {
     "name": "Cloyster",
@@ -482,7 +655,13 @@
       "grass",
       "dragon"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Cloyster"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Cloyster",
+    "effectiveElements": [
+      "fighting",
+      "grass",
+      "electric",
+      "rock"
+    ]
   },
   {
     "name": "Snorunt",
@@ -496,7 +675,12 @@
       "fire",
       "steel"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Snorunt"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Snorunt",
+    "effectiveElements": [
+      "fire",
+      "rock",
+      "steel"
+    ]
   },
   {
     "name": "Snubbull",
@@ -511,7 +695,11 @@
       "poison",
       "steel"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Snubbull"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Snubbull",
+    "effectiveElements": [
+      "poison",
+      "steel"
+    ]
   },
   {
     "name": "Shuppet",
@@ -525,7 +713,11 @@
       "normal",
       "dark"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Shuppet"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Shuppet",
+    "effectiveElements": [
+      "ghost",
+      "dark"
+    ]
   },
   {
     "name": "Darkrai Minion",
@@ -559,7 +751,14 @@
       "dragon",
       "dark"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Litwick_e_Lampent"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Litwick_e_Lampent",
+    "effectiveElements": [
+      "ghost",
+      "dark",
+      "water",
+      "ground",
+      "rock"
+    ]
   },
   {
     "name": "Litwick",
@@ -578,7 +777,14 @@
       "dragon",
       "dark"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Litwick_e_Lampent"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Litwick_e_Lampent",
+    "effectiveElements": [
+      "ghost",
+      "dark",
+      "water",
+      "ground",
+      "rock"
+    ]
   },
   {
     "name": "Goomy",
@@ -591,7 +797,12 @@
     "bestStarterElements": [
       "dragon"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Goomy_e_Sliggoo"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Goomy_e_Sliggoo",
+    "effectiveElements": [
+      "dragon",
+      "fairy",
+      "ice"
+    ]
   },
   {
     "name": "Sliggoo",
@@ -604,7 +815,12 @@
     "bestStarterElements": [
       "dragon"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Goomy_e_Sliggoo"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Goomy_e_Sliggoo",
+    "effectiveElements": [
+      "dragon",
+      "fairy",
+      "ice"
+    ]
   },
   {
     "name": "Whirlipede",
@@ -623,7 +839,13 @@
       "ghost",
       "steel"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Venipede_e_Whirlipede"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Venipede_e_Whirlipede",
+    "effectiveElements": [
+      "rock",
+      "psychic",
+      "flying",
+      "fire"
+    ]
   },
   {
     "name": "Venipede",
@@ -642,7 +864,13 @@
       "ghost",
       "steel"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Venipede_e_Whirlipede"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Venipede_e_Whirlipede",
+    "effectiveElements": [
+      "rock",
+      "psychic",
+      "flying",
+      "fire"
+    ]
   },
   {
     "name": "Litleo",
@@ -657,7 +885,13 @@
       "water",
       "rock"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Litleo"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Litleo",
+    "effectiveElements": [
+      "water",
+      "fighting",
+      "ground",
+      "rock"
+    ]
   },
   {
     "name": "Cranidos",
@@ -673,7 +907,14 @@
       "ground",
       "steel"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Cranidos"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Cranidos",
+    "effectiveElements": [
+      "fighting",
+      "steel",
+      "water",
+      "grass",
+      "ground"
+    ]
   },
   {
     "name": "Elekid",
@@ -687,7 +928,10 @@
     "bestStarterElements": [
       "ground"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Elekid"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Elekid",
+    "effectiveElements": [
+      "ground"
+    ]
   },
   {
     "name": "Tynamo",
@@ -702,7 +946,10 @@
       "ground",
       "rock"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Tynamo_e_Eelektrik"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Tynamo_e_Eelektrik",
+    "effectiveElements": [
+      "ground"
+    ]
   },
   {
     "name": "Eelektrik",
@@ -717,7 +964,10 @@
       "ground",
       "rock"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Tynamo_e_Eelektrik"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Tynamo_e_Eelektrik",
+    "effectiveElements": [
+      "ground"
+    ]
   },
   {
     "name": "Petilil",
@@ -735,7 +985,14 @@
       "bug",
       "dragon"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Petilil"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Petilil",
+    "effectiveElements": [
+      "fire",
+      "ice",
+      "poison",
+      "flying",
+      "bug"
+    ]
   },
   {
     "name": "Skiddo",
@@ -753,7 +1010,15 @@
       "bug",
       "dragon"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Skiddo_e_Nuzleaf"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Skiddo_e_Nuzleaf",
+    "effectiveElements": [
+      "fire",
+      "ice",
+      "poison",
+      "flying",
+      "bug"
+    ],
+    "effectivenessNotes": "Embora o Nuzleaf receba dano super efetivo apenas do elemento Bug, isso não interfere no desempenho dos outros clãs neste local de caça. | Apesar do Pokémon Nuzleaf receber dano efetivo dos elementos Fighting e Fairy, o Pokémon Skidoo recebe dano normal destes Pokémon. Desta forma, jogadores que frequentarem este local usando estes Pokémon deverão tomar cuidado. | O Beartic possui uma passiva que o deixa resistente ao elemento Grass, sendo uma opção segura para jogadores do clã Seavell utilizarem neste local de caça."
   },
   {
     "name": "Nuzleaf",
@@ -772,7 +1037,15 @@
       "bug",
       "dragon"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Skiddo_e_Nuzleaf"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Skiddo_e_Nuzleaf",
+    "effectiveElements": [
+      "fire",
+      "ice",
+      "poison",
+      "flying",
+      "bug"
+    ],
+    "effectivenessNotes": "Embora o Nuzleaf receba dano super efetivo apenas do elemento Bug, isso não interfere no desempenho dos outros clãs neste local de caça. | Apesar do Pokémon Nuzleaf receber dano efetivo dos elementos Fighting e Fairy, o Pokémon Skidoo recebe dano normal destes Pokémon. Desta forma, jogadores que frequentarem este local usando estes Pokémon deverão tomar cuidado. | O Beartic possui uma passiva que o deixa resistente ao elemento Grass, sendo uma opção segura para jogadores do clã Seavell utilizarem neste local de caça."
   },
   {
     "name": "Ralts",
@@ -787,7 +1060,12 @@
       "poison",
       "steel"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Ralts_e_Kirlia"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Ralts_e_Kirlia",
+    "effectiveElements": [
+      "ghost",
+      "poison",
+      "steel"
+    ]
   },
   {
     "name": "Kirlia",
@@ -802,7 +1080,12 @@
       "poison",
       "steel"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Ralts_e_Kirlia"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Ralts_e_Kirlia",
+    "effectiveElements": [
+      "ghost",
+      "poison",
+      "steel"
+    ]
   },
   {
     "name": "Applin",
@@ -820,7 +1103,15 @@
       "bug",
       "dragon"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Applin"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Applin",
+    "effectiveElements": [
+      "flying",
+      "dragon",
+      "poison",
+      "fairy",
+      "bug"
+    ],
+    "effectivenessNotes": "Os Applin possuem a passiva Ripen que reduz os golpes recebidos pelo elemento Ice, fazendo com que não seja uma hunt atrativa para o clã Seavell. | Apesar de causarem dano efetivo, o elemento Fairy recebe dano normal deste Pokémon, portanto, é necessário tomar cuidado ao frequentar o local."
   },
   {
     "name": "Meowstic",
@@ -835,7 +1126,12 @@
       "dark",
       "steel"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Meowstic"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Meowstic",
+    "effectiveElements": [
+      "ghost",
+      "dark",
+      "bug"
+    ]
   },
   {
     "name": "Wormadam",
@@ -851,7 +1147,11 @@
       "flying",
       "dragon"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Wormadam"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Wormadam",
+    "effectiveElements": [
+      "flying",
+      "fire"
+    ]
   },
   {
     "name": "Sirfetch'd",
@@ -866,7 +1166,12 @@
       "psychic",
       "fairy"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Sirfetchd"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Sirfetchd",
+    "effectiveElements": [
+      "flying",
+      "psychic",
+      "fairy"
+    ]
   },
   {
     "name": "Lycanroc",
@@ -882,7 +1187,14 @@
       "ground",
       "steel"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Lycanroc"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Lycanroc",
+    "effectiveElements": [
+      "fighting",
+      "steel",
+      "ground",
+      "water",
+      "grass"
+    ]
   },
   {
     "name": "Mantine",
@@ -896,7 +1208,10 @@
     "bestStarterElements": [
       "electric"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Mantine"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Mantine",
+    "effectiveElements": [
+      "electric"
+    ]
   },
   {
     "name": "Galarian Darmanitan",
@@ -910,7 +1225,14 @@
       "fire",
       "steel"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Galarian_Darmanitan"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Galarian_Darmanitan",
+    "effectiveElements": [
+      "fire",
+      "rock",
+      "fighting",
+      "steel"
+    ],
+    "effectivenessNotes": "Apesar do elemento Fighting causar dano super efetivo nesta hunt, apenas a Shiny Hariyama possui a passiva Thick Fat, tornando golpes do elemento Ice muito inefetivos. | O Pokémon Omastar poderá ser uma opção viável para jogadores do clã Orebound frequentarem este local, tendo em vista que recebe dano inefetivo do elemento Ice."
   },
   {
     "name": "Klinklang",
@@ -923,7 +1245,13 @@
     "bestStarterElements": [
       "fire"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Klinklang"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Klinklang",
+    "effectiveElements": [
+      "fighting",
+      "fire",
+      "ground"
+    ],
+    "effectivenessNotes": "Os elementos Ground e Fighting recebem dano normal desses Pokémon, portanto, jogadores que frequentarem este local utilizando estes elementos, deverão tomar cuidado. | O Pokémon Steelix poderá ser uma opção viável para jogadores do clã Orebound frequentarem este local, tendo em vista que recebe dano inefetivo do elemento Steel."
   },
   {
     "name": "Mecha Meganium",
@@ -1020,7 +1348,12 @@
       "electric",
       "rock"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Braviary"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Braviary",
+    "effectiveElements": [
+      "electric",
+      "rock",
+      "ice"
+    ]
   },
   {
     "name": "Pidgeot",
@@ -1036,7 +1369,12 @@
       "electric",
       "rock"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Pidgeot"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Pidgeot",
+    "effectiveElements": [
+      "rock",
+      "electric",
+      "ice"
+    ]
   },
   {
     "name": "Perrserker",
@@ -1049,7 +1387,13 @@
     "bestStarterElements": [
       "fire"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Perrserker"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Perrserker",
+    "effectiveElements": [
+      "fighting",
+      "fire",
+      "ground"
+    ],
+    "effectivenessNotes": "Os elementos Ground e Fighting recebem dano normal desses Pokémon, portanto, jogadores que frequentarem este local utilizando estes elementos, deverão tomar cuidado. | O Pokémon Steelix poderá ser uma opção viável para jogadores do clã Orebound frequentarem este local."
   },
   {
     "name": "Weavile",
@@ -1064,7 +1408,11 @@
     "bestStarterElements": [
       "fighting"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Weavile"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Weavile",
+    "effectiveElements": [
+      "fighting"
+    ],
+    "effectivenessNotes": "Apesar de causarem dano efetivo no local, os elementos Fire, Bug, Rock e Steel recebem dano normal de golpes do tipo Dark usados por deste Pokémon. Portanto, jogadores que frequentarem este local usando Pokémon destes elementos deverão tomar cuidado. | Os elementos Fire, Bug, Rock e Steel e Fairy causam dano efetivo no local, entretanto, não serão tão fortes como o dano do elemento Fighting, para o qual o local foi balanceado."
   },
   {
     "name": "Garchomp",
@@ -1079,7 +1427,11 @@
       "steel",
       "fairy"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Dragonite_e_Garchomp"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Dragonite_e_Garchomp",
+    "effectiveElements": [
+      "ice"
+    ],
+    "effectivenessNotes": "Embora o elemento Dragon cause dano super efetivo nesse local, Pokémon desse elemento também recebem dano super efetivo de Dragon. Sendo assim, não é um local indicado para o clã Wingeon. | O elemento Fairy causa dano efetivo no local, entretanto, não serão tão fortes como o dano do elemento Ice, para qual o local foi balanceado. | O elemento Rock causa dano efetivo apenas no Pokémon Dragonite, portanto, acaba não sendo o ideal para o local."
   },
   {
     "name": "Dragonite",
@@ -1094,7 +1446,11 @@
       "steel",
       "fairy"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Dragonite_e_Garchomp"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Dragonite_e_Garchomp",
+    "effectiveElements": [
+      "ice"
+    ],
+    "effectivenessNotes": "Embora o elemento Dragon cause dano super efetivo nesse local, Pokémon desse elemento também recebem dano super efetivo de Dragon. Sendo assim, não é um local indicado para o clã Wingeon. | O elemento Fairy causa dano efetivo no local, entretanto, não serão tão fortes como o dano do elemento Ice, para qual o local foi balanceado. | O elemento Rock causa dano efetivo apenas no Pokémon Dragonite, portanto, acaba não sendo o ideal para o local."
   },
   {
     "name": "Hawlucha",
@@ -1111,7 +1467,11 @@
       "psychic",
       "fairy"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Hawlucha"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Hawlucha",
+    "effectiveElements": [
+      "flying",
+      "psychic"
+    ]
   },
   {
     "name": "Granbull",
@@ -1125,7 +1485,11 @@
       "poison",
       "steel"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Granbull"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Granbull",
+    "effectiveElements": [
+      "poison",
+      "steel"
+    ]
   },
   {
     "name": "Gallade",
@@ -1143,7 +1507,12 @@
       "ghost",
       "fairy"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Gallade"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Gallade",
+    "effectiveElements": [
+      "ghost",
+      "fairy",
+      "flying"
+    ]
   },
   {
     "name": "Honchkrow",
@@ -1158,7 +1527,13 @@
       "electric",
       "rock"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Honchkrow"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Honchkrow",
+    "effectiveElements": [
+      "rock",
+      "electric",
+      "fairy",
+      "ice"
+    ]
   },
   {
     "name": "Empoleon",
@@ -1172,7 +1547,12 @@
     "bestStarterElements": [
       "electric"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Empoleon"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Empoleon",
+    "effectiveElements": [
+      "electric",
+      "fighting",
+      "ground"
+    ]
   },
   {
     "name": "Infernape",
@@ -1189,7 +1569,13 @@
       "psychic",
       "fairy"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Infernape"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Infernape",
+    "effectiveElements": [
+      "flying",
+      "psychic",
+      "ground",
+      "water"
+    ]
   },
   {
     "name": "Torterra",
@@ -1210,7 +1596,10 @@
       "dragon",
       "steel"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Torterra"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Torterra",
+    "effectiveElements": [
+      "ice"
+    ]
   },
   {
     "name": "Luxray",
@@ -1224,7 +1613,10 @@
     "bestStarterElements": [
       "ground"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Luxray"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Luxray",
+    "effectiveElements": [
+      "ground"
+    ]
   },
   {
     "name": "Raichu",
@@ -1238,7 +1630,10 @@
     "bestStarterElements": [
       "ground"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Raichu_e_Manectric"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Raichu_e_Manectric",
+    "effectiveElements": [
+      "ground"
+    ]
   },
   {
     "name": "Manectric",
@@ -1252,7 +1647,10 @@
     "bestStarterElements": [
       "ground"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Raichu_e_Manectric"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Raichu_e_Manectric",
+    "effectiveElements": [
+      "ground"
+    ]
   },
   {
     "name": "Sandaconda",
@@ -1267,7 +1665,12 @@
       "grass",
       "bug"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Sandaconda"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Sandaconda",
+    "effectiveElements": [
+      "ice",
+      "water",
+      "grass"
+    ]
   },
   {
     "name": "Scolipede",
@@ -1286,7 +1689,13 @@
       "ghost",
       "steel"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Scolipede"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Scolipede",
+    "effectiveElements": [
+      "rock",
+      "psychic",
+      "flying",
+      "fire"
+    ]
   },
   {
     "name": "Torkoal",
@@ -1301,7 +1710,12 @@
       "water",
       "rock"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Torkoal"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Torkoal",
+    "effectiveElements": [
+      "water",
+      "rock",
+      "ground"
+    ]
   },
   {
     "name": "Glalie",
@@ -1316,7 +1730,14 @@
       "fire",
       "steel"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Glalie"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Glalie",
+    "effectiveElements": [
+      "fire",
+      "rock",
+      "fighting",
+      "steel"
+    ],
+    "effectivenessNotes": "Apesar do elemento Fighting causar dano super efetivo nesta hunt, apenas a Shiny Hariyama possui a passiva Thick Fat, tornando golpes do elemento Ice muito inefetivos. | O Pokémon Omastar poderá ser uma opção viável para jogadores do clã Orebound frequentarem este local, tendo em vista que recebe dano inefetivo do elemento Ice."
   },
   {
     "name": "Sharpedo",
@@ -1330,7 +1751,14 @@
     "bestStarterElements": [
       "grass"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Sharpedo"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Sharpedo",
+    "effectiveElements": [
+      "grass",
+      "electric",
+      "fighting",
+      "bug",
+      "fairy"
+    ]
   },
   {
     "name": "Starmie",
@@ -1345,7 +1773,14 @@
     "bestStarterElements": [
       "grass"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Starmie"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Starmie",
+    "effectiveElements": [
+      "grass",
+      "electric",
+      "ghost",
+      "dark",
+      "bug"
+    ]
   },
   {
     "name": "Whiscash",
@@ -1361,7 +1796,10 @@
       "grass",
       "bug"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Whiscash"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Whiscash",
+    "effectiveElements": [
+      "grass"
+    ]
   },
   {
     "name": "Pyroar Female",
@@ -1376,7 +1814,14 @@
       "water",
       "rock"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Pyroar_Female"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Pyroar_Female",
+    "effectiveElements": [
+      "water",
+      "fighting",
+      "ground",
+      "rock"
+    ],
+    "effectivenessNotes": "Apesar de causarem dano efetivo, Pokémon dos elementos Fighting e Ground recebem dano normal de golpes do tipo Fire. Desta forma, jogadores que frequentarem este local usando Pokémon destes elementos deverão tomar cuidado. | Shiny Hariyama possui a passiva Thick Fat, tornando-a resistente a golpes do elemento Fire."
   },
   {
     "name": "Pyroar",
@@ -1392,7 +1837,14 @@
       "water",
       "rock"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Pyroar_Female"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Pyroar_Female",
+    "effectiveElements": [
+      "water",
+      "fighting",
+      "ground",
+      "rock"
+    ],
+    "effectivenessNotes": "Apesar de causarem dano efetivo, Pokémon dos elementos Fighting e Ground recebem dano normal de golpes do tipo Fire. Desta forma, jogadores que frequentarem este local usando Pokémon destes elementos deverão tomar cuidado. | Shiny Hariyama possui a passiva Thick Fat, tornando-a resistente a golpes do elemento Fire."
   },
   {
     "name": "Simisear",
@@ -1406,7 +1858,12 @@
       "water",
       "rock"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Simisear"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Simisear",
+    "effectiveElements": [
+      "water",
+      "ground",
+      "rock"
+    ]
   },
   {
     "name": "Turtonator",
@@ -1422,7 +1879,12 @@
       "rock",
       "dragon"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Turtonator"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Turtonator",
+    "effectiveElements": [
+      "dragon",
+      "ground",
+      "rock"
+    ]
   },
   {
     "name": "Chandelure",
@@ -1437,7 +1899,14 @@
       "normal",
       "dark"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Chandelure"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Chandelure",
+    "effectiveElements": [
+      "ghost",
+      "dark",
+      "water",
+      "ground",
+      "rock"
+    ]
   },
   {
     "name": "Houndoom",
@@ -1453,7 +1922,13 @@
       "water",
       "rock"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Houndoom"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Houndoom",
+    "effectiveElements": [
+      "water",
+      "ground",
+      "rock",
+      "fighting"
+    ]
   },
   {
     "name": "Pinsir",
@@ -1468,7 +1943,12 @@
       "fire",
       "flying"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Pinsir"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Pinsir",
+    "effectiveElements": [
+      "flying",
+      "fire",
+      "rock"
+    ]
   },
   {
     "name": "Machamp",
@@ -1484,7 +1964,12 @@
       "psychic",
       "fairy"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Machamp"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Machamp",
+    "effectiveElements": [
+      "flying",
+      "psychic",
+      "fairy"
+    ]
   },
   {
     "name": "Alolan Persian",
@@ -1499,7 +1984,12 @@
       "fighting",
       "fairy"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Persian"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Persian",
+    "effectiveElements": [
+      "fighting",
+      "bug",
+      "fairy"
+    ]
   },
   {
     "name": "Alolan Muk",
@@ -1514,7 +2004,10 @@
       "ground",
       "rock"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Muk"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Muk",
+    "effectiveElements": [
+      "ground"
+    ]
   },
   {
     "name": "Goodra",
@@ -1527,7 +2020,12 @@
     "bestStarterElements": [
       "dragon"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Goodra"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Goodra",
+    "effectiveElements": [
+      "dragon",
+      "fairy",
+      "ice"
+    ]
   },
   {
     "name": "Eelektross",
@@ -1542,7 +2040,10 @@
       "ground",
       "rock"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Eelektross"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Eelektross",
+    "effectiveElements": [
+      "ground"
+    ]
   },
   {
     "name": "Rampardos",
@@ -1557,7 +2058,14 @@
       "ground",
       "steel"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Rampardos_e_Sudowoodo"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Rampardos_e_Sudowoodo",
+    "effectiveElements": [
+      "steel",
+      "fighting",
+      "ground",
+      "water",
+      "grass"
+    ]
   },
   {
     "name": "Sudowoodo",
@@ -1572,7 +2080,14 @@
       "ground",
       "steel"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Rampardos_e_Sudowoodo"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Rampardos_e_Sudowoodo",
+    "effectiveElements": [
+      "steel",
+      "fighting",
+      "ground",
+      "water",
+      "grass"
+    ]
   },
   {
     "name": "Gogoat",
@@ -1591,7 +2106,14 @@
       "bug",
       "dragon"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Gogoat"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Gogoat",
+    "effectiveElements": [
+      "flying",
+      "fire",
+      "poison",
+      "ice",
+      "bug"
+    ]
   },
   {
     "name": "Alolan Raichu",
@@ -1607,7 +2129,14 @@
       "dark",
       "steel"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Raichu"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Raichu",
+    "effectiveElements": [
+      "ghost",
+      "dark",
+      "bug",
+      "ground"
+    ],
+    "effectivenessNotes": "Apesar do elemento Bug causar dano efetivo nesta hunt, apenas os Pokémon Accelgor, Vespiquen e Shiny Yanmega possuem resistência para esta hunt, devido à sua habilidade passiva Unburden, que reduz o dano recebido por golpes do elemento Psychic. | Embora causem dano efetivo, Pokémon dos elementos Ghost e Ground recebem dano normal desses Pokémon. | O Pokémon Steelix poderá ser uma opção viável para jogadores do clã Orebound frequentarem este local, tendo em vista que recebe dano inefetivo do elemento Psychic."
   },
   {
     "name": "Flapple",
@@ -1621,7 +2150,14 @@
     "bestStarterElements": [
       "fairy"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Flapple"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Flapple",
+    "effectiveElements": [
+      "flying",
+      "dragon",
+      "poison",
+      "fairy",
+      "bug"
+    ]
   },
   {
     "name": "Appletun",
@@ -1639,7 +2175,14 @@
       "bug",
       "dragon"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Appletun"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Appletun",
+    "effectiveElements": [
+      "flying",
+      "dragon",
+      "poison",
+      "fairy",
+      "bug"
+    ]
   },
   {
     "name": "Druddigon",
@@ -1653,7 +2196,12 @@
     "bestStarterElements": [
       "fairy"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Druddigon"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Druddigon",
+    "effectiveElements": [
+      "fairy",
+      "ice",
+      "dragon"
+    ]
   },
   {
     "name": "Drampa",
@@ -1670,7 +2218,13 @@
       "ghost",
       "steel"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Drampa"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Drampa",
+    "effectiveElements": [
+      "fighting",
+      "ice",
+      "dragon",
+      "fairy"
+    ]
   },
   {
     "name": "Muk",
@@ -1684,7 +2238,11 @@
       "ground",
       "rock"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Muk_e_Seviper"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Muk_e_Seviper",
+    "effectiveElements": [
+      "psychic",
+      "ground"
+    ]
   },
   {
     "name": "Seviper",
@@ -1698,6 +2256,10 @@
       "ground",
       "rock"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Muk_e_Seviper"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Muk_e_Seviper",
+    "effectiveElements": [
+      "psychic",
+      "ground"
+    ]
   }
 ]

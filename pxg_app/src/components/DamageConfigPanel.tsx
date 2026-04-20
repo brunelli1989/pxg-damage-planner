@@ -213,6 +213,16 @@ export function DamageConfigPanel({
               </span>
             )}
           </span>
+          {selectedGroupMobs[0]?.effectiveElements && selectedGroupMobs[0].effectiveElements.length > 0 && (
+            <span className="hint">
+              Dano efetivo vs mob: <strong>{selectedGroupMobs[0].effectiveElements.join(", ")}</strong>
+            </span>
+          )}
+          {selectedGroupMobs[0]?.effectivenessNotes && (
+            <span className="hint" style={{ fontStyle: "italic", opacity: 0.85 }}>
+              {selectedGroupMobs[0].effectivenessNotes}
+            </span>
+          )}
           <span className="hint legend">
             {Object.entries(SOURCE_ICON).map(([src, icon]) => (
               <span key={src} style={{ marginRight: 10 }}>
