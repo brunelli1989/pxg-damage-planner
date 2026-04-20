@@ -222,7 +222,7 @@ Quando `skill.power` é undefined, `resolveSkillPower(skill, poke)` usa `DEFAULT
 | Mob | Tipo | defFactor |
 |---|---|---|
 | Torkoal | fire | 0.55 (hunt 400+) |
-| Pinsir | bug | 0.58 (bem tanky) |
+| Pinsir | bug | 0.58 (hunt 400+, calibrado) |
 | Pidgeot | normal/flying | 0.59 (hunt 400+) |
 | Dragonair | dragon | 0.68 (outlier) |
 | Dratini | dragon | 0.80 |
@@ -267,6 +267,10 @@ Contexto histórico na memória: `project_pxg_damage_formula.md`.
 - **NÃO** permitir member sem CC no meio da chain — player morre no switch. Use `hasAnyCC` pra filtrar. Máx 1 no-CC permitido, e só na última posição (finalizer).
 - **NÃO** permitir starter com skill frontal no kit — frontal deixa buracos na proteção dos 6 mobs. Starter precisa `hasHardCC && !hasFrontal`.
 - **NÃO** re-hidratar só `bestStarterElements` no migration — também pega `defFactor`, `hp`, `types` de mobs.json quando o nome bate (source of truth, user não edita no UI).
+- **NÃO** cascading greedy em `generateLureTemplates` (base → +duplaElixir → +group parando no primeiro que finaliza). Sempre passar `includeDuplaElixir: true, includeGroup: true` — beam search escolhe melhor rotação por bph. Bag com dupla+elixir forte pode esconder rotação de group 3× melhor.
+- **NÃO** marcar poke como uncalibrated via `pokemon.todo !== undefined` — campo `todo` agora é só informativo (ex: notes de burn-pollution). UI checa per-skill: `pokemon.skills.some((s) => s.power === undefined && s.buff === null)`.
+- **NÃO** forçar Elixir Def em T1H starter — T1H tem HP pool alto, tanka sem. Regra: `needsElixirDef = !harden && tier !== "T1H"`.
+- **NÃO** tratar Flame Wheel como buff:self puro — ela tem damage + self-buff. Se user calibrou power, usar esse valor em `resolveSkillPower` (nosso código já faz, mas data.json precisa `power` setado).
 
 ## Dicas de UI
 
