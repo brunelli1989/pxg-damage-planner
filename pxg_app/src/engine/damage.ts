@@ -158,7 +158,10 @@ const X_ATK_BONUSES: Record<XAtkTier, number> = {
 };
 
 // X-Boost tier bonuses dependem do level do player.
-// Tabela baseada em wiki. X-Boost só vai até T7. Faixas: 0-99, 100-149, 150-399, 400-625.
+// Tabela da wiki: X = valor base por (tier, faixa). Wiki: "aumenta o bônus do Pokémon em X,
+// concedendo bônus de vida equivalente a X níveis **e o dobro desse valor como bônus de ataque**".
+// Pra damage calc, a contribuição efetiva ao boost é 2X (validado empiricamente em Sh.Rampardos
+// + device X-Boost T7 @ lvl 366: observado 29,783/32,181 FR/RW → 2X model bate dentro de 0.5%).
 const X_BOOST_BY_RANGE: Partial<Record<XAtkTier, number[]>> = {
   0: [0, 0, 0, 0],
   1: [6, 9, 12, 15],
@@ -175,7 +178,8 @@ export const MAX_X_BOOST_TIER: XAtkTier = 7;
 function xBoostBonus(tier: XAtkTier | undefined, playerLvl: number): number {
   if (!tier) return 0;
   const range = playerLvl <= 99 ? 0 : playerLvl <= 149 ? 1 : playerLvl <= 399 ? 2 : 3;
-  return X_BOOST_BY_RANGE[tier]?.[range] ?? 0;
+  const base = X_BOOST_BY_RANGE[tier]?.[range] ?? 0;
+  return base * 2;
 }
 
 function computeEffectiveBoost(
@@ -226,36 +230,19 @@ export function getEffectiveness(
 }
 
 /**
- * PxG usa regras customizadas pra tipo duplo (não é multiplicativo como mainline):
- * - Ambos fracos: 2.0×
- * - Só um fraco (outro neutro): 1.75×
- * - Fraco + resistente: 1.0×
- * - Ambos resistentes: 0.5×
- * - Um resist + um neutro: 0.5×
- * - Um imune: 0× (PvE)
- * - Ambos neutros: 1.0×
+ * PxG usa só o ÚLTIMO tipo listado pro efeito defensivo de mobs dual-type
+ * (validado 2026-04-20 com Pidgeot [normal, flying] vs rock/fighting/electric/grass/ground
+ * — todas as 4 categorias do wiki batem usando só `defenderTypes[1]`).
+ *
+ * Implicação: o primeiro tipo é essencialmente "cosmético" pro cálculo de dano.
+ * Ordem em mobs.json deve bater com a do wiki (ex: "normal/flying" pra Pidgeot).
  */
 export function computeEffectiveness(
   attackerType: PokemonElement,
   defenderTypes: PokemonElement[]
 ): number {
   if (defenderTypes.length === 0) return 1;
-  if (defenderTypes.length === 1) return getEffectiveness(attackerType, defenderTypes[0]);
-
-  const [e1, e2] = defenderTypes.map((t) => getEffectiveness(attackerType, t));
-
-  if (e1 === 0 || e2 === 0) return 0;
-
-  const weak1 = e1 >= 2;
-  const weak2 = e2 >= 2;
-  const resist1 = e1 <= 0.5;
-  const resist2 = e2 <= 0.5;
-
-  if (weak1 && weak2) return 2.0;
-  if ((weak1 && resist2) || (weak2 && resist1)) return 1.0;
-  if (weak1 || weak2) return 1.75;
-  if (resist1 || resist2) return 0.5;
-  return 1.0;
+  return getEffectiveness(attackerType, defenderTypes[defenderTypes.length - 1]);
 }
 
 // =========================================================

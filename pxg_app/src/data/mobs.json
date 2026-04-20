@@ -1364,7 +1364,7 @@
     "hunt": "400+",
     "group": "Pidgeot",
     "hp": 468889,
-    "todo": "calibrate defense",
+    "defFactor": 0.59,
     "bestStarterElements": [
       "electric",
       "rock"
@@ -1705,7 +1705,7 @@
     "hunt": "400+",
     "group": "Torkoal",
     "hp": 439109,
-    "todo": "calibrate defense",
+    "defFactor": 0.55,
     "bestStarterElements": [
       "water",
       "rock"

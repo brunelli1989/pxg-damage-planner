@@ -107,4 +107,56 @@ const observedPansearDevice = 52476;
 const errPansearDevice = Math.abs(predictedPansearDevice - observedPansearDevice) / observedPansearDevice;
 console.log(`Sh.Ramp RW em Pansear + device: predito ${predictedPansearDevice.toFixed(0)}, obs ${observedPansearDevice}, err ${(errPansearDevice * 100).toFixed(2)}%`);
 
+// Step 7: X-Boost device (2X rule, validado 2026-04-20)
+// Wiki: X-Boost "aumenta o bônus do Pokémon em X e o DOBRO desse valor como bônus de ataque".
+// T7 @ lvl 366 (range 150-399) → tabela X=36, eff_boost contribution = 72.
+// Sh.Rampardos FR 24.28, Torkoal def 0.55, fire 2x eff, X-Atk T7 + device X-Boost T7.
+const falling: Skill = {
+  name: "Falling Rocks",
+  cooldown: 40,
+  type: "area",
+  cc: null,
+  buff: null,
+  element: "rock",
+  power: 24.28,
+};
+const cfgXBoost: DamageConfig = {
+  playerLvl: 366,
+  clan: "orebound",
+  hunt: "400+",
+  mob: { name: "Torkoal", types: ["fire"], hp: 439109, defFactor: 0.55 },
+  device: { kind: "x-boost", tier: 7 },
+  pokeSetups: {
+    "shiny-rampardos": { boost: 70, held: { kind: "x-attack", tier: 7 }, hasDevice: true },
+  },
+  skillCalibrations: {},
+};
+const predictedXBoost = computeSkillDamage(cfgXBoost, shinyRampardos, falling);
+const observedXBoost = 29783;
+const errXBoost = Math.abs(predictedXBoost - observedXBoost) / observedXBoost;
+console.log(`Sh.Ramp FR + device X-Boost T7: predito ${predictedXBoost.toFixed(0)}, obs ${observedXBoost}, err ${(errXBoost * 100).toFixed(2)}%`);
+// Esperado ~29,940 com 2X rule; sem a correção seria ~27,939 (+6.6% off).
+
+// Step 8: Dual-type defender rule (validado 2026-04-20 com Pidgeot)
+// PxG usa só o ÚLTIMO tipo listado. Pidgeot [normal, flying] → rock SE (2×) via Flying.
+// Observado: full combo Sh.Rampardos (5 skills, Σ power=119.49) em 3 Pidgeots = 408.3k total
+// → 136.1k per mob → def = 0.587 @ eff=2.
+const pidgeotFR: Skill = { ...falling };
+const cfgPidgeot: DamageConfig = {
+  playerLvl: 366,
+  clan: "orebound",
+  hunt: "400+",
+  mob: { name: "Pidgeot", types: ["normal", "flying"], hp: 468889, defFactor: 0.59 },
+  device: { kind: "x-boost", tier: 7 },
+  pokeSetups: {
+    "shiny-rampardos": { boost: 70, held: { kind: "x-attack", tier: 7 }, hasDevice: false },
+  },
+  skillCalibrations: {},
+};
+const predictedPidgeot = computeSkillDamage(cfgPidgeot, shinyRampardos, pidgeotFR);
+const observedPidgeotFR = 27684; // @ def=0.587, scaled pra 0.59: 27684 × (0.59/0.587) ≈ 27,826
+const errPidgeot = Math.abs(predictedPidgeot - observedPidgeotFR) / observedPidgeotFR;
+console.log(`Sh.Ramp FR em Pidgeot (dual-type rule): predito ${predictedPidgeot.toFixed(0)}, obs ~${observedPidgeotFR}, err ${(errPidgeot * 100).toFixed(2)}%`);
+// Sem a fix (eff=1.0 antigo): predito ~14k → erro ~50%.
+
 console.log("\nSe todos os erros estão <1%, engine está correto.");

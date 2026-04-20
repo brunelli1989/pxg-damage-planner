@@ -191,8 +191,9 @@ Modificador: `× 1.5` se skill anterior tem `buff: "next"` (Dragon Rage, Hone Cl
 **Componentes:**
 - `player_lvl`, `boost`, constante `+150` fixa, `skill_power` calibrado por (poke, skill)
 - `Σ atk%`: aditivo (X-Atk T1=8% ... T8=31%, device=+19% equivalente T4)
+- **X-Boost held**: contribui `2X` ao eff_boost (wiki: "dobro desse valor como bônus de ataque") — validado 2026-04-20
 - `clã`: multiplicativo se skill é do tipo do clã (Orebound rock/ground=1.25, Volcanic fire=1.28, etc — ver `clans.json`)
-- `eff`: chart padrão Pokémon (0×/0.5×/1×/2×). PxG usa regra custom pra tipo duplo em `computeEffectiveness`
+- `eff`: chart padrão Pokémon (0×/0.5×/1×/2×). **PxG usa só o ÚLTIMO tipo pra dual-type defenders** (ex: Pidgeot [normal, flying] → rock 2× via flying; normal é ignorado). Ver `computeEffectiveness`
 - `def_mob`: multiplicador < 1, empírico por mob
 
 **`skill_power` varia per-instância**, não por espécie: Fire Ball no Ninetales = 6.07, no Charizard = 13.77.
@@ -219,7 +220,9 @@ Quando `skill.power` é undefined, `resolveSkillPower(skill, poke)` usa `DEFAULT
 
 | Mob | Tipo | defFactor |
 |---|---|---|
+| Torkoal | fire | 0.55 (hunt 400+) |
 | Pinsir | bug | 0.58 (bem tanky) |
+| Pidgeot | normal/flying | 0.59 (hunt 400+) |
 | Dragonair | dragon | 0.68 (outlier) |
 | Dratini | dragon | 0.80 |
 | Magby | fire | 0.88 |
