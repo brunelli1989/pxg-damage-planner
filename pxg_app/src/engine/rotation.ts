@@ -12,8 +12,8 @@ import {
   ELIXIR_DEF_COOLDOWN,
   bagRate,
 } from "./cooldown";
-import { lureFinalizesBox, resolveSkillPower } from "./damage";
-import type { MobConfig } from "../types";
+import { getClanElements, lureFinalizesBox, resolveSkillPower } from "./damage";
+import type { ClanName, MobConfig, PokemonElement } from "../types";
 import { getOptimalSkillOrder, hasFrontal, hasHardCC, hasHarden, hasSilence } from "./scoring";
 
 const CAST_TIME = 1;
@@ -399,8 +399,16 @@ export interface CompiledLure {
 export function compileLures(
   lures: Lure[],
   ctx: SimContext,
-  mob?: MobConfig
+  mob?: MobConfig,
+  clan?: ClanName | null
 ): CompiledLure[] {
+  // Pré-computa conjuntos pro cálculo do starterResistFactor.
+  // ideal = bestStarterElements ∩ clan_elements (tanka o mob + recebe clan bonus no dmg)
+  const bestEls: PokemonElement[] = mob?.bestStarterElements ?? [];
+  const clanEls: PokemonElement[] = clan ? getClanElements(clan) : [];
+  const idealSet = new Set<PokemonElement>(bestEls.filter((e) => clanEls.includes(e)));
+  const bestSet = new Set<PokemonElement>(bestEls);
+
   const out: CompiledLure[] = new Array(lures.length);
   for (let k = 0; k < lures.length; k++) {
     const lure = lures[k];
@@ -453,19 +461,21 @@ export function compileLures(
         ? (ctx.pokeIdx.get(lure.elixirAtkHolderId) ?? starterIdx)
         : starterIdx;
 
-    // Preferência pro starter: se o mob marca `bestStarterElements` (dados empíricos
-    // do jogo) e o starter tem algum desses tipos, factor = 0.7 (30% desconto no score).
-    // Caso contrário, neutro (1.0). User-driven, não derivado do chart.
+    // Preferência pro starter, 3 tiers:
+    //   type ∈ (bestStarterElements ∩ clan_elements)  → 0.60 (ideal: tanka + clan bonus)
+    //   type ∈ bestStarterElements (fora do clã)       → 0.75 (só defesa)
+    //   senão                                          → 1.00 (neutro)
     let starterResistFactor = 1;
-    const bestEls = mob?.bestStarterElements;
     const starterEls = lure.starter.elements;
-    if (bestEls && bestEls.length > 0 && starterEls && starterEls.length > 0) {
+    if (starterEls && starterEls.length > 0) {
+      let inIdeal = false;
+      let inBest = false;
       for (const e of starterEls) {
-        if (bestEls.includes(e)) {
-          starterResistFactor = 0.7;
-          break;
-        }
+        if (idealSet.has(e)) { inIdeal = true; break; }
+        if (bestSet.has(e)) inBest = true;
       }
+      if (inIdeal) starterResistFactor = 0.60;
+      else if (inBest) starterResistFactor = 0.75;
     }
 
     out[k] = {
@@ -740,7 +750,7 @@ export function findBestRotation(
   if (lures.length === 0) return null;
 
   const ctx = buildSimContext(bag);
-  const compiled = compileLures(lures, ctx, options.damageConfig?.mob);
+  const compiled = compileLures(lures, ctx, options.damageConfig?.mob, options.damageConfig?.clan);
   const pool = new SimStatePool(ctx);
 
   let beam: BeamState[] = compiled.map((c) => {

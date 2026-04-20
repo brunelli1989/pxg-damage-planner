@@ -270,6 +270,17 @@ const CLAN_ATK_BONUS: Map<ClanName, Map<PokemonElement, number>> = new Map(
   ])
 );
 
+// Pré-indexa clã → elementos (sem bonus). Usado pro engine priorizar starters
+// cujo tipo está no clã do jogador (dano maior com clan bonus nas skills STAB).
+const CLAN_ELEMENTS: Map<ClanName, PokemonElement[]> = new Map(
+  clansData.map((c) => [c.name as ClanName, c.bonuses.map((b) => b.element as PokemonElement)])
+);
+
+export function getClanElements(clanName: ClanName | null): PokemonElement[] {
+  if (!clanName) return [];
+  return CLAN_ELEMENTS.get(clanName) ?? [];
+}
+
 export function getClanBonus(
   clanName: ClanName | null,
   skillElement: PokemonElement | undefined
