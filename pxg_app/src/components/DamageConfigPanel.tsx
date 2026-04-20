@@ -183,6 +183,7 @@ export function DamageConfigPanel({
               <option value="both">Offtank + T1H</option>
               <option value="offtank">Só Offtank</option>
               <option value="t1h">Só T1H</option>
+              <option value="t1h-clan">T1H do clã</option>
             </select>
           </label>
         )}

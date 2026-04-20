@@ -1321,7 +1321,7 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Magmar",
-    "todo": "calibrate skills",
+    "todo": "HS inclui burn DoT (~10-15% overestimate); LP/BJ/FC limpos",
     "skills": [
       {
         "name": "Burning Jealousy",
@@ -1329,7 +1329,8 @@
         "type": "area",
         "cc": "stun",
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 14.92
       },
       {
         "name": "Endure",
@@ -1346,7 +1347,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 29.93
       },
       {
         "name": "Lava Plume",
@@ -1354,7 +1356,17 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 17.44
+      },
+      {
+        "name": "Flame Circle",
+        "cooldown": 25,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire",
+        "power": 16.45
       }
     ]
   },
@@ -1364,7 +1376,7 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Arcanine",
-    "todo": "calibrate skills",
+    "todo": "Flare Blitz/HS/Fire Ball incluem burn DoT (~10-15% overestimate)",
     "skills": [
       {
         "name": "Burn Up",
@@ -1372,7 +1384,8 @@
         "type": "area",
         "cc": "stun",
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 26.08
       },
       {
         "name": "Intimidate",
@@ -1389,7 +1402,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 19.53
       },
       {
         "name": "Hellfire Storm",
@@ -1397,7 +1411,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 24.03
       },
       {
         "name": "Fire Ball",
@@ -1405,7 +1420,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 12.21
       }
     ]
   },
@@ -1415,7 +1431,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Chandelure",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Mystical Fire",
@@ -1423,7 +1438,26 @@
         "type": "area",
         "cc": "silence",
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 22.24
+      },
+      {
+        "name": "Cursed Fire",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire",
+        "power": 23.35
+      },
+      {
+        "name": "Will-O-Wisp",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire",
+        "power": 19.30
       },
       {
         "name": "Shadow Fire",
@@ -1431,7 +1465,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 24.75
       },
       {
         "name": "Fire Pledge",
@@ -1439,15 +1474,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fire"
-      },
-      {
-        "name": "Incinerate",
-        "cooldown": 30,
-        "type": "frontal",
-        "cc": null,
-        "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 27.07
       }
     ]
   },
@@ -1552,7 +1580,6 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Ninetales",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Burning Jealousy",
@@ -1560,7 +1587,17 @@
         "type": "area",
         "cc": "stun",
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 22.57
+      },
+      {
+        "name": "Nasty Plot",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "dark",
+        "power": 0.51
       },
       {
         "name": "Inferno",
@@ -1568,7 +1605,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 16.21
       },
       {
         "name": "Hellfire Storm",
@@ -1576,7 +1614,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 25.58
       },
       {
         "name": "Flame Wheel",
@@ -1584,7 +1623,8 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "fire"
+        "element": "fire",
+        "power": 6.40
       },
       {
         "name": "Fire Ball",
@@ -1592,7 +1632,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 5.88
       }
     ]
   },
@@ -1602,7 +1643,7 @@
     "tier": "T1C",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Ninetales",
-    "todo": "calibrate skills",
+    "todo": "Inferno/Fire Blast/Flamethrower/Fire Ball incluem burn DoT; Flame Wheel limpo",
     "skills": [
       {
         "name": "Inferno",
@@ -1610,31 +1651,26 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 28.75
       },
       {
         "name": "Fire Blast",
         "cooldown": 40,
-        "type": "area",
-        "cc": null,
-        "buff": null,
-        "element": "fire"
-      },
-      {
-        "name": "Fire Spin",
-        "cooldown": 35,
         "type": "frontal",
-        "cc": "stun",
+        "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 19.96
       },
       {
-        "name": "Flame Wheel",
-        "cooldown": 35,
-        "type": "area",
+        "name": "Flamethrower",
+        "cooldown": 18,
+        "type": "frontal",
         "cc": null,
-        "buff": "self",
-        "element": "fire"
+        "buff": null,
+        "element": "fire",
+        "power": 13.06
       },
       {
         "name": "Fire Ball",
@@ -1642,7 +1678,17 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 8.29
+      },
+      {
+        "name": "Flame Wheel",
+        "cooldown": 35,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "fire",
+        "power": 33.65
       }
     ]
   },
@@ -1652,7 +1698,7 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Magby",
-    "todo": "calibrate skills",
+    "todo": "Powers incluem burn DoT (~10-15% overestimate)",
     "skills": [
       {
         "name": "Hellfire Storm",
@@ -1660,7 +1706,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 28.25
       },
       {
         "name": "Fire Blast",
@@ -1668,7 +1715,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 24.61
       },
       {
         "name": "Magma Fist",
@@ -1676,7 +1724,17 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 25.61
+      },
+      {
+        "name": "Flare Blitz",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire",
+        "power": 26.24
       }
     ]
   },
@@ -1740,7 +1798,7 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Flareon",
-    "todo": "calibrate skills",
+    "todo": "HS inclui burn DoT (~9% overestimate)",
     "skills": [
       {
         "name": "Burning Jealousy",
@@ -1748,7 +1806,8 @@
         "type": "area",
         "cc": "stun",
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 14.66
       },
       {
         "name": "Hellfire Storm",
@@ -1756,7 +1815,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 26.96
       },
       {
         "name": "Lava Plume",
@@ -1764,7 +1824,17 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 19.45
+      },
+      {
+        "name": "Flame Circle",
+        "cooldown": 25,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "fire",
+        "power": 16.58
       },
       {
         "name": "Blaze Kick",
@@ -1782,7 +1852,7 @@
     "tier": "TR",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Charizard_(TR)",
-    "todo": "calibrate skills",
+    "todo": "HStorm/Flare Blitz/Fire Ball incluem burn DoT; Fire Spin clean (5 ticks)",
     "skills": [
       {
         "name": "Roar",
@@ -1790,7 +1860,8 @@
         "type": "area",
         "cc": "stun",
         "buff": null,
-        "element": "normal"
+        "element": "normal",
+        "power": 0
       },
       {
         "name": "Ancient Fury",
@@ -1806,7 +1877,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 29.50
       },
       {
         "name": "Flare Blitz",
@@ -1814,7 +1886,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 26.62
       },
       {
         "name": "Fire Spin",
@@ -1822,7 +1895,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 21.95
       },
       {
         "name": "Fire Ball",
@@ -1830,7 +1904,8 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 14.94
       }
     ]
   },

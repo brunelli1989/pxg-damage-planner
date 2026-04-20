@@ -867,6 +867,18 @@
     ]
   },
   {
+    "id": "shiny-ninetales",
+    "name": "Shiny Ninetales",
+    "tier": "T1C",
+    "clans": [
+      "volcanic"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "fire"
+    ]
+  },
+  {
     "id": "omastar",
     "name": "Omastar",
     "tier": "T3",

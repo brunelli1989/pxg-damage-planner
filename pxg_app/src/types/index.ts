@@ -152,10 +152,11 @@ export interface MobEntry {
  * - "offtank": só role === "offensive_tank" pode starter (safe)
  * - "t1h": só tier === "T1H" pode starter (device burst, player forte)
  * - "both": offtank OU T1H (flexível, default)
+ * - "t1h-clan": T1H com elemento do clã (ex: Volcanic → fire; Orebound → rock/ground)
  *
  * Só aplica quando hunt === "400+". Em hunt 300 não há restrição extra.
  */
-export type StarterRoleFilter = "offtank" | "t1h" | "both";
+export type StarterRoleFilter = "offtank" | "t1h" | "both" | "t1h-clan";
 
 export interface DamageConfig {
   playerLvl: number;

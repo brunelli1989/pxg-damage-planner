@@ -96,21 +96,28 @@ export function generateLureTemplates(
     includeDuplaElixir?: boolean;
     includeGroup?: boolean;
     hunt?: "300" | "400+";
-    starterRoleFilter?: "offtank" | "t1h" | "both";
+    starterRoleFilter?: "offtank" | "t1h" | "both" | "t1h-clan";
+    clan?: ClanName | null;
   } = {}
 ): Lure[] {
   const lures: Lure[] = [];
   const n = bag.length;
 
   // Starter role filter baseado no hunt level. Só aplica em hunt "400+".
-  // Hunt 300: sem restrição extra. 400+: user escolhe offtank / t1h / both.
+  // Hunt 300: sem restrição extra. 400+: user escolhe offtank / t1h / both / t1h-clan.
   const roleFilter = options.hunt === "400+" ? (options.starterRoleFilter ?? "both") : null;
+  const clanEls = options.clan ? getClanElements(options.clan) : [];
   const starterRoleOk = (p: Pokemon): boolean => {
     if (roleFilter === null) return true;
     const isOfftank = p.role === "offensive_tank";
     const isT1H = p.tier === "T1H";
     if (roleFilter === "offtank") return isOfftank;
     if (roleFilter === "t1h") return isT1H;
+    if (roleFilter === "t1h-clan") {
+      if (!isT1H) return false;
+      const els = p.elements ?? [];
+      return els.some((e) => clanEls.includes(e));
+    }
     return isOfftank || isT1H;
   };
 
@@ -819,7 +826,7 @@ export function findBestRotation(
       return typeOk.length > 0 ? typeOk : dmgOk;
     };
 
-    const genOpts = { hunt: cfg.hunt, starterRoleFilter: cfg.starterRoleFilter };
+    const genOpts = { hunt: cfg.hunt, starterRoleFilter: cfg.starterRoleFilter, clan: cfg.clan };
     lures = filter(generateLureTemplates(bag, devicePokemonId, genOpts));
     if (lures.length === 0) {
       lures = filter(generateLureTemplates(bag, devicePokemonId, { ...genOpts, includeDuplaElixir: true }));
