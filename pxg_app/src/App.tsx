@@ -81,11 +81,20 @@ function formatTime(seconds: number): string {
 function buildReport(
   selectedIds: string[],
   diskLevel: DiskLevel,
-  result: RotationResult | null
+  result: RotationResult | null,
+  damageConfig?: import("./types").DamageConfig
 ): string {
   const lines: string[] = [];
   lines.push(`=== PxG Rotation Generator — Dados ===`);
   lines.push(`Disk: ${diskLevel === 0 ? "Nenhum" : `Disk ${diskLevel}.0`}`);
+  if (damageConfig) {
+    lines.push(`Player: lvl ${damageConfig.playerLvl} | clã ${damageConfig.clan ?? "Nenhum"} | hunt ${damageConfig.hunt}`);
+    const m = damageConfig.mob;
+    const bestStr = m.bestStarterElements?.length ? ` | best starter: ${m.bestStarterElements.join(", ")}` : "";
+    lines.push(`Mob: ${m.name} (${m.types.join("/")}) HP=${m.hp} def=${m.defFactor ?? "—"}${bestStr}`);
+    const dev = damageConfig.device;
+    lines.push(`Device held: ${dev.kind === "none" ? "—" : `${dev.kind} T${dev.tier}`}`);
+  }
   lines.push(`Pokémons selecionados (${selectedIds.length}):`);
   selectedIds.forEach((id) => {
     const p = allPokemon.find((x) => x.id === id);
@@ -177,7 +186,7 @@ function App() {
   };
 
   const handleCopy = async () => {
-    const report = buildReport(selectedIds, diskLevel, result);
+    const report = buildReport(selectedIds, diskLevel, result, damage.config);
     try {
       await navigator.clipboard.writeText(report);
       setCopyFeedback("Copiado!");
