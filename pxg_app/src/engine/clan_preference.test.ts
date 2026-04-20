@@ -28,22 +28,29 @@ const mobs = mobsData as Array<{
   group?: string;
 }>;
 const pansear = mobs.find((m) => m.name === "Pansear")!;
+const pinsir = mobs.find((m) => m.name === "Pinsir")!;
 
 function setup(boost: number, tier: 0|1|2|3|4|5|6|7|8): PokeSetup {
   return { boost, held: { kind: "x-attack", tier }, hasDevice: false };
 }
 
-function buildConfig(bag: Pokemon[], clan: "orebound" | "seavell" | null, pokeSetups?: Record<string, PokeSetup>): DamageConfig {
+function buildConfig(
+  bag: Pokemon[],
+  clan: "orebound" | "seavell" | null,
+  pokeSetups?: Record<string, PokeSetup>,
+  opts?: { mob?: typeof pansear; playerLvl?: number; hunt?: "300" | "400+" }
+): DamageConfig {
+  const m = opts?.mob ?? pansear;
   return {
-    playerLvl: 366,
+    playerLvl: opts?.playerLvl ?? 366,
     clan,
-    hunt: "300",
+    hunt: opts?.hunt ?? "300",
     mob: {
-      name: "Magby/Pansear",
-      types: pansear.types as DamageConfig["mob"]["types"],
-      hp: pansear.hp ?? 0,
-      defFactor: pansear.defFactor,
-      bestStarterElements: pansear.bestStarterElements as DamageConfig["mob"]["bestStarterElements"],
+      name: m.group ?? m.name,
+      types: m.types as DamageConfig["mob"]["types"],
+      hp: m.hp ?? 0,
+      defFactor: m.defFactor,
+      bestStarterElements: m.bestStarterElements as DamageConfig["mob"]["bestStarterElements"],
     },
     device: { kind: "x-boost", tier: 7 },
     skillCalibrations: {},
@@ -57,12 +64,13 @@ function runTest(
   clan: "orebound" | "seavell" | null,
   assertFn: (starters: string[], memberUsage: Record<string, { starter: number; any: number }>, result: { totalTime: number; steps: number }) => void,
   pokeSetups?: Record<string, PokeSetup>,
+  configOpts?: { mob?: typeof pansear; playerLvl?: number; hunt?: "300" | "400+" },
 ) {
   console.log(`\n=== ${name} ===`);
   console.log(`  bag: ${bag.map((p) => `${p.name} (${p.elements?.join("/") ?? "—"})`).join(", ")}`);
   console.log(`  clan: ${clan ?? "none"}`);
 
-  const cfg = buildConfig(bag, clan, pokeSetups);
+  const cfg = buildConfig(bag, clan, pokeSetups, configOpts);
   const res = findBestForBag(bag, 2, { damageConfig: cfg });
   if (!res) {
     console.log(`  ✗ FAIL: no rotation`);
@@ -172,6 +180,48 @@ runTest(
     }
   },
   golemDeviceSetups,
+);
+
+// --- Test 5: hunt 400+ Pinsir → group lures de 4 com Sh.Rampardos (device) como membro ---
+// Bag: 6 pokes rock/ground. Pinsir (bug, 400+) precisa de ~465k/mob. Duplas rock sozinhas
+// não finalizam nesse lvl. Engine cascata pra group lures.
+// Sh.Rampardos marcado hasDevice=true no pokeSetup → ele é device holder; damage boosted.
+// Expected: ≥2 group lures (4 membros); Sh.Golem é starter; Sh.Rampardos aparece em ambas
+// como membro não-starter (o engine permite device holder como extra/second agora).
+const huntBag = [
+  findPoke("Shiny Golem"),
+  findPoke("Shiny Rampardos"),
+  findPoke("TR Tyranitar"),
+  findPoke("Lycanroc"),
+  findPoke("Hippowdon Female"),
+  findPoke("Shiny Donphan"),
+];
+const huntSetups: Record<string, PokeSetup> = {};
+for (const p of huntBag) {
+  huntSetups[p.id] = {
+    boost: 80,
+    held: { kind: "x-attack", tier: 8 },
+    hasDevice: p.name === "Shiny Rampardos",
+  };
+}
+runTest(
+  "Test 5: hunt 400+ Pinsir → group lures com Sh.Rampardos (device) como membro",
+  huntBag,
+  "orebound",
+  (_starters, usage, result) => {
+    if (result.steps === 0) throw new Error("no lures generated");
+    // Hunt 400+ Pinsir não finaliza com dupla no lvl 400 → engine cascata pra group
+    // Sh.Rampardos (device) deve participar de pelo menos uma lure
+    if (usage["Shiny Rampardos"].any === 0) {
+      throw new Error("Sh.Rampardos (device) nunca apareceu numa lure");
+    }
+    // Sh.Golem deve aparecer também (seja starter, second ou extra)
+    if (usage["Shiny Golem"].any === 0) {
+      throw new Error("Sh.Golem nunca apareceu em nenhuma lure");
+    }
+  },
+  huntSetups,
+  { mob: pinsir, playerLvl: 400, hunt: "400+" },
 );
 
 // --- Test 3: rotação ideal Magby/Pansear com Sh.Rampardos device ---

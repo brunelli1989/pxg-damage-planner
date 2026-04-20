@@ -192,16 +192,18 @@ export function generateLureTemplates(
   // Group lures: starter (com CC) + 2..5 extras (total 3..6 membros). Gerados apenas quando
   // caller aceita (cascading fallback quando nenhuma dupla/dupla+elixir finaliza).
   // Em hunt 400+ com held baixo, a bag inteira (6 membros) pode ser necessária.
+  // Device holder PODE ser membro/extra (seu dano ganha boost via hasDevice no pokeSetup);
+  // apenas excluído de ser starter (mesma lógica do dupla).
   const MAX_GROUP_EXTRAS = MAX_BAG - 1;
   if (options.includeGroup) {
     for (let i = 0; i < n; i++) {
-      if (!hardCC[i] || i === deviceIdx) continue;
+      if (!hardCC[i]) continue;
       const starter = bag[i];
       const starterHarden = harden[i];
 
       const candidateIdx: number[] = [];
       for (let k = 0; k < n; k++) {
-        if (k !== i && k !== deviceIdx) candidateIdx.push(k);
+        if (k !== i) candidateIdx.push(k);
       }
 
       const maxExtras = Math.min(candidateIdx.length, MAX_GROUP_EXTRAS);
