@@ -730,7 +730,22 @@ export function findBestRotation(
   if (options.damageConfig) {
     // Cascata: tenta lures cheap primeiro; só gera caro quando nenhum barato finaliza.
     const cfg = options.damageConfig;
-    const filter = (ls: Lure[]) => ls.filter((l) => lureFinalizesBox(l, cfg, cfg.mob));
+    const best = cfg.mob.bestStarterElements ?? [];
+
+    // Hard filter: se a bag tem pelo menos um starter viável cujo tipo está em
+    // bestStarterElements, os demais são proibidos como starter (ainda podem ser
+    // second/extra). Fallback automaticamente pra sem filtro se não sobrar lure viável.
+    const starterTypeOk = (l: Lure): boolean => {
+      if (best.length === 0) return true;
+      const els = l.starter.elements;
+      if (!els || els.length === 0) return true;
+      return els.some((e) => best.includes(e));
+    };
+    const filter = (ls: Lure[]) => {
+      const dmgOk = ls.filter((l) => lureFinalizesBox(l, cfg, cfg.mob));
+      const typeOk = dmgOk.filter(starterTypeOk);
+      return typeOk.length > 0 ? typeOk : dmgOk;
+    };
 
     lures = filter(generateLureTemplates(bag, devicePokemonId));
     if (lures.length === 0) {
