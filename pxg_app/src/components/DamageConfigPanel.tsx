@@ -197,6 +197,16 @@ export function DamageConfigPanel({
           </select>
           <span className="hint">
             Tipo 1: <strong>{type1}</strong> | Tipo 2: <strong>{type2}</strong>
+            {selectedGroupMobs[0]?.wiki && (
+              <a
+                href={selectedGroupMobs[0].wiki}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ marginLeft: 10 }}
+              >
+                ↗ wiki
+              </a>
+            )}
             {currentMobSource && currentMobSource !== "measured" && (
               <span className="calibration-warning" title={SOURCE_LABEL[currentMobSource]}>
                 {SOURCE_ICON[currentMobSource]} {SOURCE_LABEL[currentMobSource]}

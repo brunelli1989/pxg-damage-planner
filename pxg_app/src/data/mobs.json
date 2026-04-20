@@ -11,7 +11,8 @@
       "psychic",
       "dark",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Espurr"
   },
   {
     "name": "Pansear",
@@ -25,7 +26,8 @@
     "bestStarterElements": [
       "water",
       "rock"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Magby_e_Pansear"
   },
   {
     "name": "Magby",
@@ -39,7 +41,8 @@
     "bestStarterElements": [
       "water",
       "rock"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Magby_e_Pansear"
   },
   {
     "name": "Dratini",
@@ -52,7 +55,8 @@
     "defFactor": 0.8,
     "bestStarterElements": [
       "fairy"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Dratini_e_Dragonair"
   },
   {
     "name": "Dragonair",
@@ -65,7 +69,8 @@
     "defFactor": 0.68,
     "bestStarterElements": [
       "fairy"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Dratini_e_Dragonair"
   },
   {
     "name": "Bagon",
@@ -78,7 +83,8 @@
     "todo": "calibrate defense",
     "bestStarterElements": [
       "fairy"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Bagon_e_Shelgon"
   },
   {
     "name": "Shelgon",
@@ -91,7 +97,8 @@
     "todo": "calibrate defense",
     "bestStarterElements": [
       "fairy"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Bagon_e_Shelgon"
   },
   {
     "name": "Gible",
@@ -106,7 +113,8 @@
     "bestStarterElements": [
       "steel",
       "fairy"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Gible_e_Gabite"
   },
   {
     "name": "Gabite",
@@ -121,7 +129,8 @@
     "bestStarterElements": [
       "steel",
       "fairy"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Gible_e_Gabite"
   },
   {
     "name": "Spoink",
@@ -136,7 +145,8 @@
       "psychic",
       "dark",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Spoink"
   },
   {
     "name": "Alolan Diglett",
@@ -150,7 +160,8 @@
     "bestStarterElements": [
       "fire",
       "water"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Diglett"
   },
   {
     "name": "Alolan Dugtrio",
@@ -165,7 +176,8 @@
     "bestStarterElements": [
       "fire",
       "water"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Diglett"
   },
   {
     "name": "Alolan Meowth",
@@ -178,7 +190,8 @@
     "bestStarterElements": [
       "fighting",
       "fairy"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Meowth"
   },
   {
     "name": "Grimer",
@@ -191,7 +204,8 @@
     "bestStarterElements": [
       "ground",
       "rock"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Grimer"
   },
   {
     "name": "Mega Beedrill",
@@ -205,7 +219,8 @@
     "bestStarterElements": [
       "fire",
       "flying"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Beedrill"
   },
   {
     "name": "Beedrill",
@@ -219,7 +234,8 @@
     "bestStarterElements": [
       "fire",
       "flying"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Beedrill"
   },
   {
     "name": "Silicobra",
@@ -233,7 +249,8 @@
     "bestStarterElements": [
       "grass",
       "bug"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Silicobra"
   },
   {
     "name": "Galarian Farfetch'd",
@@ -247,7 +264,8 @@
       "flying",
       "psychic",
       "fairy"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Galarian_Farfetchd"
   },
   {
     "name": "Lunatone",
@@ -260,7 +278,8 @@
     "todo": "calibrate defense",
     "bestStarterElements": [
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Solrock_e_Lunatone"
   },
   {
     "name": "Solrock",
@@ -273,7 +292,8 @@
     "todo": "calibrate defense",
     "bestStarterElements": [
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Solrock_e_Lunatone"
   },
   {
     "name": "Rockruff",
@@ -287,7 +307,8 @@
       "fighting",
       "ground",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Rockruff"
   },
   {
     "name": "Mantyke",
@@ -300,7 +321,8 @@
     "todo": "calibrate defense",
     "bestStarterElements": [
       "electric"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Mantyke"
   },
   {
     "name": "Galarian Darumaka",
@@ -314,7 +336,8 @@
     "bestStarterElements": [
       "fire",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Galarian_Darumaka"
   },
   {
     "name": "Farfetch'd",
@@ -329,7 +352,8 @@
     "bestStarterElements": [
       "electric",
       "rock"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Farfetchd"
   },
   {
     "name": "Klink",
@@ -341,7 +365,8 @@
     "todo": "calibrate defense",
     "bestStarterElements": [
       "fire"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Klink_e_Klang"
   },
   {
     "name": "Klang",
@@ -353,7 +378,8 @@
     "todo": "calibrate defense",
     "bestStarterElements": [
       "fire"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Klink_e_Klang"
   },
   {
     "name": "Galarian Meowth",
@@ -365,7 +391,8 @@
     "todo": "calibrate defense",
     "bestStarterElements": [
       "fire"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Galarian_Meowth"
   },
   {
     "name": "Carvanha",
@@ -379,7 +406,8 @@
     "todo": "calibrate defense",
     "bestStarterElements": [
       "grass"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Carvanha"
   },
   {
     "name": "Barboach",
@@ -393,7 +421,8 @@
     "bestStarterElements": [
       "grass",
       "bug"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Barboach"
   },
   {
     "name": "Rufflet",
@@ -407,7 +436,8 @@
     "bestStarterElements": [
       "electric",
       "rock"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Rufflet"
   },
   {
     "name": "Machoke",
@@ -421,7 +451,8 @@
       "flying",
       "psychic",
       "fairy"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Machoke"
   },
   {
     "name": "Sneasel",
@@ -434,7 +465,8 @@
     "todo": "calibrate defense",
     "bestStarterElements": [
       "fighting"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Sneasel"
   },
   {
     "name": "Cloyster",
@@ -449,7 +481,8 @@
       "water",
       "grass",
       "dragon"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Cloyster"
   },
   {
     "name": "Snorunt",
@@ -462,7 +495,8 @@
     "bestStarterElements": [
       "fire",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Snorunt"
   },
   {
     "name": "Snubbull",
@@ -476,7 +510,8 @@
     "bestStarterElements": [
       "poison",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Snubbull"
   },
   {
     "name": "Shuppet",
@@ -489,7 +524,8 @@
     "bestStarterElements": [
       "normal",
       "dark"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Shuppet"
   },
   {
     "name": "Darkrai Minion",
@@ -503,7 +539,8 @@
       "rock",
       "ghost",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Darkrai_Minion"
   },
   {
     "name": "Lampent",
@@ -521,7 +558,8 @@
       "rock",
       "dragon",
       "dark"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Litwick_e_Lampent"
   },
   {
     "name": "Litwick",
@@ -539,7 +577,8 @@
       "rock",
       "dragon",
       "dark"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Litwick_e_Lampent"
   },
   {
     "name": "Goomy",
@@ -551,7 +590,8 @@
     "todo": "calibrate defense",
     "bestStarterElements": [
       "dragon"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Goomy_e_Sliggoo"
   },
   {
     "name": "Sliggoo",
@@ -563,7 +603,8 @@
     "todo": "calibrate defense",
     "bestStarterElements": [
       "dragon"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Goomy_e_Sliggoo"
   },
   {
     "name": "Whirlipede",
@@ -581,7 +622,8 @@
       "rock",
       "ghost",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Venipede_e_Whirlipede"
   },
   {
     "name": "Venipede",
@@ -599,7 +641,8 @@
       "rock",
       "ghost",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Venipede_e_Whirlipede"
   },
   {
     "name": "Litleo",
@@ -613,7 +656,8 @@
     "bestStarterElements": [
       "water",
       "rock"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Litleo"
   },
   {
     "name": "Cranidos",
@@ -628,7 +672,8 @@
       "fighting",
       "ground",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Cranidos"
   },
   {
     "name": "Elekid",
@@ -641,7 +686,8 @@
     "todo": "calibrate defense",
     "bestStarterElements": [
       "ground"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Elekid"
   },
   {
     "name": "Tynamo",
@@ -655,7 +701,8 @@
     "bestStarterElements": [
       "ground",
       "rock"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Tynamo_e_Eelektrik"
   },
   {
     "name": "Eelektrik",
@@ -669,7 +716,8 @@
     "bestStarterElements": [
       "ground",
       "rock"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Tynamo_e_Eelektrik"
   },
   {
     "name": "Petilil",
@@ -686,7 +734,8 @@
       "flying",
       "bug",
       "dragon"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Petilil"
   },
   {
     "name": "Skiddo",
@@ -703,7 +752,8 @@
       "flying",
       "bug",
       "dragon"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Skiddo_e_Nuzleaf"
   },
   {
     "name": "Nuzleaf",
@@ -721,7 +771,8 @@
       "flying",
       "bug",
       "dragon"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Skiddo_e_Nuzleaf"
   },
   {
     "name": "Ralts",
@@ -735,7 +786,8 @@
     "bestStarterElements": [
       "poison",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Ralts_e_Kirlia"
   },
   {
     "name": "Kirlia",
@@ -749,7 +801,8 @@
     "bestStarterElements": [
       "poison",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Ralts_e_Kirlia"
   },
   {
     "name": "Applin",
@@ -766,7 +819,8 @@
       "flying",
       "bug",
       "dragon"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Applin"
   },
   {
     "name": "Meowstic",
@@ -780,7 +834,8 @@
       "psychic",
       "dark",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Meowstic"
   },
   {
     "name": "Wormadam",
@@ -795,7 +850,8 @@
       "fire",
       "flying",
       "dragon"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Wormadam"
   },
   {
     "name": "Sirfetch'd",
@@ -809,7 +865,8 @@
       "flying",
       "psychic",
       "fairy"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Sirfetchd"
   },
   {
     "name": "Lycanroc",
@@ -824,7 +881,8 @@
       "fighting",
       "ground",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Lycanroc"
   },
   {
     "name": "Mantine",
@@ -837,7 +895,8 @@
     "todo": "calibrate defense",
     "bestStarterElements": [
       "electric"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Mantine"
   },
   {
     "name": "Galarian Darmanitan",
@@ -850,7 +909,8 @@
     "bestStarterElements": [
       "fire",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Galarian_Darmanitan"
   },
   {
     "name": "Klinklang",
@@ -862,7 +922,8 @@
     "todo": "calibrate defense",
     "bestStarterElements": [
       "fire"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Klinklang"
   },
   {
     "name": "Mecha Meganium",
@@ -875,7 +936,8 @@
       "rock",
       "ghost",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Mecha"
   },
   {
     "name": "Mecha Venusaur",
@@ -887,7 +949,8 @@
       "rock",
       "ghost",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Mecha"
   },
   {
     "name": "Mecha Feraligatr",
@@ -900,7 +963,8 @@
       "rock",
       "ghost",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Mecha"
   },
   {
     "name": "Mecha Blastoise",
@@ -912,7 +976,8 @@
       "rock",
       "ghost",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Mecha"
   },
   {
     "name": "Mecha Typhlosion",
@@ -924,7 +989,8 @@
       "rock",
       "ghost",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Mecha"
   },
   {
     "name": "Mecha Charizard",
@@ -937,7 +1003,8 @@
       "rock",
       "ghost",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Mecha"
   },
   {
     "name": "Braviary",
@@ -952,7 +1019,8 @@
     "bestStarterElements": [
       "electric",
       "rock"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Braviary"
   },
   {
     "name": "Pidgeot",
@@ -967,7 +1035,8 @@
     "bestStarterElements": [
       "electric",
       "rock"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Pidgeot"
   },
   {
     "name": "Perrserker",
@@ -979,7 +1048,8 @@
     "todo": "calibrate defense",
     "bestStarterElements": [
       "fire"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Perrserker"
   },
   {
     "name": "Weavile",
@@ -993,7 +1063,8 @@
     "todo": "calibrate defense",
     "bestStarterElements": [
       "fighting"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Weavile"
   },
   {
     "name": "Garchomp",
@@ -1007,7 +1078,8 @@
     "bestStarterElements": [
       "steel",
       "fairy"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Dragonite_e_Garchomp"
   },
   {
     "name": "Dragonite",
@@ -1021,7 +1093,8 @@
     "bestStarterElements": [
       "steel",
       "fairy"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Dragonite_e_Garchomp"
   },
   {
     "name": "Hawlucha",
@@ -1037,7 +1110,8 @@
       "flying",
       "psychic",
       "fairy"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Hawlucha"
   },
   {
     "name": "Granbull",
@@ -1050,7 +1124,8 @@
     "bestStarterElements": [
       "poison",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Granbull"
   },
   {
     "name": "Gallade",
@@ -1067,7 +1142,8 @@
       "psychic",
       "ghost",
       "fairy"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Gallade"
   },
   {
     "name": "Honchkrow",
@@ -1081,7 +1157,8 @@
     "bestStarterElements": [
       "electric",
       "rock"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Honchkrow"
   },
   {
     "name": "Empoleon",
@@ -1094,7 +1171,8 @@
     "todo": "calibrate defense",
     "bestStarterElements": [
       "electric"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Empoleon"
   },
   {
     "name": "Infernape",
@@ -1110,7 +1188,8 @@
       "flying",
       "psychic",
       "fairy"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Infernape"
   },
   {
     "name": "Torterra",
@@ -1130,7 +1209,8 @@
       "bug",
       "dragon",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Torterra"
   },
   {
     "name": "Luxray",
@@ -1143,7 +1223,8 @@
     "todo": "calibrate defense",
     "bestStarterElements": [
       "ground"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Luxray"
   },
   {
     "name": "Raichu",
@@ -1156,7 +1237,8 @@
     "todo": "calibrate defense",
     "bestStarterElements": [
       "ground"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Raichu_e_Manectric"
   },
   {
     "name": "Manectric",
@@ -1169,7 +1251,8 @@
     "todo": "calibrate defense",
     "bestStarterElements": [
       "ground"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Raichu_e_Manectric"
   },
   {
     "name": "Sandaconda",
@@ -1183,7 +1266,8 @@
     "bestStarterElements": [
       "grass",
       "bug"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Sandaconda"
   },
   {
     "name": "Scolipede",
@@ -1201,7 +1285,8 @@
       "rock",
       "ghost",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Scolipede"
   },
   {
     "name": "Torkoal",
@@ -1215,7 +1300,8 @@
     "bestStarterElements": [
       "water",
       "rock"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Torkoal"
   },
   {
     "name": "Glalie",
@@ -1229,7 +1315,8 @@
     "bestStarterElements": [
       "fire",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Glalie"
   },
   {
     "name": "Sharpedo",
@@ -1242,7 +1329,8 @@
     "todo": "calibrate defense",
     "bestStarterElements": [
       "grass"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Sharpedo"
   },
   {
     "name": "Starmie",
@@ -1256,7 +1344,8 @@
     "todo": "calibrate defense",
     "bestStarterElements": [
       "grass"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Starmie"
   },
   {
     "name": "Whiscash",
@@ -1271,7 +1360,8 @@
     "bestStarterElements": [
       "grass",
       "bug"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Whiscash"
   },
   {
     "name": "Pyroar Female",
@@ -1285,7 +1375,8 @@
     "bestStarterElements": [
       "water",
       "rock"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Pyroar_Female"
   },
   {
     "name": "Pyroar",
@@ -1300,7 +1391,8 @@
     "bestStarterElements": [
       "water",
       "rock"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Pyroar_Female"
   },
   {
     "name": "Simisear",
@@ -1313,7 +1405,8 @@
     "bestStarterElements": [
       "water",
       "rock"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Simisear"
   },
   {
     "name": "Turtonator",
@@ -1328,7 +1421,8 @@
     "bestStarterElements": [
       "rock",
       "dragon"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Turtonator"
   },
   {
     "name": "Chandelure",
@@ -1342,7 +1436,8 @@
     "bestStarterElements": [
       "normal",
       "dark"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Chandelure"
   },
   {
     "name": "Houndoom",
@@ -1357,7 +1452,8 @@
     "bestStarterElements": [
       "water",
       "rock"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Houndoom"
   },
   {
     "name": "Pinsir",
@@ -1371,7 +1467,8 @@
     "bestStarterElements": [
       "fire",
       "flying"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Pinsir"
   },
   {
     "name": "Machamp",
@@ -1386,7 +1483,8 @@
       "flying",
       "psychic",
       "fairy"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Machamp"
   },
   {
     "name": "Alolan Persian",
@@ -1400,7 +1498,8 @@
     "bestStarterElements": [
       "fighting",
       "fairy"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Persian"
   },
   {
     "name": "Alolan Muk",
@@ -1414,7 +1513,8 @@
     "bestStarterElements": [
       "ground",
       "rock"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Muk"
   },
   {
     "name": "Goodra",
@@ -1426,7 +1526,8 @@
     "todo": "calibrate defense",
     "bestStarterElements": [
       "dragon"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Goodra"
   },
   {
     "name": "Eelektross",
@@ -1440,7 +1541,8 @@
     "bestStarterElements": [
       "ground",
       "rock"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Eelektross"
   },
   {
     "name": "Rampardos",
@@ -1454,7 +1556,8 @@
       "fighting",
       "ground",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Rampardos_e_Sudowoodo"
   },
   {
     "name": "Sudowoodo",
@@ -1468,7 +1571,8 @@
       "fighting",
       "ground",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Rampardos_e_Sudowoodo"
   },
   {
     "name": "Gogoat",
@@ -1486,7 +1590,8 @@
       "flying",
       "bug",
       "dragon"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Gogoat"
   },
   {
     "name": "Alolan Raichu",
@@ -1501,7 +1606,8 @@
       "psychic",
       "dark",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Raichu"
   },
   {
     "name": "Flapple",
@@ -1514,7 +1620,8 @@
     "todo": "calibrate defense",
     "bestStarterElements": [
       "fairy"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Flapple"
   },
   {
     "name": "Appletun",
@@ -1531,7 +1638,8 @@
       "flying",
       "bug",
       "dragon"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Appletun"
   },
   {
     "name": "Druddigon",
@@ -1544,7 +1652,8 @@
     "todo": "calibrate defense",
     "bestStarterElements": [
       "fairy"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Druddigon"
   },
   {
     "name": "Drampa",
@@ -1560,7 +1669,8 @@
       "rock",
       "ghost",
       "steel"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Drampa"
   },
   {
     "name": "Muk",
@@ -1573,7 +1683,8 @@
     "bestStarterElements": [
       "ground",
       "rock"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Muk_e_Seviper"
   },
   {
     "name": "Seviper",
@@ -1586,6 +1697,7 @@
     "bestStarterElements": [
       "ground",
       "rock"
-    ]
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Muk_e_Seviper"
   }
 ]

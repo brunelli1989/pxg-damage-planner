@@ -139,6 +139,8 @@ export interface MobEntry {
   todo?: string;
   /** Elementos que tankam bem nessa hunt — copiado pra MobConfig quando selecionado */
   bestStarterElements?: PokemonElement[];
+  /** URL da página da hunt no wiki do PxG */
+  wiki?: string;
 }
 
 export interface DamageConfig {
