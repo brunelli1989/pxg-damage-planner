@@ -1,26 +1,62 @@
 [
   {
-    "id": "alolan-marowak",
-    "name": "TM Alolan Marowak",
-    "tier": "TM",
+    "id": "accelgor",
+    "name": "Accelgor",
+    "tier": "T2",
     "clans": [
-      "volcanic"
+      "naturia"
     ],
     "role": "offensive_tank",
     "elements": [
-      "fire"
+      "bug"
     ]
   },
   {
-    "id": "magmar",
-    "name": "Magmar",
+    "id": "alakazam",
+    "name": "Alakazam",
     "tier": "T2",
     "clans": [
-      "volcanic"
+      "psycraft"
     ],
-    "role": "offensive_tank",
+    "role": "burst_dd",
     "elements": [
-      "fire"
+      "psychic"
+    ]
+  },
+  {
+    "id": "alcremie",
+    "name": "Alcremie",
+    "tier": "T2",
+    "clans": [
+      "psycraft"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "fairy"
+    ]
+  },
+  {
+    "id": "alolan-dugtrio",
+    "name": "Alolan Dugtrio",
+    "tier": "T3",
+    "clans": [
+      "orebound"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "ground"
+    ]
+  },
+  {
+    "id": "alolan-muk",
+    "name": "Alolan Muk",
+    "tier": "T2",
+    "clans": [
+      "malefic"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "poison"
     ]
   },
   {
@@ -36,75 +72,171 @@
     ]
   },
   {
-    "id": "shiny-chandelure",
-    "name": "Shiny Chandelure",
-    "tier": "T1H",
-    "clans": [
-      "volcanic"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "fire"
-    ]
-  },
-  {
-    "id": "shiny-heatmor",
-    "name": "Shiny Heatmor",
-    "tier": "T1H",
-    "clans": [
-      "volcanic"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "fire"
-    ]
-  },
-  {
-    "id": "mega-pyroar",
-    "name": "Mega Pyroar",
-    "tier": "T1H",
-    "clans": [
-      "volcanic"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "fire"
-    ]
-  },
-  {
-    "id": "ninetales",
-    "name": "Ninetales",
-    "tier": "T2",
-    "clans": [
-      "volcanic"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "fire"
-    ]
-  },
-  {
-    "id": "shiny-magby",
-    "name": "Shiny Magby",
-    "tier": "T2",
-    "clans": [
-      "volcanic"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "fire"
-    ]
-  },
-  {
-    "id": "typhlosion",
-    "name": "Typhlosion",
+    "id": "azumarill",
+    "name": "Azumarill",
     "tier": "T3",
     "clans": [
-      "volcanic"
+      "seavell"
     ],
     "role": "burst_dd",
     "elements": [
-      "fire"
+      "water"
+    ]
+  },
+  {
+    "id": "banette",
+    "name": "Banette",
+    "tier": "T3",
+    "clans": [
+      "malefic"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "ghost"
+    ]
+  },
+  {
+    "id": "barbaracle",
+    "name": "Barbaracle",
+    "tier": "T3",
+    "clans": [
+      "orebound"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "rock"
+    ]
+  },
+  {
+    "id": "beartic",
+    "name": "Beartic",
+    "tier": "T2",
+    "clans": [
+      "seavell"
+    ],
+    "role": "offensive_tank",
+    "elements": [
+      "ice"
+    ]
+  },
+  {
+    "id": "bronzong",
+    "name": "Bronzong",
+    "tier": "T2",
+    "clans": [
+      "ironhard"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "steel"
+    ]
+  },
+  {
+    "id": "champion-primeape",
+    "name": "Champion Primeape",
+    "tier": "T3",
+    "clans": [
+      "gardestrike"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "fighting"
+    ]
+  },
+  {
+    "id": "cofagrigus",
+    "name": "Cofagrigus",
+    "tier": "T2",
+    "clans": [
+      "malefic"
+    ],
+    "role": "offensive_tank",
+    "elements": [
+      "ghost"
+    ]
+  },
+  {
+    "id": "crobat",
+    "name": "Crobat",
+    "tier": "T3",
+    "clans": [
+      "wingeon"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "flying"
+    ]
+  },
+  {
+    "id": "cursola",
+    "name": "Cursola",
+    "tier": "T3",
+    "clans": [
+      "malefic"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "ghost"
+    ]
+  },
+  {
+    "id": "dragonite",
+    "name": "Dragonite",
+    "tier": "T2",
+    "clans": [
+      "wingeon"
+    ],
+    "role": "offensive_tank",
+    "elements": [
+      "dragon"
+    ]
+  },
+  {
+    "id": "druddigon",
+    "name": "Druddigon",
+    "tier": "T3",
+    "clans": [
+      "wingeon"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "dragon"
+    ]
+  },
+  {
+    "id": "elite-hitmontop",
+    "name": "Elite Hitmontop",
+    "tier": "T2",
+    "clans": [
+      "gardestrike"
+    ],
+    "role": "offensive_tank",
+    "elements": [
+      "fighting"
+    ]
+  },
+  {
+    "id": "exploud",
+    "name": "Exploud",
+    "tier": "T2",
+    "clans": [
+      "gardestrike"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "normal"
+    ]
+  },
+  {
+    "id": "flapple",
+    "name": "Flapple",
+    "tier": "T3",
+    "clans": [
+      "wingeon"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "dragon"
     ]
   },
   {
@@ -120,141 +252,261 @@
     ]
   },
   {
-    "id": "charizard",
-    "name": "TR Charizard",
-    "tier": "TR",
+    "id": "florges",
+    "name": "Florges",
+    "tier": "T2",
     "clans": [
-      "volcanic"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "fire"
-    ]
-  },
-  {
-    "id": "magmortar",
-    "name": "TM Magmortar",
-    "tier": "TM",
-    "clans": [
-      "volcanic"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "fire"
-    ]
-  },
-  {
-    "id": "shiny-ampharos",
-    "name": "TM Shiny Ampharos",
-    "tier": "TM",
-    "clans": [
-      "raibolt"
+      "psycraft"
     ],
     "role": "offensive_tank",
     "elements": [
-      "electric"
+      "fairy"
     ]
   },
   {
-    "id": "shiny-pachirisu",
-    "name": "Shiny Pachirisu",
-    "tier": "T1H",
+    "id": "froslass",
+    "name": "Froslass",
+    "tier": "T3",
     "clans": [
-      "raibolt"
+      "seavell"
     ],
     "role": "burst_dd",
     "elements": [
-      "electric"
+      "ice"
     ]
   },
   {
-    "id": "shiny-toxtricity",
-    "name": "Shiny Toxtricity",
-    "tier": "T1H",
-    "clans": [
-      "raibolt"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "electric"
-    ]
-  },
-  {
-    "id": "shiny-elekid",
-    "name": "Shiny Elekid",
+    "id": "galarian-rapidash",
+    "name": "Galarian Rapidash",
     "tier": "T2",
     "clans": [
-      "raibolt"
+      "psycraft"
     ],
-    "role": "burst_dd",
+    "role": "offensive_tank",
     "elements": [
-      "electric"
+      "psychic"
     ]
   },
   {
-    "id": "shiny-electrode",
-    "name": "Shiny Electrode",
+    "id": "garchomp",
+    "name": "Garchomp",
     "tier": "T2",
     "clans": [
-      "raibolt"
+      "wingeon"
     ],
     "role": "burst_dd",
     "elements": [
-      "electric"
+      "dragon"
+    ]
+  },
+  {
+    "id": "gengar",
+    "name": "Gengar",
+    "tier": "T2",
+    "clans": [
+      "malefic"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "ghost"
+    ]
+  },
+  {
+    "id": "glalie",
+    "name": "Glalie",
+    "tier": "T3",
+    "clans": [
+      "seavell"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "ice"
+    ]
+  },
+  {
+    "id": "gogoat",
+    "name": "Gogoat",
+    "tier": "T2",
+    "clans": [
+      "naturia"
+    ],
+    "role": "offensive_tank",
+    "elements": [
+      "grass"
+    ]
+  },
+  {
+    "id": "golem",
+    "name": "Golem",
+    "tier": "T3",
+    "clans": [
+      "orebound"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "rock"
+    ]
+  },
+  {
+    "id": "gyarados",
+    "name": "Gyarados",
+    "tier": "T2",
+    "clans": [
+      "seavell"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "water"
+    ]
+  },
+  {
+    "id": "hatterene",
+    "name": "Hatterene",
+    "tier": "T2",
+    "clans": [
+      "psycraft"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "fairy"
+    ]
+  },
+  {
+    "id": "hippowdon-female",
+    "name": "Hippowdon Female",
+    "tier": "T2",
+    "clans": [
+      "orebound"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "ground"
+    ]
+  },
+  {
+    "id": "hisuian-qwilfish",
+    "name": "Hisuian Qwilfish",
+    "tier": "T3",
+    "clans": [
+      "malefic"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "poison"
+    ]
+  },
+  {
+    "id": "hisuian-typhlosion",
+    "name": "Hisuian Typhlosion",
+    "tier": "T2",
+    "clans": [
+      "malefic"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "ghost"
+    ]
+  },
+  {
+    "id": "klinklang",
+    "name": "Klinklang",
+    "tier": "T3",
+    "clans": [
+      "ironhard"
+    ],
+    "role": "offensive_tank",
+    "elements": [
+      "steel"
+    ]
+  },
+  {
+    "id": "kricketune",
+    "name": "Kricketune",
+    "tier": "T3",
+    "clans": [
+      "naturia"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "bug"
+    ]
+  },
+  {
+    "id": "lapras",
+    "name": "Lapras",
+    "tier": "T2",
+    "clans": [
+      "seavell"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "ice"
+    ]
+  },
+  {
+    "id": "lilligant",
+    "name": "Lilligant",
+    "tier": "T3",
+    "clans": [
+      "naturia"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "grass"
+    ]
+  },
+  {
+    "id": "lycanroc",
+    "name": "Lycanroc",
+    "tier": "T2",
+    "clans": [
+      "orebound"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "rock"
+    ]
+  },
+  {
+    "id": "machamp",
+    "name": "Machamp",
+    "tier": "T3",
+    "clans": [
+      "gardestrike"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "fighting"
+    ]
+  },
+  {
+    "id": "magmar",
+    "name": "Magmar",
+    "tier": "T2",
+    "clans": [
+      "volcanic"
+    ],
+    "role": "offensive_tank",
+    "elements": [
+      "fire"
+    ]
+  },
+  {
+    "id": "magneton",
+    "name": "Magneton",
+    "tier": "T3",
+    "clans": [
+      "ironhard"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "steel"
     ]
   },
   {
     "id": "manectric",
     "name": "Manectric",
     "tier": "T3",
-    "clans": [
-      "raibolt"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "electric"
-    ]
-  },
-  {
-    "id": "raichu",
-    "name": "Raichu",
-    "tier": "T3",
-    "clans": [
-      "raibolt"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "electric"
-    ]
-  },
-  {
-    "id": "shiny-pikachu",
-    "name": "Shiny Pikachu",
-    "tier": "T3",
-    "clans": [
-      "raibolt"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "electric"
-    ]
-  },
-  {
-    "id": "electivire",
-    "name": "TM Electivire",
-    "tier": "TM",
-    "clans": [
-      "raibolt"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "electric"
-    ]
-  },
-  {
-    "id": "magnezone",
-    "name": "TR Magnezone",
-    "tier": "TR",
     "clans": [
       "raibolt"
     ],
@@ -276,27 +528,14 @@
     ]
   },
   {
-    "id": "shiny-golem",
-    "name": "Shiny Golem",
-    "tier": "T2",
-    "clans": [
-      "orebound"
-    ],
-    "role": "offensive_tank",
-    "elements": [
-      "rock"
-    ]
-  },
-  {
-    "id": "shiny-rampardos",
-    "name": "Shiny Rampardos",
+    "id": "mega-altaria-base",
+    "name": "Mega Altaria",
     "tier": "T1H",
-    "clans": [
-      "orebound"
-    ],
+    "clans": [],
     "role": "burst_dd",
     "elements": [
-      "rock"
+      "fairy",
+      "dragon"
     ]
   },
   {
@@ -312,111 +551,63 @@
     ]
   },
   {
-    "id": "rampardos",
-    "name": "Rampardos",
+    "id": "mega-beedrill",
+    "name": "Mega Beedrill",
     "tier": "T2",
     "clans": [
-      "orebound"
+      "naturia"
     ],
     "role": "burst_dd",
     "elements": [
-      "rock"
+      "bug"
     ]
   },
   {
-    "id": "lycanroc",
-    "name": "Lycanroc",
-    "tier": "T2",
-    "clans": [
-      "orebound"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "rock"
-    ]
-  },
-  {
-    "id": "golem",
-    "name": "Golem",
-    "tier": "T3",
-    "clans": [
-      "orebound"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "rock"
-    ]
-  },
-  {
-    "id": "solrock",
-    "name": "Solrock",
-    "tier": "T3",
-    "clans": [
-      "orebound"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "rock"
-    ]
-  },
-  {
-    "id": "barbaracle",
-    "name": "Barbaracle",
-    "tier": "T3",
-    "clans": [
-      "orebound"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "rock"
-    ]
-  },
-  {
-    "id": "tyranitar",
-    "name": "TR Tyranitar",
-    "tier": "TR",
-    "clans": [
-      "orebound"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "rock"
-    ]
-  },
-  {
-    "id": "steelix",
-    "name": "Steelix",
-    "tier": "T2",
-    "clans": [
-      "orebound"
-    ],
-    "role": "offensive_tank",
-    "elements": [
-      "ground"
-    ]
-  },
-  {
-    "id": "sandaconda",
-    "name": "Sandaconda",
-    "tier": "T3",
-    "clans": [
-      "orebound"
-    ],
-    "role": "offensive_tank",
-    "elements": [
-      "ground"
-    ]
-  },
-  {
-    "id": "shiny-krookodile",
-    "name": "Shiny Krookodile",
+    "id": "mega-chandelure",
+    "name": "Mega Chandelure",
     "tier": "T1H",
     "clans": [
-      "orebound"
+      "malefic"
     ],
     "role": "burst_dd",
     "elements": [
-      "ground"
+      "ghost"
+    ]
+  },
+  {
+    "id": "mega-clefable",
+    "name": "Mega Clefable",
+    "tier": "T1H",
+    "clans": [
+      "psycraft"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "fairy"
+    ]
+  },
+  {
+    "id": "mega-dragonite",
+    "name": "Mega Dragonite",
+    "tier": "T1H",
+    "clans": [
+      "wingeon"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "flying"
+    ]
+  },
+  {
+    "id": "mega-drampa",
+    "name": "Mega Drampa",
+    "tier": "T1H",
+    "clans": [
+      "wingeon"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "dragon"
     ]
   },
   {
@@ -434,385 +625,49 @@
     ]
   },
   {
-    "id": "shiny-donphan",
-    "name": "Shiny Donphan",
-    "tier": "T2",
-    "clans": [
-      "orebound"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "ground"
-    ]
-  },
-  {
-    "id": "hippowdon-female",
-    "name": "Hippowdon Female",
-    "tier": "T2",
-    "clans": [
-      "orebound"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "ground"
-    ]
-  },
-  {
-    "id": "nidoqueen",
-    "name": "Nidoqueen",
-    "tier": "T3",
-    "clans": [
-      "orebound"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "ground"
-    ]
-  },
-  {
-    "id": "alolan-dugtrio",
-    "name": "Alolan Dugtrio",
-    "tier": "T3",
-    "clans": [
-      "orebound"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "ground"
-    ]
-  },
-  {
-    "id": "rhydon",
-    "name": "Rhydon",
-    "tier": "T3",
-    "clans": [
-      "orebound"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "ground"
-    ]
-  },
-  {
-    "id": "shiny-quagsire",
-    "name": "Shiny Quagsire",
-    "tier": "T3",
-    "clans": [
-      "orebound"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "ground"
-    ]
-  },
-  {
-    "id": "shiny-rhydon",
-    "name": "TM Shiny Rhydon",
-    "tier": "TM",
-    "clans": [
-      "orebound"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "ground"
-    ]
-  },
-  {
-    "id": "piloswine",
-    "name": "TR Piloswine",
-    "tier": "TR",
-    "clans": [
-      "orebound"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "ground"
-    ]
-  },
-  {
-    "id": "shiny-meganium",
-    "name": "TM Shiny Meganium",
-    "tier": "TM",
-    "clans": [
-      "naturia"
-    ],
-    "role": "offensive_tank",
-    "elements": [
-      "grass"
-    ]
-  },
-  {
-    "id": "gogoat",
-    "name": "Gogoat",
-    "tier": "T2",
-    "clans": [
-      "naturia"
-    ],
-    "role": "offensive_tank",
-    "elements": [
-      "grass"
-    ]
-  },
-  {
-    "id": "sceptile",
-    "name": "Sceptile",
-    "tier": "T3",
-    "clans": [
-      "naturia"
-    ],
-    "role": "offensive_tank",
-    "elements": [
-      "grass"
-    ]
-  },
-  {
-    "id": "shiny-sceptile",
-    "name": "Shiny Sceptile",
+    "id": "mega-feraligatr",
+    "name": "Mega Feraligatr",
     "tier": "T1H",
     "clans": [
-      "naturia"
+      "seavell"
     ],
     "role": "burst_dd",
     "elements": [
-      "grass"
+      "water"
     ]
   },
   {
-    "id": "mega-meganium",
-    "name": "Mega Meganium",
+    "id": "mega-froslass",
+    "name": "Mega Froslass",
     "tier": "T1H",
     "clans": [
-      "naturia"
+      "seavell"
     ],
     "role": "burst_dd",
     "elements": [
-      "grass"
+      "ice"
     ]
   },
   {
-    "id": "tropius",
-    "name": "Tropius",
-    "tier": "T2",
-    "clans": [
-      "naturia"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "grass"
-    ]
-  },
-  {
-    "id": "roserade",
-    "name": "Roserade",
-    "tier": "T2",
-    "clans": [
-      "naturia"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "grass"
-    ]
-  },
-  {
-    "id": "wormadam",
-    "name": "Wormadam",
-    "tier": "T3",
-    "clans": [
-      "naturia"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "grass"
-    ]
-  },
-  {
-    "id": "lilligant",
-    "name": "Lilligant",
-    "tier": "T3",
-    "clans": [
-      "naturia"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "grass"
-    ]
-  },
-  {
-    "id": "shiny-victreebel",
-    "name": "Shiny Victreebel",
-    "tier": "T3",
-    "clans": [
-      "naturia"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "grass"
-    ]
-  },
-  {
-    "id": "shiny-jumpluff",
-    "name": "Shiny Jumpluff",
-    "tier": "T3",
-    "clans": [
-      "naturia"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "grass"
-    ]
-  },
-  {
-    "id": "venusaur",
-    "name": "TR Venusaur",
-    "tier": "TR",
-    "clans": [
-      "naturia"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "grass"
-    ]
-  },
-  {
-    "id": "vespiquen",
-    "name": "Vespiquen",
-    "tier": "T2",
-    "clans": [
-      "naturia"
-    ],
-    "role": "offensive_tank",
-    "elements": [
-      "bug"
-    ]
-  },
-  {
-    "id": "accelgor",
-    "name": "Accelgor",
-    "tier": "T2",
-    "clans": [
-      "naturia"
-    ],
-    "role": "offensive_tank",
-    "elements": [
-      "bug"
-    ]
-  },
-  {
-    "id": "shiny-yanmega",
-    "name": "Shiny Yanmega",
+    "id": "mega-glalie",
+    "name": "Mega Glalie",
     "tier": "T1H",
     "clans": [
-      "naturia"
+      "seavell"
     ],
     "role": "burst_dd",
     "elements": [
-      "bug"
+      "ice"
     ]
   },
   {
-    "id": "mega-scolipede",
-    "name": "Mega Scolipede",
+    "id": "mega-hawlucha",
+    "name": "Mega Hawlucha",
     "tier": "T1H",
-    "clans": [
-      "naturia"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "bug"
-    ]
-  },
-  {
-    "id": "shiny-kricketune",
-    "name": "Shiny Kricketune",
-    "tier": "T2",
-    "clans": [
-      "naturia"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "bug"
-    ]
-  },
-  {
-    "id": "mega-beedrill",
-    "name": "Mega Beedrill",
-    "tier": "T2",
-    "clans": [
-      "naturia"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "bug"
-    ]
-  },
-  {
-    "id": "shiny-beedrill",
-    "name": "Shiny Beedrill",
-    "tier": "T3",
-    "clans": [
-      "naturia"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "bug"
-    ]
-  },
-  {
-    "id": "shiny-parasect",
-    "name": "Shiny Parasect",
-    "tier": "T3",
-    "clans": [
-      "naturia"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "bug"
-    ]
-  },
-  {
-    "id": "kricketune",
-    "name": "Kricketune",
-    "tier": "T3",
-    "clans": [
-      "naturia"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "bug"
-    ]
-  },
-  {
-    "id": "shiny-ariados",
-    "name": "TM Shiny Ariados",
-    "tier": "TM",
-    "clans": [
-      "naturia"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "bug"
-    ]
-  },
-  {
-    "id": "scyther",
-    "name": "TR Scyther",
-    "tier": "TR",
-    "clans": [
-      "naturia"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "bug"
-    ]
-  },
-  {
-    "id": "mega-lucario-fighting",
-    "name": "TM Mega Lucario Fighting",
-    "tier": "TM",
     "clans": [
       "gardestrike"
     ],
-    "role": "offensive_tank",
+    "role": "burst_dd",
     "elements": [
       "fighting"
     ]
@@ -830,135 +685,15 @@
     ]
   },
   {
-    "id": "elite-hitmontop",
-    "name": "Elite Hitmontop",
-    "tier": "T2",
-    "clans": [
-      "gardestrike"
-    ],
-    "role": "offensive_tank",
-    "elements": [
-      "fighting"
-    ]
-  },
-  {
-    "id": "shiny-hariyama",
-    "name": "Shiny Hariyama",
+    "id": "mega-meganium",
+    "name": "Mega Meganium",
     "tier": "T1H",
     "clans": [
-      "gardestrike"
+      "naturia"
     ],
     "role": "burst_dd",
     "elements": [
-      "fighting"
-    ]
-  },
-  {
-    "id": "shiny-mienshao",
-    "name": "Shiny Mienshao",
-    "tier": "T1H",
-    "clans": [
-      "gardestrike"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "fighting"
-    ]
-  },
-  {
-    "id": "mega-hawlucha",
-    "name": "Mega Hawlucha",
-    "tier": "T1H",
-    "clans": [
-      "gardestrike"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "fighting"
-    ]
-  },
-  {
-    "id": "mega-kangaskhan",
-    "name": "TM Mega Kangaskhan",
-    "tier": "TM",
-    "clans": [
-      "gardestrike"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "fighting"
-    ]
-  },
-  {
-    "id": "machamp",
-    "name": "Machamp",
-    "tier": "T3",
-    "clans": [
-      "gardestrike"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "fighting"
-    ]
-  },
-  {
-    "id": "champion-primeape",
-    "name": "Champion Primeape",
-    "tier": "T3",
-    "clans": [
-      "gardestrike"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "fighting"
-    ]
-  },
-  {
-    "id": "shiny-primeape",
-    "name": "Shiny Primeape",
-    "tier": "T3",
-    "clans": [
-      "gardestrike"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "fighting"
-    ]
-  },
-  {
-    "id": "heracross",
-    "name": "TR Heracross",
-    "tier": "TR",
-    "clans": [
-      "gardestrike"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "fighting"
-    ]
-  },
-  {
-    "id": "exploud",
-    "name": "Exploud",
-    "tier": "T2",
-    "clans": [
-      "gardestrike"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "normal"
-    ]
-  },
-  {
-    "id": "snorlax",
-    "name": "TR Snorlax",
-    "tier": "TR",
-    "clans": [
-      "gardestrike"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "normal"
+      "grass"
     ]
   },
   {
@@ -974,162 +709,6 @@
     ]
   },
   {
-    "id": "shiny-forretress",
-    "name": "Shiny Forretress",
-    "tier": "T2",
-    "clans": [
-      "ironhard"
-    ],
-    "role": "offensive_tank",
-    "elements": [
-      "steel"
-    ]
-  },
-  {
-    "id": "klinklang",
-    "name": "Klinklang",
-    "tier": "T3",
-    "clans": [
-      "ironhard"
-    ],
-    "role": "offensive_tank",
-    "elements": [
-      "steel"
-    ]
-  },
-  {
-    "id": "shiny-mawile",
-    "name": "Shiny Mawile",
-    "tier": "T1H",
-    "clans": [
-      "ironhard"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "steel"
-    ]
-  },
-  {
-    "id": "shiny-aegislash",
-    "name": "Shiny Aegislash",
-    "tier": "T1H",
-    "clans": [
-      "ironhard"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "steel"
-    ]
-  },
-  {
-    "id": "mega-skarmory",
-    "name": "Mega Skarmory",
-    "tier": "T1H",
-    "clans": [
-      "ironhard"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "steel"
-    ]
-  },
-  {
-    "id": "bronzong",
-    "name": "Bronzong",
-    "tier": "T2",
-    "clans": [
-      "ironhard"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "steel"
-    ]
-  },
-  {
-    "id": "perrserker",
-    "name": "Perrserker",
-    "tier": "T2",
-    "clans": [
-      "ironhard"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "steel"
-    ]
-  },
-  {
-    "id": "magneton",
-    "name": "Magneton",
-    "tier": "T3",
-    "clans": [
-      "ironhard"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "steel"
-    ]
-  },
-  {
-    "id": "metang",
-    "name": "Metang",
-    "tier": "T3",
-    "clans": [
-      "ironhard"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "steel"
-    ]
-  },
-  {
-    "id": "shiny-lairon",
-    "name": "Shiny Lairon",
-    "tier": "T3",
-    "clans": [
-      "ironhard"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "steel"
-    ]
-  },
-  {
-    "id": "shiny-magneton",
-    "name": "TM Shiny Magneton",
-    "tier": "TM",
-    "clans": [
-      "ironhard"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "steel"
-    ]
-  },
-  {
-    "id": "scizor",
-    "name": "TR Scizor",
-    "tier": "TR",
-    "clans": [
-      "ironhard"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "steel"
-    ]
-  },
-  {
-    "id": "shiny-fearow",
-    "name": "Shiny Fearow",
-    "tier": "T2",
-    "clans": [
-      "wingeon"
-    ],
-    "role": "offensive_tank",
-    "elements": [
-      "flying"
-    ]
-  },
-  {
     "id": "mega-pidgeot",
     "name": "Mega Pidgeot",
     "tier": "T1H",
@@ -1142,327 +721,39 @@
     ]
   },
   {
-    "id": "mega-dragonite",
-    "name": "Mega Dragonite",
+    "id": "mega-pyroar",
+    "name": "Mega Pyroar",
     "tier": "T1H",
     "clans": [
-      "wingeon"
+      "volcanic"
     ],
     "role": "burst_dd",
     "elements": [
-      "flying"
+      "fire"
     ]
   },
   {
-    "id": "staraptor",
-    "name": "Staraptor",
-    "tier": "T2",
-    "clans": [
-      "wingeon"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "flying"
-    ]
-  },
-  {
-    "id": "pidgeot",
-    "name": "Pidgeot",
-    "tier": "T3",
-    "clans": [
-      "wingeon"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "flying"
-    ]
-  },
-  {
-    "id": "crobat",
-    "name": "Crobat",
-    "tier": "T3",
-    "clans": [
-      "wingeon"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "flying"
-    ]
-  },
-  {
-    "id": "shiny-butterfree",
-    "name": "Shiny Butterfree",
-    "tier": "T3",
-    "clans": [
-      "wingeon"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "flying"
-    ]
-  },
-  {
-    "id": "shiny-dodrio",
-    "name": "TM Shiny Dodrio",
-    "tier": "TM",
-    "clans": [
-      "wingeon"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "flying"
-    ]
-  },
-  {
-    "id": "skarmory",
-    "name": "TR Skarmory",
-    "tier": "TR",
-    "clans": [
-      "wingeon"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "flying"
-    ]
-  },
-  {
-    "id": "mega-charizard-x",
-    "name": "TM Mega Charizard X",
-    "tier": "TM",
-    "clans": [
-      "wingeon"
-    ],
-    "role": "offensive_tank",
-    "elements": [
-      "dragon"
-    ]
-  },
-  {
-    "id": "dragonite",
-    "name": "Dragonite",
-    "tier": "T2",
-    "clans": [
-      "wingeon"
-    ],
-    "role": "offensive_tank",
-    "elements": [
-      "dragon"
-    ]
-  },
-  {
-    "id": "shiny-hydreigon",
-    "name": "Shiny Hydreigon",
+    "id": "mega-scolipede",
+    "name": "Mega Scolipede",
     "tier": "T1H",
     "clans": [
-      "wingeon"
+      "naturia"
     ],
     "role": "burst_dd",
     "elements": [
-      "dragon"
+      "bug"
     ]
   },
   {
-    "id": "mega-drampa",
-    "name": "Mega Drampa",
+    "id": "mega-skarmory",
+    "name": "Mega Skarmory",
     "tier": "T1H",
     "clans": [
-      "wingeon"
+      "ironhard"
     ],
     "role": "burst_dd",
     "elements": [
-      "dragon"
-    ]
-  },
-  {
-    "id": "garchomp",
-    "name": "Garchomp",
-    "tier": "T2",
-    "clans": [
-      "wingeon"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "dragon"
-    ]
-  },
-  {
-    "id": "shiny-druddigon",
-    "name": "Shiny Druddigon",
-    "tier": "T2",
-    "clans": [
-      "wingeon"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "dragon"
-    ]
-  },
-  {
-    "id": "flapple",
-    "name": "Flapple",
-    "tier": "T3",
-    "clans": [
-      "wingeon"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "dragon"
-    ]
-  },
-  {
-    "id": "druddigon",
-    "name": "Druddigon",
-    "tier": "T3",
-    "clans": [
-      "wingeon"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "dragon"
-    ]
-  },
-  {
-    "id": "dragonair",
-    "name": "TR Dragonair",
-    "tier": "TR",
-    "clans": [
-      "wingeon"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "dragon"
-    ]
-  },
-  {
-    "id": "mega-altaria",
-    "name": "TM Mega Altaria Fairy",
-    "tier": "TM",
-    "clans": [
-      "psycraft"
-    ],
-    "role": "offensive_tank",
-    "elements": [
-      "fairy"
-    ]
-  },
-  {
-    "id": "florges",
-    "name": "Florges",
-    "tier": "T2",
-    "clans": [
-      "psycraft"
-    ],
-    "role": "offensive_tank",
-    "elements": [
-      "fairy"
-    ]
-  },
-  {
-    "id": "sylveon",
-    "name": "Sylveon",
-    "tier": "T3",
-    "clans": [
-      "psycraft"
-    ],
-    "role": "offensive_tank",
-    "elements": [
-      "fairy"
-    ]
-  },
-  {
-    "id": "shiny-gardevoir",
-    "name": "Shiny Gardevoir",
-    "tier": "T1H",
-    "clans": [
-      "psycraft"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "fairy"
-    ]
-  },
-  {
-    "id": "mega-clefable",
-    "name": "Mega Clefable",
-    "tier": "T1H",
-    "clans": [
-      "psycraft"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "fairy"
-    ]
-  },
-  {
-    "id": "hatterene",
-    "name": "Hatterene",
-    "tier": "T2",
-    "clans": [
-      "psycraft"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "fairy"
-    ]
-  },
-  {
-    "id": "alcremie",
-    "name": "Alcremie",
-    "tier": "T2",
-    "clans": [
-      "psycraft"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "fairy"
-    ]
-  },
-  {
-    "id": "wigglytuff",
-    "name": "TR Wigglytuff",
-    "tier": "TR",
-    "clans": [
-      "psycraft"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "fairy"
-    ]
-  },
-  {
-    "id": "wobbuffet",
-    "name": "Wobbuffet",
-    "tier": "T2",
-    "clans": [
-      "psycraft"
-    ],
-    "role": "offensive_tank",
-    "elements": [
-      "psychic"
-    ]
-  },
-  {
-    "id": "galarian-rapidash",
-    "name": "Galarian Rapidash",
-    "tier": "T2",
-    "clans": [
-      "psycraft"
-    ],
-    "role": "offensive_tank",
-    "elements": [
-      "psychic"
-    ]
-  },
-  {
-    "id": "shiny-gothitelle",
-    "name": "Shiny Gothitelle",
-    "tier": "T1H",
-    "clans": [
-      "psycraft"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "psychic"
+      "steel"
     ]
   },
   {
@@ -1480,15 +771,15 @@
     ]
   },
   {
-    "id": "alakazam",
-    "name": "Alakazam",
-    "tier": "T2",
+    "id": "mega-victreebel",
+    "name": "Mega Victreebel",
+    "tier": "T1H",
     "clans": [
-      "psycraft"
+      "malefic"
     ],
     "role": "burst_dd",
     "elements": [
-      "psychic"
+      "poison"
     ]
   },
   {
@@ -1504,363 +795,27 @@
     ]
   },
   {
-    "id": "shiny-kadabra",
-    "name": "Shiny Kadabra",
+    "id": "metang",
+    "name": "Metang",
     "tier": "T3",
     "clans": [
-      "psycraft"
+      "ironhard"
     ],
     "role": "burst_dd",
     "elements": [
-      "psychic"
+      "steel"
     ]
   },
   {
-    "id": "metagross",
-    "name": "TM Metagross",
-    "tier": "TM",
-    "clans": [
-      "psycraft"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "psychic"
-    ]
-  },
-  {
-    "id": "slowking",
-    "name": "TR Slowking",
-    "tier": "TR",
-    "clans": [
-      "psycraft"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "psychic"
-    ]
-  },
-  {
-    "id": "milotic",
-    "name": "TM Milotic",
-    "tier": "TM",
-    "clans": [
-      "seavell"
-    ],
-    "role": "offensive_tank",
-    "elements": [
-      "water"
-    ]
-  },
-  {
-    "id": "shiny-vaporeon",
-    "name": "Shiny Vaporeon",
-    "tier": "T2",
-    "clans": [
-      "seavell"
-    ],
-    "role": "offensive_tank",
-    "elements": [
-      "water"
-    ]
-  },
-  {
-    "id": "shiny-giant-magikarp",
-    "name": "Shiny Giant Magikarp",
-    "tier": "T2",
-    "clans": [
-      "seavell"
-    ],
-    "role": "offensive_tank",
-    "elements": [
-      "water"
-    ]
-  },
-  {
-    "id": "shiny-floatzel",
-    "name": "Shiny Floatzel",
-    "tier": "T1H",
-    "clans": [
-      "seavell"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "water"
-    ]
-  },
-  {
-    "id": "mega-feraligatr",
-    "name": "Mega Feraligatr",
-    "tier": "T1H",
-    "clans": [
-      "seavell"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "water"
-    ]
-  },
-  {
-    "id": "gyarados",
-    "name": "Gyarados",
-    "tier": "T2",
-    "clans": [
-      "seavell"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "water"
-    ]
-  },
-  {
-    "id": "shiny-kingler",
-    "name": "Shiny Kingler",
-    "tier": "T2",
-    "clans": [
-      "seavell"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "water"
-    ]
-  },
-  {
-    "id": "vaporeon",
-    "name": "Vaporeon",
-    "tier": "T3",
-    "clans": [
-      "seavell"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "water"
-    ]
-  },
-  {
-    "id": "azumarill",
-    "name": "Azumarill",
-    "tier": "T3",
-    "clans": [
-      "seavell"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "water"
-    ]
-  },
-  {
-    "id": "shiny-slowbro",
-    "name": "Shiny Slowbro",
-    "tier": "T3",
-    "clans": [
-      "seavell"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "water"
-    ]
-  },
-  {
-    "id": "shiny-politoed",
-    "name": "TM Shiny Politoed",
-    "tier": "TM",
-    "clans": [
-      "seavell"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "water"
-    ]
-  },
-  {
-    "id": "kingdra",
-    "name": "TR Kingdra",
-    "tier": "TR",
-    "clans": [
-      "seavell"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "water"
-    ]
-  },
-  {
-    "id": "mega-glalie",
-    "name": "Mega Glalie",
-    "tier": "T1H",
-    "clans": [
-      "seavell"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "ice"
-    ]
-  },
-  {
-    "id": "mega-froslass",
-    "name": "Mega Froslass",
-    "tier": "T1H",
-    "clans": [
-      "seavell"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "ice"
-    ]
-  },
-  {
-    "id": "lapras",
-    "name": "Lapras",
-    "tier": "T2",
-    "clans": [
-      "seavell"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "ice"
-    ]
-  },
-  {
-    "id": "vanilluxe",
-    "name": "Vanilluxe",
-    "tier": "T2",
-    "clans": [
-      "seavell"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "ice"
-    ]
-  },
-  {
-    "id": "glalie",
-    "name": "Glalie",
-    "tier": "T3",
-    "clans": [
-      "seavell"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "ice"
-    ]
-  },
-  {
-    "id": "shiny-delibird",
-    "name": "Shiny Delibird",
-    "tier": "T3",
-    "clans": [
-      "seavell"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "ice"
-    ]
-  },
-  {
-    "id": "froslass",
-    "name": "Froslass",
-    "tier": "T3",
-    "clans": [
-      "seavell"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "ice"
-    ]
-  },
-  {
-    "id": "shiny-dewgong",
-    "name": "Shiny Dewgong",
-    "tier": "T3",
-    "clans": [
-      "seavell"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "ice"
-    ]
-  },
-  {
-    "id": "jynx",
-    "name": "TR Jynx",
-    "tier": "TR",
-    "clans": [
-      "seavell"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "ice"
-    ]
-  },
-  {
-    "id": "shiny-muk",
-    "name": "TM Shiny Muk",
-    "tier": "TM",
-    "clans": [
-      "malefic"
-    ],
-    "role": "offensive_tank",
-    "elements": [
-      "poison"
-    ]
-  },
-  {
-    "id": "shiny-qwilfish",
-    "name": "Shiny Qwilfish",
+    "id": "mismagius",
+    "name": "Mismagius",
     "tier": "T2",
     "clans": [
       "malefic"
     ],
     "role": "offensive_tank",
     "elements": [
-      "poison"
-    ]
-  },
-  {
-    "id": "shiny-garbodor",
-    "name": "Shiny Garbodor",
-    "tier": "T1H",
-    "clans": [
-      "malefic"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "poison"
-    ]
-  },
-  {
-    "id": "mega-victreebel",
-    "name": "Mega Victreebel",
-    "tier": "T1H",
-    "clans": [
-      "malefic"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "poison"
-    ]
-  },
-  {
-    "id": "alolan-muk",
-    "name": "Alolan Muk",
-    "tier": "T2",
-    "clans": [
-      "malefic"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "poison"
-    ]
-  },
-  {
-    "id": "seviper",
-    "name": "Seviper",
-    "tier": "T2",
-    "clans": [
-      "malefic"
-    ],
-    "role": "burst_dd",
-    "elements": [
-      "poison"
+      "ghost"
     ]
   },
   {
@@ -1888,10 +843,144 @@
     ]
   },
   {
-    "id": "hisuian-qwilfish",
-    "name": "Hisuian Qwilfish",
+    "id": "nidoqueen",
+    "name": "Nidoqueen",
     "tier": "T3",
     "clans": [
+      "orebound"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "ground"
+    ]
+  },
+  {
+    "id": "ninetales",
+    "name": "Ninetales",
+    "tier": "T2",
+    "clans": [
+      "volcanic"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "fire"
+    ]
+  },
+  {
+    "id": "omastar",
+    "name": "Omastar",
+    "tier": "T3",
+    "clans": [
+      "orebound",
+      "seavell"
+    ],
+    "role": "offensive_tank",
+    "elements": [
+      "rock",
+      "water"
+    ]
+  },
+  {
+    "id": "perrserker",
+    "name": "Perrserker",
+    "tier": "T2",
+    "clans": [
+      "ironhard"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "steel"
+    ]
+  },
+  {
+    "id": "pidgeot",
+    "name": "Pidgeot",
+    "tier": "T3",
+    "clans": [
+      "wingeon"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "flying"
+    ]
+  },
+  {
+    "id": "raichu",
+    "name": "Raichu",
+    "tier": "T3",
+    "clans": [
+      "raibolt"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "electric"
+    ]
+  },
+  {
+    "id": "rampardos",
+    "name": "Rampardos",
+    "tier": "T2",
+    "clans": [
+      "orebound"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "rock"
+    ]
+  },
+  {
+    "id": "rhydon",
+    "name": "Rhydon",
+    "tier": "T3",
+    "clans": [
+      "orebound"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "ground"
+    ]
+  },
+  {
+    "id": "roserade",
+    "name": "Roserade",
+    "tier": "T2",
+    "clans": [
+      "naturia"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "grass"
+    ]
+  },
+  {
+    "id": "sandaconda",
+    "name": "Sandaconda",
+    "tier": "T3",
+    "clans": [
+      "orebound"
+    ],
+    "role": "offensive_tank",
+    "elements": [
+      "ground"
+    ]
+  },
+  {
+    "id": "sceptile",
+    "name": "Sceptile",
+    "tier": "T3",
+    "clans": [
+      "naturia"
+    ],
+    "role": "offensive_tank",
+    "elements": [
+      "grass"
+    ]
+  },
+  {
+    "id": "seviper",
+    "name": "Seviper",
+    "tier": "T2",
+    "clans": [
       "malefic"
     ],
     "role": "burst_dd",
@@ -1900,99 +989,231 @@
     ]
   },
   {
-    "id": "shiny-crobat",
-    "name": "TR Shiny Crobat",
-    "tier": "TR",
+    "id": "shiny-aegislash",
+    "name": "Shiny Aegislash",
+    "tier": "T1H",
     "clans": [
-      "malefic"
+      "ironhard"
     ],
     "role": "burst_dd",
     "elements": [
-      "poison"
+      "steel"
     ]
   },
   {
-    "id": "cofagrigus",
-    "name": "Cofagrigus",
+    "id": "shiny-beedrill",
+    "name": "Shiny Beedrill",
+    "tier": "T3",
+    "clans": [
+      "naturia"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "bug"
+    ]
+  },
+  {
+    "id": "shiny-butterfree",
+    "name": "Shiny Butterfree",
+    "tier": "T3",
+    "clans": [
+      "wingeon"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "flying"
+    ]
+  },
+  {
+    "id": "shiny-chandelure",
+    "name": "Shiny Chandelure",
+    "tier": "T1H",
+    "clans": [
+      "volcanic"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "fire"
+    ]
+  },
+  {
+    "id": "shiny-delibird",
+    "name": "Shiny Delibird",
+    "tier": "T3",
+    "clans": [
+      "seavell"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "ice"
+    ]
+  },
+  {
+    "id": "shiny-dewgong",
+    "name": "Shiny Dewgong",
+    "tier": "T3",
+    "clans": [
+      "seavell"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "ice"
+    ]
+  },
+  {
+    "id": "shiny-donphan",
+    "name": "Shiny Donphan",
     "tier": "T2",
     "clans": [
-      "malefic"
+      "orebound"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "ground"
+    ]
+  },
+  {
+    "id": "shiny-druddigon",
+    "name": "Shiny Druddigon",
+    "tier": "T2",
+    "clans": [
+      "wingeon"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "dragon"
+    ]
+  },
+  {
+    "id": "shiny-electrode",
+    "name": "Shiny Electrode",
+    "tier": "T2",
+    "clans": [
+      "raibolt"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "electric"
+    ]
+  },
+  {
+    "id": "shiny-elekid",
+    "name": "Shiny Elekid",
+    "tier": "T2",
+    "clans": [
+      "raibolt"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "electric"
+    ]
+  },
+  {
+    "id": "shiny-fearow",
+    "name": "Shiny Fearow",
+    "tier": "T2",
+    "clans": [
+      "wingeon"
     ],
     "role": "offensive_tank",
     "elements": [
-      "ghost"
+      "flying"
     ]
   },
   {
-    "id": "mismagius",
-    "name": "Mismagius",
+    "id": "shiny-floatzel",
+    "name": "Shiny Floatzel",
+    "tier": "T1H",
+    "clans": [
+      "seavell"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "water"
+    ]
+  },
+  {
+    "id": "shiny-forretress",
+    "name": "Shiny Forretress",
     "tier": "T2",
     "clans": [
-      "malefic"
+      "ironhard"
     ],
     "role": "offensive_tank",
     "elements": [
-      "ghost"
+      "steel"
     ]
   },
   {
-    "id": "mega-chandelure",
-    "name": "Mega Chandelure",
+    "id": "shiny-garbodor",
+    "name": "Shiny Garbodor",
     "tier": "T1H",
     "clans": [
       "malefic"
     ],
     "role": "burst_dd",
     "elements": [
-      "ghost"
+      "poison"
     ]
   },
   {
-    "id": "gengar",
-    "name": "Gengar",
+    "id": "shiny-gardevoir",
+    "name": "Shiny Gardevoir",
+    "tier": "T1H",
+    "clans": [
+      "psycraft"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "fairy"
+    ]
+  },
+  {
+    "id": "shiny-giant-magikarp",
+    "name": "Shiny Giant Magikarp",
     "tier": "T2",
     "clans": [
-      "malefic"
+      "seavell"
     ],
-    "role": "burst_dd",
+    "role": "offensive_tank",
     "elements": [
-      "ghost"
+      "water"
     ]
   },
   {
-    "id": "hisuian-typhlosion",
-    "name": "Hisuian Typhlosion",
+    "id": "shiny-golem",
+    "name": "Shiny Golem",
     "tier": "T2",
     "clans": [
-      "malefic"
+      "orebound"
     ],
-    "role": "burst_dd",
+    "role": "offensive_tank",
     "elements": [
-      "ghost"
+      "rock"
     ]
   },
   {
-    "id": "banette",
-    "name": "Banette",
-    "tier": "T3",
+    "id": "shiny-gothitelle",
+    "name": "Shiny Gothitelle",
+    "tier": "T1H",
     "clans": [
-      "malefic"
+      "psycraft"
     ],
     "role": "burst_dd",
     "elements": [
-      "ghost"
+      "psychic"
     ]
   },
   {
-    "id": "cursola",
-    "name": "Cursola",
-    "tier": "T3",
+    "id": "shiny-hariyama",
+    "name": "Shiny Hariyama",
+    "tier": "T1H",
     "clans": [
-      "malefic"
+      "gardestrike"
     ],
     "role": "burst_dd",
     "elements": [
-      "ghost"
+      "fighting"
     ]
   },
   {
@@ -2008,6 +1229,354 @@
     ]
   },
   {
+    "id": "shiny-heatmor",
+    "name": "Shiny Heatmor",
+    "tier": "T1H",
+    "clans": [
+      "volcanic"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "fire"
+    ]
+  },
+  {
+    "id": "shiny-hydreigon",
+    "name": "Shiny Hydreigon",
+    "tier": "T1H",
+    "clans": [
+      "wingeon"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "dragon"
+    ]
+  },
+  {
+    "id": "shiny-jumpluff",
+    "name": "Shiny Jumpluff",
+    "tier": "T3",
+    "clans": [
+      "naturia"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "grass"
+    ]
+  },
+  {
+    "id": "shiny-kadabra",
+    "name": "Shiny Kadabra",
+    "tier": "T3",
+    "clans": [
+      "psycraft"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "psychic"
+    ]
+  },
+  {
+    "id": "shiny-kingler",
+    "name": "Shiny Kingler",
+    "tier": "T2",
+    "clans": [
+      "seavell"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "water"
+    ]
+  },
+  {
+    "id": "shiny-kricketune",
+    "name": "Shiny Kricketune",
+    "tier": "T2",
+    "clans": [
+      "naturia"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "bug"
+    ]
+  },
+  {
+    "id": "shiny-krookodile",
+    "name": "Shiny Krookodile",
+    "tier": "T1H",
+    "clans": [
+      "orebound"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "ground"
+    ]
+  },
+  {
+    "id": "shiny-lairon",
+    "name": "Shiny Lairon",
+    "tier": "T3",
+    "clans": [
+      "ironhard"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "steel"
+    ]
+  },
+  {
+    "id": "shiny-magby",
+    "name": "Shiny Magby",
+    "tier": "T2",
+    "clans": [
+      "volcanic"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "fire"
+    ]
+  },
+  {
+    "id": "shiny-mawile",
+    "name": "Shiny Mawile",
+    "tier": "T1H",
+    "clans": [
+      "ironhard"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "steel"
+    ]
+  },
+  {
+    "id": "shiny-mienshao",
+    "name": "Shiny Mienshao",
+    "tier": "T1H",
+    "clans": [
+      "gardestrike"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "fighting"
+    ]
+  },
+  {
+    "id": "shiny-pachirisu",
+    "name": "Shiny Pachirisu",
+    "tier": "T1H",
+    "clans": [
+      "raibolt"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "electric"
+    ]
+  },
+  {
+    "id": "shiny-parasect",
+    "name": "Shiny Parasect",
+    "tier": "T3",
+    "clans": [
+      "naturia"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "bug"
+    ]
+  },
+  {
+    "id": "shiny-pikachu",
+    "name": "Shiny Pikachu",
+    "tier": "T3",
+    "clans": [
+      "raibolt"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "electric"
+    ]
+  },
+  {
+    "id": "shiny-primeape",
+    "name": "Shiny Primeape",
+    "tier": "T3",
+    "clans": [
+      "gardestrike"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "fighting"
+    ]
+  },
+  {
+    "id": "shiny-quagsire",
+    "name": "Shiny Quagsire",
+    "tier": "T3",
+    "clans": [
+      "orebound"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "ground"
+    ]
+  },
+  {
+    "id": "shiny-qwilfish",
+    "name": "Shiny Qwilfish",
+    "tier": "T2",
+    "clans": [
+      "malefic"
+    ],
+    "role": "offensive_tank",
+    "elements": [
+      "poison"
+    ]
+  },
+  {
+    "id": "shiny-rampardos",
+    "name": "Shiny Rampardos",
+    "tier": "T1H",
+    "clans": [
+      "orebound"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "rock"
+    ]
+  },
+  {
+    "id": "shiny-sceptile",
+    "name": "Shiny Sceptile",
+    "tier": "T1H",
+    "clans": [
+      "naturia"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "grass"
+    ]
+  },
+  {
+    "id": "shiny-slowbro",
+    "name": "Shiny Slowbro",
+    "tier": "T3",
+    "clans": [
+      "seavell"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "water"
+    ]
+  },
+  {
+    "id": "shiny-toxtricity",
+    "name": "Shiny Toxtricity",
+    "tier": "T1H",
+    "clans": [
+      "raibolt"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "electric"
+    ]
+  },
+  {
+    "id": "shiny-vaporeon",
+    "name": "Shiny Vaporeon",
+    "tier": "T2",
+    "clans": [
+      "seavell"
+    ],
+    "role": "offensive_tank",
+    "elements": [
+      "water"
+    ]
+  },
+  {
+    "id": "shiny-victreebel",
+    "name": "Shiny Victreebel",
+    "tier": "T3",
+    "clans": [
+      "naturia"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "grass"
+    ]
+  },
+  {
+    "id": "shiny-yanmega",
+    "name": "Shiny Yanmega",
+    "tier": "T1H",
+    "clans": [
+      "naturia"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "bug"
+    ]
+  },
+  {
+    "id": "solrock",
+    "name": "Solrock",
+    "tier": "T3",
+    "clans": [
+      "orebound"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "rock"
+    ]
+  },
+  {
+    "id": "staraptor",
+    "name": "Staraptor",
+    "tier": "T2",
+    "clans": [
+      "wingeon"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "flying"
+    ]
+  },
+  {
+    "id": "steelix",
+    "name": "Steelix",
+    "tier": "T2",
+    "clans": [
+      "orebound"
+    ],
+    "role": "offensive_tank",
+    "elements": [
+      "ground"
+    ]
+  },
+  {
+    "id": "sylveon",
+    "name": "Sylveon",
+    "tier": "T3",
+    "clans": [
+      "psycraft"
+    ],
+    "role": "offensive_tank",
+    "elements": [
+      "fairy"
+    ]
+  },
+  {
+    "id": "alolan-marowak",
+    "name": "TM Alolan Marowak",
+    "tier": "TM",
+    "clans": [
+      "volcanic"
+    ],
+    "role": "offensive_tank",
+    "elements": [
+      "fire"
+    ]
+  },
+  {
     "id": "dusknoir",
     "name": "TM Dusknoir",
     "tier": "TM",
@@ -2017,6 +1586,30 @@
     "role": "burst_dd",
     "elements": [
       "ghost"
+    ]
+  },
+  {
+    "id": "electivire",
+    "name": "TM Electivire",
+    "tier": "TM",
+    "clans": [
+      "raibolt"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "electric"
+    ]
+  },
+  {
+    "id": "magmortar",
+    "name": "TM Magmortar",
+    "tier": "TM",
+    "clans": [
+      "volcanic"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "fire"
     ]
   },
   {
@@ -2031,26 +1624,447 @@
     ]
   },
   {
-    "id": "mega-altaria-base",
-    "name": "Mega Altaria",
-    "tier": "T1H",
-    "clans": [],
-    "role": "burst_dd",
+    "id": "mega-altaria",
+    "name": "TM Mega Altaria Fairy",
+    "tier": "TM",
+    "clans": [
+      "psycraft"
+    ],
+    "role": "offensive_tank",
     "elements": [
-      "fairy",
+      "fairy"
+    ]
+  },
+  {
+    "id": "mega-charizard-x",
+    "name": "TM Mega Charizard X",
+    "tier": "TM",
+    "clans": [
+      "wingeon"
+    ],
+    "role": "offensive_tank",
+    "elements": [
       "dragon"
     ]
   },
   {
-    "id": "beartic",
-    "name": "Beartic",
-    "tier": "T2",
+    "id": "mega-kangaskhan",
+    "name": "TM Mega Kangaskhan",
+    "tier": "TM",
+    "clans": [
+      "gardestrike"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "fighting"
+    ]
+  },
+  {
+    "id": "mega-lucario-fighting",
+    "name": "TM Mega Lucario Fighting",
+    "tier": "TM",
+    "clans": [
+      "gardestrike"
+    ],
+    "role": "offensive_tank",
+    "elements": [
+      "fighting"
+    ]
+  },
+  {
+    "id": "metagross",
+    "name": "TM Metagross",
+    "tier": "TM",
+    "clans": [
+      "psycraft"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "psychic"
+    ]
+  },
+  {
+    "id": "milotic",
+    "name": "TM Milotic",
+    "tier": "TM",
     "clans": [
       "seavell"
     ],
     "role": "offensive_tank",
     "elements": [
+      "water"
+    ]
+  },
+  {
+    "id": "shiny-ampharos",
+    "name": "TM Shiny Ampharos",
+    "tier": "TM",
+    "clans": [
+      "raibolt"
+    ],
+    "role": "offensive_tank",
+    "elements": [
+      "electric"
+    ]
+  },
+  {
+    "id": "shiny-ariados",
+    "name": "TM Shiny Ariados",
+    "tier": "TM",
+    "clans": [
+      "naturia"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "bug"
+    ]
+  },
+  {
+    "id": "shiny-dodrio",
+    "name": "TM Shiny Dodrio",
+    "tier": "TM",
+    "clans": [
+      "wingeon"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "flying"
+    ]
+  },
+  {
+    "id": "shiny-magneton",
+    "name": "TM Shiny Magneton",
+    "tier": "TM",
+    "clans": [
+      "ironhard"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "steel"
+    ]
+  },
+  {
+    "id": "shiny-meganium",
+    "name": "TM Shiny Meganium",
+    "tier": "TM",
+    "clans": [
+      "naturia"
+    ],
+    "role": "offensive_tank",
+    "elements": [
+      "grass"
+    ]
+  },
+  {
+    "id": "shiny-muk",
+    "name": "TM Shiny Muk",
+    "tier": "TM",
+    "clans": [
+      "malefic"
+    ],
+    "role": "offensive_tank",
+    "elements": [
+      "poison"
+    ]
+  },
+  {
+    "id": "shiny-politoed",
+    "name": "TM Shiny Politoed",
+    "tier": "TM",
+    "clans": [
+      "seavell"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "water"
+    ]
+  },
+  {
+    "id": "shiny-rhydon",
+    "name": "TM Shiny Rhydon",
+    "tier": "TM",
+    "clans": [
+      "orebound"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "ground"
+    ]
+  },
+  {
+    "id": "charizard",
+    "name": "TR Charizard",
+    "tier": "TR",
+    "clans": [
+      "volcanic"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "fire"
+    ]
+  },
+  {
+    "id": "dragonair",
+    "name": "TR Dragonair",
+    "tier": "TR",
+    "clans": [
+      "wingeon"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "dragon"
+    ]
+  },
+  {
+    "id": "heracross",
+    "name": "TR Heracross",
+    "tier": "TR",
+    "clans": [
+      "gardestrike"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "fighting"
+    ]
+  },
+  {
+    "id": "jynx",
+    "name": "TR Jynx",
+    "tier": "TR",
+    "clans": [
+      "seavell"
+    ],
+    "role": "burst_dd",
+    "elements": [
       "ice"
+    ]
+  },
+  {
+    "id": "kingdra",
+    "name": "TR Kingdra",
+    "tier": "TR",
+    "clans": [
+      "seavell"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "water"
+    ]
+  },
+  {
+    "id": "magnezone",
+    "name": "TR Magnezone",
+    "tier": "TR",
+    "clans": [
+      "raibolt"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "electric"
+    ]
+  },
+  {
+    "id": "piloswine",
+    "name": "TR Piloswine",
+    "tier": "TR",
+    "clans": [
+      "orebound"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "ground"
+    ]
+  },
+  {
+    "id": "scizor",
+    "name": "TR Scizor",
+    "tier": "TR",
+    "clans": [
+      "ironhard"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "steel"
+    ]
+  },
+  {
+    "id": "scyther",
+    "name": "TR Scyther",
+    "tier": "TR",
+    "clans": [
+      "naturia"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "bug"
+    ]
+  },
+  {
+    "id": "shiny-crobat",
+    "name": "TR Shiny Crobat",
+    "tier": "TR",
+    "clans": [
+      "malefic"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "poison"
+    ]
+  },
+  {
+    "id": "skarmory",
+    "name": "TR Skarmory",
+    "tier": "TR",
+    "clans": [
+      "wingeon"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "flying"
+    ]
+  },
+  {
+    "id": "slowking",
+    "name": "TR Slowking",
+    "tier": "TR",
+    "clans": [
+      "psycraft"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "psychic"
+    ]
+  },
+  {
+    "id": "snorlax",
+    "name": "TR Snorlax",
+    "tier": "TR",
+    "clans": [
+      "gardestrike"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "normal"
+    ]
+  },
+  {
+    "id": "tyranitar",
+    "name": "TR Tyranitar",
+    "tier": "TR",
+    "clans": [
+      "orebound"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "rock"
+    ]
+  },
+  {
+    "id": "venusaur",
+    "name": "TR Venusaur",
+    "tier": "TR",
+    "clans": [
+      "naturia"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "grass"
+    ]
+  },
+  {
+    "id": "wigglytuff",
+    "name": "TR Wigglytuff",
+    "tier": "TR",
+    "clans": [
+      "psycraft"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "fairy"
+    ]
+  },
+  {
+    "id": "tropius",
+    "name": "Tropius",
+    "tier": "T2",
+    "clans": [
+      "naturia"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "grass"
+    ]
+  },
+  {
+    "id": "typhlosion",
+    "name": "Typhlosion",
+    "tier": "T3",
+    "clans": [
+      "volcanic"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "fire"
+    ]
+  },
+  {
+    "id": "vanilluxe",
+    "name": "Vanilluxe",
+    "tier": "T2",
+    "clans": [
+      "seavell"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "ice"
+    ]
+  },
+  {
+    "id": "vaporeon",
+    "name": "Vaporeon",
+    "tier": "T3",
+    "clans": [
+      "seavell"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "water"
+    ]
+  },
+  {
+    "id": "vespiquen",
+    "name": "Vespiquen",
+    "tier": "T2",
+    "clans": [
+      "naturia"
+    ],
+    "role": "offensive_tank",
+    "elements": [
+      "bug"
+    ]
+  },
+  {
+    "id": "wobbuffet",
+    "name": "Wobbuffet",
+    "tier": "T2",
+    "clans": [
+      "psycraft"
+    ],
+    "role": "offensive_tank",
+    "elements": [
+      "psychic"
+    ]
+  },
+  {
+    "id": "wormadam",
+    "name": "Wormadam",
+    "tier": "T3",
+    "clans": [
+      "naturia"
+    ],
+    "role": "burst_dd",
+    "elements": [
+      "grass"
     ]
   }
 ]
