@@ -728,6 +728,7 @@
     ],
     "hunt": "300",
     "group": "Darkrai Minion",
+    "hp": 120062,
     "todo": "calibrate defense",
     "bestStarterElements": [
       "rock",
@@ -1226,6 +1227,7 @@
     ],
     "hunt": "400+",
     "group": "Galarian Darmanitan",
+    "hp": 494590,
     "todo": "calibrate defense",
     "bestStarterElements": [
       "fire",
@@ -1247,6 +1249,7 @@
     ],
     "hunt": "400+",
     "group": "Klinklang",
+    "hp": 456137,
     "todo": "calibrate defense",
     "bestStarterElements": [
       "fire"
@@ -1278,6 +1281,7 @@
     "types": [],
     "hunt": "400+",
     "group": "Mechas",
+    "hp": 331452,
     "todo": "calibrate defense",
     "bestStarterElements": [
       "rock",
@@ -1305,6 +1309,7 @@
     "types": [],
     "hunt": "400+",
     "group": "Mechas",
+    "hp": 294987,
     "todo": "calibrate defense",
     "bestStarterElements": [
       "rock",
@@ -1318,6 +1323,7 @@
     "types": [],
     "hunt": "400+",
     "group": "Mechas",
+    "hp": 366626,
     "todo": "calibrate defense",
     "bestStarterElements": [
       "rock",
@@ -1332,6 +1338,62 @@
     "hunt": "400+",
     "group": "Mechas",
     "hp": 316842,
+    "todo": "calibrate defense",
+    "bestStarterElements": [
+      "rock",
+      "ghost",
+      "steel"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Mecha"
+  },
+  {
+    "name": "Mecha Snorlax",
+    "types": [],
+    "hunt": "400+",
+    "group": "Mechas",
+    "hp": 356362,
+    "todo": "calibrate defense",
+    "bestStarterElements": [
+      "rock",
+      "ghost",
+      "steel"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Mecha"
+  },
+  {
+    "name": "Mecha Tropius",
+    "types": [],
+    "hunt": "400+",
+    "group": "Mechas",
+    "hp": 311647,
+    "todo": "calibrate defense",
+    "bestStarterElements": [
+      "rock",
+      "ghost",
+      "steel"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Mecha"
+  },
+  {
+    "name": "Mecha Crawdaunt",
+    "types": [],
+    "hunt": "400+",
+    "group": "Mechas",
+    "hp": 332034,
+    "todo": "calibrate defense",
+    "bestStarterElements": [
+      "rock",
+      "ghost",
+      "steel"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Mecha"
+  },
+  {
+    "name": "Mecha Scizor",
+    "types": [],
+    "hunt": "400+",
+    "group": "Mechas",
+    "hp": 322214,
     "todo": "calibrate defense",
     "bestStarterElements": [
       "rock",
@@ -1754,6 +1816,7 @@
     ],
     "hunt": "400+",
     "group": "Sharpedo",
+    "hp": 463551,
     "todo": "calibrate defense",
     "bestStarterElements": [
       "grass"
@@ -1860,6 +1923,7 @@
     ],
     "hunt": "400+",
     "group": "Simisear",
+    "hp": 495378,
     "todo": "calibrate defense",
     "bestStarterElements": [
       "water",
@@ -2392,5 +2456,265 @@
       "grass",
       "steel"
     ]
+  },
+  {
+    "name": "Steelix",
+    "types": [
+      "steel",
+      "ground"
+    ],
+    "hunt": "400+",
+    "group": "Steelix",
+    "hp": 522753,
+    "todo": "calibrate defense",
+    "bestStarterElements": [
+      "fire",
+      "water",
+      "flying"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Steelix",
+    "effectiveElements": [
+      "water",
+      "grass",
+      "ice",
+      "fighting",
+      "ground"
+    ]
+  },
+  {
+    "name": "Porygon",
+    "types": [
+      "normal"
+    ],
+    "hunt": "400+",
+    "group": "Porygon/Porygon2",
+    "hp": 600724,
+    "todo": "calibrate defense",
+    "bestStarterElements": [
+      "ghost",
+      "rock",
+      "steel"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Porygon",
+    "effectiveElements": [
+      "fighting"
+    ]
+  },
+  {
+    "name": "Porygon2",
+    "types": [
+      "normal"
+    ],
+    "hunt": "400+",
+    "group": "Porygon/Porygon2",
+    "hp": 600558,
+    "todo": "calibrate defense",
+    "bestStarterElements": [
+      "ghost",
+      "rock",
+      "steel"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Porygon",
+    "effectiveElements": [
+      "fighting"
+    ]
+  },
+  {
+    "name": "Alakazam",
+    "types": ["psychic"],
+    "hunt": "400+",
+    "group": "Alakazam",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": ["dark", "steel", "ghost"],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alakazam",
+    "effectiveElements": ["dark", "ghost", "bug"]
+  },
+  {
+    "name": "Alolan Dugtrio",
+    "types": ["steel", "ground"],
+    "hunt": "400+",
+    "group": "Alolan Dugtrio",
+    "hp": 505692,
+    "todo": "calibrate defense",
+    "bestStarterElements": ["steel"],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Dugtrio",
+    "effectiveElements": ["fighting", "water", "fire", "ground"]
+  },
+  {
+    "name": "Alolan Grimer",
+    "types": ["poison", "dark"],
+    "hunt": "300",
+    "group": "Alolan Grimer",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": ["poison", "ground"],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Grimer",
+    "effectiveElements": ["ground"]
+  },
+  {
+    "name": "Alolan Meowth",
+    "types": ["dark"],
+    "hunt": "300",
+    "group": "Alolan Grimer",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": ["dark", "fighting"],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Grimer",
+    "effectiveElements": ["fighting", "bug", "fairy"]
+  },
+  {
+    "name": "Alolan Diglett",
+    "types": ["ground", "steel"],
+    "hunt": "300",
+    "group": "Alolan Grimer",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": ["steel", "poison"],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Grimer",
+    "effectiveElements": ["water", "fighting", "ground", "fire"]
+  },
+  {
+    "name": "Altaria",
+    "types": ["dragon", "flying"],
+    "hunt": "400+",
+    "group": "Altaria",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": ["steel", "fairy"],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Altaria",
+    "effectiveElements": ["ice", "dragon", "fairy"]
+  },
+  {
+    "name": "Banette",
+    "types": ["ghost"],
+    "hunt": "400+",
+    "group": "Banette/Misdreavus",
+    "hp": 590410,
+    "todo": "calibrate defense",
+    "bestStarterElements": ["dark", "normal"],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Banette_e_Misdreavus",
+    "effectiveElements": ["ghost", "dark"]
+  },
+  {
+    "name": "Misdreavus",
+    "types": ["ghost"],
+    "hunt": "400+",
+    "group": "Banette/Misdreavus",
+    "hp": 623645,
+    "todo": "calibrate defense",
+    "bestStarterElements": ["dark", "normal"],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Banette_e_Misdreavus",
+    "effectiveElements": ["ghost", "dark"]
+  },
+  {
+    "name": "Gardevoir",
+    "types": ["psychic", "fairy"],
+    "hunt": "400+",
+    "group": "Gardevoir",
+    "hp": 351168,
+    "todo": "calibrate defense",
+    "bestStarterElements": ["steel", "poison"],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Gardevoir",
+    "effectiveElements": ["ghost", "poison", "steel"]
+  },
+  {
+    "name": "Grumpig",
+    "types": ["psychic"],
+    "hunt": "400+",
+    "group": "Grumpig",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": ["dark", "steel", "ghost"],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Grumpig",
+    "effectiveElements": ["ghost", "dark", "bug"]
+  },
+  {
+    "name": "Magnezone",
+    "types": ["steel", "electric"],
+    "hunt": "400+",
+    "group": "Magnezone",
+    "hp": 512320,
+    "todo": "calibrate defense",
+    "bestStarterElements": ["ground"],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Magnezone",
+    "effectiveElements": ["fighting", "fire", "ground"]
+  },
+  {
+    "name": "Miltank",
+    "types": ["normal"],
+    "hunt": "400+",
+    "group": "Miltank",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": ["rock", "ghost"],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Miltank",
+    "effectiveElements": ["fighting"]
+  },
+  {
+    "name": "Ninetales",
+    "types": ["fire"],
+    "hunt": "400+",
+    "group": "Mixed Fire",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": ["water", "rock", "fire"],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Mixed_Fire",
+    "effectiveElements": ["water", "ground", "rock"]
+  },
+  {
+    "name": "Scizor",
+    "types": ["bug", "steel"],
+    "hunt": "400+",
+    "group": "Scizor",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": ["fire", "steel"],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Scizor",
+    "effectiveElements": ["fire"],
+    "effectivenessNotes": "Scizor é bug/steel — Fire é 4× efetivo (dupla fraqueza)."
+  },
+  {
+    "name": "Sentinel",
+    "types": ["normal"],
+    "hunt": "300",
+    "group": "Sentinel",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": ["ghost"],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Sentinel",
+    "effectiveElements": ["fighting"],
+    "effectivenessNotes": "Mobs aplicam Blind (mitigável com Nomel Berry)."
+  },
+  {
+    "name": "Togetic",
+    "types": ["fairy", "flying"],
+    "hunt": "400+",
+    "group": "Togetic/Togekiss",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": ["steel", "poison"],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Togetic_e_Togekiss",
+    "effectiveElements": ["poison", "steel", "electric", "rock", "ice"]
+  },
+  {
+    "name": "Togekiss",
+    "types": ["fairy", "flying"],
+    "hunt": "400+",
+    "group": "Togetic/Togekiss",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": ["steel", "poison"],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Togetic_e_Togekiss",
+    "effectiveElements": ["poison", "steel", "electric", "rock", "ice"]
+  },
+  {
+    "name": "Tyranitar",
+    "types": ["rock", "dark"],
+    "hunt": "400+",
+    "group": "Tyranitar",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": ["fighting", "ground", "steel", "fairy"],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Tyranitar",
+    "effectiveElements": ["fighting", "water", "grass", "ground", "bug", "steel", "fairy"],
+    "effectivenessNotes": "Rock+Dark → Fighting 4× (dupla fraqueza)."
+  },
+  {
+    "name": "Ursaring",
+    "types": ["normal"],
+    "hunt": "400+",
+    "group": "Ursaring",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": ["rock", "ghost"],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Ursaring",
+    "effectiveElements": ["fighting"]
   }
 ]
