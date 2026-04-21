@@ -204,29 +204,7 @@
     ],
     "hunt": "300",
     "group": "Alolan Diglett",
-    "todo": "calibrate defense",
-    "bestStarterElements": [
-      "fire",
-      "water"
-    ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Diglett",
-    "effectiveElements": [
-      "ground",
-      "water",
-      "fighting",
-      "fire"
-    ],
-    "effectivenessNotes": "Apesar de causarem dano super efetivo, os elementos Fighting e Ground recebem dano normal deste Pokémon, portanto, é necessário tomar cuidado ao frequentar o local. | O Pokémon Steelix poderá ser uma opção viável para jogadores do clã Orebound frequentarem este local, tendo em vista que recebe dano inefetivo do elemento Steel."
-  },
-  {
-    "name": "Alolan Dugtrio",
-    "types": [
-      "ground",
-      "steel"
-    ],
-    "hunt": "300",
-    "group": "Alolan Diglett",
-    "hp": 505692,
+    "hp": 188768,
     "todo": "calibrate defense",
     "bestStarterElements": [
       "fire",
@@ -1211,6 +1189,7 @@
     ],
     "hunt": "400+",
     "group": "Mantine",
+    "hp": 576626,
     "todo": "calibrate defense",
     "bestStarterElements": [
       "electric"
@@ -2549,26 +2528,6 @@
     "bestStarterElements": ["poison", "ground"],
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Grimer",
     "effectiveElements": ["ground"]
-  },
-  {
-    "name": "Alolan Meowth",
-    "types": ["dark"],
-    "hunt": "300",
-    "group": "Alolan Grimer",
-    "todo": "calibrate hp + defense",
-    "bestStarterElements": ["dark", "fighting"],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Grimer",
-    "effectiveElements": ["fighting", "bug", "fairy"]
-  },
-  {
-    "name": "Alolan Diglett",
-    "types": ["ground", "steel"],
-    "hunt": "300",
-    "group": "Alolan Grimer",
-    "todo": "calibrate hp + defense",
-    "bestStarterElements": ["steel", "poison"],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Grimer",
-    "effectiveElements": ["water", "fighting", "ground", "fire"]
   },
   {
     "name": "Altaria",
