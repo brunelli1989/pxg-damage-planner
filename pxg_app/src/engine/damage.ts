@@ -7,7 +7,6 @@ import type {
   MobEntry,
   Pokemon,
   PokemonElement,
-  PokemonRole,
   Skill,
   Tier,
   XAtkTier,
@@ -15,30 +14,44 @@ import type {
 import clansData from "../data/clans.json";
 
 // =========================================================
-// Default skill_power per (tier, role) — fallback pra pokes não calibrados.
-// Valores derivados de calibrações reais no dummy (média simples por slot).
+// Default skill_power por slot — fallback pra pokes não calibrados.
+//
+// Regra do jogo (validada em 44 pokes calibrados): o budget de dano por slot
+// é determinado por (role, tier, tem_CC_no_kit):
+//   - offtank: flat ~18.5 entre tiers (n=20, CV 9.1%)
+//   - burst_dd: varia por tier e se tem CC (slot de CC "custa" budget de dano)
+//     - T1H CC: n=8, CV 4.5% — calibração forte
+//     - T2 CC vs noCC: 19.5 vs 23.1 (gap ~3.5)
+//     - T3 CC vs noCC: 18.0 vs 19.2
+//     - TR CC: n=3, CV 0.6% — flat perfeito
 // =========================================================
 
-// Média de skill_power por (tier, role) derivada de pokes calibrados no dummy.
-// burst_dd escala por tier; offensive_tank é flat entre tiers (Sh.Golem T2 ≈ Omastar T3).
-type TierRoleKey = `${Tier}:${PokemonRole}`;
-const DEFAULT_POWER_BY_TIER_ROLE: Partial<Record<TierRoleKey, number>> = {
-  "T1H:burst_dd":       24.7,
-  "T1H:offensive_tank": 19.4,
-  "T1C:burst_dd":       23.5, // uncalibrated: midpoint entre T1H e T2
-  "T1C:offensive_tank": 19.4,
-  "T2:burst_dd":        22.5,
-  "T2:offensive_tank":  19.4,
-  "T3:burst_dd":        21.5,
-  "T3:offensive_tank":  19.4,
-  "TM:burst_dd":        15.0,
-  "TM:offensive_tank":  19.4,
-  "TR:burst_dd":        18.4,
+type BurstKey = `${Tier}:${"CC" | "noCC"}`;
+const BURST_POWER_BY_TIER_CC: Partial<Record<BurstKey, number>> = {
+  "T1H:CC":   24.6, // n=8
+  "T1H:noCC": 24.6, // sem amostras — usa CC como proxy
+  "T1C:CC":   19.5, // sem amostras — usa T2 CC como proxy
+  "T1C:noCC": 17.5, // n=1 (sh.ninetales)
+  "T2:CC":    19.5, // n=10
+  "T2:noCC":  23.1, // n=3
+  "T3:CC":    18.0, // n=5
+  "T3:noCC":  19.2, // n=4
+  "TR:CC":    18.5, // n=3
+  "TR:noCC":  19.6, // n=1
+  "TM:CC":    15.0, // sem amostras
+  "TM:noCC":  15.0, // sem amostras
 };
+const OFFTANK_POWER = 18.5;
 
-export function getDefaultSkillPower(tier: Tier, role: PokemonRole | undefined): number {
-  if (!role) return 0;
-  return DEFAULT_POWER_BY_TIER_ROLE[`${tier}:${role}` as TierRoleKey] ?? 0;
+function pokeHasCC(poke: Pokemon): boolean {
+  return poke.skills.some((s) => s.cc === "stun" || s.cc === "silence" || s.cc === "locked");
+}
+
+export function getDefaultSkillPower(poke: Pokemon): number {
+  if (!poke.role) return 0;
+  if (poke.role === "offensive_tank") return OFFTANK_POWER;
+  const key: BurstKey = `${poke.tier}:${pokeHasCC(poke) ? "CC" : "noCC"}`;
+  return BURST_POWER_BY_TIER_CC[key] ?? 0;
 }
 
 /**
@@ -60,7 +73,7 @@ export function resolveSkillPower(skill: Skill, poke: Pokemon): number {
   let result: number;
   if (skill.power !== undefined) result = skill.power;
   else if (skill.buff !== null) result = 0;
-  else result = getDefaultSkillPower(poke.tier, poke.role);
+  else result = getDefaultSkillPower(poke);
   bySkill.set(skill, result);
   return result;
 }

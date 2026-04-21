@@ -3,13 +3,15 @@ import { resolveSkillPower, getDefaultSkillPower } from "./damage";
 
 const pokeT2: Pokemon = {
   id: "test-t2",
-  name: "Test T2 burst_dd",
+  name: "Test T2 burst_dd CC",
   tier: "T2",
   role: "burst_dd",
-  skills: [],
+  skills: [
+    { name: "stun", cooldown: 40, type: "area", cc: "stun", buff: null, power: 0 },
+  ],
 };
 
-const defaultT2 = getDefaultSkillPower("T2", "burst_dd");
+const defaultT2 = getDefaultSkillPower(pokeT2);
 
 function mkSkill(partial: Partial<Skill>): Skill {
   return {

@@ -205,22 +205,25 @@ Modificador: `× 1.5` se skill anterior tem `buff: "next"` (Dragon Rage, Hone Cl
 
 **`skill_power` varia per-instância**, não por espécie: Fire Ball no Ninetales = 6.07, no Charizard = 13.77.
 
-### Fallback por (tier, role)
+### Fallback por (tier, hasCC) para burst_dd + flat offtank
 
-Quando `skill.power` é undefined, `resolveSkillPower(skill, poke)` usa `DEFAULT_POWER_BY_TIER_ROLE`. Valores derivados empiricamente:
+Quando `skill.power` é undefined, `resolveSkillPower(skill, poke)` usa `getDefaultSkillPower(poke)`. Budget do jogo é por slot:
 
-| Tier \ Role | burst_dd | offensive_tank |
-|---|---|---|
-| T1H | 24.7 | 19.4 |
-| T1C | 23.5 (uncalibrated) | 19.4 |
-| T2 | 22.5 | 19.4 |
-| T3 | 21.5 | 19.4 |
-| TM | 15.0 | 19.4 |
-| TR | 18.4 | — |
+| burst_dd \ has CC | CC | noCC | Amostras |
+|---|---|---|---|
+| T1H | 24.6 | 24.6 (proxy) | CC n=8 |
+| T1C | 19.5 (proxy T2) | 17.5 | noCC n=1 |
+| T2 | 19.5 | 23.1 | CC n=10, noCC n=3 |
+| T3 | 18.0 | 19.2 | CC n=5, noCC n=4 |
+| TR | 18.5 | 19.6 | CC n=3, noCC n=1 |
+| TM | 15.0 | 15.0 | sem amostras |
 
-**Insights validados:**
-- `burst_dd` **escala por tier** (T1H ~118 Σ → T2 ~92 → T3 ~85 Σ raw por poke, spread <3.5% dentro do cluster)
-- `offensive_tank` **flat entre tiers** (Sh.Golem T2 ≈ Omastar T3 ≈ 77 Σ raw)
+**Offtank: flat 18.5 entre todos os tiers** (n=20, CV 9.1%).
+
+**Insights validados (44 pokes calibrados):**
+- `burst_dd CC` < `burst_dd noCC` na mesma tier — slot de CC "custa" ~15-20% do budget dos outros slots (T2: 19.5 vs 23.1; T3: 18.0 vs 19.2)
+- `burst_dd` per-skill (CC bucket): T1H=24.6 > TR=18.5 ≈ T2/T3 ≈ 18-19.5 (TR bate T2/T3 apesar do "tier")
+- `offensive_tank` **flat entre tiers** (~18.5 per skill, Σ ~75 com 4 skills)
 - OTDD (over-time damage dealer) existe mas é foco de boss, não de lure — tratado como `burst_dd` sem distinção
 
 ### Defesas de mobs calibrados
