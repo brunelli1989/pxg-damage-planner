@@ -101,7 +101,7 @@ function buildReport(
     lines.push(`Mob: ${m.name} (${m.types.join("/")}) HP=${m.hp} def=${m.defFactor ?? "—"}${bestStr}`);
     const dev = damageConfig.device;
     lines.push(`Device held: ${dev.kind === "none" ? "—" : `${dev.kind} T${dev.tier}`}`);
-    if (damageConfig.useElixirAtk === false) lines.push(`Elixir Atk: desligado`);
+    if (damageConfig.useElixirAtk === false) lines.push(`Swordsman Elixir: desligado`);
   }
   lines.push(`Pokémons selecionados (${selectedIds.length}):`);
   selectedIds.forEach((id) => {
@@ -136,7 +136,7 @@ function buildReport(
       rSupPerHour * CONSUMABLE_PRICES.reviveSuperior
     );
     const parts: string[] = [];
-    if (atkPerHour > 0) parts.push(`${atkPerHour.toFixed(1)} elixir`);
+    if (atkPerHour > 0) parts.push(`${atkPerHour.toFixed(1)} swordsman`);
     if (rNormalPerHour > 0) parts.push(`${rNormalPerHour.toFixed(1)} revive`);
     if (rSupPerHour > 0) parts.push(`${rSupPerHour.toFixed(1)} revive+`);
     lines.push(`Consumíveis/h: ${parts.join(" + ")} (~$${cost.toLocaleString()}/h)`);
@@ -162,8 +162,8 @@ function buildReport(
       ? "Device"
       : lure.usesElixirAtk
         ? lure.type === "solo_elixir"
-          ? "Elixir Atk"
-          : `${typeLabel} + Elixir Atk`
+          ? "Swordsman Elixir"
+          : `${typeLabel} + Swordsman Elixir`
         : typeLabel;
     const reviveLabel = lure.reviveTier
       ? ` + ${lure.reviveTier === "superior" ? "Revive+" : "Revive"}`
@@ -345,7 +345,7 @@ function App() {
                 {devicePokeName ? (
                   <span className="device-pokemon">{devicePokeName}</span>
                 ) : (
-                  <span className="device-none">Nenhum (todos usam elixir)</span>
+                  <span className="device-none">Nenhum (todos usam swordsman)</span>
                 )}
               </div>
               <div className="copy-section">

@@ -24,7 +24,7 @@ function countConsumablesPerCycle(result: RotationResultType) {
 
 function lureFinisherLabel(lure: Lure): string {
   if (lure.usesDevice) return "Device";
-  if (lure.usesElixirAtk) return lure.type === "solo_elixir" ? "Elixir Atk" : "+ Elixir Atk";
+  if (lure.usesElixirAtk) return lure.type === "solo_elixir" ? "Swordsman Elixir" : "+ Swordsman Elixir";
   if (lure.type === "group") {
     const count = 2 + lure.extraMembers.length; // starter + second + extras
     return `Group (${count})`;
@@ -71,7 +71,7 @@ export function RotationResultView({ result }: Props) {
           {hasConsumables && (
             <span className="stat" title="Custo total de consumíveis por hora">
               Consumíveis/h:{" "}
-              {c.elixirAtk > 0 && <strong>{elixirAtkPerHour.toFixed(1)} elixir</strong>}
+              {c.elixirAtk > 0 && <strong>{elixirAtkPerHour.toFixed(1)} swordsman</strong>}
               {c.reviveNormal > 0 && <> {c.elixirAtk > 0 && "+ "}<strong>{reviveNormalPerHour.toFixed(1)} revive</strong></>}
               {c.reviveSuperior > 0 && <> {(c.elixirAtk + c.reviveNormal) > 0 && "+ "}<strong>{reviveSuperiorPerHour.toFixed(1)} revive+</strong></>}
               {" "}(<strong>${Math.round(totalCostPerHour).toLocaleString()}/h</strong>)

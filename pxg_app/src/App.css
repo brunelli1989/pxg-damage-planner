@@ -777,6 +777,22 @@
   color: #ccc;
 }
 
+.damage-config-group {
+  border: 1px solid #2a3e5e;
+  border-radius: 6px;
+  padding: 10px 12px 4px;
+  margin: 0 0 12px;
+}
+
+.damage-config-group legend {
+  padding: 0 6px;
+  font-size: 0.75rem;
+  color: #6fa3d4;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 .damage-config-row {
   display: flex;
   flex-wrap: wrap;
@@ -803,11 +819,45 @@
   min-width: 120px;
 }
 
+.damage-config-row .hp-def-inputs {
+  display: flex;
+  gap: 6px;
+}
+
+.damage-config-row .def-input {
+  min-width: 60px;
+  max-width: 80px;
+}
+
+.damage-config-row label.checkbox-label {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-end;
+  padding-bottom: 6px;
+}
+
+.damage-config-row label.checkbox-label input[type="checkbox"] {
+  min-width: 0;
+  width: auto;
+}
+
 .damage-config-row .hint,
 .calibration .hint,
 .poke-setup .hint {
   font-size: 0.75rem;
   color: #888;
+}
+
+.damage-config-row .hint a {
+  color: #6fa3d4;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.damage-config-row .hint a:hover {
+  color: #8cb8e0;
+  text-decoration: underline;
 }
 
 .poke-setup-table,

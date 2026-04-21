@@ -125,16 +125,8 @@ export function DamageConfigPanel({
   const maxHpInGroup = selectedGroupMobs.reduce((max, m) => Math.max(max, m.hp ?? 0), 0);
   const maxHpMob = selectedGroupMobs.find((m) => m.hp === maxHpInGroup);
 
-  const defLabel = (m: MobEntry) => (m.defFactor !== undefined ? ` def=${m.defFactor}` : "");
   const mobDisplay = (m: MobEntry) =>
-    `${m.name} (${m.types.join("/")})${defLabel(m)}${mobMarker([m])}`;
-  const groupDefLabel = (ms: MobEntry[]) => {
-    const defs = ms.map((m) => m.defFactor).filter((d): d is number => d !== undefined);
-    if (defs.length === 0) return "";
-    const min = Math.min(...defs);
-    const max = Math.max(...defs);
-    return ` def=${min === max ? min : `${min}-${max}`}`;
-  };
+    `${m.name} (${m.types.join("/")})${mobMarker([m])}`;
 
   const currentResolved = resolvedByName.get(config.mob.name);
   const currentMobSource = currentResolved
@@ -145,90 +137,133 @@ export function DamageConfigPanel({
     <section className="damage-config">
       <h2>Configuração de Dano</h2>
 
-      <div className="damage-config-row">
-        <label>
-          Player lvl:
-          <input
-            type="number"
-            min={1}
-            max={1000}
-            value={config.playerLvl}
-            onChange={(e) => onPlayerLvlChange(Number(e.target.value))}
-          />
-        </label>
+      <fieldset className="damage-config-group">
+        <legend>Player</legend>
+        <div className="damage-config-row">
+          <label>
+            Player lvl:
+            <input
+              type="number"
+              min={1}
+              max={1000}
+              value={config.playerLvl}
+              onChange={(e) => onPlayerLvlChange(Number(e.target.value))}
+            />
+          </label>
 
-        <label>
-          Clã:
-          <select
-            value={config.clan ?? ""}
-            onChange={(e) => onClanChange((e.target.value || null) as ClanName | null)}
-          >
-            <option value="">Nenhum</option>
-            {clansData.map((c) => (
-              <option key={c.name} value={c.name}>
-                {c.displayName} ({c.bonuses.map((b) => `+${Math.round(b.atk * 100)}% ${b.element}`).join(", ")})
-              </option>
-            ))}
-          </select>
-        </label>
+          <label>
+            Clã:
+            <select
+              value={config.clan ?? ""}
+              onChange={(e) => onClanChange((e.target.value || null) as ClanName | null)}
+            >
+              <option value="">Nenhum</option>
+              {clansData.map((c) => (
+                <option key={c.name} value={c.name}>
+                  {c.displayName} ({c.bonuses.map((b) => `+${Math.round(b.atk * 100)}% ${b.element}`).join(", ")})
+                </option>
+              ))}
+            </select>
+          </label>
 
-        <label>
-          Hunt:
-          <select
-            value={config.hunt}
-            onChange={(e) => onHuntChange(e.target.value as HuntLevel)}
-          >
-            <option value="300">Hunt 300</option>
-            <option value="400+">Hunt 400+</option>
-          </select>
-        </label>
+          <label>
+            Held do device:
+            <select
+              value={config.device.kind}
+              onChange={(e) => onDeviceChange({ kind: e.target.value as DeviceHeldKind })}
+            >
+              <option value="none">Nenhum</option>
+              <option value="x-attack">X-Attack</option>
+              <option value="x-boost">X-Boost</option>
+              <option value="x-critical">X-Critical</option>
+              <option value="x-defense">X-Defense</option>
+            </select>
+          </label>
 
-        <label title="Permite uso de Elixir Atk nas lures. Desligado = só offtank e T1H-do-clã podem starter.">
-          <input
-            type="checkbox"
-            checked={config.useElixirAtk ?? true}
-            onChange={(e) => onUseElixirAtkChange(e.target.checked)}
-          />
-          Usar Elixir Atk
-        </label>
+          <label>
+            Tier do device:
+            <select
+              value={config.device.tier}
+              disabled={config.device.kind === "none"}
+              onChange={(e) => onDeviceChange({ tier: Number(e.target.value) as XAtkTier })}
+            >
+              {TIERS.filter((t) =>
+                config.device.kind === "x-boost" ? t <= 7 : true
+              ).map((t) => (
+                <option key={t} value={t}>
+                  {t === 0 ? "—" : `T${t}`}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
 
-        <label title="Revive reseta CDs de 1 poke na lure, permitindo castar o kit 2x. CD independente do disk.">
-          Revive:
-          <select
-            value={config.revive ?? "none"}
-            onChange={(e) => onReviveChange(e.target.value as "none" | "normal" | "superior")}
-          >
-            <option value="none">Nenhum</option>
-            <option value="normal">Nightmare Revive ($10k, 5min)</option>
-            <option value="superior">Superior Nightmare Revive ($50k, 4min)</option>
-          </select>
-        </label>
-      </div>
+      </fieldset>
 
-      <div className="damage-config-row">
-        <label>
-          Mob alvo:
-          <select
-            value={currentSelectionKey}
-            onChange={(e) => handleMobSelect(e.target.value)}
-          >
-            {Object.entries(groupedMobs).map(([groupName, groupMobs]) => {
-              if (groupMobs.length > 1) {
-                const allTypes = [...new Set(groupMobs.flatMap((m) => m.types))];
+      <fieldset className="damage-config-group">
+        <legend>Hunt</legend>
+        <div className="damage-config-row">
+          <label>
+            Hunt:
+            <select
+              value={config.hunt}
+              onChange={(e) => onHuntChange(e.target.value as HuntLevel)}
+            >
+              <option value="300">Hunt 300</option>
+              <option value="400+">Hunt 400+</option>
+            </select>
+          </label>
+
+          <label>
+            Mob alvo:
+            <select
+              value={currentSelectionKey}
+              onChange={(e) => handleMobSelect(e.target.value)}
+            >
+              {Object.entries(groupedMobs).map(([groupName, groupMobs]) => {
+                if (groupMobs.length > 1) {
+                  const allTypes = [...new Set(groupMobs.flatMap((m) => m.types))];
+                  return (
+                    <option key={groupName} value={groupName}>
+                      {groupName} ({allTypes.join("/")}){mobMarker(groupMobs)}
+                    </option>
+                  );
+                }
                 return (
                   <option key={groupName} value={groupName}>
-                    {groupName} ({allTypes.join("/")}){groupDefLabel(groupMobs)}{mobMarker(groupMobs)}
+                    {mobDisplay(groupMobs[0])}
                   </option>
                 );
-              }
-              return (
-                <option key={groupName} value={groupName}>
-                  {mobDisplay(groupMobs[0])}
-                </option>
-              );
-            })}
-            <option value="__custom__">— Custom —</option>
-          </select>
+              })}
+              <option value="__custom__">— Custom —</option>
+            </select>
+          </label>
+
+          <label className="hp-def-group">
+            <span>Maior HP do grupo / Defesa:</span>
+            <span className="hp-def-inputs">
+              <input
+                type="text"
+                value={
+                  maxHpInGroup > 0
+                    ? `${maxHpInGroup.toLocaleString()}${maxHpMob ? ` (${maxHpMob.name})` : ""}`
+                    : "—"
+                }
+                disabled
+                readOnly
+              />
+              <input
+                type="text"
+                className="def-input"
+                value={maxHpMob?.defFactor !== undefined ? String(maxHpMob.defFactor) : "—"}
+                disabled
+                readOnly
+              />
+            </span>
+          </label>
+        </div>
+
+        <div className="damage-config-row">
           <span className="hint">
             Tipo 1: <strong>{type1}</strong> | Tipo 2: <strong>{type2}</strong>
             {selectedGroupMobs[0]?.wiki && (
@@ -264,52 +299,36 @@ export function DamageConfigPanel({
               </span>
             ))}
           </span>
-        </label>
+          <span className="hint">
+            <strong>Defesa</strong>: multiplicador &lt; 1 que reduz o dano causado ao mob.
+            Valores típicos: 0.55–0.60 (nightmare tank), 0.80–0.90 (mobs comuns).
+            "—" = sem calibração — engine usa média do hunt tier.
+          </span>
+        </div>
 
-        <label>
-          Maior HP do grupo:
-          <input
-            type="text"
-            value={maxHpInGroup > 0 ? `${maxHpInGroup.toLocaleString()}${maxHpMob ? ` (${maxHpMob.name})` : ""}` : "—"}
-            disabled
-            readOnly
-          />
-        </label>
-      </div>
+        <div className="damage-config-row">
+          <label className="checkbox-label" title="Permite uso de Swordsman Elixir nas lures. Desligado = só offtank e T1H-do-clã podem starter.">
+            <input
+              type="checkbox"
+              checked={config.useElixirAtk ?? true}
+              onChange={(e) => onUseElixirAtkChange(e.target.checked)}
+            />
+            Usar Swordsman Elixir
+          </label>
 
-      <div className="damage-config-row">
-        <label>
-          Held do device:
-          <select
-            value={config.device.kind}
-            onChange={(e) => onDeviceChange({ kind: e.target.value as DeviceHeldKind })}
-          >
-            <option value="none">Nenhum</option>
-            <option value="x-attack">X-Attack</option>
-            <option value="x-boost">X-Boost</option>
-            <option value="x-critical">X-Critical</option>
-            <option value="x-defense">X-Defense</option>
-          </select>
-        </label>
-
-        <label>
-          Tier do device:
-          <select
-            value={config.device.tier}
-            disabled={config.device.kind === "none"}
-            onChange={(e) => onDeviceChange({ tier: Number(e.target.value) as XAtkTier })}
-          >
-            {TIERS.filter((t) =>
-              config.device.kind === "x-boost" ? t <= 7 : true
-            ).map((t) => (
-              <option key={t} value={t}>
-                {t === 0 ? "—" : `T${t}`}
-              </option>
-            ))}
-          </select>
-          <span className="hint">X-Attack vai até T8, X-Boost até T7. Device é atribuído a 1 poke (checkbox no setup).</span>
-        </label>
-      </div>
+          <label title="Revive reseta CDs de 1 poke na lure, permitindo castar o kit 2x. CD independente do disk.">
+            Revive:
+            <select
+              value={config.revive ?? "none"}
+              onChange={(e) => onReviveChange(e.target.value as "none" | "normal" | "superior")}
+            >
+              <option value="none">Nenhum</option>
+              <option value="normal">Nightmare Revive ($10k, 5min)</option>
+              <option value="superior">Superior Nightmare Revive ($50k, 4min)</option>
+            </select>
+          </label>
+        </div>
+      </fieldset>
     </section>
   );
 }
