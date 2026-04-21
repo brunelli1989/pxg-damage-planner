@@ -59,10 +59,12 @@ Um **lure** = 1 box a ser finalizada com **1 a 6 pokémons**.
 **4 tipos:**
 | Tipo | Composição | Finisher | Requisitos |
 |---|---|---|---|
-| `solo_device` | 1 pokémon T1H c/ CC | Device | Device é atrelado a 1 poke só |
-| `solo_elixir` | 1 pokémon T2/T3/TR c/ CC, **sem frontal** | Elixir Atk (210s shared CD) | Starter precisa def OU Elixir Def |
-| `dupla` | Starter c/ CC + 1 segundo (opcional +elixir) | Sem item ou Elixir Atk | Starter precisa def OU Elixir Def |
-| `group` | Starter c/ CC + 2-5 extras (3-6 membros total) | Sem item ou Elixir Atk | Hunt 400+ típico |
+| `solo_device` | 1 pokémon T1H c/ CC | Device | Device atrelado a 1 poke só; starter offtank ou T1H-clã |
+| `solo_elixir` | 1 pokémon não-T1H c/ CC, **sem frontal** | Swordsman Elixir (210s CD) | Hunt 300 sem restrição; 400+ só offtank |
+| `dupla` | Starter c/ CC + 1 segundo | Sem item / +Swordsman / +Revive | Starter offtank/T1H-clã, ou consumível gate (só hunt 300) |
+| `group` | Starter c/ CC + 2-5 extras (3-6 membros total) | Sem item / +Swordsman | Hunt 400+ típico; revive não gera aqui (OOM) |
+
+UI label: "Elixir Atk" foi renomeado pra **"Swordsman Elixir"** (nome real do jogo). Internals (`usesElixirAtk`, `ELIXIR_ATK_COOLDOWN`) mantidos — só strings user-facing mudaram.
 
 ### Regras críticas
 
@@ -74,16 +76,19 @@ Um **lure** = 1 box a ser finalizada com **1 a 6 pokémons**.
 - **Frontal não finaliza solo com elixir** — poke com frontal não pode ser `solo_elixir`. Pode ir em dupla/group **como finalizer** (não como starter).
 - **Device é atribuído a 1 pokémon só** — algoritmo testa top-2 T1H+CC como candidatos + "sem device". Se user marca `hasDevice=true` em algum poke no PokeSetupEditor (qualquer tier), adiciona como **hint** à lista (não substitui os outros — engine ainda compara todos).
 - **Device holder pode ser dupla/group starter** (só é excluído do role "second" pra evitar conflito com solo_device). `hasDevice=true` é aplicado via override em `findBestRotation`, então device bonus entra no dano de qualquer lure onde o holder casta.
-- **Defesa do starter:**
+- **Defesa do starter (mecânica Elixir Def REMOVIDA):**
   - Tem skill com `def: true` (Harden, Intimidate, Iron Defense, Coil, etc) → usa essa skill (grátis)
-  - Não tem → gasta Elixir Def (210s shared CD)
-  - **EXCEÇÃO:** T1H+device não precisa de defesa
+  - Não tem → depende do tier (T1H tanka sem; outros precisam via player-strength rule)
 - **Player-strength rule:** se nenhuma lure de ≤3 membros finaliza a box, starter precisa ter `def:true` (T1H burst_dd sem Harden fica banido). Heurística do user: "a partir do momento que finaliza com 3 pokes, dá pra lurar com T1H".
+- **Consumable-gate starter filter:** `canStarter(p) = isOfftank(p) || isT1HClan(p) || lure.usesElixirAtk || lure.reviveTier`. **Hunt 300:** consumível desbloqueia starter fraco. **Hunt 400+:** strict — só offtank/T1H-clã, mesmo com item.
+- **Max 2 lures IDÊNTICAS consecutivas:** regra estrutural bloqueia sequências com 3 lures exatamente iguais (mesma composição). Beam filter + wrap-around check em evaluateCycle. Permite "Heatmor+A, Heatmor+B, Heatmor+C" (starter igual, composição diferente) mas bloqueia "Heatmor solo_device × 3".
 - **Starter type hard filter:** se `mob.bestStarterElements` populado e bag tem ≥1 poke matching, outros tipos ficam **proibidos como starter** (podem ser second/extra). Fallback se filter esvazia.
 - **Starter score 3-tier** (em `compileLures`, multiplica beam score): `type ∈ (bestStarterElements ∩ user_clan_elements)` → 0.60; `type ∈ bestStarterElements` → 0.75; senão 1.00.
+- **Stun > silence hard filter:** se bag tem stun-starter, silence-only filtrados. + silence score penalty 10% no beam.
 - **Second/extras NÃO precisam de defesa** (entram brevemente).
-- **Elixir atk em dupla/group:** +70% aditivo no `helds` do **holder** (poke mais forte) por 8s. Shared CD 210s com solo_elixir. `Lure.elixirAtkHolderId` guarda o id.
-- **Cascading generator:** `generateLureTemplates` produz em 3 tiers — base (solo+dupla), +duplaElixir, +group. `findBestRotation` só adiciona os tiers caros quando o tier anterior não finaliza (economia de bags).
+- **Swordsman Elixir em dupla/group:** +70% aditivo no `helds` do **holder** (poke mais forte) por 8s. Shared CD 210s com solo_elixir. `Lure.elixirAtkHolderId` guarda o id.
+- **Nightmare Revive:** reseta CDs de 1 poke na lure (target = `pickElixirHolder`, o mais forte). Kit castado 2×. Tiers: Normal ($10k, 300s CD) / Superior ($50k, 240s CD). Só gera em solo_device/solo_elixir/dupla (não em group — OOM).
+- **Generator SEM cascading (FIX):** `generateLureTemplates` sempre com `includeDuplaElixir: true, includeGroup: true, allowElixirAtk` e `reviveTier`. Beam search recebe todas opções. Cascading greedy antigo escondia rotações de group superiores em bags com dupla+elixir potente.
 - **`lureFinalizesBox` compara dmg vs `mob.hp` (NÃO hp×6)** — skills são area, hittam todos os 6 mobs simultaneamente; matar 1 = matar os 6.
 
 ### Cooldown de skills
@@ -143,11 +148,12 @@ Após cada lure (finisher cast), passa-se **10s de kill time** — os 6 mobs da 
 
 Esse kill time beneficia TODOS os pokes igualmente (starter do próximo lure, second, elixirs). Não há leeway especial — tudo é modelado explicitamente.
 
-### Elixirs
+### Consumíveis
 
-- **Elixir Atk:** 210s fixo (não afetado pelo disk). Usado em solo_elixir, dupla+elixir, group+elixir. Buffa +70% aditivo no `helds` do holder (poke mais forte) por 8s — janela cobre casts do holder (~5s).
-- **Elixir Def:** 210s fixo. Usado por starter sem skill `def:true` que não seja T1H+device.
-- Cooldowns **independentes** entre si.
+- **Swordsman Elixir (ex-Elixir Atk):** 210s fixo (não afetado pelo disk). Usado em solo_elixir, dupla+elixir, group+elixir. Buffa +70% aditivo no `helds` do holder (poke mais forte) por 8s — janela cobre casts do holder (~5s).
+- **Nightmare Revive:** CD próprio (Normal 300s, Superior 240s), independente do disk. Cast de 1s. Reseta CDs de todas skills do target → kit 2×. Target = `pickElixirHolder(members)` (mais forte da lure). Revive + Elixir Atk coexistem (CDs independentes).
+- **Elixir Def: REMOVIDO inteiro.** Mecânica descontinuada; starters sem harden/T1H são filtrados pela player-strength rule.
+- Preços centralizados em `cooldown.ts`: ELIXIR_PRICE=500, REVIVE_PRICE={normal:10000, superior:50000}.
 
 ### Ordem de skills dentro de um pokémon
 
@@ -257,7 +263,7 @@ Contexto histórico na memória: `project_pxg_damage_formula.md`.
 - **NÃO** chamar `resolveSkillPower` duas vezes por skill cast — passa via `opts.skillPower` pro `computeSkillDamage` (hot path do beam search)
 - **NÃO** assumir boost/held do poke testado pelo setup listado no topo da mensagem de calibração — é do char. Cada poke tem seu próprio boost/held no ball
 - **NÃO** usar `role === "offensive_tank"` como proxy pra `hasHarden` — use `p.skills.some(s => s.def === true)`. Se o offtank não tem skill com def:true no data, adicione (sem skill no kit a simulação não casta nada)
-- **NÃO** marcar skill como `def:true` se for ofensiva — o flag é só pra self-buffs que substituem Elixir Def
+- **NÃO** marcar skill como `def:true` se for ofensiva — o flag é só pra self-buffs de defesa (Harden, Iron Defense, Coil, etc)
 - **NÃO** assumir 1 ciclo no beam — skills de CD grande podem exigir evaluation em 2+ ciclos. `evaluateCycle` roda 2 cycles pra medir steady-state
 - **NÃO** rodar `evaluateCycle` em todo candidato do beam — é caro. Use cheap score (`sim.clock/steps.length`) e só refine top-4
 - **NÃO** misturar raw tpl com adjusted score no pruning — o worker mantém `bestRawTpl` separado pra comparar com bag bounds. `bestScore` (com `starterResistFactor`) é só pra ranking final. Misturar corta bags legítimamente melhores quando o factor < 1.
@@ -269,8 +275,13 @@ Contexto histórico na memória: `project_pxg_damage_formula.md`.
 - **NÃO** re-hidratar só `bestStarterElements` no migration — também pega `defFactor`, `hp`, `types` de mobs.json quando o nome bate (source of truth, user não edita no UI).
 - **NÃO** cascading greedy em `generateLureTemplates` (base → +duplaElixir → +group parando no primeiro que finaliza). Sempre passar `includeDuplaElixir: true, includeGroup: true` — beam search escolhe melhor rotação por bph. Bag com dupla+elixir forte pode esconder rotação de group 3× melhor.
 - **NÃO** marcar poke como uncalibrated via `pokemon.todo !== undefined` — campo `todo` agora é só informativo (ex: notes de burn-pollution). UI checa per-skill: `pokemon.skills.some((s) => s.power === undefined && s.buff === null)`.
-- **NÃO** forçar Elixir Def em T1H starter — T1H tem HP pool alto, tanka sem. Regra: `needsElixirDef = !harden && tier !== "T1H"`.
-- **NÃO** tratar Flame Wheel como buff:self puro — ela tem damage + self-buff. Se user calibrou power, usar esse valor em `resolveSkillPower` (nosso código já faz, mas data.json precisa `power` setado).
+- **NÃO** re-adicionar Elixir Def — mecânica foi REMOVIDA inteira (types, engine, UI). Player-strength rule já substitui (exige `def:true` quando bag fraca).
+- **NÃO** tratar Flame Wheel como buff:self puro — ela tem damage + self-buff. Se user calibrou power, usar esse valor em `resolveSkillPower`.
+- **NÃO** comparar bags entre workers por `bestIdle` — idle absoluto não é comparável entre rotações com número de lures diferente (4-lure/200s tem menos idle que 6-lure/280s com bph maior). Use `bestScore` (adjusted tpl) em `rotationAsync.ts`.
+- **NÃO** gerar variantes revive em group lures — C(n,k) × elixir × revive explode o espaço e causa OOM em pools ≥10. Revive apenas solo_device/solo_elixir/dupla.
+- **NÃO** permitir 3+ lures IDÊNTICAS consecutivas (starter + members + finisher exato). Beam filter: `if (seq[n-1] === seq[n-2]) skip c === seq[n-1]`. Também verificar wrap-around em `evaluateCycle` via `cycleHas3ConsecutiveIdentical`. Ciclos p ≤ 2 escapam (solo_device loop legítimo).
+- **NÃO** aplicar `DEFAULT_MOB_DEF_FACTOR=0.85` direto sem checar hunt tier — fallback agora é `huntAvgDefFactor(hunt, allMobs)` que faz média dos calibrados do MESMO tier. Hunt 300 → ~0.811; hunt 400+ → ~0.573.
+- **NÃO** permitir starter fraco (T2/T3/TR burst_dd non-clã) em hunt 400+ mesmo com consumível — filtro strict aplica. Hunt 300 permite via elixir/revive gate.
 
 ## Dicas de UI
 
