@@ -321,7 +321,8 @@
   margin-top: 4px;
 }
 
-.copy-btn {
+.copy-btn,
+.clear-cache-btn {
   background: #16213e;
   color: #e0e0e0;
   border: 1px solid #444;
@@ -332,9 +333,14 @@
   transition: border-color 0.2s, background 0.2s;
 }
 
-.copy-btn:hover {
+.copy-btn:hover,
+.clear-cache-btn:hover {
   background: #1a2a4a;
   border-color: #4a90d9;
+}
+
+.clear-cache-btn {
+  margin-left: auto;
 }
 
 .copy-feedback {

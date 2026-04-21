@@ -153,10 +153,7 @@ for (const sc of scenarios) {
     const pct = ((dmg / hp) * 100).toFixed(1);
     console.log(`       dano/mob: ${Math.round(dmg).toLocaleString()} / ${hp.toLocaleString()} (${pct}%)  ${dmg >= hp ? "✓" : "✗"}`);
 
-    const defs: string[] = [];
-    if (l.starterUsesHarden) defs.push("Harden");
-    if (l.starterUsesElixirDef) defs.push("Elixir Def");
-    if (defs.length) console.log(`       defesa: ${defs.join(" + ")}`);
+    if (l.starterUsesHarden) console.log(`       defesa: Harden`);
 
     const allMembers = [
       { poke: l.starter, skills: l.starterSkills },

@@ -6,7 +6,6 @@ import type {
   PokeSetup,
   MobConfig,
   MobEntry,
-  StarterRoleFilter,
   XAtkTier,
   PokemonElement,
   DeviceHeld,
@@ -132,8 +131,8 @@ export function useDamageConfig() {
     setConfig((c) => ({ ...c, device: { ...c.device, ...device } }));
   }, []);
 
-  const setStarterRoleFilter = useCallback((v: StarterRoleFilter) => {
-    setConfig((c) => ({ ...c, starterRoleFilter: v }));
+  const setUseElixirAtk = useCallback((v: boolean) => {
+    setConfig((c) => ({ ...c, useElixirAtk: v }));
   }, []);
 
   const setSkillCalibration = useCallback(
@@ -166,7 +165,7 @@ export function useDamageConfig() {
     setPokeSetup,
     setSkillCalibration,
     clearSkillCalibration,
-    setStarterRoleFilter,
+    setUseElixirAtk,
   };
 }
 

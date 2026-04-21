@@ -9,7 +9,6 @@ import type {
 } from "../types";
 import {
   ELIXIR_ATK_COOLDOWN,
-  ELIXIR_DEF_COOLDOWN,
   bagRate,
 } from "./cooldown";
 import { getClanElements, lureFinalizesBox, resolveSkillPower } from "./damage";
@@ -96,30 +95,23 @@ export function generateLureTemplates(
     includeDuplaElixir?: boolean;
     includeGroup?: boolean;
     hunt?: "300" | "400+";
-    starterRoleFilter?: "offtank" | "t1h" | "both" | "t1h-clan";
     clan?: ClanName | null;
+    /** Permite gerar lures com Elixir Atk (solo_elixir, dupla+elixir, group+elixir).
+     *  Default true. Não afeta Elixir Def. */
+    allowElixirAtk?: boolean;
   } = {}
 ): Lure[] {
+  const allowElixirAtk = options.allowElixirAtk ?? true;
   const lures: Lure[] = [];
   const n = bag.length;
 
-  // Starter role filter baseado no hunt level. Só aplica em hunt "400+".
-  // Hunt 300: sem restrição extra. 400+: user escolhe offtank / t1h / both / t1h-clan.
-  const roleFilter = options.hunt === "400+" ? (options.starterRoleFilter ?? "both") : null;
+  // Starter preference: offtank, T1H-do-clã, ou (resto somente se a lure usa Elixir Atk).
+  // A 3ª categoria "qualquer poke" fica gated pelo 210s CD do Elixir Atk → o player
+  // naturalmente usa starter fraco só pontualmente. Substitui o antigo starterRoleFilter.
   const clanEls = options.clan ? getClanElements(options.clan) : [];
-  const starterRoleOk = (p: Pokemon): boolean => {
-    if (roleFilter === null) return true;
-    const isOfftank = p.role === "offensive_tank";
-    const isT1H = p.tier === "T1H";
-    if (roleFilter === "offtank") return isOfftank;
-    if (roleFilter === "t1h") return isT1H;
-    if (roleFilter === "t1h-clan") {
-      if (!isT1H) return false;
-      const els = p.elements ?? [];
-      return els.some((e) => clanEls.includes(e));
-    }
-    return isOfftank || isT1H;
-  };
+  const isOfftank = (p: Pokemon) => p.role === "offensive_tank";
+  const isT1HClan = (p: Pokemon) =>
+    p.tier === "T1H" && (p.elements ?? []).some((e) => clanEls.includes(e));
 
   // Flags cacheadas por índice da bag (evita chamar has*() centenas de vezes)
   const hardCC = new Array<boolean>(n);
@@ -127,19 +119,14 @@ export function generateLureTemplates(
   const harden = new Array<boolean>(n);
   const silence = new Array<boolean>(n);
   const frontal = new Array<boolean>(n);
-  const roleOk = new Array<boolean>(n);
-  const needsElixirDef = new Array<boolean>(n);
+  const offtankOrClan = new Array<boolean>(n);
   for (let i = 0; i < n; i++) {
     hardCC[i] = hasHardCC(bag[i]);
     anyCC[i] = hasAnyCC(bag[i]);
     harden[i] = hasHarden(bag[i]);
     silence[i] = hasSilence(bag[i]);
     frontal[i] = hasFrontal(bag[i]);
-    roleOk[i] = starterRoleOk(bag[i]);
-    // T1H tem HP pool alto → não precisa de Elixir Def mesmo sem def:true skill.
-    // Offtanks T2/T3 sem Harden precisam. Burst_dd T2/T3 sem def também (mas
-    // normalmente são filtrados pelo hunt 400+ rule antes).
-    needsElixirDef[i] = !harden[i] && bag[i].tier !== "T1H";
+    offtankOrClan[i] = isOfftank(bag[i]) || isT1HClan(bag[i]);
   }
 
   const deviceIdx = devicePokemonId
@@ -148,7 +135,8 @@ export function generateLureTemplates(
   const devicePoke = deviceIdx >= 0 ? bag[deviceIdx] : null;
 
   // Solo T1H + device. Starter sem frontal (frontal não protege os 6 mobs da box).
-  if (devicePoke && devicePoke.tier === "T1H" && hardCC[deviceIdx] && !frontal[deviceIdx] && roleOk[deviceIdx]) {
+  // Sem elixir → precisa ser offtank ou T1H-do-clã pra starter.
+  if (devicePoke && devicePoke.tier === "T1H" && hardCC[deviceIdx] && !frontal[deviceIdx] && offtankOrClan[deviceIdx]) {
     lures.push({
       type: "solo_device",
       starter: devicePoke,
@@ -156,7 +144,6 @@ export function generateLureTemplates(
       starterSkills: getOptimalSkillOrder(devicePoke),
       secondSkills: [],
       starterUsesHarden: false,
-      starterUsesElixirDef: false,
       usesElixirAtk: false,
       usesDevice: true,
       extraMembers: [],
@@ -164,14 +151,15 @@ export function generateLureTemplates(
     });
   }
 
-  // Solo T2/T3/TR + elixir atk (starter must have CC, no frontal)
+  // Solo T2/T3/TR + elixir atk (starter must have CC, no frontal).
+  // usesElixirAtk=true → canStarter sempre true (elixir "desbloqueia" starter).
   for (let i = 0; i < n; i++) {
+    if (!allowElixirAtk) break;
     if (i === deviceIdx) continue;
     const p = bag[i];
     if (p.tier === "T1H") continue;
     if (!hardCC[i]) continue;
     if (frontal[i]) continue;
-    if (!roleOk[i]) continue;
 
     lures.push({
       type: "solo_elixir",
@@ -180,7 +168,6 @@ export function generateLureTemplates(
       starterSkills: getOptimalSkillOrder(p),
       secondSkills: [],
       starterUsesHarden: harden[i],
-      starterUsesElixirDef: needsElixirDef[i],
       usesElixirAtk: true,
       usesDevice: false,
       extraMembers: [],
@@ -193,10 +180,11 @@ export function generateLureTemplates(
   // Device holder PODE ser dupla starter (ele só é excluído de solo_device se não for T1H,
   // e de "second" role — não faz sentido ser starter e second ao mesmo tempo).
   for (let i = 0; i < n; i++) {
-    if (!hardCC[i] || frontal[i] || !roleOk[i]) continue;
+    if (!hardCC[i] || frontal[i]) continue;
     const starter = bag[i];
     const starterHarden = harden[i];
-    const starterNeedsElixirDef = needsElixirDef[i];
+    // Starter não-offtank e não-T1H-clã só entra se a lure usa Elixir Atk.
+    const needsElixirToStarter = !offtankOrClan[i];
 
     for (let j = 0; j < n; j++) {
       if (j === i || j === deviceIdx) continue;
@@ -212,13 +200,14 @@ export function generateLureTemplates(
         starterSkills: getOptimalSkillOrder(starter, silenceActive),
         secondSkills: getOptimalSkillOrder(second, silenceActive),
         starterUsesHarden: starterHarden,
-        starterUsesElixirDef: starterNeedsElixirDef,
         usesDevice: false,
         extraMembers: [],
       };
-      lures.push({ ...baseDupla, usesElixirAtk: false, elixirAtkHolderId: null });
+      if (!needsElixirToStarter) {
+        lures.push({ ...baseDupla, usesElixirAtk: false, elixirAtkHolderId: null });
+      }
       // Dupla + elixir atk: útil em hunt 400+ quando a dupla raw não finaliza a box.
-      if (options.includeDuplaElixir) {
+      if (options.includeDuplaElixir && allowElixirAtk) {
         const holder = pickElixirHolder([starter, second]);
         lures.push({ ...baseDupla, usesElixirAtk: true, elixirAtkHolderId: holder.id });
       }
@@ -233,10 +222,10 @@ export function generateLureTemplates(
   const MAX_GROUP_EXTRAS = MAX_BAG - 1;
   if (options.includeGroup) {
     for (let i = 0; i < n; i++) {
-      if (!hardCC[i] || frontal[i] || !roleOk[i]) continue;
+      if (!hardCC[i] || frontal[i]) continue;
       const starter = bag[i];
       const starterHarden = harden[i];
-      const starterNeedsElixirDef = needsElixirDef[i];
+      const needsElixirToStarter = !offtankOrClan[i];
 
       const candidateIdx: number[] = [];
       for (let k = 0; k < n; k++) {
@@ -276,13 +265,16 @@ export function generateLureTemplates(
             starterSkills: getOptimalSkillOrder(starter, silenceActive),
             secondSkills: getOptimalSkillOrder(second, silenceActive),
             starterUsesHarden: starterHarden,
-            starterUsesElixirDef: starterNeedsElixirDef,
             usesDevice: false,
             extraMembers: rest,
           };
-          lures.push({ ...base, usesElixirAtk: false, elixirAtkHolderId: null });
-          const holder = pickElixirHolder([starter, second, ...rest.map((m) => m.poke)]);
-          lures.push({ ...base, usesElixirAtk: true, elixirAtkHolderId: holder.id });
+          if (!needsElixirToStarter) {
+            lures.push({ ...base, usesElixirAtk: false, elixirAtkHolderId: null });
+          }
+          if (allowElixirAtk) {
+            const holder = pickElixirHolder([starter, second, ...rest.map((m) => m.poke)]);
+            lures.push({ ...base, usesElixirAtk: true, elixirAtkHolderId: holder.id });
+          }
         }
       }
     }
@@ -344,7 +336,6 @@ export interface SimState {
   // Per-poke counter indexado por bag index. othersCastTotal[i] = clock - selfCastTotal[i].
   selfCastTotal: Float64Array;
   elixirAtkReady: number;
-  elixirDefReady: number;
   totalIdle: number;
   steps: RotationStep[];
 }
@@ -359,7 +350,6 @@ export function emptyState(ctx: SimContext): SimState {
     skillSelfSnap: new Float64Array(ctx.skillSlotCount),
     selfCastTotal: new Float64Array(ctx.n),
     elixirAtkReady: 0,
-    elixirDefReady: 0,
     totalIdle: 0,
     steps: [],
   };
@@ -386,7 +376,6 @@ export class SimStatePool {
       s.skillSelfSnap.fill(0);
       s.selfCastTotal.fill(0);
       s.elixirAtkReady = 0;
-      s.elixirDefReady = 0;
       s.totalIdle = 0;
       s.steps.length = 0;
       return s;
@@ -404,7 +393,6 @@ export class SimStatePool {
         skillSelfSnap: new Float64Array(source.skillSelfSnap),
         selfCastTotal: new Float64Array(source.selfCastTotal),
         elixirAtkReady: source.elixirAtkReady,
-        elixirDefReady: source.elixirDefReady,
         totalIdle: source.totalIdle,
         steps: source.steps.slice(),
       };
@@ -415,7 +403,6 @@ export class SimStatePool {
     s.skillSelfSnap.set(source.skillSelfSnap);
     s.selfCastTotal.set(source.selfCastTotal);
     s.elixirAtkReady = source.elixirAtkReady;
-    s.elixirDefReady = source.elixirDefReady;
     s.totalIdle = source.totalIdle;
     // Reuse steps array: overwrite in place, resize
     const srcSteps = source.steps;
@@ -570,6 +557,23 @@ const KILL_TIME = 10; // seconds of kill time after each lure's finisher (all po
  */
 const SILENCE_STARTER_PENALTY = 0.10;
 
+/**
+ * True se o ciclo, repetido em loop, produz 3+ lures consecutivas com o mesmo starter
+ * (considerando wrap-around). Ciclos length ≤ 2 são ignorados — representam bags com
+ * poucos starters válidos (solo_device loop legítimo em PxG). Só bloqueia p≥3.
+ */
+function cycleHas3ConsecutiveStarter(cycle: CompiledLure[]): boolean {
+  const p = cycle.length;
+  if (p < 3) return false;
+  for (let i = 0; i < p; i++) {
+    const a = cycle[i].starterIdx;
+    const b = cycle[(i + 1) % p].starterIdx;
+    const c = cycle[(i + 2) % p].starterIdx;
+    if (a === b && b === c) return true;
+  }
+  return false;
+}
+
 function starterUsesSilence(lure: Lure): boolean {
   // Só penaliza starter com silence-only (sem opção de stun área).
   // Se o poke tem ambos stun e silence, vai castar stun primeiro (ordem em skills array).
@@ -685,16 +689,12 @@ export function applyLure(
     offsetBeforeExtra += nM;
   }
 
-  // Step 3: Check elixir atk / def
+  // Step 3: Check elixir atk
   if (lure.usesElixirAtk) {
     const totalCasts = numStarterSkills + numSecondSkills + compiled.totalExtraSkills + 1;
     const elixirCastAt = state.clock + wait + totalCasts;
     const elixirWait = state.elixirAtkReady - elixirCastAt;
     if (elixirWait > 0) wait += elixirWait;
-  }
-  if (lure.starterUsesElixirDef) {
-    const defWait = state.elixirDefReady - (state.clock + wait);
-    if (defWait > 0) wait += defWait;
   }
 
   // Step 4: Advance clock by wait. Durante wait, starter "selected-idle" ganha self-cast 1:1;
@@ -703,11 +703,6 @@ export function applyLure(
     state.selfCastTotal[starterIdx] += wait;
     state.clock += wait;
     state.totalIdle += wait;
-  }
-
-  // Consume elixir def at lure start
-  if (lure.starterUsesElixirDef) {
-    state.elixirDefReady = state.clock + ELIXIR_DEF_COOLDOWN;
   }
 
   // Step 5: Cast starter skills. Cada cast: clock +=1, self do caster +=1; outros ganham
@@ -864,10 +859,10 @@ export function findBestRotation(
     // 40+bph. Agora beam search recebe todas as opções e escolhe a melhor per-bph.
     const genOpts = {
       hunt: cfg.hunt,
-      starterRoleFilter: cfg.starterRoleFilter,
       clan: cfg.clan,
       includeDuplaElixir: true,
       includeGroup: true,
+      allowElixirAtk: cfg.useElixirAtk ?? true,
     };
     lures = filter(generateLureTemplates(bag, devicePokemonId, genOpts));
 
@@ -907,12 +902,22 @@ export function findBestRotation(
   for (let step = 1; step < maxCycleLen; step++) {
     const candidates: BeamState[] = [];
     for (const state of beam) {
+      const seq = state.sequence;
+      const len = seq.length;
+      // Regra: no máximo 2 lures consecutivas com o mesmo starter. Evita padrões
+      // anti-natural tipo "3x Sh.Heatmor seguidas" que o engine usaria pra encher
+      // gap de elixir CD (210s). Starters alternam → pokes em bag recuperam CD →
+      // idle cai naturalmente.
+      const last1 = len >= 1 ? seq[len - 1].starterIdx : -1;
+      const last2 = len >= 2 ? seq[len - 2].starterIdx : -1;
+      const blockStarter = (last1 >= 0 && last1 === last2) ? last1 : -1;
       for (const c of compiled) {
+        if (c.starterIdx === blockStarter) continue;
         const newSim = pool.acquireClone(state.sim);
         applyLure(newSim, c, diskLevel);
         candidates.push({
           sim: newSim,
-          sequence: [...state.sequence, c],
+          sequence: [...seq, c],
         });
       }
     }
@@ -952,6 +957,9 @@ export function findBestRotation(
       for (const s of topN) {
         const period = minPeriod(s.cand.sequence);
         const truePeriodSeq = s.cand.sequence.slice(0, period);
+        // Rejeita ciclos que, em loop, produzam 3+ starters iguais consecutivos
+        // via wrap (ex: [H, X, H, H] → ...H, H, H...).
+        if (cycleHas3ConsecutiveStarter(truePeriodSeq)) continue;
         const ev = evaluateCycle(truePeriodSeq, diskLevel, ctx, pool);
         const tpl = ev.result.totalTime / truePeriodSeq.length;
         let sumResist = 0;

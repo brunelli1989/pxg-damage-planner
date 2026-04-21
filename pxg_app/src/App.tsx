@@ -94,16 +94,7 @@ function buildReport(
     lines.push(`Mob: ${m.name} (${m.types.join("/")}) HP=${m.hp} def=${m.defFactor ?? "—"}${bestStr}`);
     const dev = damageConfig.device;
     lines.push(`Device held: ${dev.kind === "none" ? "—" : `${dev.kind} T${dev.tier}`}`);
-    if (damageConfig.hunt === "400+") {
-      const filter = damageConfig.starterRoleFilter ?? "both";
-      const filterLabel: Record<string, string> = {
-        both: "Offtank + T1H",
-        offtank: "Só Offtank",
-        t1h: "Só T1H",
-        "t1h-clan": "T1H do clã",
-      };
-      lines.push(`Estilo starter: ${filterLabel[filter] ?? filter}`);
-    }
+    if (damageConfig.useElixirAtk === false) lines.push(`Elixir Atk: desligado`);
   }
   lines.push(`Pokémons selecionados (${selectedIds.length}):`);
   selectedIds.forEach((id) => {
@@ -125,14 +116,12 @@ function buildReport(
   lines.push(`Boxes/h: ${boxesPerHour} | Pokémons/h: ${pokesPerHour}`);
 
   const elixirAtk = result.steps.filter((s) => s.lure.usesElixirAtk).length;
-  const elixirDef = result.steps.filter((s) => s.lure.starterUsesElixirDef).length;
-  if (elixirAtk > 0 || elixirDef > 0) {
+  if (elixirAtk > 0) {
     const cyclePerHour = 3600 / result.totalTime;
     const atkPerHour = elixirAtk * cyclePerHour;
-    const defPerHour = elixirDef * cyclePerHour;
     const ELIXIR_PRICE = 500;
-    const cost = Math.round((atkPerHour + defPerHour) * ELIXIR_PRICE);
-    lines.push(`Elixirs/h: ${atkPerHour.toFixed(1)} atk + ${defPerHour.toFixed(1)} def (~$${cost.toLocaleString()}/h)`);
+    const cost = Math.round(atkPerHour * ELIXIR_PRICE);
+    lines.push(`Elixirs/h: ${atkPerHour.toFixed(1)} atk (~$${cost.toLocaleString()}/h)`);
   }
 
   const devicePoke = result.devicePokemonId
@@ -158,10 +147,7 @@ function buildReport(
           ? "Elixir Atk"
           : `${typeLabel} + Elixir Atk`
         : typeLabel;
-    const defense: string[] = [];
-    if (lure.starterUsesHarden) defense.push("Harden");
-    if (lure.starterUsesElixirDef) defense.push("Elixir Def");
-    const defStr = defense.length ? ` | Defesa: ${defense.join("+")}` : "";
+    const defStr = lure.starterUsesHarden ? ` | Defesa: Harden` : "";
 
     const names = [lure.starter.name, lure.second?.name, ...lure.extraMembers.map((m) => m.poke.name)].filter(
       Boolean
@@ -228,6 +214,19 @@ function App() {
       <header className="app-header">
         <h1>PxG Rotation Generator</h1>
         <DiskSelector diskLevel={diskLevel} onChange={setDiskLevel} />
+        <button
+          className="clear-cache-btn"
+          title="Reseta disk, seleção de pokes e configs de dano"
+          onClick={() => {
+            if (!confirm("Limpar todas as configurações salvas (disk, seleção, dano)?")) return;
+            localStorage.removeItem(DISK_STORAGE_KEY);
+            localStorage.removeItem(SELECTED_STORAGE_KEY);
+            localStorage.removeItem("pxg_damage_config");
+            location.reload();
+          }}
+        >
+          🗑️ Clear cache
+        </button>
       </header>
 
       <main>
@@ -245,7 +244,7 @@ function App() {
           onHuntChange={damage.setHunt}
           onMobChange={damage.setMob}
           onDeviceChange={damage.setDevice}
-          onStarterRoleFilterChange={damage.setStarterRoleFilter}
+          onUseElixirAtkChange={damage.setUseElixirAtk}
         />
 
         <PokeSetupEditor

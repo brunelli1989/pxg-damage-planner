@@ -15,13 +15,18 @@ export interface SearchOptions {
 }
 
 /**
- * Default beam/cycle caem com o tamanho da pool pra manter tempo viável.
- * C(n, 6) cresce rápido: 6→1, 12→924, 18→18.5k, 24→134.6k bags.
+ * Default beam/cycle caem com o tamanho da pool pra manter tempo e memória viáveis.
+ * C(n, 6) cresce rápido: 6→1, 9→84, 12→924, 15→5k, 18→18.5k, 24→134.6k bags.
+ *
+ * Com generateLureTemplates sempre gerando todos os tiers (base + duplaElixir + group),
+ * n=12 produz ~300 lures/bag. beamWidth × lures × maxCycleLen × bags estoura RAM
+ * no worker acima de pool 9 com os defaults antigos — daí o threshold mais conservador.
  */
 function dynamicDefaults(poolSize: number): { beamWidth: number; maxCycleLen: number } {
-  if (poolSize <= 12) return { beamWidth: 120, maxCycleLen: 12 };
-  if (poolSize <= 18) return { beamWidth: 80, maxCycleLen: 10 };
-  return { beamWidth: 40, maxCycleLen: 8 };
+  if (poolSize <= 9) return { beamWidth: 120, maxCycleLen: 12 };
+  if (poolSize <= 13) return { beamWidth: 80, maxCycleLen: 10 };
+  if (poolSize <= 18) return { beamWidth: 50, maxCycleLen: 9 };
+  return { beamWidth: 30, maxCycleLen: 8 };
 }
 
 export async function findOptimalRotationAsync(
@@ -64,7 +69,7 @@ export async function findOptimalRotationAsync(
   signal?.addEventListener("abort", abortHandler);
 
   const promises = chunks.map((chunk) => {
-    return new Promise<{ bestIdle: number; bestResult: RotationResult | null } | null>(
+    return new Promise<{ bestScore: number; bestResult: RotationResult | null } | null>(
       (resolve, reject) => {
         const worker = new Worker(
           new URL("./rotation.worker.ts", import.meta.url),
@@ -79,7 +84,7 @@ export async function findOptimalRotationAsync(
             onProgress?.({ done: Math.min(totalDone, total), total });
           } else if (msg.type === "result") {
             worker.terminate();
-            resolve({ bestIdle: msg.bestIdle, bestResult: msg.bestResult });
+            resolve({ bestScore: msg.bestScore, bestResult: msg.bestResult });
           }
         };
 
@@ -107,11 +112,15 @@ export async function findOptimalRotationAsync(
   signal?.removeEventListener("abort", abortHandler);
   if (signal?.aborted) return null;
 
-  let bestIdle = Infinity;
+  // Ranking entre workers: pelo adjusted score (tpl × starterResistFactor × silencePenalty).
+  // Idle absoluto NÃO é comparável entre bags diferentes — uma bag com mais lures/ciclo
+  // pode ter mais idle total mas bph maior. Bug histórico: antes comparava `bestIdle` aqui,
+  // fazendo o agregador preferir a bag com MENOS lures (menos idle absoluto, mas pior bph).
+  let bestScore = Infinity;
   let bestResult: RotationResult | null = null;
   for (const r of results) {
-    if (r && r.bestResult && r.bestIdle < bestIdle) {
-      bestIdle = r.bestIdle;
+    if (r && r.bestResult && r.bestScore < bestScore) {
+      bestScore = r.bestScore;
       bestResult = r.bestResult!;
     }
   }

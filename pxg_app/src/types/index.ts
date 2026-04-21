@@ -72,7 +72,6 @@ export interface Lure {
   /** Membros adicionais além de starter/second (group lure 3-6 pokes). Vazio em solo/dupla. */
   extraMembers: LureMember[];
   starterUsesHarden: boolean;
-  starterUsesElixirDef: boolean;
   usesElixirAtk: boolean;
   usesDevice: boolean;
   /** ID do poke que usa o elixir atk (buff +70% nas skills dele por 8s). Null se usesElixirAtk=false. */
@@ -147,17 +146,6 @@ export interface MobEntry {
   effectivenessNotes?: string;
 }
 
-/**
- * Restrição de starter em hunts 400+. Usuário escolhe estilo conforme força do char:
- * - "offtank": só role === "offensive_tank" pode starter (safe)
- * - "t1h": só tier === "T1H" pode starter (device burst, player forte)
- * - "both": offtank OU T1H (flexível, default)
- * - "t1h-clan": T1H com elemento do clã (ex: Volcanic → fire; Orebound → rock/ground)
- *
- * Só aplica quando hunt === "400+". Em hunt 300 não há restrição extra.
- */
-export type StarterRoleFilter = "offtank" | "t1h" | "both" | "t1h-clan";
-
 export interface DamageConfig {
   playerLvl: number;
   clan: ClanName | null;
@@ -166,5 +154,7 @@ export interface DamageConfig {
   device: DeviceHeld; // global: held que está no device (compartilhado entre pokes)
   pokeSetups: Record<string, PokeSetup>; // keyed by pokeId
   skillCalibrations: Record<string, number>; // keyed by "pokeId:skillName", value = skill_power
-  starterRoleFilter?: StarterRoleFilter; // default "both" quando playerLvl >= 400
+  /** Permite uso de Elixir Atk nas lures (solo_elixir, dupla+elixir, group+elixir).
+   *  Não afeta Elixir Def. Default true. */
+  useElixirAtk?: boolean;
 }

@@ -1,8 +1,7 @@
 import type { DamageConfig, DiskLevel, Pokemon, RotationResult } from "../types";
 import { findBestForBag } from "./rotation";
 import { estimatePokeSoloDamage } from "./damage";
-import { getOptimalSkillOrder, hasHardCC, hasHarden } from "./scoring";
-import { ELIXIR_DEF_COOLDOWN } from "./cooldown";
+import { getOptimalSkillOrder, hasHardCC } from "./scoring";
 
 export interface WorkerRequest {
   bags: Pokemon[][];
@@ -17,7 +16,7 @@ export type WorkerMessage =
   | { type: "progress"; done: number }
   | {
       type: "result";
-      bestIdle: number;
+      bestScore: number;
       bestResult: RotationResult | null;
     };
 
@@ -27,12 +26,10 @@ const MIN_ACTIVE_TIME = 20; // ~10s casts + 10s kill time
  * Lower bound para time-per-lure de uma bag. Usado pra pular bags que não
  * podem bater o best-so-far ANTES de rodar o beam search.
  *
- * Pra cada starter válido p, o bound é `max(maxSkillCD, defPenalty)`:
- * - Rotação single-poke: T ≥ maxSkillCD (skill precisa recuperar entre casts).
- *   Rotação multi-poke alterna, pode ir abaixo do maxSkillCD — então pegamos
- *   `min` sobre todos os starters válidos (optimistic: melhor starter define bound).
- * - defPenalty = ELIXIR_DEF_COOLDOWN (210s) se o starter não tem defesa barata
- *   (Harden/Intimidate/etc ou T1H com device).
+ * Pra cada starter válido p, o bound é `max(maxSkillCD, MIN_ACTIVE_TIME)`:
+ * rotação single-poke exige T ≥ maxSkillCD (skill precisa recuperar entre casts);
+ * multi-poke alterna, pode ir abaixo — pegamos `min` sobre todos os starters
+ * válidos (optimistic: melhor starter define bound).
  */
 function bagTimePerLureLowerBound(bag: Pokemon[]): number {
   let bestBound = Infinity;
@@ -44,10 +41,7 @@ function bagTimePerLureLowerBound(bag: Pokemon[]): number {
     let maxSkillCD = 0;
     for (const s of p.skills) if (s.cooldown > maxSkillCD) maxSkillCD = s.cooldown;
 
-    const hasCheapDef = p.tier === "T1H" || hasHarden(p);
-    const defPenalty = hasCheapDef ? 0 : ELIXIR_DEF_COOLDOWN;
-
-    const pokeBound = Math.max(maxSkillCD, defPenalty, MIN_ACTIVE_TIME);
+    const pokeBound = Math.max(maxSkillCD, MIN_ACTIVE_TIME);
     if (pokeBound < bestBound) bestBound = pokeBound;
   }
   if (!hasValidStarter) return Infinity;
@@ -81,8 +75,7 @@ function makeBagDamagePruner(damageConfig: DamageConfig) {
 self.onmessage = (e: MessageEvent<WorkerRequest>) => {
   const { bags, diskLevel, beamWidth, maxCycleLen, minCycleLen, damageConfig } = e.data;
 
-  let bestIdle = Infinity;
-  let bestScore = Infinity;     // score adjusted (inclui starterResistFactor, só pra ranking)
+  let bestScore = Infinity;     // score adjusted (inclui starterResistFactor, usado pra ranking entre bags e entre workers)
   let bestRawTpl = Infinity;    // raw tpl (totalTime/steps) pro pruning por bound
   let bestResult: RotationResult | null = null;
 
@@ -128,7 +121,6 @@ self.onmessage = (e: MessageEvent<WorkerRequest>) => {
       if (res.score < bestScore) {
         bestScore = res.score;
         bestRawTpl = res.result.totalTime / res.result.steps.length;
-        bestIdle = res.idle;
         bestResult = res.result;
       }
     }
@@ -143,6 +135,6 @@ self.onmessage = (e: MessageEvent<WorkerRequest>) => {
     );
   }
 
-  const done: WorkerMessage = { type: "result", bestIdle, bestResult };
+  const done: WorkerMessage = { type: "result", bestScore, bestResult };
   self.postMessage(done);
 };

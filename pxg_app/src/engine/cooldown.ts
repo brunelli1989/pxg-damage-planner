@@ -20,4 +20,3 @@ export const ACTIVE_RATE = 1;
 
 // Elixirs: fixed 210s real time, not affected by disk
 export const ELIXIR_ATK_COOLDOWN = 210;
-export const ELIXIR_DEF_COOLDOWN = 210;
