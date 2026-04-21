@@ -2618,7 +2618,8 @@
     "types": ["psychic"],
     "hunt": "400+",
     "group": "Grumpig",
-    "todo": "calibrate hp + defense",
+    "hp": 584148,
+    "todo": "calibrate defense",
     "bestStarterElements": ["dark", "steel", "ghost"],
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Grumpig",
     "effectiveElements": ["ghost", "dark", "bug"]
