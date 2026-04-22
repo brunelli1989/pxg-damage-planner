@@ -2641,7 +2641,8 @@
     "types": ["fairy", "flying"],
     "hunt": "400+",
     "group": "Togetic/Togekiss",
-    "todo": "calibrate hp + defense",
+    "hp": 574142,
+    "todo": "calibrate defense",
     "bestStarterElements": ["steel", "poison"],
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Togetic_e_Togekiss",
     "effectiveElements": ["poison", "steel", "electric", "rock", "ice"]
