@@ -28,11 +28,9 @@ function ccLabel(pokemon: Pokemon): string {
 export function PokemonCard({ pokemon, selected, disabled, onToggle }: Props) {
   const cc = ccLabel(pokemon);
   const hasCC = cc !== "No CC";
-  // Uncalibrated = skill de dano (sem buff) com power undefined → usa fallback.
-  // pokemon.todo é só metadado informativo e não indica falta de calibração.
-  const uncalibrated = pokemon.skills.some(
-    (s) => s.power === undefined && s.buff === null
-  );
+  // ⚠️ quando tem ação pendente em `todo` (RECALIBRAR, calibrate skills, etc).
+  // `observacao` é informativo apenas — não dispara warning, mas aparece no tooltip.
+  const uncalibrated = Boolean(pokemon.todo);
 
   return (
     <div
@@ -44,7 +42,10 @@ export function PokemonCard({ pokemon, selected, disabled, onToggle }: Props) {
         {uncalibrated && (
           <span
             className="calibration-warning"
-            title={`Dano aproximado — este pokémon ainda não foi testado no dummy. Estou usando a média dos pokémons calibrados de mesmo tier/função (${pokemon.tier}, ${pokemon.role ?? "?"}).`}
+            title={
+              `Ação pendente: ${pokemon.todo}` +
+              (pokemon.observacao ? `\n\nObservação: ${pokemon.observacao}` : "")
+            }
           >
             ⚠️
           </span>

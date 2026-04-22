@@ -52,7 +52,7 @@
         "power": 25.28
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "mega-barbaracle",
@@ -60,7 +60,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Barbaracle",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Hone Claws",
@@ -94,7 +93,8 @@
         "buff": null,
         "element": "rock"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-golem",
@@ -157,7 +157,7 @@
         "power": 1.96
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "rampardos",
@@ -211,7 +211,7 @@
         "power": 15.29
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "tyranitar",
@@ -266,7 +266,7 @@
         "power": 17.87
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "lycanroc",
@@ -320,7 +320,7 @@
         "power": 25.62
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "omastar",
@@ -382,7 +382,7 @@
         "power": 25.74
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "golem",
@@ -445,7 +445,7 @@
         "power": 27.57
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "solrock",
@@ -453,7 +453,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Solrock",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Ancient Power",
@@ -487,7 +486,8 @@
         "buff": null,
         "element": "fire"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "barbaracle",
@@ -495,7 +495,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Barbaracle",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Hone Claws",
@@ -529,7 +528,8 @@
         "buff": null,
         "element": "rock"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "mega-aerodactyl",
@@ -537,7 +537,6 @@
     "tier": "T1H",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Aerodactyl",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Giga Impact",
@@ -580,7 +579,8 @@
         "def": true,
         "element": "normal"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "steelix",
@@ -635,7 +635,7 @@
         "element": "normal"
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "sandaconda",
@@ -690,7 +690,7 @@
         "power": 18.86
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "shiny-krookodile",
@@ -698,7 +698,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Krookodile",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Sand Tomb",
@@ -740,7 +739,8 @@
         "buff": null,
         "element": "ground"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "mega-excadrill",
@@ -748,7 +748,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Excadrill",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Sandstorm",
@@ -790,7 +789,8 @@
         "buff": null,
         "element": "ground"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-donphan",
@@ -852,7 +852,7 @@
         "power": 26.62
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "hippowdon-female",
@@ -907,7 +907,7 @@
         "power": 23.37
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "nidoqueen",
@@ -915,7 +915,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Nidoqueen",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Sand Tomb",
@@ -957,7 +956,8 @@
         "buff": null,
         "element": "ground"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "alolan-dugtrio",
@@ -965,7 +965,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Alolan_Dugtrio",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Sandstorm",
@@ -1007,7 +1006,8 @@
         "buff": null,
         "element": "ground"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "rhydon",
@@ -1062,7 +1062,7 @@
         "power": 0
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "shiny-quagsire",
@@ -1070,7 +1070,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Quagsire",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Mud Bomb",
@@ -1104,7 +1103,8 @@
         "buff": null,
         "element": "ground"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "tm-shiny-rhydon",
@@ -1112,7 +1112,6 @@
     "tier": "TM",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Rhydon_(TM)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Epicenter",
@@ -1154,7 +1153,8 @@
         "buff": null,
         "element": "ground"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-rhydon",
@@ -1162,7 +1162,6 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Rhydon",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Hammer Arm",
@@ -1212,7 +1211,8 @@
         "buff": null,
         "element": "ground"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "piloswine",
@@ -1267,7 +1267,7 @@
         "power": 23.17
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "alolan-marowak",
@@ -1275,7 +1275,6 @@
     "tier": "TM",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Alolan_Marowak_(TM)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Swords Dance",
@@ -1326,7 +1325,8 @@
         "def": true,
         "element": "ghost"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "magmar",
@@ -1334,7 +1334,6 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Magmar",
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo) | HS inclui burn DoT (~10-15% overestimate); LP/BJ/FC limpos",
     "skills": [
       {
         "name": "Burning Jealousy",
@@ -1381,7 +1380,9 @@
         "element": "fire",
         "power": 16.45
       }
-    ]
+    ],
+    "todo": "RECALIBRAR",
+    "observacao": "HS inclui burn DoT (~10-15% overestimate); LP/BJ/FC limpos"
   },
   {
     "id": "arcanine",
@@ -1389,7 +1390,6 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Arcanine",
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo) | Flare Blitz/HS/Fire Ball incluem burn DoT (~10-15% overestimate)",
     "skills": [
       {
         "name": "Burn Up",
@@ -1436,7 +1436,9 @@
         "element": "fire",
         "power": 12.21
       }
-    ]
+    ],
+    "todo": "RECALIBRAR",
+    "observacao": "Flare Blitz/HS/Fire Ball incluem burn DoT (~10-15% overestimate)"
   },
   {
     "id": "shiny-chandelure",
@@ -1491,7 +1493,7 @@
         "power": 27.07
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "shiny-heatmor",
@@ -1545,7 +1547,7 @@
         "power": 32.48
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "mega-pyroar",
@@ -1553,7 +1555,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Pyroar",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Sunny Day",
@@ -1587,7 +1588,8 @@
         "buff": null,
         "element": "fire"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "ninetales",
@@ -1651,7 +1653,7 @@
         "power": 5.88
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "shiny-ninetales",
@@ -1659,7 +1661,6 @@
     "tier": "T1C",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Ninetales",
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo) | Inferno/Fire Blast/Flamethrower/Fire Ball incluem burn DoT; Flame Wheel limpo",
     "skills": [
       {
         "name": "Inferno",
@@ -1706,7 +1707,9 @@
         "element": "fire",
         "power": 33.65
       }
-    ]
+    ],
+    "todo": "RECALIBRAR",
+    "observacao": "Inferno/Fire Blast/Flamethrower/Fire Ball incluem burn DoT; Flame Wheel limpo"
   },
   {
     "id": "shiny-magby",
@@ -1714,7 +1717,6 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Magby",
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo) | Powers incluem burn DoT (~10-15% overestimate)",
     "skills": [
       {
         "name": "Hellfire Storm",
@@ -1752,7 +1754,9 @@
         "element": "fire",
         "power": 26.24
       }
-    ]
+    ],
+    "todo": "RECALIBRAR",
+    "observacao": "Powers incluem burn DoT (~10-15% overestimate)"
   },
   {
     "id": "typhlosion",
@@ -1807,7 +1811,7 @@
         "power": 0
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "flareon",
@@ -1815,7 +1819,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Flareon",
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo) | HS inclui burn DoT (~9% overestimate)",
     "skills": [
       {
         "name": "Burning Jealousy",
@@ -1861,7 +1864,9 @@
         "buff": "self",
         "element": "fire"
       }
-    ]
+    ],
+    "todo": "RECALIBRAR",
+    "observacao": "HS inclui burn DoT (~9% overestimate)"
   },
   {
     "id": "charizard",
@@ -1869,7 +1874,6 @@
     "tier": "TR",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Charizard_(TR)",
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo) | HStorm/Flare Blitz/Fire Ball incluem burn DoT; Fire Spin clean (5 ticks)",
     "skills": [
       {
         "name": "Roar",
@@ -1924,7 +1928,9 @@
         "element": "fire",
         "power": 14.94
       }
-    ]
+    ],
+    "todo": "RECALIBRAR",
+    "observacao": "HStorm/Flare Blitz/Fire Ball incluem burn DoT; Fire Spin clean (5 ticks)"
   },
   {
     "id": "magmortar",
@@ -1932,7 +1938,6 @@
     "tier": "TM",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Magmortar_(TM)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Burning Jealousy",
@@ -1966,7 +1971,8 @@
         "buff": null,
         "element": "fire"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-ampharos",
@@ -1974,7 +1980,6 @@
     "tier": "TM",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Ampharos_(TM)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Shock Wave",
@@ -2009,7 +2014,8 @@
         "element": "electric",
         "def": true
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-pachirisu",
@@ -2017,7 +2023,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Pachirisu",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Flash",
@@ -2051,7 +2056,8 @@
         "buff": null,
         "element": "electric"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-toxtricity",
@@ -2059,7 +2065,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Toxtricity",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Shock Wave",
@@ -2093,7 +2098,8 @@
         "buff": null,
         "element": "electric"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-elekid",
@@ -2101,7 +2107,6 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Elekid",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Electrify",
@@ -2127,7 +2132,8 @@
         "buff": null,
         "element": "electric"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "electabuzz",
@@ -2182,7 +2188,7 @@
         "power": 28.09
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "shiny-electrode",
@@ -2236,7 +2242,7 @@
         "power": 27.71
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "manectric",
@@ -2244,7 +2250,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Manectric",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Discharge",
@@ -2270,7 +2275,8 @@
         "buff": null,
         "element": "electric"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "raichu",
@@ -2278,7 +2284,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Raichu",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Shockwave",
@@ -2320,7 +2325,8 @@
         "buff": null,
         "element": "electric"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-pikachu",
@@ -2328,7 +2334,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Pikachu",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Discharge",
@@ -2362,7 +2367,8 @@
         "buff": null,
         "element": "electric"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "electivire",
@@ -2370,7 +2376,6 @@
     "tier": "TM",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Electivire_(TM)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Electrify",
@@ -2396,7 +2401,8 @@
         "buff": "self",
         "element": "electric"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "magnezone",
@@ -2404,7 +2410,6 @@
     "tier": "TR",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Magnezone_(TR)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Shock Wave",
@@ -2438,7 +2443,8 @@
         "buff": null,
         "element": "electric"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-meganium",
@@ -2446,7 +2452,6 @@
     "tier": "TM",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Meganium_(TM)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Petal Tornado",
@@ -2481,7 +2486,8 @@
         "buff": null,
         "element": "grass"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "gogoat",
@@ -2489,7 +2495,6 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Gogoat",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Grassy Terrain",
@@ -2524,7 +2529,8 @@
         "buff": null,
         "element": "grass"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "sceptile",
@@ -2588,7 +2594,7 @@
         "power": 27.12
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "shiny-sceptile",
@@ -2596,7 +2602,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Sceptile",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Frenzy Plant",
@@ -2630,7 +2635,8 @@
         "buff": null,
         "element": "grass"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "mega-meganium",
@@ -2638,7 +2644,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Meganium",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Solar Beam",
@@ -2672,7 +2677,8 @@
         "buff": null,
         "element": "normal"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "tropius",
@@ -2727,7 +2733,7 @@
         "power": 31.42
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "roserade",
@@ -2735,7 +2741,6 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Roserade",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Sleep Powder",
@@ -2777,7 +2782,8 @@
         "buff": null,
         "element": "grass"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "wormadam",
@@ -2785,7 +2791,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Wormadam",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Captivate",
@@ -2819,7 +2824,8 @@
         "buff": null,
         "element": "grass"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "lilligant",
@@ -2827,7 +2833,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Lilligant",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Growth",
@@ -2861,7 +2866,8 @@
         "buff": null,
         "element": "grass"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-victreebel",
@@ -2869,7 +2875,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Victreebel",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Sleep Powder",
@@ -2903,7 +2908,8 @@
         "buff": null,
         "element": "grass"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-jumpluff",
@@ -2911,7 +2917,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Jumpluff",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Sleep Powder",
@@ -2945,7 +2950,8 @@
         "buff": null,
         "element": "grass"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "venusaur",
@@ -2953,7 +2959,6 @@
     "tier": "TR",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Venusaur_(TR)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Sleep Powder",
@@ -2995,7 +3000,8 @@
         "buff": null,
         "element": "poison"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "vespiquen",
@@ -3003,7 +3009,6 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Vespiquen",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Aromatic Mist",
@@ -3038,7 +3043,8 @@
         "buff": null,
         "element": "bug"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "accelgor",
@@ -3046,7 +3052,6 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Accelgor",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Sticky Hold",
@@ -3081,7 +3086,8 @@
         "buff": null,
         "element": "bug"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-yanmega",
@@ -3089,7 +3095,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Yanmega",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Bug Drop",
@@ -3123,7 +3128,8 @@
         "buff": null,
         "element": "bug"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "mega-scolipede",
@@ -3131,7 +3137,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Scolipede",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Swords Dance",
@@ -3165,7 +3170,8 @@
         "buff": null,
         "element": "poison"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-kricketune",
@@ -3173,7 +3179,6 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Kricketune",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Sing",
@@ -3207,7 +3212,8 @@
         "buff": null,
         "element": "flying"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "mega-beedrill",
@@ -3215,7 +3221,6 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Beedrill",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Infestation",
@@ -3249,7 +3254,8 @@
         "buff": null,
         "element": "bug"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-beedrill",
@@ -3257,7 +3263,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Beedrill",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Swords Dance",
@@ -3291,7 +3296,8 @@
         "buff": null,
         "element": "bug"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-parasect",
@@ -3345,7 +3351,7 @@
         "power": 27.1
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "kricketune",
@@ -3353,7 +3359,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Kricketune",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Swords Dance",
@@ -3387,7 +3392,8 @@
         "buff": null,
         "element": "flying"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-ariados",
@@ -3395,7 +3401,6 @@
     "tier": "TM",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Ariados_(TM)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Infestation",
@@ -3437,7 +3442,8 @@
         "buff": null,
         "element": "bug"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "scyther",
@@ -3445,7 +3451,6 @@
     "tier": "TR",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Scyther_(TR)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "X-Scissor",
@@ -3479,7 +3484,8 @@
         "buff": "self",
         "element": "bug"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "mega-lucario-fighting",
@@ -3487,7 +3493,6 @@
     "tier": "TM",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Lucario_Fighting_(TM)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Upper Hand",
@@ -3538,7 +3543,8 @@
         "def": true,
         "element": "normal"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "mega-lopunny",
@@ -3593,7 +3599,7 @@
         "power": 27.14
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "elite-hitmontop",
@@ -3601,7 +3607,6 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Elite_Hitmontop",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Rolling Kick",
@@ -3644,7 +3649,8 @@
         "def": true,
         "element": "fighting"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-hariyama",
@@ -3698,7 +3704,7 @@
         "power": 25.17
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "shiny-mienshao",
@@ -3706,7 +3712,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Mienshao",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "High Jump Kick",
@@ -3740,7 +3745,8 @@
         "buff": null,
         "element": "fighting"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "mega-hawlucha",
@@ -3748,7 +3754,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Hawlucha",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Superpower",
@@ -3782,7 +3787,8 @@
         "buff": null,
         "element": "fighting"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "mega-kangaskhan",
@@ -3790,7 +3796,6 @@
     "tier": "TM",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Kangaskhan_(TM)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Fake Out",
@@ -3832,7 +3837,8 @@
         "buff": "self",
         "element": "fighting"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "machamp",
@@ -3840,7 +3846,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Machamp",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Dynamic Punch",
@@ -3874,7 +3879,8 @@
         "buff": null,
         "element": "fighting"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "champion-primeape",
@@ -3882,7 +3888,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Champion_Primeape",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Anger Release",
@@ -3916,7 +3921,8 @@
         "buff": null,
         "element": "fighting"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-primeape",
@@ -3924,7 +3930,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Primeape",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Close Combat",
@@ -3958,7 +3963,8 @@
         "buff": null,
         "element": "fighting"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "heracross",
@@ -3966,7 +3972,6 @@
     "tier": "TR",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Heracross_(TR)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Brick Break",
@@ -4000,7 +4005,8 @@
         "buff": null,
         "element": "fighting"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "exploud",
@@ -4008,7 +4014,6 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Exploud",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Boomburst",
@@ -4042,7 +4047,8 @@
         "buff": null,
         "element": "normal"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "snorlax",
@@ -4050,7 +4056,6 @@
     "tier": "TR",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Snorlax_(TR)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Giga Impact",
@@ -4084,7 +4089,8 @@
         "buff": null,
         "element": "dark"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "mega-metagross",
@@ -4092,7 +4098,6 @@
     "tier": "T1H",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Metagross",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Giga Impact",
@@ -4127,7 +4132,8 @@
         "def": true,
         "element": "steel"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-forretress",
@@ -4182,7 +4188,7 @@
         "power": 25.17
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "klinklang",
@@ -4190,7 +4196,6 @@
     "tier": "T3",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Klinklang",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Gravity",
@@ -4233,7 +4238,8 @@
         "def": true,
         "element": "steel"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-mawile",
@@ -4241,7 +4247,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Mawile",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Torment",
@@ -4275,7 +4280,8 @@
         "buff": null,
         "element": "steel"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-aegislash",
@@ -4283,7 +4289,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Aegislash",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Royal Blade",
@@ -4317,7 +4322,8 @@
         "buff": null,
         "element": "steel"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "mega-skarmory",
@@ -4325,7 +4331,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Skarmory",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Hone Claws",
@@ -4359,7 +4364,8 @@
         "buff": null,
         "element": "steel"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "bronzong",
@@ -4367,7 +4373,6 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Bronzong",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Meteor Mash",
@@ -4393,7 +4398,8 @@
         "buff": null,
         "element": "steel"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "perrserker",
@@ -4401,7 +4407,6 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Perrserker",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Hone Claws",
@@ -4435,7 +4440,8 @@
         "buff": null,
         "element": "steel"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "magneton",
@@ -4443,7 +4449,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Magneton",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Gravity",
@@ -4469,7 +4474,8 @@
         "buff": null,
         "element": "steel"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "metang",
@@ -4477,7 +4483,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Metang",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Metal Claw",
@@ -4511,7 +4516,8 @@
         "buff": null,
         "element": "steel"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-lairon",
@@ -4519,7 +4525,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Lairon",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Metal Burst",
@@ -4561,7 +4566,8 @@
         "buff": null,
         "element": "steel"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-magneton",
@@ -4569,7 +4575,6 @@
     "tier": "TM",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Magneton_(TM)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Gravity",
@@ -4603,7 +4608,8 @@
         "buff": null,
         "element": "steel"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "scizor",
@@ -4611,7 +4617,6 @@
     "tier": "TR",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Scizor_(TR)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "U-Turn",
@@ -4653,7 +4658,8 @@
         "buff": null,
         "element": "steel"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-fearow",
@@ -4661,7 +4667,6 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Fearow",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Whirlwind",
@@ -4696,7 +4701,8 @@
         "def": true,
         "element": "normal"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "mega-pidgeot",
@@ -4751,7 +4757,7 @@
         "power": 24.41
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "staraptor",
@@ -4759,7 +4765,6 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Staraptor",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Close Combat",
@@ -4785,7 +4790,8 @@
         "buff": null,
         "element": "flying"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "pidgeot",
@@ -4831,7 +4837,7 @@
         "power": 32.06
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "crobat",
@@ -4839,7 +4845,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Crobat",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Fly",
@@ -4857,7 +4862,8 @@
         "buff": null,
         "element": "flying"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-butterfree",
@@ -4865,7 +4871,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Butterfree",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Sleep Powder",
@@ -4891,7 +4896,8 @@
         "buff": null,
         "element": "flying"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-dodrio",
@@ -4899,7 +4905,6 @@
     "tier": "TM",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Dodrio_(TM)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Whirlwind",
@@ -4941,7 +4946,8 @@
         "buff": null,
         "element": "flying"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "skarmory",
@@ -4949,7 +4955,6 @@
     "tier": "TR",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Skarmory_(TR)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Fly",
@@ -4991,7 +4996,8 @@
         "buff": null,
         "element": "steel"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "mega-charizard-x",
@@ -4999,7 +5005,6 @@
     "tier": "TM",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Charizard_X_(TM)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Defense Curl",
@@ -5034,7 +5039,8 @@
         "buff": null,
         "element": "dragon"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "mega-dragonite",
@@ -5042,7 +5048,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Dragonite",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Dragon Rush",
@@ -5068,7 +5073,8 @@
         "buff": null,
         "element": "flying"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "dragonite",
@@ -5076,7 +5082,6 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Dragonite",
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo) | Inner Focus é def:true + buff:next (amplifica próxima ×1.5, confirmado via Outrage 17.3k→25.9k)",
     "skills": [
       {
         "name": "Inner Focus",
@@ -5123,7 +5128,9 @@
         "element": "dragon",
         "power": 23.29
       }
-    ]
+    ],
+    "todo": "RECALIBRAR",
+    "observacao": "Inner Focus é def:true + buff:next (amplifica próxima ×1.5, confirmado via Outrage 17.3k→25.9k)"
   },
   {
     "id": "shiny-hydreigon",
@@ -5131,7 +5138,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Hydreigon",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Dragon Blast",
@@ -5157,7 +5163,8 @@
         "buff": null,
         "element": "dragon"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "mega-drampa",
@@ -5165,7 +5172,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Drampa",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Rain Dance",
@@ -5191,7 +5197,8 @@
         "buff": "self",
         "element": "dragon"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "haxorus",
@@ -5245,7 +5252,7 @@
         "power": 24.23
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "garchomp",
@@ -5253,7 +5260,6 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Garchomp",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Dragon Rush",
@@ -5279,7 +5285,8 @@
         "buff": null,
         "element": "dragon"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-druddigon",
@@ -5334,7 +5341,7 @@
         "power": 29.52
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "flapple",
@@ -5342,7 +5349,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Flapple",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Dragon Dance",
@@ -5368,7 +5374,8 @@
         "buff": null,
         "element": "dragon"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "druddigon",
@@ -5376,7 +5383,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Druddigon",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Outrage",
@@ -5402,7 +5408,8 @@
         "buff": null,
         "element": "dragon"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "dragonair",
@@ -5456,7 +5463,7 @@
         "power": 22.25
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "mega-altaria",
@@ -5464,7 +5471,6 @@
     "tier": "TM",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Altaria_Fairy_(TM)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Alluring Voice",
@@ -5507,7 +5513,8 @@
         "element": "grass",
         "def": true
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "florges",
@@ -5562,7 +5569,7 @@
         "power": 25.19
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "sylveon",
@@ -5570,7 +5577,6 @@
     "tier": "T3",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Sylveon",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Love Spell",
@@ -5613,7 +5619,8 @@
         "def": true,
         "element": "fairy"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-gardevoir",
@@ -5621,7 +5628,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Gardevoir",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Moonblast",
@@ -5655,7 +5661,8 @@
         "buff": null,
         "element": "fairy"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "mega-clefable",
@@ -5663,7 +5670,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Clefable",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Misty Terrain",
@@ -5697,7 +5703,8 @@
         "buff": null,
         "element": "normal"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "hatterene",
@@ -5705,7 +5712,6 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Hatterene",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Love Spell",
@@ -5739,7 +5745,8 @@
         "buff": null,
         "element": "fairy"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "alcremie",
@@ -5747,7 +5754,6 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Alcremie",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Aromatic Mist",
@@ -5781,7 +5787,8 @@
         "buff": null,
         "element": "fairy"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "wigglytuff",
@@ -5789,7 +5796,6 @@
     "tier": "TR",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Wigglytuff_(TR)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Love Spell",
@@ -5823,7 +5829,8 @@
         "buff": null,
         "element": "fairy"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "wobbuffet",
@@ -5831,7 +5838,6 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Wobbuffet",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Encore",
@@ -5866,7 +5872,8 @@
         "buff": null,
         "element": "psychic"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "galarian-rapidash",
@@ -5921,7 +5928,7 @@
         "power": 21.38
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "shiny-gothitelle",
@@ -5929,7 +5936,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Gothitelle",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Magic Room",
@@ -5963,7 +5969,8 @@
         "buff": null,
         "element": "ghost"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "mega-starmie",
@@ -5971,7 +5978,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Starmie",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Psyshock",
@@ -6005,7 +6011,8 @@
         "buff": null,
         "element": "psychic"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "alakazam",
@@ -6013,7 +6020,6 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Alakazam",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Kinesis",
@@ -6047,7 +6053,8 @@
         "buff": null,
         "element": "psychic"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "meowstic",
@@ -6055,7 +6062,6 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Meowstic",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Wonder Room",
@@ -6089,7 +6095,8 @@
         "buff": null,
         "element": "psychic"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-kadabra",
@@ -6097,7 +6104,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Kadabra",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Hypnosis",
@@ -6131,7 +6137,8 @@
         "buff": null,
         "element": "psychic"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "metagross",
@@ -6139,7 +6146,6 @@
     "tier": "TM",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Metagross_(TM)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Psycho Cut",
@@ -6173,7 +6179,8 @@
         "buff": null,
         "element": "psychic"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "slowking",
@@ -6181,7 +6188,6 @@
     "tier": "TR",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Slowking_(TR)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Future Sight",
@@ -6215,7 +6221,8 @@
         "buff": null,
         "element": "psychic"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "milotic",
@@ -6223,7 +6230,6 @@
     "tier": "TM",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Milotic_(TM)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Whirlpool",
@@ -6266,7 +6272,8 @@
         "def": true,
         "element": "water"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-vaporeon",
@@ -6330,7 +6337,7 @@
         "power": 24.86
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "shiny-giant-magikarp",
@@ -6393,7 +6400,7 @@
         "power": 26.15
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "shiny-floatzel",
@@ -6448,7 +6455,7 @@
         "power": 27.11
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "mega-feraligatr",
@@ -6456,7 +6463,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Feraligatr",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Water Spout",
@@ -6482,7 +6488,8 @@
         "buff": null,
         "element": "water"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "gyarados",
@@ -6537,7 +6544,7 @@
         "power": 14.82
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "shiny-kingler",
@@ -6591,7 +6598,7 @@
         "power": 28.48
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "vaporeon",
@@ -6646,7 +6653,7 @@
         "power": 25.27
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "azumarill",
@@ -6701,7 +6708,7 @@
         "power": 14.66
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "shiny-slowbro",
@@ -6709,7 +6716,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Slowbro",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Rain Dance",
@@ -6735,7 +6741,8 @@
         "buff": null,
         "element": "water"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-politoed",
@@ -6743,7 +6750,6 @@
     "tier": "TM",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Politoed_(TM)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Whirlpool",
@@ -6777,7 +6783,8 @@
         "buff": null,
         "element": "water"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "kingdra",
@@ -6785,7 +6792,6 @@
     "tier": "TR",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Kingdra_(TR)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Flip Turn",
@@ -6819,7 +6825,8 @@
         "buff": null,
         "element": "dragon"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "mega-glalie",
@@ -6874,7 +6881,7 @@
         "power": 25.3
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "mega-froslass",
@@ -6882,7 +6889,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Froslass",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Phantom Force",
@@ -6908,7 +6914,8 @@
         "buff": null,
         "element": "ice"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "lapras",
@@ -6963,7 +6970,7 @@
         "power": 27.69
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "vanilluxe",
@@ -6971,7 +6978,6 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Vanilluxe",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Hail",
@@ -6997,7 +7003,8 @@
         "buff": null,
         "element": "ice"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "glalie",
@@ -7005,7 +7012,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Glalie",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Glacial Spikes",
@@ -7031,7 +7037,8 @@
         "buff": null,
         "element": "ice"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-delibird",
@@ -7039,7 +7046,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Delibird",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Agility",
@@ -7065,7 +7071,8 @@
         "buff": null,
         "element": "ice"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "frosmoth",
@@ -7129,7 +7136,7 @@
         "power": 22.26
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "froslass",
@@ -7184,7 +7191,7 @@
         "power": 24.35
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "shiny-dewgong",
@@ -7192,7 +7199,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Dewgong",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Swagger",
@@ -7218,7 +7224,8 @@
         "buff": null,
         "element": "ice"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "jynx",
@@ -7226,7 +7233,6 @@
     "tier": "TR",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Jynx_(TR)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Hail",
@@ -7276,7 +7282,8 @@
         "buff": null,
         "element": "ice"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-muk",
@@ -7284,7 +7291,6 @@
     "tier": "TM",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Muk_(TM)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Stench",
@@ -7327,7 +7333,8 @@
         "def": true,
         "element": "normal"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-qwilfish",
@@ -7335,7 +7342,6 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Qwilfish",
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo) | Mortal Gas e Toxic calibrados clean (10 ticks subtraídos em cada)",
     "skills": [
       {
         "name": "Minimize",
@@ -7382,7 +7388,9 @@
         "element": "poison",
         "power": 21.56
       }
-    ]
+    ],
+    "todo": "RECALIBRAR",
+    "observacao": "Mortal Gas e Toxic calibrados clean (10 ticks subtraídos em cada)"
   },
   {
     "id": "shiny-garbodor",
@@ -7390,7 +7398,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Garbodor",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Stench",
@@ -7424,7 +7431,8 @@
         "buff": null,
         "element": "poison"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "mega-victreebel",
@@ -7432,7 +7440,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Victreebel",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Acid Rain",
@@ -7466,7 +7473,8 @@
         "buff": null,
         "element": "poison"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "alolan-muk",
@@ -7474,7 +7482,6 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Alolan_Muk",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Poison Touch",
@@ -7509,7 +7516,8 @@
         "buff": null,
         "element": "poison"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "seviper",
@@ -7517,7 +7525,6 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Seviper",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Venomous Gale",
@@ -7551,7 +7558,8 @@
         "buff": null,
         "element": "poison"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "muk",
@@ -7559,7 +7567,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Muk",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Poison Touch",
@@ -7594,7 +7601,8 @@
         "buff": null,
         "element": "poison"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "nidoking",
@@ -7602,7 +7610,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Nidoking",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Rage",
@@ -7636,7 +7643,8 @@
         "buff": null,
         "element": "poison"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "hisuian-qwilfish",
@@ -7644,7 +7652,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Hisuian_Qwilfish",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Barb Barrage",
@@ -7678,7 +7685,8 @@
         "buff": null,
         "element": "poison"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-crobat",
@@ -7686,7 +7694,6 @@
     "tier": "TR",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Crobat_(TR)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Venom Gale",
@@ -7720,7 +7727,8 @@
         "buff": null,
         "element": "poison"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "cofagrigus",
@@ -7784,7 +7792,7 @@
         "power": 24.26
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "mightyena",
@@ -7839,7 +7847,7 @@
         "power": 23.25
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "mismagius",
@@ -7847,7 +7855,6 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Mismagius",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Black Box",
@@ -7882,7 +7889,8 @@
         "buff": null,
         "element": "ghost"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "mega-chandelure",
@@ -7890,7 +7898,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Chandelure",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Night Shade",
@@ -7924,7 +7931,8 @@
         "buff": null,
         "element": "dark"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "gengar",
@@ -7970,7 +7978,7 @@
         "power": 28.34
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "hisuian-typhlosion",
@@ -7978,7 +7986,6 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Hisuian_Typhlosion",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Flame Charge",
@@ -8012,7 +8019,8 @@
         "buff": null,
         "element": "ghost"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "banette",
@@ -8020,7 +8028,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Banette",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Torment",
@@ -8038,7 +8045,8 @@
         "buff": null,
         "element": "ghost"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "cursola",
@@ -8046,7 +8054,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Cursola",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Harden",
@@ -8081,7 +8088,8 @@
         "buff": null,
         "element": "ghost"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-haunter",
@@ -8143,7 +8151,7 @@
         "power": 27.41
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "dusknoir",
@@ -8151,7 +8159,6 @@
     "tier": "TM",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Dusknoir_(TM)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Afterlife Link",
@@ -8177,7 +8184,8 @@
         "buff": null,
         "element": "ghost"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "mega-altaria-dragon",
@@ -8185,7 +8193,6 @@
     "tier": "TM",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Altaria_Dragon_(TM)",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Dragon Pulse",
@@ -8227,7 +8234,8 @@
         "buff": "self",
         "element": "flying"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "mega-altaria-base",
@@ -8235,7 +8243,6 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Altaria",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Disarming Voice",
@@ -8294,7 +8301,8 @@
         "buff": "self",
         "element": "fairy"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "beartic",
@@ -8302,7 +8310,6 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Beartic",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Ice Storm",
@@ -8345,7 +8352,8 @@
         "element": "ice",
         "def": true
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "zoroark",
@@ -8400,7 +8408,7 @@
         "power": 27.08
       }
     ],
-    "todo": "RECALIBRAR (nível NW — calibração anterior usou lvl base, não efetivo)"
+    "todo": "RECALIBRAR"
   },
   {
     "id": "alolan-ninetales",
@@ -8408,7 +8416,6 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Alolan_Ninetales",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Ice Spin",
@@ -8450,7 +8457,8 @@
         "buff": null,
         "element": "ice"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "crystal-onix",
@@ -8458,7 +8466,6 @@
     "tier": "TM",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Crystal_Onix",
-    "todo": "RECALIBRAR — calibração original usou lvl base (369) em dummy NW; deveria ter usado lvl efetivo (base + NL bonus). Powers atuais podem estar superestimados.",
     "skills": [
       {
         "name": "Earthquake",
@@ -8487,7 +8494,8 @@
         "element": "ground",
         "power": 23.56
       }
-    ]
+    ],
+    "todo": "RECALIBRAR"
   },
   {
     "id": "shiny-magmar",
@@ -8495,7 +8503,6 @@
     "tier": "T1A",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Magmar",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Smog",
@@ -8537,7 +8544,8 @@
         "buff": null,
         "element": "fire"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-arcanine",
@@ -8545,7 +8553,6 @@
     "tier": "T1B",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Arcanine",
-    "todo": "calibrate skills; War Dog confirm area vs self",
     "skills": [
       {
         "name": "Roar",
@@ -8604,7 +8611,8 @@
         "element": "normal",
         "def": true
       }
-    ]
+    ],
+    "todo": "calibrate skills; War Dog confirm area vs self"
   },
   {
     "id": "shiny-electabuzz",
@@ -8612,7 +8620,6 @@
     "tier": "T1A",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Electabuzz",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Lightning Fist",
@@ -8630,7 +8637,8 @@
         "buff": null,
         "element": "electric"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-manectric",
@@ -8638,7 +8646,6 @@
     "tier": "T1B",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Manectric",
-    "todo": "calibrate skills; Ancient Wrath confirm self-only",
     "skills": [
       {
         "name": "Roar",
@@ -8672,7 +8679,8 @@
         "buff": null,
         "element": "electric"
       }
-    ]
+    ],
+    "todo": "calibrate skills; Ancient Wrath confirm self-only"
   },
   {
     "id": "golden-sudowoodo",
@@ -8680,7 +8688,6 @@
     "tier": "T1A",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Golden_Sudowoodo",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Head Smash",
@@ -8714,7 +8721,8 @@
         "buff": null,
         "element": "rock"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-pupitar",
@@ -8785,7 +8793,6 @@
     "tier": "T1A",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Scizor",
-    "todo": "calibrate skills; Steel Wing confirm buff",
     "skills": [
       {
         "name": "Metal Claw",
@@ -8836,7 +8843,8 @@
         "element": "steel",
         "def": true
       }
-    ]
+    ],
+    "todo": "calibrate skills; Steel Wing confirm buff"
   },
   {
     "id": "shiny-leafeon",
@@ -8844,7 +8852,6 @@
     "tier": "T1B",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Leafeon",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Bullet Seed",
@@ -8878,7 +8885,8 @@
         "buff": "next",
         "element": "fire"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-snorlax",
@@ -8886,7 +8894,6 @@
     "tier": "T1A",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Snorlax",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Pulverizing Pancake",
@@ -8912,7 +8919,8 @@
         "buff": null,
         "element": "normal"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-tauros",
@@ -8920,7 +8928,6 @@
     "tier": "T1B",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Tauros",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Take Down",
@@ -8954,7 +8961,8 @@
         "buff": null,
         "element": "normal"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "mega-aggron",
@@ -8962,7 +8970,6 @@
     "tier": "T1B",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Aggron",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Metal Sound",
@@ -9014,7 +9021,8 @@
         "element": "rock",
         "def": true
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-gyarados",
@@ -9022,7 +9030,6 @@
     "tier": "T1A",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Gyarados",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Roar",
@@ -9072,7 +9079,8 @@
         "buff": null,
         "element": "water"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-dragonair",
@@ -9080,7 +9088,6 @@
     "tier": "T1B",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Dragonair",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Twister",
@@ -9122,7 +9129,8 @@
         "buff": "next",
         "element": "dragon"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-alakazam",
@@ -9130,7 +9138,6 @@
     "tier": "T1A",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Alakazam",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Psywave",
@@ -9164,7 +9171,8 @@
         "buff": null,
         "element": "psychic"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-sylveon",
@@ -9172,7 +9180,6 @@
     "tier": "T1B",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Sylveon",
-    "todo": "calibrate skills; Floral Storm confirm def",
     "skills": [
       {
         "name": "Fairy Wind",
@@ -9207,7 +9214,8 @@
         "element": "fairy",
         "def": true
       }
-    ]
+    ],
+    "todo": "calibrate skills; Floral Storm confirm def"
   },
   {
     "id": "shiny-glaceon",
@@ -9215,7 +9223,6 @@
     "tier": "T1B",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Glaceon",
-    "todo": "calibrate skills; Hailstorm CC confirm",
     "skills": [
       {
         "name": "Icy Wind",
@@ -9265,7 +9272,8 @@
         "buff": null,
         "element": "ice"
       }
-    ]
+    ],
+    "todo": "calibrate skills; Hailstorm CC confirm"
   },
   {
     "id": "mega-absol",
@@ -9273,7 +9281,6 @@
     "tier": "T1A",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Absol",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Psycho Cut",
@@ -9331,7 +9338,8 @@
         "buff": "next",
         "element": "normal"
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   },
   {
     "id": "shiny-gengar",
@@ -9339,7 +9347,6 @@
     "tier": "T1B",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Gengar",
-    "todo": "calibrate skills",
     "skills": [
       {
         "name": "Night Shade",
@@ -9382,6 +9389,7 @@
         "element": "ghost",
         "def": true
       }
-    ]
+    ],
+    "todo": "calibrate skills"
   }
 ]

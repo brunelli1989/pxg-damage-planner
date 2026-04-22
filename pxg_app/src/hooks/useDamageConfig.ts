@@ -18,7 +18,7 @@ const STORAGE_KEY = "pxg_damage_config";
 
 export const DEFAULT_POKE_SETUP: PokeSetup = {
   boost: 70,
-  held: { kind: "none", tier: 0 },
+  held: { kind: "x-attack", tier: 8 },
   hasDevice: false,
 };
 

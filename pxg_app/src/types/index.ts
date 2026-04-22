@@ -50,7 +50,10 @@ export interface Pokemon {
   tier: Tier;
   role?: PokemonRole;
   wiki?: string;
+  /** Ação pendente (ex: "RECALIBRAR"). Presença → ⚠️ na UI. */
   todo?: string;
+  /** Nota informativa (ex: "HS inclui burn DoT"). Não dispara ⚠️. */
+  observacao?: string;
   skills: Skill[];
   /** Elementos defensivos do poke (do roster). Usado pra calcular resistência
    *  do starter contra ataques do mob. Ausência = neutro (factor 1.0). */
