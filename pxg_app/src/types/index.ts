@@ -1,12 +1,13 @@
 export type SkillType = "area" | "frontal";
 export type CCType = "stun" | "silence" | "locked";
 export type BuffType = "self" | "next";
-export type Tier = "T1H" | "T1C" | "T2" | "T3" | "TR" | "TM";
+export type Tier = "T1A" | "T1B" | "T1H" | "T1C" | "T2" | "T3" | "TR" | "TM";
 
 export type PokemonElement =
   | "normal" | "fire" | "water" | "electric" | "grass" | "ice"
   | "fighting" | "poison" | "ground" | "flying" | "psychic" | "bug"
-  | "rock" | "ghost" | "dragon" | "dark" | "steel" | "fairy";
+  | "rock" | "ghost" | "dragon" | "dark" | "steel" | "fairy"
+  | "crystal";
 
 export type ClanName =
   | "volcanic" | "raibolt" | "orebound" | "naturia" | "gardestrike"

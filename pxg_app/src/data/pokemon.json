@@ -8408,35 +8408,18 @@
     "id": "crystal-onix",
     "name": "Crystal Onix",
     "tier": "TM",
-    "role": "offensive_tank",
+    "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Crystal_Onix",
-    "todo": "calibrate skills + confirm tier (T3 vs TM) + clans",
+    "todo": "Σ=89 (per-skill 29.7) é acima de T1H — tier provável T1A/T1B, não TM. Earthquake calibrado aproximado (32.2k ~)",
     "skills": [
       {
-        "name": "Harden",
-        "cooldown": 40,
-        "type": "area",
-        "cc": null,
-        "buff": "self",
-        "element": "normal",
-        "def": true
-      },
-      {
-        "name": "Camouflage",
-        "cooldown": 50,
-        "type": "area",
-        "cc": null,
-        "buff": "self",
-        "element": "steel",
-        "def": true
-      },
-      {
-        "name": "Earth Power",
-        "cooldown": 50,
+        "name": "Earthquake",
+        "cooldown": 45,
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 36.16
       },
       {
         "name": "Falling Rocks",
@@ -8444,16 +8427,286 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "rock"
+        "element": "rock",
+        "power": 29.31
       },
       {
-        "name": "Earthquake",
-        "cooldown": 45,
+        "name": "Earth Power",
+        "cooldown": 50,
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 23.56
       }
+    ]
+  },
+  {
+    "id": "shiny-magmar",
+    "name": "Shiny Magmar",
+    "tier": "T1A",
+    "role": "burst_dd",
+    "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Magmar",
+    "todo": "calibrate skills",
+    "skills": [
+      { "name": "Smog", "cooldown": 30, "type": "area", "cc": null, "buff": null, "element": "poison" },
+      { "name": "Overheat", "cooldown": 30, "type": "area", "cc": null, "buff": null, "element": "fire" },
+      { "name": "Fire Blast", "cooldown": 35, "type": "area", "cc": null, "buff": null, "element": "fire" },
+      { "name": "Magma Fist", "cooldown": 40, "type": "area", "cc": null, "buff": null, "element": "fire" },
+      { "name": "Magma Storm", "cooldown": 50, "type": "area", "cc": null, "buff": null, "element": "fire" }
+    ]
+  },
+  {
+    "id": "shiny-arcanine",
+    "name": "Shiny Arcanine",
+    "tier": "T1B",
+    "role": "offensive_tank",
+    "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Arcanine",
+    "todo": "calibrate skills; War Dog confirm area vs self",
+    "skills": [
+      { "name": "Roar", "cooldown": 40, "type": "area", "cc": "silence", "buff": null, "element": "normal" },
+      { "name": "Flamethrower", "cooldown": 15, "type": "area", "cc": null, "buff": null, "element": "fire" },
+      { "name": "Fire Ball", "cooldown": 10, "type": "area", "cc": null, "buff": null, "element": "fire" },
+      { "name": "Fire Blast", "cooldown": 30, "type": "area", "cc": null, "buff": null, "element": "fire" },
+      { "name": "Hellfire Storm", "cooldown": 50, "type": "area", "cc": null, "buff": null, "element": "fire" },
+      { "name": "Run Over", "cooldown": 40, "type": "area", "cc": null, "buff": null, "element": "fire" },
+      { "name": "War Dog", "cooldown": 40, "type": "area", "cc": null, "buff": "self", "element": "normal", "def": true }
+    ]
+  },
+  {
+    "id": "shiny-electabuzz",
+    "name": "Shiny Electabuzz",
+    "tier": "T1A",
+    "role": "burst_dd",
+    "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Electabuzz",
+    "todo": "calibrate skills",
+    "skills": [
+      { "name": "Lightning Fist", "cooldown": 40, "type": "area", "cc": null, "buff": null, "element": "electric" },
+      { "name": "Thunder", "cooldown": 35, "type": "area", "cc": null, "buff": null, "element": "electric" }
+    ]
+  },
+  {
+    "id": "shiny-manectric",
+    "name": "Shiny Manectric",
+    "tier": "T1B",
+    "role": "burst_dd",
+    "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Manectric",
+    "todo": "calibrate skills; Ancient Wrath confirm self-only",
+    "skills": [
+      { "name": "Roar", "cooldown": 45, "type": "area", "cc": "silence", "buff": null, "element": "normal" },
+      { "name": "Thunder", "cooldown": 40, "type": "area", "cc": null, "buff": null, "element": "electric" },
+      { "name": "Charge Beam", "cooldown": 40, "type": "area", "cc": null, "buff": null, "element": "electric" },
+      { "name": "Discharge", "cooldown": 50, "type": "area", "cc": null, "buff": null, "element": "electric" }
+    ]
+  },
+  {
+    "id": "golden-sudowoodo",
+    "name": "Golden Sudowoodo",
+    "tier": "T1A",
+    "role": "burst_dd",
+    "wiki": "https://wiki.pokexgames.com/index.php/Golden_Sudowoodo",
+    "todo": "calibrate skills",
+    "skills": [
+      { "name": "Head Smash", "cooldown": 50, "type": "area", "cc": null, "buff": null, "element": "rock" },
+      { "name": "Hammer Arm", "cooldown": 40, "type": "area", "cc": "stun", "buff": null, "element": "fighting" },
+      { "name": "Rock Blast", "cooldown": 40, "type": "area", "cc": null, "buff": null, "element": "rock" },
+      { "name": "Rock Wrecker", "cooldown": 50, "type": "area", "cc": null, "buff": null, "element": "rock" }
+    ]
+  },
+  {
+    "id": "shiny-pupitar",
+    "name": "Shiny Pupitar",
+    "tier": "T1B",
+    "role": "offensive_tank",
+    "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Pupitar",
+    "todo": "Sandstorm buff detail — não calibrado (buff:self)",
+    "skills": [
+      { "name": "Sand Tomb", "cooldown": 40, "type": "area", "cc": "locked", "buff": null, "element": "ground", "power": 19.19 },
+      { "name": "Hyper Beam", "cooldown": 40, "type": "area", "cc": null, "buff": null, "element": "normal", "power": 21.47 },
+      { "name": "Ancient Power", "cooldown": 30, "type": "area", "cc": null, "buff": null, "element": "rock", "power": 24.09 },
+      { "name": "Magnitude", "cooldown": 50, "type": "area", "cc": null, "buff": null, "element": "ground", "power": 30.89 },
+      { "name": "Earthquake", "cooldown": 40, "type": "area", "cc": null, "buff": null, "element": "ground", "power": 27.83 },
+      { "name": "Sandstorm", "cooldown": 40, "type": "area", "cc": null, "buff": "self", "element": "rock", "def": true }
+    ]
+  },
+  {
+    "id": "mega-scizor",
+    "name": "Mega Scizor",
+    "tier": "T1A",
+    "role": "offensive_tank",
+    "wiki": "https://wiki.pokexgames.com/index.php/Mega_Scizor",
+    "todo": "calibrate skills; Steel Wing confirm buff",
+    "skills": [
+      { "name": "Metal Claw", "cooldown": 40, "type": "area", "cc": null, "buff": "next", "element": "steel" },
+      { "name": "Bullet Punch", "cooldown": 40, "type": "area", "cc": null, "buff": null, "element": "steel" },
+      { "name": "Compass Slash", "cooldown": 40, "type": "area", "cc": null, "buff": null, "element": "bug" },
+      { "name": "Air Slash", "cooldown": 18, "type": "area", "cc": null, "buff": null, "element": "flying" },
+      { "name": "Steel Wing", "cooldown": 50, "type": "area", "cc": null, "buff": "next", "element": "steel" },
+      { "name": "Iron Defense", "cooldown": 300, "type": "area", "cc": null, "buff": "self", "element": "steel", "def": true }
+    ]
+  },
+  {
+    "id": "shiny-leafeon",
+    "name": "Shiny Leafeon",
+    "tier": "T1B",
+    "role": "burst_dd",
+    "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Leafeon",
+    "todo": "calibrate skills",
+    "skills": [
+      { "name": "Bullet Seed", "cooldown": 20, "type": "area", "cc": null, "buff": null, "element": "grass" },
+      { "name": "Leaf Blade", "cooldown": 30, "type": "area", "cc": null, "buff": null, "element": "grass" },
+      { "name": "Solar Blade", "cooldown": 50, "type": "area", "cc": null, "buff": null, "element": "grass" },
+      { "name": "Sunny Day", "cooldown": 40, "type": "area", "cc": null, "buff": "next", "element": "fire" }
+    ]
+  },
+  {
+    "id": "shiny-snorlax",
+    "name": "Shiny Snorlax",
+    "tier": "T1A",
+    "role": "burst_dd",
+    "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Snorlax",
+    "todo": "calibrate skills",
+    "skills": [
+      { "name": "Pulverizing Pancake", "cooldown": 50, "type": "area", "cc": null, "buff": "next", "element": "normal" },
+      { "name": "Hyper Beam", "cooldown": 40, "type": "area", "cc": null, "buff": null, "element": "normal" },
+      { "name": "Crusher Stomp", "cooldown": 40, "type": "area", "cc": null, "buff": null, "element": "normal" }
+    ]
+  },
+  {
+    "id": "shiny-tauros",
+    "name": "Shiny Tauros",
+    "tier": "T1B",
+    "role": "burst_dd",
+    "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Tauros",
+    "todo": "calibrate skills",
+    "skills": [
+      { "name": "Take Down", "cooldown": 15, "type": "area", "cc": null, "buff": null, "element": "normal" },
+      { "name": "Thrash", "cooldown": 20, "type": "area", "cc": null, "buff": null, "element": "normal" },
+      { "name": "Hyper Beam", "cooldown": 50, "type": "area", "cc": null, "buff": null, "element": "normal" },
+      { "name": "Stampede", "cooldown": 40, "type": "area", "cc": null, "buff": null, "element": "normal" }
+    ]
+  },
+  {
+    "id": "mega-aggron",
+    "name": "Mega Aggron",
+    "tier": "T1B",
+    "role": "offensive_tank",
+    "wiki": "https://wiki.pokexgames.com/index.php/Mega_Aggron",
+    "todo": "calibrate skills",
+    "skills": [
+      { "name": "Metal Sound", "cooldown": 25, "type": "area", "cc": null, "buff": null, "element": "steel" },
+      { "name": "Metal Claw", "cooldown": 50, "type": "area", "cc": null, "buff": "next", "element": "steel" },
+      { "name": "Meteor Mash", "cooldown": 30, "type": "area", "cc": null, "buff": null, "element": "steel" },
+      { "name": "Flash Cannon", "cooldown": 50, "type": "area", "cc": null, "buff": null, "element": "steel" },
+      { "name": "Harden", "cooldown": 35, "type": "area", "cc": null, "buff": "self", "element": "normal", "def": true },
+      { "name": "Sandstorm", "cooldown": 40, "type": "area", "cc": null, "buff": "self", "element": "rock", "def": true }
+    ]
+  },
+  {
+    "id": "shiny-gyarados",
+    "name": "Shiny Gyarados",
+    "tier": "T1A",
+    "role": "burst_dd",
+    "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Gyarados",
+    "todo": "calibrate skills",
+    "skills": [
+      { "name": "Roar", "cooldown": 40, "type": "area", "cc": "silence", "buff": null, "element": "normal" },
+      { "name": "Dragon Breath", "cooldown": 30, "type": "area", "cc": null, "buff": null, "element": "dragon" },
+      { "name": "Dragon Pulse", "cooldown": 35, "type": "area", "cc": null, "buff": null, "element": "dragon" },
+      { "name": "Hydro Cannon", "cooldown": 35, "type": "area", "cc": null, "buff": null, "element": "water" },
+      { "name": "Hyper Beam", "cooldown": 35, "type": "area", "cc": null, "buff": null, "element": "normal" },
+      { "name": "Hydro Pump", "cooldown": 50, "type": "area", "cc": null, "buff": null, "element": "water" }
+    ]
+  },
+  {
+    "id": "shiny-dragonair",
+    "name": "Shiny Dragonair",
+    "tier": "T1B",
+    "role": "burst_dd",
+    "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Dragonair",
+    "todo": "calibrate skills",
+    "skills": [
+      { "name": "Twister", "cooldown": 15, "type": "area", "cc": null, "buff": null, "element": "dragon" },
+      { "name": "Dragon Breath", "cooldown": 35, "type": "area", "cc": null, "buff": null, "element": "dragon" },
+      { "name": "Dragon Pulse", "cooldown": 30, "type": "area", "cc": null, "buff": null, "element": "dragon" },
+      { "name": "Draco Meteor", "cooldown": 50, "type": "area", "cc": null, "buff": null, "element": "dragon" },
+      { "name": "Dragon Dance", "cooldown": 50, "type": "area", "cc": null, "buff": "next", "element": "dragon" }
+    ]
+  },
+  {
+    "id": "shiny-alakazam",
+    "name": "Shiny Alakazam",
+    "tier": "T1A",
+    "role": "burst_dd",
+    "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Alakazam",
+    "todo": "calibrate skills",
+    "skills": [
+      { "name": "Psywave", "cooldown": 10, "type": "area", "cc": null, "buff": null, "element": "psychic" },
+      { "name": "Psy Pulse", "cooldown": 10, "type": "area", "cc": null, "buff": null, "element": "psychic" },
+      { "name": "Psychic", "cooldown": 32, "type": "area", "cc": null, "buff": null, "element": "psychic" },
+      { "name": "Kinesis", "cooldown": 40, "type": "area", "cc": "locked", "buff": null, "element": "psychic" }
+    ]
+  },
+  {
+    "id": "shiny-sylveon",
+    "name": "Shiny Sylveon",
+    "tier": "T1B",
+    "role": "offensive_tank",
+    "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Sylveon",
+    "todo": "calibrate skills; Floral Storm confirm def",
+    "skills": [
+      { "name": "Fairy Wind", "cooldown": 25, "type": "area", "cc": null, "buff": null, "element": "fairy" },
+      { "name": "Hyper Voice", "cooldown": 40, "type": "area", "cc": null, "buff": null, "element": "fairy" },
+      { "name": "Heart Pound", "cooldown": 30, "type": "area", "cc": null, "buff": null, "element": "fairy" },
+      { "name": "Floral Storm", "cooldown": 50, "type": "area", "cc": null, "buff": "self", "element": "fairy", "def": true }
+    ]
+  },
+  {
+    "id": "shiny-glaceon",
+    "name": "Shiny Glaceon",
+    "tier": "T1B",
+    "role": "burst_dd",
+    "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Glaceon",
+    "todo": "calibrate skills; Hailstorm CC confirm",
+    "skills": [
+      { "name": "Icy Wind", "cooldown": 15, "type": "area", "cc": null, "buff": null, "element": "ice" },
+      { "name": "Froth Breath", "cooldown": 20, "type": "area", "cc": null, "buff": null, "element": "ice" },
+      { "name": "Ice Beam", "cooldown": 25, "type": "area", "cc": null, "buff": null, "element": "ice" },
+      { "name": "Blizzard", "cooldown": 50, "type": "area", "cc": null, "buff": null, "element": "ice" },
+      { "name": "Hailstorm", "cooldown": 40, "type": "area", "cc": "locked", "buff": null, "element": "ice" },
+      { "name": "Frenzy Snow", "cooldown": 40, "type": "area", "cc": null, "buff": null, "element": "ice" }
+    ]
+  },
+  {
+    "id": "mega-absol",
+    "name": "Mega Absol",
+    "tier": "T1A",
+    "role": "burst_dd",
+    "wiki": "https://wiki.pokexgames.com/index.php/Mega_Absol",
+    "todo": "calibrate skills",
+    "skills": [
+      { "name": "Psycho Cut", "cooldown": 20, "type": "area", "cc": null, "buff": null, "element": "psychic" },
+      { "name": "Dark Pulse", "cooldown": 18, "type": "area", "cc": null, "buff": null, "element": "dark" },
+      { "name": "Night Slash", "cooldown": 8, "type": "area", "cc": null, "buff": null, "element": "dark" },
+      { "name": "Black Hole", "cooldown": 40, "type": "area", "cc": null, "buff": null, "element": "dark" },
+      { "name": "Razor Wind", "cooldown": 40, "type": "area", "cc": null, "buff": null, "element": "normal" },
+      { "name": "Payback", "cooldown": 50, "type": "area", "cc": null, "buff": null, "element": "dark" },
+      { "name": "Swords Dance", "cooldown": 40, "type": "area", "cc": null, "buff": "next", "element": "normal" }
+    ]
+  },
+  {
+    "id": "shiny-gengar",
+    "name": "Shiny Gengar",
+    "tier": "T1B",
+    "role": "offensive_tank",
+    "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Gengar",
+    "todo": "calibrate skills",
+    "skills": [
+      { "name": "Night Shade", "cooldown": 30, "type": "area", "cc": null, "buff": null, "element": "ghost" },
+      { "name": "Astonish", "cooldown": 25, "type": "area", "cc": null, "buff": null, "element": "ghost" },
+      { "name": "Shadow Storm", "cooldown": 50, "type": "area", "cc": null, "buff": null, "element": "ghost" },
+      { "name": "Hex", "cooldown": 40, "type": "area", "cc": null, "buff": null, "element": "ghost" },
+      { "name": "Phantom Ambush", "cooldown": 180, "type": "area", "cc": null, "buff": "self", "element": "ghost", "def": true }
     ]
   }
 ]

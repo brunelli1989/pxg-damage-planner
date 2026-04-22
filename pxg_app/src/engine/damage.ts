@@ -28,6 +28,10 @@ import clansData from "../data/clans.json";
 
 type BurstKey = `${Tier}:${"CC" | "noCC"}`;
 const BURST_POWER_BY_TIER_CC: Partial<Record<BurstKey, number>> = {
+  "T1A:CC":   25.0, // placeholder — sem amostras; T1A é top tier, ~T1H ou acima
+  "T1A:noCC": 25.0,
+  "T1B:CC":   24.7, // n=1 (sh.pupitar per-skill 24.69)
+  "T1B:noCC": 24.7, // sem amostras — usa CC como proxy
   "T1H:CC":   24.6, // n=8
   "T1H:noCC": 24.6, // sem amostras — usa CC como proxy
   "T1C:CC":   19.5, // sem amostras — usa T2 CC como proxy
@@ -252,6 +256,10 @@ const TYPE_CHART: TypeChart = {
   dark: { fighting: 0.5, psychic: 2, ghost: 2, dark: 0.5, fairy: 0.5 },
   steel: { fire: 0.5, water: 0.5, electric: 0.5, ice: 2, rock: 2, steel: 0.5, fairy: 2 },
   fairy: { fire: 0.5, fighting: 2, poison: 0.5, dragon: 2, dark: 2, steel: 0.5 },
+  // Elemento exclusivo do PxG. Sem dados de efetividade — todas defensivas ficam neutras (1×)
+  // até o usuário calibrar. Para definir (attacker crystal vs defender X), preencha aqui.
+  // Para defender crystal vs attacker X, adicionar `crystal: <mult>` dentro de TYPE_CHART[X].
+  crystal: {},
 };
 
 export function getEffectiveness(

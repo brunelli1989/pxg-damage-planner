@@ -6,9 +6,10 @@ const ALL_ELEMENTS: PokemonElement[] = [
   "normal", "fire", "water", "electric", "grass", "ice",
   "fighting", "poison", "ground", "flying", "psychic", "bug",
   "rock", "ghost", "dragon", "dark", "steel", "fairy",
+  "crystal",
 ];
 
-const ALL_TIERS: Tier[] = ["T1H", "T1C", "T2", "T3", "TM", "TR"];
+const ALL_TIERS: Tier[] = ["T1A", "T1B", "T1H", "T1C", "T2", "T3", "TM", "TR"];
 
 interface Props {
   allPokemon: Pokemon[];

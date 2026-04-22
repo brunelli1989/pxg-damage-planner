@@ -8,7 +8,10 @@ interface Props {
 }
 
 const TIER_COLORS: Record<string, string> = {
+  T1A: "#ff6b9d",
+  T1B: "#ffa07a",
   T1H: "#ffd700",
+  T1C: "#e8c872",
   T2: "#c0c0c0",
   T3: "#cd7f32",
   TR: "#4a90d9",

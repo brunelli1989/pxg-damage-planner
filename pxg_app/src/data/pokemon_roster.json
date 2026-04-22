@@ -2198,10 +2198,153 @@
     "clans": [
       "orebound"
     ],
-    "role": "offensive_tank",
+    "role": "burst_dd",
     "elements": [
-      "rock",
-      "steel"
+      "crystal"
     ]
+  },
+  {
+    "id": "shiny-magmar",
+    "name": "Shiny Magmar",
+    "tier": "T1A",
+    "clans": ["volcanic"],
+    "role": "burst_dd",
+    "elements": ["fire"]
+  },
+  {
+    "id": "shiny-arcanine",
+    "name": "Shiny Arcanine",
+    "tier": "T1B",
+    "clans": ["volcanic"],
+    "role": "offensive_tank",
+    "elements": ["fire"]
+  },
+  {
+    "id": "shiny-electabuzz",
+    "name": "Shiny Electabuzz",
+    "tier": "T1A",
+    "clans": ["raibolt"],
+    "role": "burst_dd",
+    "elements": ["electric"]
+  },
+  {
+    "id": "shiny-manectric",
+    "name": "Shiny Manectric",
+    "tier": "T1B",
+    "clans": ["raibolt"],
+    "role": "burst_dd",
+    "elements": ["electric"]
+  },
+  {
+    "id": "golden-sudowoodo",
+    "name": "Golden Sudowoodo",
+    "tier": "T1A",
+    "clans": ["orebound"],
+    "role": "burst_dd",
+    "elements": ["rock"]
+  },
+  {
+    "id": "shiny-pupitar",
+    "name": "Shiny Pupitar",
+    "tier": "T1B",
+    "clans": ["orebound"],
+    "role": "offensive_tank",
+    "elements": ["rock", "ground"]
+  },
+  {
+    "id": "mega-scizor",
+    "name": "Mega Scizor",
+    "tier": "T1A",
+    "clans": ["naturia", "ironhard"],
+    "role": "offensive_tank",
+    "elements": ["bug", "steel"]
+  },
+  {
+    "id": "shiny-leafeon",
+    "name": "Shiny Leafeon",
+    "tier": "T1B",
+    "clans": ["naturia"],
+    "role": "burst_dd",
+    "elements": ["grass"]
+  },
+  {
+    "id": "shiny-snorlax",
+    "name": "Shiny Snorlax",
+    "tier": "T1A",
+    "clans": ["gardestrike"],
+    "role": "burst_dd",
+    "elements": ["normal"]
+  },
+  {
+    "id": "shiny-tauros",
+    "name": "Shiny Tauros",
+    "tier": "T1B",
+    "clans": ["gardestrike"],
+    "role": "burst_dd",
+    "elements": ["normal"]
+  },
+  {
+    "id": "mega-aggron",
+    "name": "Mega Aggron",
+    "tier": "T1B",
+    "clans": ["ironhard"],
+    "role": "offensive_tank",
+    "elements": ["steel"]
+  },
+  {
+    "id": "shiny-gyarados",
+    "name": "Shiny Gyarados",
+    "tier": "T1A",
+    "clans": ["wingeon", "seavell"],
+    "role": "burst_dd",
+    "elements": ["water", "flying"]
+  },
+  {
+    "id": "shiny-dragonair",
+    "name": "Shiny Dragonair",
+    "tier": "T1B",
+    "clans": ["wingeon"],
+    "role": "burst_dd",
+    "elements": ["dragon"]
+  },
+  {
+    "id": "shiny-alakazam",
+    "name": "Shiny Alakazam",
+    "tier": "T1A",
+    "clans": ["psycraft"],
+    "role": "burst_dd",
+    "elements": ["psychic"]
+  },
+  {
+    "id": "shiny-sylveon",
+    "name": "Shiny Sylveon",
+    "tier": "T1B",
+    "clans": ["psycraft"],
+    "role": "offensive_tank",
+    "elements": ["fairy"]
+  },
+  {
+    "id": "shiny-glaceon",
+    "name": "Shiny Glaceon",
+    "tier": "T1B",
+    "clans": ["seavell"],
+    "role": "burst_dd",
+    "elements": ["ice"]
+  },
+  {
+    "id": "mega-absol",
+    "name": "Mega Absol",
+    "tier": "T1A",
+    "clans": ["malefic"],
+    "role": "burst_dd",
+    "elements": ["dark"]
+  },
+  {
+    "id": "shiny-gengar",
+    "name": "Shiny Gengar",
+    "tier": "T1B",
+    "clans": ["malefic"],
+    "role": "offensive_tank",
+    "elements": ["ghost", "poison"]
   }
 ]

@@ -17,7 +17,7 @@ function clampBoost(tier: Tier, v: number): number {
 }
 
 // Ordem canônica dos tiers do jogo (usada pra sort)
-const TIER_ORDER: Record<Tier, number> = { T1H: 0, T1C: 1, T2: 2, T3: 3, TM: 4, TR: 5 };
+const TIER_ORDER: Record<Tier, number> = { T1A: 0, T1B: 1, T1H: 2, T1C: 3, T2: 4, T3: 5, TM: 6, TR: 7 };
 
 type SortCol = "name" | "boost" | "heldKind" | "heldTier" | "noDevice" | "withDevice" | "noDeviceElixir" | "withDeviceElixir";
 type SortDir = "asc" | "desc";
