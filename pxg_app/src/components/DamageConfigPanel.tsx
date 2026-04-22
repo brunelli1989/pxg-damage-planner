@@ -140,12 +140,12 @@ export function DamageConfigPanel({
       <fieldset className="damage-config-group">
         <legend>Player</legend>
         <div className="damage-config-row">
-          <label>
-            Player lvl:
+          <label title="Nível efetivo = base + Nightmare Level Bonus (indicado com (+X) no char ao entrar no Nightmare World). Fora do NW, use o nível base. A fórmula do NL bonus não é pública — use o valor que aparece no jogo.">
+            Player lvl (com NW):
             <input
               type="number"
               min={1}
-              max={1000}
+              max={600}
               value={config.playerLvl}
               onChange={(e) => onPlayerLvlChange(Number(e.target.value))}
             />

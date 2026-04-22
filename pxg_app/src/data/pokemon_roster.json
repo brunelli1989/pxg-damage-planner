@@ -2248,7 +2248,7 @@
     "name": "Shiny Pupitar",
     "tier": "T1B",
     "clans": ["orebound"],
-    "role": "offensive_tank",
+    "role": "burst_dd",
     "elements": ["rock", "ground"]
   },
   {

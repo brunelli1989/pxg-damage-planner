@@ -28,10 +28,10 @@ import clansData from "../data/clans.json";
 
 type BurstKey = `${Tier}:${"CC" | "noCC"}`;
 const BURST_POWER_BY_TIER_CC: Partial<Record<BurstKey, number>> = {
-  "T1A:CC":   25.0, // placeholder — sem amostras; T1A é top tier, ~T1H ou acima
-  "T1A:noCC": 25.0,
-  "T1B:CC":   24.7, // n=1 (sh.pupitar per-skill 24.69)
-  "T1B:noCC": 24.7, // sem amostras — usa CC como proxy
+  "T1A:CC":   20.0, // placeholder — sem amostras
+  "T1A:noCC": 20.0,
+  "T1B:CC":   17.9, // n=1 (sh.pupitar per-skill 17.91 @ lvl 600 efetivo)
+  "T1B:noCC": 17.9, // sem amostras — usa CC como proxy
   "T1H:CC":   24.6, // n=8
   "T1H:noCC": 24.6, // sem amostras — usa CC como proxy
   "T1C:CC":   19.5, // sem amostras — usa T2 CC como proxy
