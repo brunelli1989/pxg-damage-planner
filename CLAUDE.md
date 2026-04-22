@@ -193,7 +193,25 @@ Valida se uma lure finaliza a box (`HP_mob × 6`) e filtra lures inviáveis. Tes
 dmg = (player_lvl + 1.3 × boost + 150) × skill_power × (1 + Σ atk%) × clã × eff × def_mob
 ```
 
+**⚠ `player_lvl` = nível EFETIVO (base + Nightmare Level bonus)**, não base. Dentro do Nightmare World o char ganha um `(+X)` bônus ao nível. Fórmula do NL bonus não é pública — user digita o nível efetivo direto no `DamageConfigPanel` (label "Player lvl (com NW)"). Calibrações devem ser feitas com o nível efetivo visível no jogo durante o cast.
+
 Modificador: `× 1.5` se skill anterior tem `buff: "next"` (Dragon Rage, Hone Claws, Focus Energy, Swords Dance, Sunny Day).
+
+**Crítico**: `× 2.0` quando a skill crita (validado 2026-04-22 em Sh.Chandelure Mystical Fire: 31310 normal × 2.001 = 62660 observado). Standard Pokemon crit. Engine não modela crit rate — damage prediction é do hit normal, média real incorpora rate de crit (baixa por default, pode ser buffada por Focus Energy / Swords Dance que têm `buff: "next"` embutindo crit).
+
+**Multi-hit skills**: muitas skills em PxG são multi-hit (batem N vezes por cast). O `power` armazenado é **total por cast** (soma de todos os hits). Exemplos observados:
+- Shadow Claw (Gengar/Haunter): 5-6 hits
+- Shadow Storm (Gengar): 2 hits
+- Superpower (Hariyama/Lopunny): 9 hits
+- Spin Swing (Lopunny): 4 hits
+- Payback (Mightyena): 4 hits
+- Barb Barrage (Qwilfish): 10 hits
+- Mamaragan (Electabuzz): 5 hits
+- Leafage (Tropius): 4 hits
+- Hurricane (Pidgeot): 9 hits
+- Ancient Power (Golem): 5 hits
+
+Calibração = soma todos os hits da skill. Os valores per-hit às vezes variam (ex: Shadow Storm 28k + 21k).
 
 **Componentes:**
 - `player_lvl`, `boost`, constante `+150` fixa, `skill_power` calibrado por (poke, skill)
@@ -244,13 +262,36 @@ Fallback `DEFAULT_MOB_DEF_FACTOR = 0.85` (média aproximada) pros demais mobs co
 ### Calibração
 
 - Usuário cast skill 1× no dummy → app deriva `skill_power` via fórmula inversa (`deriveSkillPower`) → valor salvo em `pokemon.json` (campo `power` da skill)
-- Pokes calibrados: 13 (5 T1H burst_dd, 3 T2 burst_dd, 3 T3 burst_dd, 1 T2 offensive_tank, 1 T3 offensive_tank)
+- Pokes calibrados: 40+ pokes recalibrados com lvl 600 Volcanic (dummy neutro) em 2026-04-22
 - **Pitfall de calibração:** quando o usuário cola "char X, boost Y, X-Atk Z" no topo, isso é do CHAR, não do poke testado. Cada poke tem seu próprio boost/held (ver memória `feedback_dummy_calibration_setup.md`)
+
+**Campos de calibração em Pokemon/Skill:**
+- `Pokemon.config` — setup usado na calibração (ex: "lvl 600, +70, XA8, Volcanic, sem device, neutro")
+- `Pokemon.observacao` — nota informativa (ex: "Shadow Claw multi-hit 5x"), NÃO dispara ⚠️
+- `Pokemon.todo` — ação pendente (ex: "RECALIBRAR", "calibrate skills"), DISPARA ⚠️ na UI
+- `Skill.dano` — valor observado no dummy (input bruto antes de derivar power)
+- `Skill.power` — skill_power derivado da fórmula inversa
+
+**Log-based calibration tool** (PokeXGamesTools — repo separado):
+- Arquivo `D:\git\PokeXGamesTools\src\SysMetricsWinDivert\bin\Debug\net9.0-windows\skill_summary_log.txt`
+- Formato: `Poke:\n  Skill:\n    damage_value` (pode ter multiple hits per skill)
+- Tracker misatribui labels — comum: dano de skill X aparece em bucket Y. Padrões:
+  - "mova-se" é catch-all bucket pra skills com label não reconhecido pelo tracker
+  - Skill single pode ter valor em outro bucket (ordem inversa revela)
+  - Multi-hit skills mostram N valores consecutivos (~mesma magnitude)
+  - Orphans `[orphan] X dmg @(...)` = hits não atribuídos
+- Estratégia de desembaraço:
+  1. Skills com múltiplos valores consistentes (~mesma magnitude) = multi-hit, somar
+  2. Se bucket tem 2 valores muito diferentes, o menor pode ser skill diferente misatrib
+  3. Validar com cálculo: `valor / denom ≈ power antigo` → confirma skill correta
+  4. Se tracker confuso, pedir user pra castar em ordem inversa (muda misatrib pattern)
+- Default `DEFAULT_POKE_SETUP` held = X-Attack T8 (+31%) — reflete uso comum em PxG
 
 ### UI de calibração
 
-- `PokemonCard`: ⚠️ quando `pokemon.todo` existe (skill power sem calibração)
+- `PokemonCard`: ⚠️ quando `pokemon.todo` existe (ação pendente)
 - `DamageConfigPanel`: ⚠️/✓ nos mobs da dropdown + aviso "defesa aproximada" quando `defFactor` undefined
+- Label do player lvl: "Player lvl (com NW)" — tooltip explica que é nível efetivo (base + NL bonus)
 - Linguagem user-facing: "medido no jogo" (✓) vs "aproximado / estimado" (⚠️) — evitar "calibrado"
 
 Contexto histórico na memória: `project_pxg_damage_formula.md`.

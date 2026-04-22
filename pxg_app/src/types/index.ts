@@ -42,6 +42,8 @@ export interface Skill {
   def?: boolean;
   element?: PokemonElement; // opcional; se omitido, clã/effectiveness não se aplicam
   power?: number; // skill_power "clean" (sem clã embutido); calibrado via cast no dummy
+  /** Dano observado no dummy durante a calibração (input bruto antes de derivar power). */
+  dano?: number;
 }
 
 export interface Pokemon {
@@ -54,6 +56,8 @@ export interface Pokemon {
   todo?: string;
   /** Nota informativa (ex: "HS inclui burn DoT"). Não dispara ⚠️. */
   observacao?: string;
+  /** Setup da calibração (ex: "lvl 600, +70, XA8, Volcanic, sem device, neutro"). */
+  config?: string;
   skills: Skill[];
   /** Elementos defensivos do poke (do roster). Usado pra calcular resistência
    *  do starter contra ataques do mob. Ausência = neutro (factor 1.0). */

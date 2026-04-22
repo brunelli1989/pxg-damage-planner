@@ -13,7 +13,8 @@
         "cc": "stun",
         "buff": null,
         "element": "rock",
-        "power": 21.38
+        "power": 21.3,
+        "dano": 22933
       },
       {
         "name": "Ancient Power",
@@ -22,7 +23,8 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 22.31
+        "power": 22.2,
+        "dano": 23900
       },
       {
         "name": "Falling Rocks",
@@ -31,7 +33,8 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 24.28
+        "power": 24.22,
+        "dano": 26072
       },
       {
         "name": "Rock Wrecker",
@@ -40,7 +43,8 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 26.24
+        "power": 26.17,
+        "dano": 28171
       },
       {
         "name": "Shadow Rush",
@@ -49,10 +53,11 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 25.28
+        "power": 25.21,
+        "dano": 27133
       }
     ],
-    "todo": "RECALIBRAR"
+    "config": "lvl 600, +70, XA7, Volcanic, sem device, neutro"
   },
   {
     "id": "mega-barbaracle",
@@ -102,6 +107,7 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Golem",
+    "config": "lvl 600, +70, XA5, Volcanic, sem device, neutro",
     "skills": [
       {
         "name": "Harden",
@@ -110,7 +116,9 @@
         "cc": null,
         "buff": "self",
         "element": "normal",
-        "def": true
+        "def": true,
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Rollout",
@@ -118,7 +126,9 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "rock"
+        "element": "rock",
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Falling Rocks",
@@ -127,7 +137,8 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 27.99
+        "power": 28.00,
+        "dano": 28725
       },
       {
         "name": "Ancient Power",
@@ -136,7 +147,8 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 22.33
+        "power": 22.22,
+        "dano": 22800
       },
       {
         "name": "Rock Wrecker",
@@ -145,7 +157,8 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 25.29
+        "power": 25.38,
+        "dano": 26036
       },
       {
         "name": "Steamroller",
@@ -154,10 +167,10 @@
         "cc": "stun",
         "buff": null,
         "element": "bug",
-        "power": 1.96
+        "power": 1.96,
+        "dano": 2010
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "rampardos",
@@ -165,6 +178,7 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Rampardos",
+    "config": "lvl 600, +50, XA5, Volcanic, sem device, neutro",
     "skills": [
       {
         "name": "Head Smash",
@@ -173,7 +187,8 @@
         "cc": "stun",
         "buff": null,
         "element": "rock",
-        "power": 19.45
+        "power": 19.45,
+        "dano": 19343
       },
       {
         "name": "Focus Energy",
@@ -181,7 +196,9 @@
         "type": "area",
         "cc": null,
         "buff": "next",
-        "element": "normal"
+        "element": "normal",
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Rock Wrecker",
@@ -190,7 +207,8 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 23.38
+        "power": 23.31,
+        "dano": 23175
       },
       {
         "name": "Falling Rocks",
@@ -199,7 +217,8 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 21.58
+        "power": 21.42,
+        "dano": 21298
       },
       {
         "name": "Ancient Power",
@@ -208,10 +227,10 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 15.29
+        "power": 15.19,
+        "dano": 15100
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "tyranitar",
@@ -219,6 +238,7 @@
     "tier": "TR",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Tyranitar_(TR)",
+    "config": "lvl 600, +70, XA5, Volcanic, sem device, neutro",
     "skills": [
       {
         "name": "Epicenter",
@@ -227,7 +247,8 @@
         "cc": "stun",
         "buff": null,
         "element": "rock",
-        "power": 21.24
+        "power": 21.23,
+        "dano": 21779
       },
       {
         "name": "Stone Edge",
@@ -236,7 +257,8 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 18.9
+        "power": 18.91,
+        "dano": 19400
       },
       {
         "name": "Rock Blast",
@@ -245,7 +267,8 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 16.42
+        "power": 16.37,
+        "dano": 16800
       },
       {
         "name": "Falling Rocks",
@@ -254,7 +277,8 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 17.4
+        "power": 17.38,
+        "dano": 17837
       },
       {
         "name": "Earthquake",
@@ -263,10 +287,10 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 17.87
+        "power": 17.85,
+        "dano": 18317
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "lycanroc",
@@ -290,7 +314,8 @@
         "type": "area",
         "cc": null,
         "buff": "next",
-        "element": "normal"
+        "element": "normal",
+        "power": 0
       },
       {
         "name": "Falling Rocks",
@@ -299,7 +324,8 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 28.05
+        "power": 28.01,
+        "dano": 27852
       },
       {
         "name": "Rock Blast",
@@ -308,7 +334,8 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 24.24
+        "power": 24.14,
+        "dano": 24000
       },
       {
         "name": "Stone Edge",
@@ -317,10 +344,11 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 25.62
+        "power": 25.6,
+        "dano": 25450
       }
     ],
-    "todo": "RECALIBRAR"
+    "config": "lvl 600, +50, XA5, Volcanic, sem device, neutro"
   },
   {
     "id": "omastar",
@@ -328,6 +356,7 @@
     "tier": "T3",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Omastar",
+    "config": "lvl 600, +50, XA5, Volcanic, sem device, neutro",
     "skills": [
       {
         "name": "Harden",
@@ -336,7 +365,9 @@
         "cc": null,
         "buff": "self",
         "element": "normal",
-        "def": true
+        "def": true,
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Rollout",
@@ -344,7 +375,9 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "rock"
+        "element": "rock",
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Rain Dance",
@@ -352,7 +385,9 @@
         "type": "area",
         "cc": "silence",
         "buff": "next",
-        "element": "water"
+        "element": "water",
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Falling Rocks",
@@ -361,7 +396,8 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 22.73
+        "power": 22.71,
+        "dano": 22578
       },
       {
         "name": "Ancient Power",
@@ -370,7 +406,8 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 14.72
+        "power": 14.58,
+        "dano": 14500
       },
       {
         "name": "Rock Wrecker",
@@ -379,10 +416,10 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 25.74
+        "power": 25.72,
+        "dano": 25569
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "golem",
@@ -390,6 +427,8 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Golem",
+    "config": "lvl 600, +0, sem held, Volcanic, sem device, neutro",
+    "observacao": "Ancient Power multi-hit 5x (~4130 each); Rock Wrecker/Falling Rocks single",
     "skills": [
       {
         "name": "Harden",
@@ -398,7 +437,9 @@
         "cc": null,
         "buff": "self",
         "element": "normal",
-        "def": true
+        "def": true,
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Rollout",
@@ -406,7 +447,9 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "rock"
+        "element": "rock",
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Swagger",
@@ -415,7 +458,8 @@
         "cc": null,
         "buff": null,
         "element": "normal",
-        "power": 0
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Ancient Power",
@@ -424,7 +468,8 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 28.06
+        "power": 27.54,
+        "dano": 20655
       },
       {
         "name": "Falling Rocks",
@@ -433,7 +478,8 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 29.66
+        "power": 29.21,
+        "dano": 21911
       },
       {
         "name": "Rock Wrecker",
@@ -442,10 +488,10 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 27.57
+        "power": 27.37,
+        "dano": 20524
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "solrock",
@@ -596,7 +642,8 @@
         "cc": "stun",
         "buff": null,
         "element": "ground",
-        "power": 13.74
+        "power": 13.66,
+        "dano": 13579
       },
       {
         "name": "Earth Power",
@@ -605,7 +652,8 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 16.44
+        "power": 16.42,
+        "dano": 16329
       },
       {
         "name": "Sand Eruption",
@@ -614,7 +662,8 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 25.27
+        "power": 25.13,
+        "dano": 24982
       },
       {
         "name": "Fissure",
@@ -623,7 +672,8 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 22.3
+        "power": 22.24,
+        "dano": 22117
       },
       {
         "name": "Harden",
@@ -632,10 +682,11 @@
         "cc": null,
         "buff": "self",
         "def": true,
-        "element": "normal"
+        "element": "normal",
+        "power": 0
       }
     ],
-    "todo": "RECALIBRAR"
+    "config": "lvl 600, +50, XA5, Volcanic, sem device, neutro"
   },
   {
     "id": "sandaconda",
@@ -651,7 +702,8 @@
         "cc": "silence",
         "buff": null,
         "element": "ground",
-        "power": 15.48
+        "power": 15.47,
+        "dano": 15872
       },
       {
         "name": "Coil",
@@ -660,7 +712,8 @@
         "cc": null,
         "buff": "next",
         "element": "poison",
-        "def": true
+        "def": true,
+        "power": 0
       },
       {
         "name": "Earth Power",
@@ -669,7 +722,8 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 11.03
+        "power": 11.02,
+        "dano": 11309
       },
       {
         "name": "Scorching Sand",
@@ -678,7 +732,8 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 22.79
+        "power": 23.49,
+        "dano": 24100
       },
       {
         "name": "Sand Eruption",
@@ -687,10 +742,11 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 18.86
+        "power": 18.85,
+        "dano": 19337
       }
     ],
-    "todo": "RECALIBRAR"
+    "config": "lvl 600, +70, XA5, Volcanic, sem device, neutro"
   },
   {
     "id": "shiny-krookodile",
@@ -805,7 +861,8 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "rock"
+        "element": "rock",
+        "power": 0
       },
       {
         "name": "Focus Energy",
@@ -813,7 +870,8 @@
         "type": "area",
         "cc": null,
         "buff": "next",
-        "element": "normal"
+        "element": "normal",
+        "power": 0
       },
       {
         "name": "Stomping Tantrum",
@@ -822,7 +880,8 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 11.74
+        "power": 5.82,
+        "dano": 5789
       },
       {
         "name": "Earthquake",
@@ -831,7 +890,8 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 27.08
+        "power": 27.06,
+        "dano": 26905
       },
       {
         "name": "Sand Eruption",
@@ -840,7 +900,8 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 20.34
+        "power": 20.31,
+        "dano": 20195
       },
       {
         "name": "Fissure",
@@ -849,10 +910,11 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 26.62
+        "power": 26.55,
+        "dano": 26397
       }
     ],
-    "todo": "RECALIBRAR"
+    "config": "lvl 600, +50, XA5, Volcanic, sem device, neutro"
   },
   {
     "id": "hippowdon-female",
@@ -860,6 +922,7 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Hippowdon_Female",
+    "config": "lvl 600, +50, XA5, Volcanic, sem device, neutro",
     "skills": [
       {
         "name": "Sand Field",
@@ -868,7 +931,8 @@
         "cc": "stun",
         "buff": null,
         "element": "ground",
-        "power": 14.45
+        "power": 14.48,
+        "dano": 14400
       },
       {
         "name": "Earth Power",
@@ -877,7 +941,8 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 14.26
+        "power": 14.19,
+        "dano": 14113
       },
       {
         "name": "Sandstorm",
@@ -886,7 +951,8 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 14.5
+        "power": 14.47,
+        "dano": 14391
       },
       {
         "name": "Earthquake",
@@ -895,7 +961,8 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 25.22
+        "power": 25.18,
+        "dano": 25032
       },
       {
         "name": "Fissure",
@@ -904,10 +971,10 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 23.37
+        "power": 23.41,
+        "dano": 23280
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "nidoqueen",
@@ -1023,7 +1090,8 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 21.82
+        "power": 21.53,
+        "dano": 16149
       },
       {
         "name": "Ground Collapse",
@@ -1032,7 +1100,8 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 19.8
+        "power": 19.76,
+        "dano": 14818
       },
       {
         "name": "Bulldoze",
@@ -1041,7 +1110,8 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 21.76
+        "power": 21.48,
+        "dano": 16111
       },
       {
         "name": "Fissure",
@@ -1050,7 +1120,8 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 22.79
+        "power": 22.4,
+        "dano": 16802
       },
       {
         "name": "Scary Face",
@@ -1062,7 +1133,7 @@
         "power": 0
       }
     ],
-    "todo": "RECALIBRAR"
+    "config": "lvl 600, +0, sem held, Volcanic, sem device, neutro"
   },
   {
     "id": "shiny-quagsire",
@@ -1228,7 +1299,8 @@
         "cc": "stun",
         "buff": null,
         "element": "ground",
-        "power": 13.57
+        "power": 13.54,
+        "dano": 13892
       },
       {
         "name": "High Horsepower",
@@ -1237,7 +1309,8 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 19.35
+        "power": 19.32,
+        "dano": 19826
       },
       {
         "name": "Bulldoze",
@@ -1246,7 +1319,8 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 14.53
+        "power": 14.48,
+        "dano": 14859
       },
       {
         "name": "Earthquake",
@@ -1255,7 +1329,8 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 21.28
+        "power": 21.25,
+        "dano": 21799
       },
       {
         "name": "Fissure",
@@ -1264,10 +1339,11 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 23.17
+        "power": 23.16,
+        "dano": 23763
       }
     ],
-    "todo": "RECALIBRAR"
+    "config": "lvl 600, +70, XA5, Volcanic, sem device, neutro"
   },
   {
     "id": "alolan-marowak",
@@ -1334,6 +1410,8 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Magmar",
+    "config": "lvl 600, +70, XA5, Volcanic (+28% fire), sem device, neutro",
+    "observacao": "HS pode incluir burn DoT",
     "skills": [
       {
         "name": "Burning Jealousy",
@@ -1342,7 +1420,8 @@
         "cc": "stun",
         "buff": null,
         "element": "fire",
-        "power": 14.92
+        "power": 14.85,
+        "dano": 19500
       },
       {
         "name": "Endure",
@@ -1351,7 +1430,9 @@
         "cc": null,
         "buff": "self",
         "element": "normal",
-        "def": true
+        "def": true,
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Hellfire Storm",
@@ -1360,7 +1441,8 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 29.93
+        "power": 29.32,
+        "dano": 38500
       },
       {
         "name": "Lava Plume",
@@ -1369,7 +1451,8 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 17.44
+        "power": 17.38,
+        "dano": 22823
       },
       {
         "name": "Flame Circle",
@@ -1378,11 +1461,10 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 16.45
+        "power": 16.45,
+        "dano": 21600
       }
-    ],
-    "todo": "RECALIBRAR",
-    "observacao": "HS inclui burn DoT (~10-15% overestimate); LP/BJ/FC limpos"
+    ]
   },
   {
     "id": "arcanine",
@@ -1390,6 +1472,8 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Arcanine",
+    "config": "lvl 600, +70, XA7, Volcanic (+28% fire), sem device, neutro",
+    "observacao": "Flare Blitz/HS/Fire Ball podem incluir burn DoT",
     "skills": [
       {
         "name": "Burn Up",
@@ -1398,7 +1482,8 @@
         "cc": "stun",
         "buff": null,
         "element": "fire",
-        "power": 26.08
+        "power": 26.05,
+        "dano": 35900
       },
       {
         "name": "Intimidate",
@@ -1407,7 +1492,9 @@
         "cc": null,
         "buff": "self",
         "def": true,
-        "element": "normal"
+        "element": "normal",
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Flare Blitz",
@@ -1416,7 +1503,8 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 19.53
+        "power": 19.23,
+        "dano": 26500
       },
       {
         "name": "Hellfire Storm",
@@ -1425,7 +1513,8 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 24.03
+        "power": 23.44,
+        "dano": 32300
       },
       {
         "name": "Fire Ball",
@@ -1434,11 +1523,10 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 12.21
+        "power": 11.90,
+        "dano": 16400
       }
-    ],
-    "todo": "RECALIBRAR",
-    "observacao": "Flare Blitz/HS/Fire Ball incluem burn DoT (~10-15% overestimate)"
+    ]
   },
   {
     "id": "shiny-chandelure",
@@ -1446,6 +1534,7 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Chandelure",
+    "config": "lvl 600, +70, XA8, Volcanic (+28% fire), sem device, neutro",
     "skills": [
       {
         "name": "Mystical Fire",
@@ -1454,7 +1543,8 @@
         "cc": "silence",
         "buff": null,
         "element": "fire",
-        "power": 22.24
+        "power": 22.20,
+        "dano": 31310
       },
       {
         "name": "Cursed Fire",
@@ -1463,7 +1553,8 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 23.35
+        "power": 23.26,
+        "dano": 32800
       },
       {
         "name": "Will-O-Wisp",
@@ -1472,7 +1563,8 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 19.3
+        "power": 19.28,
+        "dano": 27185
       },
       {
         "name": "Shadow Fire",
@@ -1481,7 +1573,8 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 24.75
+        "power": 24.70,
+        "dano": 34831
       },
       {
         "name": "Fire Pledge",
@@ -1490,10 +1583,10 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 27.07
+        "power": 27.02,
+        "dano": 38097
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "shiny-heatmor",
@@ -1501,6 +1594,7 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Heatmor",
+    "config": "lvl 600, +80, XA8, Volcanic (+28% fire), sem device, neutro",
     "skills": [
       {
         "name": "Burning Jealousy",
@@ -1509,7 +1603,8 @@
         "cc": "stun",
         "buff": null,
         "element": "fire",
-        "power": 22.68
+        "power": 22.65,
+        "dano": 32430
       },
       {
         "name": "Hone Claws",
@@ -1517,7 +1612,9 @@
         "type": "area",
         "cc": null,
         "buff": "next",
-        "element": "dark"
+        "element": "dark",
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Shadow Fire",
@@ -1526,7 +1623,8 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 24.26
+        "power": 24.20,
+        "dano": 34656
       },
       {
         "name": "Fire Lash",
@@ -1535,7 +1633,8 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 25.2
+        "power": 25.17,
+        "dano": 36037
       },
       {
         "name": "Hellfire Storm",
@@ -1544,10 +1643,10 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 32.48
+        "power": 31.91,
+        "dano": 45700
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "mega-pyroar",
@@ -1597,6 +1696,7 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Ninetales",
+    "config": "lvl 600, +70, XA8, Volcanic (+28% fire), sem device, neutro",
     "skills": [
       {
         "name": "Burning Jealousy",
@@ -1605,7 +1705,8 @@
         "cc": "stun",
         "buff": null,
         "element": "fire",
-        "power": 22.57
+        "power": 22.50,
+        "dano": 31730
       },
       {
         "name": "Nasty Plot",
@@ -1614,7 +1715,8 @@
         "cc": null,
         "buff": "next",
         "element": "dark",
-        "power": 0.51
+        "power": 0.50,
+        "dano": 553
       },
       {
         "name": "Inferno",
@@ -1623,7 +1725,8 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 16.21
+        "power": 18.37,
+        "dano": 25900
       },
       {
         "name": "Hellfire Storm",
@@ -1632,7 +1735,8 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 25.58
+        "power": 27.73,
+        "dano": 39100
       },
       {
         "name": "Flame Wheel",
@@ -1641,7 +1745,8 @@
         "cc": null,
         "buff": "self",
         "element": "fire",
-        "power": 6.4
+        "power": 6.24,
+        "dano": 8800
       },
       {
         "name": "Fire Ball",
@@ -1650,10 +1755,10 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 5.88
+        "power": 7.09,
+        "dano": 10000
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "shiny-ninetales",
@@ -1661,6 +1766,8 @@
     "tier": "T1C",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Ninetales",
+    "config": "lvl 600, +70, XA8, Volcanic (+28% fire), sem device, neutro",
+    "observacao": "Inferno/Fire Blast/Flamethrower/Fire Ball podem incluir burn DoT",
     "skills": [
       {
         "name": "Inferno",
@@ -1669,7 +1776,8 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 28.75
+        "power": 27.94,
+        "dano": 39400
       },
       {
         "name": "Fire Blast",
@@ -1678,7 +1786,8 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 19.96
+        "power": 19.64,
+        "dano": 27700
       },
       {
         "name": "Flamethrower",
@@ -1687,7 +1796,8 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 13.06
+        "power": 12.91,
+        "dano": 18200
       },
       {
         "name": "Fire Ball",
@@ -1696,7 +1806,8 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 8.29
+        "power": 8.01,
+        "dano": 11300
       },
       {
         "name": "Flame Wheel",
@@ -1705,11 +1816,10 @@
         "cc": null,
         "buff": "self",
         "element": "fire",
-        "power": 33.65
+        "power": 33.47,
+        "dano": 47200
       }
-    ],
-    "todo": "RECALIBRAR",
-    "observacao": "Inferno/Fire Blast/Flamethrower/Fire Ball incluem burn DoT; Flame Wheel limpo"
+    ]
   },
   {
     "id": "shiny-magby",
@@ -1717,6 +1827,8 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Magby",
+    "config": "lvl 600, +70, XA8, Volcanic (+28% fire), sem device, neutro",
+    "observacao": "Powers podem incluir burn DoT",
     "skills": [
       {
         "name": "Hellfire Storm",
@@ -1725,7 +1837,8 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 28.25
+        "power": 27.66,
+        "dano": 39000
       },
       {
         "name": "Fire Blast",
@@ -1734,7 +1847,8 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 24.61
+        "power": 24.39,
+        "dano": 34400
       },
       {
         "name": "Magma Fist",
@@ -1743,7 +1857,8 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 25.61
+        "power": 25.39,
+        "dano": 35800
       },
       {
         "name": "Flare Blitz",
@@ -1752,11 +1867,10 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 26.24
+        "power": 25.88,
+        "dano": 36500
       }
-    ],
-    "todo": "RECALIBRAR",
-    "observacao": "Powers incluem burn DoT (~10-15% overestimate)"
+    ]
   },
   {
     "id": "typhlosion",
@@ -1764,6 +1878,7 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Typhlosion",
+    "config": "lvl 600, +50, XA5, Volcanic (+28% fire), sem device, neutro",
     "skills": [
       {
         "name": "Inferno",
@@ -1772,7 +1887,8 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 30.76
+        "power": 32.06,
+        "dano": 40800
       },
       {
         "name": "Eruption",
@@ -1781,7 +1897,8 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 21.38
+        "power": 21.28,
+        "dano": 27089
       },
       {
         "name": "Lava Plume",
@@ -1790,7 +1907,8 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 16.53
+        "power": 16.50,
+        "dano": 20997
       },
       {
         "name": "Flame Circle",
@@ -1799,7 +1917,8 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 14.67
+        "power": 14.54,
+        "dano": 18500
       },
       {
         "name": "Smokescreen",
@@ -1808,10 +1927,21 @@
         "cc": null,
         "buff": null,
         "element": "normal",
-        "power": 0
+        "power": 0,
+        "dano": 0
+      },
+      {
+        "name": "Harden",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "def": true,
+        "element": "normal",
+        "power": 0,
+        "dano": 0
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "flareon",
@@ -1819,6 +1949,8 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Flareon",
+    "config": "lvl 600, +70, XA5, Volcanic (+28% fire), sem device, neutro",
+    "observacao": "Hellfire Storm pode incluir burn DoT",
     "skills": [
       {
         "name": "Burning Jealousy",
@@ -1827,7 +1959,8 @@
         "cc": "stun",
         "buff": null,
         "element": "fire",
-        "power": 14.66
+        "power": 14.56,
+        "dano": 19128
       },
       {
         "name": "Hellfire Storm",
@@ -1836,7 +1969,8 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 26.96
+        "power": 26.35,
+        "dano": 34600
       },
       {
         "name": "Lava Plume",
@@ -1845,7 +1979,8 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 19.45
+        "power": 19.35,
+        "dano": 25409
       },
       {
         "name": "Flame Circle",
@@ -1854,19 +1989,10 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 16.58
-      },
-      {
-        "name": "Blaze Kick",
-        "cooldown": 20,
-        "type": "area",
-        "cc": null,
-        "buff": "self",
-        "element": "fire"
+        "power": 16.45,
+        "dano": 21600
       }
-    ],
-    "todo": "RECALIBRAR",
-    "observacao": "HS inclui burn DoT (~9% overestimate)"
+    ]
   },
   {
     "id": "charizard",
@@ -1874,6 +2000,8 @@
     "tier": "TR",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Charizard_(TR)",
+    "config": "lvl 600, +70, XA8, Volcanic (+28% fire), sem device, neutro",
+    "observacao": "Flare Blitz/Fire Ball podem incluir burn DoT (ticks não filtrados na calibração)",
     "skills": [
       {
         "name": "Roar",
@@ -1882,7 +2010,8 @@
         "cc": "stun",
         "buff": null,
         "element": "normal",
-        "power": 0
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Ancient Fury",
@@ -1890,7 +2019,9 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "normal"
+        "element": "normal",
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Hellfire Storm",
@@ -1899,7 +2030,8 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 29.5
+        "power": 28.93,
+        "dano": 40800
       },
       {
         "name": "Flare Blitz",
@@ -1908,7 +2040,8 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 26.62
+        "power": 19.15,
+        "dano": 27000
       },
       {
         "name": "Fire Spin",
@@ -1917,7 +2050,8 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 21.95
+        "power": 25.60,
+        "dano": 36100
       },
       {
         "name": "Fire Ball",
@@ -1926,11 +2060,10 @@
         "cc": null,
         "buff": null,
         "element": "fire",
-        "power": 14.94
+        "power": 14.75,
+        "dano": 20800
       }
-    ],
-    "todo": "RECALIBRAR",
-    "observacao": "HStorm/Flare Blitz/Fire Ball incluem burn DoT; Fire Spin clean (5 ticks)"
+    ]
   },
   {
     "id": "magmortar",
@@ -2141,6 +2274,8 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Electabuzz",
+    "config": "lvl 600, +70, XA5, Volcanic, sem device, neutro",
+    "observacao": "Electrify multi-hit 3x; Mamaragan multi-hit 5x; Thunder Wrath/Discharge single",
     "skills": [
       {
         "name": "Vital Spirit",
@@ -2149,7 +2284,9 @@
         "cc": null,
         "buff": "self",
         "def": true,
-        "element": "normal"
+        "element": "normal",
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Electrify",
@@ -2158,7 +2295,8 @@
         "cc": "stun",
         "buff": null,
         "element": "electric",
-        "power": 8.88
+        "power": 8.78,
+        "dano": 9008
       },
       {
         "name": "Thunder Wrath",
@@ -2167,7 +2305,8 @@
         "cc": null,
         "buff": null,
         "element": "electric",
-        "power": 17.43
+        "power": 17.36,
+        "dano": 17814
       },
       {
         "name": "Mamaragan",
@@ -2176,7 +2315,8 @@
         "cc": null,
         "buff": null,
         "element": "electric",
-        "power": 21.4
+        "power": 21.34,
+        "dano": 21896
       },
       {
         "name": "Discharge",
@@ -2185,10 +2325,10 @@
         "cc": null,
         "buff": null,
         "element": "electric",
-        "power": 28.09
+        "power": 28.01,
+        "dano": 28744
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "shiny-electrode",
@@ -2196,6 +2336,8 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Electrode",
+    "config": "lvl 600, +0, sem X-Atk (X-Vitality held), Volcanic, sem device, neutro",
+    "observacao": "Thunder Sphere aparece no log como 'mova-se' misatribuído",
     "skills": [
       {
         "name": "Charge",
@@ -2203,7 +2345,9 @@
         "type": "area",
         "cc": null,
         "buff": "next",
-        "element": "electric"
+        "element": "electric",
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Electric Storm",
@@ -2212,7 +2356,8 @@
         "cc": "locked",
         "buff": null,
         "element": "electric",
-        "power": 25.9
+        "power": 25.47,
+        "dano": 19102
       },
       {
         "name": "Thunder Wrath",
@@ -2221,7 +2366,8 @@
         "cc": null,
         "buff": null,
         "element": "electric",
-        "power": 14.45
+        "power": 14.24,
+        "dano": 10678
       },
       {
         "name": "Thunder Sphere",
@@ -2230,7 +2376,8 @@
         "cc": null,
         "buff": null,
         "element": "electric",
-        "power": 15.7
+        "power": 15.59,
+        "dano": 11692
       },
       {
         "name": "Discharge",
@@ -2239,10 +2386,10 @@
         "cc": null,
         "buff": null,
         "element": "electric",
-        "power": 27.71
+        "power": 27.54,
+        "dano": 20656
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "manectric",
@@ -2538,6 +2685,8 @@
     "tier": "T3",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Sceptile",
+    "config": "lvl 600, +50, XA5, Volcanic, sem device, neutro",
+    "observacao": "Leafage multi-hit 4x (~4342); Night Slash multi-hit 2x (~9612); Frenzy Plant single; Leaf Storm pode bater 2x (nesta sessão 1x)",
     "skills": [
       {
         "name": "Leaf Guard",
@@ -2546,7 +2695,9 @@
         "cc": null,
         "buff": "self",
         "def": true,
-        "element": "grass"
+        "element": "grass",
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Swords Dance",
@@ -2555,7 +2706,8 @@
         "cc": null,
         "buff": "next",
         "element": "normal",
-        "power": 0
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Leaf Storm",
@@ -2564,7 +2716,8 @@
         "cc": null,
         "buff": null,
         "element": "grass",
-        "power": 11.65
+        "power": 11.61,
+        "dano": 11549
       },
       {
         "name": "Leafage",
@@ -2573,7 +2726,8 @@
         "cc": null,
         "buff": null,
         "element": "grass",
-        "power": 17.57
+        "power": 17.47,
+        "dano": 17368
       },
       {
         "name": "Night Slash",
@@ -2582,7 +2736,8 @@
         "cc": null,
         "buff": null,
         "element": "dark",
-        "power": 19.4
+        "power": 19.34,
+        "dano": 19225
       },
       {
         "name": "Frenzy Plant",
@@ -2591,10 +2746,10 @@
         "cc": "stun",
         "buff": null,
         "element": "grass",
-        "power": 27.12
+        "power": 27.05,
+        "dano": 26895
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "shiny-sceptile",
@@ -2686,6 +2841,8 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Tropius",
+    "config": "lvl 600, +51, XA5, Volcanic, sem device, neutro",
+    "observacao": "Leafage multi-hit 4x; Leaf Storm multi-hit 3x; Leaf Tornado multi-hit 4x; Stomp single",
     "skills": [
       {
         "name": "Growth",
@@ -2694,7 +2851,8 @@
         "cc": null,
         "buff": "next",
         "element": "normal",
-        "power": 0
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Stomp",
@@ -2703,7 +2861,8 @@
         "cc": "locked",
         "buff": null,
         "element": "normal",
-        "power": 6.85
+        "power": 6.83,
+        "dano": 6800
       },
       {
         "name": "Leaf Storm",
@@ -2712,7 +2871,8 @@
         "cc": null,
         "buff": null,
         "element": "grass",
-        "power": 23.57
+        "power": 23.42,
+        "dano": 23326
       },
       {
         "name": "Leafage",
@@ -2721,7 +2881,8 @@
         "cc": null,
         "buff": null,
         "element": "grass",
-        "power": 27.35
+        "power": 27.34,
+        "dano": 27228
       },
       {
         "name": "Leaf Tornado",
@@ -2730,10 +2891,10 @@
         "cc": null,
         "buff": null,
         "element": "grass",
-        "power": 31.42
+        "power": 31.27,
+        "dano": 31144
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "roserade",
@@ -3305,6 +3466,8 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Parasect",
+    "config": "lvl 600, +50, sem atk held (X-Elemental), Volcanic, sem device, neutro",
+    "observacao": "Cutting Blades multi-hit 3x (~7283); Compass Slash multi-hit 5x (~3000); Struggle Bug single. Fury Cutter é single-target (fora da rotação de área)",
     "skills": [
       {
         "name": "Sleep Powder",
@@ -3313,7 +3476,8 @@
         "cc": "stun",
         "buff": null,
         "element": "grass",
-        "power": 0
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Growth",
@@ -3321,7 +3485,9 @@
         "type": "area",
         "cc": null,
         "buff": "next",
-        "element": "normal"
+        "element": "normal",
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Struggle Bug",
@@ -3330,7 +3496,8 @@
         "cc": null,
         "buff": null,
         "element": "bug",
-        "power": 17.01
+        "power": 16.94,
+        "dano": 13808
       },
       {
         "name": "Compass Slash",
@@ -3339,7 +3506,8 @@
         "cc": null,
         "buff": null,
         "element": "bug",
-        "power": 18.7
+        "power": 18.42,
+        "dano": 15013
       },
       {
         "name": "Cutting Blades",
@@ -3348,10 +3516,10 @@
         "cc": null,
         "buff": null,
         "element": "bug",
-        "power": 27.1
+        "power": 26.81,
+        "dano": 21848
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "kricketune",
@@ -3552,6 +3720,8 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Lopunny",
+    "config": "lvl 600, +50, XA5, Volcanic, sem device, neutro",
+    "observacao": "Superpower multi-hit 9x (~2415 each); Spin Swing multi-hit 4x (~6735); Jump Kick single; Low Sweep single",
     "skills": [
       {
         "name": "Charm",
@@ -3560,7 +3730,9 @@
         "cc": null,
         "buff": "self",
         "def": true,
-        "element": "fairy"
+        "element": "fairy",
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Jump Kick",
@@ -3569,7 +3741,8 @@
         "cc": null,
         "buff": null,
         "element": "fighting",
-        "power": 11.94
+        "power": 11.90,
+        "dano": 11833
       },
       {
         "name": "Low Sweep",
@@ -3578,7 +3751,8 @@
         "cc": "stun",
         "buff": null,
         "element": "fighting",
-        "power": 16.48
+        "power": 16.44,
+        "dano": 16343
       },
       {
         "name": "Superpower",
@@ -3587,7 +3761,8 @@
         "cc": null,
         "buff": null,
         "element": "fighting",
-        "power": 21.93
+        "power": 21.86,
+        "dano": 21735
       },
       {
         "name": "Spin Swing",
@@ -3596,10 +3771,10 @@
         "cc": null,
         "buff": null,
         "element": "fighting",
-        "power": 27.14
+        "power": 27.09,
+        "dano": 26939
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "elite-hitmontop",
@@ -3658,6 +3833,8 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Hariyama",
+    "config": "lvl 600, +70, XA7, Volcanic, sem device, neutro",
+    "observacao": "Superpower multi-hit 9-hit (~3820 each); Fake Out/Reversal/Shadow Break single-hit",
     "skills": [
       {
         "name": "Fake Out",
@@ -3666,7 +3843,8 @@
         "cc": "stun",
         "buff": null,
         "element": "fighting",
-        "power": 15.72
+        "power": 15.71,
+        "dano": 16912
       },
       {
         "name": "Focus Energy",
@@ -3674,7 +3852,8 @@
         "type": "area",
         "cc": null,
         "buff": "next",
-        "element": "normal"
+        "element": "normal",
+        "power": 0
       },
       {
         "name": "Superpower",
@@ -3683,7 +3862,8 @@
         "cc": null,
         "buff": null,
         "element": "fighting",
-        "power": 32.27
+        "power": 31.96,
+        "dano": 34409
       },
       {
         "name": "Reversal",
@@ -3692,7 +3872,8 @@
         "cc": null,
         "buff": null,
         "element": "fighting",
-        "power": 30.09
+        "power": 30.03,
+        "dano": 32312
       },
       {
         "name": "Shadow Break",
@@ -3701,10 +3882,10 @@
         "cc": null,
         "buff": null,
         "element": "fighting",
-        "power": 25.17
+        "power": 25.15,
+        "dano": 27074
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "shiny-mienshao",
@@ -4141,6 +4322,7 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Forretress",
+    "config": "lvl 600, +50, XA5, Volcanic, sem device, neutro",
     "skills": [
       {
         "name": "Harden",
@@ -4149,7 +4331,9 @@
         "cc": null,
         "buff": "self",
         "def": true,
-        "element": "normal"
+        "element": "normal",
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Iron Spikes",
@@ -4158,7 +4342,8 @@
         "cc": "stun",
         "buff": null,
         "element": "steel",
-        "power": 13.73
+        "power": 13.70,
+        "dano": 13624
       },
       {
         "name": "Heavy Slam",
@@ -4167,7 +4352,8 @@
         "cc": null,
         "buff": null,
         "element": "steel",
-        "power": 17.43
+        "power": 17.39,
+        "dano": 17294
       },
       {
         "name": "Meteor Mash",
@@ -4176,7 +4362,8 @@
         "cc": null,
         "buff": null,
         "element": "steel",
-        "power": 19.4
+        "power": 19.34,
+        "dano": 19234
       },
       {
         "name": "Heavy Metal",
@@ -4185,10 +4372,10 @@
         "cc": null,
         "buff": null,
         "element": "steel",
-        "power": 25.17
+        "power": 12.57,
+        "dano": 12497
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "klinklang",
@@ -4799,6 +4986,8 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Pidgeot",
+    "config": "lvl 600, +50, XA5, Volcanic, sem device, neutro",
+    "observacao": "Air Slash multi-hit 3x (~7890); Hurricane multi-hit 9x (~3180); Whirlwind/Tornado single",
     "skills": [
       {
         "name": "Whirlwind",
@@ -4807,7 +4996,8 @@
         "cc": "stun",
         "buff": null,
         "element": "normal",
-        "power": 9.77
+        "power": 14.67,
+        "dano": 14588
       },
       {
         "name": "Tornado",
@@ -4816,7 +5006,8 @@
         "cc": null,
         "buff": null,
         "element": "flying",
-        "power": 14.88
+        "power": 14.68,
+        "dano": 14590
       },
       {
         "name": "Air Slash",
@@ -4825,7 +5016,8 @@
         "cc": null,
         "buff": null,
         "element": "flying",
-        "power": 24.04
+        "power": 23.80,
+        "dano": 23670
       },
       {
         "name": "Hurricane",
@@ -4834,10 +5026,10 @@
         "cc": null,
         "buff": null,
         "element": "flying",
-        "power": 32.06
+        "power": 28.78,
+        "dano": 28620
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "crobat",
@@ -5082,6 +5274,8 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Dragonite",
+    "config": "lvl 600, +70, XA5, Volcanic, sem device, neutro",
+    "observacao": "Inner Focus é def:true + buff:next; Twister multi-hit 2x; Dragon Flight/Draco Meteor/Outrage single",
     "skills": [
       {
         "name": "Inner Focus",
@@ -5090,7 +5284,9 @@
         "cc": null,
         "buff": "next",
         "def": true,
-        "element": "dragon"
+        "element": "dragon",
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Dragon Flight",
@@ -5099,7 +5295,8 @@
         "cc": "stun",
         "buff": null,
         "element": "dragon",
-        "power": 9.39
+        "power": 9.37,
+        "dano": 9609
       },
       {
         "name": "Twister",
@@ -5108,7 +5305,8 @@
         "cc": null,
         "buff": null,
         "element": "dragon",
-        "power": 12.11
+        "power": 12.00,
+        "dano": 12311
       },
       {
         "name": "Draco Meteor",
@@ -5117,7 +5315,8 @@
         "cc": null,
         "buff": null,
         "element": "dragon",
-        "power": 19.36
+        "power": 19.31,
+        "dano": 19813
       },
       {
         "name": "Outrage",
@@ -5126,11 +5325,10 @@
         "cc": null,
         "buff": null,
         "element": "dragon",
-        "power": 23.29
+        "power": 23.19,
+        "dano": 23788
       }
-    ],
-    "todo": "RECALIBRAR",
-    "observacao": "Inner Focus é def:true + buff:next (amplifica próxima ×1.5, confirmado via Outrage 17.3k→25.9k)"
+    ]
   },
   {
     "id": "shiny-hydreigon",
@@ -5206,6 +5404,8 @@
     "tier": "T1H",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Haxorus",
+    "config": "lvl 600, +70, XA5, Volcanic, sem device, neutro",
+    "observacao": "Dragon Rage multi-hit 3x (~5960); Draco Meteor multi-hit 2x (~12440); Outrage single",
     "skills": [
       {
         "name": "Snarl",
@@ -5214,7 +5414,9 @@
         "cc": null,
         "buff": "self",
         "def": true,
-        "element": "dark"
+        "element": "dark",
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Swords Dance",
@@ -5222,7 +5424,9 @@
         "type": "area",
         "cc": null,
         "buff": "next",
-        "element": "normal"
+        "element": "normal",
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Dragon Rage",
@@ -5231,7 +5435,8 @@
         "cc": "stun",
         "buff": null,
         "element": "dragon",
-        "power": 17.5
+        "power": 17.42,
+        "dano": 17876
       },
       {
         "name": "Outrage",
@@ -5240,7 +5445,8 @@
         "cc": null,
         "buff": null,
         "element": "dragon",
-        "power": 21.8
+        "power": 21.74,
+        "dano": 22311
       },
       {
         "name": "Draco Meteor",
@@ -5249,10 +5455,10 @@
         "cc": null,
         "buff": null,
         "element": "dragon",
-        "power": 24.23
+        "power": 24.25,
+        "dano": 24881
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "garchomp",
@@ -5311,7 +5517,8 @@
         "cc": null,
         "buff": "next",
         "element": "dragon",
-        "power": 5.5
+        "power": 5.18,
+        "dano": 3888
       },
       {
         "name": "Dragon Claw",
@@ -5320,7 +5527,8 @@
         "cc": null,
         "buff": null,
         "element": "dragon",
-        "power": 7.43
+        "power": 7.35,
+        "dano": 5511
       },
       {
         "name": "Draco Meteor",
@@ -5329,7 +5537,8 @@
         "cc": null,
         "buff": null,
         "element": "dragon",
-        "power": 22.33
+        "power": 22.02,
+        "dano": 16513
       },
       {
         "name": "Outrage",
@@ -5338,10 +5547,11 @@
         "cc": null,
         "buff": null,
         "element": "dragon",
-        "power": 29.52
+        "power": 29.38,
+        "dano": 22034
       }
     ],
-    "todo": "RECALIBRAR"
+    "config": "lvl 600, +0, sem held, Volcanic, sem device, neutro"
   },
   {
     "id": "flapple",
@@ -5417,6 +5627,8 @@
     "tier": "TR",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Dragonair_(TR)",
+    "config": "lvl 600, +70, XA5, Volcanic, sem device, neutro",
+    "observacao": "Twister multi-hit 2x (~7930); Dragon Blast/Draco Meteor/Outrage single",
     "skills": [
       {
         "name": "Dragon Dance",
@@ -5424,7 +5636,9 @@
         "type": "area",
         "cc": null,
         "buff": "next",
-        "element": "dragon"
+        "element": "dragon",
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Twister",
@@ -5433,7 +5647,8 @@
         "cc": null,
         "buff": null,
         "element": "dragon",
-        "power": 15.48
+        "power": 15.46,
+        "dano": 15858
       },
       {
         "name": "Dragon Blast",
@@ -5442,7 +5657,8 @@
         "cc": null,
         "buff": null,
         "element": "dragon",
-        "power": 18.52
+        "power": 18.52,
+        "dano": 19004
       },
       {
         "name": "Draco Meteor",
@@ -5451,7 +5667,8 @@
         "cc": null,
         "buff": null,
         "element": "dragon",
-        "power": 22.23
+        "power": 22.19,
+        "dano": 22764
       },
       {
         "name": "Outrage",
@@ -5460,10 +5677,10 @@
         "cc": null,
         "buff": null,
         "element": "dragon",
-        "power": 22.25
+        "power": 22.20,
+        "dano": 22782
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "mega-altaria",
@@ -5522,6 +5739,7 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Florges",
+    "config": "lvl 600, +50, XA5, Volcanic, sem device, neutro",
     "skills": [
       {
         "name": "Flower Shield",
@@ -5530,7 +5748,9 @@
         "cc": null,
         "buff": "self",
         "def": true,
-        "element": "normal"
+        "element": "normal",
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Grassy Terrain",
@@ -5539,7 +5759,8 @@
         "cc": "stun",
         "buff": null,
         "element": "grass",
-        "power": 12.91
+        "power": 12.85,
+        "dano": 12773
       },
       {
         "name": "Heart Pound",
@@ -5548,7 +5769,8 @@
         "cc": null,
         "buff": null,
         "element": "fairy",
-        "power": 14.53
+        "power": 14.50,
+        "dano": 14421
       },
       {
         "name": "Petal Blizzard",
@@ -5557,7 +5779,8 @@
         "cc": null,
         "buff": null,
         "element": "grass",
-        "power": 23.26
+        "power": 23.18,
+        "dano": 23050
       },
       {
         "name": "Floral Storm",
@@ -5566,10 +5789,10 @@
         "cc": null,
         "buff": null,
         "element": "fairy",
-        "power": 25.19
+        "power": 25.12,
+        "dano": 24973
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "sylveon",
@@ -5628,6 +5851,7 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Gardevoir",
+    "config": "lvl 600, +70, XA7, Volcanic, sem device, neutro",
     "skills": [
       {
         "name": "Moonblast",
@@ -5635,7 +5859,19 @@
         "type": "area",
         "cc": "silence",
         "buff": null,
-        "element": "fairy"
+        "element": "fairy",
+        "power": 20.52,
+        "dano": 22087
+      },
+      {
+        "name": "Psychic",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "psychic",
+        "power": 27.97,
+        "dano": 30114
       },
       {
         "name": "Stored Power",
@@ -5643,7 +5879,9 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fairy"
+        "element": "fairy",
+        "power": 25.37,
+        "dano": 27313
       },
       {
         "name": "Shadow Down",
@@ -5651,18 +5889,21 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ghost"
+        "element": "ghost",
+        "power": 25.08,
+        "dano": 26994
       },
       {
-        "name": "Synchronoise",
+        "name": "Heart Pound",
         "cooldown": 40,
-        "type": "frontal",
+        "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fairy"
+        "element": "fairy",
+        "power": 17.53,
+        "dano": 18869
       }
-    ],
-    "todo": "calibrate skills"
+    ]
   },
   {
     "id": "mega-clefable",
@@ -5881,6 +6122,8 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Galarian_Rapidash",
+    "config": "lvl 600, +0, sem held, Volcanic, sem device, neutro",
+    "observacao": "Expanding Force multi-hit 5x (~2323); outros single",
     "skills": [
       {
         "name": "Charm",
@@ -5889,7 +6132,9 @@
         "cc": null,
         "buff": "self",
         "def": true,
-        "element": "fairy"
+        "element": "fairy",
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Psycho Cut",
@@ -5898,7 +6143,8 @@
         "cc": "stun",
         "buff": null,
         "element": "psychic",
-        "power": 14.08
+        "power": 13.98,
+        "dano": 10487
       },
       {
         "name": "Expanding Force",
@@ -5907,7 +6153,8 @@
         "cc": null,
         "buff": null,
         "element": "psychic",
-        "power": 15.64
+        "power": 15.49,
+        "dano": 11615
       },
       {
         "name": "Psychic",
@@ -5916,7 +6163,8 @@
         "cc": null,
         "buff": null,
         "element": "psychic",
-        "power": 17.56
+        "power": 17.45,
+        "dano": 13084
       },
       {
         "name": "Stored Power",
@@ -5925,10 +6173,10 @@
         "cc": null,
         "buff": null,
         "element": "psychic",
-        "power": 21.38
+        "power": 21.30,
+        "dano": 15972
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "shiny-gothitelle",
@@ -6281,6 +6529,7 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Vaporeon",
+    "config": "lvl 600, +0, sem held, Volcanic, sem device, neutro",
     "skills": [
       {
         "name": "Acid Armor",
@@ -6289,7 +6538,9 @@
         "cc": null,
         "buff": "self",
         "element": "poison",
-        "def": true
+        "def": true,
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Flip Turn",
@@ -6298,7 +6549,8 @@
         "cc": "stun",
         "buff": null,
         "element": "water",
-        "power": 14.18
+        "power": 14.10,
+        "dano": 10573
       },
       {
         "name": "Water Ball",
@@ -6307,7 +6559,8 @@
         "cc": null,
         "buff": null,
         "element": "water",
-        "power": 11.25
+        "power": 11.16,
+        "dano": 8371
       },
       {
         "name": "Water Pulse",
@@ -6316,7 +6569,8 @@
         "cc": null,
         "buff": null,
         "element": "water",
-        "power": 13.71
+        "power": 13.61,
+        "dano": 10211
       },
       {
         "name": "Hydro Pump",
@@ -6325,7 +6579,8 @@
         "cc": null,
         "buff": null,
         "element": "water",
-        "power": 14.14
+        "power": 14.13,
+        "dano": 10600
       },
       {
         "name": "Surf",
@@ -6334,10 +6589,10 @@
         "cc": null,
         "buff": null,
         "element": "water",
-        "power": 24.86
+        "power": 24.73,
+        "dano": 18546
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "shiny-giant-magikarp",
@@ -6345,6 +6600,7 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Giant_Magikarp",
+    "config": "lvl 600, +20, X-Boost T4 (eff boost 80), Volcanic, sem device, neutro",
     "skills": [
       {
         "name": "Splash",
@@ -6353,7 +6609,9 @@
         "cc": null,
         "buff": "self",
         "def": true,
-        "element": "water"
+        "element": "water",
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Rain Dance",
@@ -6361,7 +6619,9 @@
         "type": "area",
         "cc": "silence",
         "buff": "next",
-        "element": "water"
+        "element": "water",
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Water Ball",
@@ -6370,7 +6630,8 @@
         "cc": null,
         "buff": null,
         "element": "water",
-        "power": 11.64
+        "power": 11.58,
+        "dano": 9891
       },
       {
         "name": "Water Pulse",
@@ -6379,7 +6640,8 @@
         "cc": null,
         "buff": null,
         "element": "water",
-        "power": 14.18
+        "power": 14.10,
+        "dano": 12044
       },
       {
         "name": "Hydro Pump",
@@ -6388,7 +6650,8 @@
         "cc": null,
         "buff": null,
         "element": "water",
-        "power": 12.59
+        "power": 12.55,
+        "dano": 10719
       },
       {
         "name": "Surf",
@@ -6397,10 +6660,10 @@
         "cc": null,
         "buff": null,
         "element": "water",
-        "power": 26.15
+        "power": 26.05,
+        "dano": 22248
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "shiny-floatzel",
@@ -6416,7 +6679,8 @@
         "cc": "stun",
         "buff": null,
         "element": "water",
-        "power": 23.1
+        "power": 23.06,
+        "dano": 25406
       },
       {
         "name": "Counter Shield",
@@ -6425,7 +6689,8 @@
         "cc": null,
         "buff": null,
         "element": "water",
-        "power": 19.55
+        "power": 19.52,
+        "dano": 21500
       },
       {
         "name": "Whirlpool",
@@ -6434,7 +6699,8 @@
         "cc": null,
         "buff": null,
         "element": "water",
-        "power": 24.19
+        "power": 24.14,
+        "dano": 26600
       },
       {
         "name": "Shadow Melting",
@@ -6443,7 +6709,8 @@
         "cc": null,
         "buff": null,
         "element": "ghost",
-        "power": 25.62
+        "power": 25.57,
+        "dano": 28173
       },
       {
         "name": "Dive",
@@ -6452,10 +6719,11 @@
         "cc": null,
         "buff": null,
         "element": "water",
-        "power": 27.11
+        "power": 27.06,
+        "dano": 29815
       }
     ],
-    "todo": "RECALIBRAR"
+    "config": "lvl 600, +70, XA8, Volcanic, sem device, neutro"
   },
   {
     "id": "mega-feraligatr",
@@ -6497,6 +6765,7 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Gyarados",
+    "config": "lvl 600, +50, XA5, Volcanic, sem device, neutro",
     "skills": [
       {
         "name": "Splash",
@@ -6505,7 +6774,8 @@
         "cc": "stun",
         "buff": null,
         "element": "water",
-        "power": 15.66
+        "power": 15.57,
+        "dano": 15484
       },
       {
         "name": "Surf",
@@ -6514,7 +6784,8 @@
         "cc": null,
         "buff": null,
         "element": "water",
-        "power": 28.32
+        "power": 28.22,
+        "dano": 28062
       },
       {
         "name": "Hydro Pump",
@@ -6523,7 +6794,8 @@
         "cc": null,
         "buff": null,
         "element": "water",
-        "power": 16.67
+        "power": 16.63,
+        "dano": 16539
       },
       {
         "name": "Hydro Cannon",
@@ -6532,7 +6804,8 @@
         "cc": null,
         "buff": null,
         "element": "water",
-        "power": 25.33
+        "power": 25.31,
+        "dano": 25168
       },
       {
         "name": "Dragon Breath",
@@ -6541,10 +6814,10 @@
         "cc": null,
         "buff": null,
         "element": "dragon",
-        "power": 14.82
+        "power": 14.69,
+        "dano": 14607
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "shiny-kingler",
@@ -6559,7 +6832,8 @@
         "type": "area",
         "cc": null,
         "buff": "next",
-        "element": "normal"
+        "element": "normal",
+        "power": 0
       },
       {
         "name": "Water Pulse",
@@ -6568,7 +6842,8 @@
         "cc": null,
         "buff": null,
         "element": "water",
-        "power": 13.7
+        "power": 13.62,
+        "dano": 10212
       },
       {
         "name": "Razor Shell",
@@ -6577,7 +6852,8 @@
         "cc": null,
         "buff": null,
         "element": "water",
-        "power": 20.95
+        "power": 20.68,
+        "dano": 15508
       },
       {
         "name": "Crabhammer",
@@ -6586,7 +6862,8 @@
         "cc": null,
         "buff": null,
         "element": "water",
-        "power": 23.55
+        "power": 23.39,
+        "dano": 17539
       },
       {
         "name": "Aqua Impact",
@@ -6595,10 +6872,11 @@
         "cc": null,
         "buff": null,
         "element": "water",
-        "power": 28.48
+        "power": 28.23,
+        "dano": 21170
       }
     ],
-    "todo": "RECALIBRAR"
+    "config": "lvl 600, +0, sem held, Volcanic, sem device, neutro"
   },
   {
     "id": "vaporeon",
@@ -6606,6 +6884,7 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Vaporeon",
+    "config": "lvl 600, +0, sem held, Volcanic, sem device, neutro",
     "skills": [
       {
         "name": "Flip Turn",
@@ -6614,7 +6893,8 @@
         "cc": "stun",
         "buff": null,
         "element": "water",
-        "power": 13.4
+        "power": 13.24,
+        "dano": 9929
       },
       {
         "name": "Water Ball",
@@ -6623,7 +6903,8 @@
         "cc": null,
         "buff": null,
         "element": "water",
-        "power": 11.31
+        "power": 11.21,
+        "dano": 8408
       },
       {
         "name": "Water Pulse",
@@ -6632,7 +6913,8 @@
         "cc": null,
         "buff": null,
         "element": "water",
-        "power": 13.69
+        "power": 13.62,
+        "dano": 10215
       },
       {
         "name": "Hydro Pump",
@@ -6641,7 +6923,8 @@
         "cc": null,
         "buff": null,
         "element": "water",
-        "power": 14.43
+        "power": 14.36,
+        "dano": 10767
       },
       {
         "name": "Surf",
@@ -6650,10 +6933,10 @@
         "cc": null,
         "buff": null,
         "element": "water",
-        "power": 25.27
+        "power": 25.10,
+        "dano": 18826
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "azumarill",
@@ -6661,6 +6944,7 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Azumarill",
+    "config": "lvl 600, +0, sem held, Volcanic, sem device, neutro",
     "skills": [
       {
         "name": "Defense Curl",
@@ -6669,7 +6953,9 @@
         "cc": null,
         "buff": "self",
         "element": "normal",
-        "def": true
+        "def": true,
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Surf",
@@ -6678,7 +6964,8 @@
         "cc": null,
         "buff": null,
         "element": "water",
-        "power": 23.46
+        "power": 23.32,
+        "dano": 17490
       },
       {
         "name": "Whirlpool",
@@ -6687,7 +6974,8 @@
         "cc": null,
         "buff": null,
         "element": "water",
-        "power": 29.26
+        "power": 29.07,
+        "dano": 21800
       },
       {
         "name": "Waterfall",
@@ -6696,7 +6984,8 @@
         "cc": null,
         "buff": null,
         "element": "water",
-        "power": 18.53
+        "power": 18.47,
+        "dano": 13850
       },
       {
         "name": "Water Pulse",
@@ -6705,10 +6994,10 @@
         "cc": null,
         "buff": null,
         "element": "water",
-        "power": 14.66
+        "power": 14.58,
+        "dano": 10935
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "shiny-slowbro",
@@ -6842,7 +7131,8 @@
         "cc": "locked",
         "buff": "self",
         "element": "ice",
-        "power": 17.41
+        "power": 17.36,
+        "dano": 19130
       },
       {
         "name": "Frost Power",
@@ -6851,7 +7141,8 @@
         "cc": null,
         "buff": null,
         "element": "ice",
-        "power": 19.3
+        "power": 19.29,
+        "dano": 21255
       },
       {
         "name": "Icicle Crash",
@@ -6860,7 +7151,8 @@
         "cc": null,
         "buff": null,
         "element": "ice",
-        "power": 26.62
+        "power": 26.5,
+        "dano": 29200
       },
       {
         "name": "Frenzy Snow",
@@ -6869,7 +7161,8 @@
         "cc": null,
         "buff": null,
         "element": "ice",
-        "power": 28.12
+        "power": 28.03,
+        "dano": 30885
       },
       {
         "name": "Shadow Melting",
@@ -6878,10 +7171,11 @@
         "cc": null,
         "buff": null,
         "element": "ice",
-        "power": 25.3
+        "power": 25.24,
+        "dano": 27810
       }
     ],
-    "todo": "RECALIBRAR"
+    "config": "lvl 600, +70, XA8, Volcanic, sem device, neutro"
   },
   {
     "id": "mega-froslass",
@@ -7080,6 +7374,7 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Frosmoth",
+    "config": "lvl 600, +50, sem held, Volcanic, sem device, neutro",
     "skills": [
       {
         "name": "Quiver Dance",
@@ -7088,7 +7383,9 @@
         "cc": null,
         "buff": "self",
         "element": "bug",
-        "def": true
+        "def": true,
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Infestation",
@@ -7097,7 +7394,8 @@
         "cc": "stun",
         "buff": null,
         "element": "bug",
-        "power": 0.34
+        "power": 0.29,
+        "dano": 235
       },
       {
         "name": "Ice Windy",
@@ -7106,7 +7404,8 @@
         "cc": null,
         "buff": null,
         "element": "ice",
-        "power": 14.65
+        "power": 14.60,
+        "dano": 11900
       },
       {
         "name": "Power Snow",
@@ -7115,7 +7414,8 @@
         "cc": null,
         "buff": null,
         "element": "ice",
-        "power": 17.79
+        "power": 17.59,
+        "dano": 14337
       },
       {
         "name": "Ice Storm",
@@ -7124,7 +7424,8 @@
         "cc": null,
         "buff": null,
         "element": "ice",
-        "power": 21.34
+        "power": 21.28,
+        "dano": 17345
       },
       {
         "name": "Frenzy Snow",
@@ -7133,10 +7434,10 @@
         "cc": null,
         "buff": null,
         "element": "ice",
-        "power": 22.26
+        "power": 22.21,
+        "dano": 18105
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "froslass",
@@ -7144,6 +7445,7 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Froslass",
+    "config": "lvl 600, +0, sem held, Volcanic, sem device, neutro",
     "skills": [
       {
         "name": "Aurora Veil",
@@ -7152,7 +7454,9 @@
         "cc": null,
         "buff": "self",
         "element": "ice",
-        "def": true
+        "def": true,
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Hail",
@@ -7161,7 +7465,8 @@
         "cc": "locked",
         "buff": null,
         "element": "ice",
-        "power": 20.4
+        "power": 20.33,
+        "dano": 15246
       },
       {
         "name": "Frost Breath",
@@ -7170,7 +7475,8 @@
         "cc": null,
         "buff": null,
         "element": "ice",
-        "power": 15.72
+        "power": 15.62,
+        "dano": 11712
       },
       {
         "name": "Power Snow",
@@ -7179,7 +7485,8 @@
         "cc": null,
         "buff": null,
         "element": "ice",
-        "power": 15.94
+        "power": 15.79,
+        "dano": 11839
       },
       {
         "name": "Blizzard",
@@ -7188,10 +7495,10 @@
         "cc": null,
         "buff": null,
         "element": "ice",
-        "power": 24.35
+        "power": 24.00,
+        "dano": 18003
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "shiny-dewgong",
@@ -7342,6 +7649,8 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Qwilfish",
+    "config": "lvl 600, +50, XA2, Volcanic, sem device, neutro",
+    "observacao": "Barb Barrage multi-hit 10x (~2234 each); Toxic/Mortal Gas incluem poison DoT (350/tick, ~10 ticks cada)",
     "skills": [
       {
         "name": "Minimize",
@@ -7350,7 +7659,9 @@
         "cc": null,
         "buff": "self",
         "element": "normal",
-        "def": true
+        "def": true,
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Barb Barrage",
@@ -7359,7 +7670,8 @@
         "cc": "silence",
         "buff": null,
         "element": "poison",
-        "power": 29.67
+        "power": 24.48,
+        "dano": 22340
       },
       {
         "name": "Poison Tail",
@@ -7368,7 +7680,8 @@
         "cc": null,
         "buff": null,
         "element": "poison",
-        "power": 13.34
+        "power": 13.28,
+        "dano": 12121
       },
       {
         "name": "Toxic",
@@ -7377,7 +7690,8 @@
         "cc": null,
         "buff": null,
         "element": "poison",
-        "power": 10.93
+        "power": 14.89,
+        "dano": 13587
       },
       {
         "name": "Mortal Gas",
@@ -7386,11 +7700,10 @@
         "cc": null,
         "buff": null,
         "element": "poison",
-        "power": 21.56
+        "power": 14.49,
+        "dano": 13226
       }
-    ],
-    "todo": "RECALIBRAR",
-    "observacao": "Mortal Gas e Toxic calibrados clean (10 ticks subtraídos em cada)"
+    ]
   },
   {
     "id": "shiny-garbodor",
@@ -7736,6 +8049,8 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Cofagrigus",
+    "config": "lvl 600, +50, XA5, Volcanic, sem device, neutro",
+    "observacao": "Curse multi-hit 4x (~4873 each); Shadow Storm/Spectral Grap/Trick Room single",
     "skills": [
       {
         "name": "Confide",
@@ -7744,7 +8059,9 @@
         "cc": null,
         "buff": "self",
         "def": true,
-        "element": "normal"
+        "element": "normal",
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Trick Room",
@@ -7753,7 +8070,8 @@
         "cc": "stun",
         "buff": null,
         "element": "psychic",
-        "power": 9.71
+        "power": 9.68,
+        "dano": 9628
       },
       {
         "name": "Nasty Plot",
@@ -7762,7 +8080,8 @@
         "cc": null,
         "buff": "next",
         "element": "dark",
-        "power": 1.08
+        "power": 1.08,
+        "dano": 1076
       },
       {
         "name": "Spectral Grap",
@@ -7771,7 +8090,8 @@
         "cc": null,
         "buff": null,
         "element": "ghost",
-        "power": 18.52
+        "power": 18.47,
+        "dano": 18362
       },
       {
         "name": "Curse",
@@ -7780,7 +8100,8 @@
         "cc": null,
         "buff": null,
         "element": "ghost",
-        "power": 19.82
+        "power": 19.60,
+        "dano": 19492
       },
       {
         "name": "Shadow Storm",
@@ -7789,10 +8110,10 @@
         "cc": null,
         "buff": null,
         "element": "ghost",
-        "power": 24.26
+        "power": 24.17,
+        "dano": 24034
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "mightyena",
@@ -7800,6 +8121,8 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Mightyena",
+    "config": "lvl 600, +70, XA6, Volcanic, sem device, neutro",
+    "observacao": "Payback multi-hit 4x (~6106 each); Night Daze/Howl single",
     "skills": [
       {
         "name": "Snarl",
@@ -7808,7 +8131,9 @@
         "cc": null,
         "buff": "self",
         "def": true,
-        "element": "dark"
+        "element": "dark",
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Nasty Plot",
@@ -7817,7 +8142,8 @@
         "cc": null,
         "buff": "next",
         "element": "dark",
-        "power": 7.35
+        "power": 7.34,
+        "dano": 7715
       },
       {
         "name": "Night Daze",
@@ -7826,7 +8152,8 @@
         "cc": null,
         "buff": null,
         "element": "dark",
-        "power": 14.06
+        "power": 14.02,
+        "dano": 14740
       },
       {
         "name": "Howl",
@@ -7835,7 +8162,8 @@
         "cc": "stun",
         "buff": null,
         "element": "dark",
-        "power": 19.34
+        "power": 19.30,
+        "dano": 20286
       },
       {
         "name": "Payback",
@@ -7844,10 +8172,10 @@
         "cc": null,
         "buff": null,
         "element": "dark",
-        "power": 23.25
+        "power": 23.23,
+        "dano": 24423
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "mismagius",
@@ -7940,6 +8268,8 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Gengar",
+    "config": "lvl 600, +50, XA5, Volcanic, sem device, neutro",
+    "observacao": "Shadow Claw 5-hit; Shadow Storm 2-hit; Astonish single big; tracker às vezes misatribui Hypnosis como 6º hit do Shadow Claw",
     "skills": [
       {
         "name": "Hypnosis",
@@ -7948,7 +8278,8 @@
         "cc": "stun",
         "buff": null,
         "element": "ghost",
-        "power": 17.53
+        "power": 17.44,
+        "dano": 17345
       },
       {
         "name": "Astonish",
@@ -7957,7 +8288,8 @@
         "cc": null,
         "buff": null,
         "element": "ghost",
-        "power": 21.57
+        "power": 17.45,
+        "dano": 17360
       },
       {
         "name": "Shadow Claw",
@@ -7966,7 +8298,8 @@
         "cc": null,
         "buff": null,
         "element": "ghost",
-        "power": 24.6
+        "power": 20.09,
+        "dano": 19972
       },
       {
         "name": "Shadow Storm",
@@ -7975,10 +8308,10 @@
         "cc": null,
         "buff": null,
         "element": "ghost",
-        "power": 28.34
+        "power": 49.70,
+        "dano": 49400
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "hisuian-typhlosion",
@@ -8097,22 +8430,18 @@
     "tier": "T3",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Haunter",
+    "config": "lvl 600, +0, sem held, Volcanic, sem device, neutro",
+    "observacao": "Shadow Claw multi-hit 6x (~3340 each); Shadow Storm single; Curse single; Night Shade aparece misatribuído sob Curse/Shadow Storm bucket",
     "skills": [
-      {
-        "name": "Hypnosis",
-        "cooldown": 50,
-        "type": "frontal",
-        "cc": "stun",
-        "buff": null,
-        "element": "psychic"
-      },
       {
         "name": "Invisible",
         "cooldown": 40,
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "ghost"
+        "element": "ghost",
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Night Shade",
@@ -8121,7 +8450,8 @@
         "cc": null,
         "buff": null,
         "element": "ghost",
-        "power": 15.86
+        "power": 15.69,
+        "dano": 11768
       },
       {
         "name": "Curse",
@@ -8130,7 +8460,8 @@
         "cc": null,
         "buff": null,
         "element": "ghost",
-        "power": 18.51
+        "power": 18.43,
+        "dano": 13820
       },
       {
         "name": "Shadow Storm",
@@ -8139,7 +8470,8 @@
         "cc": null,
         "buff": null,
         "element": "ghost",
-        "power": 25.06
+        "power": 24.54,
+        "dano": 18405
       },
       {
         "name": "Shadow Claw",
@@ -8148,10 +8480,10 @@
         "cc": null,
         "buff": null,
         "element": "ghost",
-        "power": 27.41
+        "power": 26.68,
+        "dano": 20009
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "dusknoir",
@@ -8361,6 +8693,8 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Zoroark",
+    "config": "lvl 600, +70, XA5, Volcanic, sem device, neutro",
+    "observacao": "Black Hole 3-hit; Night Daze 2-hit silence; Night Slash 2-hit; Shadow End single",
     "skills": [
       {
         "name": "Hone Claws",
@@ -8369,7 +8703,8 @@
         "cc": null,
         "buff": "next",
         "element": "normal",
-        "power": 0
+        "power": 0,
+        "dano": 0
       },
       {
         "name": "Black Hole",
@@ -8378,7 +8713,8 @@
         "cc": null,
         "buff": null,
         "element": "dark",
-        "power": 24.49
+        "power": 24.39,
+        "dano": 25021
       },
       {
         "name": "Shadow End",
@@ -8387,7 +8723,8 @@
         "cc": null,
         "buff": null,
         "element": "ghost",
-        "power": 24.76
+        "power": 24.71,
+        "dano": 25354
       },
       {
         "name": "Night Daze",
@@ -8396,7 +8733,8 @@
         "cc": "silence",
         "buff": null,
         "element": "dark",
-        "power": 27.05
+        "power": 27.03,
+        "dano": 27733
       },
       {
         "name": "Night Slash",
@@ -8405,10 +8743,10 @@
         "cc": null,
         "buff": null,
         "element": "dark",
-        "power": 27.08
+        "power": 27.02,
+        "dano": 27720
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "alolan-ninetales",
@@ -8466,7 +8804,19 @@
     "tier": "TM",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Crystal_Onix",
+    "config": "lvl 600, +50, XA5, Volcanic, sem device, neutro",
     "skills": [
+      {
+        "name": "Harden",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "def": true,
+        "element": "normal",
+        "power": 0,
+        "dano": 0
+      },
       {
         "name": "Earthquake",
         "cooldown": 45,
@@ -8474,7 +8824,8 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 36.16
+        "power": 35.80,
+        "dano": 35600
       },
       {
         "name": "Falling Rocks",
@@ -8483,7 +8834,8 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 29.31
+        "power": 29.18,
+        "dano": 29016
       },
       {
         "name": "Earth Power",
@@ -8492,10 +8844,10 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 23.56
+        "power": 23.32,
+        "dano": 23191
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "shiny-magmar",
@@ -8738,7 +9090,8 @@
         "cc": "locked",
         "buff": null,
         "element": "ground",
-        "power": 13.92
+        "power": 13.92,
+        "dano": 19165
       },
       {
         "name": "Hyper Beam",
@@ -8747,7 +9100,8 @@
         "cc": null,
         "buff": null,
         "element": "normal",
-        "power": 15.57
+        "power": 15.57,
+        "dano": 17154
       },
       {
         "name": "Ancient Power",
@@ -8756,7 +9110,8 @@
         "cc": null,
         "buff": null,
         "element": "rock",
-        "power": 17.47
+        "power": 17.47,
+        "dano": 24064
       },
       {
         "name": "Magnitude",
@@ -8765,7 +9120,8 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 22.41
+        "power": 22.41,
+        "dano": 30858
       },
       {
         "name": "Earthquake",
@@ -8774,7 +9130,8 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 20.18
+        "power": 20.18,
+        "dano": 27794
       },
       {
         "name": "Sandstorm",
@@ -8785,7 +9142,8 @@
         "element": "rock",
         "power": 0
       }
-    ]
+    ],
+    "config": "lvl 600, +70, XA8, Orebound, sem device, neutro"
   },
   {
     "id": "mega-scizor",
