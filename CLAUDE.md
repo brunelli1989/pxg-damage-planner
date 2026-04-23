@@ -218,7 +218,7 @@ Calibração = soma todos os hits da skill. Os valores per-hit às vezes variam 
 - `Σ atk%`: aditivo (X-Atk T1=8% ... T8=31%, device=+19% equivalente T4)
 - **X-Boost held**: contribui `2X` ao eff_boost (wiki: "dobro desse valor como bônus de ataque") — validado 2026-04-20
 - `clã`: multiplicativo se skill é do tipo do clã (Orebound rock/ground=1.25, Volcanic fire=1.28, etc — ver `clans.json`)
-- `eff`: chart padrão Pokémon (0×/0.5×/1×/2×). **PxG usa só o ÚLTIMO tipo pra dual-type defenders** (ex: Pidgeot [normal, flying] → rock 2× via flying; normal é ignorado). Ver `computeEffectiveness`
+- `eff`: chart padrão Pokémon (0×/0.5×/1×/2×). **PxG usa FULL DUAL-TYPE** — multiplica o efeito de cada tipo do defender. Ex: fighting vs Mawile [fairy, steel] = ×0.5 × ×2 = ×1 (neutro). Validado 2026-04-22. Pidgeot [normal, flying] vs rock = ×1 × ×2 = ×2 (igual ao antigo last-only por coincidência). Ver `computeEffectiveness`
 - `def_mob`: multiplicador < 1, empírico por mob
 
 **`skill_power` varia per-instância**, não por espécie: Fire Ball no Ninetales = 6.07, no Charizard = 13.77.

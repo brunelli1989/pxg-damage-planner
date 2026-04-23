@@ -1,5 +1,5 @@
-import type { DamageConfig, Pokemon, Skill } from "../types";
-import { computeSkillDamage, deriveSkillPower } from "./damage";
+import type { DamageConfig, MobConfig, Pokemon, Skill } from "../types";
+import { computeEffectiveness, computeSkillDamage, deriveSkillPower } from "./damage";
 
 const shinyRampardos: Pokemon = {
   id: "shiny-rampardos",
@@ -266,6 +266,25 @@ assert("Heatmor +70 BJ", 31949, computeSkillDamage(heatmorBase70, heatmor, burni
 assert("Heatmor +80 BJ", 32425, computeSkillDamage(heatmorBase80, heatmor, burningJealousy));
 assert("Heatmor +80 Shadow Fire", 34675, computeSkillDamage(heatmorBase80, heatmor, shadowFire));
 assert("Heatmor +80 Fire Lash", 36025, computeSkillDamage(heatmorBase80, heatmor, fireLash));
+
+// ---- Sh.Heatmor vs Mawile (valida FULL DUAL eff rule) ----
+console.log("\nSh.Heatmor vs Mawile T1H [fairy, steel] — full dual-type rule:");
+const mawileMob: MobConfig = { name: "Mawile", types: ["fairy", "steel"], hp: 0, defFactor: 0.61 };
+const cfgHeatmorMawile: DamageConfig = {
+  playerLvl: 600,
+  clan: "volcanic",
+  hunt: "400+",
+  mob: mawileMob,
+  device: { kind: "x-attack", tier: 0 },
+  pokeSetups: { "shiny-heatmor": { boost: 80, held: { kind: "x-attack", tier: 8 }, hasDevice: false } },
+  skillCalibrations: {},
+};
+// Fire × Mawile full dual: steel(2) × fairy(1) = 2. Empirically 39725 observed.
+assert("Mawile BJ (fire ×2 via steel+fairy)", 39725, computeSkillDamage(cfgHeatmorMawile, heatmor, burningJealousy));
+// Fighting × Mawile full dual: steel(2) × fairy(0.5) = 1 (neutro). Bug antigo (last-only) daria ×2.
+assert("Mawile fighting eff = 1.0 (full dual)", 1.0, computeEffectiveness("fighting", ["fairy", "steel"]));
+// Pidgeot test: rock × [normal, flying] = 1 × 2 = 2 (consistente com last-only também)
+assert("Pidgeot rock eff = 2.0 (full dual = last-only aqui)", 2.0, computeEffectiveness("rock", ["normal", "flying"]));
 
 // ---- Ninetales Volcanic lvl 600 XA5 vs XA8 (valida X-Atk T5 + T8) ----
 console.log("\nNinetales Volcanic lvl 600 +70 (XA5 vs XA8 → valida helds):");

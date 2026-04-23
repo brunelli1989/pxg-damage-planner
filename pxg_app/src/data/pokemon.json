@@ -6672,6 +6672,7 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Floatzel",
+    "observacao": "Counter Shield 8-hit (~2700/hit); Whirlpool 4-hit (~6650/hit); Shadow Melting é WATER (não ghost); Wave Crash/Dive single-hit",
     "skills": [
       {
         "name": "Wave Crash",
@@ -6709,7 +6710,7 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ghost",
+        "element": "water",
         "power": 25.57,
         "dano": 28173
       },

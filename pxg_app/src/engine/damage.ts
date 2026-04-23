@@ -270,19 +270,23 @@ export function getEffectiveness(
 }
 
 /**
- * PxG usa só o ÚLTIMO tipo listado pro efeito defensivo de mobs dual-type
- * (validado 2026-04-20 com Pidgeot [normal, flying] vs rock/fighting/electric/grass/ground
- * — todas as 4 categorias do wiki batem usando só `defenderTypes[1]`).
- *
- * Implicação: o primeiro tipo é essencialmente "cosmético" pro cálculo de dano.
- * Ordem em mobs.json deve bater com a do wiki (ex: "normal/flying" pra Pidgeot).
+ * PxG usa FULL DUAL-TYPE: multiplica o efeito de cada tipo do defender.
+ * Validado empiricamente 2026-04-22:
+ * - Mawile [fairy, steel]: fighting NÃO é eff (×2 steel × ×0.5 fairy = 1) ✓
+ *   (last-only teria dado ×2, incorreto)
+ * - Pidgeot [normal, flying]: rock é eff ×2 (×1 normal × ×2 flying = 2) ✓
+ *   (consistente com last-only também, por isso não distinguia)
+ * - Sh.Heatmor vs Mawile: fire ×2 (×2 steel × ×1 fairy = 2) ✓
  */
 export function computeEffectiveness(
   attackerType: PokemonElement,
   defenderTypes: PokemonElement[]
 ): number {
   if (defenderTypes.length === 0) return 1;
-  return getEffectiveness(attackerType, defenderTypes[defenderTypes.length - 1]);
+  return defenderTypes.reduce(
+    (acc, t) => acc * getEffectiveness(attackerType, t),
+    1
+  );
 }
 
 // =========================================================
