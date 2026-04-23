@@ -4855,6 +4855,8 @@
     "tier": "T2",
     "role": "offensive_tank",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Fearow",
+    "config": "lvl 600, +70, XA7, Volcanic (não bonusa flying), sem device, neutro",
+    "observacao": "Air Vortex 10-hit (~2298/hit); Aerial Ace 4-hit (~5719/hit); Whirlwind/Sky Attack single",
     "skills": [
       {
         "name": "Whirlwind",
@@ -4862,7 +4864,19 @@
         "type": "area",
         "cc": "stun",
         "buff": null,
-        "element": "flying"
+        "element": "flying",
+        "power": 13.52,
+        "dano": 14558
+      },
+      {
+        "name": "Air Vortex",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying",
+        "power": 21.35,
+        "dano": 22977
       },
       {
         "name": "Sky Attack",
@@ -4870,7 +4884,9 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "flying"
+        "element": "flying",
+        "power": 19.32,
+        "dano": 20796
       },
       {
         "name": "Aerial Ace",
@@ -4878,7 +4894,9 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "flying"
+        "element": "flying",
+        "power": 21.25,
+        "dano": 22875
       },
       {
         "name": "Confide",
@@ -4889,8 +4907,7 @@
         "def": true,
         "element": "normal"
       }
-    ],
-    "todo": "calibrate skills"
+    ]
   },
   {
     "id": "mega-pidgeot",
@@ -4898,6 +4915,8 @@
     "tier": "T1H",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Mega_Pidgeot",
+    "config": "lvl 600, +70, XA8, Volcanic (não bonusa flying), sem device, neutro",
+    "observacao": "Aerial Ace 4-hit (~5781/hit); Tornado 2-hit (~14974/hit); Sky Attack/Whirlwind/Shadow Gale single",
     "skills": [
       {
         "name": "Whirlwind",
@@ -4906,7 +4925,8 @@
         "cc": "stun",
         "buff": null,
         "element": "flying",
-        "power": 19.88
+        "power": 19.85,
+        "dano": 21864
       },
       {
         "name": "Sky Attack",
@@ -4915,7 +4935,8 @@
         "cc": null,
         "buff": null,
         "element": "flying",
-        "power": 23.99
+        "power": 23.92,
+        "dano": 26359
       },
       {
         "name": "Aerial Ace",
@@ -4924,7 +4945,8 @@
         "cc": null,
         "buff": null,
         "element": "flying",
-        "power": 21.07
+        "power": 20.99,
+        "dano": 23124
       },
       {
         "name": "Tornado",
@@ -4933,7 +4955,8 @@
         "cc": null,
         "buff": null,
         "element": "flying",
-        "power": 27.24
+        "power": 27.18,
+        "dano": 29948
       },
       {
         "name": "Shadow Gale",
@@ -4942,10 +4965,10 @@
         "cc": null,
         "buff": null,
         "element": "flying",
-        "power": 24.41
+        "power": 24.40,
+        "dano": 26884
       }
-    ],
-    "todo": "RECALIBRAR"
+    ]
   },
   {
     "id": "staraptor",
@@ -4953,22 +4976,27 @@
     "tier": "T2",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Staraptor",
+    "config": "lvl 600, +70, XA5, Volcanic (não bonusa flying), sem device, neutro",
+    "observacao": "Aerial Ace 4-hit (~5725/hit); Brave Bird 2-hit frontal (~10495/hit); Sky Attack/Wing Slash single. Close Combat buff:next ×1.5 confirmado empírico.",
     "skills": [
       {
         "name": "Close Combat",
         "cooldown": 40,
         "type": "area",
         "cc": null,
-        "buff": "self",
-        "element": "fighting"
+        "buff": "next",
+        "element": "fighting",
+        "power": 0
       },
       {
         "name": "Brave Bird",
         "cooldown": 40,
-        "type": "area",
+        "type": "frontal",
         "cc": null,
-        "buff": "self",
-        "element": "flying"
+        "buff": null,
+        "element": "flying",
+        "power": 20.46,
+        "dano": 20986
       },
       {
         "name": "Sky Attack",
@@ -4976,10 +5004,31 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "flying"
+        "element": "flying",
+        "power": 22.30,
+        "dano": 22881
+      },
+      {
+        "name": "Aerial Ace",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying",
+        "power": 22.32,
+        "dano": 22903
+      },
+      {
+        "name": "Wing Slash",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying",
+        "power": 20.55,
+        "dano": 21082
       }
-    ],
-    "todo": "calibrate skills"
+    ]
   },
   {
     "id": "pidgeot",
@@ -5148,6 +5197,8 @@
     "tier": "TR",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Skarmory_(TR)",
+    "config": "lvl 600, +70, XA5, Volcanic (não bonusa flying), sem device, neutro",
+    "observacao": "Air Slash 3-hit (~5951/hit); Aerial Ace 4-hit (~5696/hit); Sky Attack/Fly single",
     "skills": [
       {
         "name": "Fly",
@@ -5155,7 +5206,9 @@
         "type": "area",
         "cc": "stun",
         "buff": "self",
-        "element": "flying"
+        "element": "flying",
+        "power": 17.43,
+        "dano": 17886
       },
       {
         "name": "Sky Attack",
@@ -5163,7 +5216,9 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "flying"
+        "element": "flying",
+        "power": 21.92,
+        "dano": 22486
       },
       {
         "name": "Aerial Ace",
@@ -5171,7 +5226,9 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "flying"
+        "element": "flying",
+        "power": 22.21,
+        "dano": 22784
       },
       {
         "name": "Air Slash",
@@ -5179,7 +5236,18 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "flying"
+        "element": "flying",
+        "power": 17.40,
+        "dano": 17854
+      },
+      {
+        "name": "Swords Dance",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "normal",
+        "power": 0
       },
       {
         "name": "Iron Head",
@@ -5189,8 +5257,7 @@
         "buff": null,
         "element": "steel"
       }
-    ],
-    "todo": "calibrate skills"
+    ]
   },
   {
     "id": "mega-charizard-x",
@@ -8803,7 +8870,7 @@
   {
     "id": "crystal-onix",
     "name": "Crystal Onix",
-    "tier": "TM",
+    "tier": "T1C",
     "role": "burst_dd",
     "wiki": "https://wiki.pokexgames.com/index.php/Crystal_Onix",
     "config": "lvl 600, +50, XA5, Volcanic, sem device, neutro",
@@ -9751,5 +9818,118 @@
       }
     ],
     "todo": "calibrate skills"
+  },
+  {
+    "id": "braviary",
+    "name": "Braviary",
+    "tier": "T2",
+    "role": "burst_dd",
+    "wiki": "https://wiki.pokexgames.com/index.php/Braviary",
+    "config": "lvl 600, +70, XA5, Volcanic (não bonusa flying), sem device, neutro",
+    "observacao": "Aerial Ace 4-hit (~5499/hit); Air Slash 3-hit (~4148/hit); Sky Attack/Whirlwind single; sem Brave Bird",
+    "elements": ["normal", "flying"],
+    "skills": [
+      {
+        "name": "Whirlwind",
+        "cooldown": 40,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "flying",
+        "power": 9.73,
+        "dano": 9981
+      },
+      {
+        "name": "Air Slash",
+        "cooldown": 25,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying",
+        "power": 12.13,
+        "dano": 12445
+      },
+      {
+        "name": "Sky Attack",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying",
+        "power": 21.38,
+        "dano": 21935
+      },
+      {
+        "name": "Aerial Ace",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying",
+        "power": 21.44,
+        "dano": 21994
+      },
+      {
+        "name": "Hone Claws",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "next",
+        "element": "dark",
+        "power": 0
+      }
+    ]
+  },
+  {
+    "id": "shiny-beautifly",
+    "name": "Shiny Beautifly",
+    "tier": "T3",
+    "role": "offensive_tank",
+    "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Beautifly",
+    "config": "lvl 600, +70, XA5, Volcanic (não bonusa flying), sem device, neutro",
+    "observacao": "Aerial Ace 4-hit (~6719/hit); Air Slash 3-hit (~7940/hit); Sky Attack single",
+    "elements": ["bug", "flying"],
+    "skills": [
+      {
+        "name": "Air Slash",
+        "cooldown": 30,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying",
+        "power": 23.22,
+        "dano": 23821
+      },
+      {
+        "name": "Sky Attack",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying",
+        "power": 25.86,
+        "dano": 26530
+      },
+      {
+        "name": "Aerial Ace",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "flying",
+        "power": 26.20,
+        "dano": 26877
+      },
+      {
+        "name": "Quiver Dance",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "bug",
+        "power": 0,
+        "dano": 1816
+      }
+    ]
   }
 ]

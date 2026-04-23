@@ -34,16 +34,16 @@ const BURST_POWER_BY_TIER_CC: Partial<Record<BurstKey, number>> = {
   "T1B:noCC": 17.9, // sem amostras — usa CC como proxy
   "T1H:CC":   24.6, // n=8
   "T1H:noCC": 24.6, // sem amostras — usa CC como proxy
-  "T1C:CC":   19.5, // sem amostras — usa T2 CC como proxy
-  "T1C:noCC": 17.5, // n=1 (sh.ninetales)
-  "T2:CC":    19.5, // n=10
-  "T2:noCC":  23.1, // n=3
-  "T3:CC":    18.0, // n=5
-  "T3:noCC":  19.2, // n=4
-  "TR:CC":    18.5, // n=3
-  "TR:noCC":  19.6, // n=1
-  "TM:CC":    15.0, // sem amostras
-  "TM:noCC":  15.0, // sem amostras
+  "T1C:CC":   22.0, // sem amostras — hierarquia TM > T1C > T2 (T2:CC=21.1)
+  "T1C:noCC": 23.3, // n=2 (sh.ninetales 17.13 + crystal onix 29.43; alta variância)
+  "T2:CC":    21.1, // n=11
+  "T2:noCC":  22.2, // n=4
+  "T3:CC":    19.0, // n=5
+  "T3:noCC":  22.6, // n=5
+  "TR:CC":    19.8, // n=5 (combinado CC+noCC; TR não distingue por amostra pequena)
+  "TR:noCC":  19.8, // n=5 (mesmo valor)
+  "TM:CC":    23.5, // sem amostras — hierarquia TM > T1C (T1C:CC=22.0)
+  "TM:noCC":  24.5, // sem amostras — hierarquia TM > T1C (T1C:noCC=23.3)
 };
 const OFFTANK_POWER = 18.5;
 

@@ -1903,7 +1903,7 @@
     "hunt": "400+",
     "group": "Simisear",
     "hp": 495378,
-    "todo": "calibrate defense",
+    "defFactor": 0.62,
     "bestStarterElements": [
       "water",
       "rock"

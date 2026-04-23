@@ -2194,7 +2194,7 @@
   {
     "id": "crystal-onix",
     "name": "Crystal Onix",
-    "tier": "TM",
+    "tier": "T1C",
     "clans": [
       "orebound"
     ],
@@ -2346,5 +2346,21 @@
     "clans": ["malefic"],
     "role": "offensive_tank",
     "elements": ["ghost", "poison"]
+  },
+  {
+    "id": "shiny-beautifly",
+    "name": "Shiny Beautifly",
+    "tier": "T3",
+    "clans": ["wingeon"],
+    "role": "offensive_tank",
+    "elements": ["bug", "flying"]
+  },
+  {
+    "id": "braviary",
+    "name": "Braviary",
+    "tier": "T2",
+    "clans": ["wingeon"],
+    "role": "burst_dd",
+    "elements": ["normal", "flying"]
   }
 ]
