@@ -923,7 +923,7 @@
     "hunt": "300",
     "group": "Tynamo/Eelektrik",
     "hp": 239169,
-    "defFactor": 0.653,
+    "defFactor": 0.555,
     "bestStarterElements": [
       "ground",
       "rock"
@@ -941,7 +941,7 @@
     "hunt": "300",
     "group": "Tynamo/Eelektrik",
     "hp": 203680,
-    "defFactor": 0.555,
+    "defFactor": 0.653,
     "bestStarterElements": [
       "ground",
       "rock"
