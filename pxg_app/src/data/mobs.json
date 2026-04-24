@@ -709,7 +709,7 @@
     "hunt": "300",
     "group": "Darkrai Minion",
     "hp": 120062,
-    "todo": "calibrate defense",
+    "defFactor": 0.867,
     "bestStarterElements": [
       "rock",
       "ghost",

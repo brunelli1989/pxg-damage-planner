@@ -17,7 +17,8 @@
         "dano": 22933,
         "calibrations": [
           { "config": "lvl 600, +70, XA7, Volcanic, dummy neutro", "dano": 22933, "power": 21.3 },
-          { "config": "lvl 375, +70, XA7, Orebound, dummy electric (rock neutro ×1)", "dano": 21140, "power": 21.45 }
+          { "config": "lvl 375, +70, XA7, Orebound, dummy electric (rock neutro ×1)", "dano": 21140, "power": 21.45 },
+          { "config": "lvl 375, +70, XA7, X-Boost T7, Orebound, Tynamo (rock ×1, def 0.867)", "dano": 21127, "power": 21.46 }
         ]
       },
       {
@@ -31,7 +32,8 @@
         "dano": 23900,
         "calibrations": [
           { "config": "lvl 600, +70, XA7, Volcanic, dummy neutro", "dano": 23900, "power": 22.2, "note": "5-hit multi-hit" },
-          { "config": "lvl 375, +70, XA7, Orebound, dummy electric (rock neutro ×1)", "dano": 22165, "power": 22.49, "note": "5× 4433 per-hit" }
+          { "config": "lvl 375, +70, XA7, Orebound, dummy electric (rock neutro ×1)", "dano": 22165, "power": 22.49, "note": "5× 4433 per-hit" },
+          { "config": "lvl 375, +70, XA7, X-Boost T7, Orebound, Tynamo (rock ×1, def 0.867)", "dano": 22100, "power": 22.45, "note": "5× 4420 per-hit" }
         ]
       },
       {
@@ -45,7 +47,8 @@
         "dano": 26072,
         "calibrations": [
           { "config": "lvl 600, +70, XA7, Volcanic, dummy neutro", "dano": 26072, "power": 24.22 },
-          { "config": "lvl 375, +70, XA7, Orebound, dummy electric (rock neutro ×1)", "dano": 23983, "power": 24.33 }
+          { "config": "lvl 375, +70, XA7, Orebound, dummy electric (rock neutro ×1)", "dano": 23983, "power": 24.33 },
+          { "config": "lvl 375, +70, XA7, X-Boost T7, Orebound, Tynamo (rock ×1, def 0.867)", "dano": 24009, "power": 24.39 }
         ]
       },
       {
@@ -59,7 +62,8 @@
         "dano": 28171,
         "calibrations": [
           { "config": "lvl 600, +70, XA7, Volcanic, dummy neutro", "dano": 28171, "power": 26.17 },
-          { "config": "lvl 375, +70, XA7, Orebound, dummy electric (rock neutro ×1)", "dano": 25977, "power": 26.36 }
+          { "config": "lvl 375, +70, XA7, Orebound, dummy electric (rock neutro ×1)", "dano": 25977, "power": 26.36 },
+          { "config": "lvl 375, +70, XA7, X-Boost T7, Orebound, Tynamo (rock ×1, def 0.867)", "dano": 25969, "power": 26.38 }
         ]
       },
       {
@@ -73,7 +77,8 @@
         "dano": 27133,
         "calibrations": [
           { "config": "lvl 600, +70, XA7, Volcanic, dummy neutro", "dano": 27133, "power": 25.21 },
-          { "config": "lvl 375, +70, XA7, Orebound, dummy electric (rock neutro ×1)", "dano": 25013, "power": 25.38 }
+          { "config": "lvl 375, +70, XA7, Orebound, dummy electric (rock neutro ×1)", "dano": 25013, "power": 25.38 },
+          { "config": "lvl 375, +70, XA7, X-Boost T7, Orebound, Tynamo (rock ×1, def 0.867)", "dano": 25011, "power": 25.41 }
         ]
       }
     ],
@@ -680,7 +685,8 @@
         "dano": 16329,
         "calibrations": [
           { "config": "lvl 600, +50, XA5, Volcanic, dummy neutro", "dano": 16329, "power": 16.42 },
-          { "config": "lvl 375, +50, XA5, Orebound, dummy neutro", "dano": 14882, "power": 16.54 }
+          { "config": "lvl 375, +50, XA5, Orebound, dummy neutro", "dano": 14882, "power": 16.54 },
+          { "config": "lvl 375, +50, XA5, X-Boost T7, Orebound, Darkrai Minion (ground×1 neutro, def 0.867)", "dano": 14861, "power": 16.45, "note": "color=164 leak em SE bucket" }
         ]
       },
       {
@@ -696,7 +702,8 @@
           { "config": "lvl 600, +50, XA5, Volcanic, dummy neutro", "dano": 24982, "power": 25.13 },
           { "config": "lvl 375, +50, XA5, Orebound, dummy neutro", "dano": 22726, "power": 25.26 },
           { "config": "lvl 375, +50, XA5, X-Boost T7, Orebound, Tynamo (ground×2, def 0.867)", "dano": 45502, "power": 25.16, "note": "color=164 isolado" },
-          { "config": "lvl 375, +50, XA5, X-Boost T7, Orebound, Eelektrik (ground×2, def 0.737)", "dano": 38664, "power": 25.16, "note": "color=164 isolado" }
+          { "config": "lvl 375, +50, XA5, X-Boost T7, Orebound, Eelektrik (ground×2, def 0.737)", "dano": 38664, "power": 25.16, "note": "color=164 isolado" },
+          { "config": "lvl 375, +50, XA5, X-Boost T7, Orebound, Darkrai Minion (ground×1 neutro, def 0.867)", "dano": 22727, "power": 25.15, "note": "color=164" }
         ]
       },
       {
