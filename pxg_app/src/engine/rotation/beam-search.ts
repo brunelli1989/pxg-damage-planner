@@ -1,5 +1,6 @@
 import type { DamageConfig, DiskLevel, Lure, Pokemon, RotationResult } from "../../types";
 import { lureFinalizesBox } from "../damage";
+import { computeEffectiveness, getClanBonus } from "../damage/multipliers";
 import { hasHardCC } from "../scoring";
 import { generateLureTemplates } from "./generate";
 import {
@@ -355,24 +356,34 @@ export function findBestForBag(
     damageConfig?: DamageConfig;
   }
 ): { idle: number; result: RotationResult; score: number } | null {
-  // Device: só T1H+CC carrega device. Limita a top-2 por power total calibrado
-  // pra evitar explosão de runs em bags com muitos T1H.
-  const t1hCC = bag
-    .filter((p) => p.tier === "T1H" && hasHardCC(p))
-    .map((p) => ({
-      id: p.id,
-      score: p.skills.reduce((s, sk) => s + (sk.power ?? 0), 0),
-    }))
+  // Device: qualquer poke com HardCC pode carregar device. Ranking por dano efetivo
+  // (soma de pw × clã × eff de cada skill). Limita a top-3 pra controlar search space.
+  // Motivo: T1H sem eff×2 (ex: Sh.Ramp rock vs electric neutro) perde pra T2 ground×2.
+  const cfg = options?.damageConfig;
+  const mobTypes = cfg?.mob.types ?? [];
+  const clan = cfg?.clan ?? null;
+  const scorePoke = (p: Pokemon): number => {
+    return p.skills.reduce((sum, sk) => {
+      const pw = sk.power ?? 0;
+      if (pw === 0) return sum;
+      const el = sk.element;
+      const clãMult = el && clan ? 1 + getClanBonus(clan, el) : 1;
+      const eff = el && mobTypes.length ? computeEffectiveness(el, mobTypes) : 1;
+      return sum + pw * clãMult * eff;
+    }, 0);
+  };
+  const ccCandidates = bag
+    .filter((p) => hasHardCC(p))
+    .map((p) => ({ id: p.id, score: scorePoke(p) }))
     .sort((a, b) => b.score - a.score)
-    .slice(0, 2)
+    .slice(0, 3)
     .map((x) => x.id);
-  const deviceCandidates: (string | null)[] = [null, ...t1hCC];
+  const deviceCandidates: (string | null)[] = [null, ...ccCandidates];
 
   // User hint: se o usuário marcou hasDevice=true em algum poke no PokeSetupEditor,
-  // garantimos que ele entra na lista de candidatos (mesmo se não for top-T1H+CC).
-  // Mas NÃO substitui os demais — o beam compara todos e escolhe o melhor.
+  // garantimos que ele entra na lista (mesmo se não for top-3 por eff).
   const userDesignated = bag.find(
-    (p) => options?.damageConfig?.pokeSetups?.[p.id]?.hasDevice === true && hasHardCC(p)
+    (p) => cfg?.pokeSetups?.[p.id]?.hasDevice === true && hasHardCC(p)
   );
   if (userDesignated && !deviceCandidates.includes(userDesignated.id)) {
     deviceCandidates.push(userDesignated.id);
