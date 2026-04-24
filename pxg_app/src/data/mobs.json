@@ -206,7 +206,7 @@
     "hunt": "300",
     "group": "Alolan Diglett",
     "hp": 188768,
-    "todo": "calibrate defense",
+    "defFactor": 0.781,
     "bestStarterElements": [
       "fire",
       "water"
@@ -227,6 +227,7 @@
     ],
     "hunt": "300",
     "group": "Alolan Meowth",
+    "hp": 204282,
     "todo": "calibrate defense",
     "bestStarterElements": [
       "fighting",
@@ -1925,7 +1926,7 @@
     "hunt": "400+",
     "group": "Chandelure",
     "hp": 469384,
-    "defFactor": 0.62,
+    "defFactor": 0.709,
     "bestStarterElements": [
       "normal",
       "dark"
@@ -1948,7 +1949,7 @@
     "hunt": "400+",
     "group": "Mixed Fire",
     "hp": 391590,
-    "defFactor": 0.58,
+    "defFactor": 0.663,
     "bestStarterElements": [
       "water",
       "rock"
@@ -2308,7 +2309,7 @@
     "hunt": "400+",
     "group": "Mixed Grass",
     "hp": 477598,
-    "defFactor": 0.55,
+    "defFactor": 0.629,
     "bestStarterElements": [
       "fire",
       "flying",
@@ -2404,7 +2405,7 @@
     "hunt": "400+",
     "group": "Piloswine",
     "hp": 454886,
-    "defFactor": 0.62,
+    "defFactor": 0.709,
     "bestStarterElements": [
       "fire",
       "fighting",

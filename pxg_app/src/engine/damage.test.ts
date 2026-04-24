@@ -267,9 +267,11 @@ assert("Heatmor +80 BJ", 32425, computeSkillDamage(heatmorBase80, heatmor, burni
 assert("Heatmor +80 Shadow Fire", 34675, computeSkillDamage(heatmorBase80, heatmor, shadowFire));
 assert("Heatmor +80 Fire Lash", 36025, computeSkillDamage(heatmorBase80, heatmor, fireLash));
 
-// ---- Sh.Heatmor vs Mawile (valida FULL DUAL eff rule) ----
-console.log("\nSh.Heatmor vs Mawile T1H [fairy, steel] — full dual-type rule:");
-const mawileMob: MobConfig = { name: "Mawile", types: ["fairy", "steel"], hp: 0, defFactor: 0.61 };
+// ---- Sh.Heatmor vs Mawile (valida PxG dual-type piecewise rule) ----
+console.log("\nSh.Heatmor vs Mawile T1H [fairy, steel] — PxG dual-type piecewise:");
+// Mawile [fairy, steel] vs fire: steel fraco (2), fairy neutro (1) → 1 weak + 1 neutral = 1.75x
+// Def rescalada de 0.61 (old mult rule) → 0.697 (new PxG rule: 0.61 × 2/1.75)
+const mawileMob: MobConfig = { name: "Mawile", types: ["fairy", "steel"], hp: 0, defFactor: 0.697 };
 const cfgHeatmorMawile: DamageConfig = {
   playerLvl: 600,
   clan: "volcanic",
@@ -279,12 +281,16 @@ const cfgHeatmorMawile: DamageConfig = {
   pokeSetups: { "shiny-heatmor": { boost: 80, held: { kind: "x-attack", tier: 8 }, hasDevice: false } },
   skillCalibrations: {},
 };
-// Fire × Mawile full dual: steel(2) × fairy(1) = 2. Empirically 39725 observed.
-assert("Mawile BJ (fire ×2 via steel+fairy)", 39725, computeSkillDamage(cfgHeatmorMawile, heatmor, burningJealousy));
-// Fighting × Mawile full dual: steel(2) × fairy(0.5) = 1 (neutro). Bug antigo (last-only) daria ×2.
-assert("Mawile fighting eff = 1.0 (full dual)", 1.0, computeEffectiveness("fighting", ["fairy", "steel"]));
-// Pidgeot test: rock × [normal, flying] = 1 × 2 = 2 (consistente com last-only também)
-assert("Pidgeot rock eff = 2.0 (full dual = last-only aqui)", 2.0, computeEffectiveness("rock", ["normal", "flying"]));
+// Fire × Mawile PxG: 1 weak + 1 neutral = 1.75. Empirically 39725 observed.
+assert("Mawile BJ (fire ×1.75 via 1 weak + 1 neutral)", 39725, computeSkillDamage(cfgHeatmorMawile, heatmor, burningJealousy));
+// Fighting × Mawile PxG: steel(2=weak), fairy(0.5=resistant) → 1 weak + 1 resistant = 1.0 (normal)
+assert("Mawile fighting eff = 1.0 (1 weak + 1 resistant)", 1.0, computeEffectiveness("fighting", ["fairy", "steel"]));
+// Pidgeot [normal, flying] vs rock PxG: normal(0.5=resistant... na verdade 1=neutral), flying(2=weak) → 1 weak + 1 neutral = 1.75
+// Update: rock vs normal = 0.5 (rock resisted by normal defender). Espera! Na tabela TYPE_CHART:
+//   rock: { fire:2, ice:2, fighting:0.5, ground:0.5, flying:2, bug:2, steel:0.5 }
+// rock vs normal não está listado → default 1 (neutral). flying está em rock = 2 (weak).
+// Então Pidgeot [normal, flying] vs rock = 1 weak (flying) + 1 neutral (normal) = 1.75
+assert("Pidgeot rock eff = 1.75 (1 weak + 1 neutral, antes 2.0 mult)", 1.75, computeEffectiveness("rock", ["normal", "flying"]));
 
 // ---- Ninetales Volcanic lvl 600 XA5 vs XA8 (valida X-Atk T5 + T8) ----
 console.log("\nNinetales Volcanic lvl 600 +70 (XA5 vs XA8 → valida helds):");
@@ -307,6 +313,25 @@ assert("Ninetales XA8 BJ", 31697, computeSkillDamage(ninetalesXA8, ninetales, ni
 // Ninetales XA5 ball tinha food 1% → observado é 1.01× predito
 const ninetalesXA5Predicted = computeSkillDamage(ninetalesXA5, ninetales, ninetalesBJ);
 assert("Ninetales XA5 BJ (sem food bonus)", Math.round(29788 / 1.01), ninetalesXA5Predicted);
+
+// ---- Tabela PxG piecewise dual-type (validada por user 2026-04-24) ----
+console.log("\nPxG dual-type piecewise table — todos casos:");
+// Single-type (sanity)
+assert("Single weak (fire vs grass)", 2.0, computeEffectiveness("fire", ["grass"]));
+assert("Single neutral (ground vs psychic)", 1.0, computeEffectiveness("ground", ["psychic"]));
+assert("Single resistant (fire vs water)", 0.5, computeEffectiveness("fire", ["water"]));
+assert("Single null NW (normal vs ghost)", 0.5, computeEffectiveness("normal", ["ghost"]));
+
+// Dual-type piecewise
+assert("Dual both weak (ice vs dragon/flying)", 2.0, computeEffectiveness("ice", ["dragon", "flying"]));
+assert("Dual 1 weak + 1 neutral (ground vs [ground,steel] Alolan Diglett)", 1.75, computeEffectiveness("ground", ["ground", "steel"]));
+assert("Dual 1 weak + 1 neutral (fire vs [ice,ground] Piloswine)", 1.75, computeEffectiveness("fire", ["ice", "ground"]));
+assert("Dual 1 weak + 1 neutral (rock vs [normal,flying] Pidgeot)", 1.75, computeEffectiveness("rock", ["normal", "flying"]));
+assert("Dual 1 weak + 1 resistant (fighting vs [steel,fairy] Mawile)", 1.0, computeEffectiveness("fighting", ["fairy", "steel"]));
+assert("Dual 2 neutral (normal vs [normal,flying])", 1.0, computeEffectiveness("normal", ["normal", "flying"]));
+assert("Dual 1 resistant + 1 neutral (grass vs [fire,psychic])", 0.75, computeEffectiveness("grass", ["fire", "psychic"]));
+assert("Dual 2 resistant (fire vs [fire,water])", 0.5, computeEffectiveness("fire", ["fire", "water"]));
+assert("Dual 1 null NW (ghost vs [normal,psychic])", 0.5, computeEffectiveness("ghost", ["normal", "psychic"]));
 
 // ---- Summary ----
 console.log(`\n=== Validation tests: ${failures === 0 ? "PASSED" : `${failures} FAILED`} ===`);

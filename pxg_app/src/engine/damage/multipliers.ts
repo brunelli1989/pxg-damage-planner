@@ -1,4 +1,4 @@
-import type { ClanName, PokemonElement } from "../../types";
+import type { ClanName, PokemonElement, Skill } from "../../types";
 import clansData from "../../data/clans.json";
 
 // =========================================================
@@ -39,24 +39,86 @@ export function getEffectiveness(
   return TYPE_CHART[attackerType]?.[defenderType] ?? 1;
 }
 
+// =========================================================
+// PxG effectiveness rules (PVE Nightmare World — context do app)
+// =========================================================
+//
+// Single-type:
+//   weak (chart ×2)   → 2.0   (Super Efetivo)
+//   neutral (×1)      → 1.0   (Normal)
+//   resistant (×0.5)  → 0.5   (Muito Inefetivo)
+//   null (×0) PVE NW  → 0.5   (PVP = 0.4, PVE normal = 0)
+//
+// Dual-type (tabela piecewise, NÃO multiplicativa):
+//   2 weak                → 2.0   (Super Efetivo)
+//   1 weak + 1 neutral    → 1.75  (Efetivo)
+//   1 weak + 1 resistant  → 1.0   (Normal)
+//   2 neutral             → 1.0   (Normal)
+//   1 resistant + 1 neutral → 0.75 (Inefetivo)
+//   2 resistant           → 0.5   (Muito Inefetivo)
+//   qualquer null (NW)    → 0.5   (Muito Inefetivo)
+// =========================================================
+
+type EffClass = "weak" | "neutral" | "resistant" | "null";
+
+function classifyEff(eff: number): EffClass {
+  if (eff === 0) return "null";
+  if (eff >= 2) return "weak";
+  if (eff >= 1) return "neutral";
+  return "resistant";
+}
+
 /**
- * PxG usa FULL DUAL-TYPE: multiplica o efeito de cada tipo do defender.
- * Validado empiricamente 2026-04-22:
- * - Mawile [fairy, steel]: fighting NÃO é eff (×2 steel × ×0.5 fairy = 1) ✓
- *   (last-only teria dado ×2, incorreto)
- * - Pidgeot [normal, flying]: rock é eff ×2 (×1 normal × ×2 flying = 2) ✓
- *   (consistente com last-only também, por isso não distinguia)
- * - Sh.Heatmor vs Mawile: fire ×2 (×2 steel × ×1 fairy = 2) ✓
+ * Efetividade de um elemento atacante contra os tipos do defender, usando as regras oficiais
+ * PxG (PVE Nightmare World). Single-type usa a tabela direta; dual-type usa piecewise.
+ *
+ * Validações:
+ * - Alolan Diglett [ground, steel] vs ground: 1 weak + 1 neutral = 1.75 (não 2.0 multiplicativo)
+ * - Mawile [steel, fairy] vs fighting: 1 weak + 1 resistant = 1.0 (não 2×0.5 = 1.0, coincide por acaso)
+ * - Pidgeot [normal, flying] vs rock: 1 weak + 1 neutral = 1.75 (antes era 2.0)
  */
 export function computeEffectiveness(
   attackerType: PokemonElement,
   defenderTypes: PokemonElement[]
 ): number {
   if (defenderTypes.length === 0) return 1;
-  return defenderTypes.reduce(
-    (acc, t) => acc * getEffectiveness(attackerType, t),
-    1
-  );
+
+  if (defenderTypes.length === 1) {
+    const eff = getEffectiveness(attackerType, defenderTypes[0]);
+    // PVE NW: null vira 0.5 (não 0). PVE regular e PVP usam valores diferentes,
+    // mas app foca em Nightmare World.
+    if (eff === 0) return 0.5;
+    return eff;
+  }
+
+  // Dual-type: classify each, apply piecewise table.
+  const classes = defenderTypes.map((t) => classifyEff(getEffectiveness(attackerType, t)));
+  const weak = classes.filter((c) => c === "weak").length;
+  const neutral = classes.filter((c) => c === "neutral").length;
+  const resistant = classes.filter((c) => c === "resistant").length;
+  const nullCount = classes.filter((c) => c === "null").length;
+
+  if (nullCount > 0) return 0.5; // NW: null vira muito inefetivo
+  if (weak === 2) return 2.0;
+  if (weak === 1 && neutral === 1) return 1.75;
+  if (weak === 1 && resistant === 1) return 1.0;
+  if (neutral === 2) return 1.0;
+  if (resistant === 1 && neutral === 1) return 0.75;
+  if (resistant === 2) return 0.5;
+  return 1.0;
+}
+
+/**
+ * Efetividade de uma skill específica contra os tipos de um pokemon defender.
+ * Wrapper conveniente que extrai o element da skill. Se skill não tem element
+ * definido (utilitária, buff, etc.), retorna 1 (neutro).
+ */
+export function skillEffectiveness(
+  skill: Skill,
+  defenderTypes: PokemonElement[]
+): number {
+  if (!skill.element) return 1;
+  return computeEffectiveness(skill.element, defenderTypes);
 }
 
 // =========================================================
