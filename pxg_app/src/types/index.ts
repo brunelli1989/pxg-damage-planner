@@ -31,6 +31,17 @@ export interface RosterPokemon {
 }
 export type DiskLevel = 0 | 1 | 2 | 3 | 4;
 
+export interface SkillCalibration {
+  /** Setup usado na observação (ex: "lvl 600, +50, XA5, Volcanic, neutro"). */
+  config: string;
+  /** Dano observado no cast. */
+  dano: number;
+  /** skill_power derivado (opcional; se omitido, engine deriva on-the-fly). */
+  power?: number;
+  /** Nota opcional (ex: "Sh.Heatmor vs Sceptile eff×2"). */
+  note?: string;
+}
+
 export interface Skill {
   name: string;
   cooldown: number;
@@ -41,9 +52,14 @@ export interface Skill {
    *  Elixir Def pro starter do lure */
   def?: boolean;
   element?: PokemonElement; // opcional; se omitido, clã/effectiveness não se aplicam
-  power?: number; // skill_power "clean" (sem clã embutido); calibrado via cast no dummy
-  /** Dano observado no dummy durante a calibração (input bruto antes de derivar power). */
+  /** skill_power canônico usado pelo engine. Se múltiplas calibrations existirem,
+   *  representa a média/best-fit; senão é o valor da calibração principal. */
+  power?: number;
+  /** Dano observado na calibração principal (primeira/canônica). Kept pra retrocompat. */
   dano?: number;
+  /** Observações adicionais da mesma skill em setups diferentes (cross-validation, variance).
+   *  Engine usa `power` canônico; este array é histórico/info. */
+  calibrations?: SkillCalibration[];
 }
 
 export interface Pokemon {

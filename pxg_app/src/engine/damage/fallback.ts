@@ -42,7 +42,20 @@ export function getDefaultSkillPower(poke: Pokemon): number {
 }
 
 /**
- * Resolve o power de uma skill: calibrado se existir, senão fallback por (tier, role).
+ * Computa power canônico a partir do array `calibrations` (média simples das entradas
+ * que tenham `power` definido). Usado quando `skill.power` não está setado manualmente.
+ */
+function averageCalibrationPower(skill: Skill): number | undefined {
+  const cals = skill.calibrations;
+  if (!cals || cals.length === 0) return undefined;
+  const values = cals.map((c) => c.power).filter((p): p is number => typeof p === "number");
+  if (values.length === 0) return undefined;
+  return values.reduce((a, b) => a + b, 0) / values.length;
+}
+
+/**
+ * Resolve o power de uma skill: prioridade (1) `skill.power` manual, (2) média de
+ * `skill.calibrations[].power`, (3) fallback por (tier, role).
  * Skills com buff (self ou next) e power = 0 (CC-only) não recebem fallback — são 0.
  * Resultado cacheado por (poke, skill) — invariante no hot path do beam search.
  */
@@ -58,9 +71,14 @@ export function resolveSkillPower(skill: Skill, poke: Pokemon): number {
     resolvedPowerCache.set(poke, bySkill);
   }
   let result: number;
-  if (skill.power !== undefined) result = skill.power;
-  else if (skill.buff !== null) result = 0;
-  else result = getDefaultSkillPower(poke);
+  if (skill.power !== undefined) {
+    result = skill.power;
+  } else {
+    const avg = averageCalibrationPower(skill);
+    if (avg !== undefined) result = avg;
+    else if (skill.buff !== null) result = 0;
+    else result = getDefaultSkillPower(poke);
+  }
   bySkill.set(skill, result);
   return result;
 }
