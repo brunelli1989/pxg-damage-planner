@@ -6,7 +6,8 @@
     ],
     "hunt": "300",
     "group": "Espurr",
-    "defFactor": 0.92,
+    "hp": 220464,
+    "defFactor": 0.80,
     "bestStarterElements": [
       "psychic",
       "dark",
@@ -923,7 +924,7 @@
     "hunt": "300",
     "group": "Tynamo/Eelektrik",
     "hp": 239169,
-    "defFactor": 0.555,
+    "defFactor": 0.867,
     "bestStarterElements": [
       "ground",
       "rock"
@@ -941,7 +942,7 @@
     "hunt": "300",
     "group": "Tynamo/Eelektrik",
     "hp": 203680,
-    "defFactor": 0.653,
+    "defFactor": 0.737,
     "bestStarterElements": [
       "ground",
       "rock"
