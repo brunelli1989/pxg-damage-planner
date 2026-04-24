@@ -1858,28 +1858,6 @@
     ],
     "hunt": "400+",
     "group": "Pyroar Female",
-    "todo": "calibrate defense",
-    "bestStarterElements": [
-      "water",
-      "rock"
-    ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Pyroar_Female",
-    "effectiveElements": [
-      "water",
-      "fighting",
-      "ground",
-      "rock"
-    ],
-    "effectivenessNotes": "Apesar de causarem dano efetivo, Pokémon dos elementos Fighting e Ground recebem dano normal de golpes do tipo Fire. Desta forma, jogadores que frequentarem este local usando Pokémon destes elementos deverão tomar cuidado. | Shiny Hariyama possui a passiva Thick Fat, tornando-a resistente a golpes do elemento Fire."
-  },
-  {
-    "name": "Pyroar",
-    "types": [
-      "fire",
-      "normal"
-    ],
-    "hunt": "400+",
-    "group": "Pyroar",
     "hp": 391855,
     "todo": "calibrate defense",
     "bestStarterElements": [
@@ -1966,14 +1944,14 @@
       "fire"
     ],
     "hunt": "400+",
-    "group": "Houndoom",
+    "group": "Mixed Fire",
     "hp": 391590,
     "todo": "calibrate defense",
     "bestStarterElements": [
       "water",
       "rock"
     ],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Houndoom",
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Mixed_Fire",
     "effectiveElements": [
       "water",
       "ground",
@@ -2501,391 +2479,639 @@
   },
   {
     "name": "Alakazam",
-    "types": ["psychic"],
+    "types": [
+      "psychic"
+    ],
     "hunt": "400+",
     "group": "Alakazam",
     "todo": "calibrate hp + defense",
-    "bestStarterElements": ["dark", "steel", "ghost"],
+    "bestStarterElements": [
+      "dark",
+      "steel",
+      "ghost"
+    ],
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alakazam",
-    "effectiveElements": ["dark", "ghost", "bug"]
+    "effectiveElements": [
+      "dark",
+      "ghost",
+      "bug"
+    ]
   },
   {
     "name": "Alolan Dugtrio",
-    "types": ["steel", "ground"],
+    "types": [
+      "steel",
+      "ground"
+    ],
     "hunt": "400+",
     "group": "Alolan Dugtrio",
     "hp": 505692,
     "todo": "calibrate defense",
-    "bestStarterElements": ["steel"],
+    "bestStarterElements": [
+      "steel"
+    ],
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Dugtrio",
-    "effectiveElements": ["fighting", "water", "fire", "ground"]
+    "effectiveElements": [
+      "fighting",
+      "water",
+      "fire",
+      "ground"
+    ]
   },
   {
     "name": "Alolan Grimer",
-    "types": ["poison", "dark"],
+    "types": [
+      "poison",
+      "dark"
+    ],
     "hunt": "300",
     "group": "Alolan Grimer",
     "todo": "calibrate hp + defense",
-    "bestStarterElements": ["poison", "ground"],
+    "bestStarterElements": [
+      "poison",
+      "ground"
+    ],
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Grimer",
-    "effectiveElements": ["ground"]
-  },
-  {
-    "name": "Altaria",
-    "types": ["dragon", "flying"],
-    "hunt": "400+",
-    "group": "Altaria",
-    "todo": "calibrate hp + defense",
-    "bestStarterElements": ["steel", "fairy"],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Altaria",
-    "effectiveElements": ["ice", "dragon", "fairy"]
+    "effectiveElements": [
+      "ground"
+    ]
   },
   {
     "name": "Banette",
-    "types": ["ghost"],
+    "types": [
+      "ghost"
+    ],
     "hunt": "400+",
     "group": "Banette/Misdreavus",
     "hp": 590410,
     "todo": "calibrate defense",
-    "bestStarterElements": ["dark", "normal"],
+    "bestStarterElements": [
+      "dark",
+      "normal"
+    ],
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Banette_e_Misdreavus",
-    "effectiveElements": ["ghost", "dark"]
+    "effectiveElements": [
+      "ghost",
+      "dark"
+    ]
   },
   {
     "name": "Misdreavus",
-    "types": ["ghost"],
+    "types": [
+      "ghost"
+    ],
     "hunt": "400+",
     "group": "Banette/Misdreavus",
     "hp": 623645,
     "todo": "calibrate defense",
-    "bestStarterElements": ["dark", "normal"],
+    "bestStarterElements": [
+      "dark",
+      "normal"
+    ],
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Banette_e_Misdreavus",
-    "effectiveElements": ["ghost", "dark"]
+    "effectiveElements": [
+      "ghost",
+      "dark"
+    ]
   },
   {
     "name": "Gardevoir",
-    "types": ["psychic", "fairy"],
+    "types": [
+      "psychic",
+      "fairy"
+    ],
     "hunt": "400+",
     "group": "Gardevoir",
     "hp": 351168,
     "todo": "calibrate defense",
-    "bestStarterElements": ["steel", "poison"],
+    "bestStarterElements": [
+      "steel",
+      "poison"
+    ],
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Gardevoir",
-    "effectiveElements": ["ghost", "poison", "steel"]
+    "effectiveElements": [
+      "ghost",
+      "poison",
+      "steel"
+    ]
   },
   {
     "name": "Grumpig",
-    "types": ["psychic"],
+    "types": [
+      "psychic"
+    ],
     "hunt": "400+",
     "group": "Grumpig",
     "hp": 584148,
     "todo": "calibrate defense",
-    "bestStarterElements": ["dark", "steel", "ghost"],
+    "bestStarterElements": [
+      "dark",
+      "steel",
+      "ghost"
+    ],
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Grumpig",
-    "effectiveElements": ["ghost", "dark", "bug"]
+    "effectiveElements": [
+      "ghost",
+      "dark",
+      "bug"
+    ]
   },
   {
     "name": "Magnezone",
-    "types": ["steel", "electric"],
+    "types": [
+      "steel",
+      "electric"
+    ],
     "hunt": "400+",
     "group": "Magnezone",
     "hp": 512320,
     "todo": "calibrate defense",
-    "bestStarterElements": ["ground"],
+    "bestStarterElements": [
+      "ground"
+    ],
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Magnezone",
-    "effectiveElements": ["fighting", "fire", "ground"]
+    "effectiveElements": [
+      "fighting",
+      "fire",
+      "ground"
+    ]
   },
   {
     "name": "Miltank",
-    "types": ["normal"],
+    "types": [
+      "normal"
+    ],
     "hunt": "400+",
     "group": "Miltank",
     "todo": "calibrate hp + defense",
-    "bestStarterElements": ["rock", "ghost"],
+    "bestStarterElements": [
+      "rock",
+      "ghost"
+    ],
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Miltank",
-    "effectiveElements": ["fighting"]
-  },
-  {
-    "name": "Ninetales",
-    "types": ["fire"],
-    "hunt": "400+",
-    "group": "Mixed Fire",
-    "todo": "calibrate hp + defense",
-    "bestStarterElements": ["water", "rock", "fire"],
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Mixed_Fire",
-    "effectiveElements": ["water", "ground", "rock"]
+    "effectiveElements": [
+      "fighting"
+    ]
   },
   {
     "name": "Scizor",
-    "types": ["bug", "steel"],
+    "types": [
+      "bug",
+      "steel"
+    ],
     "hunt": "400+",
     "group": "Scizor",
     "todo": "calibrate hp + defense",
-    "bestStarterElements": ["fire", "steel"],
+    "bestStarterElements": [
+      "fire",
+      "steel"
+    ],
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Scizor",
-    "effectiveElements": ["fire"],
+    "effectiveElements": [
+      "fire"
+    ],
     "effectivenessNotes": "Scizor é bug/steel — Fire é 4× efetivo (dupla fraqueza)."
   },
   {
     "name": "Sentinel",
-    "types": ["normal"],
+    "types": [
+      "normal"
+    ],
     "hunt": "300",
     "group": "Sentinel",
     "todo": "calibrate hp + defense",
-    "bestStarterElements": ["ghost"],
+    "bestStarterElements": [
+      "ghost"
+    ],
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Sentinel",
-    "effectiveElements": ["fighting"],
+    "effectiveElements": [
+      "fighting"
+    ],
     "effectivenessNotes": "Mobs aplicam Blind (mitigável com Nomel Berry)."
   },
   {
     "name": "Togetic",
-    "types": ["fairy", "flying"],
+    "types": [
+      "fairy",
+      "flying"
+    ],
     "hunt": "400+",
     "group": "Togetic/Togekiss",
     "hp": 574142,
     "todo": "calibrate defense",
-    "bestStarterElements": ["steel", "poison"],
+    "bestStarterElements": [
+      "steel",
+      "poison"
+    ],
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Togetic_e_Togekiss",
-    "effectiveElements": ["poison", "steel", "electric", "rock", "ice"]
+    "effectiveElements": [
+      "poison",
+      "steel",
+      "electric",
+      "rock",
+      "ice"
+    ]
   },
   {
     "name": "Togekiss",
-    "types": ["fairy", "flying"],
+    "types": [
+      "fairy",
+      "flying"
+    ],
     "hunt": "400+",
     "group": "Togetic/Togekiss",
     "todo": "calibrate hp + defense",
-    "bestStarterElements": ["steel", "poison"],
+    "bestStarterElements": [
+      "steel",
+      "poison"
+    ],
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Togetic_e_Togekiss",
-    "effectiveElements": ["poison", "steel", "electric", "rock", "ice"]
+    "effectiveElements": [
+      "poison",
+      "steel",
+      "electric",
+      "rock",
+      "ice"
+    ]
   },
   {
     "name": "Tyranitar",
-    "types": ["rock", "dark"],
+    "types": [
+      "rock",
+      "dark"
+    ],
     "hunt": "400+",
     "group": "Tyranitar",
     "todo": "calibrate hp + defense",
-    "bestStarterElements": ["fighting", "ground", "steel", "fairy"],
+    "bestStarterElements": [
+      "fighting",
+      "ground",
+      "steel",
+      "fairy"
+    ],
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Tyranitar",
-    "effectiveElements": ["fighting", "water", "grass", "ground", "bug", "steel", "fairy"],
+    "effectiveElements": [
+      "fighting",
+      "water",
+      "grass",
+      "ground",
+      "bug",
+      "steel",
+      "fairy"
+    ],
     "effectivenessNotes": "Rock+Dark → Fighting 4× (dupla fraqueza)."
   },
   {
     "name": "Ursaring",
-    "types": ["normal"],
+    "types": [
+      "normal"
+    ],
     "hunt": "400+",
     "group": "Ursaring",
     "todo": "calibrate hp + defense",
-    "bestStarterElements": ["rock", "ghost"],
+    "bestStarterElements": [
+      "rock",
+      "ghost"
+    ],
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Ursaring",
-    "effectiveElements": ["fighting"]
+    "effectiveElements": [
+      "fighting"
+    ]
   },
   {
-    "name": "Zorua",
-    "types": ["dark"],
+    "name": "T1H Zorua",
+    "types": [
+      "dark"
+    ],
     "hunt": "400+",
     "group": "T1H - Zoroark",
     "hp": 304210,
-    "defFactor": 0.80,
+    "defFactor": 0.8,
     "todo": "calibrate bestStarterElements",
     "wiki": "https://wiki.pokexgames.com/index.php/T1H_-_Cosmic_Island",
-    "effectiveElements": ["fighting", "bug", "fairy"]
+    "effectiveElements": [
+      "fighting",
+      "bug",
+      "fairy"
+    ]
   },
   {
-    "name": "Mawile",
-    "types": ["fairy", "steel"],
+    "name": "T1H Mawile",
+    "types": [
+      "fairy",
+      "steel"
+    ],
     "hunt": "400+",
     "group": "T1H - Shiny Mawile",
     "hp": 239325,
     "defFactor": 0.61,
     "todo": "calibrate bestStarterElements",
     "wiki": "https://wiki.pokexgames.com/index.php/T1H_-_Cosmic_Island",
-    "effectiveElements": ["fire", "ground"]
+    "effectiveElements": [
+      "fire",
+      "ground"
+    ]
   },
   {
-    "name": "Pachirisu",
-    "types": ["electric"],
+    "name": "T1H Pachirisu",
+    "types": [
+      "electric"
+    ],
     "hunt": "400+",
     "group": "T1H - Shiny Pachirisu",
     "hp": 257470,
     "defFactor": 0.68,
     "todo": "calibrate bestStarterElements",
     "wiki": "https://wiki.pokexgames.com/index.php/T1H_-_Cosmic_Island",
-    "effectiveElements": ["ground"]
+    "effectiveElements": [
+      "ground"
+    ]
   },
   {
-    "name": "Heatmor",
-    "types": ["fire"],
+    "name": "T1H Heatmor",
+    "types": [
+      "fire"
+    ],
     "hunt": "400+",
     "group": "T1H - Shiny Heatmor",
     "hp": 271720,
     "defFactor": 0.72,
     "todo": "calibrate bestStarterElements",
     "wiki": "https://wiki.pokexgames.com/index.php/T1H_-_Cosmic_Island",
-    "effectiveElements": ["water", "ground", "rock"]
+    "effectiveElements": [
+      "water",
+      "ground",
+      "rock"
+    ]
   },
   {
-    "name": "Makuhita",
-    "types": ["fighting"],
+    "name": "T1H Makuhita",
+    "types": [
+      "fighting"
+    ],
     "hunt": "400+",
     "group": "T1H - Shiny Hariyama",
     "hp": 214720,
     "defFactor": 0.85,
     "todo": "calibrate bestStarterElements",
     "wiki": "https://wiki.pokexgames.com/index.php/T1H_-_Cosmic_Island",
-    "effectiveElements": ["flying", "psychic", "fairy"]
+    "effectiveElements": [
+      "flying",
+      "psychic",
+      "fairy"
+    ]
   },
   {
-    "name": "Hariyama",
-    "types": ["fighting"],
+    "name": "T1H Hariyama",
+    "types": [
+      "fighting"
+    ],
     "hunt": "400+",
     "group": "T1H - Shiny Hariyama",
     "hp": 278845,
-    "defFactor": 0.70,
+    "defFactor": 0.7,
     "todo": "calibrate bestStarterElements",
     "wiki": "https://wiki.pokexgames.com/index.php/T1H_-_Cosmic_Island",
-    "effectiveElements": ["flying", "psychic", "fairy"]
+    "effectiveElements": [
+      "flying",
+      "psychic",
+      "fairy"
+    ]
   },
   {
     "name": "T1H Snorunt",
-    "types": ["ice"],
+    "types": [
+      "ice"
+    ],
     "hunt": "400+",
     "group": "T1H - Mega Glalie",
     "hp": 214720,
-    "defFactor": 0.80,
+    "defFactor": 0.8,
     "todo": "calibrate bestStarterElements",
     "wiki": "https://wiki.pokexgames.com/index.php/T1H_-_Cosmic_Island",
-    "effectiveElements": ["fire", "fighting", "rock", "steel"]
+    "effectiveElements": [
+      "fire",
+      "fighting",
+      "rock",
+      "steel"
+    ]
   },
   {
     "name": "T1H Glalie",
-    "types": ["ice"],
+    "types": [
+      "ice"
+    ],
     "hunt": "400+",
     "group": "T1H - Mega Glalie",
     "hp": 228970,
-    "defFactor": 0.60,
+    "defFactor": 0.6,
     "todo": "calibrate bestStarterElements",
     "wiki": "https://wiki.pokexgames.com/index.php/T1H_-_Cosmic_Island",
-    "effectiveElements": ["fire", "fighting", "rock", "steel"]
+    "effectiveElements": [
+      "fire",
+      "fighting",
+      "rock",
+      "steel"
+    ]
   },
   {
     "name": "T1H Cranidos",
-    "types": ["rock"],
+    "types": [
+      "rock"
+    ],
     "hunt": "400+",
     "group": "T1H - Shiny Rampardos",
     "hp": 214720,
-    "defFactor": 0.90,
+    "defFactor": 0.9,
     "todo": "calibrate bestStarterElements",
     "wiki": "https://wiki.pokexgames.com/index.php/T1H_-_Cosmic_Island",
-    "effectiveElements": ["water", "grass", "fighting", "ground", "steel"]
+    "effectiveElements": [
+      "water",
+      "grass",
+      "fighting",
+      "ground",
+      "steel"
+    ]
   },
   {
     "name": "T1H Rampardos",
-    "types": ["rock"],
+    "types": [
+      "rock"
+    ],
     "hunt": "400+",
     "group": "T1H - Shiny Rampardos",
     "hp": 247970,
     "defFactor": 0.63,
     "todo": "calibrate bestStarterElements",
     "wiki": "https://wiki.pokexgames.com/index.php/T1H_-_Cosmic_Island",
-    "effectiveElements": ["water", "grass", "fighting", "ground", "steel"]
+    "effectiveElements": [
+      "water",
+      "grass",
+      "fighting",
+      "ground",
+      "steel"
+    ]
   },
   {
-    "name": "Treecko",
-    "types": ["grass"],
+    "name": "T1H Treecko",
+    "types": [
+      "grass"
+    ],
     "hunt": "400+",
     "group": "T1H - Shiny Sceptile",
     "hp": 179095,
-    "defFactor": 1.00,
+    "defFactor": 1,
     "todo": "calibrate bestStarterElements",
     "wiki": "https://wiki.pokexgames.com/index.php/T1H_-_Cosmic_Island",
-    "effectiveElements": ["fire", "ice", "flying", "bug", "poison"]
+    "effectiveElements": [
+      "fire",
+      "ice",
+      "flying",
+      "bug",
+      "poison"
+    ]
   },
   {
-    "name": "Grovyle",
-    "types": ["grass"],
+    "name": "T1H Grovyle",
+    "types": [
+      "grass"
+    ],
     "hunt": "400+",
     "group": "T1H - Shiny Sceptile",
     "hp": 214720,
-    "defFactor": 0.90,
+    "defFactor": 0.9,
     "todo": "calibrate bestStarterElements",
     "wiki": "https://wiki.pokexgames.com/index.php/T1H_-_Cosmic_Island",
-    "effectiveElements": ["fire", "ice", "flying", "bug", "poison"]
+    "effectiveElements": [
+      "fire",
+      "ice",
+      "flying",
+      "bug",
+      "poison"
+    ]
   },
   {
-    "name": "Sceptile",
-    "types": ["grass"],
+    "name": "T1H Sceptile",
+    "types": [
+      "grass"
+    ],
     "hunt": "400+",
     "group": "T1H - Shiny Sceptile",
     "hp": 241795,
     "defFactor": 0.62,
     "todo": "calibrate bestStarterElements",
     "wiki": "https://wiki.pokexgames.com/index.php/T1H_-_Cosmic_Island",
-    "effectiveElements": ["fire", "ice", "flying", "bug", "poison"]
+    "effectiveElements": [
+      "fire",
+      "ice",
+      "flying",
+      "bug",
+      "poison"
+    ]
   },
   {
-    "name": "Pidgey",
-    "types": ["normal", "flying"],
+    "name": "T1H Pidgey",
+    "types": [
+      "normal",
+      "flying"
+    ],
     "hunt": "400+",
     "group": "T1H - Mega Pidgeot",
     "hp": 179095,
-    "defFactor": 1.00,
+    "defFactor": 1,
     "todo": "calibrate bestStarterElements",
     "wiki": "https://wiki.pokexgames.com/index.php/T1H_-_Cosmic_Island",
-    "effectiveElements": ["electric", "ice", "rock"]
+    "effectiveElements": [
+      "electric",
+      "ice",
+      "rock"
+    ]
   },
   {
-    "name": "Pidgeotto",
-    "types": ["normal", "flying"],
+    "name": "T1H Pidgeotto",
+    "types": [
+      "normal",
+      "flying"
+    ],
     "hunt": "400+",
     "group": "T1H - Mega Pidgeot",
     "hp": 214720,
-    "defFactor": 1.00,
+    "defFactor": 1,
     "todo": "calibrate bestStarterElements",
     "wiki": "https://wiki.pokexgames.com/index.php/T1H_-_Cosmic_Island",
-    "effectiveElements": ["electric", "ice", "rock"]
+    "effectiveElements": [
+      "electric",
+      "ice",
+      "rock"
+    ]
   },
   {
     "name": "T1H Pidgeot",
-    "types": ["normal", "flying"],
+    "types": [
+      "normal",
+      "flying"
+    ],
     "hunt": "400+",
     "group": "T1H - Mega Pidgeot",
     "hp": 241805,
     "defFactor": 0.67,
     "todo": "calibrate bestStarterElements",
     "wiki": "https://wiki.pokexgames.com/index.php/T1H_-_Cosmic_Island",
-    "effectiveElements": ["electric", "ice", "rock"]
+    "effectiveElements": [
+      "electric",
+      "ice",
+      "rock"
+    ]
   },
   {
     "name": "T1H Ralts",
-    "types": ["psychic", "fairy"],
+    "types": [
+      "psychic",
+      "fairy"
+    ],
     "hunt": "400+",
     "group": "T1H - Shiny Gardevoir",
     "hp": 164845,
     "defFactor": 0.96,
     "todo": "calibrate bestStarterElements",
     "wiki": "https://wiki.pokexgames.com/index.php/T1H_-_Cosmic_Island",
-    "effectiveElements": ["poison", "steel"]
+    "effectiveElements": [
+      "poison",
+      "steel"
+    ]
   },
   {
     "name": "T1H Kirlia",
-    "types": ["psychic", "fairy"],
+    "types": [
+      "psychic",
+      "fairy"
+    ],
     "hunt": "400+",
     "group": "T1H - Shiny Gardevoir",
     "hp": 200470,
     "defFactor": 0.95,
     "todo": "calibrate bestStarterElements",
     "wiki": "https://wiki.pokexgames.com/index.php/T1H_-_Cosmic_Island",
-    "effectiveElements": ["poison", "steel"]
+    "effectiveElements": [
+      "poison",
+      "steel"
+    ]
   },
   {
     "name": "T1H Gardevoir",
-    "types": ["psychic", "fairy"],
+    "types": [
+      "psychic",
+      "fairy"
+    ],
     "hunt": "400+",
     "group": "T1H - Shiny Gardevoir",
     "hp": 303545,
-    "defFactor": 0.90,
+    "defFactor": 0.9,
     "todo": "calibrate bestStarterElements",
     "wiki": "https://wiki.pokexgames.com/index.php/T1H_-_Cosmic_Island",
-    "effectiveElements": ["poison", "steel"]
+    "effectiveElements": [
+      "poison",
+      "steel"
+    ]
   }
 ]
