@@ -125,7 +125,7 @@
         "cooldown": 40,
         "type": "area",
         "cc": null,
-        "buff": "self",
+        "buff": null,
         "element": "rock",
         "power": 0,
         "dano": 0
@@ -374,7 +374,7 @@
         "cooldown": 35,
         "type": "area",
         "cc": null,
-        "buff": "self",
+        "buff": null,
         "element": "rock",
         "power": 0,
         "dano": 0
@@ -446,7 +446,7 @@
         "cooldown": 40,
         "type": "area",
         "cc": null,
-        "buff": "self",
+        "buff": null,
         "element": "rock",
         "power": 0,
         "dano": 0
@@ -860,7 +860,7 @@
         "cooldown": 20,
         "type": "area",
         "cc": null,
-        "buff": "self",
+        "buff": null,
         "element": "rock",
         "power": 0
       },
