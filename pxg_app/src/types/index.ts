@@ -87,6 +87,18 @@ export interface Pokemon {
   melee?: MeleeStats;
 }
 
+export type BossCategory = "Nightmare Terror" | "Bestas Lendárias";
+
+export interface Boss {
+  id: string;
+  name: string;
+  category: BossCategory;
+  types: PokemonElement[];
+  hp?: number;
+  defFactor?: number;
+  wiki?: string;
+}
+
 export interface MeleeStats {
   /** skill_power equivalente do melee (mesma fórmula que skills). */
   power: number;

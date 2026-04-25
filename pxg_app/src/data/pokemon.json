@@ -1510,7 +1510,7 @@
   {
     "id": "shiny-marowak",
     "name": "Shiny Marowak",
-    "tier": "T2",
+    "tier": "T1C",
     "role": "otdd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Marowak",
     "observacao": "Mud Sport 5-hit per cast + blind + neverboost; Bone Rush variável 2-5 hits/cast (calibrado assumindo 5 hits max — best case) focus-blocked; Headbutt single-hit normal (color=129); Bulldoze single-hit frontal; Earth Power single-hit AOE; Bonemerang/Bone Club single-hit; Rage = self-buff ×2 dano físico por ~20s (validado), CD 80s → uptime 25% (+25% sustained DPS); engine ainda modela Rage como buff:next ×1.5 simplificado. Wiki tem Smack Down (selvagem) e Bone Spin (sem CD) — não inclusos. PVE CDs.",
@@ -1753,11 +1753,172 @@
   {
     "id": "shiny-gogoat",
     "name": "Shiny Gogoat",
-    "tier": "T2",
+    "tier": "T1C",
     "role": "otdd",
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Gogoat",
-    "skills": [],
-    "todo": "definir skills + calibrar"
+    "config": "lvl 600, +70, XA8, Volcanic (no grass bonus), sem device, dummy neutro",
+    "observacao": "Cores novas: color=26 (grass), color=35 (lifesteal heal). Razor Leaf e Grass Knot ambos 3-hit per cast (wiki diz Single Target mas log confirma multi-hit). Secret Power capturado em 2 hits. Horn Leech: damage 1-hit + 4 lifesteal heals (color=35 não conta como dano ao alvo). Tail Whip só funciona em duel (debuff def 5s).",
+    "skills": [
+      {
+        "name": "Razor Leaf",
+        "cooldown": 8,
+        "type": "target",
+        "cc": null,
+        "buff": null,
+        "element": "grass",
+        "power": 11.67,
+        "dano": 12854,
+        "calibrations": [
+          { "config": "lvl 600, +70, XA8, Volcanic, sem device, dummy neutro", "dano": 12854, "power": 11.67, "note": "3-hit per cast (4322, 4257, 4275), color=26 grass. Per-hit ~4285." }
+        ]
+      },
+      {
+        "name": "Leaf Blade",
+        "cooldown": 8,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass",
+        "power": 11.22,
+        "dano": 12357,
+        "calibrations": [
+          { "config": "lvl 600, +70, XA8, Volcanic, sem device, dummy neutro", "dano": 12357, "power": 11.22, "note": "1-hit grande (12357), color=26 grass. Wiki diz 'Single Target + AOE' — marcado como area." }
+        ]
+      },
+      {
+        "name": "Grass Knot",
+        "cooldown": 10,
+        "type": "target",
+        "cc": null,
+        "buff": null,
+        "element": "grass",
+        "power": 14.72,
+        "dano": 16220,
+        "calibrations": [
+          { "config": "lvl 600, +70, XA8, Volcanic, sem device, dummy neutro", "dano": 16220, "power": 14.72, "note": "3-hit per cast (5407, 5406, 5407), color=26 grass. Per-hit ~5407." }
+        ]
+      },
+      {
+        "name": "Giga Impact",
+        "cooldown": 40,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "normal",
+        "power": 14.81,
+        "dano": 16318,
+        "playerNote": "Aplica Slow no oponente; engine não modela o slow.",
+        "calibrations": [
+          { "config": "lvl 600, +70, XA8, Volcanic, sem device, dummy neutro", "dano": 16318, "power": 14.81, "note": "1-hit, color=129 normal. Wiki: Damage + Buff + Slow." }
+        ]
+      },
+      {
+        "name": "Horn Leech",
+        "cooldown": 40,
+        "type": "target",
+        "cc": "stun",
+        "buff": null,
+        "element": "grass",
+        "power": 2.94,
+        "dano": 3234,
+        "playerNote": "⚠ Lifesteal: aplica heal no caster (4 ticks de ~2675 observados, color=35), não conta como dano ao alvo. Stun + Focus Blocked + Neverboost.",
+        "calibrations": [
+          { "config": "lvl 600, +70, XA8, Volcanic, sem device, dummy neutro", "dano": 3234, "power": 2.94, "note": "1-hit damage (3234, color=26 grass) + 4 lifesteal hits (~2675 each, color=35) — esses são heal no player, não dano ao alvo." }
+        ]
+      },
+      {
+        "name": "Stampede",
+        "cooldown": 50,
+        "type": "area",
+        "cc": "stun",
+        "buff": null,
+        "element": "grass",
+        "power": 29.56,
+        "dano": 32567,
+        "calibrations": [
+          { "config": "lvl 600, +70, XA8, Volcanic, sem device, dummy neutro", "dano": 32567, "power": 29.56, "note": "1-hit AOE big (32567), color=26 grass. Aplica Paralyze (modelado como cc:stun)." }
+        ]
+      },
+      {
+        "name": "Secret Power",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "grass",
+        "power": 25.86,
+        "dano": 28486,
+        "calibrations": [
+          { "config": "lvl 600, +70, XA8, Volcanic, sem device, dummy neutro", "dano": 28486, "power": 25.86, "note": "2-hit per cast (14201, 14285), color=26 grass. Per-hit ~14243." }
+        ]
+      },
+      {
+        "name": "Tail Whip",
+        "cooldown": 60,
+        "type": "target",
+        "cc": null,
+        "buff": null,
+        "element": "normal",
+        "power": 0,
+        "dano": 0,
+        "playerNote": "Só funciona em duel (PVP) — reduz defesa do oponente por 5s. Power 0 → não soma no OTDD em boss fights.",
+        "calibrations": [
+          { "config": "skill descritiva — não calibrada", "dano": 0, "power": 0, "note": "Debuff de defesa por 5s (in-game description). Não modelado no engine; power 0 efetivamente exclui de OTDD." }
+        ]
+      },
+      {
+        "name": "Milk Drink",
+        "cooldown": 200,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "normal",
+        "power": 0,
+        "dano": 0,
+        "playerNote": "Healing skill — não dá dano (Nevermiss).",
+        "calibrations": [
+          { "config": "skill de cura — não calibrada", "dano": 0, "power": 0, "note": "Healing AOE no aliado/self. Não conta no OTDD." }
+        ]
+      },
+      {
+        "name": "Grassy Terrain",
+        "cooldown": 80,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "grass",
+        "power": 0,
+        "dano": 0,
+        "playerNote": "Healing + Buff (Nevermiss). Não dá dano.",
+        "calibrations": [
+          { "config": "skill de cura/buff — não calibrada", "dano": 0, "power": 0, "note": "Healing AOE + buff. Não conta no OTDD." }
+        ]
+      },
+      {
+        "name": "Grass Pelt",
+        "cooldown": 0,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "grass",
+        "power": 0,
+        "dano": 0,
+        "playerNote": "Passive — não cast manual.",
+        "calibrations": [
+          { "config": "passiva — não cast manual, apenas listada por completude", "dano": 0, "power": 0, "note": "Passive buff. Não cast manualmente." }
+        ]
+      }
+    ],
+    "melee": {
+      "power": 1.99,
+      "attackInterval": 2.07,
+      "element": "normal",
+      "kind": "melee",
+      "config": "lvl 600, +70, XA8, Volcanic, sem device, dummy neutro",
+      "calibrations": [
+        { "config": "lvl 600, +70, XA8, Volcanic, sem device, dummy neutro (5 hits)", "dano": 2188, "power": 1.99, "note": "color=129 normal close-melee, interval ~2.07s. Per-hit ~2188 (vs Sh.Marowak 2480, -12%)." }
+      ]
+    }
   },
   {
     "id": "magmar",

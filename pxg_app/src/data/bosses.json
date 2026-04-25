@@ -1,0 +1,86 @@
+[
+  {
+    "id": "kairiki",
+    "name": "Kairiki",
+    "category": "Nightmare Terror",
+    "types": [],
+    "wiki": "https://wiki.pokexgames.com/index.php/Kairiki"
+  },
+  {
+    "id": "kame",
+    "name": "Kame",
+    "category": "Nightmare Terror",
+    "types": [],
+    "wiki": "https://wiki.pokexgames.com/index.php/Kame"
+  },
+  {
+    "id": "ptera",
+    "name": "Ptera",
+    "category": "Nightmare Terror",
+    "types": [],
+    "wiki": "https://wiki.pokexgames.com/index.php/Ptera"
+  },
+  {
+    "id": "gama",
+    "name": "Gama",
+    "category": "Nightmare Terror",
+    "types": [],
+    "wiki": "https://wiki.pokexgames.com/index.php/Gama"
+  },
+  {
+    "id": "riza",
+    "name": "Riza",
+    "category": "Nightmare Terror",
+    "types": [],
+    "wiki": "https://wiki.pokexgames.com/index.php/Riza"
+  },
+  {
+    "id": "raito",
+    "name": "Raito",
+    "category": "Nightmare Terror",
+    "types": [],
+    "wiki": "https://wiki.pokexgames.com/index.php/Raito"
+  },
+  {
+    "id": "gyakkyo",
+    "name": "Gyakkyo",
+    "category": "Nightmare Terror",
+    "types": [],
+    "wiki": "https://wiki.pokexgames.com/index.php/Gyakkyo"
+  },
+  {
+    "id": "seishin-yurei",
+    "name": "Seishin & Yurei",
+    "category": "Nightmare Terror",
+    "types": [],
+    "wiki": "https://wiki.pokexgames.com/index.php/Seishin_%26_Yurei"
+  },
+  {
+    "id": "kitsune",
+    "name": "Kitsune",
+    "category": "Nightmare Terror",
+    "types": [],
+    "wiki": "https://wiki.pokexgames.com/index.php/Kitsune"
+  },
+  {
+    "id": "raikou",
+    "name": "Raikou",
+    "category": "Bestas Lendárias",
+    "types": ["electric"],
+    "wiki": "https://wiki.pokexgames.com/index.php/Raikou"
+  },
+  {
+    "id": "entei",
+    "name": "Entei",
+    "category": "Bestas Lendárias",
+    "types": ["fire"],
+    "wiki": "https://wiki.pokexgames.com/index.php/Entei"
+  },
+  {
+    "id": "suicune",
+    "name": "Suicune",
+    "category": "Bestas Lendárias",
+    "types": ["water"],
+    "wiki": "https://wiki.pokexgames.com/index.php/Suicune"
+  }
+]

@@ -1,8 +1,12 @@
 import { useMemo, useState } from "react";
-import type { DamageConfig, Pokemon, RosterPokemon, XAtkTier } from "../types";
+import type { Boss, BossCategory, DamageConfig, Pokemon, PokemonElement, RosterPokemon, XAtkTier } from "../types";
 import pokemonData from "../data/pokemon.json";
 import rosterData from "../data/pokemon_roster.json";
+import bossesData from "../data/bosses.json";
 import { computeSkillDamage, resolveSkillPower } from "../engine/damage";
+
+const bosses = bossesData as Boss[];
+const BOSS_CATEGORIES: BossCategory[] = ["Nightmare Terror", "Bestas Lendárias"];
 
 const elementsById = Object.fromEntries(
   (rosterData as RosterPokemon[]).map((r) => [r.id, r.elements])
@@ -40,20 +44,22 @@ interface SkillRow {
 
 /**
  * Boss fights não aplicam bônus de clã, então clan é forçado a null.
- * Mob é dummy neutro (eff 1, def 1) — boss fight é considerado neutro pra cálculo padrão.
+ * targetTypes define o(s) elemento(s) do alvo — engine aplica eff (PxG piecewise).
+ * defFactor = 1 (boss já tem stats próprios, eff cobre matchup).
  */
 function buildConfig(
   playerLvl: number,
   xAtkTier: XAtkTier,
   xBoostTier: XAtkTier,
   boost: number,
-  pokeId: string
+  pokeId: string,
+  targetTypes: PokemonElement[]
 ): DamageConfig {
   return {
     playerLvl,
     clan: null,
     hunt: "300",
-    mob: { name: "boss", types: [], hp: 0, defFactor: 1 },
+    mob: { name: "target", types: targetTypes, hp: 0, defFactor: 1 },
     device: xBoostTier > 0 ? { kind: "x-boost", tier: xBoostTier } : { kind: "x-attack", tier: 0 },
     pokeSetups: {
       [pokeId]: {
@@ -140,17 +146,29 @@ export function OtddPage() {
   const [xAtkTier, setXAtkTier] = useState<XAtkTier>(8);
   const [xBoostTier, setXBoostTier] = useState<XAtkTier>(0);
   const [boost, setBoost] = useState(70);
+  const [bossId, setBossId] = useState<string>("");
   const [search, setSearch] = useState("");
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
+  const selectedBoss = useMemo(() => bosses.find((b) => b.id === bossId), [bossId]);
+  const bossesByCategory = useMemo(() => {
+    const map = new Map<BossCategory, Boss[]>();
+    for (const b of bosses) {
+      if (!map.has(b.category)) map.set(b.category, []);
+      map.get(b.category)!.push(b);
+    }
+    return map;
+  }, []);
+
   const rows = useMemo<PokeRow[]>(() => {
     const result: PokeRow[] = [];
+    const targetTypes: PokemonElement[] = selectedBoss?.types ?? [];
 
     for (const poke of allPokes) {
       if (poke.role !== "otdd") continue;
       const damageSkills = poke.skills.filter((s) => (resolveSkillPower(s, poke) ?? 0) > 0);
 
-      const cfg = buildConfig(playerLvl, xAtkTier, xBoostTier, boost, poke.id);
+      const cfg = buildConfig(playerLvl, xAtkTier, xBoostTier, boost, poke.id, targetTypes);
       const sim = simulate10min(poke, cfg);
 
       const skillRows: SkillRow[] = damageSkills.map((skill) => {
@@ -205,7 +223,7 @@ export function OtddPage() {
 
     result.sort((a, b) => b.totalDmg - a.totalDmg);
     return result;
-  }, [playerLvl, xAtkTier, xBoostTier, boost]);
+  }, [playerLvl, xAtkTier, xBoostTier, boost, selectedBoss]);
 
   const filtered = useMemo(() => {
     if (!search) return rows;
@@ -220,6 +238,7 @@ export function OtddPage() {
       <h2>OTDD — Dano em 10 min</h2>
       <p className="otdd-hint">
         Simulação greedy de 600s (casta a skill com maior dano sempre que ready).
+        Selecione tipo(s) do target pra aplicar efetividade (PxG piecewise).
         Bônus de clã NÃO se aplica em boss fight. Buffs (Rage ×2/20s) ainda não modelados —
         valores são baseline sem buff.
       </p>
@@ -263,6 +282,21 @@ export function OtddPage() {
               <option key={t} value={t}>
                 T{t}
               </option>
+            ))}
+          </select>
+        </label>
+        <label>
+          Boss
+          <select value={bossId} onChange={(e) => setBossId(e.target.value)}>
+            <option value="">Neutro (sem boss)</option>
+            {BOSS_CATEGORIES.map((cat) => (
+              <optgroup key={cat} label={cat}>
+                {(bossesByCategory.get(cat) ?? []).map((b) => (
+                  <option key={b.id} value={b.id}>
+                    {b.name}{b.types.length > 0 ? ` (${b.types.join("/")})` : ""}
+                  </option>
+                ))}
+              </optgroup>
             ))}
           </select>
         </label>
