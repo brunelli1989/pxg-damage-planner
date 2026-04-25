@@ -809,10 +809,11 @@
         "cc": "stun",
         "buff": "self",
         "element": "ground",
-        "power": 23.31,
+        "power": 20.24,
         "dano": 22976,
         "calibrations": [
-          { "config": "lvl 375, +70, XA7, Orebound, dummy neutro, sem device", "dano": 22976, "power": 23.31, "note": "2-hit por cast (11483 + 11493), color=164" }
+          { "config": "lvl 375, +70, XA7, X-Boost T7 device, Orebound, dummy neutro", "dano": 22976, "power": 20.24, "note": "2-hit por cast (11483 + 11493), color=164" },
+          { "config": "lvl 600, +70, XA7, X-Boost T7 device, Volcanic, dummy neutro", "dano": 24959, "power": 20.35, "note": "2-hit por cast (12482 + 12477), color=164" }
         ]
       },
       {
@@ -822,10 +823,11 @@
         "cc": null,
         "buff": "self",
         "element": "ground",
-        "power": 21.34,
+        "power": 18.53,
         "dano": 21034,
         "calibrations": [
-          { "config": "lvl 375, +70, XA7, Orebound, dummy neutro, sem device", "dano": 21034, "power": 21.34, "note": "color=164" }
+          { "config": "lvl 375, +70, XA7, X-Boost T7 device, Orebound, dummy neutro", "dano": 21034, "power": 18.53, "note": "color=164" },
+          { "config": "lvl 600, +70, XA7, X-Boost T7 device, Volcanic, dummy neutro", "dano": 22857, "power": 18.64, "note": "color=164" }
         ]
       },
       {
@@ -835,10 +837,11 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 20.56,
+        "power": 17.85,
         "dano": 20265,
         "calibrations": [
-          { "config": "lvl 375, +70, XA7, Orebound, dummy neutro, sem device", "dano": 20265, "power": 20.56, "note": "color=164" }
+          { "config": "lvl 375, +70, XA7, X-Boost T7 device, Orebound, dummy neutro", "dano": 20265, "power": 17.85, "note": "color=164" },
+          { "config": "lvl 600, +70, XA7, X-Boost T7 device, Volcanic, dummy neutro", "dano": 22034, "power": 17.97, "note": "color=164" }
         ]
       },
       {
@@ -848,10 +851,11 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 29.09,
+        "power": 25.25,
         "dano": 28669,
         "calibrations": [
-          { "config": "lvl 375, +70, XA7, Orebound, dummy neutro, sem device", "dano": 28669, "power": 29.09, "note": "color=164" }
+          { "config": "lvl 375, +70, XA7, X-Boost T7 device, Orebound, dummy neutro", "dano": 28669, "power": 25.25, "note": "color=164" },
+          { "config": "lvl 600, +70, XA7, X-Boost T7 device, Volcanic, dummy neutro", "dano": 31157, "power": 25.41, "note": "color=164" }
         ]
       },
       {
@@ -861,14 +865,15 @@
         "cc": null,
         "buff": null,
         "element": "ground",
-        "power": 25.47,
+        "power": 22.11,
         "dano": 25107,
         "calibrations": [
-          { "config": "lvl 375, +70, XA7, Orebound, dummy neutro, sem device", "dano": 25107, "power": 25.47, "note": "color=164 confirma element=ground (não ghost apesar do nome)" }
+          { "config": "lvl 375, +70, XA7, X-Boost T7 device, Orebound, dummy neutro", "dano": 25107, "power": 22.11, "note": "color=164 confirma element=ground (não ghost apesar do nome)" },
+          { "config": "lvl 600, +70, XA7, X-Boost T7 device, Volcanic, dummy neutro", "dano": 27156, "power": 22.15, "note": "color=164" }
         ]
       }
     ],
-    "config": "lvl 375, +70, XA7, Orebound, dummy neutro, sem device",
+    "config": "lvl 375, +70, XA7, X-Boost T7 device, Orebound, dummy neutro",
     "observacao": "Sand Tomb 2-hit por cast"
   },
   {
