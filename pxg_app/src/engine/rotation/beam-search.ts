@@ -131,6 +131,22 @@ export function findBestRotation(
       if (!els || els.length === 0) return true;
       return els.some((e) => best.includes(e));
     };
+    // Hard filter: starter precisa TOMAR inefetivo (≤0.75) ou muito inefetivo (≤0.5)
+    // do mob. Mesmo offtank/T1H-clã não pode lurar se recebe neutral/super effective.
+    // Worst-case por mob.types (max eff) — se mob é dual e starter resiste só um tipo,
+    // ainda toma o outro. Fallback automático se filtro esvazia (bag sem opção tank).
+    const mobTypes = cfg.mob.types ?? [];
+    const starterResistsMob = (l: Lure): boolean => {
+      if (mobTypes.length === 0) return true;
+      const els = l.starter.elements;
+      if (!els || els.length === 0) return true;
+      let maxEff = 0;
+      for (const mt of mobTypes) {
+        const eff = computeEffectiveness(mt, els);
+        if (eff > maxEff) maxEff = eff;
+      }
+      return maxEff <= 0.75;
+    };
     const lureSize = (l: Lure) => 1 + (l.second ? 1 : 0) + l.extraMembers.length;
     // Stun starter preferido sobre silence via SILENCE_STARTER_PENALTY (soft score penalty).
     // Antes: hard filter removia silence-starters quando stun existia — eliminava rotações
@@ -139,7 +155,10 @@ export function findBestRotation(
     const filter = (ls: Lure[]) => {
       const dmgOk = ls.filter((l) => lureFinalizesBox(l, cfg, cfg.mob));
       const typeOk = dmgOk.filter(starterTypeOk);
-      return typeOk.length > 0 ? typeOk : dmgOk;
+      const resistOk = typeOk.filter(starterResistsMob);
+      if (resistOk.length > 0) return resistOk;
+      if (typeOk.length > 0) return typeOk;
+      return dmgOk;
     };
 
     // Gera TODOS os tiers de lure (solo + dupla + dupla+elixir + group) de uma vez.

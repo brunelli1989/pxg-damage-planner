@@ -808,7 +808,12 @@
         "type": "area",
         "cc": "stun",
         "buff": "self",
-        "element": "ground"
+        "element": "ground",
+        "power": 23.31,
+        "dano": 22976,
+        "calibrations": [
+          { "config": "lvl 375, +70, XA7, Orebound, dummy neutro, sem device", "dano": 22976, "power": 23.31, "note": "2-hit por cast (11483 + 11493), color=164" }
+        ]
       },
       {
         "name": "Dig",
@@ -816,7 +821,12 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "ground"
+        "element": "ground",
+        "power": 21.34,
+        "dano": 21034,
+        "calibrations": [
+          { "config": "lvl 375, +70, XA7, Orebound, dummy neutro, sem device", "dano": 21034, "power": 21.34, "note": "color=164" }
+        ]
       },
       {
         "name": "Stomping Tantrum",
@@ -824,7 +834,12 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 20.56,
+        "dano": 20265,
+        "calibrations": [
+          { "config": "lvl 375, +70, XA7, Orebound, dummy neutro, sem device", "dano": 20265, "power": 20.56, "note": "color=164" }
+        ]
       },
       {
         "name": "Earthquake",
@@ -832,7 +847,12 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 29.09,
+        "dano": 28669,
+        "calibrations": [
+          { "config": "lvl 375, +70, XA7, Orebound, dummy neutro, sem device", "dano": 28669, "power": 29.09, "note": "color=164" }
+        ]
       },
       {
         "name": "Shadow Rush",
@@ -840,10 +860,16 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 25.47,
+        "dano": 25107,
+        "calibrations": [
+          { "config": "lvl 375, +70, XA7, Orebound, dummy neutro, sem device", "dano": 25107, "power": 25.47, "note": "color=164 confirma element=ground (não ghost apesar do nome)" }
+        ]
       }
     ],
-    "todo": "calibrate skills"
+    "config": "lvl 375, +70, XA7, Orebound, dummy neutro, sem device",
+    "observacao": "Sand Tomb 2-hit por cast"
   },
   {
     "id": "mega-excadrill",
