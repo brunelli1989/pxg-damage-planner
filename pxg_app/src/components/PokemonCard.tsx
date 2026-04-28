@@ -44,7 +44,7 @@ export function PokemonCard({ pokemon, selected, disabled, onToggle }: Props) {
         <span className="font-semibold text-sm">{pokemon.name}</span>
         {uncalibrated && (
           <span
-            className="calibration-warning text-xs ml-auto mr-1.5 cursor-help opacity-85 hover:opacity-100"
+            className="text-xs ml-auto mr-1.5 cursor-help opacity-85 hover:opacity-100"
             title={
               `Ação pendente: ${pokemon.todo}` +
               (pokemon.observacao ? `\n\nObservação: ${pokemon.observacao}` : "")

@@ -68,6 +68,13 @@ interface Props {
   onDiskLevelChange: (v: DiskLevel) => void;
 }
 
+const inputCls = "bg-bg-skills text-text border border-[#444] px-2.5 py-1.5 rounded-md text-[0.875rem] min-w-[120px]";
+const labelCls = "flex flex-col gap-1 text-[0.8rem] text-text-muted";
+const hintCls = "text-[0.75rem] text-text-dim";
+const fieldsetCls = "border border-[#2a3e5e] rounded-md px-3 pt-2.5 pb-1 mb-3";
+const legendCls = "px-1.5 text-[0.75rem] text-[#6fa3d4] font-semibold uppercase tracking-wider";
+const rowCls = "flex flex-wrap gap-4 mb-3";
+
 export function DamageConfigPanel({
   config,
   diskLevel,
@@ -97,7 +104,6 @@ export function DamageConfigPanel({
     const groupMobs = groupedMobs[groupName];
     if (!groupMobs || groupMobs.length === 0) return;
 
-    // Maior effective HP = HP / defFactor (mais tanky)
     const hardest = groupMobs
       .map((m) => resolvedByName.get(m.name)!)
       .reduce((best, cur) => {
@@ -116,7 +122,6 @@ export function DamageConfigPanel({
     });
   };
 
-  // Match current mob.name against groupName (multi) or individual name (solo)
   const currentGroup = Object.entries(groupedMobs).find(([groupName, groupMobs]) => {
     if (groupMobs.length > 1) return groupName === config.mob.name;
     return groupMobs[0].name === config.mob.name;
@@ -126,7 +131,6 @@ export function DamageConfigPanel({
   const type1 = config.mob.types[0] ?? "—";
   const type2 = config.mob.types[1] ?? "—";
 
-  // Maior HP dentro do grupo atualmente selecionado
   const selectedGroupMobs = currentGroup ? currentGroup[1] : [];
   const maxHpInGroup = selectedGroupMobs.reduce((max, m) => Math.max(max, m.hp ?? 0), 0);
   const maxHpMob = selectedGroupMobs.find((m) => m.hp === maxHpInGroup);
@@ -140,13 +144,13 @@ export function DamageConfigPanel({
     : null;
 
   return (
-    <section className="damage-config">
-      <h2>Configuração de Dano</h2>
+    <section className="bg-bg-card border border-[#333] rounded-lg p-4 mt-4">
+      <h2 className="m-0 mb-3 text-base text-[#ccc]">Configuração de Dano</h2>
 
-      <fieldset className="damage-config-group">
-        <legend>Player</legend>
-        <div className="damage-config-row">
-          <label title="Nível BASE do char (ignorar o (+X) do Nightmare Level Bonus — NL não afeta dano, só HP/def). Validado empiricamente com char Orebound 369(+48) vs Volcanic 600(+0).">
+      <fieldset className={fieldsetCls}>
+        <legend className={legendCls}>Player</legend>
+        <div className={rowCls}>
+          <label className={labelCls} title="Nível BASE do char (ignorar o (+X) do Nightmare Level Bonus — NL não afeta dano, só HP/def). Validado empiricamente com char Orebound 369(+48) vs Volcanic 600(+0).">
             Player lvl (base):
             <input
               type="number"
@@ -154,14 +158,16 @@ export function DamageConfigPanel({
               max={600}
               value={config.playerLvl}
               onChange={(e) => onPlayerLvlChange(Number(e.target.value))}
+              className={inputCls}
             />
           </label>
 
-          <label>
+          <label className={labelCls}>
             Clã:
             <select
               value={config.clan ?? ""}
               onChange={(e) => onClanChange((e.target.value || null) as ClanName | null)}
+              className={inputCls}
             >
               <option value="">Nenhum</option>
               {clansData.map((c) => (
@@ -172,11 +178,12 @@ export function DamageConfigPanel({
             </select>
           </label>
 
-          <label>
+          <label className={labelCls}>
             Held do device:
             <select
               value={config.device.kind}
               onChange={(e) => onDeviceChange({ kind: e.target.value as DeviceHeldKind })}
+              className={inputCls}
             >
               <option value="none">Nenhum</option>
               <option value="x-attack">X-Attack</option>
@@ -186,12 +193,13 @@ export function DamageConfigPanel({
             </select>
           </label>
 
-          <label>
+          <label className={labelCls}>
             Tier do device:
             <select
               value={config.device.tier}
               disabled={config.device.kind === "none"}
               onChange={(e) => onDeviceChange({ tier: Number(e.target.value) as XAtkTier })}
+              className={inputCls}
             >
               {TIERS.filter((t) =>
                 config.device.kind === "x-boost" ? t <= 7 : true
@@ -205,28 +213,29 @@ export function DamageConfigPanel({
 
           <DiskSelector diskLevel={diskLevel} onChange={onDiskLevelChange} />
         </div>
-
       </fieldset>
 
-      <fieldset className="damage-config-group">
-        <legend>Hunt</legend>
-        <div className="damage-config-row">
-          <label>
+      <fieldset className={fieldsetCls}>
+        <legend className={legendCls}>Hunt</legend>
+        <div className={rowCls}>
+          <label className={labelCls}>
             Hunt:
             <select
               value={config.hunt}
               onChange={(e) => onHuntChange(e.target.value as HuntLevel)}
+              className={inputCls}
             >
               <option value="300">Hunt 300</option>
               <option value="400+">Hunt 400+</option>
             </select>
           </label>
 
-          <label>
+          <label className={labelCls}>
             Mob alvo:
             <select
               value={currentSelectionKey}
               onChange={(e) => handleMobSelect(e.target.value)}
+              className={inputCls}
             >
               {Object.entries(groupedMobs).map(([groupName, groupMobs]) => {
                 if (groupMobs.length > 1) {
@@ -247,9 +256,9 @@ export function DamageConfigPanel({
             </select>
           </label>
 
-          <label className="hp-def-group">
+          <label className={labelCls}>
             <span>Maior HP do grupo / Defesa:</span>
-            <span className="hp-def-inputs">
+            <span className="flex gap-1.5">
               <input
                 type="text"
                 value={
@@ -259,10 +268,11 @@ export function DamageConfigPanel({
                 }
                 disabled
                 readOnly
+                className={inputCls}
               />
               <input
                 type="text"
-                className="def-input"
+                className={`${inputCls} min-w-[60px] max-w-[80px]`}
                 value={maxHpMob?.defFactor !== undefined ? String(maxHpMob.defFactor) : "—"}
                 disabled
                 readOnly
@@ -271,51 +281,51 @@ export function DamageConfigPanel({
           </label>
         </div>
 
-        <div className="damage-config-row">
-          <span className="hint">
+        <div className={rowCls}>
+          <span className={hintCls}>
             Tipo 1: <strong>{type1}</strong> | Tipo 2: <strong>{type2}</strong>
             {selectedGroupMobs[0]?.wiki && (
               <a
                 href={selectedGroupMobs[0].wiki}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ marginLeft: 10 }}
+                className="ml-2.5 text-[#6fa3d4] no-underline font-semibold hover:text-[#8cb8e0] hover:underline"
               >
                 ↗ wiki
               </a>
             )}
             {currentMobSource && currentMobSource !== "measured" && (
-              <span className="calibration-warning" title={SOURCE_LABEL[currentMobSource]}>
+              <span className="ml-1.5 text-[0.8rem] cursor-help opacity-85 hover:opacity-100" title={SOURCE_LABEL[currentMobSource]}>
                 {SOURCE_ICON[currentMobSource]} {SOURCE_LABEL[currentMobSource]}
               </span>
             )}
           </span>
           {selectedGroupMobs[0]?.effectiveElements && selectedGroupMobs[0].effectiveElements.length > 0 && (
-            <span className="hint">
+            <span className={hintCls}>
               Dano efetivo vs mob: <strong>{selectedGroupMobs[0].effectiveElements.join(", ")}</strong>
             </span>
           )}
           {selectedGroupMobs[0]?.effectivenessNotes && (
-            <span className="hint" style={{ fontStyle: "italic", opacity: 0.85 }}>
+            <span className={`${hintCls} italic opacity-85`}>
               {selectedGroupMobs[0].effectivenessNotes}
             </span>
           )}
-          <span className="hint legend">
+          <span className={hintCls}>
             {Object.entries(SOURCE_ICON).map(([src, icon]) => (
-              <span key={src} style={{ marginRight: 10 }}>
+              <span key={src} className="mr-2.5">
                 {icon} {SOURCE_LABEL[src as MobFieldSource]}
               </span>
             ))}
           </span>
-          <span className="hint">
+          <span className={hintCls}>
             <strong>Defesa</strong>: multiplicador &lt; 1 que reduz o dano causado ao mob.
             Valores típicos: 0.55–0.60 (nightmare tank), 0.80–0.90 (mobs comuns).
             "—" = sem calibração — engine usa média do hunt tier.
           </span>
         </div>
 
-        <div className="damage-config-row">
-          <label className="checkbox-label" title="Permite uso de Swordsman Elixir nas lures. Desligado = só offtank e T1H-do-clã podem starter.">
+        <div className={rowCls}>
+          <label className="flex flex-row items-center gap-2 self-end pb-1.5 text-[0.8rem] text-text-muted" title="Permite uso de Swordsman Elixir nas lures. Desligado = só offtank e T1H-do-clã podem starter.">
             <input
               type="checkbox"
               checked={config.useElixirAtk ?? true}
@@ -324,11 +334,12 @@ export function DamageConfigPanel({
             Usar Swordsman Elixir
           </label>
 
-          <label title="Revive reseta CDs de 1 poke na lure, permitindo castar o kit 2x. CD independente do disk.">
+          <label className={labelCls} title="Revive reseta CDs de 1 poke na lure, permitindo castar o kit 2x. CD independente do disk.">
             Revive:
             <select
               value={config.revive ?? "none"}
               onChange={(e) => onReviveChange(e.target.value as "none" | "normal" | "superior")}
+              className={inputCls}
             >
               <option value="none">Nenhum</option>
               <option value="normal">Nightmare Revive ($10k, 5min)</option>

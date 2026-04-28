@@ -250,18 +250,24 @@ export function OtddPage() {
 
   const fmt = (n: number) => Math.round(n).toLocaleString();
 
+  const rowGrid = "grid grid-cols-[2fr_0.4fr_0.7fr_1fr_0.8fr_1fr] gap-2 items-center px-3 py-2 text-[0.875rem]";
+  const skillRowGrid = "grid grid-cols-[2fr_0.8fr_0.5fr_0.7fr_1fr_1fr] gap-2 py-1 text-[0.825rem] text-[#c0c0c0]";
+  const dpsCls = "text-right text-accent font-semibold tabular-nums";
+  const heldInputCls = "px-1.5 py-0.5 text-[0.82rem] bg-bg-darker text-text border border-border-default rounded w-[60px]";
+  const heldSelectCls = "px-1.5 py-0.5 text-[0.82rem] bg-bg-darker text-text border border-border-default rounded";
+
   return (
-    <div className="otdd-page">
-      <h2>OTDD — Dano em 10 min</h2>
-      <p className="otdd-hint">
+    <div className="py-4">
+      <h2 className="text-[1.3rem] text-[#ccc] m-0 mb-2">OTDD — Dano em 10 min</h2>
+      <p className="text-text-dim text-[0.85rem] mb-4 italic">
         Simulação greedy de 600s (casta a skill com maior dano sempre que ready).
         Selecione o boss pra aplicar efetividade (PxG piecewise). Cada poke tem seu próprio
         held (X-Atk/X-Boost/boost) salvo no navegador. Bônus de clã NÃO se aplica em boss fight.
         Buffs (Rage ×2/20s) ainda não modelados — valores são baseline sem buff.
       </p>
 
-      <div className="otdd-config">
-        <label>
+      <div className="flex flex-wrap gap-3 bg-bg-card px-4 py-3.5 rounded-lg mb-4">
+        <label className="flex flex-col gap-1 text-[0.8rem] text-text-muted">
           Player lvl
           <input
             type="number"
@@ -269,11 +275,16 @@ export function OtddPage() {
             onChange={(e) => setPlayerLvl(Number(e.target.value) || 0)}
             min={1}
             max={1000}
+            className="bg-bg-skills text-text border border-[#444] px-2 py-1.5 rounded-md text-[0.875rem] w-[80px]"
           />
         </label>
-        <label>
+        <label className="flex flex-col gap-1 text-[0.8rem] text-text-muted">
           Boss
-          <select value={bossId} onChange={(e) => setBossId(e.target.value)}>
+          <select
+            value={bossId}
+            onChange={(e) => setBossId(e.target.value)}
+            className="bg-bg-skills text-text border border-[#444] px-2 py-1.5 rounded-md text-[0.875rem] min-w-[100px]"
+          >
             <option value="">Neutro (sem boss)</option>
             {BOSS_CATEGORIES.map((cat) => (
               <optgroup key={cat} label={cat}>
@@ -290,20 +301,20 @@ export function OtddPage() {
 
       <input
         type="text"
-        className="otdd-search"
+        className="w-full bg-bg-skills text-text border border-[#444] px-3 py-2 rounded-md text-[0.9rem] mb-3 box-border"
         placeholder="Buscar poke..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
 
-      <div className="otdd-list">
-        <div className="otdd-row otdd-header-row">
+      <div className="flex flex-col gap-1">
+        <div className={`${rowGrid} bg-bg-darker rounded-md font-semibold text-text-dim text-[0.78rem] uppercase tracking-wider`}>
           <span>Poke</span>
           <span>Tier</span>
           <span>Held</span>
           <span>Melee/10m</span>
           <span>Skills/10m</span>
-          <span className="dps-col">Total/10m</span>
+          <span className={dpsCls}>Total/10m</span>
         </div>
         {filtered.map((row) => {
           const expanded = expandedId === row.poke.id;
@@ -311,24 +322,30 @@ export function OtddPage() {
             ? `+${row.held.boost} XB${row.held.xBoostTier}`
             : `+${row.held.boost} XA${row.held.xAtkTier}`;
           return (
-            <div key={row.poke.id} className="otdd-poke">
+            <div
+              key={row.poke.id}
+              className="bg-bg-card rounded-md border border-transparent transition-[border-color] duration-150 hover:border-border-default"
+            >
               <div
-                className={`otdd-row otdd-poke-row ${expanded ? "expanded" : ""}`}
+                className={`${rowGrid} cursor-pointer select-none ${expanded ? "bg-bg-card-hover rounded-t-md rounded-b-none" : ""}`}
                 onClick={() => setExpandedId(expanded ? null : row.poke.id)}
               >
-                <span className="poke-name">{row.poke.name}</span>
-                <span className="poke-tier">{row.poke.tier}</span>
-                <span className="poke-held">{heldSummary}</span>
-                <span className={!row.meleeIncludedInTotal && row.meleeDmg > 0 ? "melee-excluded" : ""}>
+                <span className="font-medium text-text">{row.poke.name}</span>
+                <span className="text-[0.75rem] text-text-dim">{row.poke.tier}</span>
+                <span className="text-[0.78rem] text-text-muted tabular-nums">{heldSummary}</span>
+                <span className={!row.meleeIncludedInTotal && row.meleeDmg > 0 ? "italic text-text-dim" : ""}>
                   {row.meleeDmg > 0 ? `${fmt(row.meleeDmg)}${!row.meleeIncludedInTotal ? " (close — não soma)" : ""}` : "—"}
                 </span>
                 <span>{fmt(row.skillsDmg)}</span>
-                <span className="dps-col">{fmt(row.totalDmg)}</span>
+                <span className={dpsCls}>{fmt(row.totalDmg)}</span>
               </div>
               {expanded && (
-                <div className="otdd-skills">
-                  <div className="otdd-held-config" onClick={(e) => e.stopPropagation()}>
-                    <label>
+                <div className="bg-bg-skills rounded-b-md px-3 py-2">
+                  <div
+                    className="flex gap-3 items-center px-1 py-2 mb-1.5 border-b border-border-default flex-wrap"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <label className="flex items-center gap-1.5 text-[0.78rem] text-text-muted">
                       Boost
                       <input
                         type="number"
@@ -336,24 +353,27 @@ export function OtddPage() {
                         onChange={(e) => updateHeld(row.poke.id, { boost: Number(e.target.value) || 0 })}
                         min={0}
                         max={150}
+                        className={heldInputCls}
                       />
                     </label>
-                    <label>
+                    <label className="flex items-center gap-1.5 text-[0.78rem] text-text-muted">
                       X-Atk
                       <select
                         value={row.held.xAtkTier}
                         onChange={(e) => updateHeld(row.poke.id, { xAtkTier: Number(e.target.value) as XAtkTier })}
+                        className={heldSelectCls}
                       >
                         {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((t) => (
                           <option key={t} value={t}>{t === 0 ? "—" : `T${t}`}</option>
                         ))}
                       </select>
                     </label>
-                    <label>
+                    <label className="flex items-center gap-1.5 text-[0.78rem] text-text-muted">
                       X-Boost (device)
                       <select
                         value={row.held.xBoostTier}
                         onChange={(e) => updateHeld(row.poke.id, { xBoostTier: Number(e.target.value) as XAtkTier })}
+                        className={heldSelectCls}
                       >
                         <option value={0}>Sem device</option>
                         {[1, 2, 3, 4, 5, 6, 7].map((t) => (
@@ -362,22 +382,22 @@ export function OtddPage() {
                       </select>
                     </label>
                   </div>
-                  <div className="otdd-skill-row otdd-skill-header">
+                  <div className={`${skillRowGrid} text-[0.72rem] text-[#777] uppercase tracking-wide border-b border-border-default pb-1.5 mb-1`}>
                     <span>Skill</span>
                     <span>Element</span>
                     <span>CD</span>
                     <span>Dano/cast</span>
                     <span>Casts</span>
-                    <span className="dps-col">Total</span>
+                    <span className={dpsCls}>Total</span>
                   </div>
                   {row.poke.melee && row.meleeDmg > 0 && (
-                    <div className={`otdd-skill-row otdd-melee-row ${!row.meleeIncludedInTotal ? "otdd-melee-excluded" : ""}`}>
+                    <div className={`${skillRowGrid} bg-bg-melee my-1 px-2 py-1 rounded border-l-[3px] border-accent`}>
                       <span>{row.poke.melee.kind === "ranged" ? "Auto-attack (ranged)" : "Auto-attack (close)"}</span>
                       <span>{row.poke.melee.element ?? "—"}</span>
                       <span>{row.poke.melee.attackInterval}s</span>
                       <span>{fmt(row.meleeDmg / row.meleeHits)}</span>
                       <span>{row.meleeHits}</span>
-                      <span className="dps-col">{fmt(row.meleeDmg)}{!row.meleeIncludedInTotal ? " ⚠" : ""}</span>
+                      <span className={dpsCls}>{fmt(row.meleeDmg)}{!row.meleeIncludedInTotal ? " ⚠" : ""}</span>
                     </div>
                   )}
                   {row.skillRows
@@ -385,16 +405,16 @@ export function OtddPage() {
                     .sort((a, b) => b.totalDmg - a.totalDmg)
                     .map((sr) => (
                       <div key={sr.name}>
-                        <div className="otdd-skill-row">
+                        <div className={skillRowGrid}>
                           <span>{sr.name}{sr.playerNote ? " ⚠" : ""}</span>
                           <span>{sr.element}</span>
                           <span>{sr.cooldown}s</span>
                           <span>{fmt(sr.danoPerCast)}</span>
                           <span>{sr.casts}</span>
-                          <span className="dps-col">{fmt(sr.totalDmg)}</span>
+                          <span className={dpsCls}>{fmt(sr.totalDmg)}</span>
                         </div>
                         {sr.playerNote && (
-                          <div className="otdd-player-note">{sr.playerNote}</div>
+                          <div className="text-[0.75rem] text-accent px-3 py-0.5 italic">{sr.playerNote}</div>
                         )}
                       </div>
                     ))}
