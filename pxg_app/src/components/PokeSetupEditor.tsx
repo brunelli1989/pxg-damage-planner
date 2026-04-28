@@ -16,7 +16,6 @@ function clampBoost(tier: Tier, v: number): number {
   return Math.min(Math.max(v, minBoostForTier(tier)), MAX_BOOST);
 }
 
-// Ordem canônica dos tiers do jogo (usada pra sort)
 const TIER_ORDER: Record<Tier, number> = { T1A: 0, T1B: 1, T1H: 2, T1C: 3, T2: 4, T3: 5, TM: 6, TR: 7 };
 
 type SortCol = "name" | "boost" | "heldKind" | "heldTier" | "noDevice" | "withDevice" | "noDeviceElixir" | "withDeviceElixir";
@@ -35,8 +34,12 @@ interface DamageRow {
   withDeviceElixir: number;
 }
 
+const inlineInputCls = "bg-bg-skills text-text border border-[#444] px-2 py-1 rounded text-[0.85rem] w-[100px]";
+const tableSelectCls = "bg-bg-skills text-text border border-[#444] px-2 py-1 rounded text-[0.85rem]";
+const thCls = "text-left px-2 py-1.5 text-text-dim font-medium border-b border-[#333] cursor-pointer";
+const tdCls = "px-2 py-1.5 border-b border-[#222]";
+
 export function PokeSetupEditor({ pokes, config, onChange }: Props) {
-  // Keyed by poke.id; populated when user clicks "Estimar dano"
   const [estimates, setEstimates] = useState<Record<string, DamageRow>>({});
   const [sort, setSort] = useState<{ col: SortCol; dir: SortDir }>({ col: "name", dir: "asc" });
 
@@ -52,7 +55,7 @@ export function PokeSetupEditor({ pokes, config, onChange }: Props) {
         case "name": return p.name.toLowerCase();
         case "boost": return clampBoost(p.tier, setup.boost);
         case "heldKind": return setup.held.kind;
-        case "heldTier": return setup.held.tier * 10 + TIER_ORDER[p.tier]; // inclui poke tier como desempate
+        case "heldTier": return setup.held.tier * 10 + TIER_ORDER[p.tier];
         case "noDevice": return est?.noDevice ?? -1;
         case "withDevice": return est?.withDevice ?? -1;
         case "noDeviceElixir": return est?.noDeviceElixir ?? -1;
@@ -70,8 +73,6 @@ export function PokeSetupEditor({ pokes, config, onChange }: Props) {
 
   const sortArrow = (col: SortCol) => (sort.col === col ? (sort.dir === "asc" ? " ▲" : " ▼") : "");
 
-  // Normaliza boost pra respeitar min do tier (TR +70, TM +80). Roda sempre que
-  // muda a lista de pokes ou os setups persistidos.
   useEffect(() => {
     for (const p of pokes) {
       const stored = config.pokeSetups[p.id];
@@ -84,7 +85,6 @@ export function PokeSetupEditor({ pokes, config, onChange }: Props) {
   if (pokes.length === 0) return null;
 
   const handleEstimate = () => {
-    // Garante que todos os pokes tenham setup (usa default pros que não têm)
     const configWithDefaults: DamageConfig = {
       ...config,
       pokeSetups: { ...config.pokeSetups },
@@ -109,22 +109,22 @@ export function PokeSetupEditor({ pokes, config, onChange }: Props) {
   };
 
   return (
-    <section className="poke-setup">
-      <h2>Setup dos Pokémons</h2>
-      <p className="hint">
+    <section className="bg-bg-card border border-[#333] rounded-lg p-4 mt-4">
+      <h2 className="m-0 mb-3 text-base text-[#ccc]">Setup dos Pokémons</h2>
+      <p className="text-[0.75rem] text-text-dim">
         X-Held: X-Attack (T1-T8) ou X-Boost (T1-T7). Só 1 held por poke.
       </p>
-      <table className="poke-setup-table">
+      <table className="w-full border-collapse text-[0.85rem]">
         <thead>
           <tr>
-            <th onClick={() => toggleSort("name")} style={{ cursor: "pointer" }}>Pokémon{sortArrow("name")}</th>
-            <th onClick={() => toggleSort("boost")} style={{ cursor: "pointer" }}>Boost{sortArrow("boost")}</th>
-            <th onClick={() => toggleSort("heldKind")} style={{ cursor: "pointer" }}>X-Held{sortArrow("heldKind")}</th>
-            <th onClick={() => toggleSort("heldTier")} style={{ cursor: "pointer" }}>Tier{sortArrow("heldTier")}</th>
-            <th onClick={() => toggleSort("noDevice")} style={{ cursor: "pointer" }}>Dano sem device{sortArrow("noDevice")}</th>
-            <th onClick={() => toggleSort("withDevice")} style={{ cursor: "pointer" }}>Dano com device{sortArrow("withDevice")}</th>
-            <th onClick={() => toggleSort("noDeviceElixir")} style={{ cursor: "pointer" }}>Dano + Elixir (sem device){sortArrow("noDeviceElixir")}</th>
-            <th onClick={() => toggleSort("withDeviceElixir")} style={{ cursor: "pointer" }}>Dano + Elixir (com device){sortArrow("withDeviceElixir")}</th>
+            <th className={thCls} onClick={() => toggleSort("name")}>Pokémon{sortArrow("name")}</th>
+            <th className={thCls} onClick={() => toggleSort("boost")}>Boost{sortArrow("boost")}</th>
+            <th className={thCls} onClick={() => toggleSort("heldKind")}>X-Held{sortArrow("heldKind")}</th>
+            <th className={thCls} onClick={() => toggleSort("heldTier")}>Tier{sortArrow("heldTier")}</th>
+            <th className={thCls} onClick={() => toggleSort("noDevice")}>Dano sem device{sortArrow("noDevice")}</th>
+            <th className={thCls} onClick={() => toggleSort("withDevice")}>Dano com device{sortArrow("withDevice")}</th>
+            <th className={thCls} onClick={() => toggleSort("noDeviceElixir")}>Dano + Elixir (sem device){sortArrow("noDeviceElixir")}</th>
+            <th className={thCls} onClick={() => toggleSort("withDeviceElixir")}>Dano + Elixir (com device){sortArrow("withDeviceElixir")}</th>
           </tr>
         </thead>
         <tbody>
@@ -150,8 +150,8 @@ export function PokeSetupEditor({ pokes, config, onChange }: Props) {
 
             return (
               <tr key={p.id}>
-                <td>{p.name}</td>
-                <td>
+                <td className={tdCls}>{p.name}</td>
+                <td className={tdCls}>
                   <input
                     type="number"
                     min={minBoost}
@@ -160,12 +160,13 @@ export function PokeSetupEditor({ pokes, config, onChange }: Props) {
                     onChange={(e) =>
                       onChange(p.id, { boost: clampBoost(p.tier, Number(e.target.value)) })
                     }
-                    className="inline-input"
+                    className={inlineInputCls}
                     title={`${p.tier}: boost ${minBoost}-${MAX_BOOST}`}
                   />
                 </td>
-                <td>
+                <td className={tdCls}>
                   <select
+                    className={tableSelectCls}
                     value={heldKind}
                     onChange={(e) => {
                       const kind = e.target.value as HeldKind;
@@ -182,8 +183,9 @@ export function PokeSetupEditor({ pokes, config, onChange }: Props) {
                     <option value="x-defense">X-Defense</option>
                   </select>
                 </td>
-                <td>
+                <td className={tdCls}>
                   <select
+                    className={tableSelectCls}
                     value={setup.held.tier}
                     disabled={heldKind === "none"}
                     onChange={(e) => setHeld({ tier: Number(e.target.value) as XAtkTier })}
@@ -195,16 +197,16 @@ export function PokeSetupEditor({ pokes, config, onChange }: Props) {
                     ))}
                   </select>
                 </td>
-                <td>{noDeviceCell}</td>
-                <td>{withDeviceCell}</td>
-                <td>{noDeviceElixirCell}</td>
-                <td>{withDeviceElixirCell}</td>
+                <td className={tdCls}>{noDeviceCell}</td>
+                <td className={tdCls}>{withDeviceCell}</td>
+                <td className={tdCls}>{noDeviceElixirCell}</td>
+                <td className={tdCls}>{withDeviceElixirCell}</td>
               </tr>
             );
           })}
         </tbody>
       </table>
-      <div style={{ marginTop: "12px" }}>
+      <div className="mt-3">
         <button className="small-btn" onClick={handleEstimate}>
           Estimar dano
         </button>

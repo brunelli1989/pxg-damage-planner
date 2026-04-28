@@ -28,20 +28,23 @@ function ccLabel(pokemon: Pokemon): string {
 export function PokemonCard({ pokemon, selected, disabled, onToggle }: Props) {
   const cc = ccLabel(pokemon);
   const hasCC = cc !== "No CC";
-  // ⚠️ quando tem ação pendente em `todo` (RECALIBRAR, calibrate skills, etc).
-  // `observacao` é informativo apenas — não dispara warning, mas aparece no tooltip.
+  // ⚠️ quando tem ação pendente em `todo`. `observacao` é informativo apenas.
   const uncalibrated = Boolean(pokemon.todo);
 
+  const baseCard = "rounded-lg p-2.5 cursor-pointer border-2 transition-[border-color,transform] duration-150 ease-out hover:-translate-y-px";
+  const stateCard = disabled
+    ? "opacity-40 cursor-not-allowed bg-bg-card border-[#333] hover:translate-y-0"
+    : selected
+    ? "bg-border-card border-accent-blue"
+    : "bg-bg-card border-[#333] hover:border-[#555]";
+
   return (
-    <div
-      className={`pokemon-card ${selected ? "selected" : ""} ${disabled ? "disabled" : ""}`}
-      onClick={() => !disabled && onToggle(pokemon.id)}
-    >
-      <div className="card-header">
-        <span className="pokemon-name">{pokemon.name}</span>
+    <div className={`${baseCard} ${stateCard}`} onClick={() => !disabled && onToggle(pokemon.id)}>
+      <div className="flex justify-between items-center mb-1.5">
+        <span className="font-semibold text-sm">{pokemon.name}</span>
         {uncalibrated && (
           <span
-            className="calibration-warning"
+            className="calibration-warning text-xs ml-auto mr-1.5 cursor-help opacity-85 hover:opacity-100"
             title={
               `Ação pendente: ${pokemon.todo}` +
               (pokemon.observacao ? `\n\nObservação: ${pokemon.observacao}` : "")
@@ -51,15 +54,17 @@ export function PokemonCard({ pokemon, selected, disabled, onToggle }: Props) {
           </span>
         )}
         <span
-          className="tier-badge"
+          className="text-[0.7rem] font-bold px-1.5 py-0.5 rounded text-bg-app"
           style={{ backgroundColor: TIER_COLORS[pokemon.tier] ?? "#888" }}
         >
           {pokemon.tier}
         </span>
       </div>
 
-      <div className="card-meta">
-        <span className={`cc-indicator ${hasCC ? "has-cc" : "no-cc"}`}>{cc}</span>
+      <div className="flex gap-2 mb-2 text-[0.75rem]">
+        <span className={`px-1 py-0.5 rounded-sm font-semibold text-white ${hasCC ? "bg-[#27ae60]" : "bg-[#c0392b]"}`}>
+          {cc}
+        </span>
       </div>
     </div>
   );

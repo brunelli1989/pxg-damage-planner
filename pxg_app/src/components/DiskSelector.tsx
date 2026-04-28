@@ -15,12 +15,13 @@ const DISK_OPTIONS: { level: DiskLevel; label: string; detail: string }[] = [
 
 export function DiskSelector({ diskLevel, onChange }: Props) {
   return (
-    <div className="disk-selector">
-      <label htmlFor="disk-select">Nightmare Disk:</label>
+    <div className="flex items-center gap-2">
+      <label htmlFor="disk-select" className="text-sm text-text-muted">Nightmare Disk:</label>
       <select
         id="disk-select"
         value={diskLevel}
         onChange={(e) => onChange(Number(e.target.value) as DiskLevel)}
+        className="bg-bg-card text-text border border-[#444] px-2.5 py-1.5 rounded-md text-sm"
       >
         {DISK_OPTIONS.map((opt) => (
           <option key={opt.level} value={opt.level}>
