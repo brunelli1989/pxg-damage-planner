@@ -1,4 +1,9 @@
 import { Suspense, lazy, useState, useCallback, useEffect, useTransition } from "react";
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
+import Alert from "@mui/material/Alert";
+import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
+import CircularProgress from "@mui/material/CircularProgress";
 import type { DiskLevel, Pokemon, RotationResult } from "./types";
 import pokemonData from "./data/pokemon.json";
 import { PokemonSelector } from "./components/PokemonSelector";
@@ -312,20 +317,47 @@ function App() {
           onChange={damage.setPokeSetup}
         />
 
-        <div className="text-center my-5">
-          <button
-            className="bg-accent-blue text-white border-0 px-8 py-3 rounded-lg text-base font-semibold cursor-pointer transition-[background] duration-200 hover:bg-[#357abd] disabled:bg-[#333] disabled:text-[#666] disabled:cursor-not-allowed"
+        <Box sx={{ textAlign: "center", my: 4 }}>
+          <Button
+            variant="contained"
+            size="large"
+            color="primary"
             onClick={handleGenerate}
             disabled={pool.length === 0 || loading}
+            startIcon={loading ? <CircularProgress size={20} color="inherit" /> : <AutoAwesomeIcon />}
+            sx={{
+              px: 5,
+              py: 1.75,
+              fontSize: "1rem",
+              fontWeight: 700,
+              letterSpacing: "0.02em",
+              boxShadow: "0 4px 14px rgba(74, 144, 217, 0.35)",
+              "&:hover": {
+                boxShadow: "0 6px 20px rgba(74, 144, 217, 0.5)",
+                transform: "translateY(-1px)",
+              },
+              "&:disabled": {
+                boxShadow: "none",
+              },
+              transition: "all 0.2s",
+            }}
           >
-            {loading ? "Calculando..." : `Gerar Rotação (${pool.length} pokémon selecionados)`}
-          </button>
+            {loading
+              ? "Calculando rotação..."
+              : pool.length === 0
+                ? "Selecione pokémons primeiro"
+                : `Gerar Rotação · ${pool.length} ${pool.length === 1 ? "poke" : "pokes"}`}
+          </Button>
           {pool.length > 6 && !loading && (
-            <p className="text-[0.8rem] text-warn mt-2">
+            <Alert
+              severity="info"
+              variant="outlined"
+              sx={{ mt: 2, maxWidth: 600, mx: "auto", fontSize: "0.85rem" }}
+            >
               Mais de 6 selecionados — o gerador vai encontrar a melhor composição de 6
-            </p>
+            </Alert>
           )}
-        </div>
+        </Box>
 
         {loading && (
           <div className="flex items-center gap-4 p-5 bg-bg-card border border-accent-blue-soft rounded-lg mt-5">
