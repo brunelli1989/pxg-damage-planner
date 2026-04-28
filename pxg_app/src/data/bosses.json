@@ -3,56 +3,63 @@
     "id": "kairiki",
     "name": "Kairiki",
     "category": "Nightmare Terror",
-    "types": [],
+    "types": ["fighting"],
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Terror_-_Kairiki"
   },
   {
     "id": "kame",
     "name": "Kame",
     "category": "Nightmare Terror",
-    "types": [],
+    "types": ["water"],
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Terror_-_Kame"
   },
   {
     "id": "ptera",
     "name": "Ptera",
     "category": "Nightmare Terror",
-    "types": [],
+    "types": ["rock", "flying"],
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Terror_-_Ptera"
   },
   {
     "id": "gama",
     "name": "Gama",
     "category": "Nightmare Terror",
-    "types": [],
+    "types": ["grass"],
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Terror_-_Gama"
   },
   {
     "id": "riza",
     "name": "Riza",
     "category": "Nightmare Terror",
-    "types": [],
+    "types": ["fire", "flying"],
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Terror_-_Riza"
   },
   {
     "id": "raito",
     "name": "Raito",
     "category": "Nightmare Terror",
-    "types": [],
+    "types": ["electric"],
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Terror_-_Raito"
   },
   {
     "id": "gyakkyo",
     "name": "Gyakkyo",
     "category": "Nightmare Terror",
-    "types": [],
+    "types": ["water", "dark"],
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Terror_-_Gyakkyo"
   },
   {
-    "id": "seishin-yurei",
-    "name": "Seishin & Yurei",
+    "id": "seishin",
+    "name": "Seishin",
     "category": "Nightmare Terror",
-    "types": [],
+    "types": ["psychic"],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Terror_-_Seishin_%26_Yurei"
+  },
+  {
+    "id": "yurei",
+    "name": "Yurei",
+    "category": "Nightmare Terror",
+    "types": ["ghost", "poison"],
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Terror_-_Seishin_%26_Yurei"
   },
   {
