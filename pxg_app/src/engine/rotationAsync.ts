@@ -1,5 +1,6 @@
 import type { DamageConfig, DiskLevel, Pokemon, RotationResult } from "../types";
 import { combinations, MAX_BAG } from "./rotation";
+import { postProcessSwap } from "./rotation/post-swap";
 import type { WorkerMessage, WorkerRequest } from "./rotation.worker";
 
 export interface ProgressUpdate {
@@ -123,6 +124,13 @@ export async function findOptimalRotationAsync(
       bestScore = r.bestScore;
       bestResult = r.bestResult!;
     }
+  }
+
+  // Post-process swap com POOL COMPLETO (não só os 6 pokes da bag escolhida).
+  // Isso permite trazer pokes equivalentes de fora da bag (ex: Arcanine que não foi
+  // selecionado pra bag inicial mas pode dar mais dano que Magmar via held/boost/calibração).
+  if (bestResult && options?.damageConfig) {
+    bestResult = postProcessSwap(bestResult, pool, options.damageConfig, diskLevel);
   }
 
   return bestResult;

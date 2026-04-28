@@ -3,6 +3,7 @@ import { lureFinalizesBox } from "../damage";
 import { computeEffectiveness, getClanBonus } from "../damage/multipliers";
 import { hasHardCC } from "../scoring";
 import { generateLureTemplates } from "./generate";
+import { postProcessSwap } from "./post-swap";
 import {
   applyLure,
   buildSimContext,
@@ -295,7 +296,16 @@ export function findBestRotation(
   }
 
   if (!bestOverall) return null;
-  return { idle: bestOverall.idle, result: bestOverall.result, score: bestOverall.score };
+
+  // Post-process: tenta trocar pokes equivalentes por outros com mais dano (held/boost
+  // mais alto, calibração maior) sem perder b/h. Roda só quando damageConfig disponível
+  // — sem ele não dá pra avaliar dano da lure.
+  let finalResult = bestOverall.result;
+  if (options.damageConfig) {
+    finalResult = postProcessSwap(finalResult, bag, options.damageConfig, diskLevel);
+  }
+
+  return { idle: bestOverall.idle, result: finalResult, score: bestOverall.score };
 }
 
 /**
