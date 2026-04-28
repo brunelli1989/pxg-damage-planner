@@ -90,12 +90,13 @@ export function PokemonSelector({ allPokemon, selectedIds, onToggle, elementsByP
         onChange={(e) => setSearch(e.target.value)}
       />
 
-      <div className="flex flex-wrap gap-1.5 mb-3">
+      <div className="flex flex-wrap items-center gap-1.5 mb-3">
+        <span className="text-[0.7rem] font-semibold text-text-dim uppercase tracking-wider mr-1.5 min-w-[40px]">Tier</span>
         <button
           className={tierChipClasses(tierFilter === "")}
           onClick={() => setTierFilter("")}
         >
-          todos tiers
+          todos
         </button>
         {ALL_TIERS.map((t) => (
           <button
@@ -108,7 +109,8 @@ export function PokemonSelector({ allPokemon, selectedIds, onToggle, elementsByP
         ))}
       </div>
 
-      <div className="flex flex-wrap gap-1.5 mb-4">
+      <div className="flex flex-wrap items-center gap-1.5 mb-4">
+        <span className="text-[0.7rem] font-semibold text-text-dim uppercase tracking-wider mr-1.5 min-w-[40px]">Tipo</span>
         <button
           className={tierChipClasses(typeFilter === "")}
           onClick={() => setTypeFilter("")}

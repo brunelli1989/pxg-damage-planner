@@ -71,8 +71,8 @@ interface Props {
 const inputCls = "bg-bg-skills text-text border border-[#444] px-2.5 py-1.5 rounded-md text-[0.875rem] min-w-[120px]";
 const labelCls = "flex flex-col gap-1 text-[0.8rem] text-text-muted";
 const hintCls = "text-[0.75rem] text-text-dim";
-const fieldsetCls = "border border-[#2a3e5e] rounded-md px-3 pt-2.5 pb-1 mb-3";
-const legendCls = "px-1.5 text-[0.75rem] text-[#6fa3d4] font-semibold uppercase tracking-wider";
+const fieldsetCls = "border border-[#2a3e5e] rounded-md px-4 pt-3 pb-1 mb-4";
+const legendCls = "px-2 py-0.5 text-[0.78rem] text-accent-blue-light font-bold uppercase tracking-[0.08em] bg-bg-card rounded";
 const rowCls = "flex flex-wrap gap-4 mb-3";
 
 export function DamageConfigPanel({

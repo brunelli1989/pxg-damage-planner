@@ -165,7 +165,7 @@ function loadCurrentPage(): Page {
   return raw === "otdd" ? "otdd" : "rotation";
 }
 
-const tabBaseCls = "border px-[18px] py-2 rounded-md text-[0.9rem] font-medium cursor-pointer transition-[background,color,border-color,box-shadow] duration-150";
+const tabBaseCls = "border px-6 py-2.5 rounded-md text-[0.95rem] font-semibold cursor-pointer transition-[background,color,border-color,box-shadow] duration-150";
 const tabActiveCls = "bg-accent-blue text-white border-accent-blue shadow-[0_2px_8px_rgb(74_144_217/0.35)]";
 const tabIdleCls = "bg-bg-card text-text-muted border-border-default hover:bg-bg-card-hover hover:text-text hover:border-accent-blue";
 
