@@ -1,7 +1,7 @@
 import { createTheme } from "@mui/material/styles";
 
 /**
- * Tema MUI customizado pro PxG Rotation Generator.
+ * Tema MUI customizado pro PxG Damage Planner.
  * Cores espelham os tokens em @theme do index.css mas em formato MUI palette.
  */
 export const theme = createTheme({

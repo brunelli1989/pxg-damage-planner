@@ -2,7 +2,15 @@ import { Suspense, lazy, useState, useCallback, useEffect, useTransition } from 
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Alert from "@mui/material/Alert";
+import Typography from "@mui/material/Typography";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import IconButton from "@mui/material/IconButton";
+import Tooltip from "@mui/material/Tooltip";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
+import LoopIcon from "@mui/icons-material/Loop";
+import WhatshotIcon from "@mui/icons-material/Whatshot";
+import DeleteSweepIcon from "@mui/icons-material/DeleteSweep";
 import CircularProgress from "@mui/material/CircularProgress";
 import type { DiskLevel, Pokemon, RotationResult } from "./types";
 import pokemonData from "./data/pokemon.json";
@@ -74,7 +82,7 @@ function buildReport(
   damageConfig?: import("./types").DamageConfig
 ): string {
   const lines: string[] = [];
-  lines.push(`=== PxG Rotation Generator — Dados ===`);
+  lines.push(`=== PxG Damage Planner — Dados ===`);
   lines.push(`Disk: ${diskLevel === 0 ? "Nenhum" : `Disk ${diskLevel}.0`}`);
   if (damageConfig) {
     lines.push(`Player: lvl ${damageConfig.playerLvl} | clã ${damageConfig.clan ?? "Nenhum"} | hunt ${damageConfig.hunt}`);
@@ -174,10 +182,6 @@ function loadCurrentPage(): Page {
   return raw === "otdd" ? "otdd" : "rotation";
 }
 
-const tabBaseCls = "border px-6 py-2.5 rounded-md text-[0.95rem] font-semibold cursor-pointer transition-[background,color,border-color,box-shadow] duration-150";
-const tabActiveCls = "bg-accent-blue text-white border-accent-blue shadow-[0_2px_8px_rgb(74_144_217/0.35)]";
-const tabIdleCls = "bg-bg-card text-text-muted border-border-default hover:bg-bg-card-hover hover:text-text hover:border-accent-blue";
-
 const headerBtnCls =
   "bg-bg-card text-text border border-[#444] px-4 py-2 rounded-md text-[0.85rem] cursor-pointer transition-[border-color,background] duration-200 hover:bg-border-card hover:border-accent-blue";
 
@@ -246,38 +250,81 @@ function App() {
 
   return (
     <div className="w-full p-5 text-text bg-bg-app min-h-screen">
-      <header className="pb-4 border-b-2 border-[#333] mb-8">
-        <div className="flex justify-between items-center mb-4">
-          <h1 className="m-0 text-[1.75rem] font-bold text-white tracking-tight">PxG Rotation Generator</h1>
-          <button
-            className={headerBtnCls}
-            title="Reseta disk, seleção de pokes e configs de dano"
-            onClick={() => {
-              if (!confirm("Limpar todas as configurações salvas (disk, seleção, dano)?")) return;
-              localStorage.removeItem(DISK_STORAGE_KEY);
-              localStorage.removeItem(SELECTED_STORAGE_KEY);
-              localStorage.removeItem("pxg_damage_config");
-              location.reload();
-            }}
-          >
-            🗑️ Clear cache
-          </button>
-        </div>
-        <nav className="flex gap-1.5">
-          <button
-            className={`${tabBaseCls} ${currentPage === "rotation" ? tabActiveCls : tabIdleCls}`}
-            onClick={() => switchPage("rotation")}
-          >
-            Rotação
-          </button>
-          <button
-            className={`${tabBaseCls} ${currentPage === "otdd" ? tabActiveCls : tabIdleCls}`}
-            onClick={() => switchPage("otdd")}
-          >
-            OTDD
-          </button>
-        </nav>
-      </header>
+      <Box
+        component="header"
+        sx={{
+          mb: 4,
+          borderBottom: 1,
+          borderColor: "divider",
+        }}
+      >
+        <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 2 }}>
+          <Box>
+            <Typography
+              variant="h1"
+              sx={{
+                fontSize: "1.75rem",
+                fontWeight: 700,
+                color: "#fff",
+                letterSpacing: "-0.01em",
+                lineHeight: 1.1,
+              }}
+            >
+              PxG Damage Planner
+            </Typography>
+            <Typography variant="caption" sx={{ color: "text.disabled", letterSpacing: "0.04em" }}>
+              Otimizador de boxes/h e calculadora de dano em boss
+            </Typography>
+          </Box>
+          <Tooltip title="Reseta disk, seleção e configs de dano" placement="left" arrow>
+            <IconButton
+              size="small"
+              onClick={() => {
+                if (!confirm("Limpar todas as configurações salvas (disk, seleção, dano)?")) return;
+                localStorage.removeItem(DISK_STORAGE_KEY);
+                localStorage.removeItem(SELECTED_STORAGE_KEY);
+                localStorage.removeItem("pxg_damage_config");
+                location.reload();
+              }}
+              sx={{
+                color: "text.secondary",
+                border: 1,
+                borderColor: "divider",
+                borderRadius: 1.5,
+                "&:hover": {
+                  color: "error.main",
+                  borderColor: "error.main",
+                  bgcolor: "rgba(192, 57, 43, 0.08)",
+                },
+              }}
+            >
+              <DeleteSweepIcon fontSize="small" />
+            </IconButton>
+          </Tooltip>
+        </Box>
+        <Tabs
+          value={currentPage}
+          onChange={(_, v) => switchPage(v as Page)}
+          sx={{
+            minHeight: 44,
+            "& .MuiTab-root": {
+              minHeight: 44,
+              textTransform: "none",
+              fontSize: "0.95rem",
+              fontWeight: 600,
+              letterSpacing: "0.01em",
+              color: "text.secondary",
+              px: 2.5,
+              "&:hover": { color: "text.primary" },
+            },
+            "& .Mui-selected": { color: "primary.light" },
+            "& .MuiTabs-indicator": { height: 3, borderRadius: "3px 3px 0 0" },
+          }}
+        >
+          <Tab value="rotation" label="Rotação" icon={<LoopIcon fontSize="small" />} iconPosition="start" />
+          <Tab value="otdd" label="OTDD" icon={<WhatshotIcon fontSize="small" />} iconPosition="start" />
+        </Tabs>
+      </Box>
 
       {/* OtddPage: monta uma vez e fica viva. display:none preserva estado/scroll
           e evita re-simular dano quando troca de tab. Lazy = JS só baixa no
@@ -295,6 +342,10 @@ function App() {
           allPokemon={allPokemon}
           selectedIds={selectedIds}
           onToggle={handleToggle}
+          onClearSelection={() => {
+            setSelectedIds([]);
+            setShowResult(false);
+          }}
           elementsByPokeId={pokeElements}
         />
 

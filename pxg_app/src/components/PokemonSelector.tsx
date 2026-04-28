@@ -2,11 +2,18 @@ import { useDeferredValue, useMemo, useState } from "react";
 import type { Pokemon, PokemonElement, Tier } from "../types";
 import { PokemonCard } from "./PokemonCard";
 import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
 import Chip from "@mui/material/Chip";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
+import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
+import Tooltip from "@mui/material/Tooltip";
 import SearchIcon from "@mui/icons-material/Search";
+import CatchingPokemonIcon from "@mui/icons-material/CatchingPokemon";
+import ClearAllIcon from "@mui/icons-material/ClearAll";
+import CloseIcon from "@mui/icons-material/Close";
 import { VirtuosoGrid } from "react-virtuoso";
 
 const ALL_ELEMENTS: PokemonElement[] = [
@@ -52,10 +59,11 @@ interface Props {
   allPokemon: Pokemon[];
   selectedIds: string[];
   onToggle: (id: string) => void;
+  onClearSelection?: () => void;
   elementsByPokeId: Record<string, string[]>;
 }
 
-export function PokemonSelector({ allPokemon, selectedIds, onToggle, elementsByPokeId }: Props) {
+export function PokemonSelector({ allPokemon, selectedIds, onToggle, onClearSelection, elementsByPokeId }: Props) {
   const [search, setSearch] = useState("");
   const [typeFilter, setTypeFilter] = useState<string>("");
   const [tierFilter, setTierFilter] = useState<Tier | "">("");
@@ -88,15 +96,53 @@ export function PokemonSelector({ allPokemon, selectedIds, onToggle, elementsByP
   }, [filtered, selectedIds]);
 
   const isStale = deferredSearch !== search || deferredTypeFilter !== typeFilter || deferredTierFilter !== tierFilter;
+  const hasFilters = search.trim() !== "" || typeFilter !== "" || tierFilter !== "";
+  const clearFilters = () => {
+    setSearch("");
+    setTypeFilter("");
+    setTierFilter(("" as Tier | ""));
+  };
 
   return (
-    <Box component="section">
-      <Typography variant="h2" sx={{ mb: 2 }}>
-        Selecione seus Pokémon disponíveis{" "}
-        <Box component="span" sx={{ color: "primary.light", fontWeight: 400, fontSize: "1rem" }}>
-          ({selectedIds.length} selecionados)
+    <Paper component="section" sx={{ p: { xs: 2, sm: 2.5 }, mb: 3 }}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: { xs: "flex-start", sm: "center" },
+          justifyContent: "space-between",
+          flexDirection: { xs: "column", sm: "row" },
+          gap: 1.5,
+          mb: 2,
+        }}
+      >
+        <Box sx={{ display: "flex", alignItems: "center", gap: 1.25 }}>
+          <CatchingPokemonIcon sx={{ color: "primary.light", fontSize: 26 }} />
+          <Typography variant="h2" sx={{ m: 0 }}>
+            Pokémon disponíveis
+          </Typography>
+          <Chip
+            label={`${selectedIds.length} ${selectedIds.length === 1 ? "selecionado" : "selecionados"}`}
+            size="small"
+            color={selectedIds.length > 0 ? "primary" : "default"}
+            variant={selectedIds.length > 0 ? "filled" : "outlined"}
+            sx={{ fontWeight: 700, height: 22 }}
+          />
         </Box>
-      </Typography>
+        {selectedIds.length > 0 && onClearSelection && (
+          <Tooltip title="Desmarca todos os pokémons selecionados" arrow>
+            <Button
+              size="small"
+              variant="text"
+              color="inherit"
+              startIcon={<ClearAllIcon />}
+              onClick={onClearSelection}
+              sx={{ color: "text.secondary", "&:hover": { color: "error.light" } }}
+            >
+              Limpar seleção
+            </Button>
+          </Tooltip>
+        )}
+      </Box>
 
       <TextField
         fullWidth
@@ -112,6 +158,13 @@ export function PokemonSelector({ allPokemon, selectedIds, onToggle, elementsByP
                 <SearchIcon sx={{ color: "text.disabled", fontSize: 20 }} />
               </InputAdornment>
             ),
+            endAdornment: search ? (
+              <InputAdornment position="end">
+                <IconButton size="small" onClick={() => setSearch("")} sx={{ color: "text.disabled" }}>
+                  <CloseIcon fontSize="small" />
+                </IconButton>
+              </InputAdornment>
+            ) : null,
           },
         }}
       />
@@ -139,7 +192,7 @@ export function PokemonSelector({ allPokemon, selectedIds, onToggle, elementsByP
         ))}
       </Box>
 
-      <Box sx={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 1, mb: 3 }}>
+      <Box sx={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 1, mb: 1.5 }}>
         <Typography sx={FILTER_LABEL_SX}>Tipo</Typography>
         <Chip
           label="todos"
@@ -193,7 +246,46 @@ export function PokemonSelector({ allPokemon, selectedIds, onToggle, elementsByP
 
       <Box
         sx={{
-          mb: 2,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          mb: 1,
+          minHeight: 22,
+        }}
+      >
+        <Typography variant="caption" sx={{ color: "text.disabled" }}>
+          {hasFilters ? (
+            <>
+              <Box component="span" sx={{ color: "text.secondary", fontWeight: 600 }}>
+                {sorted.length}
+              </Box>
+              {" de "}
+              {allPokemon.length}
+              {" pokémons"}
+            </>
+          ) : (
+            <>
+              {allPokemon.length}
+              {" pokémons"}
+            </>
+          )}
+        </Typography>
+        {hasFilters && (
+          <Button
+            size="small"
+            variant="text"
+            color="inherit"
+            startIcon={<CloseIcon fontSize="small" />}
+            onClick={clearFilters}
+            sx={{ fontSize: "0.7rem", py: 0, color: "text.disabled", "&:hover": { color: "primary.light" } }}
+          >
+            Limpar filtros
+          </Button>
+        )}
+      </Box>
+
+      <Box
+        sx={{
           height: 480,
           opacity: isStale ? 0.5 : 1,
           transition: "opacity 0.15s",
@@ -221,15 +313,15 @@ export function PokemonSelector({ allPokemon, selectedIds, onToggle, elementsByP
       </Box>
 
       {sorted.length === 0 && (
-        <Typography variant="caption" color="text.disabled" sx={{ display: "block", mt: 0.5 }}>
-          Nenhum pokémon encontrado
+        <Typography variant="caption" color="text.disabled" sx={{ display: "block", mt: 1, textAlign: "center" }}>
+          Nenhum pokémon encontrado{hasFilters ? " — tente ajustar os filtros" : ""}
         </Typography>
       )}
       {selectedIds.length === 0 && sorted.length > 0 && (
-        <Typography variant="caption" color="text.disabled" sx={{ display: "block", mt: 0.5 }}>
+        <Typography variant="caption" color="text.disabled" sx={{ display: "block", mt: 1 }}>
           Clique nos pokémons acima para selecionar
         </Typography>
       )}
-    </Box>
+    </Paper>
   );
 }
