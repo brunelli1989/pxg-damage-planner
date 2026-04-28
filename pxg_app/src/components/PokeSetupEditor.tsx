@@ -3,6 +3,20 @@ import type { DamageConfig, HeldKind, HeldItem, Pokemon, PokeSetup, Tier, XAtkTi
 import { estimatePokeSoloDamage } from "../engine/damage";
 import { getOptimalSkillOrder } from "../engine/scoring";
 import { DEFAULT_POKE_SETUP } from "../hooks/useDamageConfig";
+import Paper from "@mui/material/Paper";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import TableSortLabel from "@mui/material/TableSortLabel";
+import TextField from "@mui/material/TextField";
+import MenuItem from "@mui/material/MenuItem";
+import Button from "@mui/material/Button";
+import CalculateIcon from "@mui/icons-material/Calculate";
 
 const X_ATK_TIERS_ALL: XAtkTier[] = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
@@ -34,10 +48,16 @@ interface DamageRow {
   withDeviceElixir: number;
 }
 
-const inlineInputCls = "bg-bg-skills text-text border border-[#444] px-2 py-1 rounded text-[0.85rem] w-[100px]";
-const tableSelectCls = "bg-bg-skills text-text border border-[#444] px-2 py-1 rounded text-[0.85rem]";
-const thCls = "text-left px-2 py-1.5 text-text-dim font-medium border-b border-[#333] cursor-pointer";
-const tdCls = "px-2 py-1.5 border-b border-[#222]";
+const COLS: { id: SortCol; label: string; numeric: boolean; tooltip?: string }[] = [
+  { id: "name", label: "Pokémon", numeric: false },
+  { id: "boost", label: "Boost", numeric: true },
+  { id: "heldKind", label: "X-Held", numeric: false },
+  { id: "heldTier", label: "Tier", numeric: false },
+  { id: "noDevice", label: "Sem device", numeric: true },
+  { id: "withDevice", label: "Com device", numeric: true },
+  { id: "noDeviceElixir", label: "+ Elixir (s/ device)", numeric: true },
+  { id: "withDeviceElixir", label: "+ Elixir (c/ device)", numeric: true },
+];
 
 export function PokeSetupEditor({ pokes, config, onChange }: Props) {
   const [estimates, setEstimates] = useState<Record<string, DamageRow>>({});
@@ -70,8 +90,6 @@ export function PokeSetupEditor({ pokes, config, onChange }: Props) {
     });
     return sorted;
   }, [pokes, config.pokeSetups, estimates, sort]);
-
-  const sortArrow = (col: SortCol) => (sort.col === col ? (sort.dir === "asc" ? " ▲" : " ▼") : "");
 
   useEffect(() => {
     for (const p of pokes) {
@@ -108,112 +126,140 @@ export function PokeSetupEditor({ pokes, config, onChange }: Props) {
     setEstimates(next);
   };
 
+  const fmtDmg = (n: number | undefined) => (n !== undefined && n >= 0 ? Math.round(n).toLocaleString() : "—");
+
+  // Pra destaque visual: melhor valor por linha (entre as 4 colunas de dano)
+  const bestPerRow = (est: DamageRow | undefined): keyof DamageRow | null => {
+    if (!est) return null;
+    let bestKey: keyof DamageRow = "noDevice";
+    let bestVal = est.noDevice;
+    (["withDevice", "noDeviceElixir", "withDeviceElixir"] as (keyof DamageRow)[]).forEach((k) => {
+      if (est[k] > bestVal) { bestVal = est[k]; bestKey = k; }
+    });
+    return bestKey;
+  };
+
   return (
-    <section className="bg-bg-card border border-[#333] rounded-lg p-4 mt-6 shadow-[var(--shadow-card)]">
-      <h2 className="m-0 mb-4 text-lg font-semibold text-text">Setup dos Pokémons</h2>
-      <p className="text-[0.75rem] text-text-dim">
-        X-Held: X-Attack (T1-T8) ou X-Boost (T1-T7). Só 1 held por poke.
-      </p>
-      <table className="w-full border-collapse text-[0.85rem]">
-        <thead>
-          <tr>
-            <th className={thCls} onClick={() => toggleSort("name")}>Pokémon{sortArrow("name")}</th>
-            <th className={thCls} onClick={() => toggleSort("boost")}>Boost{sortArrow("boost")}</th>
-            <th className={thCls} onClick={() => toggleSort("heldKind")}>X-Held{sortArrow("heldKind")}</th>
-            <th className={thCls} onClick={() => toggleSort("heldTier")}>Tier{sortArrow("heldTier")}</th>
-            <th className={thCls} onClick={() => toggleSort("noDevice")}>Dano sem device{sortArrow("noDevice")}</th>
-            <th className={thCls} onClick={() => toggleSort("withDevice")}>Dano com device{sortArrow("withDevice")}</th>
-            <th className={thCls} onClick={() => toggleSort("noDeviceElixir")}>Dano + Elixir (sem device){sortArrow("noDeviceElixir")}</th>
-            <th className={thCls} onClick={() => toggleSort("withDeviceElixir")}>Dano + Elixir (com device){sortArrow("withDeviceElixir")}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {sortedPokes.map((p) => {
-            const setup = config.pokeSetups[p.id] ?? {
-              ...DEFAULT_POKE_SETUP,
-              boost: clampBoost(p.tier, DEFAULT_POKE_SETUP.boost),
-            };
-            const heldKind = setup.held.kind;
-            const maxTier: XAtkTier = heldKind === "x-boost" ? 7 : 8;
-            const availableTiers = X_ATK_TIERS_ALL.filter((t) => t <= maxTier);
-            const minBoost = minBoostForTier(p.tier);
-
-            const setHeld = (next: Partial<HeldItem>) => {
-              onChange(p.id, { held: { ...setup.held, ...next } });
-            };
-
-            const est = estimates[p.id];
-            const noDeviceCell = est ? Math.round(est.noDevice).toLocaleString() : "—";
-            const withDeviceCell = est ? Math.round(est.withDevice).toLocaleString() : "—";
-            const noDeviceElixirCell = est ? Math.round(est.noDeviceElixir).toLocaleString() : "—";
-            const withDeviceElixirCell = est ? Math.round(est.withDeviceElixir).toLocaleString() : "—";
-
-            return (
-              <tr key={p.id}>
-                <td className={tdCls}>{p.name}</td>
-                <td className={tdCls}>
-                  <input
-                    type="number"
-                    min={minBoost}
-                    max={MAX_BOOST}
-                    value={clampBoost(p.tier, setup.boost)}
-                    onChange={(e) =>
-                      onChange(p.id, { boost: clampBoost(p.tier, Number(e.target.value)) })
-                    }
-                    className={inlineInputCls}
-                    title={`${p.tier}: boost ${minBoost}-${MAX_BOOST}`}
-                  />
-                </td>
-                <td className={tdCls}>
-                  <select
-                    className={tableSelectCls}
-                    value={heldKind}
-                    onChange={(e) => {
-                      const kind = e.target.value as HeldKind;
-                      let tier = setup.held.tier;
-                      if (kind === "x-boost" && tier > 7) tier = 7;
-                      if (kind === "none") tier = 0;
-                      setHeld({ kind, tier: tier as XAtkTier });
-                    }}
-                  >
-                    <option value="none">Nenhum</option>
-                    <option value="x-attack">X-Attack</option>
-                    <option value="x-boost">X-Boost</option>
-                    <option value="x-critical">X-Critical</option>
-                    <option value="x-defense">X-Defense</option>
-                  </select>
-                </td>
-                <td className={tdCls}>
-                  <select
-                    className={tableSelectCls}
-                    value={setup.held.tier}
-                    disabled={heldKind === "none"}
-                    onChange={(e) => setHeld({ tier: Number(e.target.value) as XAtkTier })}
-                  >
-                    {availableTiers.map((t) => (
-                      <option key={t} value={t}>
-                        {t === 0 ? "—" : `T${t}`}
-                      </option>
-                    ))}
-                  </select>
-                </td>
-                <td className={tdCls}>{noDeviceCell}</td>
-                <td className={tdCls}>{withDeviceCell}</td>
-                <td className={tdCls}>{noDeviceElixirCell}</td>
-                <td className={tdCls}>{withDeviceElixirCell}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-      <div className="mt-3">
-        <button
-          className="bg-[#2a3f5f] text-text border border-[#444] px-2 py-0.5 rounded text-[0.75rem] cursor-pointer mr-1 hover:bg-[#3a5080]"
+    <Paper sx={{ p: 3, mt: 3 }}>
+      <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 1, flexWrap: "wrap", gap: 2 }}>
+        <Typography variant="h2">Setup dos Pokémons</Typography>
+        <Button
+          variant="contained"
+          size="small"
+          startIcon={<CalculateIcon />}
           onClick={handleEstimate}
         >
           Estimar dano
-        </button>
-      </div>
-    </section>
+        </Button>
+      </Box>
+      <Typography variant="caption" color="text.disabled" sx={{ mb: 2, display: "block" }}>
+        X-Held: X-Attack (T1-T8) ou X-Boost (T1-T7). Só 1 held por poke. Boost mínimo: TR ≥70, TM ≥80.
+      </Typography>
+
+      <TableContainer>
+        <Table size="small" sx={{ "& td, & th": { borderColor: "divider" } }}>
+          <TableHead>
+            <TableRow>
+              {COLS.map((col) => (
+                <TableCell
+                  key={col.id}
+                  align={col.numeric ? "right" : "left"}
+                  sx={{ fontWeight: 600, color: "text.secondary", fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.04em" }}
+                >
+                  <TableSortLabel
+                    active={sort.col === col.id}
+                    direction={sort.col === col.id ? sort.dir : "asc"}
+                    onClick={() => toggleSort(col.id)}
+                  >
+                    {col.label}
+                  </TableSortLabel>
+                </TableCell>
+              ))}
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {sortedPokes.map((p) => {
+              const setup = config.pokeSetups[p.id] ?? {
+                ...DEFAULT_POKE_SETUP,
+                boost: clampBoost(p.tier, DEFAULT_POKE_SETUP.boost),
+              };
+              const heldKind = setup.held.kind;
+              const maxTier: XAtkTier = heldKind === "x-boost" ? 7 : 8;
+              const availableTiers = X_ATK_TIERS_ALL.filter((t) => t <= maxTier);
+              const minBoost = minBoostForTier(p.tier);
+
+              const setHeld = (next: Partial<HeldItem>) => {
+                onChange(p.id, { held: { ...setup.held, ...next } });
+              };
+
+              const est = estimates[p.id];
+              const best = bestPerRow(est);
+
+              const dmgCellSx = (key: keyof DamageRow) => ({
+                fontVariantNumeric: "tabular-nums" as const,
+                fontWeight: best === key ? 700 : 400,
+                color: best === key ? "secondary.main" : "text.primary",
+              });
+
+              return (
+                <TableRow key={p.id} hover>
+                  <TableCell sx={{ fontWeight: 500 }}>{p.name}</TableCell>
+                  <TableCell align="right">
+                    <TextField
+                      type="number"
+                      size="small"
+                      value={clampBoost(p.tier, setup.boost)}
+                      onChange={(e) => onChange(p.id, { boost: clampBoost(p.tier, Number(e.target.value)) })}
+                      slotProps={{ htmlInput: { min: minBoost, max: MAX_BOOST } }}
+                      sx={{ width: 80, "& input": { textAlign: "right" } }}
+                      title={`${p.tier}: boost ${minBoost}-${MAX_BOOST}`}
+                    />
+                  </TableCell>
+                  <TableCell>
+                    <TextField
+                      select
+                      size="small"
+                      value={heldKind}
+                      onChange={(e) => {
+                        const kind = e.target.value as HeldKind;
+                        let tier = setup.held.tier;
+                        if (kind === "x-boost" && tier > 7) tier = 7;
+                        if (kind === "none") tier = 0;
+                        setHeld({ kind, tier: tier as XAtkTier });
+                      }}
+                      sx={{ minWidth: 120 }}
+                    >
+                      <MenuItem value="none">Nenhum</MenuItem>
+                      <MenuItem value="x-attack">X-Attack</MenuItem>
+                      <MenuItem value="x-boost">X-Boost</MenuItem>
+                      <MenuItem value="x-critical">X-Critical</MenuItem>
+                      <MenuItem value="x-defense">X-Defense</MenuItem>
+                    </TextField>
+                  </TableCell>
+                  <TableCell>
+                    <TextField
+                      select
+                      size="small"
+                      value={setup.held.tier}
+                      disabled={heldKind === "none"}
+                      onChange={(e) => setHeld({ tier: Number(e.target.value) as XAtkTier })}
+                      sx={{ minWidth: 80 }}
+                    >
+                      {availableTiers.map((t) => (
+                        <MenuItem key={t} value={t}>{t === 0 ? "—" : `T${t}`}</MenuItem>
+                      ))}
+                    </TextField>
+                  </TableCell>
+                  <TableCell align="right" sx={dmgCellSx("noDevice")}>{fmtDmg(est?.noDevice)}</TableCell>
+                  <TableCell align="right" sx={dmgCellSx("withDevice")}>{fmtDmg(est?.withDevice)}</TableCell>
+                  <TableCell align="right" sx={dmgCellSx("noDeviceElixir")}>{fmtDmg(est?.noDeviceElixir)}</TableCell>
+                  <TableCell align="right" sx={dmgCellSx("withDeviceElixir")}>{fmtDmg(est?.withDeviceElixir)}</TableCell>
+                </TableRow>
+              );
+            })}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </Paper>
   );
 }

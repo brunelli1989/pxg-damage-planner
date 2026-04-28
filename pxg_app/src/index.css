@@ -68,3 +68,12 @@ body {
   max-width: 1200px;
   min-height: 100vh;
 }
+
+/* VirtuosoGrid: define grid responsivo pra lista de pokes selecionáveis.
+   Virtuoso renderiza itens dentro deste container — precisa estilizar via class. */
+.poke-grid-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+  padding-right: 4px;
+}

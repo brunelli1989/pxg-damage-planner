@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { Suspense, lazy, useState, useCallback, useEffect, useTransition } from "react";
 import type { DiskLevel, Pokemon, RotationResult } from "./types";
 import pokemonData from "./data/pokemon.json";
 import { PokemonSelector } from "./components/PokemonSelector";
@@ -7,7 +7,11 @@ import { SkillTimeline } from "./components/SkillTimeline";
 import { DamageConfigPanel } from "./components/DamageConfigPanel";
 import { PokeSetupEditor } from "./components/PokeSetupEditor";
 import { LureDamagePreview } from "./components/LureDamagePreview";
-import { OtddPage } from "./components/OtddPage";
+
+// Code split: OtddPage só baixa quando user clica na tab pela primeira vez.
+const OtddPage = lazy(() =>
+  import("./components/OtddPage").then((m) => ({ default: m.OtddPage }))
+);
 import { useRotation } from "./hooks/useRotation";
 import { useDamageConfig } from "./hooks/useDamageConfig";
 import { ELIXIR_PRICE, REVIVE_PRICE } from "./engine/cooldown";
@@ -174,10 +178,20 @@ const headerBtnCls =
 
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>(() => loadCurrentPage());
+  const [, startTabTransition] = useTransition();
   const [selectedIds, setSelectedIds] = useState<string[]>(() => loadSelectedIds());
   const [diskLevel, setDiskLevel] = useState<DiskLevel>(() => loadDiskLevel());
   const [showResult, setShowResult] = useState(false);
   const [copyFeedback, setCopyFeedback] = useState<string | null>(null);
+
+  // OtddPage só monta na primeira vez que o user clica nela.
+  // Depois fica montada (escondida via display:none) — evita re-render caro.
+  const [otddMounted, setOtddMounted] = useState<boolean>(currentPage === "otdd");
+
+  const switchPage = (page: Page) => {
+    if (page === "otdd" && !otddMounted) setOtddMounted(true);
+    startTabTransition(() => setCurrentPage(page));
+  };
 
   useEffect(() => {
     localStorage.setItem(PAGE_STORAGE_KEY, currentPage);
@@ -247,25 +261,31 @@ function App() {
         <nav className="flex gap-1.5">
           <button
             className={`${tabBaseCls} ${currentPage === "rotation" ? tabActiveCls : tabIdleCls}`}
-            onClick={() => setCurrentPage("rotation")}
+            onClick={() => switchPage("rotation")}
           >
             Rotação
           </button>
           <button
             className={`${tabBaseCls} ${currentPage === "otdd" ? tabActiveCls : tabIdleCls}`}
-            onClick={() => setCurrentPage("otdd")}
+            onClick={() => switchPage("otdd")}
           >
             OTDD
           </button>
         </nav>
       </header>
 
-      {currentPage === "otdd" ? (
-        <main>
-          <OtddPage />
+      {/* OtddPage: monta uma vez e fica viva. display:none preserva estado/scroll
+          e evita re-simular dano quando troca de tab. Lazy = JS só baixa no
+          primeiro mount. */}
+      {otddMounted && (
+        <main style={{ display: currentPage === "otdd" ? "block" : "none" }}>
+          <Suspense fallback={<div style={{ padding: 24 }}>Carregando OTDD...</div>}>
+            <OtddPage />
+          </Suspense>
         </main>
-      ) : (
-      <main>
+      )}
+
+      <main style={{ display: currentPage === "rotation" ? "block" : "none" }}>
         <PokemonSelector
           allPokemon={allPokemon}
           selectedIds={selectedIds}
@@ -380,7 +400,6 @@ function App() {
           </>
         )}
       </main>
-      )}
     </div>
   );
 }

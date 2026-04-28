@@ -1,4 +1,13 @@
+import { memo } from "react";
 import type { Pokemon } from "../types";
+import Card from "@mui/material/Card";
+import CardActionArea from "@mui/material/CardActionArea";
+import CardContent from "@mui/material/CardContent";
+import Chip from "@mui/material/Chip";
+import Typography from "@mui/material/Typography";
+import Tooltip from "@mui/material/Tooltip";
+import Box from "@mui/material/Box";
+import WarningAmberIcon from "@mui/icons-material/WarningAmber";
 
 interface Props {
   pokemon: Pokemon;
@@ -50,83 +59,146 @@ const ROLE_LABELS: Record<string, string> = {
 };
 
 function ccLabel(pokemon: Pokemon): string {
-  // Mostra qualquer CC (incluindo stun/silence frontal, que ainda vale como second).
   const kinds = new Set(pokemon.skills.filter((s) => s.cc !== null).map((s) => s.cc));
   if (kinds.size === 0) return "No CC";
   return Array.from(kinds).join("/");
 }
 
-export function PokemonCard({ pokemon, selected, disabled, onToggle }: Props) {
+function PokemonCardImpl({ pokemon, selected, disabled, onToggle }: Props) {
   const cc = ccLabel(pokemon);
   const hasCC = cc !== "No CC";
   const uncalibrated = Boolean(pokemon.todo);
   const skillCount = pokemon.skills.length;
   const roleLabel = pokemon.role ? ROLE_LABELS[pokemon.role] : null;
-
-  const baseCard = "rounded-lg p-3.5 cursor-pointer border-2 transition-[border-color,transform,box-shadow] duration-150 ease-out hover:-translate-y-0.5 shadow-[var(--shadow-card)]";
-  const stateCard = disabled
-    ? "opacity-40 cursor-not-allowed bg-bg-card border-[#333] hover:translate-y-0 shadow-none"
-    : selected
-    ? "bg-border-card border-accent-blue shadow-[0_2px_12px_rgb(74_144_217/0.3)]"
-    : "bg-bg-card border-[#333] hover:border-[#555] hover:shadow-[var(--shadow-elevated)]";
-
-  const ccCls = hasCC ? "bg-cc-yes text-white" : "bg-cc-no text-white";
+  const tierColor = TIER_COLORS[pokemon.tier] ?? "#888";
 
   return (
-    <div className={`${baseCard} ${stateCard}`} onClick={() => !disabled && onToggle(pokemon.id)}>
-      <div className="flex justify-between items-start gap-2 mb-2">
-        <span className="font-semibold text-[0.95rem] leading-tight">{pokemon.name}</span>
-        <div className="flex items-center gap-1.5 shrink-0">
-          {uncalibrated && (
-            <span
-              className="text-xs cursor-help opacity-85 hover:opacity-100"
-              title={
-                `Ação pendente: ${pokemon.todo}` +
-                (pokemon.observacao ? `\n\nObservação: ${pokemon.observacao}` : "")
-              }
-            >
-              ⚠️
-            </span>
+    <Card
+      sx={{
+        opacity: disabled ? 0.4 : 1,
+        border: 2,
+        borderColor: selected ? "primary.main" : "transparent",
+        bgcolor: selected ? "rgba(74, 144, 217, 0.08)" : "background.paper",
+        transition: "border-color 0.15s, box-shadow 0.15s, transform 0.15s",
+        "&:hover": disabled ? {} : {
+          transform: "translateY(-2px)",
+          boxShadow: 6,
+        },
+        position: "relative",
+        overflow: "hidden",
+        // Performance: browser pula render de cards fora do viewport.
+        // contain-intrinsic-size reserva espaço sem renderizar conteúdo.
+        contentVisibility: "auto",
+        containIntrinsicSize: "0 140px",
+      }}
+    >
+      {/* Faixa de cor do tier no topo */}
+      <Box sx={{ height: 4, bgcolor: tierColor }} />
+
+      <CardActionArea
+        disabled={disabled}
+        onClick={() => onToggle(pokemon.id)}
+        sx={{ alignItems: "stretch" }}
+      >
+        <CardContent sx={{ p: 2, "&:last-child": { pb: 2 } }}>
+          {/* Header: nome + tier badge + warning */}
+          <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 1, mb: 1 }}>
+            <Typography variant="body1" sx={{ fontWeight: 600, lineHeight: 1.2 }}>
+              {pokemon.name}
+            </Typography>
+            <Box sx={{ display: "flex", gap: 0.5, alignItems: "center", flexShrink: 0 }}>
+              {uncalibrated && (
+                <Tooltip
+                  title={
+                    `Ação pendente: ${pokemon.todo}` +
+                    (pokemon.observacao ? `\n\nObservação: ${pokemon.observacao}` : "")
+                  }
+                >
+                  <WarningAmberIcon sx={{ fontSize: 16, color: "warning.main" }} />
+                </Tooltip>
+              )}
+              <Chip
+                label={pokemon.tier}
+                size="small"
+                sx={{
+                  bgcolor: tierColor,
+                  color: "#1a1a2e",
+                  fontWeight: 700,
+                  fontSize: "0.7rem",
+                  height: 20,
+                }}
+              />
+            </Box>
+          </Box>
+
+          {/* Tipos */}
+          {pokemon.elements && pokemon.elements.length > 0 && (
+            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5, mb: 1 }}>
+              {pokemon.elements.map((el) => {
+                const colors = ELEMENT_COLORS[el] ?? { bg: "#444", text: "#fff" };
+                return (
+                  <Chip
+                    key={el}
+                    label={el}
+                    size="small"
+                    sx={{
+                      bgcolor: colors.bg,
+                      color: colors.text,
+                      fontSize: "0.65rem",
+                      height: 18,
+                      textTransform: "uppercase",
+                      letterSpacing: "0.05em",
+                      fontWeight: 600,
+                    }}
+                  />
+                );
+              })}
+            </Box>
           )}
-          <span
-            className="text-[0.7rem] font-bold px-1.5 py-0.5 rounded text-bg-app"
-            style={{ backgroundColor: TIER_COLORS[pokemon.tier] ?? "#888" }}
-          >
-            {pokemon.tier}
-          </span>
-        </div>
-      </div>
 
-      {pokemon.elements && pokemon.elements.length > 0 && (
-        <div className="flex flex-wrap gap-1 mb-2">
-          {pokemon.elements.map((el) => {
-            const colors = ELEMENT_COLORS[el] ?? { bg: "#444", text: "#fff" };
-            return (
-              <span
-                key={el}
-                className="text-[0.65rem] font-semibold px-1.5 py-0.5 rounded uppercase tracking-wide"
-                style={{ backgroundColor: colors.bg, color: colors.text }}
-              >
-                {el}
-              </span>
-            );
-          })}
-        </div>
-      )}
-
-      <div className="flex flex-wrap items-center gap-1.5 text-[0.7rem]">
-        <span className={`px-2 py-0.5 rounded font-semibold uppercase tracking-wide ${ccCls}`}>
-          {cc}
-        </span>
-        {roleLabel && (
-          <span className="px-1.5 py-0.5 rounded bg-white/[0.067] text-text-muted font-semibold uppercase tracking-wide border border-white/[0.13]">
-            {roleLabel}
-          </span>
-        )}
-        <span className="text-text-dim ml-auto">
-          {skillCount > 0 ? `${skillCount} skills` : "—"}
-        </span>
-      </div>
-    </div>
+          {/* Footer: CC, Role, skill count */}
+          <Box sx={{ display: "flex", alignItems: "center", gap: 0.75 }}>
+            <Chip
+              label={cc}
+              size="small"
+              color={hasCC ? "success" : "error"}
+              sx={{
+                height: 20,
+                fontSize: "0.65rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.05em",
+              }}
+            />
+            {roleLabel && (
+              <Chip
+                label={roleLabel}
+                size="small"
+                variant="outlined"
+                sx={{
+                  height: 20,
+                  fontSize: "0.65rem",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.05em",
+                  color: "text.secondary",
+                  borderColor: "divider",
+                }}
+              />
+            )}
+            <Box sx={{ flexGrow: 1 }} />
+            <Typography variant="caption" color="text.disabled">
+              {skillCount > 0 ? `${skillCount} skills` : "—"}
+            </Typography>
+          </Box>
+        </CardContent>
+      </CardActionArea>
+    </Card>
   );
 }
+
+/**
+ * memo evita re-render quando pokemon/selected/disabled/onToggle não mudam.
+ * Crítico aqui pq a grade pode ter 586 cards — sem memo, qualquer mudança
+ * em PokemonSelector (como filtro de tier) re-renderiza todos.
+ * onToggle precisa ser estável (useCallback no parent — já é em App.tsx).
+ */
+export const PokemonCard = memo(PokemonCardImpl);

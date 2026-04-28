@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { Boss, BossCategory, DamageConfig, Pokemon, PokemonElement, XAtkTier } from "../types";
 import pokemonData from "../data/pokemon.json";
 import bossesData from "../data/bosses.json";
@@ -178,68 +178,80 @@ export function OtddPage() {
     return map;
   }, []);
 
+  // Cache per-poke: chave inclui todos os inputs do cálculo daquele poke.
+  // Mudar held de UM poke só invalida a entrada dele — outros 96 reusam cache.
+  const rowCache = useRef(new Map<string, PokeRow>());
+
+  function computePokeRow(poke: Pokemon, held: PokeHeld, targetTypes: PokemonElement[]): PokeRow {
+    const cacheKey = `${poke.id}|${held.boost}|${held.xAtkTier}|${held.xBoostTier}|${playerLvl}|${targetTypes.join(",")}`;
+    const cached = rowCache.current.get(cacheKey);
+    if (cached) return cached;
+
+    const damageSkills = poke.skills.filter((s) => (resolveSkillPower(s, poke) ?? 0) > 0);
+    const cfg = buildConfig(playerLvl, held, poke.id, targetTypes);
+    const sim = simulate10min(poke, cfg);
+
+    const skillRows: SkillRow[] = damageSkills.map((skill) => {
+      const power = resolveSkillPower(skill, poke);
+      const danoPerCast = computeSkillDamage(cfg, poke, skill, cfg.mob, { skillPower: power });
+      const stats = sim.perSkill.get(skill.name) ?? { casts: 0, dmg: 0 };
+      return {
+        name: skill.name,
+        element: skill.element ?? "—",
+        cooldown: skill.cooldown,
+        power,
+        danoPerCast,
+        casts: stats.casts,
+        totalDmg: stats.dmg,
+        playerNote: skill.playerNote,
+      };
+    });
+
+    let meleeHits = 0;
+    let meleeDmg = 0;
+    let meleeIncludedInTotal = false;
+    if (poke.melee && poke.melee.attackInterval > 0) {
+      meleeHits = Math.floor(SIM_DURATION / poke.melee.attackInterval);
+      const meleeSkill = {
+        name: "Auto-attack",
+        cooldown: poke.melee.attackInterval,
+        type: "target" as const,
+        cc: null,
+        buff: null,
+        element: poke.melee.element,
+        power: poke.melee.power,
+      };
+      const meleeDmgPerHit = computeSkillDamage(cfg, poke, meleeSkill, cfg.mob, { skillPower: poke.melee.power });
+      meleeDmg = meleeDmgPerHit * meleeHits;
+      meleeIncludedInTotal = poke.melee.kind === "ranged";
+    }
+
+    const row: PokeRow = {
+      poke,
+      held,
+      totalDmg: sim.totalDmg + (meleeIncludedInTotal ? meleeDmg : 0),
+      meleeDmg,
+      meleeIncludedInTotal,
+      skillsDmg: sim.totalDmg,
+      totalCasts: sim.totalCasts,
+      meleeHits,
+      skillRows,
+    };
+    rowCache.current.set(cacheKey, row);
+    return row;
+  }
+
   const rows = useMemo<PokeRow[]>(() => {
     const result: PokeRow[] = [];
     const targetTypes: PokemonElement[] = selectedBoss?.types ?? [];
-
     for (const poke of allPokes) {
       if (poke.role !== "otdd") continue;
-      const damageSkills = poke.skills.filter((s) => (resolveSkillPower(s, poke) ?? 0) > 0);
-
       const held = helds[poke.id] ?? DEFAULT_HELD;
-      const cfg = buildConfig(playerLvl, held, poke.id, targetTypes);
-      const sim = simulate10min(poke, cfg);
-
-      const skillRows: SkillRow[] = damageSkills.map((skill) => {
-        const power = resolveSkillPower(skill, poke);
-        const danoPerCast = computeSkillDamage(cfg, poke, skill, cfg.mob, { skillPower: power });
-        const stats = sim.perSkill.get(skill.name) ?? { casts: 0, dmg: 0 };
-        return {
-          name: skill.name,
-          element: skill.element ?? "—",
-          cooldown: skill.cooldown,
-          power,
-          danoPerCast,
-          casts: stats.casts,
-          totalDmg: stats.dmg,
-          playerNote: skill.playerNote,
-        };
-      });
-
-      let meleeHits = 0;
-      let meleeDmg = 0;
-      let meleeIncludedInTotal = false;
-      if (poke.melee && poke.melee.attackInterval > 0) {
-        meleeHits = Math.floor(SIM_DURATION / poke.melee.attackInterval);
-        const meleeSkill = {
-          name: "Auto-attack",
-          cooldown: poke.melee.attackInterval,
-          type: "target" as const,
-          cc: null,
-          buff: null,
-          element: poke.melee.element,
-          power: poke.melee.power,
-        };
-        const meleeDmgPerHit = computeSkillDamage(cfg, poke, meleeSkill, cfg.mob, { skillPower: poke.melee.power });
-        meleeDmg = meleeDmgPerHit * meleeHits;
-        meleeIncludedInTotal = poke.melee.kind === "ranged";
-      }
-
-      result.push({
-        poke,
-        held,
-        totalDmg: sim.totalDmg + (meleeIncludedInTotal ? meleeDmg : 0),
-        meleeDmg,
-        meleeIncludedInTotal,
-        skillsDmg: sim.totalDmg,
-        totalCasts: sim.totalCasts,
-        meleeHits,
-        skillRows,
-      });
+      result.push(computePokeRow(poke, held, targetTypes));
     }
-
     result.sort((a, b) => b.totalDmg - a.totalDmg);
     return result;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [playerLvl, helds, selectedBoss]);
 
   const filtered = useMemo(() => {
