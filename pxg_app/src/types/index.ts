@@ -101,6 +101,9 @@ export interface Boss {
   types: PokemonElement[];
   hp?: number;
   defFactor?: number;
+  /** Duração da luta em segundos. Default 600 (10min) — bosses com janela
+   *  diferente (ex: Raito 450s = 7min30) sobrescrevem aqui. */
+  durationSeconds?: number;
   wiki?: string;
 }
 

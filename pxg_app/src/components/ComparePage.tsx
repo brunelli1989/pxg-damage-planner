@@ -5,6 +5,7 @@ import bossesData from "../data/bosses.json";
 import {
   createPokeRowCache,
   DEFAULT_HELD,
+  DEFAULT_SIM_DURATION,
   pokeHasCalibratedDamage,
   type PokeHeld,
   type PokeRow,
@@ -89,6 +90,12 @@ const OTDD_POKE_IDS = damagePokes.filter((p) => p.role === "otdd").map((p) => p.
 
 const fmt = (n: number) => Math.round(n).toLocaleString();
 
+function formatDuration(s: number): string {
+  const m = Math.floor(s / 60);
+  const sec = s % 60;
+  return sec === 0 ? `${m}min` : `${m}min${String(sec).padStart(2, "0")}`;
+}
+
 const headerCellSx = {
   fontWeight: 600,
   color: "text.secondary",
@@ -143,6 +150,7 @@ export function ComparePage() {
   const otddAlreadyAdded = OTDD_POKE_IDS.every((id) => selectedIds.includes(id));
 
   const selectedBoss = useMemo(() => bosses.find((b) => b.id === bossId), [bossId]);
+  const simDuration = selectedBoss?.durationSeconds ?? DEFAULT_SIM_DURATION;
 
   const rowCache = useRef(createPokeRowCache());
 
@@ -153,10 +161,10 @@ export function ComparePage() {
       const poke = damagePokes.find((p) => p.id === id);
       if (!poke) continue;
       const held = helds[id] ?? DEFAULT_HELD;
-      result.push(rowCache.current.get(poke, held, playerLvl, targetTypes));
+      result.push(rowCache.current.get(poke, held, playerLvl, targetTypes, simDuration));
     }
     return result;
-  }, [playerLvl, helds, selectedBoss, selectedIds]);
+  }, [playerLvl, helds, selectedBoss, selectedIds, simDuration]);
 
   const sortedRows = useMemo<PokeRow[]>(() => {
     const getValue = (r: PokeRow): string | number => {
@@ -207,25 +215,27 @@ export function ComparePage() {
     return items;
   }, []);
 
+  const durLabel = formatDuration(simDuration);
   const COLS: { id: SortCol; label: string; numeric: boolean; tooltip?: string }[] = [
     { id: "name", label: "Pokémon", numeric: false },
     { id: "tier", label: "Tier", numeric: false },
     { id: "boost", label: "Boost", numeric: true },
     { id: "boost" as SortCol, label: "X-Held", numeric: false },
     { id: "boost" as SortCol, label: "Tier held", numeric: false },
-    { id: "skills", label: "Skills/10m", numeric: true },
-    { id: "melee", label: "Melee/10m", numeric: true, tooltip: "Apenas ranged conta no total. Close (italic) é informativo." },
-    { id: "total", label: "Total/10m", numeric: true },
+    { id: "skills", label: `Skills/${durLabel}`, numeric: true },
+    { id: "melee", label: `Melee/${durLabel}`, numeric: true, tooltip: "Apenas ranged conta no total. Close (italic) é informativo." },
+    { id: "total", label: `Total/${durLabel}`, numeric: true },
   ];
 
   return (
     <Box sx={{ py: 2 }}>
       <Typography variant="h2" sx={{ mb: 1 }}>
-        Comparar — Dano em 10 min
+        Comparar — Dano em {durLabel}
       </Typography>
       <Typography variant="caption" sx={{ color: "text.disabled", display: "block", mb: 3, lineHeight: 1.6 }}>
-        Adicione pokes pra comparar dano em 10min vs um boss (ou alvo neutro). Apenas pokes com dano calibrado disponíveis.
-        Bônus de clã não se aplica em boss. Buffs (Rage ×2/20s) não modelados.
+        Adicione pokes pra comparar dano vs um boss (ou alvo neutro). Apenas pokes com dano calibrado disponíveis.
+        Janela default 10min — bosses com timer próprio sobrescrevem (Raito 7min30). Bônus de clã não se aplica em boss.
+        Buffs (Rage ×2/20s) não modelados.
       </Typography>
 
       <Paper sx={{ p: 2.5, mb: 2 }}>

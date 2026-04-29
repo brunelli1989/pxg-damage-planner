@@ -39,6 +39,7 @@
     "name": "Raito",
     "category": "Nightmare Terror",
     "types": ["electric"],
+    "durationSeconds": 450,
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Terror_-_Raito"
   },
   {
@@ -67,6 +68,7 @@
     "name": "Kitsune",
     "category": "Nightmare Terror",
     "types": [],
+    "durationSeconds": 450,
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Terror_-_Kitsune"
   },
   {

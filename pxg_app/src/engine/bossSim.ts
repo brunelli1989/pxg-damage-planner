@@ -1,7 +1,7 @@
 import type { DamageConfig, Pokemon, PokemonElement, XAtkTier } from "../types";
 import { computeSkillDamage, resolveSkillPower } from "./damage";
 
-export const SIM_DURATION = 600;
+export const DEFAULT_SIM_DURATION = 600;
 const CAST_TIME = 1;
 
 export interface PokeHeld {
@@ -70,14 +70,15 @@ export function buildBossDamageConfig(
 }
 
 /**
- * Simula 600s (10 min) de casting greedy:
+ * Simula `duration` segundos de casting greedy:
  * - A cada segundo, casta a skill com maior dano disponível (fora do CD)
  * - CD começa após o cast (clock + cd + cast_time)
  * - Sem buff modeling por enquanto (Rage ×2/20s não aplicado).
  */
-function simulate10min(
+function simulateBossFight(
   poke: Pokemon,
-  cfg: DamageConfig
+  cfg: DamageConfig,
+  duration: number
 ): { totalDmg: number; totalCasts: number; perSkill: Map<string, { casts: number; dmg: number }> } {
   const damageSkills = poke.skills.filter((s) => (resolveSkillPower(s, poke) ?? 0) > 0);
   if (damageSkills.length === 0) {
@@ -99,7 +100,7 @@ function simulate10min(
   let totalDmg = 0;
   let totalCasts = 0;
 
-  while (t < SIM_DURATION) {
+  while (t < duration) {
     let bestIdx = -1;
     for (let i = 0; i < skillData.length; i++) {
       if (cooldowns[i] <= t) {
@@ -132,11 +133,12 @@ function computePokeRow(
   poke: Pokemon,
   held: PokeHeld,
   playerLvl: number,
-  targetTypes: PokemonElement[]
+  targetTypes: PokemonElement[],
+  duration: number
 ): PokeRow {
   const damageSkills = poke.skills.filter((s) => (resolveSkillPower(s, poke) ?? 0) > 0);
   const cfg = buildBossDamageConfig(playerLvl, held, poke.id, targetTypes);
-  const sim = simulate10min(poke, cfg);
+  const sim = simulateBossFight(poke, cfg, duration);
 
   const skillRows: SkillRow[] = damageSkills.map((skill) => {
     const power = resolveSkillPower(skill, poke);
@@ -158,7 +160,7 @@ function computePokeRow(
   let meleeDmg = 0;
   let meleeIncludedInTotal = false;
   if (poke.melee && poke.melee.attackInterval > 0) {
-    meleeHits = Math.floor(SIM_DURATION / poke.melee.attackInterval);
+    meleeHits = Math.floor(duration / poke.melee.attackInterval);
     const meleeSkill = {
       name: "Auto-attack",
       cooldown: poke.melee.attackInterval,
@@ -187,18 +189,18 @@ function computePokeRow(
 }
 
 /**
- * Cache de PokeRow per (poke, held, playerLvl, target). Mudar held de UM poke
- * só invalida a entrada dele — outros reusam cache. Crítico pra perf da OTDD
- * (97 pokes) e Comparar (até pool inteiro).
+ * Cache de PokeRow per (poke, held, playerLvl, target, duration). Mudar held
+ * de UM poke só invalida a entrada dele — outros reusam cache. Crítico pra
+ * perf da Comparar (até pool inteiro).
  */
 export function createPokeRowCache() {
   const cache = new Map<string, PokeRow>();
   return {
-    get(poke: Pokemon, held: PokeHeld, playerLvl: number, targetTypes: PokemonElement[]): PokeRow {
-      const key = `${poke.id}|${held.boost}|${held.xAtkTier}|${held.xBoostTier}|${playerLvl}|${targetTypes.join(",")}`;
+    get(poke: Pokemon, held: PokeHeld, playerLvl: number, targetTypes: PokemonElement[], duration: number): PokeRow {
+      const key = `${poke.id}|${held.boost}|${held.xAtkTier}|${held.xBoostTier}|${playerLvl}|${targetTypes.join(",")}|${duration}`;
       let row = cache.get(key);
       if (!row) {
-        row = computePokeRow(poke, held, playerLvl, targetTypes);
+        row = computePokeRow(poke, held, playerLvl, targetTypes, duration);
         cache.set(key, row);
       }
       return row;
