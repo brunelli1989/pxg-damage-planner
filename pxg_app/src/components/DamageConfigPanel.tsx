@@ -324,7 +324,9 @@ export function DamageConfigPanel({
         </Tooltip>
       </Box>
 
-      {/* Lista simples dos mobs do mesmo grupo/hunt. Angry vem como entry própria no JSON. */}
+      {/* Tabela compacta dos mobs do mesmo grupo/hunt. Angry vem como entry própria no JSON.
+          Markers de qualidade (🟡🟠🔴) ficam em colunas próprias pra que os valores
+          numéricos fiquem alinhados verticalmente independente da source. */}
       {selectedGroupMobs.length > 0 && (
         <Box
           sx={{
@@ -336,56 +338,69 @@ export function DamageConfigPanel({
             borderColor: "divider",
             fontSize: "0.78rem",
             fontVariantNumeric: "tabular-nums",
+            display: "grid",
+            gridTemplateColumns: "minmax(0, 1fr) auto auto 14px auto auto 14px",
+            columnGap: 1.5,
+            rowGap: 0.5,
+            alignItems: "center",
           }}
         >
-          {selectedGroupMobs.map((m) => {
+          {selectedGroupMobs.flatMap((m) => {
             const r = resolvedById.get(m.id);
-            return (
-              <Box key={m.id} sx={{ display: "flex", gap: 1, py: 0.25, alignItems: "center" }}>
-                <Box component="span" sx={{ minWidth: 180, fontWeight: 600, display: "flex", alignItems: "center", gap: 0.5 }}>
-                  {m.name}
-                  {m.tag === "angry" && (
-                    <Chip
-                      label="ANGRY"
-                      size="small"
-                      sx={{
-                        height: 14,
-                        fontSize: "0.6rem",
-                        fontWeight: 700,
-                        letterSpacing: "0.05em",
-                        bgcolor: "error.main",
-                        color: "error.contrastText",
-                        "& .MuiChip-label": { px: 0.6 },
-                      }}
-                    />
-                  )}
-                  {m.todo && (
-                    <Tooltip title={m.todo} placement="top" arrow>
-                      <Typography component="span" sx={{ color: "warning.main", cursor: "help" }}>⚠</Typography>
-                    </Tooltip>
-                  )}
-                </Box>
-                <Box component="span" sx={{ minWidth: 110, color: "text.disabled" }}>
-                  {m.types.join("/")}
-                </Box>
-                <Box component="span" sx={{ minWidth: 95, textAlign: "right" }}>
-                  {r?.hp ? r.hp.toLocaleString() : "—"}
-                  {r && r.hpSource !== "measured" && (
-                    <Tooltip title={SOURCE_LABEL[r.hpSource]} placement="top" arrow>
-                      <Typography component="span" sx={{ ml: 0.5, fontSize: "0.7rem", cursor: "help" }}>{SOURCE_ICON[r.hpSource]}</Typography>
-                    </Tooltip>
-                  )}
-                </Box>
-                <Box component="span" sx={{ minWidth: 70, textAlign: "right", color: "text.disabled" }}>
-                  def {r?.defFactor !== undefined ? r.defFactor.toFixed(3) : "—"}
-                  {r && r.defSource !== "measured" && (
-                    <Tooltip title={SOURCE_LABEL[r.defSource]} placement="top" arrow>
-                      <Typography component="span" sx={{ ml: 0.5, fontSize: "0.7rem", cursor: "help" }}>{SOURCE_ICON[r.defSource]}</Typography>
-                    </Tooltip>
-                  )}
-                </Box>
-              </Box>
-            );
+            return [
+              <Box
+                key={`${m.id}-name`}
+                sx={{ fontWeight: 600, display: "flex", alignItems: "center", gap: 0.5 }}
+              >
+                {m.name}
+                {m.tag === "angry" && (
+                  <Chip
+                    label="ANGRY"
+                    size="small"
+                    sx={{
+                      height: 14,
+                      fontSize: "0.6rem",
+                      fontWeight: 700,
+                      letterSpacing: "0.05em",
+                      bgcolor: "error.main",
+                      color: "error.contrastText",
+                      "& .MuiChip-label": { px: 0.6 },
+                    }}
+                  />
+                )}
+                {m.todo && (
+                  <Tooltip title={m.todo} placement="top" arrow>
+                    <Typography component="span" sx={{ color: "warning.main", cursor: "help" }}>⚠</Typography>
+                  </Tooltip>
+                )}
+              </Box>,
+              <Box key={`${m.id}-types`} sx={{ color: "text.disabled" }}>
+                {m.types.join("/")}
+              </Box>,
+              <Box key={`${m.id}-hp`} sx={{ textAlign: "right" }}>
+                {r?.hp ? r.hp.toLocaleString() : "—"}
+              </Box>,
+              <Box key={`${m.id}-hpmark`} sx={{ fontSize: "0.7rem", lineHeight: 1, textAlign: "center" }}>
+                {r && r.hpSource !== "measured" && (
+                  <Tooltip title={SOURCE_LABEL[r.hpSource]} placement="top" arrow>
+                    <Typography component="span" sx={{ fontSize: "0.7rem", cursor: "help" }}>{SOURCE_ICON[r.hpSource]}</Typography>
+                  </Tooltip>
+                )}
+              </Box>,
+              <Box key={`${m.id}-deflabel`} sx={{ color: "text.disabled", textAlign: "right" }}>
+                def
+              </Box>,
+              <Box key={`${m.id}-def`} sx={{ color: "text.disabled", textAlign: "right" }}>
+                {r?.defFactor !== undefined ? r.defFactor.toFixed(3) : "—"}
+              </Box>,
+              <Box key={`${m.id}-defmark`} sx={{ fontSize: "0.7rem", lineHeight: 1, textAlign: "center" }}>
+                {r && r.defSource !== "measured" && (
+                  <Tooltip title={SOURCE_LABEL[r.defSource]} placement="top" arrow>
+                    <Typography component="span" sx={{ fontSize: "0.7rem", cursor: "help" }}>{SOURCE_ICON[r.defSource]}</Typography>
+                  </Tooltip>
+                )}
+              </Box>,
+            ];
           })}
         </Box>
       )}

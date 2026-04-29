@@ -448,7 +448,8 @@
     ],
     "hunt": "300",
     "group": "Grimer",
-    "todo": "calibrate hp + defense",
+    "hp": 194480,
+    "todo": "calibrate defense",
     "bestStarterElements": [
       "ground",
       "rock"
@@ -1424,7 +1425,8 @@
     ],
     "hunt": "300",
     "group": "Lampent/Litwick",
-    "todo": "calibrate hp + defense",
+    "hp": 185168,
+    "todo": "calibrate defense",
     "bestStarterElements": [
       "normal",
       "fire",
@@ -2299,14 +2301,15 @@
     "id": "galarian-darmanitan"
   },
   {
-    "name": "Angry Galarian Darmanitan",
+    "name": "Angry Darmanitan",
     "types": [
       "ice"
     ],
     "hunt": "400+",
     "group": "Galarian Darmanitan",
     "tag": "angry",
-    "todo": "calibrate hp + defense",
+    "hp": 506384,
+    "todo": "calibrate defense",
     "bestStarterElements": [
       "fire",
       "steel"
@@ -2319,7 +2322,7 @@
       "steel"
     ],
     "effectivenessNotes": "Apesar do elemento Fighting causar dano super efetivo nesta hunt, apenas a Shiny Hariyama possui a passiva Thick Fat, tornando golpes do elemento Ice muito inefetivos. | O Pokémon Omastar poderá ser uma opção viável para jogadores do clã Orebound frequentarem este local, tendo em vista que recebe dano inefetivo do elemento Ice.",
-    "id": "angry-galarian-darmanitan"
+    "id": "angry-darmanitan"
   },
   {
     "name": "Klinklang",
@@ -2776,7 +2779,8 @@
     "hunt": "400+",
     "group": "Hawlucha",
     "tag": "angry",
-    "todo": "calibrate hp + defense",
+    "hp": 444924,
+    "todo": "calibrate defense",
     "bestStarterElements": [
       "flying",
       "psychic",
@@ -3912,7 +3916,8 @@
     "hunt": "400+",
     "group": "Goodra",
     "tag": "angry",
-    "todo": "calibrate hp + defense",
+    "hp": 457998,
+    "todo": "calibrate defense",
     "bestStarterElements": [
       "dragon"
     ],
@@ -4018,7 +4023,8 @@
     "hunt": "400+",
     "group": "Rampardos/Sudowoodo",
     "tag": "angry",
-    "todo": "calibrate hp + defense",
+    "hp": 487800,
+    "todo": "calibrate defense",
     "bestStarterElements": [
       "fighting",
       "ground",
@@ -4069,7 +4075,8 @@
     "hunt": "400+",
     "group": "Gogoat",
     "tag": "angry",
-    "todo": "calibrate hp + defense",
+    "hp": 473399,
+    "todo": "calibrate defense",
     "bestStarterElements": [
       "fire",
       "grass",
