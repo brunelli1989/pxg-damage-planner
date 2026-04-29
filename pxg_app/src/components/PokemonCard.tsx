@@ -113,6 +113,8 @@ function PokemonCardImpl({ pokemon, selected, disabled, onToggle }: Props) {
                     `Ação pendente: ${pokemon.todo}` +
                     (pokemon.observacao ? `\n\nObservação: ${pokemon.observacao}` : "")
                   }
+                  placement="top"
+                  arrow
                 >
                   <WarningAmberIcon sx={{ fontSize: 16, color: "warning.main" }} />
                 </Tooltip>

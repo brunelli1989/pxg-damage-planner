@@ -216,6 +216,9 @@ export interface MobEntry {
   effectiveElements?: PokemonElement[];
   /** Observações da seção Efetividades do wiki (passivas, exceções) */
   effectivenessNotes?: string;
+  /** Tag opcional pra classificar variantes especiais (ex: "angry", "shiny", "rare").
+   *  Usado pra filtragem visual e separação de spawn raro vs comum. */
+  tag?: string;
 }
 
 export interface DamageConfig {

@@ -24,6 +24,7 @@ import Switch from "@mui/material/Switch";
 import Tooltip from "@mui/material/Tooltip";
 import Link from "@mui/material/Link";
 import IconButton from "@mui/material/IconButton";
+import Chip from "@mui/material/Chip";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutlineOutlined";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
@@ -320,6 +321,72 @@ export function DamageConfigPanel({
         </Tooltip>
       </Box>
 
+      {/* Lista simples dos mobs do mesmo grupo/hunt. Angry vem como entry própria no JSON. */}
+      {selectedGroupMobs.length > 0 && (
+        <Box
+          sx={{
+            mt: 2,
+            p: 1.5,
+            bgcolor: "background.default",
+            borderRadius: 1,
+            border: 1,
+            borderColor: "divider",
+            fontSize: "0.78rem",
+            fontVariantNumeric: "tabular-nums",
+          }}
+        >
+          {selectedGroupMobs.map((m) => {
+            const r = resolvedByName.get(m.name);
+            return (
+              <Box key={m.name} sx={{ display: "flex", gap: 1, py: 0.25, alignItems: "center" }}>
+                <Box component="span" sx={{ minWidth: 180, fontWeight: 600, display: "flex", alignItems: "center", gap: 0.5 }}>
+                  {m.name}
+                  {m.tag === "angry" && (
+                    <Chip
+                      label="ANGRY"
+                      size="small"
+                      sx={{
+                        height: 14,
+                        fontSize: "0.6rem",
+                        fontWeight: 700,
+                        letterSpacing: "0.05em",
+                        bgcolor: "error.main",
+                        color: "error.contrastText",
+                        "& .MuiChip-label": { px: 0.6 },
+                      }}
+                    />
+                  )}
+                  {m.todo && (
+                    <Tooltip title={m.todo} placement="top" arrow>
+                      <Typography component="span" sx={{ color: "warning.main", cursor: "help" }}>⚠</Typography>
+                    </Tooltip>
+                  )}
+                </Box>
+                <Box component="span" sx={{ minWidth: 110, color: "text.disabled" }}>
+                  {m.types.join("/")}
+                </Box>
+                <Box component="span" sx={{ minWidth: 95, textAlign: "right" }}>
+                  {r?.hp ? r.hp.toLocaleString() : "—"}
+                  {r && r.hpSource !== "measured" && (
+                    <Tooltip title={SOURCE_LABEL[r.hpSource]} placement="top" arrow>
+                      <Typography component="span" sx={{ ml: 0.5, fontSize: "0.7rem", cursor: "help" }}>{SOURCE_ICON[r.hpSource]}</Typography>
+                    </Tooltip>
+                  )}
+                </Box>
+                <Box component="span" sx={{ minWidth: 70, textAlign: "right", color: "text.disabled" }}>
+                  def {r?.defFactor !== undefined ? r.defFactor.toFixed(3) : "—"}
+                  {r && r.defSource !== "measured" && (
+                    <Tooltip title={SOURCE_LABEL[r.defSource]} placement="top" arrow>
+                      <Typography component="span" sx={{ ml: 0.5, fontSize: "0.7rem", cursor: "help" }}>{SOURCE_ICON[r.defSource]}</Typography>
+                    </Tooltip>
+                  )}
+                </Box>
+              </Box>
+            );
+          })}
+        </Box>
+      )}
+
       {/* Info bar do mob selecionado */}
       <Box
         sx={{
@@ -352,7 +419,7 @@ export function DamageConfigPanel({
         )}
 
         {currentMobSource && currentMobSource !== "measured" && (
-          <Tooltip title={SOURCE_LABEL[currentMobSource]}>
+          <Tooltip title={SOURCE_LABEL[currentMobSource]} placement="top" arrow>
             <Typography variant="caption" sx={{ cursor: "help" }}>
               {SOURCE_ICON[currentMobSource]} {SOURCE_LABEL[currentMobSource]}
             </Typography>

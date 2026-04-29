@@ -7,7 +7,7 @@
     "hunt": "300",
     "group": "Espurr",
     "hp": 220464,
-    "defFactor": 0.80,
+    "defFactor": 0.8,
     "bestStarterElements": [
       "psychic",
       "dark",
@@ -19,6 +19,27 @@
       "ghost",
       "dark"
     ]
+  },
+  {
+    "name": "Angry Espurr",
+    "types": [
+      "psychic"
+    ],
+    "hunt": "300",
+    "group": "Espurr",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "psychic",
+      "dark",
+      "steel"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Espurr",
+    "effectiveElements": [
+      "bug",
+      "ghost",
+      "dark"
+    ],
+    "tag": "angry"
   },
   {
     "name": "Pansear",
@@ -61,6 +82,26 @@
     ]
   },
   {
+    "name": "Shiny Magby",
+    "types": [
+      "fire"
+    ],
+    "hunt": "300",
+    "group": "Magby/Pansear",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "water",
+      "rock"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Magby_e_Pansear",
+    "effectiveElements": [
+      "water",
+      "ground",
+      "rock"
+    ],
+    "tag": "angry"
+  },
+  {
     "name": "Dratini",
     "types": [
       "dragon"
@@ -99,6 +140,25 @@
     ]
   },
   {
+    "name": "Shiny Druddigon",
+    "types": [
+      "dragon"
+    ],
+    "hunt": "300",
+    "group": "Dratini/Dragonair",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "fairy"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Dratini_e_Dragonair",
+    "effectiveElements": [
+      "fairy",
+      "ice",
+      "dragon"
+    ],
+    "tag": "angry"
+  },
+  {
     "name": "Bagon",
     "types": [
       "dragon"
@@ -135,6 +195,25 @@
       "ice",
       "dragon"
     ]
+  },
+  {
+    "name": "Shiny Druddigon",
+    "types": [
+      "dragon"
+    ],
+    "hunt": "300",
+    "group": "Bagon/Shelgon",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "fairy"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Bagon_e_Shelgon",
+    "effectiveElements": [
+      "fairy",
+      "ice",
+      "dragon"
+    ],
+    "tag": "angry"
   },
   {
     "name": "Gible",
@@ -177,6 +256,24 @@
     "effectivenessNotes": "O Beartic possui uma passiva que o deixa resistente ao elemento Dragon. | Embora o elemento Dragon cause dano super efetivo nesse local, Pokémon desse elemento também recebem dano super efetivo de Dragon. Sendo assim, não é um local indicado para o clã Wingeon. | O elemento Fairy causa dano efetivo no local, entretanto, não serão tão fortes como o dano do elemento Ice, para qual o local foi balanceado."
   },
   {
+    "name": "Shiny Druddigon",
+    "types": [
+      "dragon"
+    ],
+    "hunt": "300",
+    "group": "Gible/Gabite",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "steel",
+      "fairy"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Gible_e_Gabite",
+    "effectiveElements": [
+      "ice"
+    ],
+    "tag": "angry"
+  },
+  {
     "name": "Spoink",
     "types": [
       "psychic"
@@ -196,6 +293,27 @@
       "ghost",
       "dark"
     ]
+  },
+  {
+    "name": "Shiny Spoink",
+    "types": [
+      "psychic"
+    ],
+    "hunt": "300",
+    "group": "Spoink",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "psychic",
+      "dark",
+      "steel"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Spoink",
+    "effectiveElements": [
+      "bug",
+      "ghost",
+      "dark"
+    ],
+    "tag": "angry"
   },
   {
     "name": "Alolan Diglett",
@@ -221,6 +339,29 @@
     "effectivenessNotes": "Apesar de causarem dano super efetivo, os elementos Fighting e Ground recebem dano normal deste Pokémon, portanto, é necessário tomar cuidado ao frequentar o local. | O Pokémon Steelix poderá ser uma opção viável para jogadores do clã Orebound frequentarem este local, tendo em vista que recebe dano inefetivo do elemento Steel."
   },
   {
+    "name": "Angry Alolan Diglett",
+    "types": [
+      "ground",
+      "steel"
+    ],
+    "hunt": "300",
+    "group": "Alolan Diglett",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "fire",
+      "water"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Diglett",
+    "effectiveElements": [
+      "ground",
+      "water",
+      "fighting",
+      "fire"
+    ],
+    "effectivenessNotes": "Apesar de causarem dano super efetivo, os elementos Fighting e Ground recebem dano normal deste Pokémon, portanto, é necessário tomar cuidado ao frequentar o local. | O Pokémon Steelix poderá ser uma opção viável para jogadores do clã Orebound frequentarem este local, tendo em vista que recebe dano inefetivo do elemento Steel.",
+    "tag": "angry"
+  },
+  {
     "name": "Alolan Meowth",
     "types": [
       "dark"
@@ -239,6 +380,26 @@
       "bug",
       "fairy"
     ]
+  },
+  {
+    "name": "Angry Alolan Meowth",
+    "types": [
+      "dark"
+    ],
+    "hunt": "300",
+    "group": "Alolan Meowth",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "fighting",
+      "fairy"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Meowth",
+    "effectiveElements": [
+      "fighting",
+      "bug",
+      "fairy"
+    ],
+    "tag": "angry"
   },
   {
     "name": "Grimer",
@@ -260,6 +421,25 @@
     ]
   },
   {
+    "name": "Shiny Koffing",
+    "types": [
+      "poison"
+    ],
+    "hunt": "300",
+    "group": "Grimer",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "ground",
+      "rock"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Grimer",
+    "effectiveElements": [
+      "psychic",
+      "ground"
+    ],
+    "tag": "angry"
+  },
+  {
     "name": "Mega Beedrill",
     "types": [
       "bug",
@@ -267,7 +447,7 @@
     ],
     "hunt": "300",
     "group": "Mega Beedrill/Beedrill",
-    "todo": "calibrate defense",
+    "todo": "calibrate hp + defense",
     "bestStarterElements": [
       "fire",
       "flying"
@@ -278,7 +458,8 @@
       "fire",
       "rock",
       "psychic"
-    ]
+    ],
+    "tag": "angry"
   },
   {
     "name": "Beedrill",
@@ -323,6 +504,26 @@
     ]
   },
   {
+    "name": "Angry Silicobra",
+    "types": [
+      "ground"
+    ],
+    "hunt": "300",
+    "group": "Silicobra",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "grass",
+      "bug"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Silicobra",
+    "effectiveElements": [
+      "water",
+      "grass",
+      "ice"
+    ],
+    "tag": "angry"
+  },
+  {
     "name": "Galarian Farfetch'd",
     "types": [
       "fighting"
@@ -342,6 +543,27 @@
       "psychic",
       "fairy"
     ]
+  },
+  {
+    "name": "Angry Galarian Farfetch'd",
+    "types": [
+      "fighting"
+    ],
+    "hunt": "300",
+    "group": "Galarian Farfetch'd",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "flying",
+      "psychic",
+      "fairy"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Galarian_Farfetchd",
+    "effectiveElements": [
+      "flying",
+      "psychic",
+      "fairy"
+    ],
+    "tag": "angry"
   },
   {
     "name": "Lunatone",
@@ -391,6 +613,54 @@
     "effectivenessNotes": "Apesar de causarem dano efetivo, Pokémon dos elementos Ghost, Dark, Water e Grass recebem dano normal destes Pokémon, portanto, é necessário tomar cuidado ao frequentar o local. | Embora os Pokémon sejam do elemento Rock, estes Pokémon possuem a passiva Levitate, portanto, não recebem dano do tipo Ground."
   },
   {
+    "name": "Angry Lunatone",
+    "types": [
+      "rock",
+      "psychic"
+    ],
+    "hunt": "300",
+    "group": "Lunatone/Solrock",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "steel"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Solrock_e_Lunatone",
+    "effectiveElements": [
+      "ghost",
+      "dark",
+      "steel",
+      "water",
+      "grass",
+      "bug"
+    ],
+    "effectivenessNotes": "Apesar de causarem dano efetivo, Pokémon dos elementos Ghost, Dark, Water e Grass recebem dano normal destes Pokémon, portanto, é necessário tomar cuidado ao frequentar o local. | Embora os Pokémon sejam do elemento Rock, estes Pokémon possuem a passiva Levitate, portanto, não recebem dano do tipo Ground.",
+    "tag": "angry"
+  },
+  {
+    "name": "Angry Solrock",
+    "types": [
+      "rock",
+      "psychic"
+    ],
+    "hunt": "300",
+    "group": "Lunatone/Solrock",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "steel"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Solrock_e_Lunatone",
+    "effectiveElements": [
+      "ghost",
+      "dark",
+      "steel",
+      "water",
+      "grass",
+      "bug"
+    ],
+    "effectivenessNotes": "Apesar de causarem dano efetivo, Pokémon dos elementos Ghost, Dark, Water e Grass recebem dano normal destes Pokémon, portanto, é necessário tomar cuidado ao frequentar o local. | Embora os Pokémon sejam do elemento Rock, estes Pokémon possuem a passiva Levitate, portanto, não recebem dano do tipo Ground.",
+    "tag": "angry"
+  },
+  {
     "name": "Rockruff",
     "types": [
       "rock"
@@ -414,6 +684,29 @@
     ]
   },
   {
+    "name": "Angry Rockruff",
+    "types": [
+      "rock"
+    ],
+    "hunt": "300",
+    "group": "Rockruff",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "fighting",
+      "ground",
+      "steel"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Rockruff",
+    "effectiveElements": [
+      "fighting",
+      "steel",
+      "water",
+      "grass",
+      "ground"
+    ],
+    "tag": "angry"
+  },
+  {
     "name": "Mantyke",
     "types": [
       "water",
@@ -430,6 +723,24 @@
     "effectiveElements": [
       "electric"
     ]
+  },
+  {
+    "name": "Shiny Mantyke",
+    "types": [
+      "water",
+      "flying"
+    ],
+    "hunt": "300",
+    "group": "Mantyke",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "electric"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Mantyke",
+    "effectiveElements": [
+      "electric"
+    ],
+    "tag": "angry"
   },
   {
     "name": "Galarian Darumaka",
@@ -452,6 +763,26 @@
     ]
   },
   {
+    "name": "Angry Galarian Darumaka",
+    "types": [
+      "ice"
+    ],
+    "hunt": "300",
+    "group": "Galarian Darumaka",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "fire",
+      "steel"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Galarian_Darumaka",
+    "effectiveElements": [
+      "fire",
+      "rock",
+      "steel"
+    ],
+    "tag": "angry"
+  },
+  {
     "name": "Farfetch'd",
     "types": [
       "normal",
@@ -471,6 +802,27 @@
       "rock",
       "ice"
     ]
+  },
+  {
+    "name": "Angry Farfetch'd",
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "hunt": "300",
+    "group": "Farfetch'd",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "electric",
+      "rock"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Farfetchd",
+    "effectiveElements": [
+      "electric",
+      "rock",
+      "ice"
+    ],
+    "tag": "angry"
   },
   {
     "name": "Klink",
@@ -513,6 +865,26 @@
     "effectivenessNotes": "Apesar de causarem dano super efetivo, os elementos Fighting e Ground recebem dano normal deste Pokémon, portanto, é necessário tomar cuidado ao frequentar o local. | O Pokémon Steelix poderá ser uma opção viável para jogadores do clã Orebound frequentarem este local, tendo em vista que recebe dano inefetivo do elemento Steel."
   },
   {
+    "name": "Shiny Klinklang",
+    "types": [
+      "steel"
+    ],
+    "hunt": "300",
+    "group": "Klink/Klang",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "fire"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Klink_e_Klang",
+    "effectiveElements": [
+      "fighting",
+      "ground",
+      "fire"
+    ],
+    "effectivenessNotes": "Apesar de causarem dano super efetivo, os elementos Fighting e Ground recebem dano normal deste Pokémon, portanto, é necessário tomar cuidado ao frequentar o local. | O Pokémon Steelix poderá ser uma opção viável para jogadores do clã Orebound frequentarem este local, tendo em vista que recebe dano inefetivo do elemento Steel.",
+    "tag": "angry"
+  },
+  {
     "name": "Galarian Meowth",
     "types": [
       "steel"
@@ -531,6 +903,26 @@
       "fire"
     ],
     "effectivenessNotes": "Apesar de causarem dano super efetivo, Pokémon do elemento Ground e Fighting recebem dano normal deste Pokémon, portanto, é necessário tomar cuidado ao frequentar o local utilizando esses Pokémon. | O Pokémon Steelix poderá ser uma opção viável para jogadores do clã Orebound frequentarem este local, tendo em vista que recebe dano inefetivo do elemento Steel."
+  },
+  {
+    "name": "Angry Galarian Meowth",
+    "types": [
+      "steel"
+    ],
+    "hunt": "300",
+    "group": "Galarian Meowth",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "fire"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Galarian_Meowth",
+    "effectiveElements": [
+      "fighting",
+      "ground",
+      "fire"
+    ],
+    "effectivenessNotes": "Apesar de causarem dano super efetivo, Pokémon do elemento Ground e Fighting recebem dano normal deste Pokémon, portanto, é necessário tomar cuidado ao frequentar o local utilizando esses Pokémon. | O Pokémon Steelix poderá ser uma opção viável para jogadores do clã Orebound frequentarem este local, tendo em vista que recebe dano inefetivo do elemento Steel.",
+    "tag": "angry"
   },
   {
     "name": "Carvanha",
@@ -555,6 +947,28 @@
     ]
   },
   {
+    "name": "Angry Carvanha",
+    "types": [
+      "water",
+      "dark"
+    ],
+    "hunt": "300",
+    "group": "Carvanha",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "grass"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Carvanha",
+    "effectiveElements": [
+      "grass",
+      "electric",
+      "fighting",
+      "bug",
+      "fairy"
+    ],
+    "tag": "angry"
+  },
+  {
     "name": "Barboach",
     "types": [
       "water",
@@ -572,6 +986,25 @@
     "effectiveElements": [
       "grass"
     ]
+  },
+  {
+    "name": "Angry Barboach",
+    "types": [
+      "water",
+      "ground"
+    ],
+    "hunt": "300",
+    "group": "Barboach",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "grass",
+      "bug"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Barboach",
+    "effectiveElements": [
+      "grass"
+    ],
+    "tag": "angry"
   },
   {
     "name": "Rufflet",
@@ -595,6 +1028,27 @@
     ]
   },
   {
+    "name": "Angry Rufflet",
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "hunt": "300",
+    "group": "Rufflet",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "electric",
+      "rock"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Rufflet",
+    "effectiveElements": [
+      "electric",
+      "rock",
+      "ice"
+    ],
+    "tag": "angry"
+  },
+  {
     "name": "Machoke",
     "types": [
       "fighting"
@@ -616,6 +1070,27 @@
     ]
   },
   {
+    "name": "Shiny Machoke",
+    "types": [
+      "fighting"
+    ],
+    "hunt": "300",
+    "group": "Machoke",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "flying",
+      "psychic",
+      "fairy"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Machoke",
+    "effectiveElements": [
+      "fairy",
+      "psychic",
+      "flying"
+    ],
+    "tag": "angry"
+  },
+  {
     "name": "Sneasel",
     "types": [
       "dark",
@@ -633,6 +1108,25 @@
       "fighting"
     ],
     "effectivenessNotes": "Apesar de causarem dano efetivo no local, os elementos Fire, Bug, Rock e Steel recebem dano normal de golpes do tipo Dark usados por deste Pokémon. Portanto, jogadores que frequentarem este local usando Pokémon destes elementos deverão tomar cuidado. | Os elementos Fire, Bug, Rock e Steel e Fairy causam dano efetivo no local, entretanto, não serão tão fortes como o dano do elemento Fighting, para o qual o local foi balanceado."
+  },
+  {
+    "name": "Shiny Sneasel",
+    "types": [
+      "dark",
+      "ice"
+    ],
+    "hunt": "300",
+    "group": "Sneasel",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "fighting"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Sneasel",
+    "effectiveElements": [
+      "fighting"
+    ],
+    "effectivenessNotes": "Apesar de causarem dano efetivo no local, os elementos Fire, Bug, Rock e Steel recebem dano normal de golpes do tipo Dark usados por deste Pokémon. Portanto, jogadores que frequentarem este local usando Pokémon destes elementos deverão tomar cuidado. | Os elementos Fire, Bug, Rock e Steel e Fairy causam dano efetivo no local, entretanto, não serão tão fortes como o dano do elemento Fighting, para o qual o local foi balanceado.",
+    "tag": "angry"
   },
   {
     "name": "Cloyster",
@@ -658,6 +1152,29 @@
     ]
   },
   {
+    "name": "Shiny Cloyster",
+    "types": [
+      "water",
+      "ice"
+    ],
+    "hunt": "300",
+    "group": "Cloyster",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "water",
+      "grass",
+      "dragon"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Cloyster",
+    "effectiveElements": [
+      "fighting",
+      "grass",
+      "electric",
+      "rock"
+    ],
+    "tag": "angry"
+  },
+  {
     "name": "Snorunt",
     "types": [
       "ice"
@@ -676,6 +1193,26 @@
       "rock",
       "steel"
     ]
+  },
+  {
+    "name": "Angry Snorunt",
+    "types": [
+      "ice"
+    ],
+    "hunt": "300",
+    "group": "Snorunt",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "fire",
+      "steel"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Snorunt",
+    "effectiveElements": [
+      "fire",
+      "rock",
+      "steel"
+    ],
+    "tag": "angry"
   },
   {
     "name": "Snubbull",
@@ -697,6 +1234,25 @@
     ]
   },
   {
+    "name": "Angry Snubbull",
+    "types": [
+      "fairy"
+    ],
+    "hunt": "300",
+    "group": "Snubbull",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "poison",
+      "steel"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Snubbull",
+    "effectiveElements": [
+      "poison",
+      "steel"
+    ],
+    "tag": "angry"
+  },
+  {
     "name": "Shuppet",
     "types": [
       "ghost"
@@ -716,6 +1272,25 @@
     ]
   },
   {
+    "name": "Angry Shuppet",
+    "types": [
+      "ghost"
+    ],
+    "hunt": "300",
+    "group": "Shuppet",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "normal",
+      "dark"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Shuppet",
+    "effectiveElements": [
+      "ghost",
+      "dark"
+    ],
+    "tag": "angry"
+  },
+  {
     "name": "Darkrai Minion",
     "types": [
       "dark"
@@ -730,6 +1305,22 @@
       "steel"
     ],
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Darkrai_Minion"
+  },
+  {
+    "name": "Angry Darkrai",
+    "types": [
+      "dark"
+    ],
+    "hunt": "300",
+    "group": "Darkrai Minion",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "rock",
+      "ghost",
+      "steel"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Darkrai_Minion",
+    "tag": "angry"
   },
   {
     "name": "Lampent",
@@ -757,6 +1348,33 @@
       "ground",
       "rock"
     ]
+  },
+  {
+    "name": "Angry Lampent",
+    "types": [
+      "ghost",
+      "fire"
+    ],
+    "hunt": "300",
+    "group": "Lampent/Litwick",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "normal",
+      "fire",
+      "water",
+      "rock",
+      "dragon",
+      "dark"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Litwick_e_Lampent",
+    "effectiveElements": [
+      "ghost",
+      "dark",
+      "water",
+      "ground",
+      "rock"
+    ],
+    "tag": "angry"
   },
   {
     "name": "Litwick",
@@ -824,6 +1442,25 @@
     ]
   },
   {
+    "name": "Angry Sliggoo",
+    "types": [
+      "dragon"
+    ],
+    "hunt": "300",
+    "group": "Goomy/Sliggoo",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "dragon"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Goomy_e_Sliggoo",
+    "effectiveElements": [
+      "dragon",
+      "fairy",
+      "ice"
+    ],
+    "tag": "angry"
+  },
+  {
     "name": "Whirlipede",
     "types": [
       "bug",
@@ -874,6 +1511,30 @@
     ]
   },
   {
+    "name": "Shiny Koffing",
+    "types": [
+      "poison"
+    ],
+    "hunt": "300",
+    "group": "Whirlipede/Venipede",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "poison",
+      "ground",
+      "rock",
+      "ghost",
+      "steel"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Venipede_e_Whirlipede",
+    "effectiveElements": [
+      "rock",
+      "psychic",
+      "flying",
+      "fire"
+    ],
+    "tag": "angry"
+  },
+  {
     "name": "Litleo",
     "types": [
       "fire",
@@ -894,6 +1555,28 @@
       "ground",
       "rock"
     ]
+  },
+  {
+    "name": "Angry Litleo",
+    "types": [
+      "fire",
+      "normal"
+    ],
+    "hunt": "300",
+    "group": "Litleo",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "water",
+      "rock"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Litleo",
+    "effectiveElements": [
+      "water",
+      "fighting",
+      "ground",
+      "rock"
+    ],
+    "tag": "angry"
   },
   {
     "name": "Cranidos",
@@ -919,6 +1602,29 @@
     ]
   },
   {
+    "name": "Angry Cranidos",
+    "types": [
+      "rock"
+    ],
+    "hunt": "300",
+    "group": "Cranidos",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "fighting",
+      "ground",
+      "steel"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Cranidos",
+    "effectiveElements": [
+      "fighting",
+      "steel",
+      "water",
+      "grass",
+      "ground"
+    ],
+    "tag": "angry"
+  },
+  {
     "name": "Elekid",
     "types": [
       "electric"
@@ -934,6 +1640,23 @@
     "effectiveElements": [
       "ground"
     ]
+  },
+  {
+    "name": "Shiny Elekid",
+    "types": [
+      "electric"
+    ],
+    "hunt": "300",
+    "group": "Elekid",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "ground"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Elekid",
+    "effectiveElements": [
+      "ground"
+    ],
+    "tag": "angry"
   },
   {
     "name": "Tynamo",
@@ -972,6 +1695,24 @@
     ]
   },
   {
+    "name": "Angry Eelektrik",
+    "types": [
+      "electric"
+    ],
+    "hunt": "300",
+    "group": "Tynamo/Eelektrik",
+    "tag": "angry",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "ground",
+      "rock"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Tynamo_e_Eelektrik",
+    "effectiveElements": [
+      "ground"
+    ]
+  },
+  {
     "name": "Petilil",
     "types": [
       "grass"
@@ -996,6 +1737,32 @@
       "flying",
       "bug"
     ]
+  },
+  {
+    "name": "Angry Petilil",
+    "types": [
+      "grass"
+    ],
+    "hunt": "300",
+    "group": "Petilil",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "fire",
+      "grass",
+      "poison",
+      "flying",
+      "bug",
+      "dragon"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Petilil",
+    "effectiveElements": [
+      "fire",
+      "ice",
+      "poison",
+      "flying",
+      "bug"
+    ],
+    "tag": "angry"
   },
   {
     "name": "Skiddo",
@@ -1023,6 +1790,33 @@
       "bug"
     ],
     "effectivenessNotes": "Embora o Nuzleaf receba dano super efetivo apenas do elemento Bug, isso não interfere no desempenho dos outros clãs neste local de caça. | Apesar do Pokémon Nuzleaf receber dano efetivo dos elementos Fighting e Fairy, o Pokémon Skidoo recebe dano normal destes Pokémon. Desta forma, jogadores que frequentarem este local usando estes Pokémon deverão tomar cuidado. | O Beartic possui uma passiva que o deixa resistente ao elemento Grass, sendo uma opção segura para jogadores do clã Seavell utilizarem neste local de caça."
+  },
+  {
+    "name": "Angry Skiddo",
+    "types": [
+      "grass"
+    ],
+    "hunt": "300",
+    "group": "Skiddo/Nuzleaf",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "fire",
+      "grass",
+      "poison",
+      "flying",
+      "bug",
+      "dragon"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Skiddo_e_Nuzleaf",
+    "effectiveElements": [
+      "fire",
+      "ice",
+      "poison",
+      "flying",
+      "bug"
+    ],
+    "effectivenessNotes": "Embora o Nuzleaf receba dano super efetivo apenas do elemento Bug, isso não interfere no desempenho dos outros clãs neste local de caça. | Apesar do Pokémon Nuzleaf receber dano efetivo dos elementos Fighting e Fairy, o Pokémon Skidoo recebe dano normal destes Pokémon. Desta forma, jogadores que frequentarem este local usando estes Pokémon deverão tomar cuidado. | O Beartic possui uma passiva que o deixa resistente ao elemento Grass, sendo uma opção segura para jogadores do clã Seavell utilizarem neste local de caça.",
+    "tag": "angry"
   },
   {
     "name": "Nuzleaf",
@@ -1094,6 +1888,27 @@
     ]
   },
   {
+    "name": "Angry Kirlia",
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "hunt": "300",
+    "group": "Ralts/Kirlia",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "poison",
+      "steel"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Ralts_e_Kirlia",
+    "effectiveElements": [
+      "ghost",
+      "poison",
+      "steel"
+    ],
+    "tag": "angry"
+  },
+  {
     "name": "Applin",
     "types": [
       "grass",
@@ -1119,6 +1934,33 @@
       "bug"
     ],
     "effectivenessNotes": "Os Applin possuem a passiva Ripen que reduz os golpes recebidos pelo elemento Ice, fazendo com que não seja uma hunt atrativa para o clã Seavell. | Apesar de causarem dano efetivo, o elemento Fairy recebe dano normal deste Pokémon, portanto, é necessário tomar cuidado ao frequentar o local."
+  },
+  {
+    "name": "Angry Applin",
+    "types": [
+      "grass",
+      "dragon"
+    ],
+    "hunt": "300",
+    "group": "Applin",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "grass",
+      "poison",
+      "flying",
+      "bug",
+      "dragon"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Applin",
+    "effectiveElements": [
+      "flying",
+      "dragon",
+      "poison",
+      "fairy",
+      "bug"
+    ],
+    "effectivenessNotes": "Os Applin possuem a passiva Ripen que reduz os golpes recebidos pelo elemento Ice, fazendo com que não seja uma hunt atrativa para o clã Seavell. | Apesar de causarem dano efetivo, o elemento Fairy recebe dano normal deste Pokémon, portanto, é necessário tomar cuidado ao frequentar o local.",
+    "tag": "angry"
   },
   {
     "name": "Meowstic",
@@ -2575,6 +3417,25 @@
     ]
   },
   {
+    "name": "Angry Alolan Grimer",
+    "types": [
+      "poison",
+      "dark"
+    ],
+    "hunt": "300",
+    "group": "Alolan Grimer",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "poison",
+      "ground"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Alolan_Grimer",
+    "effectiveElements": [
+      "ground"
+    ],
+    "tag": "angry"
+  },
+  {
     "name": "Banette",
     "types": [
       "ghost"
@@ -2747,6 +3608,24 @@
       "fighting"
     ],
     "effectivenessNotes": "Mobs aplicam Blind (mitigável com Nomel Berry)."
+  },
+  {
+    "name": "Overcharged Sentinel",
+    "types": [
+      "normal"
+    ],
+    "hunt": "300",
+    "group": "Sentinel",
+    "todo": "calibrate hp + defense",
+    "bestStarterElements": [
+      "ghost"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Sentinel",
+    "effectiveElements": [
+      "fighting"
+    ],
+    "effectivenessNotes": "Mobs aplicam Blind (mitigável com Nomel Berry).",
+    "tag": "angry"
   },
   {
     "name": "Togetic",
