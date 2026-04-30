@@ -35,10 +35,19 @@ export interface PokeRow {
   skillRows: SkillRow[];
 }
 
-/** True se o poke tem ao menos uma skill com dano calibrado (>0) — usado pra filtrar
- *  pokes sem dano modelado da lista de comparação. */
+/** True se o poke tem ao menos uma skill com `power` EXPLÍCITO calibrado (>0).
+ *  NÃO usa o fallback tier-based de resolveSkillPower — pokes sem calibração
+ *  in-game ficam fora da Compare (caso contrário teríamos defaults inflados
+ *  vs valores reais medidos). */
 export function pokeHasCalibratedDamage(poke: Pokemon): boolean {
-  return poke.skills.some((s) => (resolveSkillPower(s, poke) ?? 0) > 0);
+  return poke.skills.some((s) => s.power !== undefined && s.power > 0);
+}
+
+/** Skill conta como calibrada na sim de boss apenas se tem `power` explícito.
+ *  Skills sem power (que cairiam no fallback tier) contribuem 0 — assim a
+ *  comparação só conta dano realmente medido in-game. */
+function hasExplicitPower(skill: { power?: number }): boolean {
+  return skill.power !== undefined && skill.power > 0;
 }
 
 /**
@@ -80,7 +89,9 @@ function simulateBossFight(
   cfg: DamageConfig,
   duration: number
 ): { totalDmg: number; totalCasts: number; perSkill: Map<string, { casts: number; dmg: number }> } {
-  const damageSkills = poke.skills.filter((s) => (resolveSkillPower(s, poke) ?? 0) > 0);
+  // Apenas skills com power explícito — sem fallback tier (evita inflar dmg de pokes
+  // não calibrados na Compare).
+  const damageSkills = poke.skills.filter(hasExplicitPower);
   if (damageSkills.length === 0) {
     return { totalDmg: 0, totalCasts: 0, perSkill: new Map() };
   }
@@ -136,7 +147,7 @@ function computePokeRow(
   targetTypes: PokemonElement[],
   duration: number
 ): PokeRow {
-  const damageSkills = poke.skills.filter((s) => (resolveSkillPower(s, poke) ?? 0) > 0);
+  const damageSkills = poke.skills.filter(hasExplicitPower);
   const cfg = buildBossDamageConfig(playerLvl, held, poke.id, targetTypes);
   const sim = simulateBossFight(poke, cfg, duration);
 

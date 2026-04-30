@@ -4,6 +4,7 @@
     "name": "Kairiki",
     "category": "Nightmare Terror",
     "types": ["fighting"],
+    "durationSeconds": 480,
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Terror_-_Kairiki"
   },
   {
@@ -11,6 +12,7 @@
     "name": "Kame",
     "category": "Nightmare Terror",
     "types": ["water"],
+    "durationSeconds": 600,
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Terror_-_Kame"
   },
   {
@@ -19,6 +21,7 @@
     "category": "Nightmare Terror",
     "types": ["rock", "flying"],
     "hp": 15000000,
+    "durationSeconds": 450,
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Terror_-_Ptera"
   },
   {
@@ -26,6 +29,7 @@
     "name": "Gama",
     "category": "Nightmare Terror",
     "types": ["grass"],
+    "durationSeconds": 480,
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Terror_-_Gama"
   },
   {
@@ -33,6 +37,7 @@
     "name": "Riza",
     "category": "Nightmare Terror",
     "types": ["fire", "flying"],
+    "durationSeconds": 450,
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Terror_-_Riza"
   },
   {
@@ -49,6 +54,7 @@
     "name": "Gyakkyo",
     "category": "Nightmare Terror",
     "types": ["water", "dark"],
+    "durationSeconds": 450,
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Terror_-_Gyakkyo"
   },
   {
@@ -56,6 +62,7 @@
     "name": "Seishin",
     "category": "Nightmare Terror",
     "types": ["psychic"],
+    "durationSeconds": 690,
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Terror_-_Seishin_%26_Yurei"
   },
   {
@@ -63,6 +70,7 @@
     "name": "Yurei",
     "category": "Nightmare Terror",
     "types": ["ghost", "poison"],
+    "durationSeconds": 690,
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Terror_-_Seishin_%26_Yurei"
   },
   {
@@ -78,6 +86,7 @@
     "name": "Raikou",
     "category": "Bestas Lendárias",
     "types": ["electric"],
+    "durationSeconds": 600,
     "wiki": "https://wiki.pokexgames.com/index.php/Boss_Fight_-_Raikou"
   },
   {
@@ -85,6 +94,7 @@
     "name": "Entei",
     "category": "Bestas Lendárias",
     "types": ["fire"],
+    "durationSeconds": 600,
     "wiki": "https://wiki.pokexgames.com/index.php/Boss_Fight_-_Entei"
   },
   {
@@ -92,6 +102,7 @@
     "name": "Suicune",
     "category": "Bestas Lendárias",
     "types": ["water"],
+    "durationSeconds": 600,
     "wiki": "https://wiki.pokexgames.com/index.php/Boss_Fight_-_Suicune"
   }
 ]

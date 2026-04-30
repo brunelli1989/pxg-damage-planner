@@ -30,6 +30,7 @@ import Tooltip from "@mui/material/Tooltip";
 import Button from "@mui/material/Button";
 import CloseIcon from "@mui/icons-material/Close";
 import WhatshotIcon from "@mui/icons-material/Whatshot";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 
 const bosses = bossesData as Boss[];
 const BOSS_CATEGORIES: BossCategory[] = ["Nightmare Terror", "Bestas Lendárias"];
@@ -38,6 +39,8 @@ const damagePokes: Pokemon[] = allPokes.filter(pokeHasCalibratedDamage);
 
 const SELECTED_STORAGE_KEY = "pxg_compare_selected_ids";
 const HELDS_STORAGE_KEY = "pxg_compare_helds";
+const BOSS_STORAGE_KEY = "pxg_compare_boss_id";
+const PLAYER_LVL_STORAGE_KEY = "pxg_compare_player_lvl";
 
 function loadSelectedIds(): string[] {
   const raw = localStorage.getItem(SELECTED_STORAGE_KEY);
@@ -109,12 +112,27 @@ type SortDir = "asc" | "desc";
 
 const TIER_ORDER: Record<string, number> = { T1A: 0, T1B: 1, T1H: 2, T1C: 3, T2: 4, T3: 5, TM: 6, TR: 7 };
 
+/** True quando o poke tem alguma skill de dano (não-buff) sem power calibrado.
+ *  Usado pra marcar comparações incompletas — total mostrado pode estar subestimado. */
+function pokeHasUncalibratedSkills(poke: Pokemon): boolean {
+  return poke.skills.some((s) => s.power === undefined && s.buff === null);
+}
+
 export function ComparePage() {
-  const [playerLvl, setPlayerLvl] = useState(600);
-  const [bossId, setBossId] = useState<string>("");
+  const [playerLvl, setPlayerLvl] = useState<number>(() => {
+    const raw = localStorage.getItem(PLAYER_LVL_STORAGE_KEY);
+    const n = raw ? Number(raw) : NaN;
+    return Number.isFinite(n) && n > 0 ? n : 600;
+  });
+  const [bossId, setBossId] = useState<string>(() => {
+    const raw = localStorage.getItem(BOSS_STORAGE_KEY) ?? "";
+    // Valida que o id ainda existe (evita stale data se boss for removido)
+    return bosses.some((b) => b.id === raw) ? raw : "";
+  });
   const [selectedIds, setSelectedIds] = useState<string[]>(loadSelectedIds);
   const [helds, setHelds] = useState<Record<string, PokeHeld>>(loadHelds);
   const [sort, setSort] = useState<{ col: SortCol; dir: SortDir }>({ col: "total", dir: "desc" });
+  const [copyFeedback, setCopyFeedback] = useState<string | null>(null);
 
   useEffect(() => {
     localStorage.setItem(SELECTED_STORAGE_KEY, JSON.stringify(selectedIds));
@@ -122,6 +140,12 @@ export function ComparePage() {
   useEffect(() => {
     localStorage.setItem(HELDS_STORAGE_KEY, JSON.stringify(helds));
   }, [helds]);
+  useEffect(() => {
+    localStorage.setItem(BOSS_STORAGE_KEY, bossId);
+  }, [bossId]);
+  useEffect(() => {
+    localStorage.setItem(PLAYER_LVL_STORAGE_KEY, String(playerLvl));
+  }, [playerLvl]);
 
   const updateHeld = (pokeId: string, patch: Partial<PokeHeld>) => {
     setHelds((prev) => ({
@@ -202,7 +226,13 @@ export function ComparePage() {
       </MenuItem>
     );
     for (const cat of BOSS_CATEGORIES) {
-      items.push(<ListSubheader key={`h-${cat}`}>{cat}</ListSubheader>);
+      // ListSubheader como categoria visual — desabilitado pra não ser clicável
+      // (default do MUI Select trata subheaders como clicáveis, o que reseta a seleção).
+      items.push(
+        <ListSubheader key={`h-${cat}`} sx={{ pointerEvents: "none", lineHeight: 2, bgcolor: "background.default" }}>
+          {cat}
+        </ListSubheader>
+      );
       for (const b of bosses.filter((x) => x.category === cat)) {
         items.push(
           <MenuItem key={b.id} value={b.id}>
@@ -230,12 +260,18 @@ export function ComparePage() {
   return (
     <Box sx={{ py: 2 }}>
       <Typography variant="h2" sx={{ mb: 1 }}>
-        Comparar — Dano em {durLabel}
+        Comparar dano por luta
       </Typography>
       <Typography variant="caption" sx={{ color: "text.disabled", display: "block", mb: 3, lineHeight: 1.6 }}>
         Adicione pokes pra comparar dano vs um boss (ou alvo neutro). Apenas pokes com dano calibrado disponíveis.
-        Janela default 10min — bosses com timer próprio sobrescrevem (Raito 7min30). Bônus de clã não se aplica em boss.
-        Buffs (Rage ×2/20s) não modelados.
+        Janela default 10min — bosses com timer próprio sobrescrevem (Raito e Kitsune 7min30).
+        <Box component="span" sx={{ display: "block", mt: 0.5 }}>
+          ⚠ <strong>Bônus de clã é ignorado em boss</strong> (mecânica do jogo) — o cálculo aqui força clã = neutro mesmo
+          que o poke pertença a um clã com bônus pro elemento da skill.
+        </Box>
+        <Box component="span" sx={{ display: "block", mt: 0.5 }}>
+          Buffs (Rage ×2/20s, etc.) não modelados — valores são baseline sem buff.
+        </Box>
       </Typography>
 
       <Paper sx={{ p: 2.5, mb: 2 }}>
@@ -310,14 +346,67 @@ export function ComparePage() {
       </Paper>
 
       <Paper sx={{ p: 2.5 }}>
-        <Box sx={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", mb: 1.5, flexWrap: "wrap", gap: 1 }}>
-          <Typography variant="h2" sx={{ m: 0 }}>
-            Comparação
-          </Typography>
-          <Typography variant="caption" sx={{ color: "text.disabled" }}>
-            {selectedIds.length} {selectedIds.length === 1 ? "poke" : "pokes"}
-            {selectedBoss ? ` vs ${selectedBoss.name}${selectedBoss.types.length > 0 ? ` (${selectedBoss.types.join("/")})` : ""}` : " — alvo neutro"}
-          </Typography>
+        <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mb: 1.5, flexWrap: "wrap", gap: 1 }}>
+          <Box sx={{ display: "flex", alignItems: "baseline", gap: 1.5, flexWrap: "wrap" }}>
+            <Typography variant="h2" sx={{ m: 0 }}>
+              Comparação
+            </Typography>
+            <Typography variant="caption" sx={{ color: "text.disabled" }}>
+              {selectedIds.length} {selectedIds.length === 1 ? "poke" : "pokes"}
+              {selectedBoss ? ` vs ${selectedBoss.name}${selectedBoss.types.length > 0 ? ` (${selectedBoss.types.join("/")})` : ""}` : " — alvo neutro"}
+            </Typography>
+          </Box>
+          {selectedIds.length > 0 && (
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+              {copyFeedback && (
+                <Typography variant="caption" sx={{ color: "success.main", fontWeight: 600 }}>
+                  {copyFeedback}
+                </Typography>
+              )}
+              <Tooltip title="Copia a tabela em formato texto pro clipboard" arrow>
+                <Button
+                  size="small"
+                  variant="outlined"
+                  startIcon={<ContentCopyIcon fontSize="small" />}
+                  onClick={async () => {
+                    const lines: string[] = [];
+                    lines.push(`=== PxG Damage Planner — Comparação ===`);
+                    lines.push(`Player lvl: ${playerLvl}`);
+                    lines.push(`Boss: ${selectedBoss ? `${selectedBoss.name}${selectedBoss.types.length > 0 ? ` (${selectedBoss.types.join("/")})` : ""}` : "Neutro (sem boss)"}`);
+                    lines.push(`Janela: ${durLabel}`);
+                    lines.push(`Pokes: ${sortedRows.length}`);
+                    lines.push("");
+                    lines.push(`Pokémon                  Tier  Boost  Held       Skills/${durLabel}   Melee/${durLabel}   Total/${durLabel}`);
+                    for (const row of sortedRows) {
+                      const heldStr = row.held.xBoostTier > 0
+                        ? `+${row.held.boost} XB${row.held.xBoostTier}`
+                        : `+${row.held.boost} XA${row.held.xAtkTier}`;
+                      const meleeStr = row.meleeDmg > 0
+                        ? `${fmt(row.meleeDmg)}${!row.meleeIncludedInTotal ? " (close)" : ""}`
+                        : "—";
+                      const uncal = pokeHasUncalibratedSkills(row.poke) ? " ⚠" : "";
+                      lines.push(
+                        `${(row.poke.name + uncal).padEnd(24)} ${row.poke.tier.padEnd(5)} ${("+" + row.held.boost).padEnd(6)} ${heldStr.padEnd(10)} ${fmt(row.skillsDmg).padStart(13)} ${meleeStr.padStart(15)} ${fmt(row.totalDmg).padStart(15)}`
+                      );
+                    }
+                    if (sortedRows.some((r) => pokeHasUncalibratedSkills(r.poke))) {
+                      lines.push("");
+                      lines.push("⚠ = poke tem skills sem dano calibrado — total pode estar subestimado.");
+                    }
+                    try {
+                      await navigator.clipboard.writeText(lines.join("\n"));
+                      setCopyFeedback("Copiado!");
+                    } catch {
+                      setCopyFeedback("Falha");
+                    }
+                    setTimeout(() => setCopyFeedback(null), 2000);
+                  }}
+                >
+                  Copiar
+                </Button>
+              </Tooltip>
+            </Box>
+          )}
         </Box>
 
         {selectedIds.length === 0 ? (
@@ -363,9 +452,24 @@ export function ComparePage() {
                   const heldTierValue = xBoostActive ? row.held.xBoostTier : row.held.xAtkTier;
                   const tierOptions: XAtkTier[] = xBoostActive ? [1, 2, 3, 4, 5, 6, 7] : [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
+                  const uncalibrated = pokeHasUncalibratedSkills(row.poke);
+
                   return (
                     <TableRow key={row.poke.id} hover>
-                      <TableCell sx={{ fontWeight: 500 }}>{row.poke.name}</TableCell>
+                      <TableCell sx={{ fontWeight: 500 }}>
+                        <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+                          {row.poke.name}
+                          {uncalibrated && (
+                            <Tooltip
+                              title="⚠ Este poke tem skills sem dano calibrado — o total mostrado pode estar subestimado (ignorar essas skills)."
+                              placement="top"
+                              arrow
+                            >
+                              <Typography component="span" sx={{ color: "warning.main", cursor: "help", fontSize: "1rem", lineHeight: 1 }}>⚠</Typography>
+                            </Tooltip>
+                          )}
+                        </Box>
+                      </TableCell>
                       <TableCell>
                         <Chip
                           label={row.poke.tier}

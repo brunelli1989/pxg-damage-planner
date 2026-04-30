@@ -289,6 +289,8 @@ function App() {
                 localStorage.removeItem("pxg_otdd_helds");
                 localStorage.removeItem("pxg_compare_selected_ids");
                 localStorage.removeItem("pxg_compare_helds");
+                localStorage.removeItem("pxg_compare_boss_id");
+                localStorage.removeItem("pxg_compare_player_lvl");
                 localStorage.removeItem(PAGE_STORAGE_KEY);
                 location.reload();
               }}
