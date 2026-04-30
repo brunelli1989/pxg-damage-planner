@@ -238,6 +238,22 @@ export interface MobEntry {
   /** Tag opcional pra classificar variantes especiais (ex: "angry", "shiny", "rare").
    *  Usado pra filtragem visual e separação de spawn raro vs comum. */
   tag?: string;
+  /** Critérios da calibração da defFactor — quem mediu, qual skill, quando.
+   *  Documenta a fonte do número pra futuras recalibrações ou auditoria. */
+  calibration?: MobCalibration;
+}
+
+export interface MobCalibration {
+  /** Poke usado pra medir (nome canônico). Ex: "Shiny Heatmor". */
+  poke: string;
+  /** Skills triangulating defFactor. Ex: ["Burning Jealousy", "Shadow Fire", "Fire Lash×Hone Claws"]. */
+  skills: string[];
+  /** Data da medição (YYYY-MM-DD). */
+  date: string;
+  /** Quantidade de skills que convergiram (1 = single-skill, 3+ = forte triangulação). */
+  triangulation?: number;
+  /** Nota livre pra contexto adicional (ex: "Hone Claws × 1.5 confirmado"). */
+  note?: string;
 }
 
 export interface DamageConfig {

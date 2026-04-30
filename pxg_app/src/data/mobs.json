@@ -175,7 +175,7 @@
     "hunt": "300",
     "group": "Bagon/Shelgon",
     "hp": 192055,
-    "todo": "calibrate defense",
+    "defFactor": 0.8,
     "bestStarterElements": [
       "fairy"
     ],
@@ -185,7 +185,17 @@
       "ice",
       "dragon"
     ],
-    "id": "bagon"
+    "id": "bagon",
+    "calibration": {
+      "poke": "Mega Glalie",
+      "skills": [
+        "Frost Power",
+        "Frenzy Snow",
+        "Glacial Spikes"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 3
+    }
   },
   {
     "name": "Shelgon",
@@ -195,7 +205,7 @@
     "hunt": "300",
     "group": "Bagon/Shelgon",
     "hp": 154350,
-    "todo": "calibrate defense",
+    "defFactor": 0.64,
     "bestStarterElements": [
       "fairy"
     ],
@@ -205,7 +215,18 @@
       "ice",
       "dragon"
     ],
-    "id": "shelgon"
+    "id": "shelgon",
+    "calibration": {
+      "poke": "Mega Glalie",
+      "skills": [
+        "Frost Power",
+        "Frenzy Snow",
+        "Glacial Spikes"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 3,
+      "note": "Discriminado de Bagon via HP"
+    }
   },
   {
     "name": "Shiny Druddigon",
@@ -236,7 +257,7 @@
     "hunt": "300",
     "group": "Gible/Gabite",
     "hp": 191610,
-    "todo": "calibrate defense",
+    "defFactor": 0.8,
     "bestStarterElements": [
       "steel",
       "fairy"
@@ -246,7 +267,18 @@
       "ice"
     ],
     "effectivenessNotes": "O Beartic possui uma passiva que o deixa resistente ao elemento Dragon. | Embora o elemento Dragon cause dano super efetivo nesse local, Pokémon desse elemento também recebem dano super efetivo de Dragon. Sendo assim, não é um local indicado para o clã Wingeon. | O elemento Fairy causa dano efetivo no local, entretanto, não serão tão fortes como o dano do elemento Ice, para qual o local foi balanceado.",
-    "id": "gible"
+    "id": "gible",
+    "calibration": {
+      "poke": "Mega Glalie",
+      "skills": [
+        "Frost Power",
+        "Frenzy Snow",
+        "Glacial Spikes"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 3,
+      "note": "Discriminado de Gabite via HP em 2 sessões"
+    }
   },
   {
     "name": "Gabite",
@@ -257,7 +289,7 @@
     "hunt": "300",
     "group": "Gible/Gabite",
     "hp": 167407,
-    "todo": "calibrate defense",
+    "defFactor": 0.7,
     "bestStarterElements": [
       "steel",
       "fairy"
@@ -267,7 +299,18 @@
       "ice"
     ],
     "effectivenessNotes": "O Beartic possui uma passiva que o deixa resistente ao elemento Dragon. | Embora o elemento Dragon cause dano super efetivo nesse local, Pokémon desse elemento também recebem dano super efetivo de Dragon. Sendo assim, não é um local indicado para o clã Wingeon. | O elemento Fairy causa dano efetivo no local, entretanto, não serão tão fortes como o dano do elemento Ice, para qual o local foi balanceado.",
-    "id": "gabite"
+    "id": "gabite",
+    "calibration": {
+      "poke": "Mega Glalie",
+      "skills": [
+        "Frost Power",
+        "Frenzy Snow",
+        "Glacial Spikes"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 3,
+      "note": "Discriminado de Gible via HP em 2 sessões"
+    }
   },
   {
     "name": "Shiny Druddigon",
@@ -308,7 +351,16 @@
       "ghost",
       "dark"
     ],
-    "id": "spoink"
+    "id": "spoink",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy",
+        "Shadow Fire"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 2
+    }
   },
   {
     "name": "Shiny Spoink",
@@ -400,7 +452,15 @@
       "bug",
       "fairy"
     ],
-    "id": "alolan-meowth"
+    "id": "alolan-meowth",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1
+    }
   },
   {
     "name": "Angry Alolan Meowth",
@@ -441,7 +501,15 @@
       "psychic",
       "ground"
     ],
-    "id": "grimer"
+    "id": "grimer",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1
+    }
   },
   {
     "name": "Shiny Koffing",
@@ -496,7 +564,7 @@
     "hunt": "300",
     "group": "Mega Beedrill/Beedrill",
     "hp": 209692,
-    "defFactor": 1.0,
+    "defFactor": 1,
     "bestStarterElements": [
       "fire",
       "flying"
@@ -508,7 +576,16 @@
       "rock",
       "psychic"
     ],
-    "id": "beedrill"
+    "id": "beedrill",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1,
+      "note": "defFactor 1.0 (sem redução de dano)"
+    }
   },
   {
     "name": "Silicobra",
@@ -529,7 +606,15 @@
       "grass",
       "ice"
     ],
-    "id": "silicobra"
+    "id": "silicobra",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1
+    }
   },
   {
     "name": "Angry Silicobra",
@@ -573,7 +658,15 @@
       "psychic",
       "fairy"
     ],
-    "id": "galarian-farfetchd"
+    "id": "galarian-farfetchd",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1
+    }
   },
   {
     "name": "Angry Galarian Farfetch'd",
@@ -644,7 +737,15 @@
       "bug"
     ],
     "effectivenessNotes": "Apesar de causarem dano efetivo, Pokémon dos elementos Ghost, Dark, Water e Grass recebem dano normal destes Pokémon, portanto, é necessário tomar cuidado ao frequentar o local. | Embora os Pokémon sejam do elemento Rock, estes Pokémon possuem a passiva Levitate, portanto, não recebem dano do tipo Ground.",
-    "id": "solrock"
+    "id": "solrock",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1
+    }
   },
   {
     "name": "Angry Lunatone",
@@ -718,7 +819,15 @@
       "grass",
       "ground"
     ],
-    "id": "rockruff"
+    "id": "rockruff",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1
+    }
   },
   {
     "name": "Angry Rockruff",
@@ -761,7 +870,15 @@
     "effectiveElements": [
       "electric"
     ],
-    "id": "mantyke"
+    "id": "mantyke",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1
+    }
   },
   {
     "name": "Shiny Mantyke",
@@ -801,7 +918,15 @@
       "rock",
       "steel"
     ],
-    "id": "galarian-darumaka"
+    "id": "galarian-darumaka",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1
+    }
   },
   {
     "name": "Angry Galarian Darumaka",
@@ -887,7 +1012,17 @@
       "fire"
     ],
     "effectivenessNotes": "Apesar de causarem dano super efetivo, os elementos Fighting e Ground recebem dano normal deste Pokémon, portanto, é necessário tomar cuidado ao frequentar o local. | O Pokémon Steelix poderá ser uma opção viável para jogadores do clã Orebound frequentarem este local, tendo em vista que recebe dano inefetivo do elemento Steel.",
-    "id": "klink"
+    "id": "klink",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy",
+        "Shadow Fire"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 2,
+      "note": "Discriminado de Klang via HP"
+    }
   },
   {
     "name": "Klang",
@@ -908,7 +1043,17 @@
       "fire"
     ],
     "effectivenessNotes": "Apesar de causarem dano super efetivo, os elementos Fighting e Ground recebem dano normal deste Pokémon, portanto, é necessário tomar cuidado ao frequentar o local. | O Pokémon Steelix poderá ser uma opção viável para jogadores do clã Orebound frequentarem este local, tendo em vista que recebe dano inefetivo do elemento Steel.",
-    "id": "klang"
+    "id": "klang",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy",
+        "Shadow Fire"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 2,
+      "note": "Discriminado de Klink via HP"
+    }
   },
   {
     "name": "Shiny Klinklang",
@@ -950,7 +1095,15 @@
       "fire"
     ],
     "effectivenessNotes": "Apesar de causarem dano super efetivo, Pokémon do elemento Ground e Fighting recebem dano normal deste Pokémon, portanto, é necessário tomar cuidado ao frequentar o local utilizando esses Pokémon. | O Pokémon Steelix poderá ser uma opção viável para jogadores do clã Orebound frequentarem este local, tendo em vista que recebe dano inefetivo do elemento Steel.",
-    "id": "galarian-meowth"
+    "id": "galarian-meowth",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1
+    }
   },
   {
     "name": "Angry Galarian Meowth",
@@ -994,7 +1147,16 @@
       "bug",
       "fairy"
     ],
-    "id": "carvanha"
+    "id": "carvanha",
+    "calibration": {
+      "poke": "Shiny Hariyama",
+      "skills": [
+        "Fake Out",
+        "Shadow Break"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 2
+    }
   },
   {
     "name": "Angry Carvanha",
@@ -1037,7 +1199,16 @@
     "effectiveElements": [
       "grass"
     ],
-    "id": "barboach"
+    "id": "barboach",
+    "calibration": {
+      "poke": "Shiny Hariyama",
+      "skills": [
+        "Fake Out",
+        "Shadow Break"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 2
+    }
   },
   {
     "name": "Angry Barboach",
@@ -1111,7 +1282,7 @@
     "hunt": "300",
     "group": "Machoke",
     "hp": 202850,
-    "todo": "calibrate defense",
+    "defFactor": 0.84,
     "bestStarterElements": [
       "flying",
       "psychic",
@@ -1123,7 +1294,17 @@
       "psychic",
       "flying"
     ],
-    "id": "machoke"
+    "id": "machoke",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy",
+        "Shadow Fire",
+        "Fire Lash×Hone Claws"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 3
+    }
   },
   {
     "name": "Shiny Machoke",
@@ -1165,7 +1346,17 @@
       "fighting"
     ],
     "effectivenessNotes": "Apesar de causarem dano efetivo no local, os elementos Fire, Bug, Rock e Steel recebem dano normal de golpes do tipo Dark usados por deste Pokémon. Portanto, jogadores que frequentarem este local usando Pokémon destes elementos deverão tomar cuidado. | Os elementos Fire, Bug, Rock e Steel e Fairy causam dano efetivo no local, entretanto, não serão tão fortes como o dano do elemento Fighting, para o qual o local foi balanceado.",
-    "id": "sneasel"
+    "id": "sneasel",
+    "calibration": {
+      "poke": "Shiny Heatmor + Shiny Hariyama",
+      "skills": [
+        "Burning Jealousy",
+        "Fake Out",
+        "Shadow Break"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 3
+    }
   },
   {
     "name": "Shiny Sneasel",
@@ -1196,7 +1387,7 @@
     "hunt": "300",
     "group": "Cloyster",
     "hp": 167090,
-    "todo": "calibrate defense",
+    "defFactor": 0.78,
     "bestStarterElements": [
       "water",
       "grass",
@@ -1209,7 +1400,16 @@
       "electric",
       "rock"
     ],
-    "id": "cloyster"
+    "id": "cloyster",
+    "calibration": {
+      "poke": "Shiny Hariyama",
+      "skills": [
+        "Fake Out",
+        "Shadow Break"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 2
+    }
   },
   {
     "name": "Shiny Cloyster",
@@ -1243,7 +1443,7 @@
     "hunt": "300",
     "group": "Snorunt",
     "hp": 187596,
-    "todo": "calibrate defense",
+    "defFactor": 0.78,
     "bestStarterElements": [
       "fire",
       "steel"
@@ -1254,7 +1454,16 @@
       "rock",
       "steel"
     ],
-    "id": "snorunt"
+    "id": "snorunt",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy",
+        "Shadow Fire"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 2
+    }
   },
   {
     "name": "Angry Snorunt",
@@ -1285,7 +1494,7 @@
     "hunt": "300",
     "group": "Snubbull",
     "hp": 211296,
-    "todo": "calibrate defense",
+    "defFactor": 0.88,
     "bestStarterElements": [
       "poison",
       "steel"
@@ -1295,7 +1504,17 @@
       "poison",
       "steel"
     ],
-    "id": "snubbull"
+    "id": "snubbull",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy",
+        "Shadow Fire",
+        "Fire Lash×Hone Claws"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 3
+    }
   },
   {
     "name": "Angry Snubbull",
@@ -1336,7 +1555,15 @@
       "ghost",
       "dark"
     ],
-    "id": "shuppet"
+    "id": "shuppet",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1
+    }
   },
   {
     "name": "Angry Shuppet",
@@ -1418,7 +1645,16 @@
       "ground",
       "rock"
     ],
-    "id": "lampent"
+    "id": "lampent",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1,
+      "note": "Discriminado de Litwick via HP"
+    }
   },
   {
     "name": "Angry Lampent",
@@ -1475,7 +1711,16 @@
       "ground",
       "rock"
     ],
-    "id": "litwick"
+    "id": "litwick",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1,
+      "note": "Discriminado de Lampent via HP"
+    }
   },
   {
     "name": "Goomy",
@@ -1682,7 +1927,17 @@
       "grass",
       "ground"
     ],
-    "id": "cranidos"
+    "id": "cranidos",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy",
+        "Shadow Fire",
+        "Fire Lash×Hone Claws"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 3
+    }
   },
   {
     "name": "Angry Cranidos",
@@ -2127,7 +2382,15 @@
       "flying",
       "fire"
     ],
-    "id": "wormadam"
+    "id": "wormadam",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1
+    }
   },
   {
     "name": "Angry Wormadam",
@@ -2172,7 +2435,15 @@
       "psychic",
       "fairy"
     ],
-    "id": "sirfetchd"
+    "id": "sirfetchd",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1
+    }
   },
   {
     "name": "Angry Sirfetch'd",
@@ -2218,7 +2489,17 @@
       "water",
       "grass"
     ],
-    "id": "lycanroc"
+    "id": "lycanroc",
+    "calibration": {
+      "poke": "Shiny Hariyama",
+      "skills": [
+        "Fake Out",
+        "Shadow Break"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 2,
+      "note": "Corrigido de 0.57 (CLAUDE.md, sem cross-check) pra 0.62"
+    }
   },
   {
     "name": "Angry Lycanroc",
@@ -2261,7 +2542,15 @@
     "effectiveElements": [
       "electric"
     ],
-    "id": "mantine"
+    "id": "mantine",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1
+    }
   },
   {
     "name": "Shiny Starmie",
@@ -2303,7 +2592,15 @@
       "steel"
     ],
     "effectivenessNotes": "Apesar do elemento Fighting causar dano super efetivo nesta hunt, apenas a Shiny Hariyama possui a passiva Thick Fat, tornando golpes do elemento Ice muito inefetivos. | O Pokémon Omastar poderá ser uma opção viável para jogadores do clã Orebound frequentarem este local, tendo em vista que recebe dano inefetivo do elemento Ice.",
-    "id": "galarian-darmanitan"
+    "id": "galarian-darmanitan",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1
+    }
   },
   {
     "name": "Angry Darmanitan",
@@ -2348,7 +2645,18 @@
       "ground"
     ],
     "effectivenessNotes": "Os elementos Ground e Fighting recebem dano normal desses Pokémon, portanto, jogadores que frequentarem este local utilizando estes elementos, deverão tomar cuidado. | O Pokémon Steelix poderá ser uma opção viável para jogadores do clã Orebound frequentarem este local, tendo em vista que recebe dano inefetivo do elemento Steel.",
-    "id": "klinklang"
+    "id": "klinklang",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy",
+        "Shadow Fire",
+        "Fire Lash×Hone Claws"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 3,
+      "note": "Hone Claws ×1.5 valida buff:next"
+    }
   },
   {
     "name": "Shiny Klinklang",
@@ -2542,7 +2850,15 @@
       "rock",
       "ice"
     ],
-    "id": "braviary"
+    "id": "braviary",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1
+    }
   },
   {
     "name": "Angry Braviary",
@@ -2630,7 +2946,15 @@
       "ground"
     ],
     "effectivenessNotes": "Os elementos Ground e Fighting recebem dano normal desses Pokémon, portanto, jogadores que frequentarem este local utilizando estes elementos, deverão tomar cuidado. | O Pokémon Steelix poderá ser uma opção viável para jogadores do clã Orebound frequentarem este local.",
-    "id": "perrserker"
+    "id": "perrserker",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1
+    }
   },
   {
     "name": "Angry Perrserker",
@@ -2863,7 +3187,15 @@
       "fairy",
       "flying"
     ],
-    "id": "gallade"
+    "id": "gallade",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1
+    }
   },
   {
     "name": "Angry Gallade",
@@ -2911,7 +3243,15 @@
       "fairy",
       "ice"
     ],
-    "id": "honchkrow"
+    "id": "honchkrow",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1
+    }
   },
   {
     "name": "Angry Honchkrow",
@@ -2955,7 +3295,17 @@
       "fighting",
       "ground"
     ],
-    "id": "empoleon"
+    "id": "empoleon",
+    "calibration": {
+      "poke": "Shiny Floatzel",
+      "skills": [
+        "Counter Shield",
+        "Wave Crash",
+        "Whirlpool"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 3
+    }
   },
   {
     "name": "Angry Empoleon",
@@ -3204,7 +3554,19 @@
       "water",
       "grass"
     ],
-    "id": "sandaconda"
+    "id": "sandaconda",
+    "calibration": {
+      "poke": "Mega Glalie",
+      "skills": [
+        "Frost Power",
+        "Frenzy Snow",
+        "Glacial Spikes",
+        "Shadow Melting"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 3,
+      "note": "Corrigido de 0.57 (CLAUDE.md) pra 0.55"
+    }
   },
   {
     "name": "Angry Sandaconda",
@@ -3388,7 +3750,19 @@
       "bug",
       "fairy"
     ],
-    "id": "sharpedo"
+    "id": "sharpedo",
+    "calibration": {
+      "poke": "Shiny Floatzel",
+      "skills": [
+        "Counter Shield",
+        "Wave Crash",
+        "Whirlpool",
+        "Shadow Melting",
+        "Dive"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 5
+    }
   },
   {
     "name": "Angry Sharpedo",
@@ -3434,7 +3808,19 @@
       "dark",
       "bug"
     ],
-    "id": "starmie"
+    "id": "starmie",
+    "calibration": {
+      "poke": "Shiny Floatzel",
+      "skills": [
+        "Counter Shield",
+        "Wave Crash",
+        "Whirlpool",
+        "Shadow Melting",
+        "Dive"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 5
+    }
   },
   {
     "name": "Shiny Starmie",
@@ -3478,7 +3864,16 @@
     "effectiveElements": [
       "grass"
     ],
-    "id": "whiscash"
+    "id": "whiscash",
+    "calibration": {
+      "poke": "Shiny Floatzel",
+      "skills": [
+        "Counter Shield"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1,
+      "note": "Múltiplos pokes presentes, só CS isolado limpo"
+    }
   },
   {
     "name": "Angry Whiscash",
@@ -3835,7 +4230,17 @@
       "bug",
       "fairy"
     ],
-    "id": "alolan-persian"
+    "id": "alolan-persian",
+    "calibration": {
+      "poke": "Shiny Heatmor + Shiny Hariyama",
+      "skills": [
+        "Burning Jealousy",
+        "Fake Out",
+        "Shadow Break"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 3
+    }
   },
   {
     "name": "Angry Alolan Persian",
@@ -4304,7 +4709,7 @@
     "hunt": "400+",
     "group": "Drampa",
     "hp": 420095,
-    "todo": "calibrate defense",
+    "defFactor": 0.6,
     "bestStarterElements": [
       "rock",
       "ghost",
@@ -4317,7 +4722,17 @@
       "dragon",
       "fairy"
     ],
-    "id": "drampa"
+    "id": "drampa",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy",
+        "Shadow Fire",
+        "Fire Lash×Hone Claws"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 3
+    }
   },
   {
     "name": "Angry Drampa",
@@ -4526,7 +4941,15 @@
       "rock",
       "steel"
     ],
-    "id": "abomasnow"
+    "id": "abomasnow",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1
+    }
   },
   {
     "name": "Angry Abomasnow",
@@ -4625,7 +5048,15 @@
       "fighting",
       "ground"
     ],
-    "id": "steelix"
+    "id": "steelix",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1
+    }
   },
   {
     "name": "Angry Steelix",
@@ -4733,7 +5164,15 @@
       "ghost",
       "bug"
     ],
-    "id": "alakazam"
+    "id": "alakazam",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1
+    }
   },
   {
     "name": "Angry Alakazam",
@@ -4778,7 +5217,15 @@
       "fire",
       "ground"
     ],
-    "id": "alolan-dugtrio"
+    "id": "alolan-dugtrio",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1
+    }
   },
   {
     "name": "Angry Alolan Dugtrio",
@@ -4820,7 +5267,17 @@
     "effectiveElements": [
       "ground"
     ],
-    "id": "alolan-grimer"
+    "id": "alolan-grimer",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Shadow Fire",
+        "Fire Lash"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 2,
+      "note": "BJ errou neste teste"
+    }
   },
   {
     "name": "Angry Alolan Grimer",
@@ -5009,7 +5466,15 @@
       "fire",
       "ground"
     ],
-    "id": "magnezone"
+    "id": "magnezone",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1
+    }
   },
   {
     "name": "Angry Magnezone",
@@ -5089,7 +5554,16 @@
       "fire"
     ],
     "effectivenessNotes": "Scizor é bug/steel — Fire é 4× efetivo (dupla fraqueza).",
-    "id": "scizor"
+    "id": "scizor",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1,
+      "note": "Confirma piecewise 2-weak = 2.0 (não 4× canon)"
+    }
   },
   {
     "name": "Angry Scizor",
@@ -5129,7 +5603,16 @@
       "fighting"
     ],
     "effectivenessNotes": "Mobs aplicam Blind (mitigável com Nomel Berry).",
-    "id": "small-sentinel"
+    "id": "small-sentinel",
+    "calibration": {
+      "poke": "Shiny Hariyama",
+      "skills": [
+        "Fake Out"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1,
+      "note": "Indistinguível de Sentinel (HP quase iguais)"
+    }
   },
   {
     "name": "Sentinel",
@@ -5148,7 +5631,16 @@
       "fighting"
     ],
     "effectivenessNotes": "Mobs aplicam Blind (mitigável com Nomel Berry).",
-    "id": "sentinel"
+    "id": "sentinel",
+    "calibration": {
+      "poke": "Shiny Hariyama",
+      "skills": [
+        "Fake Out"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1,
+      "note": "Indistinguível de Small Sentinel (HP quase iguais)"
+    }
   },
   {
     "name": "Overcharged Sentinel",
@@ -5191,7 +5683,16 @@
       "rock",
       "ice"
     ],
-    "id": "togetic"
+    "id": "togetic",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1,
+      "note": "Discriminado de Togekiss via HP"
+    }
   },
   {
     "name": "Togekiss",
@@ -5215,7 +5716,16 @@
       "rock",
       "ice"
     ],
-    "id": "togekiss"
+    "id": "togekiss",
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": [
+        "Burning Jealousy"
+      ],
+      "date": "2026-04-30",
+      "triangulation": 1,
+      "note": "Discriminado de Togetic via HP"
+    }
   },
   {
     "name": "Shiny Togetic",
