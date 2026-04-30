@@ -698,7 +698,14 @@
     ],
     "hunt": "300",
     "group": "Lunatone/Solrock",
-    "todo": "calibrate defense",
+    "defFactor": 0.67,
+    "calibration": {
+      "poke": "Shiny Floatzel",
+      "skills": ["Wave Crash", "Counter Shield"],
+      "date": "2026-04-30",
+      "triangulation": 2,
+      "note": "Mesma defFactor que Solrock (par confirmado, mesmos tipos)"
+    },
     "bestStarterElements": [
       "steel"
     ],
@@ -1730,7 +1737,14 @@
     "hunt": "300",
     "group": "Goomy/Sliggoo",
     "hp": 184625,
-    "todo": "calibrate defense",
+    "defFactor": 0.77,
+    "calibration": {
+      "poke": "Mega Glalie",
+      "skills": ["Glacial Spikes", "Frost Power", "Shadow Melting", "Frenzy Snow"],
+      "date": "2026-04-30",
+      "triangulation": 4,
+      "note": "Discriminado de Sliggoo via HP (4 skills convergem perfeitas)"
+    },
     "bestStarterElements": [
       "dragon"
     ],
@@ -1750,7 +1764,14 @@
     "hunt": "300",
     "group": "Goomy/Sliggoo",
     "hp": 158567,
-    "todo": "calibrate defense",
+    "defFactor": 0.66,
+    "calibration": {
+      "poke": "Mega Glalie",
+      "skills": ["Glacial Spikes", "Frost Power", "Shadow Melting", "Frenzy Snow"],
+      "date": "2026-04-30",
+      "triangulation": 4,
+      "note": "Discriminado de Goomy via HP (4 skills convergem perfeitas)"
+    },
     "bestStarterElements": [
       "dragon"
     ],
@@ -2065,7 +2086,13 @@
     "hunt": "300",
     "group": "Petilil",
     "hp": 235312,
-    "todo": "calibrate defense",
+    "defFactor": 0.98,
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": ["Burning Jealousy", "Shadow Fire"],
+      "date": "2026-04-30",
+      "triangulation": 2
+    },
     "bestStarterElements": [
       "fire",
       "grass",
@@ -2119,7 +2146,14 @@
     "hunt": "300",
     "group": "Skiddo/Nuzleaf",
     "hp": 203680,
-    "todo": "calibrate defense",
+    "defFactor": 0.85,
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": ["Burning Jealousy", "Shadow Fire"],
+      "date": "2026-04-30",
+      "triangulation": 2,
+      "note": "Cross-validado com Nuzleaf (mesma defFactor, effs diferentes 2.0 vs 1.75)"
+    },
     "bestStarterElements": [
       "fire",
       "grass",
@@ -2176,7 +2210,14 @@
     "hunt": "300",
     "group": "Skiddo/Nuzleaf",
     "hp": 180799,
-    "todo": "calibrate defense",
+    "defFactor": 0.85,
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": ["Burning Jealousy", "Shadow Fire"],
+      "date": "2026-04-30",
+      "triangulation": 2,
+      "note": "Cross-validado com Skiddo (mesma defFactor, effs diferentes 2.0 vs 1.75)"
+    },
     "bestStarterElements": [
       "fire",
       "grass",
@@ -2205,7 +2246,14 @@
     "hunt": "300",
     "group": "Ralts/Kirlia",
     "hp": 131312,
-    "todo": "calibrate defense",
+    "defFactor": 0.62,
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": ["Burning Jealousy", "Shadow Fire", "Fire Lash×Hone Claws"],
+      "date": "2026-04-30",
+      "triangulation": 3,
+      "note": "Mesma defFactor que Kirlia (indistinguíveis no log)"
+    },
     "bestStarterElements": [
       "poison",
       "steel"
@@ -2226,7 +2274,14 @@
     ],
     "hunt": "300",
     "group": "Ralts/Kirlia",
-    "todo": "calibrate defense",
+    "defFactor": 0.62,
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": ["Burning Jealousy", "Shadow Fire", "Fire Lash×Hone Claws"],
+      "date": "2026-04-30",
+      "triangulation": 3,
+      "note": "Mesma defFactor que Ralts (indistinguíveis no log)"
+    },
     "bestStarterElements": [
       "poison",
       "steel"
@@ -2270,7 +2325,13 @@
     "hunt": "300",
     "group": "Applin",
     "hp": 189600,
-    "todo": "calibrate defense",
+    "defFactor": 0.9,
+    "calibration": {
+      "poke": "Shiny Heatmor",
+      "skills": ["Burning Jealousy", "Shadow Fire", "Fire Lash×Hone Claws"],
+      "date": "2026-04-30",
+      "triangulation": 3
+    },
     "bestStarterElements": [
       "grass",
       "poison",
