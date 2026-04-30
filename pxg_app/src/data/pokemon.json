@@ -15705,13 +15705,19 @@
         "element": "dark",
         "power": 15.51,
         "dano": 17745,
+        "buffEffect": {
+          "type": "self-window",
+          "mult": 2,
+          "durationSeconds": 7,
+          "appliesTo": { "skills": ["Flatter"], "melee": true }
+        },
         "playerNote": "Por 7s pós-cast: Flatter + ataques básicos causam dano extra (Flatter vira multi-hit ~×2). TM-exclusive.",
         "calibrations": [
           {
             "config": "lvl 600, +80, XA8 + food 3%, sem device, Volcanic, dummy neutro",
             "dano": 17745,
             "power": 15.51,
-            "note": "2-hit (13229+4516), color=87. TM-exclusive"
+            "note": "2-hit (13229+4516), color=87. TM-exclusive. Boss sim modela window 7s ×2 em Flatter+melee via buffEffect.appliesTo."
           }
         ]
       }
@@ -17842,12 +17848,13 @@
         "element": "dragon",
         "power": 0,
         "dano": 0,
+        "buffEffect": { "type": "self-window", "mult": 2, "durationSeconds": 20 },
         "calibrations": [
           {
             "config": "lvl 600, +70, XA8, Volcanic, sem device, dummy neutro",
             "dano": 0,
             "power": 0,
-            "note": "Self-buff: dobra (×2) dano de ataques físicos por ~20s. Não dá dano direto. Validado: 10 melee hits ×2 (4958 vs baseline 2480, ratio 1.999) durante janela 18.84s. CD 80s → uptime 25%. Engine atual modela como buff:next ×1.5 (simplificação)."
+            "note": "Self-buff: dobra (×2) dano de ataques físicos por ~20s. Não dá dano direto. Validado: 10 melee hits ×2 (4958 vs baseline 2480, ratio 1.999) durante janela 18.84s. CD 80s → uptime 25%. Boss sim modela via buffEffect (window 20s, mult 2). Rotação ainda usa buff:next simplificado."
           }
         ]
       }
@@ -23123,12 +23130,13 @@
         "element": "dragon",
         "power": 0,
         "dano": 0,
+        "buffEffect": { "type": "self-window", "mult": 2, "durationSeconds": 20 },
         "calibrations": [
           {
             "config": "lvl 600, +70, XA8, Volcanic, sem device, dummy neutro",
             "dano": 0,
             "power": 0,
-            "note": "Self-buff ×2 dano físico ~20s (validado: 9 ranged hits a 5619 vs baseline 2810, ratio 1.999). CD 40s → uptime 50% (+50% sustained DPS, vs regular 25%). Não dá dano direto. Engine modela como buff:next ×1.5 simplificado."
+            "note": "Self-buff ×2 dano físico ~20s (validado: 9 ranged hits a 5619 vs baseline 2810, ratio 1.999). CD 40s → uptime 50% (+50% sustained DPS vs regular 25%). Boss sim modela via buffEffect (window 20s, mult 2). Rotação usa buff:next simplificado."
           }
         ]
       }

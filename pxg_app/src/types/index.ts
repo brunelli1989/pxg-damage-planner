@@ -65,11 +65,17 @@ export interface Skill {
   /** Self-buff de janela: ao castar, ativa um multiplicador no dano de skills/melee
    *  do próprio poke por `durationSeconds`. Diferente de `buff:"next"` (esse é
    *  ×1.5 só na próxima skill). Modelado pelo bossSim (não usado em rotação).
-   *  Ex: Rage = mult:2, durationSeconds:20 (CD da skill define uptime). */
+   *  Ex: Rage = mult:2, durationSeconds:20 (CD da skill define uptime).
+   *  `appliesTo` filtra escopo — undefined = afeta todas skills + melee. Ex Pursuit
+   *  TM Sh.Honchkrow: mult:2, durationSeconds:7, appliesTo:{skills:["Flatter"],melee:true}. */
   buffEffect?: {
     type: "self-window";
     mult: number;
     durationSeconds: number;
+    appliesTo?: {
+      skills?: string[];
+      melee?: boolean;
+    };
   };
 }
 

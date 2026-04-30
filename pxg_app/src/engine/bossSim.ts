@@ -109,58 +109,180 @@ export function buildBossDamageConfig(
   };
 }
 
+/** Janela de self-buff ativa durante a sim. Usada pra multiplicar skills/melee
+ *  do mesmo poke por `mult` enquanto `t ∈ [startedAt, expiresAt)`.
+ *  `appliesTo` undefined = afeta todas skills + melee; senão filtra. */
+interface BuffWindow {
+  skillIdx: number;
+  startedAt: number;
+  expiresAt: number;
+  mult: number;
+  appliesTo?: {
+    skills?: string[];
+    melee?: boolean;
+  };
+}
+
+type BuffContext = { kind: "skill"; name: string } | { kind: "melee" };
+
+/** Verifica se a window aplica no contexto (skill específica ou melee). */
+function buffApplies(b: BuffWindow, ctx: BuffContext): boolean {
+  if (!b.appliesTo) return true; // sem filtro = afeta tudo
+  if (ctx.kind === "melee") return b.appliesTo.melee === true;
+  return b.appliesTo.skills?.includes(ctx.name) === true;
+}
+
+/** Multiplicador efetivo no tempo `t` pro contexto — produto de buffs ativos que aplicam. */
+function currentMultAt(time: number, buffs: BuffWindow[], ctx: BuffContext): number {
+  let mult = 1;
+  for (const b of buffs) {
+    if (b.startedAt > time || b.expiresAt <= time) continue;
+    if (!buffApplies(b, ctx)) continue;
+    mult *= b.mult;
+  }
+  return mult;
+}
+
+/** True se a skill é relevante pra sim — tem dano calibrado OU buffEffect (window)
+ *  OU buff:"next" (próxima skill ×1.5, ex: Nasty Plot, Charge, Hone Claws). */
+function hasSimRelevance(skill: { power?: number; buffEffect?: unknown; buff?: string | null }): boolean {
+  return (
+    (skill.power !== undefined && skill.power > 0) ||
+    skill.buffEffect !== undefined ||
+    skill.buff === "next"
+  );
+}
+
+/** Multiplier aplicado pela skill anterior se ela tinha buff:"next" (Nasty Plot etc). */
+const BUFF_NEXT_MULT = 1.5;
+
 /**
  * Simula `duration` segundos de casting greedy:
- * - A cada segundo, casta a skill com maior dano disponível (fora do CD)
- * - CD começa após o cast (clock + cd + cast_time)
- * - Sem buff modeling por enquanto (Rage ×2/20s não aplicado).
+ * - A cada segundo: prefere castar buff window não-ativo se ready; senão skill
+ *   de maior dano disponível.
+ * - Skills com `buffEffect` ativam window (ex: Rage ×2 por 20s). Damage casts
+ *   dentro da window são multiplicados pelo `mult` ativo.
+ * - CD começa após o cast (clock + cd + cast_time).
  */
 function simulateBossFight(
   poke: Pokemon,
   cfg: DamageConfig,
   duration: number
-): { totalDmg: number; totalCasts: number; perSkill: Map<string, { casts: number; dmg: number }> } {
-  // Apenas skills com power explícito — sem fallback tier (evita inflar dmg de pokes
-  // não calibrados na Compare).
-  const damageSkills = poke.skills.filter(hasExplicitPower);
-  if (damageSkills.length === 0) {
-    return { totalDmg: 0, totalCasts: 0, perSkill: new Map() };
+): {
+  totalDmg: number;
+  totalCasts: number;
+  perSkill: Map<string, { casts: number; dmg: number }>;
+  buffCasts: BuffWindow[];
+} {
+  // Inclui skills com power explícito E skills com buffEffect (window). Skills só
+  // com `buff:"next"` simplificado (sem buffEffect) ficam de fora — só rotação usa.
+  const allSkills = poke.skills.filter(hasSimRelevance);
+  if (allSkills.length === 0) {
+    return { totalDmg: 0, totalCasts: 0, perSkill: new Map(), buffCasts: [] };
   }
 
-  const skillData = damageSkills.map((skill) => {
-    const power = resolveSkillPower(skill, poke);
-    const dano = computeSkillDamage(cfg, poke, skill, cfg.mob, { skillPower: power });
-    return { skill, dano };
+  const skillData = allSkills.map((skill) => {
+    const isWindow = skill.buffEffect !== undefined;
+    const isBuffNext = skill.buff === "next";
+    const hasDamage = skill.power !== undefined && skill.power > 0;
+    const power = hasDamage ? resolveSkillPower(skill, poke) : 0;
+    const baseDano = hasDamage
+      ? computeSkillDamage(cfg, poke, skill, cfg.mob, { skillPower: power })
+      : 0;
+    return { skill, baseDano, isWindow, isBuffNext, hasDamage };
   });
-  skillData.sort((a, b) => b.dano - a.dano);
+  // Ordena por dano desc — pure buffs (hasDamage=false) ficam no fim, mas o loop
+  // escolhe window/buff:next explicitamente antes de damage.
+  skillData.sort((a, b) => b.baseDano - a.baseDano);
 
   const cooldowns = new Array<number>(skillData.length).fill(0);
   const casts = new Array<number>(skillData.length).fill(0);
   const dmgs = new Array<number>(skillData.length).fill(0);
+  const buffCasts: BuffWindow[] = [];
+  // Flag ativa quando a última skill castada tinha buff:"next". A próxima damage
+  // cast aplica ×1.5 e reseta o flag.
+  let buffNextPending = false;
 
   let t = 0;
   let totalDmg = 0;
   let totalCasts = 0;
 
   while (t < duration) {
-    let bestIdx = -1;
+    let pickedIdx = -1;
+
+    // 1. Window buff ready e não ativo → priorizar (maximiza uptime). Inclui híbridos
+    //    (skill com dano + window) — vale castar mesmo que dano seja menor pra ativar.
     for (let i = 0; i < skillData.length; i++) {
-      if (cooldowns[i] <= t) {
-        bestIdx = i;
+      if (!skillData[i].isWindow) continue;
+      if (cooldowns[i] > t) continue;
+      const stillActive = buffCasts.some((b) => b.skillIdx === i && b.expiresAt > t);
+      if (stillActive) continue;
+      pickedIdx = i;
+      break;
+    }
+
+    // 2. Pure buff:"next" ready e flag não pendente → cast pra setar flag (Nasty Plot).
+    //    Híbridas (damage + buff:next) caem no path 3 — castam pelo dano e armam flag.
+    if (pickedIdx < 0 && !buffNextPending) {
+      for (let i = 0; i < skillData.length; i++) {
+        const s = skillData[i];
+        if (!s.isBuffNext || s.hasDamage || s.isWindow) continue;
+        if (cooldowns[i] > t) continue;
+        pickedIdx = i;
         break;
       }
     }
-    if (bestIdx === -1) {
-      const nextReady = Math.min(...cooldowns.filter((c) => c > t));
-      t = nextReady;
+
+    // 3. Senão, damage skill de maior dano que esteja ready.
+    if (pickedIdx < 0) {
+      for (let i = 0; i < skillData.length; i++) {
+        if (!skillData[i].hasDamage) continue;
+        if (cooldowns[i] <= t) {
+          pickedIdx = i;
+          break;
+        }
+      }
+    }
+
+    if (pickedIdx < 0) {
+      // Espera o próximo CD.
+      const futureCDs = cooldowns.filter((c) => c > t);
+      if (futureCDs.length === 0) break;
+      t = Math.min(...futureCDs);
       continue;
     }
-    const { skill, dano } = skillData[bestIdx];
-    casts[bestIdx]++;
-    dmgs[bestIdx] += dano;
-    totalDmg += dano;
+
+    const sd = skillData[pickedIdx];
+    casts[pickedIdx]++;
+
+    // 1. Aplica dano (se houver). Window/buff:next vigentes no momento já estão
+    //    em buffCasts/buffNextPending — esta cast NÃO se beneficia da própria window.
+    if (sd.hasDamage) {
+      const windowMult = currentMultAt(t, buffCasts, { kind: "skill", name: sd.skill.name });
+      const nextMult = buffNextPending ? BUFF_NEXT_MULT : 1;
+      const dano = sd.baseDano * windowMult * nextMult;
+      dmgs[pickedIdx] += dano;
+      totalDmg += dano;
+      if (buffNextPending) buffNextPending = false;
+    }
+
+    // 2. Registra própria window (pós-cast — afeta próximas casts, não esta).
+    if (sd.isWindow) {
+      const eff = sd.skill.buffEffect!;
+      buffCasts.push({
+        skillIdx: pickedIdx,
+        startedAt: t,
+        expiresAt: t + eff.durationSeconds,
+        mult: eff.mult,
+        appliesTo: eff.appliesTo,
+      });
+    }
+
+    // 3. Arma buff:next pra próxima cast.
+    if (sd.isBuffNext) buffNextPending = true;
+
+    cooldowns[pickedIdx] = t + sd.skill.cooldown;
     totalCasts++;
-    cooldowns[bestIdx] = t + skill.cooldown;
     t += CAST_TIME;
   }
 
@@ -168,7 +290,7 @@ function simulateBossFight(
   skillData.forEach((sd, i) => {
     perSkill.set(sd.skill.name, { casts: casts[i], dmg: dmgs[i] });
   });
-  return { totalDmg, totalCasts, perSkill };
+  return { totalDmg, totalCasts, perSkill, buffCasts };
 }
 
 function computePokeRow(
@@ -214,7 +336,18 @@ function computePokeRow(
       power: poke.melee.power,
     };
     const meleeDmgPerHit = computeSkillDamage(cfg, poke, meleeSkill, cfg.mob, { skillPower: poke.melee.power });
-    meleeDmg = meleeDmgPerHit * meleeHits;
+    if (sim.buffCasts.length > 0) {
+      // Soma per-hit aplicando buff window vigente em cada hit (filtrando por
+      // appliesTo.melee — Pursuit afeta melee, Rage também por default).
+      let total = 0;
+      for (let h = 1; h <= meleeHits; h++) {
+        const hitT = h * poke.melee.attackInterval;
+        total += meleeDmgPerHit * currentMultAt(hitT, sim.buffCasts, { kind: "melee" });
+      }
+      meleeDmg = total;
+    } else {
+      meleeDmg = meleeDmgPerHit * meleeHits;
+    }
     meleeIncludedInTotal = poke.melee.kind === "ranged";
   }
 

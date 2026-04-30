@@ -239,7 +239,7 @@ const headerCellSx = {
   letterSpacing: "0.04em",
 };
 
-type SortCol = "name" | "boost" | "skills" | "melee" | "total";
+type SortCol = "name" | "boost" | "crit" | "skills" | "melee" | "total";
 type SortDir = "asc" | "desc";
 
 /** True quando o poke tem alguma skill de dano (não-buff) sem power calibrado.
@@ -442,15 +442,20 @@ export function ComparePage() {
     return result;
   }, [playerLvls, defaultPlayerLvl, helds, foods, selectedBoss, entries, simDuration, rowCache]);
 
-  const getRowMult = useCallback(
+  const getRowCritPct = useCallback(
     (r: RenderRow): number => {
       const foodCrit = getFoodBonuses(foods[r.rowId] ?? "none").critPct;
       const rowManoplaCrit = getManoplaCritPct(manoplas[r.rowId] ?? defaultManopla);
       const heldCrit = r.held.heldKind === "x-critical" ? X_CRITICAL_PCT_BY_TIER[r.held.heldTier] ?? 0 : 0;
       const deviceCrit = r.held.deviceKind === "x-critical" ? X_CRITICAL_PCT_BY_TIER[r.held.deviceTier] ?? 0 : 0;
-      return getTankMult(r.poke.tier, tmTank) * getCritMult(rowManoplaCrit + foodCrit + heldCrit + deviceCrit);
+      return rowManoplaCrit + foodCrit + heldCrit + deviceCrit;
     },
-    [foods, manoplas, defaultManopla, tmTank]
+    [foods, manoplas, defaultManopla]
+  );
+
+  const getRowMult = useCallback(
+    (r: RenderRow): number => getTankMult(r.poke.tier, tmTank) * getCritMult(getRowCritPct(r)),
+    [getRowCritPct, tmTank]
   );
 
   const sortedRows = useMemo<RenderRow[]>(() => {
@@ -459,6 +464,7 @@ export function ComparePage() {
       switch (sort.col) {
         case "name": return r.poke.name.toLowerCase();
         case "boost": return r.held.boost;
+        case "crit": return getRowCritPct(r);
         case "skills": return r.skillsDmg * m;
         case "melee": return r.meleeIncludedInTotal ? r.meleeDmg * m : 0;
         case "total": return r.totalDmg * m;
@@ -471,7 +477,7 @@ export function ComparePage() {
       return 0;
     });
     return sorted;
-  }, [rows, sort, getRowMult]);
+  }, [rows, sort, getRowMult, getRowCritPct]);
 
   const toggleSort = (col: SortCol) => {
     setSort((s) =>
@@ -518,9 +524,10 @@ export function ComparePage() {
     { id: "boost" as SortCol, label: "Device", numeric: false, tooltip: "Device do char (slot separado, 1 por char). BOOST mostra valor do range 400+ (engine ajusta por lvl); CRIT mostra % de chance." },
     { id: "boost" as SortCol, label: "Manopla", numeric: false, tooltip: "Joia primária. Pra dano só Critical importa (+5% crit). Qualquer outro = Topaz secundário (+2%). \"Sem\" = 0%." },
     { id: "boost" as SortCol, label: "Food", numeric: false, tooltip: "Atk: somado ao Σ atk%. Crit: somado ao crit %. Em boss o valor é ×2." },
+    { id: "crit", label: "Crit %", numeric: true, tooltip: "Crit total da linha — manopla + food + held (X-Critical) + device (X-Critical)." },
     { id: "skills", label: `Skills/${durLabel}`, numeric: true },
     { id: "melee", label: `Melee/${durLabel}`, numeric: true, tooltip: "Apenas ranged conta no total. Close (italic) é informativo." },
-    { id: "total", label: `Total/${durLabel}`, numeric: true },
+    { id: "total", label: `Esp/${durLabel}`, numeric: true, tooltip: "Dano esperado: skills + ranged melee, com tank e crit aplicados (E[dmg] = base × (1 + crit/100) × tank)." },
   ];
 
   return (
@@ -654,7 +661,7 @@ export function ComparePage() {
                     lines.push(`Tank: ${tmTank ? "TM Tank (TM pokes +40%, demais +10%)" : "Sem TM tank"}`);
                     lines.push(`Pokes: ${sortedRows.length}`);
                     lines.push("");
-                    lines.push(`Pokémon                  Lvl   Boost  Held          Device           Manopla    Food                 Skills/${durLabel}   Melee/${durLabel}   Total/${durLabel}`);
+                    lines.push(`Pokémon                  Lvl   Boost  Held          Device           Manopla    Food                 Crit   Skills/${durLabel}   Melee/${durLabel}   Esp/${durLabel}`);
                     for (const row of sortedRows) {
                       const m = getRowMult(row);
                       const heldStr = `ATK ${row.held.heldTier} (${X_ATK_PCT[row.held.heldTier] ?? 0}%)`;
@@ -674,8 +681,9 @@ export function ComparePage() {
                       const lvlStr = String(getPlayerLvl(row.rowId));
                       const manoplaOpt = MANOPLA_OPTIONS.find((o) => o.value === getManopla(row.rowId));
                       const manoplaStr = manoplaOpt?.label ?? "Sem";
+                      const critStr = `${getRowCritPct(row)}%`;
                       lines.push(
-                        `${(row.poke.name + uncal).padEnd(24)} ${lvlStr.padEnd(5)} ${("+" + row.held.boost).padEnd(6)} ${heldStr.padEnd(13)} ${deviceStr.padEnd(16)} ${manoplaStr.padEnd(10)} ${foodStr.padEnd(20)} ${fmt(row.skillsDmg * m).padStart(13)} ${meleeStr.padStart(15)} ${fmt(row.totalDmg * m).padStart(15)}`
+                        `${(row.poke.name + uncal).padEnd(24)} ${lvlStr.padEnd(5)} ${("+" + row.held.boost).padEnd(6)} ${heldStr.padEnd(13)} ${deviceStr.padEnd(16)} ${manoplaStr.padEnd(10)} ${foodStr.padEnd(20)} ${critStr.padEnd(6)} ${fmt(row.skillsDmg * m).padStart(13)} ${meleeStr.padStart(15)} ${fmt(row.totalDmg * m).padStart(13)}`
                       );
                     }
                     if (sortedRows.some((r) => pokeHasUncalibratedSkills(r.poke))) {
@@ -858,6 +866,9 @@ export function ComparePage() {
                             </MenuItem>
                           ))}
                         </TextField>
+                      </TableCell>
+                      <TableCell align="right" sx={{ fontVariantNumeric: "tabular-nums", color: "text.secondary" }}>
+                        {getRowCritPct(row)}%
                       </TableCell>
                       <TableCell align="right" sx={{ fontVariantNumeric: "tabular-nums" }}>
                         {fmt(row.skillsDmg * tankMult)}
