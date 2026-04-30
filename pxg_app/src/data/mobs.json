@@ -296,7 +296,7 @@
     "hunt": "300",
     "group": "Spoink",
     "hp": 217021,
-    "todo": "calibrate defense",
+    "defFactor": 0.9,
     "bestStarterElements": [
       "psychic",
       "dark",
@@ -389,7 +389,7 @@
     "hunt": "300",
     "group": "Alolan Meowth",
     "hp": 204282,
-    "todo": "calibrate defense",
+    "defFactor": 0.85,
     "bestStarterElements": [
       "fighting",
       "fairy"
@@ -431,7 +431,7 @@
     "hunt": "300",
     "group": "Grimer",
     "hp": 213840,
-    "todo": "calibrate defense",
+    "defFactor": 0.9,
     "bestStarterElements": [
       "ground",
       "rock"
@@ -496,7 +496,7 @@
     "hunt": "300",
     "group": "Mega Beedrill/Beedrill",
     "hp": 209692,
-    "todo": "calibrate defense",
+    "defFactor": 1.0,
     "bestStarterElements": [
       "fire",
       "flying"
@@ -518,7 +518,7 @@
     "hunt": "300",
     "group": "Silicobra",
     "hp": 184696,
-    "todo": "calibrate defense",
+    "defFactor": 0.77,
     "bestStarterElements": [
       "grass",
       "bug"
@@ -561,7 +561,7 @@
     "hunt": "300",
     "group": "Galarian Farfetch'd",
     "hp": 179559,
-    "todo": "calibrate defense",
+    "defFactor": 0.75,
     "bestStarterElements": [
       "flying",
       "psychic",
@@ -630,7 +630,7 @@
     "hunt": "300",
     "group": "Lunatone/Solrock",
     "hp": 140480,
-    "todo": "calibrate defense",
+    "defFactor": 0.67,
     "bestStarterElements": [
       "steel"
     ],
@@ -704,7 +704,7 @@
     "hunt": "300",
     "group": "Rockruff",
     "hp": 206220,
-    "todo": "calibrate defense",
+    "defFactor": 0.86,
     "bestStarterElements": [
       "fighting",
       "ground",
@@ -753,7 +753,7 @@
     "hunt": "300",
     "group": "Mantyke",
     "hp": 213265,
-    "todo": "calibrate defense",
+    "defFactor": 0.88,
     "bestStarterElements": [
       "electric"
     ],
@@ -790,7 +790,7 @@
     "hunt": "300",
     "group": "Galarian Darumaka",
     "hp": 177632,
-    "todo": "calibrate defense",
+    "defFactor": 0.74,
     "bestStarterElements": [
       "fire",
       "steel"
@@ -876,7 +876,7 @@
     "hunt": "300",
     "group": "Klink/Klang",
     "hp": 216626,
-    "todo": "calibrate defense",
+    "defFactor": 0.9,
     "bestStarterElements": [
       "fire"
     ],
@@ -897,7 +897,7 @@
     "hunt": "300",
     "group": "Klink/Klang",
     "hp": 180414,
-    "todo": "calibrate defense",
+    "defFactor": 0.75,
     "bestStarterElements": [
       "fire"
     ],
@@ -939,7 +939,7 @@
     "hunt": "300",
     "group": "Galarian Meowth",
     "hp": 204415,
-    "todo": "calibrate defense",
+    "defFactor": 0.85,
     "bestStarterElements": [
       "fire"
     ],
@@ -982,7 +982,7 @@
     "hunt": "300",
     "group": "Carvanha",
     "hp": 199800,
-    "todo": "calibrate defense",
+    "defFactor": 0.95,
     "bestStarterElements": [
       "grass"
     ],
@@ -1028,7 +1028,7 @@
     "hunt": "300",
     "group": "Barboach",
     "hp": 216333,
-    "todo": "calibrate defense",
+    "defFactor": 0.9,
     "bestStarterElements": [
       "grass",
       "bug"
@@ -1156,7 +1156,7 @@
     "hunt": "300",
     "group": "Sneasel",
     "hp": 193374,
-    "todo": "calibrate defense",
+    "defFactor": 0.8,
     "bestStarterElements": [
       "fighting"
     ],
@@ -1326,7 +1326,7 @@
     "hunt": "300",
     "group": "Shuppet",
     "hp": 218929,
-    "todo": "calibrate defense",
+    "defFactor": 0.9,
     "bestStarterElements": [
       "normal",
       "dark"
@@ -1401,7 +1401,7 @@
     "hunt": "300",
     "group": "Lampent/Litwick",
     "hp": 180642,
-    "todo": "calibrate defense",
+    "defFactor": 0.86,
     "bestStarterElements": [
       "normal",
       "fire",
@@ -1458,7 +1458,7 @@
     "hunt": "300",
     "group": "Lampent/Litwick",
     "hp": 195261,
-    "todo": "calibrate defense",
+    "defFactor": 0.93,
     "bestStarterElements": [
       "normal",
       "fire",
@@ -1668,7 +1668,7 @@
     "hunt": "300",
     "group": "Cranidos",
     "hp": 216472,
-    "todo": "calibrate defense",
+    "defFactor": 0.9,
     "bestStarterElements": [
       "fighting",
       "ground",
@@ -2116,7 +2116,7 @@
     "hunt": "400+",
     "group": "Wormadam",
     "hp": 586080,
-    "todo": "calibrate defense",
+    "defFactor": 0.73,
     "bestStarterElements": [
       "fire",
       "flying",
@@ -2160,7 +2160,7 @@
     "hunt": "400+",
     "group": "Sirfetch'd",
     "hp": 487560,
-    "todo": "calibrate defense",
+    "defFactor": 0.61,
     "bestStarterElements": [
       "flying",
       "psychic",
@@ -2204,7 +2204,7 @@
     "hunt": "400+",
     "group": "Lycanroc",
     "hp": 495264,
-    "defFactor": 0.57,
+    "defFactor": 0.62,
     "bestStarterElements": [
       "fighting",
       "ground",
@@ -2253,7 +2253,7 @@
     "hunt": "400+",
     "group": "Mantine",
     "hp": 576626,
-    "todo": "calibrate defense",
+    "defFactor": 0.72,
     "bestStarterElements": [
       "electric"
     ],
@@ -2290,7 +2290,7 @@
     "hunt": "400+",
     "group": "Galarian Darmanitan",
     "hp": 494590,
-    "todo": "calibrate defense",
+    "defFactor": 0.62,
     "bestStarterElements": [
       "fire",
       "steel"
@@ -2337,7 +2337,7 @@
     "hunt": "400+",
     "group": "Klinklang",
     "hp": 456137,
-    "todo": "calibrate defense",
+    "defFactor": 0.57,
     "bestStarterElements": [
       "fire"
     ],
@@ -2531,7 +2531,7 @@
     "hunt": "400+",
     "group": "Braviary",
     "hp": 455650,
-    "todo": "calibrate defense",
+    "defFactor": 0.65,
     "bestStarterElements": [
       "electric",
       "rock"
@@ -2619,7 +2619,7 @@
     "hunt": "400+",
     "group": "Perrserker",
     "hp": 494745,
-    "todo": "calibrate defense",
+    "defFactor": 0.62,
     "bestStarterElements": [
       "fire"
     ],
@@ -2849,7 +2849,7 @@
     "hunt": "400+",
     "group": "Gallade",
     "hp": 420900,
-    "todo": "calibrate defense",
+    "defFactor": 0.6,
     "bestStarterElements": [
       "poison",
       "flying",
@@ -2899,7 +2899,7 @@
     "hunt": "400+",
     "group": "Honchkrow",
     "hp": 453876,
-    "todo": "calibrate defense",
+    "defFactor": 0.65,
     "bestStarterElements": [
       "electric",
       "rock"
@@ -2945,7 +2945,7 @@
     "hunt": "400+",
     "group": "Empoleon",
     "hp": 434525,
-    "todo": "calibrate defense",
+    "defFactor": 0.62,
     "bestStarterElements": [
       "electric"
     ],
@@ -3193,7 +3193,7 @@
     "hunt": "400+",
     "group": "Sandaconda",
     "hp": 440100,
-    "defFactor": 0.57,
+    "defFactor": 0.55,
     "bestStarterElements": [
       "grass",
       "bug"
@@ -3376,7 +3376,7 @@
     "hunt": "400+",
     "group": "Sharpedo",
     "hp": 463551,
-    "todo": "calibrate defense",
+    "defFactor": 0.66,
     "bestStarterElements": [
       "grass"
     ],
@@ -3422,7 +3422,7 @@
     "hunt": "400+",
     "group": "Starmie",
     "hp": 505974,
-    "todo": "calibrate defense",
+    "defFactor": 0.72,
     "bestStarterElements": [
       "grass"
     ],
@@ -3469,7 +3469,7 @@
     "hunt": "400+",
     "group": "Whiscash",
     "hp": 495711,
-    "todo": "calibrate defense",
+    "defFactor": 0.62,
     "bestStarterElements": [
       "grass",
       "bug"
@@ -3824,7 +3824,7 @@
     "hunt": "400+",
     "group": "Alolan Persian",
     "hp": 448152,
-    "todo": "calibrate defense",
+    "defFactor": 0.56,
     "bestStarterElements": [
       "fighting",
       "fairy"
@@ -4513,7 +4513,7 @@
     "hunt": "400+",
     "group": "Abomasnow",
     "hp": 439700,
-    "todo": "calibrate defense",
+    "defFactor": 0.55,
     "bestStarterElements": [
       "fire",
       "fighting",
@@ -4611,7 +4611,7 @@
     "hunt": "400+",
     "group": "Steelix",
     "hp": 522753,
-    "todo": "calibrate defense",
+    "defFactor": 0.75,
     "bestStarterElements": [
       "fire",
       "water",
@@ -4721,7 +4721,7 @@
     "hunt": "400+",
     "group": "Alakazam",
     "hp": 615488,
-    "todo": "calibrate defense",
+    "defFactor": 0.77,
     "bestStarterElements": [
       "dark",
       "steel",
@@ -4767,7 +4767,7 @@
     "hunt": "400+",
     "group": "Alolan Dugtrio",
     "hp": 505692,
-    "todo": "calibrate defense",
+    "defFactor": 0.72,
     "bestStarterElements": [
       "steel"
     ],
@@ -4811,7 +4811,7 @@
     "hunt": "300",
     "group": "Alolan Grimer",
     "hp": 161612,
-    "todo": "calibrate defense",
+    "defFactor": 0.78,
     "bestStarterElements": [
       "poison",
       "ground"
@@ -4999,7 +4999,7 @@
     "hunt": "400+",
     "group": "Magnezone",
     "hp": 512320,
-    "todo": "calibrate defense",
+    "defFactor": 0.65,
     "bestStarterElements": [
       "ground"
     ],
@@ -5079,7 +5079,7 @@
     "hunt": "400+",
     "group": "Scizor",
     "hp": 520420,
-    "todo": "calibrate defense",
+    "defFactor": 0.65,
     "bestStarterElements": [
       "fire",
       "steel"
@@ -5120,7 +5120,7 @@
     "hunt": "300",
     "group": "Sentinel",
     "hp": 83453,
-    "todo": "calibrate defense",
+    "defFactor": 0.56,
     "bestStarterElements": [
       "ghost"
     ],
@@ -5139,7 +5139,7 @@
     "hunt": "300",
     "group": "Sentinel",
     "hp": 84833,
-    "todo": "calibrate defense",
+    "defFactor": 0.56,
     "bestStarterElements": [
       "ghost"
     ],
@@ -5178,7 +5178,7 @@
     "hunt": "400+",
     "group": "Togetic/Togekiss",
     "hp": 574142,
-    "todo": "calibrate defense",
+    "defFactor": 0.82,
     "bestStarterElements": [
       "steel",
       "poison"
@@ -5202,7 +5202,7 @@
     "hunt": "400+",
     "group": "Togetic/Togekiss",
     "hp": 560441,
-    "todo": "calibrate defense",
+    "defFactor": 0.8,
     "bestStarterElements": [
       "steel",
       "poison"
