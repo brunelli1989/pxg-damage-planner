@@ -18,6 +18,7 @@
     "name": "Ptera",
     "category": "Nightmare Terror",
     "types": ["rock", "flying"],
+    "hp": 15000000,
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Terror_-_Ptera"
   },
   {
@@ -39,6 +40,7 @@
     "name": "Raito",
     "category": "Nightmare Terror",
     "types": ["electric"],
+    "hp": 17500000,
     "durationSeconds": 450,
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Terror_-_Raito"
   },

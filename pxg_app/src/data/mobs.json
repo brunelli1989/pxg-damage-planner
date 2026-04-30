@@ -28,7 +28,8 @@
     ],
     "hunt": "300",
     "group": "Espurr",
-    "todo": "calibrate hp + defense",
+    "hp": 225675,
+    "todo": "calibrate defense",
     "bestStarterElements": [
       "psychic",
       "dark",
@@ -316,7 +317,8 @@
     ],
     "hunt": "300",
     "group": "Spoink",
-    "todo": "calibrate hp + defense",
+    "hp": 186728,
+    "todo": "calibrate defense",
     "bestStarterElements": [
       "psychic",
       "dark",
@@ -536,7 +538,8 @@
     ],
     "hunt": "300",
     "group": "Silicobra",
-    "todo": "calibrate hp + defense",
+    "hp": 207828,
+    "todo": "calibrate defense",
     "bestStarterElements": [
       "grass",
       "bug"
@@ -1787,7 +1790,8 @@
     "hunt": "300",
     "group": "Tynamo/Eelektrik",
     "tag": "angry",
-    "todo": "calibrate hp + defense",
+    "hp": 208972,
+    "defFactor": 0.97,
     "bestStarterElements": [
       "ground",
       "rock"
@@ -2134,7 +2138,8 @@
     "hunt": "400+",
     "group": "Wormadam",
     "tag": "angry",
-    "todo": "calibrate hp + defense",
+    "hp": 596820,
+    "todo": "calibrate defense",
     "bestStarterElements": [
       "fire",
       "flying",
@@ -2353,7 +2358,8 @@
     "hunt": "400+",
     "group": "Klinklang",
     "tag": "angry",
-    "todo": "calibrate hp + defense",
+    "hp": 459118,
+    "todo": "calibrate defense",
     "bestStarterElements": [
       "fire"
     ],
@@ -2676,7 +2682,8 @@
     "hunt": "400+",
     "group": "Weavile",
     "tag": "angry",
-    "todo": "calibrate hp + defense",
+    "hp": 555140,
+    "todo": "calibrate defense",
     "bestStarterElements": [
       "fighting"
     ],
@@ -3053,7 +3060,8 @@
     "hunt": "400+",
     "group": "Torterra",
     "tag": "angry",
-    "todo": "calibrate hp + defense",
+    "hp": 518370,
+    "todo": "calibrate defense",
     "bestStarterElements": [
       "fire",
       "grass",
@@ -3343,7 +3351,8 @@
     "hunt": "400+",
     "group": "Glalie",
     "tag": "angry",
-    "todo": "calibrate hp + defense",
+    "hp": 466171,
+    "todo": "calibrate defense",
     "bestStarterElements": [
       "fire",
       "steel"
@@ -3658,7 +3667,8 @@
     "hunt": "400+",
     "group": "Chandelure",
     "tag": "angry",
-    "todo": "calibrate hp + defense",
+    "hp": 479595,
+    "todo": "calibrate defense",
     "bestStarterElements": [
       "normal",
       "dark"
@@ -4733,7 +4743,8 @@
     "hunt": "400+",
     "group": "Alakazam",
     "tag": "angry",
-    "todo": "calibrate hp + defense",
+    "hp": 624658,
+    "todo": "calibrate defense",
     "bestStarterElements": [
       "dark",
       "steel",
