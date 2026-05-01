@@ -5152,7 +5152,7 @@
     "hunt": "400+",
     "group": "Porygon/Porygon2",
     "hp": 600724,
-    "todo": "calibrate defense",
+    "defFactor": 0.76,
     "bestStarterElements": [
       "ghost",
       "rock",
@@ -5162,7 +5162,17 @@
     "effectiveElements": [
       "fighting"
     ],
-    "id": "porygon"
+    "id": "porygon",
+    "calibration": {
+      "poke": "Shiny Hariyama",
+      "skills": [
+        "Fake Out",
+        "Superpower (com FE×1.5)"
+      ],
+      "date": "2026-05-01",
+      "triangulation": 2,
+      "note": "Gardestrike +70 XA8 lvl 606. Fake Out 32995/mob → def 0.757. Superpower 9-hit ×1.5 buff (FE) sum 100530/mob → def 0.755. Reversal single-hit obs 41700 deu def 0.50 (descartado — provável multi-hit pattern em cleave perdeu small hits)."
+    }
   },
   {
     "name": "Porygon2",
@@ -5172,7 +5182,7 @@
     "hunt": "400+",
     "group": "Porygon/Porygon2",
     "hp": 600558,
-    "todo": "calibrate defense",
+    "defFactor": 0.76,
     "bestStarterElements": [
       "ghost",
       "rock",
@@ -5182,7 +5192,17 @@
     "effectiveElements": [
       "fighting"
     ],
-    "id": "porygon2"
+    "id": "porygon2",
+    "calibration": {
+      "poke": "Shiny Hariyama",
+      "skills": [
+        "Fake Out",
+        "Superpower"
+      ],
+      "date": "2026-05-01",
+      "triangulation": 2,
+      "note": "Mesmo grupo Porygon — defFactor inferido igual (cleave juntos). Ver Porygon nota detalhada"
+    }
   },
   {
     "name": "Angry Porygon2",
@@ -5193,7 +5213,7 @@
     "group": "Porygon/Porygon2",
     "tag": "angry",
     "hp": 610188,
-    "todo": "calibrate defense",
+    "defFactor": 0.76,
     "bestStarterElements": [
       "ghost",
       "rock",

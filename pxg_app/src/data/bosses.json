@@ -62,6 +62,7 @@
     "name": "Seishin",
     "category": "Nightmare Terror",
     "types": ["psychic"],
+    "defFactor": 0.68,
     "durationSeconds": 690,
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Terror_-_Seishin_%26_Yurei"
   },
@@ -70,6 +71,7 @@
     "name": "Yurei",
     "category": "Nightmare Terror",
     "types": ["ghost", "poison"],
+    "defFactor": 0.68,
     "durationSeconds": 690,
     "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Terror_-_Seishin_%26_Yurei"
   },

@@ -12801,7 +12801,14 @@
       "dragon"
     ],
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Druddigon",
+    "observacao": "Recal 2026-05-01 (2 sessões): Roar/Scratch/Dragon Tail/Dragon Rage/Draco Meteor/Outrage single-hit; Dragon Claw 2-hit (corrigido); Scale Shot 5-hit. Roar=status (stun area, 0 dmg). DR é buff:next ×1.5 (Outrage pós-DR ratio observado ~1.575 — investigar possível Outrage subestimada em 5%). Auto-atk ~1490/hit, ~3.6s interval, color=129. Colors: dragon principal=181; Dragon Tail=89; Scale Shot=138; Dragon Claw=180.",
     "config": "lvl 600, +0, sem held, Volcanic, sem device, neutro",
+    "melee": {
+      "power": 1.99,
+      "attackInterval": 3.6,
+      "element": "normal",
+      "kind": "melee"
+    },
     "skills": [
       {
         "name": "Roar",
@@ -12811,6 +12818,26 @@
         "buff": null,
         "element": "dragon",
         "power": 0
+      },
+      {
+        "name": "Scratch",
+        "cooldown": 8,
+        "type": "target",
+        "cc": null,
+        "buff": null,
+        "element": "dragon",
+        "power": 6.89,
+        "dano": 5166
+      },
+      {
+        "name": "Dragon Tail",
+        "cooldown": 25,
+        "type": "target",
+        "cc": null,
+        "buff": null,
+        "element": "dragon",
+        "power": 8.79,
+        "dano": 6595
       },
       {
         "name": "Dragon Rage",
@@ -12823,14 +12850,26 @@
         "dano": 3888
       },
       {
+        "name": "Scale Shot",
+        "cooldown": 30,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "dragon",
+        "power": 17.21,
+        "dano": 12911,
+        "playerNote": "5-hit per cast (~2582/hit no dummy)"
+      },
+      {
         "name": "Dragon Claw",
         "cooldown": 35,
         "type": "area",
         "cc": null,
         "buff": null,
         "element": "dragon",
-        "power": 7.35,
-        "dano": 5511
+        "power": 15.07,
+        "dano": 11301,
+        "playerNote": "2-hit per cast (~5650/hit no dummy)"
       },
       {
         "name": "Draco Meteor",
@@ -12850,7 +12889,8 @@
         "buff": null,
         "element": "dragon",
         "power": 29.38,
-        "dano": 22034
+        "dano": 22034,
+        "playerNote": "Pós-DR (buff:next): observado +5% acima do esperado ×1.5 (ratio ~1.575). Possível Outrage subestimada ou DR buff > 1.5"
       }
     ]
   },
@@ -15070,8 +15110,14 @@
       "fighting"
     ],
     "wiki": "https://wiki.pokexgames.com/index.php/Shiny_Hariyama",
-    "observacao": "Superpower multi-hit 9-hit (~3820 each); Fake Out/Reversal/Shadow Break single-hit",
+    "observacao": "Recal 2026-04-30 (2 sessões) confirmou: Fake Out/Reversal/Shadow Break/Tackle/Smelling Salts/Low Kick/Leap Strike single-hit no dummy; Superpower 9-hit; Focus Energy buff:next ×1.5 (sem dmg). Auto-attack ~6285/3.1s color=129. Padrão tracker: hits caem 1ms antes do announce da PRÓXIMA skill (atribui pro bucket anterior). CLEAVE EM HUNT é DIFERENTE: Reversal vira pattern '5 small + 1 big' por mob; Fake Out vira ~1.3× maior que predicted (mecânica não modelada).",
     "config": "lvl 600, +70, XA7, Volcanic, sem device, neutro",
+    "melee": {
+      "power": 5.84,
+      "attackInterval": 3.1,
+      "element": "normal",
+      "kind": "melee"
+    },
     "skills": [
       {
         "name": "Fake Out",
@@ -15099,8 +15145,8 @@
         "cc": null,
         "buff": null,
         "element": "fighting",
-        "power": 31.96,
-        "dano": 34409
+        "power": 32.00,
+        "dano": 34444
       },
       {
         "name": "Reversal",
@@ -15109,8 +15155,8 @@
         "cc": null,
         "buff": null,
         "element": "fighting",
-        "power": 30.03,
-        "dano": 32312
+        "power": 30.02,
+        "dano": 32319
       },
       {
         "name": "Shadow Break",
@@ -15121,6 +15167,47 @@
         "element": "fighting",
         "power": 25.15,
         "dano": 27074
+      },
+      {
+        "name": "Tackle",
+        "cooldown": 8,
+        "type": "target",
+        "cc": null,
+        "buff": null,
+        "element": "normal",
+        "power": 3.91,
+        "dano": 4205
+      },
+      {
+        "name": "Smelling Salts",
+        "cooldown": 30,
+        "type": "target",
+        "cc": null,
+        "buff": null,
+        "element": "normal",
+        "power": 11.66,
+        "dano": 12548,
+        "playerNote": "Single-hit em alvo neutro. Canon 2× se alvo paralisado/dormindo — não testado em PxG"
+      },
+      {
+        "name": "Low Kick",
+        "cooldown": 10,
+        "type": "target",
+        "cc": null,
+        "buff": null,
+        "element": "fighting",
+        "power": 5.86,
+        "dano": 6313
+      },
+      {
+        "name": "Leap Strike",
+        "cooldown": 12,
+        "type": "target",
+        "cc": null,
+        "buff": null,
+        "element": "fighting",
+        "power": 7.74,
+        "dano": 8334
       }
     ]
   },
