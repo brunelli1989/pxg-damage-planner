@@ -4549,7 +4549,7 @@
     "hunt": "400+",
     "group": "Gogoat",
     "hp": 463891,
-    "todo": "calibrate defense",
+    "defFactor": 0.59,
     "bestStarterElements": [
       "fire",
       "grass",
@@ -4566,7 +4566,16 @@
       "ice",
       "bug"
     ],
-    "id": "gogoat"
+    "id": "gogoat",
+    "calibration": {
+      "poke": "Shiny Beautifly + Mega Pidgeot",
+      "skills": [
+        "Sky Attack"
+      ],
+      "date": "2026-05-01",
+      "triangulation": 2,
+      "note": "Player Wingeon lvl 423. Eff flying vs grass = 2.0 (single weak). Beautifly +70 XA5 SA 31685/mob → def 0.591. Mega Pidgeot +70 XA7 SA 30300/mob → def 0.583. Sh.Fearow SA 28595/mob daria def 0.68 sem device, mas com X-Boost T7 device alinha em 0.59 — sugere Fearow tem XB device, outros não."
+    }
   },
   {
     "name": "Angry Gogoat",
@@ -4577,7 +4586,7 @@
     "group": "Gogoat",
     "tag": "angry",
     "hp": 473399,
-    "todo": "calibrate defense",
+    "defFactor": 0.59,
     "bestStarterElements": [
       "fire",
       "grass",
