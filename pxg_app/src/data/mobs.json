@@ -3598,7 +3598,8 @@
     "hunt": "400+",
     "group": "Raichu/Manectric",
     "tag": "angry",
-    "todo": "calibrate hp + defense",
+    "hp": 523260,
+    "todo": "calibrate defense",
     "bestStarterElements": [
       "ground"
     ],
