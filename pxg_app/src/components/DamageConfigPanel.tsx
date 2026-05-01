@@ -11,7 +11,7 @@ import type {
 } from "../types";
 import clansData from "../data/clans.json";
 import mobsData from "../data/mobs.json";
-import { DEFAULT_MOB_DEF_FACTOR, resolveMobConfig } from "../engine/damage";
+import { DEFAULT_MOB_DEF_FACTOR, isLureMob, resolveMobConfig } from "../engine/damage";
 import type { MobFieldSource, ResolvedMob } from "../engine/damage";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
@@ -120,7 +120,7 @@ export function DamageConfigPanel({
   onDiskLevelChange,
 }: Props) {
   const mobsForHunt = mobs
-    .filter((m) => m.hunt === config.hunt)
+    .filter((m) => m.hunt === config.hunt && isLureMob(m))
     .sort((a, b) => a.group.localeCompare(b.group) || a.name.localeCompare(b.name));
 
   const groupedMobs = mobsForHunt.reduce<Record<string, MobEntry[]>>((acc, m) => {

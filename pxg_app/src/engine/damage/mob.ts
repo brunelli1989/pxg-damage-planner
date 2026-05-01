@@ -3,6 +3,12 @@ import type { HuntLevel, MobConfig, MobEntry } from "../../types";
 // Fallback quando mob não tem defFactor calibrado (média dos mobs testados no dummy).
 export const DEFAULT_MOB_DEF_FACTOR = 0.85;
 
+/** Mobs válidos pra rotação de lures: spawn comum (sem tag) ou angry.
+ *  Bosses/shiny rares são excluídos — não aparecem em lure de hunt normal. */
+export function isLureMob(m: MobEntry): boolean {
+  return m.tag === undefined || m.tag === "angry";
+}
+
 // =========================================================
 // Mob resolver — preenche HP/defFactor ausentes via fallback hierárquico:
 // 1. valor explícito no mobs.json
@@ -20,14 +26,14 @@ export interface ResolvedMob extends MobConfig {
 
 function groupEffHp(entry: MobEntry, allMobs: MobEntry[]): number | undefined {
   const anchor = allMobs.find(
-    (m) => m.group === entry.group && m.hp !== undefined && m.defFactor !== undefined
+    (m) => m.group === entry.group && isLureMob(m) && m.hp !== undefined && m.defFactor !== undefined
   );
   return anchor ? anchor.hp! / anchor.defFactor! : undefined;
 }
 
 function huntAvgEffHp(hunt: HuntLevel, allMobs: MobEntry[]): number | undefined {
   const samples = allMobs
-    .filter((m) => m.hunt === hunt && m.hp !== undefined && m.defFactor !== undefined)
+    .filter((m) => m.hunt === hunt && isLureMob(m) && m.hp !== undefined && m.defFactor !== undefined)
     .map((m) => m.hp! / m.defFactor!);
   if (samples.length === 0) return undefined;
   return samples.reduce((a, b) => a + b, 0) / samples.length;
@@ -35,7 +41,7 @@ function huntAvgEffHp(hunt: HuntLevel, allMobs: MobEntry[]): number | undefined 
 
 function huntAvgDefFactor(hunt: HuntLevel, allMobs: MobEntry[]): number | undefined {
   const samples = allMobs
-    .filter((m) => m.hunt === hunt && m.defFactor !== undefined)
+    .filter((m) => m.hunt === hunt && isLureMob(m) && m.defFactor !== undefined)
     .map((m) => m.defFactor!);
   if (samples.length === 0) return undefined;
   return samples.reduce((a, b) => a + b, 0) / samples.length;

@@ -93,7 +93,8 @@
     ],
     "hunt": "300",
     "group": "Magby/Pansear",
-    "todo": "calibrate hp + defense",
+    "hp": 162900,
+    "todo": "calibrate defense",
     "bestStarterElements": [
       "water",
       "rock"
@@ -2484,7 +2485,7 @@
     "hunt": "400+",
     "group": "Sirfetch'd",
     "hp": 487560,
-    "defFactor": 0.61,
+    "defFactor": 0.62,
     "bestStarterElements": [
       "flying",
       "psychic",
@@ -2514,7 +2515,8 @@
     "hunt": "400+",
     "group": "Sirfetch'd",
     "tag": "angry",
-    "todo": "calibrate hp + defense",
+    "hp": 497466,
+    "defFactor": 0.62,
     "bestStarterElements": [
       "flying",
       "psychic",
@@ -4763,7 +4765,8 @@
     "hunt": "400+",
     "group": "Appletun",
     "tag": "angry",
-    "todo": "calibrate hp + defense",
+    "hp": 444132,
+    "todo": "calibrate defense",
     "bestStarterElements": [
       "grass",
       "poison",
@@ -4780,6 +4783,35 @@
       "bug"
     ],
     "id": "angry-appletun"
+  },
+  {
+    "name": "Shiny Torterra",
+    "types": [
+      "grass",
+      "ground"
+    ],
+    "hunt": "400+",
+    "group": "Appletun",
+    "tag": "boss",
+    "hp": 701796,
+    "todo": "calibrate defense",
+    "bestStarterElements": [
+      "fire",
+      "grass",
+      "poison",
+      "flying",
+      "bug",
+      "dragon"
+    ],
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Hunt_-_Appletun",
+    "effectiveElements": [
+      "ice",
+      "flying",
+      "fire",
+      "poison",
+      "bug"
+    ],
+    "id": "shiny-torterra-appletun"
   },
   {
     "name": "Druddigon",

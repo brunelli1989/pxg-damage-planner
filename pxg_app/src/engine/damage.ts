@@ -6,7 +6,7 @@
 //   - formula.ts     → X-Atk/X-Boost tables + computeSkillDamage + deriveSkillPower
 //   - lure.ts        → estimateLureDamagePerMob/lureFinalizesBox/estimatePokeSoloDamage
 export { getDefaultSkillPower, resolveSkillPower } from "./damage/fallback";
-export { DEFAULT_MOB_DEF_FACTOR, resolveMobConfig } from "./damage/mob";
+export { DEFAULT_MOB_DEF_FACTOR, isLureMob, resolveMobConfig } from "./damage/mob";
 export type { MobFieldSource, ResolvedMob } from "./damage/mob";
 export {
   computeEffectiveness,
