@@ -3446,7 +3446,7 @@
     "hunt": "400+",
     "group": "Torterra",
     "hp": 506520,
-    "todo": "calibrate defense",
+    "defFactor": 0.63,
     "bestStarterElements": [
       "fire",
       "grass",
@@ -3460,7 +3460,19 @@
     "effectiveElements": [
       "ice"
     ],
-    "id": "torterra"
+    "id": "torterra",
+    "calibration": {
+      "poke": "Mega Glalie + Shiny Heatmor",
+      "skills": [
+        "Icicle Crash",
+        "Frost Power",
+        "Hellfire Storm",
+        "Fire Lash"
+      ],
+      "date": "2026-05-01",
+      "triangulation": 4,
+      "note": "Player Seavell lvl 607. Glalie +70 XA8 (eff ice 2.0): IC 46757/mob → def 0.62, FP 35740/mob → def 0.65. Heatmor +70 XA7 (eff fire 1.75 = 1weak+1neutral): HFS 3-hit cleave 36690/mob → def 0.61, FL 28695/mob → def 0.60. Convergência ~0.63."
+    }
   },
   {
     "name": "Angry Torterra",
@@ -3472,7 +3484,7 @@
     "group": "Torterra",
     "tag": "angry",
     "hp": 518370,
-    "todo": "calibrate defense",
+    "defFactor": 0.63,
     "bestStarterElements": [
       "fire",
       "grass",
@@ -3965,7 +3977,7 @@
     "hunt": "400+",
     "group": "Pyroar Female",
     "hp": 391855,
-    "todo": "calibrate defense",
+    "defFactor": 0.57,
     "bestStarterElements": [
       "water",
       "rock"
@@ -3978,7 +3990,19 @@
       "rock"
     ],
     "effectivenessNotes": "Apesar de causarem dano efetivo, Pokémon dos elementos Fighting e Ground recebem dano normal de golpes do tipo Fire. Desta forma, jogadores que frequentarem este local usando Pokémon destes elementos deverão tomar cuidado. | Shiny Hariyama possui a passiva Thick Fat, tornando-a resistente a golpes do elemento Fire.",
-    "id": "pyroar-female"
+    "id": "pyroar-female",
+    "calibration": {
+      "poke": "Shiny Floatzel + Shiny Vaporeon",
+      "skills": [
+        "Wave Crash",
+        "Shadow Melting",
+        "Dive",
+        "Flip Turn"
+      ],
+      "date": "2026-05-01",
+      "triangulation": 4,
+      "note": "Player Seavell lvl 486. Eff water vs fire+normal piecewise = 1.75 (1weak+1neutral). Floatzel +70 XA8: WC 27310/mob → def 0.57, SM 30297 → 0.57, Dive 30300 → 0.54. Vaporeon +70 XA7 FT 16225 → def 0.57. Convergência 0.54-0.57."
+    }
   },
   {
     "name": "Angry Pyroar Female",
@@ -3989,7 +4013,8 @@
     "hunt": "400+",
     "group": "Pyroar Female",
     "tag": "angry",
-    "todo": "calibrate hp + defense",
+    "hp": 401534,
+    "defFactor": 0.57,
     "bestStarterElements": [
       "water",
       "rock"
