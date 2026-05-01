@@ -3047,7 +3047,7 @@
     "hunt": "400+",
     "group": "Weavile",
     "hp": 543200,
-    "todo": "calibrate defense",
+    "defFactor": 0.69,
     "bestStarterElements": [
       "fighting"
     ],
@@ -3056,7 +3056,18 @@
       "fighting"
     ],
     "effectivenessNotes": "Apesar de causarem dano efetivo no local, os elementos Fire, Bug, Rock e Steel recebem dano normal de golpes do tipo Dark usados por deste Pokémon. Portanto, jogadores que frequentarem este local usando Pokémon destes elementos deverão tomar cuidado. | Os elementos Fire, Bug, Rock e Steel e Fairy causam dano efetivo no local, entretanto, não serão tão fortes como o dano do elemento Fighting, para o qual o local foi balanceado.",
-    "id": "weavile"
+    "id": "weavile",
+    "calibration": {
+      "poke": "Shiny Hariyama",
+      "skills": [
+        "Reversal",
+        "Shadow Break",
+        "Fake Out"
+      ],
+      "date": "2026-05-01",
+      "triangulation": 6,
+      "note": "Player Gardestrike lvl 606. Eff fighting vs dark+ice = 2.0 (2-weak). 2 clusters × 3 skills = 6 datapoints todos em 0.687. Reversal big finisher (~57160) é o cal value real; os '5 small ~10120 hits' por mob são mecânica adicional (DoT/bonus) não no cal — corrige interpretação anterior que dava 0.59."
+    }
   },
   {
     "name": "Angry Weavile",
@@ -3068,7 +3079,7 @@
     "group": "Weavile",
     "tag": "angry",
     "hp": 555140,
-    "todo": "calibrate defense",
+    "defFactor": 0.69,
     "bestStarterElements": [
       "fighting"
     ],
@@ -3710,7 +3721,8 @@
     "hunt": "400+",
     "group": "Scolipede",
     "tag": "angry",
-    "todo": "calibrate hp + defense",
+    "hp": 425554,
+    "todo": "calibrate defense",
     "bestStarterElements": [
       "poison",
       "ground",
