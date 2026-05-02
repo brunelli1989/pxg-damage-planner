@@ -13245,14 +13245,24 @@
       "water",
       "steel"
     ],
+    "config": "lvl 600, +70, XA8 (+31%), Y-Ghost T3 (sem efeito), sem food, Volcanic (sem clã match), sem device, dummy neutro",
+    "melee": {
+      "power": 1.97,
+      "attackInterval": 2.06,
+      "element": "normal",
+      "kind": "melee"
+    },
     "skills": [
       {
-        "name": "Scrap Throw",
+        "name": "Steely Blast",
         "cooldown": 8,
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "steel"
+        "element": "steel",
+        "power": 5.93,
+        "dano": 6531,
+        "playerNote": "In-game tracker emite 'Steely Blast' (wiki diz 'Scrap Throw' — provavelmente renomeada)"
       },
       {
         "name": "Bubble",
@@ -13260,7 +13270,9 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "water"
+        "element": "water",
+        "power": 9.68,
+        "dano": 10665
       },
       {
         "name": "Bubble Beam",
@@ -13268,7 +13280,10 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "water"
+        "element": "water",
+        "power": 11.60,
+        "dano": 12784,
+        "playerNote": "3-hit per cast (~4261 each)"
       },
       {
         "name": "Water Pulse",
@@ -13276,15 +13291,25 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "water"
+        "element": "water",
+        "power": 11.61,
+        "dano": 12792
       },
       {
         "name": "Metal Claw",
         "cooldown": 50,
-        "type": "area",
+        "type": "frontal",
         "cc": null,
-        "buff": "self",
-        "element": "steel"
+        "buff": "next",
+        "element": "steel",
+        "power": 9.84,
+        "dano": 10844,
+        "buffEffect": {
+          "mult": 2,
+          "duration": 10,
+          "appliesTo": "melee"
+        },
+        "playerNote": "Combo buff: melee ×2 window (~10s) + buff:next ×1.5 skills. Validado empiricamente: melee 2167→4345 (×2.00), Bubble 10665→15994 (×1.50)."
       },
       {
         "name": "Liquidation",
@@ -13292,23 +13317,29 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "water"
+        "element": "water",
+        "power": 13.54,
+        "dano": 14922
       },
       {
         "name": "Flash Cannon",
         "cooldown": 40,
-        "type": "area",
+        "type": "frontal",
         "cc": "locked",
         "buff": null,
-        "element": "steel"
+        "element": "steel",
+        "power": 15.60,
+        "dano": 17188
       },
       {
         "name": "Hydro Cannon",
         "cooldown": 40,
-        "type": "area",
+        "type": "frontal",
         "cc": null,
         "buff": null,
-        "element": "water"
+        "element": "water",
+        "power": 15.62,
+        "dano": 17203
       },
       {
         "name": "Surf",
@@ -13316,10 +13347,12 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "water"
+        "element": "water",
+        "power": 23.40,
+        "dano": 25780
       }
     ],
-    "todo": "calibrate skills (powers from wiki, dano não medido)"
+    "observacao": "Passiva 'Water Sport': recebe 0.5x dano de fogo. Sh.Empoleon water/steel canon já é 2-resist (0.5 piecewise PxG) — passiva redundante, sem efeito extra na fórmula."
   },
   {
     "id": "shiny-empoleon-tm",
