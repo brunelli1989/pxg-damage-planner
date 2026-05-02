@@ -4759,6 +4759,14 @@
       "fire",
       "steel"
     ],
+    "config": "lvl 600, +50, XA5, Y-Ghost T3 (sem efeito), sem food, Volcanic, sem device, neutro",
+    "observacao": "Cal 2026-05-02 single-cast no dummy. Heat Wave/Flash Cannon = frontal type. Heat Wave aplica silence. Crunch 3-hit, Rock Slide 4-hit, Stone Edge 5-hit em cleave/cast. Magma Storm: main hit + burn DoT 10×350 ticks (similar HFS). Cores: Iron Head/Flash Cannon (steel) saem color=172 (overload steel/self-buff). Ancient Power saiu color=129 (esperado 180 rock).",
+    "melee": {
+      "power": 3.92,
+      "attackInterval": 4.1,
+      "element": "normal",
+      "kind": "melee"
+    },
     "skills": [
       {
         "name": "Volcano Shot",
@@ -4766,7 +4774,9 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 5.82,
+        "dano": 7413
       },
       {
         "name": "Iron Head",
@@ -4774,7 +4784,9 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "steel"
+        "element": "steel",
+        "power": 7.78,
+        "dano": 7735
       },
       {
         "name": "Crunch",
@@ -4782,7 +4794,10 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "dark"
+        "element": "dark",
+        "power": 7.37,
+        "dano": 7323,
+        "playerNote": "3-hit per cast (~2441 each)"
       },
       {
         "name": "Earth Power",
@@ -4790,7 +4805,9 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ground"
+        "element": "ground",
+        "power": 11.76,
+        "dano": 11691
       },
       {
         "name": "Rock Slide",
@@ -4798,7 +4815,10 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "rock"
+        "element": "rock",
+        "power": 13.63,
+        "dano": 13548,
+        "playerNote": "4-hit per cast (~3387 each)"
       },
       {
         "name": "Stone Edge",
@@ -4806,23 +4826,31 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "rock"
+        "element": "rock",
+        "power": 12.25,
+        "dano": 12175,
+        "playerNote": "5-hit per cast (~2435 each)"
       },
       {
         "name": "Ancient Power",
         "cooldown": 40,
-        "type": "area",
+        "type": "frontal",
         "cc": null,
         "buff": null,
-        "element": "rock"
+        "element": "rock",
+        "power": 23.26,
+        "dano": 23117,
+        "playerNote": "Single-hit frontal. Color=129 (anomalia, esperado 180 rock)"
       },
       {
         "name": "Heat Wave",
         "cooldown": 40,
-        "type": "area",
+        "type": "frontal",
         "cc": "silence",
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 17.42,
+        "dano": 22179
       },
       {
         "name": "Magma Storm",
@@ -4830,18 +4858,22 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 10.80,
+        "dano": 13747,
+        "playerNote": "Main hit + burn DoT 10×350 ticks (similar HFS Heatmor pattern)"
       },
       {
         "name": "Flash Cannon",
         "cooldown": 40,
-        "type": "area",
+        "type": "frontal",
         "cc": null,
         "buff": null,
-        "element": "steel"
+        "element": "steel",
+        "power": 22.43,
+        "dano": 22295
       }
-    ],
-    "todo": "calibrate skills (powers from wiki, dano não medido)"
+    ]
   },
   {
     "id": "heracross",
