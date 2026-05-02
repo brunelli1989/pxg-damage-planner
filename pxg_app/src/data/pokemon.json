@@ -13838,14 +13838,23 @@
       "psychic",
       "fighting"
     ],
+    "config": "lvl 600, +70, XA8 (+31%), Y-Ghost T3 (sem efeito), food 3%, Volcanic (sem clã match), sem device, dummy neutro",
+    "melee": {
+      "power": 1.69,
+      "attackInterval": 1.65,
+      "element": "normal",
+      "kind": "melee"
+    },
     "skills": [
       {
         "name": "Psycho Cut",
         "cooldown": 8,
-        "type": "area",
+        "type": "frontal",
         "cc": null,
         "buff": null,
-        "element": "psychic"
+        "element": "psychic",
+        "power": 12.19,
+        "dano": 13737
       },
       {
         "name": "Psy Pulse",
@@ -13853,7 +13862,10 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "psychic"
+        "element": "psychic",
+        "power": 14.57,
+        "dano": 16417,
+        "playerNote": "Multi-hit 3× per cast (~5450 each)"
       },
       {
         "name": "Heal Pulse",
@@ -13861,7 +13873,10 @@
         "type": "target",
         "cc": null,
         "buff": "self",
-        "element": "psychic"
+        "element": "psychic",
+        "power": 12.47,
+        "dano": 14055,
+        "playerNote": "Drain: dmg = heal user. Damage hit color=180, heal color=35."
       },
       {
         "name": "Confusion",
@@ -13869,7 +13884,9 @@
         "type": "area",
         "cc": "stun",
         "buff": null,
-        "element": "psychic"
+        "element": "psychic",
+        "power": 7.86,
+        "dano": 8853
       },
       {
         "name": "Psychic",
@@ -13877,15 +13894,19 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "psychic"
+        "element": "psychic",
+        "power": 16.58,
+        "dano": 18682
       },
       {
         "name": "Psyshock",
         "cooldown": 40,
-        "type": "area",
+        "type": "frontal",
         "cc": null,
         "buff": null,
-        "element": "psychic"
+        "element": "psychic",
+        "power": 13.66,
+        "dano": 15391
       },
       {
         "name": "Expanding Force",
@@ -13893,7 +13914,10 @@
         "type": "area",
         "cc": "locked",
         "buff": null,
-        "element": "psychic"
+        "element": "psychic",
+        "power": 20.24,
+        "dano": 22805,
+        "playerNote": "5-hit per cast (~4561 each, color=184 novo)"
       },
       {
         "name": "Leer",
@@ -13902,10 +13926,11 @@
         "cc": null,
         "buff": null,
         "element": "normal",
-        "def": true
+        "def": true,
+        "power": 0,
+        "playerNote": "Debuff sem dano observado em dummy. Em PVE não reduziu def visivelmente (melee +1% pós-cast = noise)."
       }
-    ],
-    "todo": "calibrate skills (powers from wiki, dano não medido)"
+    ]
   },
   {
     "id": "shiny-gallade-tm",
@@ -16056,10 +16081,9 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fire",
-        "power": 15.19,
-        "dano": 21421,
-        "playerNote": "Element FIRE em Sh.Infernape (color=198) — diferente do canon fighting. Volcanic clã +28% aplica."
+        "element": "fighting",
+        "power": 19.44,
+        "dano": 21421
       },
       {
         "name": "Focus Blast",
