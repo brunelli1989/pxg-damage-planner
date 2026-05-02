@@ -21780,6 +21780,14 @@
       "psychic",
       "flying"
     ],
+    "config": "lvl 600, +70, XA8, Y-Ghost T3 (sem efeito), food 3%, Volcanic, sem device, neutro",
+    "observacao": "Cal 2026-05-02 single-cast no dummy. Todas skills ghost (SS/CR/SB/NS/Astonish) saem color=83. Peck color=179 (flying). Padrão tracker: hit 1ms antes do announce = pertence ao skill cast nessa hora.",
+    "melee": {
+      "power": 1.97,
+      "attackInterval": 2.1,
+      "element": "normal",
+      "kind": "melee"
+    },
     "skills": [
       {
         "name": "Peck",
@@ -21787,7 +21795,9 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "flying"
+        "element": "flying",
+        "power": 5.81,
+        "dano": 6551
       },
       {
         "name": "Shadow Sphere",
@@ -21795,7 +21805,9 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ghost"
+        "element": "ghost",
+        "power": 15.49,
+        "dano": 17459
       },
       {
         "name": "Confuse Ray",
@@ -21803,7 +21815,9 @@
         "type": "target",
         "cc": "locked",
         "buff": null,
-        "element": "ghost"
+        "element": "ghost",
+        "power": 20.30,
+        "dano": 22885
       },
       {
         "name": "Shadow Ball",
@@ -21811,7 +21825,9 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "ghost"
+        "element": "ghost",
+        "power": 11.65,
+        "dano": 13128
       },
       {
         "name": "Night Shade",
@@ -21819,7 +21835,9 @@
         "type": "area",
         "cc": "locked",
         "buff": null,
-        "element": "ghost"
+        "element": "ghost",
+        "power": 24.23,
+        "dano": 27308
       },
       {
         "name": "Astonish",
@@ -21827,7 +21845,9 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ghost"
+        "element": "ghost",
+        "power": 26.68,
+        "dano": 30064
       },
       {
         "name": "Tailwind",
@@ -21836,7 +21856,8 @@
         "cc": "locked",
         "buff": "self",
         "element": "flying",
-        "def": true
+        "def": true,
+        "power": 0
       },
       {
         "name": "Predict",
@@ -21844,7 +21865,8 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "psychic"
+        "element": "psychic",
+        "power": 0
       },
       {
         "name": "Double Team",
@@ -21853,10 +21875,10 @@
         "cc": "locked",
         "buff": "self",
         "element": "normal",
-        "def": true
+        "def": true,
+        "power": 0
       }
-    ],
-    "todo": "calibrate skills (powers from wiki, dano não medido)"
+    ]
   },
   {
     "id": "shiny-yanmega",
