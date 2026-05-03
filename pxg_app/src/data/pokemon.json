@@ -2256,10 +2256,115 @@
     "clans": [
       "ironhard"
     ],
-    "role": "burst_dd",
+    "role": "otdd",
     "pvpRole": "burst_dd",
-    "elements": [],
-    "skills": []
+    "elements": [
+      "steel"
+    ],
+    "config": "lvl 600, +50, XA4 (+19%), sem Y, sem food, Volcanic (sem clã match), sem device, dummy neutro",
+    "melee": {
+      "power": 3.91,
+      "attackInterval": 4.14,
+      "element": "normal",
+      "kind": "melee"
+    },
+    "skills": [
+      {
+        "name": "Steely Blast",
+        "cooldown": 12,
+        "type": "target",
+        "cc": null,
+        "buff": null,
+        "element": "steel",
+        "power": 9.78,
+        "dano": 9490,
+        "playerNote": "In-game tracker emite 'Steely Blast' (wiki diz 'Scrap Throw' — renomeada igual Sh.Empoleon)"
+      },
+      {
+        "name": "Iron Head",
+        "cooldown": 20,
+        "type": "target",
+        "cc": null,
+        "buff": null,
+        "element": "steel",
+        "power": 14.54,
+        "dano": 14100
+      },
+      {
+        "name": "Iron Blow",
+        "cooldown": 8,
+        "type": "target",
+        "cc": null,
+        "buff": null,
+        "element": "steel",
+        "power": 11.80,
+        "dano": 11441,
+        "playerNote": "In-game tracker emite 'Iron Blow' (wiki diz 'Scrap Shot' — renomeada)"
+      },
+      {
+        "name": "Stomp",
+        "cooldown": 20,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel",
+        "power": 9.71,
+        "dano": 9413
+      },
+      {
+        "name": "Heavy Metal",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel",
+        "power": 18.58,
+        "dano": 18024,
+        "playerNote": "2-hit (~9012 each)"
+      },
+      {
+        "name": "Heavy Slam",
+        "cooldown": 50,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel",
+        "power": 13.73,
+        "dano": 13315
+      },
+      {
+        "name": "Strength",
+        "cooldown": 15,
+        "type": "area",
+        "cc": null,
+        "buff": null,
+        "element": "steel",
+        "power": 11.78,
+        "dano": 11425,
+        "playerNote": "3-hit (~3808 each, sai em color=172 steel ao invés de cluster típico)"
+      },
+      {
+        "name": "Steel Roller",
+        "cooldown": 25,
+        "type": "area",
+        "cc": null,
+        "buff": "self",
+        "element": "steel",
+        "power": 2.09,
+        "dano": 2024,
+        "playerNote": "Speed buff + AOE DoT 10s. Tooltip: 'muito' speed por 10s + 'levemente' speed por +45s (55s total). Damage: ~22 ticks de 92 (~2024 total). Skill primariamente de buff, não dano. Schema buffEffect atual não modela speed mult."
+      },
+      {
+        "name": "Flash Cannon",
+        "cooldown": 35,
+        "type": "frontal",
+        "cc": null,
+        "buff": null,
+        "element": "steel",
+        "power": 13.66,
+        "dano": 13246
+      }
+    ]
   },
   {
     "id": "cradily",
@@ -3916,7 +4021,16 @@
     ],
     "role": "otdd",
     "pvpRole": null,
-    "elements": [],
+    "elements": [
+      "poison"
+    ],
+    "config": "lvl 600, +0 (sem boost), sem held, sem food, Volcanic (sem clã match), sem device, dummy neutro",
+    "melee": {
+      "power": 1.87,
+      "attackInterval": 2.09,
+      "element": "normal",
+      "kind": "melee"
+    },
     "skills": [
       {
         "name": "Body Slam",
@@ -3924,7 +4038,10 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "normal"
+        "element": "normal",
+        "power": 3.96,
+        "dano": 2969,
+        "playerNote": "Recoil + knockback: hit 593 c=200 = self-damage tomado pelo Garbodor (não dano ao alvo). Tooltip in-game confirma: 'fere levemente o usuário'. Aplica knockback se não for selvagem."
       },
       {
         "name": "Toxic Spikes",
@@ -3932,7 +4049,10 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "poison"
+        "element": "poison",
+        "power": 8.80,
+        "dano": 6597,
+        "playerNote": "3-hit (~2199 each) + aplica poison DoT (tick 350)"
       },
       {
         "name": "Sludge",
@@ -3940,7 +4060,10 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "poison"
+        "element": "poison",
+        "power": 7.33,
+        "dano": 5495,
+        "playerNote": "3-hit cluster (~1832 each)"
       },
       {
         "name": "Gunk Shot",
@@ -3948,7 +4071,10 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "poison"
+        "element": "poison",
+        "power": 12.12,
+        "dano": 9093,
+        "playerNote": "Single-hit em color=102 (não 160 padrão poison) — variant 'poison-shot' tracker"
       },
       {
         "name": "Acid Spray",
@@ -3956,7 +4082,9 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "poison"
+        "element": "poison",
+        "power": 16.09,
+        "dano": 12068
       },
       {
         "name": "Sludge Bomb",
@@ -3964,7 +4092,9 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "poison"
+        "element": "poison",
+        "power": 17.46,
+        "dano": 13098
       },
       {
         "name": "Acid Rain",
@@ -3972,7 +4102,9 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "poison"
+        "element": "poison",
+        "power": 19.95,
+        "dano": 14963
       },
       {
         "name": "Venoshock",
@@ -3980,10 +4112,11 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "poison"
+        "element": "poison",
+        "power": 17.62,
+        "dano": 13212
       }
-    ],
-    "todo": "calibrate skills (powers from wiki, dano não medido)"
+    ]
   },
   {
     "id": "garchomp",
@@ -4429,6 +4562,13 @@
     "elements": [
       "psychic"
     ],
+    "config": "lvl 600, +50, sem held (sem XA), sem food, Volcanic (sem clã match), sem device, dummy neutro",
+    "melee": {
+      "power": 1.48,
+      "attackInterval": 2.07,
+      "element": "normal",
+      "kind": "melee"
+    },
     "skills": [
       {
         "name": "Psy Ball",
@@ -4436,7 +4576,9 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "psychic"
+        "element": "psychic",
+        "power": 7.74,
+        "dano": 6304
       },
       {
         "name": "Psy Pulse",
@@ -4444,7 +4586,10 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "psychic"
+        "element": "psychic",
+        "power": 8.73,
+        "dano": 7116,
+        "playerNote": "3-hit per cast (~2372 each)"
       },
       {
         "name": "Synchronoise",
@@ -4452,7 +4597,10 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "psychic"
+        "element": "psychic",
+        "power": 12.66,
+        "dano": 10318,
+        "playerNote": "3-hit per cast (~3439 each)"
       },
       {
         "name": "Instant Teleportation",
@@ -4461,7 +4609,9 @@
         "cc": "locked",
         "buff": "self",
         "element": "psychic",
-        "def": true
+        "def": true,
+        "power": 0,
+        "playerNote": "Self-buff/teleport (sem dano observado)"
       },
       {
         "name": "Trick",
@@ -4469,7 +4619,9 @@
         "type": "target",
         "cc": "stun",
         "buff": null,
-        "element": "psychic"
+        "element": "psychic",
+        "power": 10.78,
+        "dano": 8782
       },
       {
         "name": "Psyshock",
@@ -4477,7 +4629,9 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "psychic"
+        "element": "psychic",
+        "power": 23.21,
+        "dano": 18919
       },
       {
         "name": "Psychic",
@@ -4485,7 +4639,9 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "psychic"
+        "element": "psychic",
+        "power": 18.36,
+        "dano": 14959
       },
       {
         "name": "Future Sight",
@@ -4493,10 +4649,12 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "psychic"
+        "element": "psychic",
+        "power": 24.15,
+        "dano": 19681
       }
     ],
-    "todo": "calibrate skills (powers from wiki, dano não medido)"
+    "observacao": "Passiva 'Immunity': 0.5x dano de poison (canon poison vs psychic = 2.0 -> reduzido pra 0.5, redução real) + imune ao status poison. Só afeta dano tomado, irrelevante p/ OTDD outgoing."
   },
   {
     "id": "granbull",
@@ -6067,7 +6225,16 @@
     ],
     "role": "otdd",
     "pvpRole": null,
-    "elements": [],
+    "elements": [
+      "rock"
+    ],
+    "config": "lvl 600, +0 (sem boost), sem held, sem food, Volcanic (sem clã match), sem device, dummy neutro",
+    "melee": {
+      "power": 2.01,
+      "attackInterval": 2.10,
+      "element": "normal",
+      "kind": "melee"
+    },
     "skills": [
       {
         "name": "Crunch",
@@ -6075,7 +6242,10 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "dark"
+        "element": "dark",
+        "power": 5.98,
+        "dano": 4487,
+        "playerNote": "3-hit per cast (~1496 each)"
       },
       {
         "name": "Rock Throw",
@@ -6083,7 +6253,9 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "rock"
+        "element": "rock",
+        "power": 9.27,
+        "dano": 6954
       },
       {
         "name": "Rock Slide",
@@ -6091,7 +6263,10 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "rock"
+        "element": "rock",
+        "power": 11.84,
+        "dano": 8878,
+        "playerNote": "3-hit per cast (~2960 each)"
       },
       {
         "name": "Rock Tomb",
@@ -6099,7 +6274,9 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "rock"
+        "element": "rock",
+        "power": 6.81,
+        "dano": 5111
       },
       {
         "name": "Rock Blast",
@@ -6107,15 +6284,20 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "rock"
+        "element": "rock",
+        "power": 24.25,
+        "dano": 18184,
+        "playerNote": "2-hit per cast (~9092 each)"
       },
       {
         "name": "Stone Edge",
         "cooldown": 40,
-        "type": "area",
+        "type": "frontal",
         "cc": null,
         "buff": null,
-        "element": "rock"
+        "element": "rock",
+        "power": 25.70,
+        "dano": 19273
       },
       {
         "name": "Accelerock",
@@ -6123,7 +6305,9 @@
         "type": "target",
         "cc": null,
         "buff": "self",
-        "element": "rock"
+        "element": "rock",
+        "power": 19.46,
+        "dano": 14596
       },
       {
         "name": "Howl",
@@ -6131,10 +6315,11 @@
         "type": "area",
         "cc": "stun",
         "buff": "self",
-        "element": "dark"
+        "element": "dark",
+        "power": 0,
+        "playerNote": "Stun + sem dano observado. Não buffa melee/skills (validado: Rock Throw/Rock Slide pré e pós Howl com mesmo dano)."
       }
-    ],
-    "todo": "calibrate skills (powers from wiki, dano não medido)"
+    ]
   },
   {
     "id": "lycanroc-midnight-form",
@@ -9239,6 +9424,13 @@
     "elements": [
       "fighting"
     ],
+    "config": "lvl 600, +50, XA5 (+22%), sem Y, sem food, Volcanic (sem clã match), sem device, dummy neutro",
+    "melee": {
+      "power": 1.01,
+      "attackInterval": 1.04,
+      "element": "normal",
+      "kind": "melee"
+    },
     "skills": [
       {
         "name": "Low Kick",
@@ -9246,15 +9438,20 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "fighting"
+        "element": "fighting",
+        "power": 6.85,
+        "dano": 6816
       },
       {
         "name": "Close Combat",
         "cooldown": 45,
         "type": "area",
         "cc": null,
-        "buff": "self",
-        "element": "fighting"
+        "buff": "next",
+        "element": "fighting",
+        "power": 10.57,
+        "dano": 10515,
+        "playerNote": "5-hit (~2103 each) + buff:next x1.5 confirmado (Low Kick 6816 -> 10207, ratio 1.497)"
       },
       {
         "name": "High Jump Kick",
@@ -9262,15 +9459,20 @@
         "type": "area",
         "cc": "stun",
         "buff": null,
-        "element": "fighting"
+        "element": "fighting",
+        "power": 16.67,
+        "dano": 16577,
+        "playerNote": "2-hit cluster. Valor calibrado é unbuffed (cast obs = 24865 buffado por Close Combat ÷1.5)"
       },
       {
         "name": "Vacuum Wave",
         "cooldown": 30,
-        "type": "area",
+        "type": "frontal",
         "cc": null,
         "buff": null,
-        "element": "fighting"
+        "element": "fighting",
+        "power": 16.58,
+        "dano": 16486
       },
       {
         "name": "Focus Blast",
@@ -9278,7 +9480,10 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "fighting"
+        "element": "fighting",
+        "power": 17.95,
+        "dano": 17846,
+        "playerNote": "Hit delay ~1.4s pos-announce"
       },
       {
         "name": "Aura Sphere",
@@ -9286,7 +9491,10 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "fighting"
+        "element": "fighting",
+        "power": 13.11,
+        "dano": 13034,
+        "playerNote": "4-hit per cast (~3258 each)"
       },
       {
         "name": "Reversal",
@@ -9294,7 +9502,10 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fighting"
+        "element": "fighting",
+        "power": 24.30,
+        "dano": 24160,
+        "playerNote": "Single-hit big (single-target/dummy). Hit delay ~1.6s pos-announce. Em cleave provavelmente vira pattern Sh.Hari (5 small + 1 finisher) — verificar."
       },
       {
         "name": "Agility",
@@ -9302,10 +9513,12 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "normal"
+        "element": "normal",
+        "power": 0,
+        "playerNote": "Speed buff puro: melee interval 1.04s -> 0.66s (~1.6x mais rapido). Damage NAO afetado. Schema buffEffect atual nao suporta speed mult — buffo nao modelado pelo engine."
       }
     ],
-    "todo": "calibrate skills (powers from wiki, dano não medido)"
+    "observacao": "Passiva 'Tough Spirit': 0.5x dano de NORMAL (canon normal vs fighting = 1.0 neutro -> reduzido pra 0.5, redução real). Só afeta dano tomado, irrelevante p/ OTDD outgoing."
   },
   {
     "id": "mightyena",
@@ -9980,7 +10193,16 @@
     ],
     "role": "otdd",
     "pvpRole": null,
-    "elements": [],
+    "elements": [
+      "flying"
+    ],
+    "config": "lvl 600, +50, XA5 (+22%), sem Y, sem food, Volcanic (sem clã match), sem device, dummy neutro",
+    "melee": {
+      "power": 1.02,
+      "attackInterval": 1.04,
+      "element": "normal",
+      "kind": "melee"
+    },
     "skills": [
       {
         "name": "Wind Swirl",
@@ -9988,7 +10210,9 @@
         "type": "target",
         "cc": "locked",
         "buff": null,
-        "element": "flying"
+        "element": "flying",
+        "power": 11.59,
+        "dano": 11526
       },
       {
         "name": "Wing Attack",
@@ -9996,15 +10220,19 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "flying"
+        "element": "flying",
+        "power": 13.04,
+        "dano": 12970
       },
       {
         "name": "Air Cutter",
         "cooldown": 20,
-        "type": "area",
+        "type": "frontal",
         "cc": null,
         "buff": null,
-        "element": "flying"
+        "element": "flying",
+        "power": 14.60,
+        "dano": 14512
       },
       {
         "name": "Air Slash",
@@ -10012,7 +10240,10 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "flying"
+        "element": "flying",
+        "power": 11.58,
+        "dano": 11511,
+        "playerNote": "3-hit cluster (~3837 each)"
       },
       {
         "name": "Hurricane",
@@ -10020,23 +10251,30 @@
         "type": "area",
         "cc": "stun",
         "buff": null,
-        "element": "flying"
+        "element": "flying",
+        "power": 17.51,
+        "dano": 17412
       },
       {
         "name": "Boomburst",
         "cooldown": 40,
-        "type": "area",
+        "type": "frontal",
         "cc": null,
         "buff": null,
-        "element": "flying"
+        "element": "flying",
+        "power": 22.34,
+        "dano": 22216
       },
       {
         "name": "Acrobatics",
         "cooldown": 50,
-        "type": "area",
+        "type": "frontal",
         "cc": null,
         "buff": null,
-        "element": "flying"
+        "element": "flying",
+        "power": 9.65,
+        "dano": 9594,
+        "playerNote": "2-hit (~4797 each). Power baixa pra 50s skill — canon Acrobatics rende mais sem held item; com XA5 segura o dano. Validar sem held se necessário."
       },
       {
         "name": "Tailwind",
@@ -10045,10 +10283,10 @@
         "cc": null,
         "buff": "self",
         "element": "flying",
-        "def": true
+        "power": 0,
+        "playerNote": "Movement speed buff (6s) — tooltip in-game: 'aumenta a velocidade de movimento'. NÃO é attack speed nem def. Irrelevante para OTDD/damage."
       }
-    ],
-    "todo": "calibrate skills (powers from wiki, dano não medido)"
+    ]
   },
   {
     "id": "omastar",
@@ -13627,6 +13865,13 @@
     "elements": [
       "fire"
     ],
+    "config": "lvl 600, +50, XA2 (+11%), Y-Reg T3 (sem efeito), sem food, Volcanic clã match (×1.28 fire), sem device, dummy neutro",
+    "melee": {
+      "power": 1.80,
+      "attackInterval": 2.08,
+      "element": "normal",
+      "kind": "melee"
+    },
     "skills": [
       {
         "name": "Ember",
@@ -13634,7 +13879,10 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 8.30,
+        "dano": 9617,
+        "playerNote": "Aplica burn DoT (~350 ticks/0.5-1s)"
       },
       {
         "name": "Incinerate",
@@ -13642,7 +13890,10 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 11.24,
+        "dano": 13013,
+        "playerNote": "Aplica burn DoT"
       },
       {
         "name": "Fire Spin",
@@ -13650,7 +13901,10 @@
         "type": "target",
         "cc": "stun",
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 11.80,
+        "dano": 13669,
+        "playerNote": "6-hit per cast (~2278 each) sobre ~8s — padrão spin DoT-like + burn"
       },
       {
         "name": "Fire Ball",
@@ -13658,15 +13912,21 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 11.75,
+        "dano": 13606,
+        "playerNote": "Aplica burn DoT"
       },
       {
         "name": "Flame Charge",
         "cooldown": 40,
         "type": "area",
         "cc": "stun",
-        "buff": "self",
-        "element": "fire"
+        "buff": null,
+        "element": "fire",
+        "power": 15.75,
+        "dano": 18241,
+        "playerNote": "Hit delay ~2.5s pos-announce + burn. Buff:self original NÃO confirmado (skill seguinte sem ratio observável)."
       },
       {
         "name": "Will-O-Wisp",
@@ -13674,15 +13934,21 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 11.68,
+        "dano": 13527,
+        "playerNote": "3-hit cluster (~4509 each) + burn"
       },
       {
         "name": "Overheat",
         "cooldown": 40,
-        "type": "area",
+        "type": "frontal",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 18.82,
+        "dano": 21799,
+        "playerNote": "Aplica burn DoT"
       },
       {
         "name": "Hellfire Storm",
@@ -13690,10 +13956,12 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fire"
+        "element": "fire",
+        "power": 23.52,
+        "dano": 27242,
+        "playerNote": "3-hit (~9081 each) + burn longo. Single-target value; em cleave HFS tem penalty ~35% (memória sessão anterior)."
       }
-    ],
-    "todo": "calibrate skills (powers from wiki, dano não medido)"
+    ]
   },
   {
     "id": "shiny-floatzel",
@@ -18740,7 +19008,16 @@
     ],
     "role": "otdd",
     "pvpRole": null,
-    "elements": [],
+    "elements": [
+      "water"
+    ],
+    "config": "lvl 600, +70, XA5 (+22%), sem Y, sem food, Volcanic (sem clã match), sem device, dummy neutro",
+    "melee": {
+      "power": 1.80,
+      "attackInterval": 2.10,
+      "element": "normal",
+      "kind": "melee"
+    },
     "skills": [
       {
         "name": "Soak",
@@ -18748,7 +19025,9 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "water"
+        "element": "water",
+        "power": 10.34,
+        "dano": 10612
       },
       {
         "name": "Bubble",
@@ -18756,7 +19035,9 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "water"
+        "element": "water",
+        "power": 7.82,
+        "dano": 8021
       },
       {
         "name": "Bubble Beam",
@@ -18764,15 +19045,21 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "water"
+        "element": "water",
+        "power": 8.79,
+        "dano": 9018,
+        "playerNote": "3-hit per cast (~3006 each)"
       },
       {
-        "name": "Water Pulse",
+        "name": "Water Ball",
         "cooldown": 25,
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "water"
+        "element": "water",
+        "power": 11.72,
+        "dano": 12028,
+        "playerNote": "Tracker emite 'Water Ball' mas wiki diz 'Water Pulse' (mesma skill, renomeada)"
       },
       {
         "name": "Liquidation",
@@ -18780,7 +19067,9 @@
         "type": "area",
         "cc": "locked",
         "buff": null,
-        "element": "water"
+        "element": "water",
+        "power": 13.66,
+        "dano": 14019
       },
       {
         "name": "Octazooka",
@@ -18788,15 +19077,19 @@
         "type": "target",
         "cc": "silence",
         "buff": null,
-        "element": "water"
+        "element": "water",
+        "power": 19.50,
+        "dano": 20008
       },
       {
         "name": "Giant Water Gun",
         "cooldown": 50,
-        "type": "area",
+        "type": "frontal",
         "cc": null,
         "buff": null,
-        "element": "water"
+        "element": "water",
+        "power": 19.50,
+        "dano": 20003
       },
       {
         "name": "Surf",
@@ -18804,10 +19097,11 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "water"
+        "element": "water",
+        "power": 21.77,
+        "dano": 22338
       }
-    ],
-    "todo": "calibrate skills (powers from wiki, dano não medido)"
+    ]
   },
   {
     "id": "shiny-pachirisu",
@@ -19080,6 +19374,13 @@
       "ice",
       "ground"
     ],
+    "config": "lvl 600, +50, XA4 (+19%), sem Y, sem food, Volcanic (sem clã match), sem device, dummy neutro",
+    "melee": {
+      "power": 1.99,
+      "attackInterval": 2.12,
+      "element": "normal",
+      "kind": "melee"
+    },
     "skills": [
       {
         "name": "Ice Shard",
@@ -19087,7 +19388,9 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "ice"
+        "element": "ice",
+        "power": 7.77,
+        "dano": 7532
       },
       {
         "name": "Icicle Spear",
@@ -19095,15 +19398,21 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "ice"
+        "element": "ice",
+        "power": 11.63,
+        "dano": 11277,
+        "playerNote": "3-hit per cast (~3759 each)"
       },
       {
         "name": "Icy Wind",
         "cooldown": 15,
-        "type": "area",
+        "type": "frontal",
         "cc": null,
         "buff": null,
-        "element": "ice"
+        "element": "ice",
+        "power": 8.75,
+        "dano": 8487,
+        "playerNote": "Single-hit em color=35 (não 71 ice padrão) — sub-color de ice 'wind/freeze'"
       },
       {
         "name": "Icicle Crash",
@@ -19111,7 +19420,9 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ice"
+        "element": "ice",
+        "power": 11.63,
+        "dano": 11275
       },
       {
         "name": "Avalanche",
@@ -19119,7 +19430,10 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "ice"
+        "element": "ice",
+        "power": 12.23,
+        "dano": 11865,
+        "playerNote": "5-hit per cast (~2373 each), span ~1.5s (não cluster compacto)"
       },
       {
         "name": "Powder Snow",
@@ -19127,7 +19441,10 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ice"
+        "element": "ice",
+        "power": 13.73,
+        "dano": 13319,
+        "playerNote": "Single-hit em color=35 (sub-color ice wind/freeze, mesmo padrão do Icy Wind)"
       },
       {
         "name": "Blizzard",
@@ -19135,10 +19452,11 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "ice"
+        "element": "ice",
+        "power": 20.58,
+        "dano": 19956
       }
-    ],
-    "todo": "calibrate skills (powers from wiki, dano não medido)"
+    ]
   },
   {
     "id": "shiny-pinsir",
@@ -21850,6 +22168,13 @@
       "normal",
       "fairy"
     ],
+    "config": "lvl 600, +42, XA2 (+11%), sem Y, sem food, Volcanic (sem clã match), sem device, dummy neutro",
+    "melee": {
+      "power": 2.02,
+      "attackInterval": 2.10,
+      "element": "normal",
+      "kind": "melee"
+    },
     "skills": [
       {
         "name": "Dazzling Gleam",
@@ -21857,7 +22182,10 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "fairy"
+        "element": "fairy",
+        "power": 14.92,
+        "dano": 13329,
+        "playerNote": "3-hit per cast (~4443 each)"
       },
       {
         "name": "Play Rough",
@@ -21865,7 +22193,9 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "fairy"
+        "element": "fairy",
+        "power": 13.92,
+        "dano": 12436
       },
       {
         "name": "Alluring Voice",
@@ -21873,15 +22203,20 @@
         "type": "area",
         "cc": null,
         "buff": "self",
-        "element": "fairy"
+        "element": "fairy",
+        "power": 10.01,
+        "dano": 8938,
+        "playerNote": "5-hit pattern (~1788 each) — magnitude próxima ao melee, distinguir por color=203 fairy"
       },
       {
         "name": "Disarming Voice",
         "cooldown": 20,
-        "type": "area",
+        "type": "frontal",
         "cc": "stun",
         "buff": null,
-        "element": "fairy"
+        "element": "fairy",
+        "power": 12.04,
+        "dano": 10754
       },
       {
         "name": "Heart Pound",
@@ -21889,7 +22224,10 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fairy"
+        "element": "fairy",
+        "power": 14.16,
+        "dano": 12651,
+        "playerNote": "Hit delay ~800ms pos-announce"
       },
       {
         "name": "Misty Terrain",
@@ -21898,7 +22236,9 @@
         "cc": null,
         "buff": "self",
         "element": "fairy",
-        "def": true
+        "def": true,
+        "power": 0,
+        "playerNote": "Self-buff def, sem dano observado"
       },
       {
         "name": "Misty Explosion",
@@ -21906,18 +22246,22 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "fairy"
+        "element": "fairy",
+        "power": 21.34,
+        "dano": 19063
       },
       {
         "name": "Magic Beam",
         "cooldown": 25,
-        "type": "area",
+        "type": "frontal",
         "cc": null,
         "buff": null,
-        "element": "fairy"
+        "element": "fairy",
+        "power": 11.94,
+        "dano": 10662,
+        "playerNote": "Hit delay ~410ms pos-announce"
       }
-    ],
-    "todo": "calibrate skills (powers from wiki, dano não medido)"
+    ]
   },
   {
     "id": "shiny-xatu",
@@ -24138,6 +24482,13 @@
       "rock",
       "dark"
     ],
+    "config": "lvl 600, +50, XA4 (+19%), Y-Regeneration T3 (sem efeito), sem food, Volcanic (sem clã match), sem device, dummy neutro",
+    "melee": {
+      "power": 4.88,
+      "attackInterval": 3.57,
+      "element": "normal",
+      "kind": "melee"
+    },
     "skills": [
       {
         "name": "Bite",
@@ -24145,7 +24496,10 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "dark"
+        "element": "dark",
+        "power": 3.94,
+        "dano": 3820,
+        "playerNote": "Single-hit dark (diferente de Crunch multi-hit). Power baixíssimo p/ skill 20s."
       },
       {
         "name": "Dragon Claw",
@@ -24153,7 +24507,10 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "dragon"
+        "element": "dragon",
+        "power": 6.82,
+        "dano": 6617,
+        "playerNote": "Em Tyranitar emerge color=89 (dragon-physical). Sh.Druddigon mesma skill em color=180 — per-poke variation no tracker."
       },
       {
         "name": "Rock Tomb",
@@ -24161,7 +24518,9 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "rock"
+        "element": "rock",
+        "power": 11.61,
+        "dano": 11259
       },
       {
         "name": "Rock Slide",
@@ -24169,7 +24528,10 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "rock"
+        "element": "rock",
+        "power": 10.24,
+        "dano": 9932,
+        "playerNote": "3-hit per cast (~3311 each)"
       },
       {
         "name": "Stone Edge",
@@ -24177,7 +24539,10 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "rock"
+        "element": "rock",
+        "power": 15.61,
+        "dano": 15142,
+        "playerNote": "5-hit per cast (~3028 each)"
       },
       {
         "name": "Rock Blast",
@@ -24185,15 +24550,21 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "rock"
+        "element": "rock",
+        "power": 22.50,
+        "dano": 21821,
+        "playerNote": "2-hit per cast (~10911 each)"
       },
       {
         "name": "Ancient Power",
         "cooldown": 35,
-        "type": "area",
+        "type": "frontal",
         "cc": null,
         "buff": null,
-        "element": "rock"
+        "element": "rock",
+        "power": 22.36,
+        "dano": 21681,
+        "playerNote": "Single-hit. Announce c=180 mas hit emerge c=129 (anomalia consistente vs Heatran)"
       },
       {
         "name": "Falling Rocks",
@@ -24201,7 +24572,9 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "rock"
+        "element": "rock",
+        "power": 23.48,
+        "dano": 22769
       },
       {
         "name": "Sandstorm",
@@ -24210,10 +24583,11 @@
         "cc": null,
         "buff": "self",
         "element": "rock",
-        "def": true
+        "def": true,
+        "power": 0,
+        "playerNote": "Self-buff def, sem dano observado"
       }
-    ],
-    "todo": "calibrate skills (powers from wiki, dano não medido)"
+    ]
   },
   {
     "id": "tyrantrum",
