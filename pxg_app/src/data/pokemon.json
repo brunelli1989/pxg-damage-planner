@@ -957,6 +957,13 @@
       "dark",
       "normal"
     ],
+    "config": "lvl 600, +80, XA8 (+31%), Y-Ghost T3 (sem efeito), sem food, Volcanic (sem clã match), sem device, dummy neutro. Tracker emite 'Tubarao Ratao'.",
+    "melee": {
+      "power": 2.05,
+      "attackInterval": 2.13,
+      "element": "normal",
+      "kind": "melee"
+    },
     "skills": [
       {
         "name": "Quick Attack",
@@ -964,7 +971,9 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "normal"
+        "element": "normal",
+        "power": 5.82,
+        "dano": 6512
       },
       {
         "name": "Bite",
@@ -972,7 +981,9 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "dark"
+        "element": "dark",
+        "power": 8.71,
+        "dano": 9746
       },
       {
         "name": "Knock Off",
@@ -980,7 +991,9 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "dark"
+        "element": "dark",
+        "power": 11.60,
+        "dano": 12977
       },
       {
         "name": "Pursuit",
@@ -988,7 +1001,9 @@
         "type": "target",
         "cc": null,
         "buff": "self",
-        "element": "dark"
+        "element": "dark",
+        "power": 7.75,
+        "dano": 8676
       },
       {
         "name": "Sucker Punch",
@@ -996,7 +1011,9 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "dark"
+        "element": "dark",
+        "power": 23.21,
+        "dano": 25962
       },
       {
         "name": "Super Fang",
@@ -1004,7 +1021,9 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "normal"
+        "element": "normal",
+        "power": 14.50,
+        "dano": 16224
       },
       {
         "name": "Assurance",
@@ -1012,7 +1031,9 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "dark"
+        "element": "dark",
+        "power": 25.15,
+        "dano": 28133
       },
       {
         "name": "Scary Face",
@@ -1020,18 +1041,26 @@
         "type": "area",
         "cc": "locked",
         "buff": null,
-        "element": "normal"
+        "element": "normal",
+        "power": 0,
+        "playerNote": "Debuff/locked sem dano observado"
       },
       {
         "name": "Swords Dance",
         "cooldown": 45,
         "type": "area",
         "cc": "locked",
-        "buff": "self",
-        "element": "normal"
+        "buff": "next",
+        "element": "normal",
+        "power": 0,
+        "buffEffect": {
+          "mult": 2,
+          "duration": 15,
+          "appliesTo": "melee"
+        },
+        "playerNote": "Tooltip in-game: dobra dano de ataques físicos por 15s + bônus na próxima skill. Validado: melee 2298→4598 (×2.001), Quick Attack 6512→9744 (×1.497)."
       }
-    ],
-    "todo": "calibrate skills (powers from wiki, dano não medido)"
+    ]
   },
   {
     "id": "alolan-raticate-tm",
@@ -1042,7 +1071,16 @@
     ],
     "role": "otdd",
     "pvpRole": null,
-    "elements": [],
+    "elements": [
+      "dark"
+    ],
+    "config": "lvl 600, +80, XA8 (+31%), Y-Ghost T3 (sem efeito), sem food, Volcanic (sem clã match), TM Dark-Type Collection equipado, dummy neutro. Tracker emite 'Tubarao Ratao'.",
+    "melee": {
+      "power": 2.44,
+      "attackInterval": 2.07,
+      "element": "dark",
+      "kind": "melee"
+    },
     "skills": [
       {
         "name": "Dark Pulse",
@@ -1050,7 +1088,10 @@
         "type": "target",
         "cc": null,
         "buff": null,
-        "element": "dark"
+        "element": "dark",
+        "power": 11.60,
+        "dano": 12982,
+        "playerNote": "Validado: 2 casts pré/pós Swords Dance (ratio ×1.499 confirma SD window buff ×1.5 skills)"
       },
       {
         "name": "Pursuit",
@@ -1058,15 +1099,19 @@
         "type": "target",
         "cc": null,
         "buff": "self",
-        "element": "dark"
+        "element": "dark",
+        "power": 13.57,
+        "dano": 15185
       },
       {
         "name": "Ruinous Claws",
         "cooldown": 20,
-        "type": "area",
+        "type": "frontal",
         "cc": null,
         "buff": null,
-        "element": "dark"
+        "element": "dark",
+        "power": 16.93,
+        "dano": 18936
       },
       {
         "name": "Quash",
@@ -1074,7 +1119,10 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "dark"
+        "element": "dark",
+        "power": 17.38,
+        "dano": 19438,
+        "playerNote": "3-hit cluster (~6479 each)"
       },
       {
         "name": "Crunch",
@@ -1082,27 +1130,37 @@
         "type": "area",
         "cc": null,
         "buff": null,
-        "element": "dark"
+        "element": "dark",
+        "power": 19.31,
+        "dano": 21603
       },
       {
         "name": "Swords Dance",
         "cooldown": 40,
         "type": "area",
         "cc": "locked",
-        "buff": "self",
+        "buff": "next",
         "element": "normal",
-        "def": true
+        "def": true,
+        "power": 0,
+        "buffEffect": {
+          "mult": 2,
+          "duration": 15,
+          "appliesTo": "melee"
+        },
+        "playerNote": "Tooltip in-game: 'Dobra o dano por ataques físicos durante 15 segundos e concede bônus ao próximo ataque'. Modelo correto: melee ×2 window 15s + buff:next ×1.5 single (skills DENTRO do window NÃO recebem ×2 — só melee)."
       },
       {
         "name": "Bite",
         "cooldown": 50,
-        "type": "area",
+        "type": "frontal",
         "cc": null,
         "buff": null,
-        "element": "dark"
+        "element": "dark",
+        "power": 12.54,
+        "dano": 14029
       }
-    ],
-    "todo": "calibrate skills (powers from wiki, dano não medido)"
+    ]
   },
   {
     "id": "alolan-sandslash",
