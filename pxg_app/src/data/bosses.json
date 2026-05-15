@@ -46,8 +46,10 @@
     "category": "Nightmare Terror",
     "types": ["electric"],
     "hp": 17500000,
+    "defFactor": 0.56,
     "durationSeconds": 450,
-    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Terror_-_Raito"
+    "wiki": "https://wiki.pokexgames.com/index.php/Nightmare_Terror_-_Raito",
+    "observacao": "defFactor cross-validado em 2 lutas independentes (8 dias de intervalo) com Serj/TM Marowak: 2026-05-04 product def×buff=0.840 (8 casts Bonemerang/EP); 2026-05-12 product=0.8433±0.0005 (62 hits limpos em 4 skills — Bonemerang/Mud Sport/EP/Bulldoze convergem na 3a casa decimal). Buff TM Ampharos Natural Leader confirmado em tooltip: ×1.50 pra TM Tank/DoT em bosses (10% base + 40% extra). def=0.843/1.50=0.562 → 0.56."
   },
   {
     "id": "gyakkyo",
@@ -106,5 +108,14 @@
     "types": ["water"],
     "durationSeconds": 600,
     "wiki": "https://wiki.pokexgames.com/index.php/Boss_Fight_-_Suicune"
+  },
+  {
+    "id": "giant-tyranitar-darkness-ultra",
+    "name": "Giant Tyranitar (Darkness Ultra)",
+    "category": "Mystery Dungeon",
+    "types": ["rock", "dark"],
+    "hp": 1050000,
+    "durationSeconds": 90,
+    "wiki": "https://wiki.pokexgames.com/index.php/Mystery_Dungeon_-_The_Darkness"
   }
 ]
